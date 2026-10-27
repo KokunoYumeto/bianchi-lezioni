@@ -1,0 +1,2081 @@
+\section*{第十四章}
+\begin{center}
+\large 常曲率空间中的超曲面
+\end{center}
+
+\oldquote
+欧几里得空间中超曲面的一般公式；假定可弯曲的超曲面之不可变形性；超曲面的曲率线与渐屈超曲面；球面表示与切向坐标；超球面中的正交 $n$ 重系统与 Darboux 定理；常曲率空间中超曲面的一般公式；曲率线的特殊性质；三维椭圆几何与双曲几何中的曲面；共轭系统与渐近线；按曲率线参数化的曲面；渐屈面的两叶与 Weingarten 定理；按渐近线参数化的曲面；椭圆空间中的零曲率曲面；曲空间中的曲面在欧几里得空间上的共形表示公式。
+\closeoldquote
+
+\subsection*{\S. 203.\quad 欧几里得空间中的超曲面}
+
+本章把 \S\S.165--168 中关于曲空间内超曲面的一般理论，应用于环境空间具有常曲率而维数任意的特殊情形；随后还要特别考察普通三维空间中曲面的主要定理，如何推广到三维椭圆几何和双曲几何。
+
+先从超曲面 $V_n$ 开始；它浸没于欧几里得空间 $S_{n+1}$ 中，后者有 $n+1$ 维。把 $ds^2$ 在 $S_{n+1}$ 中写成标准形式
+\[
+ds^2=\sum_{i=0}^{n} dx_i^2,
+\]
+而两点 $(x_i)$、$(x_i')$ 之间的距离由
+\[
+D^2=\sum_i (x_i-x_i')^2.
+\]
+给出。沿用第十一章的记号，以
+\[
+\sum_{r,s=1}^{n} b_{rs}\,du_r\,du_s,\qquad
+\sum_{r,s=1}^{n} \Omega_{rs}\,du_r\,du_s
+\]
+表示超曲面 $V_n$ 的两个基本形式，则系数 $b$ 与 $\Omega$ 由第362页 Gauss 与 Codazzi 的方程 (H*)、(J*) 联系起来：
+\[
+\tag{I}
+(\alpha\delta,\beta\gamma)_b=\Omega_{\alpha\beta}\Omega_{\delta\gamma}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+\]
+\[
+\tag{II}
+\frac{\partial\Omega_{\alpha\beta}}{\partial u_\gamma}
+-\frac{\partial\Omega_{\alpha\gamma}}{\partial u_\beta}
++\sum_t\left\{\begin{matrix}\alpha\beta\\ t\end{matrix}\right\}_b\Omega_{\gamma t}
+-\sum_t\left\{\begin{matrix}\alpha\gamma\\ t\end{matrix}\right\}_b\Omega_{\beta t}=0
+\]
+\[
+\alpha,\beta,\gamma,\delta=1,2,3\ldots n .
+\]
+
+已知超曲面的两个基本形式以后，以
+\[
+x_0,x_1,\ldots,x_n
+\]
+表示超曲面上动点的坐标，并以 $X_0,X_1,\ldots,X_n$ 表示用变量 $u$ 表出的法线方向余弦；那么每一对 $(x_\nu,X_\nu)$，其中 $\nu=0,1,2\ldots n$，都必须满足第360页的基本方程 (F)、(G)：
+\[
+\tag{A}
+\frac{\partial^2 x}{\partial u_r\,\partial u_s}
+=\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b
+\frac{\partial x}{\partial u_t}+\Omega_{rs}X,\qquad
+r,s=1,2,3\ldots n
+\]
+\[
+\tag{B}
+\frac{\partial X}{\partial u_s}
+=-\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu s}\frac{\partial x}{\partial u_\lambda}.
+\]
+还应注意（\S.165），在当前情形中，定义诸 $X$ 以及第二基本形式系数 $\Omega_{rs}$ 的公式为
+\[
+\tag{C}
+\left\{
+\begin{aligned}
+\sum_\nu X_\nu\frac{\partial x_\nu}{\partial u_r}&=0 \quad (r=1,2,\ldots,n),\\
+\sum_\nu X_\nu^2&=1,
+\end{aligned}\right.
+\]
+\[
+\tag{D}
+\Omega_{rs}=\sum_\nu X_\nu
+\frac{\partial^2x_\nu}{\partial u_r\,\partial u_s}
+=-\sum_\nu\frac{\partial X_\nu}{\partial u_r}\frac{\partial x_\nu}{\partial u_s}.
+\]
+
+在这里可以证明（参见第四章 \S.58）：若 Gauss 与 Codazzi 条件 (I)、(II) 已经满足，则联立方程组 (A)、(B) 是完全可积的。事实上，令
+\[
+\frac{\partial x}{\partial u_r}=p^{(r)},
+\]
+方程组 (A)、(B) 就可以看成关于 $n+1$ 个未知函数
+\[
+p^{(1)},p^{(2)},\ldots,p^{(n)},X
+\]
+的全微分线性方程组，即
+\[
+\tag{\(\alpha\)}
+\left\{
+\begin{aligned}
+dp^{(r)}&=\sum_s\left(\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b p^{(t)}+\Omega_{rs}X\right)du_s,\\
+dX&=-\sum_s\left(\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu s}p^{(\lambda)}\right)du_s.
+\end{aligned}\right.
+\]
+写出这个方程组的可积条件，便容易看出：正由于 (I)、(II)，这些条件恒等地满足。由此很容易证明：对于给定的两个基本形式，只要假定 (I)、(II) 成立，相应超曲面便存在而且唯一。
+
+方程组 (\(\alpha\)) 完全可积，故取 $n+1$ 组不同的解
+\[
+p_\nu^{(1)},p_\nu^{(2)},\ldots,p_\nu^{(n)},X_\nu,\qquad \nu=0,1,2\ldots n,
+\]
+每一组分别由任意选取的初值确定。于是令
+\[
+\sum_\nu p_\nu^{(r)}p_\nu^{(s)}-b_{rs}=\beta_{rs},\quad r,s=1,2,\ldots,n,
+\]
+\[
+\sum_\nu p_\nu^{(r)}X_\nu=\alpha_r,\quad r=1,2,\ldots,n,
+\]
+\[
+\sum_\nu X_\nu^2-1=\gamma,
+\]
+由 (\(\alpha\)) 可为 $n(n+1)+1$ 个函数 $\beta_{rs},\alpha_r,\gamma$ 推出如下齐次全微分线性方程组：
+\[
+\left\{
+\begin{aligned}
+\frac{\partial\beta_{rs}}{\partial u_t}
+&=\sum_\ell\left\{\begin{matrix}rt\\ \ell\end{matrix}\right\}_b\beta_{\ell s}
++\sum_\ell\left\{\begin{matrix}st\\ \ell\end{matrix}\right\}_b\beta_{r\ell}
++\Omega_{rt}\alpha_s+\Omega_{st}\alpha_r,\\
+\frac{\partial\alpha_r}{\partial u_s}
+&=\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b\alpha_t
+-\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu s}\beta_{r\lambda}
++\Omega_{rs}\gamma,\\
+\frac{\partial\gamma}{\partial u_s}
+&=-2\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu s}\alpha_\lambda.
+\end{aligned}\right.
+\]
+因此，只须在比如 $u_i=u_i^{(0)}$ 处选择初值，使
+\[
+\beta_{rs},\quad \alpha_r,\quad \gamma
+\]
+起初全为零，它们对于 $u$ 的一切值便恒为零。为了更清楚地说明如何实际选择
+\[
+p_\nu^{(r)},\quad X_\nu
+\]
+的初值，使 $\beta_{rs},\alpha_r,\gamma$ 起初全为零，例如可以对 $u$ 作一次线性替换，使
+\[
+b_{rr}=1,\qquad b_{rs}=0,\quad \text{当 }r\ne s,
+\]
+于是只须把一个 $n+1$ 元正交替换的系数，取作
+\[
+p_\nu^{(1)},p_\nu^{(2)},\ldots,p_\nu^{(n)},X_\nu,\qquad (\nu=0,1,2\ldots n)
+\]
+的初值。此后，对于 $u$ 的所有值，都有恒等式
+\[
+\sum_\nu p_\nu^{(r)}p_\nu^{(s)}=b_{rs},\qquad
+\sum_\nu p_\nu^{(r)}X_\nu=0,\qquad
+\sum_\nu X_\nu^2=1.
+\]
+现在，由于依据 (\(\alpha\))，诸表达式
+\[
+\sum_r p_\nu^{(r)}du_r,\qquad \nu=0,1,2,\ldots,n,
+\]
+\ednote{原书第464页此处把指标范围印作 \(\nu=0,2,\ldots,n\)，漏去 \(1\)；同页前后的坐标组均为 \(\nu=0,1,2,\ldots,n\)，故本译补入 \(1\)。}
+都是恰当微分，故令
+\[
+\tag{1}
+x_\nu=\int\sum_r p_\nu^{(r)}du_r,\qquad (\nu=0,1,2,\ldots,n),
+\]
+便可看出：超曲面 $V_n$ 由这些 $x$ 关于 $u$ 的表达式定义，并且恰好具有给定的两个基本形式。
+
+这样便证明了超曲面的实际存在性。至于唯一性，也由同一证明得出；因为在初始正交行列式的选择以及公式 (1) 中诸 $x_\nu$ 的加法常数上所余的任意性，恰好对应于任意移动超曲面 $V_n$ 于空间 $S_{n+1}$ 中的自由。
+
+所以得到结论：\emph{对于给定的两个基本二次形式}
+\[
+\sum_{r,s=1}^{n} b_{rs}\,du_r\,du_s,\qquad
+\sum_{r,s=1}^{n} \Omega_{rs}\,du_r\,du_s,
+\]
+\emph{要有一个超曲面 $V_n$ 在欧几里得空间 $S_{n+1}$ 中与之对应，Gauss 与 Codazzi 方程 (I)、(II) 成立是充分必要条件；这个超曲面在相差一个空间运动的意义下唯一确定。}
+
+\subsection*{\S. 204.\quad 欧几里得空间中超曲面的不可变形性}
+
+上一节所考察的性质，与普通三维空间中曲面的性质完全类似。但是，维数一旦超过3，便出现我们现在要考察的全新性质。首先证明：\emph{超曲面 $V_n$ 在 $S_{n+1}$ 中，一般一旦 $n>2$，就已经由它的第一基本形式}
+\[
+\sum b_{rs}\,du_r\,du_s.
+\]
+\emph{完全确定。}
+
+事实上，当 $n>2$ 时，Gauss 方程 (I) 一般足以确定第二基本形式的系数 $\Omega_{rs}$，只差全体同时变号；唯一的例外，是行列式 $|\Omega_{rs}|$，即诸 $\Omega$ 的行列式，中所有三阶子式全都为零的情形。
+
+这个命题由下面的行列式定理推出：\emph{设两个 $n>2$ 阶行列式}
+\[
+|a_{rs}|\qquad |a'_{rs}|
+\]
+\emph{所有相应的二阶子式都相等，而三阶子式并非全为零；那么一个行列式的元素 $a'_{rs}$ 等于另一个行列式的相应元素 $a_{rs}$，只差全体同时变号。}
+
+为证明这个定理，依照 Killing\srcfn{1}{\emph{Nicht-Euklidische Raumformen in analytischer Behandlung}（Teubner，1885 年），第236--237页。} 作如下论证。
+
+因为 $(a_{rs})$ 的三阶子式并非全为零，所以它的二阶子式更不可能全为零。适当交换指标后，可以假定
+\[
+\begin{vmatrix}
+a_{11}&a_{12}\\
+a_{21}&a_{22}
+\end{vmatrix}\ne0.
+\]
+依 Kronecker 定理，在非零的三阶子式中，必有一个把上述行列式包含为二阶子式；不失一般性，可以假定
+\[
+\begin{vmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}\\
+a_{31}&a_{32}&a_{33}
+\end{vmatrix}\ne0.
+\]
+把最后这个行列式的值记为 A，以 $A_{rs}$、$(r,s=1,2,3)$ 表示它的二阶子式，并用类似记号表示 $|a'_{rs}|$ 中相应的子式。按照假设，$A'_{rs}=A_{rs}$，因而
+\[
+{A'}^2=A^2,
+\]
+所以
+\[
+A'=\pm A.
+\]
+由 $A_{rs}$ 组成的二阶行列式，等于由相应的 $A'_{rs}$ 组成的行列式；利用倒数行列式二阶子式与原行列式元素之间的关系，得到
+\[
+A'a'_{rs}=Aa_{rs}\qquad (r,s=1,2,3),
+\]
+也就是说，先有
+\[
+a'_{rs}=\pm a_{rs}\qquad (r,s=1,2,3).
+\]
+现在，对于 $r$ 的任意值，都有
+\[
+\begin{vmatrix}
+a'_{11}&a'_{12}\\
+a'_{r1}&a'_{r2}
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{11}&a_{12}\\
+a_{r1}&a_{r2}
+\end{vmatrix},
+\qquad
+\begin{vmatrix}
+a'_{21}&a'_{22}\\
+a'_{r1}&a'_{r2}
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{21}&a_{22}\\
+a_{r1}&a_{r2}
+\end{vmatrix},
+\]
+即
+\[
+a_{11}(a'_{r2}\mp a_{r2})-a_{12}(a'_{r1}\mp a_{r1})=0,
+\]
+\[
+a_{21}(a'_{r2}\mp a_{r2})-a_{22}(a'_{r1}\mp a_{r1})=0,
+\]
+而 $a_{11}a_{22}-a_{12}a_{21}\ne0$，故推出
+\[
+a'_{r1}=\pm a_{r1},\qquad a'_{r2}=\pm a_{r2}\quad \text{对 } r=1,2,3\ldots n,
+\]
+并且完全类似地有
+\[
+a'_{1r}=\pm a_{1r},\qquad a'_{2r}=\pm a_{2r}\quad (r=1,2,3\ldots n).
+\]
+最后，取 $r,s$ 为任意两个指标，则
+\[
+\begin{vmatrix}
+a'_{11}&a'_{1s}\\
+a'_{r1}&a'_{rs}
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{11}&a_{1s}\\
+a_{r1}&a_{rs}
+\end{vmatrix},
+\qquad
+\begin{vmatrix}
+a'_{12}&a'_{1s}\\
+a'_{r2}&a'_{rs}
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{12}&a_{1s}\\
+a_{r2}&a_{rs}
+\end{vmatrix},
+\]
+由前面的结果可得
+\[
+a_{11}(a'_{rs}\mp a_{rs})=0,\qquad
+a_{12}(a'_{rs}\mp a_{rs})=0,
+\]
+又因为并非同时有
+\[
+a_{11}=a_{12}=0,
+\]
+所以
+\[
+a'_{rs}=\pm a_{rs}\qquad (r,s=1,2,\ldots,n),
+\]
+定理得证。
+
+由此可见，第一基本形式单独就足以在相差一个运动的意义下确定超曲面 $V_n$。唯一可能的例外，是行列式 $(\Omega_{rs})$ 中诸 $\Omega$ 的所有三阶子式全都为零。这个条件的几何意义，立即由 \S.168 的结果看出：在该节第368页的 R 的 $n$ 次方程 (36) 中，$n$ 个根就是超曲面的主曲率半径；此时高于二次的 R 的幂全部消失，即有 $n-2$ 个主曲率半径为无穷大。因此可以表述为：\emph{在三维以上的欧几里得空间中，每一个超曲面都是不可变形的（不能弯曲）；只有当超曲面的主曲率半径除至多两个以外全为无穷大时，才可能出现例外。}
+
+目前，对可变形超曲面的实际研究还很不充分。Schur 对四维空间的情形已经得到一些重要结果\srcfn{1}{\emph{Ueber die Deformation eines dreidimensionalen Raumes in einem ebenen vierdimensionalen Raume}（\emph{Math. Annalen}，第 XXVII 卷，第344页）。}，这里不能不止于提及。
+
+\subsection*{\S. 205.\quad 等距适用性方程}
+
+为推出上一节的结果，我们只用到了 Gauss 方程 (I)；当 $n>2$ 时，这些方程便确定诸 $\Omega_{rs}$，只要诸 $b_{rs}$ 已知（前述例外情形除外）。但是，如果再考虑 Codazzi 方程 (II)\ednote{原书此处印作“Gauss 方程 (II)”；上一节明确把 (I) 列为 Gauss 方程、(II) 列为 Codazzi 方程。本译据此更正名称并保留原印信息。}，就会看出：\emph{超曲面 $V_n$ 在欧几里得空间 $S_{n+1}$ 中的第一基本形式，也不能任意给定。}事实上，由 Gauss 方程 (I) 得出的诸 $\Omega_{rs}$，还必须满足微分方程 (II)；只有在这个假设下，相应的超曲面才会存在。
+
+这个命题的真实性很容易从\emph{先验}观点加以确认。事实上，若要实现给定的 $ds^2$ 这个 $n$ 维线元
+\[
+\sum_{r,s=1}^{n} b_{rs}\,du_r\,du_s
+\]
+于欧几里得空间 $S_{n+1}$ 中，就必须求出 $n+1$ 个未知函数 $x_0,x_1,x_2,\ldots,x_n$，它们以 $u_1,u_2,\ldots,u_n$ 为变量，并使
+\[
+dx_0^2+dx_1^2+\cdots+dx_n^2
+=\sum_{r,s=1}^{n}b_{rs}\,du_r\,du_s.
+\]
+对于这 $n+1$ 个 $x$ 中的任意一个，$n$ 个变量的形式
+\[
+\sum_{r,s=1}^{n}\left(b_{rs}-\frac{\partial x}{\partial u_r}\frac{\partial x}{\partial u_s}\right)du_r\,du_s
+\]
+因而必须具有零 Riemann 曲率。令这个形式的 $\frac{n^2(n^2-1)}{12}$ 个 Riemann 符号（\S.35）全都等于零，便得到同样多个以唯一未知函数 $x$ 为对象的联立偏微分方程；显然，这些方程都是二阶的。这些方程可以称为\emph{等距适用性方程}，自然只有在特殊情形下才彼此相容。
+
+以上考察显然只是 \S.109 中普通空间曲面等距适用性理论的推广。仿照 \S.69 计算微分参数，也很容易实际写出上述等距适用性方程。为此，从第462页的基本方程 (A) 出发；用协变导数的符号，它们写成
+\[
+x_{rs}=\Omega_{rs}X.
+\]
+由此推出
+\[
+x_{rs}x_{kt}-x_{rt}x_{ks}=(\Omega_{rs}\Omega_{kt}-\Omega_{rt}\Omega_{ks})X^2,
+\]
+也就是说，由 Gauss 方程 (I)\ednote{原书此处印作“Codazzi 方程 (I)”；与上一节的编号以及本行所用的代数曲率关系相对照，应为 Gauss 方程 (I)。本译更正名称并保留原印信息。}，有
+\[
+\tag{2}
+x_{rs}x_{kt}-x_{rt}x_{ks}=(rk,st)_bX^2.
+\]
+现在与普通情形一样，有
+\[
+\tag{3}
+\Delta_1 x=1-X^2,
+\]
+验证这个公式最简便的方法如下：在初始点 $u_i^{(0)}$，也就是所要计算 $\Delta_1x$ 值之处，对诸 $u$ 作一次线性替换，使
+\[
+b_{rr}=1,\qquad b_{rs}=0\quad \text{当 }r\ne s,
+\]
+于是当 $u_i=u_i^{(0)}$ 时，行列式
+\[
+\left|\frac{\partial x_\nu}{\partial u_1},\frac{\partial x_\nu}{\partial u_2},\ldots,
+\frac{\partial x_\nu}{\partial u_n},X_\nu\right|
+\qquad (\nu=0,1,2,\ldots,n)
+\]
+是一个正交替换的行列式；因而
+\[
+(\Delta_1x)_0=\sum_i\left(\frac{\partial x}{\partial u_i}\right)^2=1-X_0^2.
+\]
+把 (3) 给出的 $X^2$ 值代入 (2)，得到
+\[
+\tag{III}
+x_{rs}x_{kt}-x_{rt}x_{ks}=(rk,st)_b(1-\Delta_1x),
+\qquad r,k,s,t=1,2,3\ldots n,
+\]
+这正是上述等距适用性方程。
+
+再记下给出参数 $\Delta_2x$ 的公式：
+\[
+\Delta_2x=\sum_{r,s}B_{rs}x_{rs}=X\sum_{r,s}B_{rs}\Omega_{rs}.
+\]
+右端的和无非就是（\S.168）超曲面各主曲率半径倒数之和
+\[
+\frac1{R_1}+\frac1{R_2}+\cdots+\frac1{R_n}
+\]
+所以
+\[
+\tag{4}
+\Delta_2x=\left(\frac1{R_1}+\frac1{R_2}+\cdots+\frac1{R_n}\right)X,
+\]
+这个公式推广了 Beltrami 的公式（第146页 (A)）。读者会注意到，对于诸倒数 $\frac1R$ 的两两乘积之和、三三乘积之和等等，也能写出类似公式；这里从略。
+
+现在应用这些一般考察，研究欧几里得空间 $S_{n+1}$ 中是否存在 $n$ 维的常 Riemann 曲率 $K_0$ 空间（参见 \S.169）。由 Gauss 公式 (I)，必须有
+\[
+\Omega_{\alpha\beta}\Omega_{\delta\gamma}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+=K_0(b_{\alpha\beta}b_{\delta\gamma}-b_{\alpha\gamma}b_{\beta\delta}).
+\]
+\ednote{原书第470页此处印作“Codazzi 公式 (II)”，但紧接的代数曲率等式正是本章第461页所列 Gauss 公式 (I)，并非微分的 Codazzi 公式 (II)；本译据公式本身更正。}
+现在，对诸 $u$ 作一次线性替换，可以在某个初始点 $u_i^{(0)}$ 使
+\[
+b_{ii}=1,\qquad b_{ik}=\Omega_{ik}=0\quad(\text{当 }i\ne k),
+\]
+于是得到方程
+\[
+\Omega_{ii}\Omega_{kk}=K_0.
+\]
+若以 $R_1,R_2,\ldots,R_n$ 表示主曲率半径，则
+\[
+\Omega_{ii}=\frac1{R_i},
+\]
+所以上述方程写成
+\[
+R_iR_k=\frac1{K_0}\qquad (i\ne k=1,2,\ldots,n),
+\]
+其中 $i,k$ 是不同的指标。现在假设 $n>2$，由其中三个方程
+\[
+R_1R_2=\frac1{K_0},\qquad
+R_1R_3=\frac1{K_0},\qquad
+R_2R_3=\frac1{K_0}
+\]
+可得
+\[
+R_1^2=\frac1{K_0},
+\]
+因此 $K_0$ 首先必须为正；设 $K_0=\frac1{R^2}$，则
+\[
+R_1=R_2=\cdots=R_n=R.
+\]
+于是超曲面的第二基本形式
+\[
+\sum_{i,k}\Omega_{ik}\,du_i\,du_k
+\]
+与第一基本形式 $\sum b_{ik}\,du_i\,du_k$ 只相差常因子 $\frac1R$。再利用第462页的基本公式 (B)，便得到
+\[
+\frac{\partial X}{\partial u_s}
+=-\frac1R\sum_{\lambda,\mu}B_{\lambda\mu}b_{\mu s}\frac{\partial x}{\partial u_\lambda},
+\]
+即
+\[
+\frac{\partial x}{\partial u_s}=-R\frac{\partial X}{\partial u_s},
+\]
+从而
+\[
+x_\nu=c_\nu-RX_\nu,
+\]
+其中诸 $c$ 为常数。因此，所求超曲面就是半径为 R 的超球面
+\[
+(x_0-c_0)^2+(x_1-c_1)^2+\cdots+(x_n-c_n)^2=R^2.
+\]
+所以得到结论：\emph{在三维以上的欧几里得空间中，不存在本身为常负 Riemann 曲率空间的超曲面；常正 Riemann 曲率 $\pxChFourteenAmbientK=\frac1{R^2}$ 的超曲面，则只有半径为 R 的超球面。}\ednote{原书第471页此处印作 \(K=1/R^2\)，但本节自开头起始终以 \(K_0\) 表示所讨论的常 Riemann 曲率，且上文刚设 \(K_0=1/R^2\)；本译据此补回下标。}由此可见，欧几里得空间中的超球面不可变形。
+
+\subsection*{\S. 206.\quad 超曲面的曲率线与渐屈超曲面}
+
+在当前环境空间为欧几里得空间的特殊情形下，重新研究超曲面曲率线的性质（\S.168），便会看出曲率线还可以有第二种定义；这个定义推广了我们在普通空间中所取的出发定义（\S.59）\srcfn{1}{以下各节将证明，对于常曲率空间，更一般地也有同样结论。}：\emph{在超曲面 $V_n$（位于 $S_{n+1}$ 中）上画一条线；如果沿这条线的超曲面法线都与空间中的某一曲线相切，这条线就是曲率线。法线垂足与法线在该曲线上的接触点之间的线段之（代数）值，表示相应的主曲率半径。}
+
+设超曲面 $V_n$ 上的一条线 L 具有上述性质；以 M 表示 L 上的法线垂足，以 $m$ 表示这条法线同沿 L 的诸法线之包络曲线 C 的接触点，并令
+\[
+\rho=\overline{mM},
+\]
+其中，赋予 $\rho$ 正值或负值，分别依从 $m$ 到 M 的方向与法线正向相同或相反而定。
+
+点 $m$ 称为与线 L 相应的\emph{主曲率中心}。
+
+完全仿照 \S.59 的推导，可知这样的线 L 由方程
+\[
+dx_r=\rho\,dX_r,\qquad (r=0,1,2,\ldots,n)
+\]
+刻画，其中的微分都沿 L 取。把这些方程写成
+\[
+\sum_s\frac{\partial x_r}{\partial u_s}\,du_s
+=\rho\sum_s\frac{\partial X_r}{\partial u_s}\,du_s,
+\]
+再乘以 $\frac{\partial x_r}{\partial u_k}$，并对 $r$ 求和；注意到
+\[
+\sum_r\frac{\partial x_r}{\partial u_s}\frac{\partial x_r}{\partial u_k}=b_{sk},
+\]
+\[
+\sum_r\frac{\partial X_r}{\partial u_s}\frac{\partial x_r}{\partial u_k}=-\Omega_{sk},
+\]
+便得到完全等价的方程
+\[
+\sum_s b_{ks}\,du_s+\rho\sum_s\Omega_{ks}\,du_s=0,
+\]
+它们在取 $\rho=-R$ 时，恰好与第368页的 (35) 相同。这就证明了上述性质。
+
+还应注意，在超曲面 $V_n$ 的每一条法线上，都要考察 $n$ 个主曲率中心 $m_1,m_2,\ldots,m_n$；它们的轨迹由 $n$ 叶组成，称为\emph{渐屈超曲面}。第九章开头（\S.124）的几何考察，可以立即推广到任意维数。由此可知：在渐屈超曲面的每一叶 $\Sigma_1$ 上——它对应于主曲率半径 $\rho_1$——沿原超曲面上一条相应曲率线的诸法线所包络出的曲线，是 $\Sigma_1$ 的测地线；在 $\Sigma_1$ 中还有一族与它们正交的 $n-1$ 维流形，其方程为 $\rho_1=$ 常数。这些性质的解析验证十分简单（参见 \S.126）。事实上，取一个系统的曲率线 $(u_1)$ 作为 $V_n$ 上的坐标线，以 $\rho_1$ 表示相应的曲率半径，并以 $\overline{x}_\nu$ 表示相应曲率中心的坐标；于是
+\[
+\overline{x}_\nu=x_\nu-\rho_1X_\nu.
+\]
+根据假设，
+\[
+\frac{\partial x_\nu}{\partial u_1}=\rho_1\frac{\partial X_\nu}{\partial u_1}
+\]
+所以
+\[
+\frac{\partial\overline{x}_\nu}{\partial u_1}
+=-\frac{\partial\rho_1}{\partial u_1}X_\nu,\qquad
+\frac{\partial\overline{x}_\nu}{\partial u_s}
+=-\frac{\partial\rho_1}{\partial u_s}X_\nu+
+\frac{\partial x_\nu}{\partial u_s}
+-\rho_1\frac{\partial X_\nu}{\partial u_s},
+\]
+\[
+s=2,3,\ldots,n.
+\]
+因此，以 $\overline{b}_{rs}$ 表示渐屈超曲面第一叶 $\Sigma_1$ 的线元系数，便有
+\[
+\overline{b}_{11}=\left(\frac{\partial\rho_1}{\partial u_1}\right)^2,\qquad
+\overline{b}_{1s}=\frac{\partial\rho_1}{\partial u_1}\frac{\partial\rho_1}{\partial u_s},
+\]
+\[
+\overline{b}_{rs}=\frac{\partial\rho_1}{\partial u_r}\frac{\partial\rho_1}{\partial u_s}
++\sum_\nu\left(\frac{\partial x_\nu}{\partial u_r}-\rho_1\frac{\partial X_\nu}{\partial u_r}\right)
+\left(\frac{\partial x_\nu}{\partial u_s}-\rho_1\frac{\partial X_\nu}{\partial u_s}\right)
+\]
+以及
+\[
+\overline{ds}^{\,2}=d\rho_1^2+\sum_{r,s=2}^{n}\alpha_{rs}\,du_r\,du_s,
+\]
+其中诸 $\alpha_{rs}$ 是 $u_1,u_2,\ldots,u_n$ 的函数。
+
+所以在 $\Sigma_1$ 中，诸流形 $\rho_1=$ 常数测地平行；它们的正交轨线为诸线 $(u_1)$，因而这些线是 $\Sigma_1$ 上的测地线，证毕。
+
+反过来还可证明：若在一个超曲面 $V_n$（位于 $S_{n+1}$ 中）内画出一个 $\infty^1$ 系统，其中各流形为测地平行的 $n-1$ 维流形，并在 $S_{n+1}$ 中作出与这些流形正交的测地线的切线，那么这些切线将成为一族（平行）超曲面 $\Sigma_n$ 的法线；于是其中每一个都以给定的 $V_n$ 为其渐屈超曲面的一叶。
+
+\subsection*{\S. 207.\quad 超曲面的球面表示}
+
+现在要把通常的 Gauss 球面表示理论（第五章）推广到高维欧几里得空间。这里我们只建立基本公式；读者依据这些公式，很容易重建整个理论。
+
+给定一个超曲面 $V_n$ 于 $S_{n+1}$ 中，考察超球面
+\[
+x_0^2+x_1^2+\cdots+x_n^2=1
+\]
+它以原点为中心，半径 $=1$。取一点 $M\equiv(x_0,x_1,\ldots,x_n)$ 于 $V_n$ 上，从原点作超球面的半径，使其平行于 M 点的法线 $(X_i)$。这条半径与超球面相交于一点 $M'$，其坐标为
+\[
+x_i'=X_i\qquad (i=0,1,\ldots,n),
+\]
+我们把它看作超曲面 $V_n$ 上点 M 的像。为了使超曲面 $V_n$ 的像仍有同样的维数 $n$，只须排除 $V_n$ 的一个或多个主曲率半径为无穷大的情形\srcfn{1}{事实上，$V_n$ 的球面像之维数只有在 $<n$ 时，函数 $X_i(u_1,u_2,\ldots,u_n)$ 才能用 $<n$ 个变量表示。这时，若改变变量 $u$，例如假定诸 $X_i$ 与 $u_n$ 无关，便可看出所有系数 $\Omega_{rn}$（$(r=1,\ldots,n)$）都消失，因而 \S.166 的 (36) 至少有一个无穷大根。}；以后所说的超曲面球面表示，总是默认排除了这个情形。
+
+现在用
+\[
+\tag{5}
+ds'^2=\sum_{r,s=1}^{n}b'_{rs}\,du_r\,du_s
+\]
+表示 $ds^2$，它属于 $V_n$ 的球面像；也就是说，令
+\[
+\tag{6}
+b'_{rs}=\sum_\nu\frac{\partial X_\nu}{\partial u_r}\frac{\partial X_\nu}{\partial u_s}.
+\]
+二次形式 (5) 称为超曲面 $V_n$ 的\emph{第三基本形式}。首先必须求出它同第一、第二基本形式
+\[
+\sum b_{rs}\,du_r\,du_s,\qquad
+\sum \Omega_{rs}\,du_r\,du_s.
+\]
+之间的关系。把第462页基本公式 (B) 给出的 $\frac{\partial X_\nu}{\partial u_r}$、$\frac{\partial X_\nu}{\partial u_s}$ 值代入 (6)，立即得到
+\[
+\tag{7}
+b'_{rs}=\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\lambda r}\Omega_{\mu s}.
+\]
+另一方面，把公式 (A) 用于超球面本身，得到
+\[
+\tag{A*}
+\frac{\partial^2X}{\partial u_i\,\partial u_k}
+=\sum_t\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_{b'}
+\frac{\partial X}{\partial u_t}-b'_{ik}X,
+\]
+Christoffel 符号下附的指标 $b'$ 表示这些符号是按二次形式 (5)，也就是按超球面的 $ds^2$ 构造的。
+
+现在对公式
+\[
+\Omega_{ik}=-\sum_\nu\frac{\partial x_\nu}{\partial u_i}\frac{\partial X_\nu}{\partial u_k}
+=-\sum_\nu\frac{\partial x_\nu}{\partial u_k}\frac{\partial X_\nu}{\partial u_i}.
+\]
+关于一个 $u_l$ 求导，并利用公式 (A) 和上述 (A*)，立即得到
+\[
+\tag{a}
+\frac{\partial\Omega_{ik}}{\partial u_l}
+=\sum_t\left\{\begin{matrix}il\\ t\end{matrix}\right\}_{b}\Omega_{kt}
++\sum_t\left\{\begin{matrix}kl\\ t\end{matrix}\right\}_{b'}\Omega_{it},
+\]
+\[
+\tag{b}
+\frac{\partial\Omega_{ki}}{\partial u_l}
+=\sum_t\left\{\begin{matrix}kl\\ t\end{matrix}\right\}_{b}\Omega_{it}
++\sum_t\left\{\begin{matrix}il\\ t\end{matrix}\right\}_{b'}\Omega_{kt}.\scanrestoredsrcfnmark{1}
+\]
+\scanrestoredsrcfntext{1}{这无非是推广到任意维数的 Weingarten 公式（参见第156页脚注）。}
+在 (a) 中交换 $k$ 与 $l$，再把两个公式相减，便得到
+\[
+\frac{\partial\Omega_{ik}}{\partial u_l}
+-\frac{\partial\Omega_{il}}{\partial u_k}
++\sum_t\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_{b}\Omega_{lt}
+-\sum_t\left\{\begin{matrix}il\\ t\end{matrix}\right\}_{b}\Omega_{kt}=0:
+\]
+这些正是 Codazzi 公式 (II)。若对 (b) 作同样处理，则得到另外一组公式；相对于第三基本形式，它们具有完全类似的形状：
+\[
+\tag{II*}
+\frac{\partial\Omega_{ik}}{\partial u_l}
+-\frac{\partial\Omega_{il}}{\partial u_k}
++\sum_t\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_{b'}\Omega_{lt}
+-\sum_t\left\{\begin{matrix}il\\ t\end{matrix}\right\}_{b'}\Omega_{kt}=0 .
+\]
+这说明：由第二基本形式 $\sum\Omega_{rs}\,du_r\,du_s$（属于超曲面 $V_n$）相对于第三基本形式 $\sum b'_{rs}\,du_r\,du_s$ 所构造的协变三线性形式恒等于零（\S.38）。我们把 (II*) 称为球面表示的 Codazzi 方程。
+
+给定两个二次形式
+\[
+\sum\Omega_{rs}\,du_r\,du_s,\qquad
+\sum b'_{rs}\,du_r\,du_s,
+\]
+作为一个超曲面 $V_n$ 的第二和第三基本形式，要有相应的超曲面存在，下列条件必须成立：
+
+第一，形式 $\sum b'_{rs}\,du_r\,du_s$ 表示 $ds^2$；这个球形空间为 $n$ 维，Riemann 曲率 $K=1$。
+
+第二，Codazzi 方程 (II*) 成立。
+
+现在证明这些条件也充分，并且由它们确定超曲面 $V_n$（相差空间中的运动除外）。首先，行列式
+\[
+\left|\frac{\partial X_\nu}{\partial u_1},\frac{\partial X_\nu}{\partial u_2},\ldots,
+\frac{\partial X_\nu}{\partial u_n},X_\nu\right|,\qquad
+\nu=0,1,2,\ldots,n
+\]
+不等于零\srcfn{1}{事实上，它的平方等于行列式 $\begin{vmatrix} b'_{11}&b'_{12}&\cdots&b'_{1n}\\ \cdots&\cdots&\cdots&\cdots\\ b'_{n1}&b'_{n2}&\cdots&b'_{nn}\end{vmatrix}$。}，所以诸 $x_\nu$ 对诸 $u$ 的导数必可表示成该行列式所写一行元素的齐次线性组合；令
+\[
+\frac{\partial x_\nu}{\partial u_i}
+=\sum_r\alpha_{ir}\frac{\partial X_\nu}{\partial u_r}+\beta_iX_\nu
+\qquad (\nu=0,1,2,\ldots,n),
+\]
+这其实也由第462页的 (B) 推出。为了确定系数 $\alpha_{ir},\beta_i$，注意
+\[
+-\sum_\nu\frac{\partial x_\nu}{\partial u_i}\frac{\partial X_\nu}{\partial u_k}=\Omega_{ik},\qquad
+\sum_\nu\frac{\partial X_\nu}{\partial u_r}\frac{\partial X_\nu}{\partial u_k}=b'_{rk},
+\]
+\[
+\sum_\nu X_\nu\frac{\partial x_\nu}{\partial u_i}=0,\quad
+\sum_\nu X_\nu\frac{\partial X_\nu}{\partial u_k}=0,\quad
+\sum_\nu X_\nu^2=1,
+\]
+由此得到
+\[
+\beta_i=0,\qquad \sum_r \alpha_{ir}b'_{rk}=-\Omega_{ik}
+\]
+再解出诸 $\alpha_{ir}$：
+\[
+\alpha_{ir}=-\sum_kB'_{rk}\Omega_{ik},
+\]
+这就给出所求公式
+\[
+\tag{IV}
+\frac{\partial x_\nu}{\partial u_i}
+=-\sum_{r,k}B'_{rk}\Omega_{ik}\frac{\partial X_\nu}{\partial u_r},
+\qquad
+\nu=0,1,\ldots,n;\quad i=1,2,\ldots,n.
+\]
+诸 $x_\nu$ 的全部导数既已这样确定，超曲面也就确定了，只差空间中的一次平移\srcfn{1}{这是因为我们已经假定球面像固定；若在超球面上旋转这个像，空间中的超曲面也随之旋转。}。另一方面，写出 (IV) 的可积条件：
+\[
+\tag{c}
+\frac{\partial}{\partial u_i}\sum_{r,k}B'_{rk}\Omega_{lk}\frac{\partial X_\nu}{\partial u_r}
+-\frac{\partial}{\partial u_l}\sum_{r,k}B'_{rk}\Omega_{ik}\frac{\partial X_\nu}{\partial u_r}=0,
+\]
+并利用 (A*)、假定成立的 Codazzi 方程 (II*)，最后再利用恒等式（参见第349页的 (a*)）
+\[
+\frac{\partial B'_{rk}}{\partial u_i}
+=-\sum_tB'_{rt}\left\{\begin{matrix}it\\ k\end{matrix}\right\}_{b'}
+-\sum_tB'_{kt}\left\{\begin{matrix}it\\ r\end{matrix}\right\}_{b'},
+\]
+便立即看出，诸 (c) 本身化为同样多个恒等式；这就证明了我们的全部断言。
+
+现在建立用第二和第三基本形式表示主曲率半径以及曲率线微分方程的公式。
+
+沿一条曲率线 L，必须满足特征微分方程（\S.200）
+\[
+dx_r=\rho\,dX_r,\srcfnmark{2}
+\]
+\[
+\sum_i\frac{\partial x_\nu}{\partial u_i}\,du_i
+=\rho\sum_i\frac{\partial X_\nu}{\partial u_i}\,du_i,\qquad
+\nu=0,1,2,\ldots,n.
+\]
+\srcfntext{2}{同普通空间一样，由此可见，超曲面的曲率线具有如下特征：其切线在球面像中不发生偏转。}
+把这些方程乘以 $\frac{\partial X_\nu}{\partial u_k}$，再令 $\nu$ 从 0 到 $n$ 求和，得到等价方程
+\[
+\tag{8}
+\sum_i\Omega_{ki}\,du_i+\rho\sum_i b'_{ki}\,du_i=0,\qquad
+k=1,2,\ldots,n.
+\]
+消去诸 $du_i$，便得到一个 $n$ 次方程，它关于 $\rho$：
+\[
+\tag{9}
+\begin{vmatrix}
+\Omega_{11}+\rho b'_{11}&\Omega_{12}+\rho b'_{12}&\cdots&\Omega_{1n}+\rho b'_{1n}\\
+\Omega_{21}+\rho b'_{21}&\Omega_{22}+\rho b'_{22}&\cdots&\Omega_{2n}+\rho b'_{2n}\\
+\cdots&\cdots&\cdots&\cdots\\
+\Omega_{n1}+\rho b'_{n1}&\Omega_{n2}+\rho b'_{n2}&\cdots&\Omega_{nn}+\rho b'_{nn}
+\end{vmatrix}=0,
+\]
+它的 $n$ 个根 $\rho_1,\rho_2,\ldots,\rho_n$ 就是各主曲率半径的值；特别地，
+\[
+\tag{10}
+\rho_1+\rho_2+\cdots+\rho_n=-\sum_{r,k}B'_{rk}\Omega_{rk}.
+\]
+
+\subsection*{\S. 208.\quad 切向坐标}
+
+现在要推广 \S.81 中关于切向坐标的 Weingarten 公式。把超曲面看作其切超平面的包络，并以该超平面法线的方向余弦 $X_0,X_1,\ldots,X_n$ 以及超平面到原点的距离 W，作为超平面的度量坐标；这个距离为
+\[
+\tag{11}
+W=\sum_\nu x_\nu X_\nu.
+\]
+根据上一节已经作过的考察，切超平面接触点的坐标 $x_\nu$ 可以由下列类型的公式确定：
+\[
+\tag{12}
+x_\nu=\alpha X_\nu+\sum_i\beta_i\frac{\partial X_\nu}{\partial u_i},
+\qquad \nu=0,1,2\ldots n,
+\]
+其中诸 $\beta_i,\alpha$ 是诸 $u$ 的函数。由 (11) 立即得到 $\alpha=W$；另一方面，对 (11) 求导可得
+\[
+\tag{13}
+\frac{\partial W}{\partial u_k}
+=\sum_\nu x_\nu\frac{\partial X_\nu}{\partial u_k},
+\]
+所以从 (12) 求诸 $\beta_i$，得到方程
+\[
+\frac{\partial W}{\partial u_k}=\sum_i b'_{ki}\beta_i,\qquad k=1,2,\ldots,n;
+\]
+再对诸 $\beta$ 解出
+\[
+\beta_i=\sum_k B'_{ik}\frac{\partial W}{\partial u_k}.
+\]
+代入 (12)，就得到所求公式
+\[
+x_\nu=WX_\nu+\sum_{i,k}B'_{ik}
+\frac{\partial X_\nu}{\partial u_i}\frac{\partial W}{\partial u_k},
+\]
+即
+\[
+\tag{V}
+x_\nu=WX_\nu+\nabla'(W,X_\nu),
+\]
+其中一阶微分参数 $\nabla'$ 是相对于球面像的 $ds'^2$ 计算的。
+
+其次，再对 (13) 求导并利用第475页的基本公式 (A*)，就很容易确定第二基本形式的系数 $\Omega_{ik}$；由此得到
+\[
+\frac{\partial^2W}{\partial u_i\,\partial u_k}
+=\sum_t\left\{\begin{matrix}ik\\t\end{matrix}\right\}_{b'}
+\frac{\partial W}{\partial u_t}-b'_{ik}W-\Omega_{ik},
+\]
+即
+\[
+\tag{14}
+-\Omega_{ik}=W_{ik}+b'_{ik}W\qquad (i,k=1,2,\ldots,n),
+\]
+其中 $W_{ik}$ 表示 $W$ 相对于 $ds'^2$ 构造的二阶协变导数。
+
+这样，我们便有了在切向坐标中计算超曲面各元素所需的全部公式。特别地，对于主曲率半径之和 $\rho_1+\rho_2+\cdots+\rho_n$，由 (10) 与 (14) 得到
+\[
+\rho_1+\rho_2+\cdots+\rho_n
+=\sum_{r,k}B'_{rk}W_{rk}+W\sum_{r,k}B'_{rk}b'_{rk},
+\]
+它可以写成如下值得注意的形式：
+\[
+\tag{VI}
+\Delta'_2W+nW=\rho_1+\rho_2+\cdots+\rho_n.
+\]
+这样，我们就把 \S.81 中关于切向坐标的公式推广到了任意维数的情形。
+
+但为了看出维数增高时出现的一个重要差别，提出如下问题：\emph{一个系统的曲率线之球面像，能否对超曲面任意给定？}
+
+立即可见，若把任意一个超球面取作超曲面，这个问题总有一个显然的解，因为超球面上的每条线都是曲率线。自然排除这个平凡解后，为回答问题，在表示超球面上把给定的线取作坐标线 $(u_1)$，其余 $(u_2)(u_3)\ldots(u_n)$ 则任意选取；以 $\rho_1$ 表示与诸线 $(u_1)$ 相应的曲率半径。在 (8) 中令
+\[
+du_2=du_3=\cdots=du_n=0,\qquad \rho=\rho_1,
+\]
+便表示出所需条件；由此得到 $n$ 个方程
+\[
+\Omega_{1k}+\rho_1b'_{1k}=0,
+\]
+或者消去 $\rho_1$，得到 $n-1$ 个方程
+\[
+b'_{1k}\Omega_{11}-b'_{11}\Omega_{1k}=0\qquad(k=2,3,\ldots,n).
+\]
+依据 (14)，把这些条件化为切向坐标，得到
+\[
+\tag{15}
+b'_{1k}W_{11}-b'_{11}W_{1k}=0\qquad(k=2,3,\ldots,n).
+\]
+这些方程总是彼此相容；依 (A)，它们至少容许 $n+1$ 个线性无关的解
+\[
+X_0,X_1,\ldots,X_n
+\]
+因而容许解
+\[
+\tag{16}
+W=R+\sum_\nu a_\nu X_\nu,
+\]
+其中 $a_0,a_1,\ldots,a_n,R$ 是任意常数。
+
+显然，解 (16) 对应于把超球面
+\[
+\sum_\nu (x_\nu-a_\nu)^2=R^2.
+\]
+取作所求超曲面。因此：\emph{除超球面以外，所提问题只有在二阶的 $n-1$ 个联立方程 (15) 除 (16) 外还有其他公共解时，才有真正的解。}
+
+\subsection*{\S. 209.\quad 超球面中的正交 $n$ 重系统与 Darboux 定理\srcfnmark{1}}
+\srcfntext{1}{参见 \emph{Leçons sur les systèmes orthogonaux et les coordonnées curvilignes}，第173页及以下各页（Gauthier-Villars，1898）。}
+
+现在把上述公式用于推导 Darboux（同上引文）所得的一些重要结果。
+
+从超曲面 $V_n$（位于 $S_{n+1}$ 中）的每一点，都引出 $n$ 条属于 $V_n$ 的曲率线，每一族一条，其方向两两正交。可是，\emph{一般说来}，不可能找到 $n$ 个这样的变量 $u_1,u_2,\ldots,u_n$，使得沿每一条曲率线只有其中一个变量变化；换言之，不能在 $V_n$ 上构成一个正交 $n$ 重系统，使它的交线就是 $V_n$ 的曲率线。不过，这一特殊种类的超曲面有无穷多个；Darboux 称它们的曲率线为\emph{坐标曲率线}。由球面表示的性质立即可见，这样一个超曲面的球面像在表示超球面中产生一个正交 $n$ 重系统。Darboux 又反过来证明：\emph{给定超球面中的任意正交 $n$ 重系统，存在无穷多个超曲面，它们依赖于 $n$ 个任意函数——每个函数各含一个变量——并以该系统作为其曲率线之像；因而这些曲率线是坐标曲率线。}
+
+事实上，设
+\[
+\tag{16}
+ds'^2=H_1^2du_1^2+H_2^2du_2^2+\cdots+H_n^2du_n^2
+\]
+为超球面的 $ds^2$，而超球面以一个正交 $n$ 重系统为参照。为了求一个超曲面，使超球面的诸线 $(u_1)(u_2)\ldots(u_n)$ 成为其曲率线之像，我们须把它用切向坐标表示，并由下列 $\frac{n(n-1)}2$ 个联立方程（\S.205）确定 W：
+\[
+W_{ik}=0\qquad(i\ne k);
+\]
+所以问题归结为考察这些方程的相容性。由于 $ds'^2$ 具有正交形式 (16)，这些方程写成
+\[
+\tag{17}
+\frac{\partial^2W}{\partial u_i\,\partial u_k}
+=\frac{\partial\log H_k}{\partial u_i}\frac{\partial W}{\partial u_k}
++\frac{\partial\log H_i}{\partial u_k}\frac{\partial W}{\partial u_i},
+\]
+\[
+(i\ne k=1,2,\ldots,n).
+\]
+另一方面，若 $i,k,l$ 表示三个不同的指标，则 (16) 所给的 $ds'^2$ 具有常 Riemann 曲率 $=1$，故有
+\[
+(ik,kl)=0;
+\]
+也就是（\S.159，公式 (17)）：
+\[
+\tag{18}
+\frac{\partial^2H_k}{\partial u_i\,\partial u_l}
+=\frac1{H_i}\frac{\partial H_i}{\partial u_l}\frac{\partial H_k}{\partial u_i}
++\frac1{H_l}\frac{\partial H_l}{\partial u_i}\frac{\partial H_k}{\partial u_l}.
+\]
+现在再取一个方程 (17)
+\[
+\frac{\partial^2W}{\partial u_i\,\partial u_l}
+=\frac{\partial\log H_l}{\partial u_i}\frac{\partial W}{\partial u_l}
++\frac{\partial\log H_i}{\partial u_l}\frac{\partial W}{\partial u_i}
+\]
+并写出可积条件
+\[
+\frac{\partial}{\partial u_l}\left(
+\frac{\partial\log H_k}{\partial u_i}\frac{\partial W}{\partial u_k}
++\frac{\partial\log H_i}{\partial u_k}\frac{\partial W}{\partial u_i}\right)
+=
+\frac{\partial}{\partial u_k}\left(
+\frac{\partial\log H_l}{\partial u_i}\frac{\partial W}{\partial u_l}
++\frac{\partial\log H_i}{\partial u_l}\frac{\partial W}{\partial u_i}\right),
+\]
+把 (17) 的值代入 W 的二阶导数后，可见由于 (18)，这些条件恒等地成立。于是，由联立偏微分方程组的已知定理\srcfn{1}{Darboux，\emph{Leçons sur la théorie générale des surfaces}，第四部，第267页及以下各页。}可知，诸方程 (17) 有一个含 $n$ 个任意函数的公共解。更确切地说，在超球面上选定一点 $(u_i^{(0)})$，并考察从该点出发的坐标线 $(u_1)(u_2)\ldots(u_n)$，便可任意指定 W 沿这些线的值。
+
+因此，求具有坐标曲率线的超曲面，就归结为求超球面中的正交 $n$ 重系统（或求 $n$ 维 Euclid 空间中的这种系统，因为超球面可以共形地表示在该空间上），然后再对形如 (17) 的方程组进行积分。
+
+\subsection*{\S. 210.\quad 椭圆空间中超曲面的一般公式}
+
+现在来建立一般常曲率空间中超曲面的基本公式。在椭圆空间和双曲空间中都采用 Weierstrass 坐标（\S\S.193, 194）是适宜的，因为这样一来，这些公式就与前几节为 Euclid 空间所建立的公式完全相似\srcfn{1}{在三维椭圆空间和双曲空间中，当曲面的 $ds^2$ 具有正交形式时，这些公式最初由 Fibbi 在论文 \emph{I sistemi doppiamente infiniti di raggi negli spazi di curvatura costante} 中给出（\emph{Annali della R. Scuola Normale Superiore di Pisa}，第 VII 卷，1896）。}。
+
+先从椭圆空间 $S_n$ 开始；它有 $n$ 维，曲率为 $K=\frac1{R^2}$。用下式定义它的 $ds^2$：
+\[
+\tag{19}
+ds^2=R^2(dx_0^2+dx_1^2+\cdots+dx_n^2),
+\]
+其中 $x_0,x_1,x_2,\ldots,x_n$ 是点的普通 Weierstrass 坐标，并满足关系
+\[
+\tag{20}
+\sum_\nu x_\nu^2=1.
+\]
+通常把 $x_0,x_1,\ldots,x_n$ 看成一个表示性 Euclid 空间 $\pxChFourteenRepresentativeSpace$ 中点的齐次坐标，会更有用；该空间中相对于绝对形
+\[
+\tag{21}
+x_0^2+x_1^2+\cdots+x_n^2=0.
+\]
+建立了 Cayley 度量。
+\ednote{原书第483页清楚地印作表示空间 $S'_n$；既有意大利文和英文 TeX 均漏掉了撇号。本译文按扫描页恢复。}
+
+在 $S_n$ 中取一个由下列方程定义的超曲面 $V_{n-1}$：
+\[
+x_\nu=x_\nu(u_1,u_2,\ldots,u_{n-1}),\qquad \nu=0,1,\ldots,n,
+\]
+并仍以
+\[
+\tag{22}
+ds^2=\sum_{r,s=1}^{n-1}b_{rs}\,du_r\,du_s,
+\]
+表示它的线元；也就是说，令
+\[
+\tag{23}
+b_{rs}=R^2\sum_\nu\frac{\partial x_\nu}{\partial u_r}\frac{\partial x_\nu}{\partial u_s}.
+\]
+再以 $\xi_0,\xi_1,\xi_2,\ldots,\xi_n$ 表示在 $(x_i)$ 点处与 $V_{n-1}$ 相切之超平面的 Weierstrass 坐标；除同时变号外，它们由下列方程（\S.193）确定：
+\[
+\sum_\nu\xi_\nu^2=1,\qquad
+\sum_\nu\xi_\nu x_\nu=0,\qquad
+\sum_\nu\xi_\nu\frac{\partial x_\nu}{\partial u_r}=0\quad\pxChFourteenTangentRange.
+\]
+\ednote{原书第483页把末式的指标范围印成 \(r=0,1,2,\ldots,n\)，但这里只定义了 \(u_1,\ldots,u_{n-1}\)，下文所有公式也一致采用 \(r=1,\ldots,n-1\)；本译文据此校正。原书没有在这组方程旁印出编号，但下文两次称它为 (24)。}
+
+现在用 $x,\xi$ 及其导数表示第二基本形式的系数 $\Omega_{rs}$；该形式属于 $V_{n-1}$。为此，须依照 \S.164 的公式 (28)（第359页），计算 $ds^2$ 从超曲面 $V_{n-1}$ 过渡到无限邻近的平行超曲面时的变分：
+\[
+\delta ds^2=-2\varepsilon\sum_{r,s=1}^{n-1}\Omega_{rs}\,du_r\,du_s,
+\]
+其中 $\varepsilon$ 表示 $V_{n-1}$ 与无限邻近的 $\overline{V}_{n-1}$ 之间的无穷小距离。
+
+对于坐标 $\overline{x}_\nu$（属于 $\overline{V}_{n-1}$ 上一点），有
+\[
+\overline{x}_\nu=x_\nu\cos\left(\frac\varepsilon R\right)+\xi_\nu\sen\left(\frac\varepsilon R\right),
+\]
+也就是，略去 $\varepsilon$ 的高次幂，
+\[
+\overline{x}_\nu=x_\nu+\frac{\varepsilon}{R}\xi_\nu,
+\]
+或者
+\[
+\delta x_\nu=\frac{\varepsilon}{R}\xi_\nu.
+\]
+由此对 (19) 取变分，得到
+\[
+\delta ds^2=2R^2\sum_\nu d x_\nu\,\delta d x_\nu
+=2R\varepsilon\sum_\nu dx_\nu\,d\xi_\nu,
+\]
+因而
+\[
+\tag{25}
+\Omega_{rs}=-R\sum_\nu
+\frac{\partial x_\nu}{\partial u_r}\frac{\partial\xi_\nu}{\partial u_s}
+=R\sum_\nu\xi_\nu\frac{\partial^2x_\nu}{\partial u_r\,\partial u_s}.
+\]
+
+再注意，行列式
+\[
+\tag{26}
+\left|R\frac{\partial x_\nu}{\partial u_1},\,
+R\frac{\partial x_\nu}{\partial u_2},\ldots,
+R\frac{\partial x_\nu}{\partial u_{n-1}},\,x_\nu,\,\xi_\nu\right|,
+\qquad \nu=0,1,2,\ldots,n,
+\]
+的平方，由 (23)、(24) 等于第一基本形式 (22) 的判别式，因而不为零。由此可见，$x_\nu$ 的二阶导数 $\frac{\partial^2x_\nu}{\partial u_r\,\partial u_s}$ 和 $\xi_\nu$ 的一阶导数 $\frac{\partial\xi_\nu}{\partial u_r}$（$(\nu=0,1,2,\ldots,n)$），都可以表示成行列式 (26) 所写一行诸元素的齐次线性组合，其系数与指标 $\nu$ 无关。另一方面，注意到恒等式
+\[
+\sum_\nu x_\nu\frac{\partial x_\nu}{\partial u_r}=0,\qquad
+\sum_\nu x_\nu\frac{\partial^2x_\nu}{\partial u_r\,\partial u_s}
+=-\frac{b_{rs}}{R^2},
+\]
+\[
+\sum_\nu
+\frac{\partial^2x_\nu}{\partial u_r\,\partial u_s}
+\frac{\partial x_\nu}{\partial u_t}
+=\frac1{R^2}\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b,
+\]
+它们由对 (20)、(23) 求导而来；再计及 (24)、(25)，立即得到下列公式：
+\[
+\tag{E}
+\left\{
+\begin{aligned}
+\frac{\partial^2x}{\partial u_r\,\partial u_s}
+&=\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b
+\frac{\partial x}{\partial u_t}
+-\frac{b_{rs}}{R^2}x+\frac{\Omega_{rs}}{R}\xi,
+\qquad (r,s=1,2,\ldots,n-1),\\
+\frac{\partial\xi}{\partial u_r}
+&=-R\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu r}
+\frac{\partial x}{\partial u_\lambda},
+\qquad (r=1,2,\ldots,n-1),
+\end{aligned}\right.
+\]
+其中以 $x,\xi$ 代入任意一对 $(x_\nu,\xi_\nu)$，$\nu=0,1,2,\ldots,n$，公式都成立。
+
+这些就是所求的基本公式；宜将它们与 \S.203 为 Euclid 空间建立的 (A)、(B) 比较。
+
+写出方程组 (E) 的可积条件，经过简单计算就会发现，它们归结为 \S.165 已经建立的 Gauss 方程和 Codazzi 方程（第362页的方程 (H*)、(I*)）：
+\[
+\tag{F}
+\Omega_{\alpha\beta}\Omega_{\gamma\delta}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+=(\alpha\delta,\beta\gamma)_b-\frac1{R^2}(b_{\alpha\beta}b_{\gamma\delta}-b_{\alpha\gamma}b_{\beta\delta})
+\]
+\[
+\tag{G}
+\frac{\partial\Omega_{\alpha\beta}}{\partial u_\gamma}
+-\frac{\partial\Omega_{\alpha\gamma}}{\partial u_\beta}
++\sum_t\left\{\begin{matrix}\alpha\beta\\ t\end{matrix}\right\}_b\Omega_{\gamma t}
+-\sum_t\left\{\begin{matrix}\alpha\gamma\\ t\end{matrix}\right\}_b\Omega_{\beta t}=0.
+\]
+反过来，采用与 \S.203 完全相同的方法可以证明：给定两个基本形式
+\[
+\sum b_{rs}\,du_r\,du_s,\qquad
+\sum\Omega_{rs}\,du_r\,du_s,
+\]
+若它们满足 Gauss 方程 (F) 和 Codazzi 方程 (G)，就存在相应的超曲面 $V_{n-1}$，并且除空间中的运动外，它是确定的。
+
+与 Euclid 空间的情形一样，这里也应注意：$n$ 维椭圆空间中的超曲面，当 $n>3$ 时，一般是\emph{不可变形的}；而且更进一步，一般不能把一个 $n-1$ 维、具有给定 $ds^2$ 的空间置于椭圆空间 $S_n$ 中。例如，在 $S_n$ 中不存在 Riemann 曲率恒为 $<\frac1{R^2}$ 的超曲面；曲率恒为 $K>\frac1{R^2}$ 的超曲面则只有超球面。
+
+\subsection*{\S. 211.\quad 双曲空间中超曲面的公式}
+
+对于双曲情形，我们采用完全类似的步骤；此时 $ds^2$ 由 \S.194 的下式给出：
+\[
+\tag{27}
+ds^2=R^2(dx_1^2+dx_2^2+\cdots+dx_n^2-dx_0^2),
+\]
+点的 Weierstrass 坐标 $x_0,x_1,\ldots,x_n$ 满足恒等式
+\[
+\tag{28}
+x_0^2-\sum_i x_i^2=1.
+\]
+考察超曲面 $V_{n-1}$；它位于 $S_n$ 中，并由下列公式定义：
+\[
+x_\nu=x_\nu(u_1,u_2,\ldots,u_{n-1}),
+\]
+仍用
+\[
+\tag{29}
+ds^2=\sum_{r,s=1}^{n-1}b_{rs}\,du_r\,du_s,
+\]
+表示它的 $ds^2$，其中
+\[
+\tag{30}
+b_{rs}=R^2\left[\sum_i\frac{\partial x_i}{\partial u_r}\frac{\partial x_i}{\partial u_s}
+-\frac{\partial x_0}{\partial u_r}\frac{\partial x_0}{\partial u_s}\right].
+\]
+该切超平面的坐标 $\xi_0,\xi_1,\ldots,\xi_n$——它在 $(x_i)$ 点处与 $V_{n-1}$ 相切——由下列联立方程确定：
+\[
+\tag{31}
+\sum_i\xi_i^2-\xi_0^2=1,\qquad
+\sum_i x_i\xi_i-\xi_0x_0=0,\qquad
+\sum_i\xi_i\frac{\partial x_i}{\partial u_r}-\xi_0\frac{\partial x_0}{\partial u_r}=0
+\]
+\[
+(r=1,2,\ldots,n-1).
+\]
+作与上一节相似的计算，求得第二基本形式的系数 $\Omega_{rs}$：
+\[
+\tag{32}
+\Omega_{rs}=R\left[\sum_i\xi_i\frac{\partial^2x_i}{\partial u_r\,\partial u_s}
+-\xi_0\frac{\partial^2x_0}{\partial u_r\,\partial u_s}\right]
+=R\left[\frac{\partial\xi_0}{\partial u_r}\frac{\partial x_0}{\partial u_s}
+-\sum_i\frac{\partial\xi_i}{\partial u_r}\frac{\partial x_i}{\partial u_s}\right].
+\]
+对于与椭圆空间基本公式 (E) 相应的公式，在当前双曲情形中得到
+\[
+\tag{E*}
+\left\{
+\begin{aligned}
+\frac{\partial^2x}{\partial u_r\,\partial u_s}
+&=\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_b
+\frac{\partial x}{\partial u_t}
++\frac{b_{rs}}{R^2}x+\frac{\Omega_{rs}}{R}\xi,
+\qquad (r,s=1,2,\ldots,n-1),\\
+\frac{\partial\xi}{\partial u_r}
+&=-R\sum_{\lambda,\mu=1}^{n-1}B_{\lambda\mu}\Omega_{\mu r}
+\frac{\partial x}{\partial u_\lambda},
+\qquad (r=1,2,\ldots,n-1),
+\end{aligned}\right.
+\]
+它们仍对所有的对 $(x_\nu,\xi_\nu)$ 成立，其中 $\nu=0,1,\ldots,n$。
+
+最后，Gauss 方程变成（\S.165）：
+\[
+\tag{F*}
+\Omega_{\alpha\beta}\Omega_{\gamma\delta}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+=(\alpha\delta,\beta\gamma)_b+\frac1{R^2}(b_{\alpha\beta}b_{\gamma\delta}-b_{\alpha\gamma}b_{\beta\delta}),
+\]
+而 Codazzi 方程 (G) 仍保持不变。
+
+在当前双曲情形中，除公式 (E*)、(F*) 外，还宜考察第二组基本公式。当把超曲面的线元同两个相继切超平面的\emph{角元} $d\varphi$ 对照时，这第二组公式依照该空间中成立的度量对偶律与前一组对应。按照 \S.194 的公式 (37)（第440页），角元由下式给出：
+\[
+d\varphi^2=\sum_\nu d\xi_\nu^2-d\xi_0^2.
+\]
+把 $\xi$ 表示为 $u_1,u_2,\ldots,u_{n-1}$ 的函数，引入如下第三基本形式：
+\[
+\tag{33}
+R^2d\varphi^2=\sum_{r,s}b'_{rs}\,du_r\,du_s,
+\]
+其中令
+\[
+\tag{34}
+b'_{rs}=R^2\left[
+\sum_\nu\frac{\partial\xi_\nu}{\partial u_r}\frac{\partial\xi_\nu}{\partial u_s}
+-\frac{\partial\xi_0}{\partial u_r}\frac{\partial\xi_0}{\partial u_s}\right].
+\]
+于是导数
+\[
+\frac{\partial^2\xi_\nu}{\partial u_r\,\partial u_s},\qquad
+\frac{\partial x_\nu}{\partial u_r}
+\]
+可以线性且齐次地表示为
+\[
+\frac{\partial\xi_\nu}{\partial u_1},\quad
+\frac{\partial\xi_\nu}{\partial u_2},\ldots,
+\frac{\partial\xi_\nu}{\partial u_{n-1}},\quad \xi_\nu,\quad x_\nu,
+\]
+从而得到下列作为 (E) 的对偶公式：
+\[
+\tag{E**}
+\left\{
+\begin{aligned}
+\frac{\partial^2\xi}{\partial u_r\,\partial u_s}
+&=\sum_t\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_{b'}
+\frac{\partial\xi}{\partial u_t}
+-\frac{b'_{rs}}{R^2}\xi-\frac{\Omega_{rs}}{R}x,
+\qquad (r,s=1,2,\ldots,n-1),\\
+\frac{\partial x}{\partial u_r}
+&=-R\sum_{\lambda,\mu=1}^{n-1}B'_{\lambda\mu}\Omega_{\mu r}
+\frac{\partial\xi}{\partial u_\lambda},
+\qquad (r=1,2,\ldots,n-1).
+\end{aligned}\right.
+\]
+至于可积条件，它们仍归结为保持第485页通常形式 (G) 的 Codazzi 方程；其中符号
+\[
+\left\{\begin{matrix}\alpha\beta\\ t\end{matrix}\right\}
+\]
+应当按 $b'$ 的形式构造。补全可积条件的 Gauss 方程在这里具有如下形式：
+\[
+\tag{F**}
+\Omega_{\alpha\beta}\Omega_{\gamma\delta}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+=-(\alpha\delta,\beta\gamma)_{b'}+
+\frac{b'_{\alpha\beta}b'_{\gamma\delta}-b'_{\alpha\gamma}b'_{\beta\delta}}{R^2}.
+\]
+
+暂时回到椭圆空间，可见这里同样可以谈论度量对偶律，而且形式还更完整；为此引入第三基本形式
+\[
+\tag{35}
+ds'^2=R^2\sum_\nu d\xi_\nu^2=\sum b'_{rs}\,du_r\,du_s.
+\]
+在这种情形下，切超平面的坐标 $\xi_\nu$——该超平面与 $V_{n-1}$ 相切——与它关于绝对形之极点的坐标 $x'_\nu$ 重合；也就是与如下点的坐标重合：该点在 $(x_i)$ 处的 $V_{n-1}$ 法线上，距离为一个象限 $\frac{\pi R}{2}$。因此，(35) 给出超曲面 $V'_{n-1}$ 的线元；它与 $V_{n-1}$ 测地平行，并与后者相距一个象限。称 $V'_{n-1}$ 为 $V_{n-1}$ 的\emph{极超曲面}。立即可见，除基本公式 (E)、(F)、(G) 外，它们的对偶公式也成立；只须在这些公式中交换 $x$ 与 $\xi$，并交换第一基本形式的系数 $b_{rs}$ 与第三基本形式的系数 $b'_{rs}$，即可得到这些对偶公式。
+
+\subsection*{\S. 212.\quad 椭圆几何与双曲几何中超曲面的曲率线}
+
+我们已经在 \S.206 看到，多维 Euclid 空间中超曲面的曲率线，可以获得一个与通常定义完全类似的定义。现在证明，对于任意常曲率空间情形也相同，即：\emph{在超曲面 $V_{n-1}$ 上画一条线 L；该超曲面位于常曲率空间 $S_n$ 中。当沿 L 的超曲面法线都与空间中的某条曲线 C 相切时，L 就是一条曲率线。}
+
+先假定 $S_n$ 的曲率为正，即 $=+\frac1{R^2}$，并设 L 是超曲面 $V_{n-1}$ 上一条具有上述性质的线。再用 $w$ 表示沿 L 的 $V_{n-1}$ 法线上，从垂足 $(x_i)$ 到该法线与曲线 C 相切之点 $(x'_\nu)$ 之间的线段。于是
+\[
+x'_\nu=x_\nu\cos\left(\frac wR\right)-\xi_\nu\sen\left(\frac wR\right),
+\]
+并且沿 L，$x_\nu,\xi_\nu,w$，从而 $x'_\nu$，都是 L 的弧长 $s$ 的函数。对 $s$ 求导，得到
+\[
+\frac{dx'_\nu}{ds}
+=\frac{dx_\nu}{ds}\cos\left(\frac wR\right)
+-\frac{d\xi_\nu}{ds}\sen\left(\frac wR\right)
+-\frac1R\left\{\xi_\nu\cos\left(\frac wR\right)+x_\nu\sen\left(\frac wR\right)\right\}\frac{dw}{ds}.
+\]
+现在诸量 $\frac{dx'_\nu}{ds}$ 与曲线 C 在 $(x'_\nu)$ 点的切线方向余弦成比例；也就是说，依照假设，它们与位于 $(x'_\nu)$ 点的法超平面坐标成比例；该超平面垂直于连接 $(x_\nu),(x'_\nu)$ 的直线。由 \S.193 的 (28*)（第436页），这些坐标就是二项式
+\[
+\xi_\nu\cos\left(\frac wR\right)+x_\nu\sen\left(\frac wR\right).
+\]
+因此，前面的方程变为
+\[
+\frac{dx_\nu}{ds}\cos\left(\frac wR\right)
+-\frac{d\xi_\nu}{ds}\sen\left(\frac wR\right)
+=\lambda\left\{\xi_\nu\cos\left(\frac wR\right)+x_\nu\sen\left(\frac wR\right)\right\}
+\]
+\[
+(\nu=0,1,2,\ldots,n),
+\]
+其中 $\lambda$ 是对 $\nu$ 的所有值都保持相同的比例因子。把前式乘以同一二项式 $\xi_\nu\cos\left(\frac wR\right)+x_\nu\sen\left(\frac wR\right)$，再对 $\nu$ 求和，立即得到 $\lambda=0$。所以，沿一条具有所要求性质的线 L 移动时，必有特征方程
+\[
+dx_\nu=\tg\left(\frac wR\right)\,d\xi_\nu,\qquad(\nu=0,1,2,\ldots,n).
+\]
+若给超曲面 $V_{n-1}$ 取坐标系 $u_1,u_2,\ldots,u_{n-1}$ 作为参照，这些方程写成
+\[
+\sum_r\frac{\partial x_\nu}{\partial u_r}\,du_r
+=\tg\left(\frac wR\right)\sum_r\frac{\partial \xi_\nu}{\partial u_r}\,du_r
+\]
+并按通常步骤（\S.206）化为等价方程
+\[
+\sum_s b_{rs}\,du_s+R\tg\left(\frac wR\right)\sum_s\Omega_{rs}\,du_s=0
+\]
+\[
+(r=1,2,\ldots,n-1),
+\]
+把它们同 \S.168 的一般公式比较，恰好证明曲率线的新定义与旧定义相同，并且还赋予相应的主曲率半径 $\rho$ 如下几何意义：
+\[
+\rho=R\tg\left(\frac wR\right).
+\]
+
+对应于 $n-1$ 个主曲率半径
+\[
+\rho_1,\rho_2,\ldots,\rho_{n-1},
+\]
+在超曲面 $V_{n-1}$ 的法线上也就有 $n-1$ 个曲率中心；它们到垂足的距离为 $w_1,w_2,\ldots,w_{n-1}$，由下列公式定义\srcfn{1}{由于在（单式）椭圆空间中，直线走过一周 $\pi R$ 后闭合，所以总可取 $w_i$ 为 0 与 $\pi R$ 之间的正值；正文公式 (36) 因而完全确定 $w_i$（在 $\rho_i$ 已给定时）。原书脚注误印作公式 (35)。}
+\[
+\tag{36}
+\rho_i=R\tg\left(\frac{w_i}{R}\right)\qquad (i=1,2,\ldots,n-1).
+\]
+
+若不考察椭圆空间而考察曲率 $K=-\frac1{R^2}$ 的双曲空间，经过与前面完全类似的计算，仍得到同一结论。只有关系 (36) 要改变：在主曲率半径 $\rho_i$ 的值与相应曲率中心到法线垂足的距离 $w_i$ 之间，用双曲正切代替圆正切；即
+\[
+\tag{36*}
+\rho_i=R\tgh\left(\frac{w_i}{R}\right).
+\]
+因此，$w_i$ 只有在 $|\rho_i|<R$ 时才有实值；若 $|\rho_i|>R$，则相应的 $w_i$ 为虚数。不过，依 Cayley 度量，一条法线同相邻法线的交点总存在于表示 Euclid 空间中；只是该交点在绝对形之外，因而表示双曲空间中的一个理想点。
+
+如果希望在所有情形下都以实的方式定义曲率线，只须要求：沿这样一条线 L 的超曲面法线形成一个可展的二维曲面，也就是说，该曲面在每一点的绝对曲率都等于周围空间的曲率。
+
+\subsection*{\S. 213.\quad 三维椭圆几何与双曲几何中的曲面}
+
+现在转向三维常曲率空间这一特殊情形，以便把普通曲面论的主要定理推广到这些空间。
+
+在曲率记为 $K_0$ 的三维常曲率空间中，任取一曲面 S。为了更便于同普通理论的公式比较，以 $u,v$ 表示曲面 S 上的自变量，即曲线坐标，并分别以
+\[
+\tag{37}
+\left\{
+\begin{aligned}
+&E\,du^2+2F\,du\,dv+G\,dv^2,\\
+&D\,du^2+2D'\,du\,dv+D''\,dv^2
+\end{aligned}\right.
+\]
+表示 S 的第一基本形式和第二基本形式。再考察第三基本形式（\S.211），将它记为
+\[
+\tag{37*}
+E'\,du^2+2F'\,du\,dv+G'\,dv^2,
+\]
+它表示原曲面角元的平方；在椭圆几何中，它也表示 $ds^2$，即 S 的极曲面 $S'$ 的线元。
+
+前两个基本形式的系数首先由通常的 Codazzi 方程（\S.56 的 (IV)，第119页）联系起来；现将它们抄录如下：
+\[
+\tag{VII}
+\left\{
+\begin{aligned}
+\frac{\partial D}{\partial v}-\frac{\partial D'}{\partial u}
+&-\left\{\begin{matrix}12\\1\end{matrix}\right\}D
++\left[\left\{\begin{matrix}11\\1\end{matrix}\right\}
+-\left\{\begin{matrix}12\\2\end{matrix}\right\}\right]D'
++\left\{\begin{matrix}11\\2\end{matrix}\right\}D''=0,\\
+\frac{\partial D''}{\partial u}-\frac{\partial D'}{\partial v}
+&+\left\{\begin{matrix}22\\1\end{matrix}\right\}D
++\left[\left\{\begin{matrix}22\\2\end{matrix}\right\}
+-\left\{\begin{matrix}12\\1\end{matrix}\right\}\right]D'
+-\left\{\begin{matrix}12\\2\end{matrix}\right\}D''=0.
+\end{aligned}\right.
+\]
+
+或写成下列等价形式（第120页）：
+\[
+\tag{VII*}
+\left\{
+\begin{aligned}
+&\frac{\partial}{\partial v}\left(\frac{D}{\sqrt{EG-F^2}}\right)
+-\frac{\partial}{\partial u}\left(\frac{D'}{\sqrt{EG-F^2}}\right)
+\pxChFourteenDisplayBreak
++\Ctwo{22}{2}\frac{D}{\sqrt{EG-F^2}}
+-2\Ctwo{12}{2}\frac{D'}{\sqrt{EG-F^2}}
++\Ctwo{11}{2}\frac{D''}{\sqrt{EG-F^2}}=0,\\[0.6em]
+&\frac{\partial}{\partial u}\left(\frac{D''}{\sqrt{EG-F^2}}\right)
+-\frac{\partial}{\partial v}\left(\frac{D'}{\sqrt{EG-F^2}}\right)
+\pxChFourteenDisplayBreak
++\Ctwo{22}{1}\frac{D}{\sqrt{EG-F^2}}
+-2\Ctwo{12}{1}\frac{D'}{\sqrt{EG-F^2}}
++\Ctwo{11}{1}\frac{D''}{\sqrt{EG-F^2}}=0 .
+\end{aligned}
+\right.
+\]
+至于 Gauss 方程，若以 K 表示曲面 S 的绝对曲率，则写成
+\[
+\tag{VIII}
+\frac{DD''-D'^2}{EG-F^2}=K-K_0,
+\]
+其中在椭圆情形 $K_0=+\frac1{R^2}$，在双曲情形 $K_0=-\frac1{R^2}$。
+
+(VIII) 的左端正是两个主曲率半径倒数的乘积，称为曲面 S 的\emph{相对曲率}；以 $k$ 表示它，就有（参见第373页公式 (37)）
+\[
+k=K-K_0.
+\]
+除相对曲率 $k$ 外，还宜考察\emph{平均曲率} H，即两个约化主曲率半径倒数之和
+\[
+H=\frac1{\rho_1}+\frac1{\rho_2}.
+\]
+以主曲率半径为根的二次方程始终是 \S.60 的 (9)（第129页），即
+\[
+(DD''-D'^2)\rho^2+(ED''+GD-2FD')\rho+EG-F^2=0,
+\]
+所以这里也有公式
+\[
+\tag{VIII*}
+H=\frac1{\rho_1}+\frac1{\rho_2}=\frac{2FD'-ED''-GD}{EG-F^2}.
+\]
+由 Codazzi 方程 (VII)（或等价形式 (VII*)）和 Gauss 方程 (VIII) 所表示的 $E,F,G,D,D',D''$ 之间的关系，给出了相应曲面 S 存在的充分必要条件（\S.215）。\ednote{原书此处印作“由 Gauss 方程 (VII)，或 (VII*) 表示的关系”，既把前文明确称为 Codazzi 的方程误名为 Gauss 方程，又没有列入真正的 Gauss 方程 (VIII)。本译据本节上下文与 \S.215 补正，原印信息在此保留。}若处于 $K_0=+\frac1{R^2}$ 的椭圆空间情形，则在给定前两个基本形式后，曲面 S 的确定归结为积分下列完全可积方程组：
+\[
+\tag{38}
+\left\{
+\begin{aligned}
+\frac{\partial^2x}{\partial u^2}&=\Ctwo{11}{1}\frac{\partial x}{\partial u}+\Ctwo{11}{2}\frac{\partial x}{\partial v}-\frac{E}{R^2}x+\frac{D}{R}\xi,\\
+\frac{\partial^2x}{\partial u\partial v}&=\Ctwo{12}{1}\frac{\partial x}{\partial u}+\Ctwo{12}{2}\frac{\partial x}{\partial v}-\frac{F}{R^2}x+\frac{D'}{R}\xi,\\
+\frac{\partial^2x}{\partial v^2}&=\Ctwo{22}{1}\frac{\partial x}{\partial u}+\Ctwo{22}{2}\frac{\partial x}{\partial v}-\frac{G}{R^2}x+\frac{D''}{R}\xi,
+\end{aligned}\right.
+\]
+\[
+\tag{39}
+\left\{
+\begin{aligned}
+\frac{\partial\xi}{\partial u}&=R\left[\frac{FD'-GD}{EG-F^2}\frac{\partial x}{\partial u}+\frac{FD-ED'}{EG-F^2}\frac{\partial x}{\partial v}\right],\\
+\frac{\partial\xi}{\partial v}&=R\left[\frac{FD''-GD'}{EG-F^2}\frac{\partial x}{\partial u}+\frac{FD'-ED''}{EG-F^2}\frac{\partial x}{\partial v}\right].
+\end{aligned}\right.
+\]
+对于双曲空间，当 $\pxChFourteenAmbientK=-\frac1{R^2}$ 时，也有一个完全类似的方程组；甚至可以看出：\emph{当 $\pxChFourteenAmbientK=-\frac1{R^2}$ 时，公式 (39) 保持不变，而 (38) 只须作如下改变：在各右端把关于 $x$ 的一次项变号，也就是把 $E,F,G$ 换成 $-E,-F,-G$。}\ednote{原书此处两次印作 $K=-1/R^2$，但本节开头和 (VIII) 均以 $K_0$ 表示周围空间的常曲率，以 $K$ 表示曲面 S 的绝对曲率。本译据此改作 $K_0$，并保留原印信息。}
+
+再注意，第三基本形式 $E'\,du^2+2F'\,du\,dv+G'\,dv^2$ 在这里仍是前两个基本形式的齐次线性组合，并且仍由 \S.70 的同一公式 (2)（第149页）给出：
+\[
+\tag{40}
+\frac1{R^2}\bigl(E'\,du^2+2F'\,du\,dv+G'\,dv^2\bigr)=-k\bigl(E\,du^2+2F\,du\,dv+G\,dv^2\bigr)-H\bigl(D\,du^2+2D'\,du\,dv+\pxChFourteenSecondFormDvCoefficient\,dv^2\bigr).
+\]
+\ednote{原书第493页公式 (40) 的最后一项印作 \(D'\,dv^2\)。同页前文已把第二基本形式定义为 \(D\,du^2+2D'\,du\,dv+D''\,dv^2\)，而本式下方逐项验证的最后一项也是 \(HD''\)；故本译改作 \(D''\,dv^2\)。}
+为证明这一点，暂时恢复双指标记号，并以椭圆情形为例（双曲情形的计算完全相同）；由第485页 (E) 的第二组方程推出
+\[
+\pxChFourteenAlignBegin
+\pxChFourteenAlignMark b'_{rs}=R^2\sum_\nu \frac{\partial \xi_\nu}{\partial u_r}\frac{\partial \xi_\nu}{\partial u_s}
+\pxChFourteenDisplayBreak
+=R^2\sum_{\lambda,\mu,\lambda',\mu'}B_{\lambda\mu}\Omega_{\mu r}B_{\lambda'\mu'}\Omega_{\mu' s}R^2\pxChFourteenEqFortyDerivativeProduct
+\pxChFourteenDisplayBreak
+=R^2\sum_{\lambda,\lambda',\mu'} b_{\lambda\lambda'}B_{\lambda\mu}B_{\lambda'\mu'}\Omega_{\mu r}\Omega_{\mu' s}.
+\pxChFourteenAlignEnd
+\]
+\ednote{原书第493页的乘积清楚地印作 $\partial x_\nu/\partial u_\lambda$ 与 $\partial x_\nu/\partial u_{\lambda'}$；既有意大利文和英文 TeX 将其误录成了关于 $x_\lambda,x_{\lambda'}$ 且分母为 $u_r,u_s$ 的导数。本译按扫描页恢复。}
+注意到
+\[
+\pxChFourteenKroneckerIdentity
+\begin{cases}
+0&\text{当 }\mu'\ne \lambda,\\
+1&\text{当 }\mu'=\lambda,
+\end{cases}
+\]
+\ednote{原书第494页明确写成对 $\lambda'$ 求和，并给出 $\varepsilon_{\lambda\mu'}$；既有意大利文和英文 TeX 分别误录了求和指标和 Kronecker 符号的下标。本译按扫描页恢复。}
+可写成
+\[
+b'_{rs}=R^2\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\lambda r}\Omega_{\mu s},
+\]
+即
+\[
+\frac{b'_{rs}}{R^2}=\frac{b_{22}\Omega_{1r}\Omega_{1s}-b_{12}(\Omega_{1r}\Omega_{2s}+\Omega_{1s}\Omega_{2r})+b_{11}\Omega_{2r}\Omega_{2s}}{b_{11}b_{22}-b_{12}^2}.
+\]
+由此恰好推出
+\begin{align*}
+-\frac{E'}{R^2}&=\frac{2FDD'-ED'^2-GD^2}{EG-F^2}
+\pxChFourteenDisplayBreak
+=\frac{E(DD''-D'^2)+D(2FD'-ED''-GD)}{EG-F^2}=kE+HD,\\
+-\frac{F'}{R^2}&=\frac{F(DD''+D'^2)-EDD''-GDD'}{EG-F^2}
+\pxChFourteenDisplayBreak
+=\frac{F(DD''-D'^2)+D'(2FD'-ED''-GD)}{EG-F^2}=kF+HD',\\
+-\frac{G'}{R^2}&=\frac{2FD'D''-ED''^2-GD'^2}{EG-F^2}
+\pxChFourteenDisplayBreak
+=\frac{G(DD''-D'^2)+D''(2FD'-ED''-GD)}{EG-F^2}=kG+HD'',
+\end{align*}
+这就证明了公式 (40)。
+
+\subsection*{\S. 214.\quad 共轭系与渐近线}
+
+我们在 \S.64 给出的 Euclid 空间中曲面 S 的共轭切线定义，可以不加改变地移用于常曲率空间中的曲面；还可以注意到，常曲率空间在 Euclid 空间中的测地表示（Cayley 度量），会直接把原曲面的共轭系变换为像曲面的共轭系。
+
+依 \S.64 的方法，求从曲面同一点引出的两个线元 $ds,\delta s$ 相互共轭的条件，立即得到：在椭圆情形，此条件写成
+\[
+\pxChFourteenEllipticConjugacySum
+\]
+\ednote{原书第494页在求和号下清楚印有指标 $\nu$；既有意大利文和英文 TeX 都只录成了字母 S。本译按扫描页恢复为显式求和。}
+而在双曲空间中写成
+\[
+\sum_1^3 dx_i\,\pxChFourteenHyperbolicDeltaXi-dx_0\,\delta \xi_0=0
+\]
+\ednote{原书第494页第一项清楚印作 $dx_i\,\delta\xi_i$；既有意大利文和英文 TeX 误录为 $dx_i\,\delta x_i$。本译按扫描页恢复。}
+在两种情形中，引入曲线坐标 $u,v$ 后，该条件都表示为下列双线性形式等于零：
+\[
+D\,du\,\delta u+D'(du\,\delta v+dv\,\delta u)+D''\,dv\,\delta v.
+\]
+所以，坐标线 $(u,v)$ 在 $D'=0$ 时构成一个共轭系；此时基本公式 (38) 的中间一个方程表明：\emph{函数 $x_0,x_1,x_2,x_3$ 作为 $u,v$ 的函数，受二次恒等式}
+\[
+x_0^2+x_1^2+x_2^2+x_3^2=1,
+\]
+\emph{约束（椭圆情形）\srcfn{1}{在双曲情形，诸 $x$ 之间的二次关系改为 $x_0^2-x_1^2-x_2^2-x_3^2=1$；}，并且都是同一个 Laplace 方程的解}
+\[
+\frac{\partial^2\theta}{\partial u\partial v}=\Ctwo{12}{1}\frac{\partial\theta}{\partial u}+\Ctwo{12}{2}\frac{\partial\theta}{\partial v}-\frac{F}{R^2}\theta.
+\]
+这一基本观察可以立即逆转；由此能推出与 Euclid 空间中完全类似的结果，这里为简短起见，不再展开。
+
+随着共轭系的概念，也同时引入了\emph{渐近线}的概念：它们与自身共轭，并具有如下特征性质，即在每一点，其密切平面都与曲面的切平面重合（参见 \S.65）。渐近线的微分方程在这里仍是
+\[
+D\,du^2+2D'\,du\,dv+\pxChFourteenSecondFormDvCoefficient\,dv^2=0,
+\]
+\ednote{原书第495页此式的最后一项印作 \(D'\,dv^2\)；渐近线方程是第二基本形式的二次式，上文明确把该系数记作 \(D''\)，故本译改作 \(D''\,dv^2\)。}
+因而，渐近线是实的还是虚的，取决于相对曲率 $k$ 是负还是正。
+
+只有当曲面可以等距铺展到相应椭圆空间或双曲空间的平面上时，两条渐近线才重合；这时称该曲面为可展曲面。容易证明（参见 \S.63），在这种情形下，完全如在 Euclid 空间中一样，该曲面是与空间中同一条曲线相切的诸直线的轨迹；这条曲线就是回归棱，不过在双曲情形它也可能完全是虚的。事实上，在可展曲面 S 上，把渐近线取为坐标线 $v=$ 常数，把它们的正交轨线取为 $u=$ 常数；于是
+\[
+F=0,
+\quad D=0,
+\quad D'=0
+\]
+并且当然 $D''\ne0$，否则依基本公式 (39)，该曲面将是一个平面。
+
+Codazzi 方程 (VII) 的第一式化为 $\Ctwo{11}{2}=0$，说明诸 $v=$ 常数线是测地线；由于它们也是渐近线，所以它们是直线\srcfn{1}{证明从这里也可按解析方法继续：求一条曲线的单参数法线族构成可展曲面的条件。利用 Frenet 公式（\S.201），以 $\tau$ 表示所求法线相对于主法线的倾角，就必须像在 Euclid 几何中那样（\S.18）取
+\[
+\tau=\int\frac{ds}{T},
+\]
+这个公式包含了渐屈线的全部理论。以 $w$ 表示渐伸线 C 与渐屈线 $\Gamma$ 之间的距离；在椭圆情形，它由
+\[
+\tg\left(\frac{w}{R}\right)=\frac{\rho}{R\cos\tau}
+\]
+确定，在双曲情形则由
+\[
+\tgh\left(\frac{w}{R}\right)=\frac{\rho}{R\cos\tau}
+\]
+确定。因此在这里，只有当右端的绝对值 $<1$ 时，渐屈线才是实的。}。把可展曲面 S 铺展到平面上时，这些直线也铺展成一个直线系；在椭圆情形，该直线系必有包络，而在双曲情形，这个包络可能是虚的。因此，S 上对应曲线与所有母线相切。证毕。
+
+回到任意曲面上的渐近线，现把 Enneper 定理推广到常曲率空间；它表述为：\emph{每条渐近线在每一点的挠率平方，等于曲面相对曲率 $k$ 的相反数。}事实上，对于一条渐近线，其副法线的方向余弦与曲面法线的方向余弦重合，所以
+\[
+\frac1{T^2}=\pxChFourteenEnneperSum=\frac1{R^2}\frac{E'\,du^2+2F'\,du\,dv+G'\,dv^2}{E\,du^2+2F\,du\,dv+G\,dv^2}.
+\]
+\ednote{原书第496页在求和号下印有 $\nu$，且微分量为 $d\xi_\nu$；既有意大利文和英文 TeX 均漏掉了这些指标。本译按扫描页恢复。}
+而由公式 (40)，并注意沿渐近线有
+\[
+D\,du^2+2D'\,du\,dv+D''\,dv^2=0,
+\]
+恰好得到
+\[
+\frac1{T^2}=-k.\quad \text{证毕。}
+\]
+
+\subsection*{\S. 215.\quad 以其曲率线为坐标的曲面 S}
+
+我们所建立的基本公式，本可让我们重新考察整个曲面理论，使之在椭圆和双曲情形中与通常的 Euclid 空间理论平行地展开。不过在这里，我们必须只限于指出这种推广的若干主要方面；其余部分其实很容易完成。首先，我们来把 Weingarten 关于 W 曲面之演化曲面的定理（\S.\S.132, 133）推广到椭圆与双曲几何；这个定理给出了曲面的一个最重要性质\srcfn{1}{Weingarten 定理的这一推广，最初由我在 1887 年的论文《常曲率空间中的 Weingarten 系》（\emph{Sui sistemi di Weingarten negli spazi a curvatura costante}；\emph{Memorie dei Lincei}，第 IV 卷，第 IV 辑，第 221 页）中给出。}。
+
+先从椭圆空间的情形开始。首先以曲率线 $(u,v)$ 为给定曲面 S 的坐标，并令
+\[
+ds^2=E\,du^2+G\,dv^2
+\]
+为第一基本形式，令
+\[
+D\,du^2+D''\,dv^2
+\]
+为第二基本形式；再令
+\[
+\rho_1,\quad \rho_2
+\]
+为约化主曲率半径。像通常一样，以 $x_0,x_1,x_2,x_3$ 表示 S 上一点的坐标，以 $\xi_0,\xi_1,\xi_2,\xi_3$ 表示切平面的坐标（即法线的方向余弦）；于是由 \S.212 的公式首先有
+\[
+\frac{\partial\xi}{\partial u}=\frac{R}{\rho_2}\frac{\partial x}{\partial u},\qquad
+\frac{\partial\xi}{\partial v}=\frac{R}{\rho_1}\frac{\partial x}{\partial v},
+\]
+这里为简化书写，省略了字母 $x,\xi$ 的下标。由此立刻推出
+\[
+\left\{
+\begin{aligned}
+D&=-RS\frac{\partial x}{\partial u}\frac{\partial\xi}{\partial u}=-\frac{E}{\rho_2},\\
+D'&=0,\\
+D''&=-RS\frac{\partial x}{\partial v}\frac{\partial\xi}{\partial v}=-\frac{G}{\rho_1}.
+\end{aligned}\right.
+\]
+现在再引入曲率线 $v=$ 常数和 $u=$ 常数的切线方向余弦，分别记为
+\[
+\eta_0,\eta_1,\eta_2,\eta_3,\qquad
+\zeta_0,\zeta_1,\zeta_2,\zeta_3,
+\]
+这些量也可以解释为 S 的两个主平面的坐标；这两个平面通过法线，并分别通过 $u,v$ 线的切线。于是有
+\[
+\eta=\frac{R}{\sqrt E}\frac{\partial x}{\partial u},\qquad
+\zeta=\frac{R}{\sqrt G}\frac{\partial x}{\partial v}.
+\]
+\S.213 的公式 (38) 与上列各式于是导出下列方程组：
+\[
+\tag{41}
+\left\{
+\begin{aligned}
+\frac{\partial x}{\partial u}&=\frac{\sqrt E}{R}\eta,&
+\frac{\partial x}{\partial v}&=\frac{\sqrt G}{R}\zeta,\\
+\frac{\partial\xi}{\partial u}&=\frac{\sqrt E}{\rho_2}\eta,&
+\frac{\partial\eta}{\partial u}&=-\frac{\sqrt E}{R}x-\frac{\sqrt E}{\rho_2}\xi-\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\zeta,&
+\frac{\partial\zeta}{\partial u}&=\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\eta,\\
+\frac{\partial\xi}{\partial v}&=\frac{\sqrt G}{\rho_1}\zeta,&
+\frac{\partial\eta}{\partial v}&=\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\zeta,&
+\frac{\partial\zeta}{\partial v}&=-\frac{\sqrt G}{R}x-\frac{\sqrt G}{\rho_1}\xi-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\eta,
+\end{aligned}\right.
+\]
+这是我们研究中的基本方程组。
+
+在双曲情形中，处理完全类似；与上式相应的方程写成
+\[
+\tag{41*}
+\left\{
+\begin{aligned}
+\frac{\partial x}{\partial u}&=\frac{\sqrt E}{R}\eta,&
+\frac{\partial x}{\partial v}&=\frac{\sqrt G}{R}\zeta,\\
+\frac{\partial\xi}{\partial u}&=\frac{\sqrt E}{\rho_2}\eta,&
+\frac{\partial\eta}{\partial u}&=\frac{\sqrt E}{R}x-\frac{\sqrt E}{\rho_2}\xi-\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\zeta,&
+\frac{\partial\zeta}{\partial u}&=\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\eta,\\
+\frac{\partial\xi}{\partial v}&=\frac{\sqrt G}{\rho_1}\zeta,&
+\frac{\partial\eta}{\partial v}&=\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\zeta,&
+\frac{\partial\zeta}{\partial v}&=\frac{\sqrt G}{R}x-\frac{\sqrt G}{\rho_1}\xi-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\eta,
+\end{aligned}\right.
+\]
+可以看出，它同 (41) 的差别只在各右端含 $x$ 项的符号。
+
+再注意，Codazzi 方程在这两种情形中都保持它们在 Euclid 空间中所具有的形式（第 273 页），即
+\[
+\tag{42}
+\left\{
+\begin{aligned}
+\left(\frac1{\rho_1}-\frac1{\rho_2}\right)\frac{\partial\log\sqrt E}{\partial v}-\frac{\partial}{\partial v}\left(\frac1{\rho_2}\right)&=0,\\
+\left(\frac1{\rho_1}-\frac1{\rho_2}\right)\frac{\partial\log\sqrt G}{\partial u}+\frac{\partial}{\partial u}\left(\frac1{\rho_1}\right)&=0.
+\end{aligned}\right.
+\]
+至于 Gauss 方程，它写成
+\[
+\tag{43}
+\frac1{\rho_1\rho_2}=K-K_0=K\mp \frac1{R^2},
+\]
+其中上方符号用于椭圆情形，下方符号用于双曲情形。
+
+\subsection*{\S. 216.\quad 演化曲面的两片}
+
+如在 Euclid 几何中一样，在椭圆几何中，曲面 S 的每一条法线上都有两个点 $M_1,M_2$，它们就是两个主曲率中心。这些点 $M_1,M_2$ 的轨迹是 S 的演化曲面，它由两片 $\Sigma_1,\Sigma_2$ 组成；这两片也就是 S 的法线线丛的两个焦面。若以 $w_1,w_2$ 表示曲率中心到法线垂足的距离，则有公式
+\[
+\rho_1=R\tg\left(\frac{w_1}{R}\right),\qquad
+\rho_2=R\tg\left(\frac{w_2}{R}\right).
+\]
+在双曲几何中也有类似的公式；但此时 $w_1,w_2$ 应由
+\[
+\rho_1=R\tgh\left(\frac{w_1}{R}\right),\qquad
+\rho_2=R\tgh\left(\frac{w_2}{R}\right),
+\]
+求出，所以只有当相应半径 $\rho$ 的绝对值 $<R$ 时，曲率中心才是实的；因此，演化曲面的一片或两片都可能是虚的。
+
+现在完全仿照第九章（\S.\S.125, 126）处理 Euclid 情形的方法，计算演化曲面两片的有关元素。只须在椭圆情形中展开计算，然后指出双曲情形所需的修改。以
+\[
+\overline{x}_0,\overline{x}_1,\overline{x}_2,\overline{x}_3
+\]
+表示一个曲率中心（例如 $M_1$）的坐标；由 \S.210 有
+\[
+\overline{x}=x\cos\frac{w_1}{R}-\xi\sen\frac{w_1}{R}.
+\]
+对此求导，并利用 (41)，得到
+\[
+\left\{
+\begin{aligned}
+\frac{\partial\overline{x}}{\partial u}&=\frac{\sqrt E}{R}\left(\cos\frac{w_1}{R}-\frac{R}{\rho_2}\sen\frac{w_1}{R}\right)\eta
+-\frac1R\left(x\sen\frac{w_1}{R}+\xi\cos\frac{w_1}{R}\right)\frac{\partial w_1}{\partial u},\\
+\frac{\partial\overline{x}}{\partial v}&=-\frac1R\left(x\sen\frac{w_1}{R}+\xi\cos\frac{w_1}{R}\right)\frac{\partial w_1}{\partial v}.
+\end{aligned}\right.
+\]
+因此，$\overline\xi$，即在 $(\overline{x})$ 处与演化曲面第一片 $\Sigma_1$ 相切的平面的坐标，由
+\[
+\pxChFourteenBarredTangentCoordinate=\zeta_\nu,\qquad (\nu=0,1,2,3),
+\]
+给出；也就是说，这个切平面正是渐伸面 S 的第二主平面。这一点本来也可以从几何上\emph{先验地}确定（参见 \S.124）。\ednote{原书第 500 页的显示公式在 $\xi_\nu$ 上清楚印有横线，与紧接公式之前的 $\overline\xi$ 一致；既有意大利文和英文 TeX 均漏掉了这条横线。本译按扫描页恢复为 $\overline\xi_\nu=\zeta_\nu$。}
+
+若以
+\[
+ds_1^2=E_1\,du^2+2F_1\,du\,dv+G_1\,dv^2,
+\qquad
+D_1\,du^2+2D'_1\,du\,dv+D''_1\,dv^2
+\]
+表示 $\Sigma_1$ 的两个基本形式，则由上式并结合 (41)、(42)，求得各系数如下：
+\[
+\tag{42}
+\left\{
+\begin{aligned}
+E_1&=E\frac{\sen^2\left(\frac{w_1-w_2}{R}\right)}{\sen^2\left(\frac{w_2}{R}\right)}+\left(\frac{\partial w_1}{\partial u}\right)^2,
+&F_1&=\frac{\partial w_1}{\partial u}\frac{\partial w_1}{\partial v},
+&G_1&=\left(\frac{\partial w_1}{\partial v}\right)^2,\\
+D_1&=\frac1R\frac{E}{\sqrt G}\frac{\sen\left(\frac{w_1}{R}\right)}{\sen^2\left(\frac{w_2}{R}\right)}\frac{\partial w_2}{\partial v},
+&D'_1&=0,
+&D''_1&=-\frac{\sqrt G}{R}\sen\left(\frac{w_1}{R}\right)\frac{\partial w_1}{\partial v}.
+\end{aligned}\right.
+\]
+由此先得到
+\[
+\tag{43}
+ds_1^2=dw_1^2+E\frac{\sen^2\left(\frac{w_1-w_2}{R}\right)}{\sen^2\left(\frac{w_2}{R}\right)}\,du^2,
+\]
+所以在 $\Sigma_1$ 上，$u=$ 常数线是测地线，而它们的正交轨线是 $w_1=$ 常数线，也就是 $v_1=$ 常数线。对于第二片，同样有
+\[
+\tag{42*}
+D_2=-\frac{\sqrt E}{R}\frac1{\sen\left(\frac{w_1}{R}\right)}\frac{\partial w_2}{\partial u},\quad
+D'_2=0,\quad
+D''_2=\frac1R\frac{G}{\sqrt E}\frac{\sen\left(\frac{w_2}{R}\right)}{\sen^2\left(\frac{w_1}{R}\right)}\frac{\partial w_1}{\partial u},
+\]
+\[
+ds_2^2=dw_2^2+G\frac{\sen^2\left(\frac{w_1-w_2}{R}\right)}{\sen^2\left(\frac{w_1}{R}\right)}\,dv^2.
+\]
+以 $k_1,k_2$ 表示两片的\emph{相对}曲率，还可导出下列重要公式：
+\[
+\tag{44}
+k_1=-\frac{1}{R^2\sen^2\left(\frac{w_1-w_2}{R}\right)}\frac{\frac{\partial w_2}{\partial v}}{\frac{\partial w_1}{\partial v}},
+\qquad
+k_2=-\frac{1}{R^2\sen^2\left(\frac{w_1-w_2}{R}\right)}\frac{\frac{\partial w_1}{\partial u}}{\frac{\partial w_2}{\partial u}}.
+\]
+我们不再写出双曲情形的相应公式。当两片都是实的，即 $w_1,w_2$ 都是实数时，只须把上列公式中的圆正弦换成双曲正弦即可得到它们。反之，若 $w_1$ 是实数而 $w_2$ 是虚数，其原因是 $|\rho_2|>R$，那么在上列公式中应保留 $\rho_2$ 的值，而不宜引入 $w_2$。
+
+最后注意，计算测地曲率 $\frac1{\rho_{w_1}}$，即 $w_1=$ 常数线在 $\Sigma_1$ 上的测地曲率（例如利用 \S.85 的 Bonnet 公式），可得简洁公式
+\[
+\tag{45}
+\frac1{\rho_{w_1}}=\frac1R\cotg\left(\frac{w_1-w_2}{R}\right).
+\]
+
+\subsection*{\S. 217.\quad W 曲面与 Weingarten 定理}
+
+如在 Euclid 情形中一样（\S.129），这里也由考察下列问题而引出 W 曲面：\emph{在什么条件下，演化曲面两片上的渐近线彼此对应？}公式 (42)、(42*) 立即给出所需条件，即函数行列式
+\[
+\frac{\partial(w_1,w_2)}{\partial(u,v)};
+\]
+为零。因此：\emph{充要条件是，作为渐伸面的曲面 S 的两个主曲率半径由一个关系相联系，也就是说，S 是一个 W 曲面。}
+
+对于这样的 W 曲面，(44) 变为
+\[
+\left\{
+\begin{aligned}
+k_1&=-\frac1{R^2\sen^2\left(\frac{w_1-w_2}{R}\right)}\frac{\partial w_2}{\partial w_1},\\[0.4em]
+k_2&=-\frac1{R^2\sen^2\left(\frac{w_1-w_2}{R}\right)}\frac{\partial w_1}{\partial w_2},
+\end{aligned}\right.
+\]
+从而给出与 Halphen 定理（\S.129）相应的公式
+\[
+\tag{46}
+k_1k_2=\frac1{R^4\sen^4\left(\frac{w_1-w_2}{R}\right)}.
+\]
+把公式 (45) 用于 W 曲面，可知此时 $\frac1{\rho_{w_1}}$ 只是 $w_1$ 的函数，而且这个函数只依赖于联系渐伸面各曲率半径的关系
+\[
+\varphi(\rho_1,\rho_2)=0,
+\]
+因此，演化曲面第一片的线元取如下形式：
+\[
+ds^2=dw_1^2+\Phi^2(w_1)\,du^2,
+\]
+而在椭圆空间或双曲空间中，这个线元可以用旋转面来实现\srcfn{1}{在椭圆空间中，令一条平面曲线绕其平面内的一条轴旋转，并以 $a$ 表示子午线弧长，以 $r$ 表示平行圆半径；后者只是 $a$ 的函数。于是旋转面的线元立即为
+\[
+ds^2=da^2+R^2\sen^2\left(\frac rR\right)d\beta^2,
+\]
+其中 $\beta$ 表示经度。在双曲空间中，相应公式为
+\[
+ds^2=da^2+R^2\senh^2\left(\frac rR\right)d\beta^2.
+\]}。
+
+这样，我们便把 Weingarten 定理推广到了常曲率空间：
+
+\emph{W 曲面的演化曲面每一片都可等距贴合于一个旋转面；该旋转面的形状只依赖于联系渐伸曲面 W 的曲率半径 $\rho_1,\rho_2$ 的关系。}
+
+现在，Beltrami 为证明逆定理所用的几何论证（我们在 \S.133 已经叙述）可原封不动地移用于常曲率空间。因此，只要排除这样一些直纹面：它们可等距贴合于旋转面，并且其母线展开为子午线，Weingarten 第二定理在这里也成立。如 \S.202 所见，常挠率曲线的副法线轨迹所构成的所有曲面，都属于这类直纹面；而用一种与 \S.133 注中（第 288 页）完全类似的方法，很容易看出它们穷尽了所讨论的整个类。事实上，例如在椭圆空间中，设有一个直纹面；以其母线 $v=$ 常数及这些母线的正交轨线为坐标时，它的 $ds^2$ 具有典型形式
+\[
+ds^2=du^2+\varphi^2(u)\,dv^2.
+\]
+这里有 $D=0$，所以第 492 页 Codazzi 第一方程 (VII*) 给出
+\[
+\frac{D'}{\varphi}=\frac{c}{\varphi^2},
+\]
+其中 $c$ 为常数。另一方面，Gauss 方程变为
+\[
+\frac{D'^2}{\varphi^2}=\frac{\varphi''}{\varphi}+\frac1{R^2}
+\]
+即
+\[
+\frac{\varphi''}{\varphi}+\frac1{R^2}=\frac{c^2}{\varphi^4}.
+\]
+乘以 $2\varphi\varphi'$ 并作一次积分，得到
+\[
+\varphi'^2=h^2-\frac{\varphi^2}{R^2}-\frac{c^2}{\varphi^2},
+\]
+其中 $h$ 是一个新常数。令 $\varphi^2=\theta$，可写成
+\[
+\theta'^2=4h^2\theta-4c^2-\frac{4\theta^2}{R^2}
+\]
+或
+\[
+\theta'=\sqrt{\pxChFourteenCompletedSquareConstant-\left(\frac{2\theta}{R}-h^2R\right)^2},
+\]
+\ednote{原书第503页根号内第一项印作 \(h^2R^2-4c^2\)。把前式 \(\theta'^2=4h^2\theta-4c^2-4\theta^2/R^2\) 配方，所得常数项为 \(h^4R^2-4c^2\)，且下一行积分结果也印作 \(\sqrt{h^4R^2-4c^2}\)；本译据此更正。}
+由此再作一次积分，得到
+\[
+\theta=\varphi^2=\frac R2\left\{h^2R+\sqrt{h^4R^2-4c^2}\cos\left(\frac{2u}{R}\right)\right\},
+\]
+把这个公式同 \S.202 的 (50)（第 459 页）比较，就证明了我们的直纹面可等距贴合于一条常挠率曲线的副法线轨迹所构成的曲面，因而它本身也是这种直纹面\srcfn{1}{应当注意，在由曲线 C 的副法线轨迹构成的直纹面上，曲线 C 是测地线；而且无论怎样使这个直纹面变形，只要保持母线为直线，这些母线就仍是 C 的副法线，所以曲线 C 总保持常挠率。}。
+
+双曲情形的证明完全类似。因此我们断定，在任意常曲率空间中，Weingarten 逆定理都成立：
+
+\emph{除去由一条常挠率曲线的副法线轨迹所构成的直纹面外，任何其他可等距贴合于旋转面的曲面，都可以看作一个 W 曲面演化曲面的一片。}
+
+\subsection*{\S. 218.\quad 以渐近线为坐标的曲面}
+
+现在把 \S.211 的一般公式应用于下列情形：椭圆空间或双曲空间中的曲面 S，以它的渐近线 $u,v$ 为坐标，并假定这些渐近线为实线；也就是说，假定 S 的相对曲率 $k=K-K_0$ 为负。若像 \S.73 那样令
+\[
+k=-\frac1{\rho^2},
+\]
+则这里有
+\[
+D=D''=0,\qquad \frac{D'}{\sqrt{EG-F^2}}=\frac1\rho,
+\]
+而第 492 页的 Codazzi 公式 (VII*) 变为
+\[
+\tag{47}
+\frac{\partial\log\rho}{\partial u}=2\Ctwo{12}{2},
+\qquad
+\frac{\partial\log\rho}{\partial v}=2\Ctwo{12}{1}.
+\]
+反过来，若微分形式
+\[
+\tag{48}
+ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+的曲率 K 具有如下性质：令
+\[
+\tag{49}
+K=K_0-\frac1{\rho^2}
+\]
+以后，(47) 成立，那么必存在椭圆空间或双曲空间中的一个曲面（依 $K_0>0$ 或 $K_0<0$ 而定），它以渐近线 $u,v$ 为坐标时的线元正由 (48) 给出。
+
+把这些一般观察应用于两个特殊情形：
+
+1. 先考察面积极小曲面，也就是平均曲率 H 为零的曲面。由于这里
+\[
+H=\frac{2FD'}{EG-F^2},
+\]
+必有 $F=0$，也就是说，渐近线彼此正交。另一方面，由 (47) 还必须有
+\[
+\frac{\partial\log\rho}{\partial u}=2\Ctwo{12}{2}=\frac{\partial\log G}{\partial u},
+\qquad
+\frac{\partial\log\rho}{\partial v}=2\Ctwo{12}{1}=\frac{\partial\log E}{\partial v},
+\]
+所以改变参数 $u,v$ 后，可以令
+\[
+E=G=\rho.
+\]
+因此：\emph{在常曲率空间的每一个面积极小曲面上，渐近线构成一个正交等温线系。}
+
+若令 $\rho=e^{2\theta}$，则有 $ds^2=e^{2\theta}(du^2+dv^2)$，而 (49) 变为
+\[
+\tag{50}
+\frac{\partial^2\theta}{\partial u^2}+\frac{\partial^2\theta}{\partial v^2}=e^{-2\theta}-K_0e^{2\theta}.
+\]
+这就是面积极小曲面所依赖的方程；它的每一个解 $\theta$，都对应于常曲率 $K_0$ 空间中的一个面积极小曲面。
+
+2. 再考察一个常曲率曲面 S。如在 \S.76 中一样，因为这里 $\rho$ 为常数，便有
+\[
+\Ctwo{12}{1}=0,
+\qquad
+\Ctwo{12}{2}=0,
+\]
+所以改变参数 $u,v$ 后，可以令 $E=1$、$G=1$；再以 $\omega$ 表示两条渐近线之间的夹角，就有
+\[
+\tag{51}
+ds^2=du^2+2\cos\omega\,du\,dv+dv^2.
+\]
+因此，\S.76 为 Euclid 空间中伪球曲面的渐近线所证明的各定理，一般地都适用于常曲率空间中具有实渐近线的常曲率曲面。它们的确定也依赖于关于 $\omega$ 的同一个偏微分方程，因为把 (49) 用于当前情形，得到
+\[
+\tag{52}
+\frac{\partial^2\omega}{\partial u\partial v}=\left(\frac1{\rho^2}-K_0\right)\sen\omega=-K\sen\omega.
+\]
+
+\subsection*{\S. 219.\quad 椭圆几何中的零曲率曲面\srcfnmark{1}}
+\srcfntext{1}{本节及以下两节的研究取自作者的论文：\emph{Sulle superficie a curvatura nulla in geometria ellittica}（《Annali di matematica》，1895）。}
+
+现在把上面建立的公式用于研究椭圆空间中一类重要的曲面，即绝对曲率 K 为零的曲面；也就是说，它们具有普通 Euclid 平面的几何。
+
+在 \S.200 中，我们已经找到这类曲面的一个完整类别：Clifford 直线汇的直纹面，也就是常挠率曲线的副法线所成的曲面，其中
+$\frac1T=\pm\frac1R$。现在先证明，它们是椭圆空间中仅有的零曲率直纹面。以这样一张直纹面的渐近线为坐标，并令 $v=$ 常数的渐近线为直线，由 (51) 有
+\[
+ds^2=du^2+2\cos\omega\,du\,dv+dv^2,
+\]
+又因 $v=$ 常数的曲线为测地线，故
+\[
+\frac{\partial\omega}{\partial u}=0,
+\]
+从而
+\[
+ds^2=du^2+2V'\,du\,dv+dv^2,
+\]
+其中 V 仅为 $v$ 的函数。若令 $u_1=u+V$，上式写成
+\[
+ds^2=du_1^2+(1-V'^2)\,dv^2,
+\]
+由此可见，母线的正交轨迹全都是测地线，因而这些母线本身就是它们的副法线。所以，\S.202 的公式 (50)（第459页）证明了这些正交轨迹是彼此全等的常挠率曲线，并且
+$\frac1T=\pm\frac1R$。
+
+因此：\emph{椭圆空间中的零曲率直纹面，恰好就是 Clifford 直线汇的直纹面。}
+
+现在转而考察最一般的零曲率曲面。由于 $K=0$，(52) 给出
+\[
+\omega=U+V,
+\]
+其中 U、V 是两个任意函数，前者只依赖于 $u$，后者只依赖于 $v$。以渐近线 $u,v$ 为坐标时，线元便具有如下特征形式：
+\[
+\tag{53}
+ds^2=du^2+2\cos(U+V)\,du\,dv+dv^2.
+\]
+注意，作代换
+\[
+\left\{
+\begin{aligned}
+x&=\int\sen U\,du-\int\sen V\,dv,\\
+y&=\int\cos U\,du+\int\cos V\,dv,
+\end{aligned}\right.
+\]
+以后，它就化为普通平面的 $ds^2=dx^2+dy^2$；由此可见，在 Euclid 平面上，$u$ 曲线彼此由平移而全等，$v$ 曲线也同样如此。
+
+现在很容易证明，在椭圆空间中也发生完全类似的重要性质：同一族的各条渐近线 $u$（或各条渐近线 $v$）彼此由一次滑移而全等。
+
+为此，先证明如下定理：\emph{在一张零曲率曲面上，过一条渐近线 $u=$ 常数的各点、并与另一族渐近线相切的直线，在 Clifford 意义下彼此平行。}
+
+根据上面已经看到的结果，只须证明这些切线所成的直纹面具有零曲率。以 $t$ 表示从 $u=u_0$ 起算的母线线段，并以 $x'_0,x'_1,x'_2,x'_3$ 表示其端点的坐标。
+
+曲线 $v$ 的切线方向余弦为
+\[
+\frac{\partial x_i}{\partial \pxChFourteenGeneratingTangentParameter}\quad(i=0,1,2,3),
+\]
+所以
+\[
+x'_i=x_i\cos\left(\frac tR\right)
++\frac{\partial x_i}{\partial \pxChFourteenGeneratingTangentParameter}
+ \sen\left(\frac tR\right).
+\]
+对 $v$ 求导，并注意到由第493页中间的方程 (38) 有
+\[
+\frac{\partial^2x}{\partial u\partial v}
+=-\frac{\cos\omega}{R^2}x+\frac{\sen\omega}{R^2}\xi,
+\]
+便得到
+\[
+\frac{\partial x'_i}{\partial v}
+=\frac{\partial x_i}{\partial v}\cos\left(\frac tR\right)
++\frac1{R^2}\bigl[\sen\omega\,\xi-\cos\omega\,x\bigr]
+ \sen\left(\frac tR\right).
+\]
+此外
+\[
+\frac{\partial x'_i}{\partial t}
+=\frac1R\left[
+\frac{\partial x_i}{\partial \pxChFourteenGeneratingTangentParameter}
+\cos\left(\frac tR\right)-x_i\sen\left(\frac tR\right)
+\right],
+\]
+所以这个直纹面的线元
+\[
+\pxChFourteenRuledLineElement
+=R^2\bigl(dx_0'^2+dx_1'^2+dx_2'^2+dx_3'^2\bigr)
+\]
+满足
+\[
+\pxChFourteenRuledLineElement
+=dt^2+2\frac{\cos(U+V)}{R}\,dt\,dv+\frac{dv^2}{R^2},
+\]
+这恰好是一个零曲率的 $ds^2$。
+
+\ednote{原书第507页在上述生成切线的三个相应偏导数中均明确印作对字母 u 求导，而现存意大利文和英译 TeX 均误录为 v；第508页两个直纹面线元的左端也都带撇号，而两种 TeX 均漏失。这里依扫描页恢复。}
+
+\subsection*{\S. 220.\quad 作为滑移曲面的零曲率曲面}
+
+现在计算曲面 (53) 的渐近线曲率 $\frac1{\rho_u},\frac1{\rho_v}$，便很容易证明上述性质；这些曲率分别与相应的测地曲率相同，所以
+\[
+\frac1{\rho_u}=\frac{\partial\omega}{\partial v}=V',
+\qquad
+\frac1{\rho_v}=\frac{\partial\omega}{\partial u}=U'.
+\]
+因此，若考察同一族的两条渐近线，例如
+\[
+u=u_0,
+\qquad
+u=u_1,
+\]
+那么对于相同的弧长 $v$，它们不仅具有相同的挠率 $\frac1T=\pm\frac1R$，还具有相同的曲率
+\[
+\frac1{\rho_{u_1}}=\frac1{\rho_{u_0}}=V'(v),
+\]
+所以它们是全等曲线（\S.201）。
+
+现在考察一种连续运动，它使一条渐近线依次与同一族的所有渐近线重合；该渐近线的各点描出长度相等的渐近线弧。特别地，在把一条渐近线带到下一条渐近线的无穷小运动中，各点沿平行方向描出相等的线段；所以这个无穷小运动就是一次滑移。
+
+还应注意，一族的所有渐近线都具有正挠率 $+\frac1R$，另一族的所有渐近线则具有挠率 $-\frac1R$。零曲率曲面既可以由第一族的一条渐近线连续滑移而生成，使它的一个点描出第二族的一条渐近线；也可以由第二族的一条渐近线沿第一族的一条渐近线连续滑移而生成。
+
+因此，椭圆空间中的零曲率曲面属于一个更普遍的曲面类别，我们称之为\emph{滑移曲面}，并作如下定义。在 \S.196 关于滑移的公式中，先取第一类滑移：
+\[
+\tag{54}
+\left\{
+\begin{aligned}
+x'_0&=Ax_0-Bx_1-Cx_2-Dx_3,\\
+x'_1&=Bx_0+Ax_1-Dx_2+Cx_3,\\
+x'_2&=Cx_0+Dx_1+Ax_2-Bx_3,\\
+x'_3&=Dx_0-Cx_1+Bx_2+Ax_3,
+\end{aligned}\right.
+\]
+把 $x_i$ 取作参数 $u$ 的四个函数，使方程
+\[
+x_i=x_i(u)
+\]
+在空间中定义一条曲线 $\Gamma$，而 (54) 定义这条曲线经滑移 $(A,B,C,D)$ 后的位置。现在假设四个系数 $A,B,C,D$ 都是变量，并且是参数 $v$ 的函数：
+\[
+A=y_0(v),\quad B=y_1(v),\quad C=y_2(v),\quad D=y_3(v),
+\]
+它们又借助方程
+\[
+y_i=y_i(v).
+\]
+定义一条曲线 $\Gamma'$。代入 (54)，便得到一张曲面；它由曲线 $\Gamma$ 沿曲线 $\Gamma'$ 作连续右旋滑移而生成。另一方面，若把 (54) 按 $y_0,y_1,y_2,y_3$ 排列，则有
+\[
+\tag{54*}
+\left\{
+\begin{aligned}
+x'_0&=x_0y_0-x_1y_1-x_2y_2-x_3y_3,\\
+x'_1&=x_1y_0+x_0y_1+x_3y_2-x_2y_3,\\
+x'_2&=x_2y_0-x_3y_1+x_0y_2+x_1y_3,\\
+x'_3&=x_3y_0+x_2y_1-x_1y_2+x_0y_3;
+\end{aligned}\right.
+\]
+这些公式证明，该曲面也可以由 $\Gamma'$ 沿 $\Gamma$ 作连续左旋滑移而生成。我们正把由 (54*) 给出的曲面称为以 $\Gamma,\Gamma'$ 为生成曲线的滑移曲面。要定义这样一张曲面，只须给出从同一点出发的两条曲线 $\Gamma,\Gamma'$。
+
+因此，所有零曲率曲面都可由如下几何构造得到：\emph{任取两条曲线 $\Gamma,\Gamma'$，其中一条的挠率恒为 $\frac1T=+\frac1R$，另一条的挠率恒为 $\frac1T=-\frac1R$，除此以外任意；把它们放置在空间中，使它们有一个公共点 M，并在该点具有同一个密切平面。若令 $\Gamma$ 沿 $\Gamma'$ 连续滑移，或者令 $\Gamma'$ 以相反类别的连续滑移沿 $\Gamma$ 运动，便得到最一般的零曲率曲面。}
+
+挠率恒为 $=\frac1R$ 的曲线，由 \S.202 已经全部求得，它们是 Clifford 直纹面母线的正交轨迹；因此可见，椭圆空间中所有零曲率曲面都由此以有限形式确定。
+
+最后还要注意，如果两条任意曲线 $\Gamma,\Gamma'$ 中有一条退化为直线（也就是说，两个任意函数 U、V 中有一个成为常数），那么零曲率曲面就成为一张母线彼此平行的直纹面；更特殊地，如果两条生成曲线 $\Gamma,\Gamma'$ 都退化为直线，那么该曲面就成为 Clifford 曲面。
+
+\subsection*{\S. 221.\quad 零曲率曲面的进一步性质}
+
+应用 \S\S.215, 216 的公式，可以得到这些曲面的另一些重要性质。以 $\rho_1,\rho_2$ 表示主曲率半径；由于 $K=0$，有
+\[
+\frac1{\rho_1\rho_2}=-\frac1{R^2}
+\]
+也就是
+\[
+\tg\left(\frac{w_1}{R}\right)\tg\left(\frac{w_2}{R}\right)=-1
+\]
+从而
+\[
+w_1-w_2=\frac{\pi R}{2}.
+\]
+反过来，由 $w_1-w_2=\frac{\pi R}{2}$ 可得
+\[
+\frac1{\rho_1\rho_2}=-\frac1{R^2},\qquad K=0;
+\]
+所以：\emph{椭圆空间中的零曲率曲面具有如下特征：在每一条法线上，两个主曲率中心相距一个象限。}
+
+特别地，由此得到：\emph{与一张零曲率曲面平行的所有曲面，也都具有零曲率。}
+
+现在注意，在 Cayley 度量中，一张曲面的法线直线汇表示为这样一个直线汇：每条射线的两个焦平面关于绝对形共轭；此外，在当前所考察的特殊情形中，每条射线上的两个焦点也彼此共轭。因此可见：\emph{在 Cayley 度量中，零曲率曲面的法线直线汇具有如下特征性质：每条射线上的两个焦点关于绝对形共轭，并且每条射线的两个焦平面也彼此共轭。}
+
+再注意，第501页的 (44) 因为 $\frac{w_1-w_2}{R}=\frac\pi2$，给出
+\[
+k_1=-\frac1{R^2},\qquad k_2=-\frac1{R^2},
+\]
+其中包含如下定理：\emph{零曲率曲面的演化曲面两片仍然都具有零曲率。}
+
+按照 (42)，演化曲面第一片的 $D_1,D'_1,D''_1$ 变为
+\[
+D_1=\frac1R\frac{E}{\sqrt G}
+\frac{\sen\left(\frac{w_1}{R}\right)}{\cos^2\left(\frac{w_1}{R}\right)}
+\frac{\partial w_1}{\partial v},\qquad D'_1=0,
+\]
+\[
+D''_1=-\frac{\sqrt G}{R}\frac1{\sen\left(\frac{w_1}{R}\right)}
+\frac{\partial w_1}{\partial v},
+\]
+另一方面又有
+\[
+D=-\frac{E}{\rho_2}=\frac{E}{R}\tg\left(\frac{w_1}{R}\right),\qquad D'=0,
+\qquad D''=-\frac{G}{\rho_1}=-\frac{G}{R}\cotg\left(\frac{w_1}{R}\right)
+\]
+所以
+\[
+\pxChFourteenCoefficientRatio
+\]
+\ednote{原书第512页把左端前两项印作 \(D'_1:D_1\)。但紧接上文给出 \(D'_1=0\)，同时 \(D'=0\)，故相应的比例次序必须为 \(D_1:D'_1:D''_1=D:D':D''\)；本译据此交换左端前两项。}
+由此得到定理：
+
+\emph{零曲率演变曲面上的渐近线，在演化曲面的两片上仍分别对应于渐近线\srcfn{1}{更一般地，这一性质对于常曲率的演变曲面也成立，并且是一项特征性质；由 (42)、(42*) 很容易看出。}。}
+
+现在把第501页的公式 (45) 用于当前情形，得到
+\[
+\frac1{\rho_{w_1}}=0,
+\]
+也就是说，$w_1=$ 常数的曲线在演化曲面第一片上是测地线（在第二片上也是如此）；又因为 $u=$ 常数的曲线是与它们正交的测地线，所以两族曲线组成通常 Euclid 意义下的一个平行测地线系。反过来，在一张零曲率曲面上任取 Euclid 意义下的一个平行测地线系，并作这些测地线的切线；由 Weingarten 逆定理，这些切线是某张曲面 W 的法线，而由 (45) 可知，W 仍然具有零曲率。因此：\emph{在一张零曲率曲面上任画一个 Euclid 意义下的平行测地线系，这些测地线的切线所具有的各个法曲面（演变曲面），也都是零曲率曲面。}
+
+再注意，起始曲面 S 是演变曲面 $\Sigma$ 的演化曲面第一片，而第二片可由下法得到：从接触点起，在上述切线上截取一段
+\[
+-\frac{\pi R}{2}\,\srcfnmark{2}.
+\]
+\srcfntext{2}{方向当然无关紧要。}
+于是得到定理：
+
+\emph{在一张零曲率曲面 S 上，沿一个平行测地线系的各条测地线作切线，并从接触点起在这些切线上截取一个象限 $\frac{\pi R}{2}$；各端点的轨迹 $S'$ 是一张新的零曲率曲面。}
+
+用这一构造，从一张零曲率曲面 S 可导出 $\infty^1$ 张互补曲面 S'；很容易看出，这些曲面 S' 彼此平行，而且它们的法线，是 S 的法线关于绝对形的极线。事实上，S' 在一点 M' 的法线，位于 S 在对应点的切平面内，并且在 M' 处垂直于长为一个象限的线段 MM'；所以，在上述切平面内，这条法线就是接触点的极线，也就是 S 在 M 点的法线关于绝对形的极线。因此：\emph{一张零曲率曲面 S 的法线直线汇，其极直线汇仍是同一类别的直线汇。}
+
+用 Cayley 度量的考察或直接计算，立刻可以看出，这是这类直线汇的一项特征性质；也就是说，没有任何别的法线直线汇，其极直线汇仍为一个法线直线汇。
+
+\subsection*{\S. 222.\quad 曲空间中的曲面在欧几里得空间上作共形表示时的公式}
+
+在前几节的研究中，我们只使用了三维常曲率空间在欧几里得空间上的\emph{测地表示}。
+
+但在某些情形下，采用上述空间的共形表示可能更为有用；这有时会导出普通空间中曲面的新性质。例如，若考察常曲率空间中的 W 曲面，并回忆 Weingarten 关于演化曲面的定理，那么显然仍可应用 \S.132 末尾（第286页）Lie 的论证，由此可知\emph{只需求积即可求出这些曲面的曲率线}。在上述共形表示下，欧几里得空间中像曲面的曲率线与原曲面的曲率线相对应；于是得到普通空间中一类新的曲面：对于这一类中的每一张已知曲面，其曲率线都可用求积法求出。
+
+这里要写出常曲率 $K_0$ 空间中一张曲面的相对总曲率与平均曲率公式；这时空间的 $ds^2$ 取如下形式：
+\[
+\tag{55}
+ds^2=\frac{dx^2+dy^2+dz^2}{\lambda^2},
+\]
+这正建立了所讨论的共形表示。关于 $\lambda$ 的取值，可以取（\S.159，第345页）
+\[
+\tag{56}
+\lambda=1+\frac{K_0}{4}(x^2+y^2+z^2),
+\]
+这样空间便相对于一个 Riemann 坐标系来表示；在伪球空间的情形，还可更简单地取
+\[
+\tag{56*}
+\lambda=\frac zR,
+\]
+这就是我们在第十三章（\S\S.185--188）中详细研究过的共形表示。
+
+不过，我们在一般形式 (55) 上进行计算，因为这样得到的结果对任何可在欧几里得空间上作共形表示的三维空间都成立。为此只须重新采用 \S.170 的一般公式 (39)（第375页）；该公式联系任意曲空间中一张超曲面与其在共形空间中的像所对应的主曲率 $\frac1R,\frac1{R'}$。这里以 $r_1,r_2$ 表示欧几里得空间中像曲面的两个主曲率半径，以 $\rho_1,\rho_2$ 表示曲空间 (55) 中原曲面的两个主曲率半径；由于现在曲率半径的量法不同，我们必须在上述公式中把 $R,R'$ 分别换成 $-r,-\rho$，并把函数 U 取为 $\frac1\lambda$。这样得到基本公式
+\[
+\tag{57}
+\frac1\rho=\frac{\lambda}{r}-\frac{\partial\lambda}{\partial n},
+\]
+其中 $\frac{\partial\lambda}{\partial n}$ 表示沿所考察曲面的正法线方向所取的 $\lambda$ 的导数，即
+\[
+\frac{\partial\lambda}{\partial n}=X\frac{\partial\lambda}{\partial x}+Y\frac{\partial\lambda}{\partial y}+Z\frac{\partial\lambda}{\partial z}.
+\]
+若把欧几里得空间中像曲面的方程写成
+\[
+z=z(x,y),
+\]
+并对 $z$ 的一阶、二阶导数采用 Monge 的通常记号，则有（\S.68）
+\[
+X=-\frac{p}{\sqrt{1+p^2+q^2}},\qquad
+Y=-\frac{q}{\sqrt{1+p^2+q^2}},\qquad
+Z=\frac1{\sqrt{1+p^2+q^2}}
+\]
+因而
+\[
+\frac{\partial\lambda}{\partial n}=\frac{\frac{\partial\lambda}{\partial z}-p\frac{\partial\lambda}{\partial x}-q\frac{\partial\lambda}{\partial y}}{\sqrt{1+p^2+q^2}}.
+\]
+所以，由 (57) 得到
+\[
+\tag{57*}
+\left\{
+\begin{aligned}
+\frac1{\rho_1\rho_2}&=\frac{\lambda^2}{r_1r_2}-\lambda\frac{\partial\lambda}{\partial n}\left(\frac1{r_1}+\frac1{r_2}\right)+\left(\frac{\partial\lambda}{\partial n}\right)^2,\\
+\frac1{\rho_1}+\frac1{\rho_2}&=\lambda\left(\frac1{r_1}+\frac1{r_2}\right)-2\frac{\partial\lambda}{\partial n},
+\end{aligned}\right.
+\]
+亦即（\S.68）
+\[
+\tag{58}
+\left\{
+\begin{aligned}
+\frac1{\rho_1\rho_2}&=\lambda^2\frac{rt-s^2}{(1+p^2+q^2)^2}
++\lambda\left(\frac{\partial\lambda}{\partial z}-p\frac{\partial\lambda}{\partial x}-q\frac{\partial\lambda}{\partial y}\right)
+\frac{(1+q^2)r-2pqs+(1+p^2)t}{(1+p^2+q^2)^2}\\
+&\quad+\frac{\left(\frac{\partial\lambda}{\partial z}-p\frac{\partial\lambda}{\partial x}-q\frac{\partial\lambda}{\partial y}\right)^2}{1+p^2+q^2},\\
+\frac1{\rho_1}+\frac1{\rho_2}&=\lambda\frac{2pqs-(1+q^2)r-(1+p^2)t}{(1+p^2+q^2)^{3/2}}
++2\frac{p\frac{\partial\lambda}{\partial x}+q\frac{\partial\lambda}{\partial y}-\frac{\partial\lambda}{\partial z}}{(1+p^2+q^2)^{1/2}}.
+\end{aligned}\right.
+\]
+特别地，若令
+\[
+\lambda=\frac zR,
+\]
+便有
+\[
+\tag{59}
+\left\{
+\begin{aligned}
+\frac1{\rho_1\rho_2}&=\frac{z^2}{R^2}\frac{rt-s^2}{(1+p^2+q^2)^2}
++\frac zR\frac{(1+q^2)r-2pqs+(1+p^2)t}{(1+p^2+q^2)^2}
++\frac1{R^2(1+p^2+q^2)},\\
+\frac1{\rho_1}+\frac1{\rho_2}&=\frac zR\frac{2pqs-(1+q^2)r-(1+p^2)t}{(1+p^2+q^2)^{3/2}}
+-\frac2{R(1+p^2+q^2)^{1/2}}.
+\end{aligned}\right.
+\]
+
+现在假设曲面 $z=z(x,y)$ 是双曲空间中的一张 W 曲面。完全如 Weingarten 对 Lie 定理的证明（\S.131）那样，依据 \S.215 的公式 (42)，可知由两个基本二次型构成的协变式 $\Theta$
+\[
+\Theta=\frac1{\sqrt{b_{11}b_{22}-b_{12}^2}}
+\detmat{b_{11}\,du+b_{12}\,dv,&b_{12}\,du+b_{22}\,dv\\
+\Omega_{11}\,du+\Omega_{12}\,dv,&\Omega_{12}\,du+\Omega_{22}\,dv},
+\]
+在所考察曲面为 W 曲面时，其特征是曲率为零。顾及 \S.168 的公式，可以看到，对于形式
+\[
+ds^2=\frac{dx^2+dy^2+dz^2}{z^2}
+\]
+协变式 $\Theta$ 变为
+\[
+\Theta=\frac{R}{z(1+p^2+q^2)}
+\detmat{(1+p^2)\,dx+pq\,dy,&pq\,dx+(1+q^2)\,dy\\
+r\,dx+s\,dy,&s\,dx+t\,dy},
+\]
+它除因子 $\frac Rz$ 外，与在欧几里得空间中为像曲面计算的协变式 $\Theta$ 并无不同。
+
+\ednote{原书第516页在先取 $\lambda=z/R$ 后，把上述度量印作 $ds^2=(dx^2+dy^2+dz^2)/z^2$；由 (55) 直接代入则会多出因子 $R^2$。现存意大利文和英译 TeX 均照录原印式。这里不作无声改动，仍照原书保留，并明确记录这一符号差异。}
+
+作为这些一般论述的一个应用，例如来考察非欧几里得空间中的面积极小曲面。由 (59) 的第二式，它们在欧几里得空间中的像曲面，就是下列二阶方程的积分曲面：
+\[
+\tag{60}
+z\{(1+q^2)r-2pqs+(1+p^2)t\}+2(1+p^2+q^2)=0.
+\]
+由于常曲率空间中的面积极小曲面具有等温曲率线，它们在欧几里得空间上共形表示所得的像曲面也同样如此；所以得到结论：
+
+\emph{在二阶方程 (60) 的积分曲面上，曲率线构成一个等温系统。}
+
+更一般地，这一性质属于曲空间中所有平均曲率恒定的曲面，因而也属于普通空间中满足下列方程的所有积分曲面：
+\[
+\frac1{\rho_1}+\frac1{\rho_2}=\text{常数}.
+\]
+
+\begin{center}
+\vspace{1em}
+第一卷终。
+\end{center}
+
+\clearpage

@@ -1,0 +1,1444 @@
+%% UNIT ch04_complete | IT authority lines 4133--5577
+\section*{第四章}
+\begin{center}
+{\Large\bfseries 曲面理论的基本公式}
+\end{center}
+
+\begin{center}
+\small
+两个基本二次型
+\[
+\left\{
+\begin{array}{l}
+E\,du^2+2F\,du\,dv+G\,dv^2\\
+D\,du^2+2D'\,du\,dv+D''\,dv^2
+\end{array}
+\right.
+\]
+——给出 \(x,y,z\) 的二阶导数以及 \(X,Y,Z\) 的一阶导数的公式。——两个基本型的系数 \(E,F,G,D,D',D''\) 之间的高斯方程与马伊纳尔迪–科达齐方程。——对于满足高斯方程与科达齐方程的两个给定基本型，相应曲面的存在性与唯一性。——曲率线。——曲面上所画曲线的 1.\({}^{\mathrm a}\) 曲率半径。——默尼耶定理。——欧拉公式。——迪潘指标曲线。——总曲率与平均曲率。——共轭系统。——渐近线。——微分参数的计算。——笛卡儿坐标下曲面的元素。
+\end{center}
+
+\subsection*{\S. 54.\quad 第二基本二次型}
+
+在上一章所研究的性质中，我们看到只涉及一个微分形式，即给出曲面线元的形式
+\[
+ f=ds^2=E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+也就是\emph{第一基本形式}。但是，当研究曲面在空间中实际形状所固有的性质时，除上述形式外，还要出现另一个二次微分形式；正如我们不久将看到的：\emph{从我们的观点来看，曲面理论实质上归结为研究两个联立的二次微分形式。}
+
+为了引入刚才提到的第二微分形式，我们先规定曲面法线的正向方向余弦，并始终记作
+\[
+ X,Y,Z.
+\]
+如同在 \S. 42 中那样，我们约定切平面的正面为这样的一面：在这一面上，\(u\) 线正向的切线方向位于 \(v\) 线正向的左侧\srcfn{1}{仍始终采用如下约定：在 \(xy\) 平面的正面上，正方向 \(Oy\) 位于 \(Ox\) 的左侧。}。
+
+法线的正方向，就是切平面正面所朝向的方向。由解析几何中的熟知公式，便有：
+\[
+\begin{aligned}
+X&=\frac{1}{\sen\omega}
+\bigdet{\frac{1}{\sqrt E}\frac{\partial y}{\partial u}&
+       \frac{1}{\sqrt E}\frac{\partial z}{\partial u}\\[0.35em]
+       \frac{1}{\sqrt G}\frac{\partial y}{\partial v}&
+       \frac{1}{\sqrt G}\frac{\partial z}{\partial v}},\\
+Y&=\frac{1}{\sen\omega}
+\bigdet{\frac{1}{\sqrt E}\frac{\partial z}{\partial u}&
+       \frac{1}{\sqrt E}\frac{\partial x}{\partial u}\\[0.35em]
+       \frac{1}{\sqrt G}\frac{\partial z}{\partial v}&
+       \frac{1}{\sqrt G}\frac{\partial x}{\partial v}},\\
+Z&=\frac{1}{\sen\omega}
+\bigdet{\frac{1}{\sqrt E}\frac{\partial x}{\partial u}&
+       \frac{1}{\sqrt E}\frac{\partial y}{\partial u}\\[0.35em]
+       \frac{1}{\sqrt G}\frac{\partial x}{\partial v}&
+       \frac{1}{\sqrt G}\frac{\partial y}{\partial v}},
+\end{aligned}
+\]
+其中 \(\omega\) 是在 \S. 41 中定义的坐标线夹角。因此，由该节的 (6*)（第 88 页）可得
+\begin{equation}\tag{1}
+\begin{aligned}
+X&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{\frac{\partial y}{\partial u}&\frac{\partial z}{\partial u}\\[0.35em]
+       \frac{\partial y}{\partial v}&\frac{\partial z}{\partial v}},\\
+Y&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{\frac{\partial z}{\partial u}&\frac{\partial x}{\partial u}\\[0.35em]
+       \frac{\partial z}{\partial v}&\frac{\partial x}{\partial v}},\\
+Z&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{\frac{\partial x}{\partial u}&\frac{\partial y}{\partial u}\\[0.35em]
+       \frac{\partial x}{\partial v}&\frac{\partial y}{\partial v}}.
+\end{aligned}
+\end{equation}
+我们要引入的第二微分形式为
+\[
+ \varphi=-(dx\,dX+dy\,dY+dz\,dZ),
+\]
+对它将始终采用记号
+\begin{equation}\tag{2}
+ \varphi=-\sum dx\,dX\srcfnmark{1}=D\,du^2+2D'\,du\,dv+D''\,dv^2.
+\end{equation}
+\srcfntext{1}{这里以及下文的求和符号 \(\sum\)，表示由第一项分别把 \(x,X\) 换成 \(y,Y;\ z,Z\) 所得的三项之和。}
+我们立即考察系数 \(D,D',D''\) 对于 \(\varphi\) 可以采取的各种形式。由恒等式
+\[
+ \sum X\frac{\partial x}{\partial u}=0,\qquad
+ \sum X\frac{\partial x}{\partial v}=0,
+\]
+分别对 \(u,v\) 求导，得到另外一些恒等式：
+\[
+\left\{
+\begin{aligned}
+ \sum X\frac{\partial^2x}{\partial u^2}
+ &= -\sum\frac{\partial X}{\partial u}\frac{\partial x}{\partial u},\\
+ \sum X\frac{\partial^2x}{\partial u\,\partial v}
+ &= -\sum\frac{\partial X}{\partial v}\frac{\partial x}{\partial u}
+  = -\sum\frac{\partial X}{\partial u}\frac{\partial x}{\partial v},\\
+ \sum X\frac{\partial^2x}{\partial v^2}
+ &= -\sum\frac{\partial X}{\partial v}\frac{\partial x}{\partial v}.
+\end{aligned}
+\right.
+\]
+所以有：
+\begin{equation}\tag{3}
+\left\{
+\begin{aligned}
+ D&=\sum X\frac{\partial^2x}{\partial u^2}
+   =-\sum\frac{\partial x}{\partial u}\frac{\partial X}{\partial u},\\
+ D'&=\sum X\frac{\partial^2x}{\partial u\,\partial v}
+   =-\sum\frac{\partial x}{\partial u}\frac{\partial X}{\partial v}
+   =-\sum\frac{\partial x}{\partial v}\frac{\partial X}{\partial u},\\
+ D''&=\sum X\frac{\partial^2x}{\partial v^2}
+   =-\sum\frac{\partial x}{\partial v}\frac{\partial X}{\partial v}.
+\end{aligned}
+\right.
+\end{equation}
+根据 (1)，还可以把 \(D,D',D''\) 写成行列式形式：
+\begin{equation}\tag{3*}
+\begin{aligned}
+D&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{
+\frac{\partial^2x}{\partial u^2}&\frac{\partial^2y}{\partial u^2}&\frac{\partial^2z}{\partial u^2}\\[0.35em]
+\frac{\partial x}{\partial u}&\frac{\partial y}{\partial u}&\frac{\partial z}{\partial u}\\[0.35em]
+\frac{\partial x}{\partial v}&\frac{\partial y}{\partial v}&\frac{\partial z}{\partial v}},\\
+D'&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{
+\frac{\partial^2x}{\partial u\partial v}&\frac{\partial^2y}{\partial u\partial v}&\frac{\partial^2z}{\partial u\partial v}\\[0.35em]
+\frac{\partial x}{\partial u}&\frac{\partial y}{\partial u}&\frac{\partial z}{\partial u}\\[0.35em]
+\frac{\partial x}{\partial v}&\frac{\partial y}{\partial v}&\frac{\partial z}{\partial v}},\\
+D''&=\frac{1}{\sqrt{EG-F^2}}
+\bigdet{
+\frac{\partial^2x}{\partial v^2}&\frac{\partial^2y}{\partial v^2}&\frac{\partial^2z}{\partial v^2}\\[0.35em]
+\frac{\partial x}{\partial u}&\frac{\partial y}{\partial u}&\frac{\partial z}{\partial u}\\[0.35em]
+\frac{\partial x}{\partial v}&\frac{\partial y}{\partial v}&\frac{\partial z}{\partial v}}.
+\end{aligned}
+\end{equation}
+\emph{两个二次微分形式}
+\[
+ f=\sum dx^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+\[
+ \varphi=-\sum dx\,dX=D\,du^2+2D'\,du\,dv+D''\,dv^2
+\]
+\emph{分别称为曲面 \(S\) 的第一基本形式与第二基本形式。}
+
+显然，无论怎样变换变量 \(u,v\)，它们都相应地变换为新的基本形式。
+
+\subsection*{\S. 55.\quad 基本方程}
+
+本节将建立本理论的\emph{基本方程}。为此先作如下观察。若 \(A,B,C\) 是 \(u,v\) 的任意三个函数，就可以确定三个未知系数 \(\alpha,\beta,\gamma\)，使得：
+\begin{equation}\tag{a}
+\left\{
+\begin{aligned}
+ A&=\alpha\frac{\partial x}{\partial u}+\beta\frac{\partial x}{\partial v}+\gamma X\\
+ B&=\alpha\frac{\partial y}{\partial u}+\beta\frac{\partial y}{\partial v}+\gamma Y\\
+ C&=\alpha\frac{\partial z}{\partial u}+\beta\frac{\partial z}{\partial v}+\gamma Z,
+\end{aligned}
+\right.
+\end{equation}
+因为行列式
+\[
+\bigdet{
+\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}&X\\[0.35em]
+\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}&Y\\[0.35em]
+\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}&Z}
+=\sqrt{EG-F^2}
+\]
+不为零。
+
+在此前提下，我们暂时重新采用带指标的记号，令
+\[
+ u=u_1,\quad v=u_2
+\]
+\[
+ E=a_{11},\quad F=a_{12},\quad G=a_{22}
+\]
+\[
+ D=b_{11},\quad D'=b_{12},\quad D''=b_{22}.
+\]
+由于
+\[
+ a_{rs}=\sum\frac{\partial x}{\partial u_r}\frac{\partial x}{\partial u_s},
+\]
+所以
+\[
+ \sum\frac{\partial x}{\partial u_t}
+ \frac{\partial^2x}{\partial u_r\,\partial u_s}
+ =\left[\begin{matrix}rs\\ t\end{matrix}\right].
+\]
+在 (a) 中令
+\[
+ A=\frac{\partial^2x}{\partial u_r\,\partial u_s},\quad
+ B=\frac{\partial^2y}{\partial u_r\,\partial u_s},\quad
+ C=\frac{\partial^2z}{\partial u_r\,\partial u_s},
+\]
+然后依次第一次分别乘以
+\(\frac{\partial x}{\partial u_1},\frac{\partial y}{\partial u_1},\frac{\partial z}{\partial u_1}\)，
+第二次分别乘以
+\(\frac{\partial x}{\partial u_2},\frac{\partial y}{\partial u_2},\frac{\partial z}{\partial u_2}\)，
+第三次乘以 \(X,Y,Z\)，每次都求和，便得到
+\[
+\left\{
+\begin{aligned}
+ a_{11}\alpha+a_{12}\beta&=\left[\begin{matrix}rs\\1\end{matrix}\right]\\
+ a_{12}\alpha+a_{22}\beta&=\left[\begin{matrix}rs\\2\end{matrix}\right]
+\end{aligned}\right.
+\qquad
+ \gamma=b_{rs},
+\]
+由此
+\[
+ \alpha=A_{11}\left[\begin{matrix}rs\\1\end{matrix}\right]
+       +A_{12}\left[\begin{matrix}rs\\2\end{matrix}\right]
+       =\left\{\begin{matrix}rs\\1\end{matrix}\right\}
+\]
+\[
+ \beta=A_{21}\left[\begin{matrix}rs\\1\end{matrix}\right]
+       +A_{22}\left[\begin{matrix}rs\\2\end{matrix}\right]
+       =\left\{\begin{matrix}rs\\2\end{matrix}\right\}
+\]
+因而
+\[
+ \frac{\partial^2x}{\partial u_r\,\partial u_s}
+ =
+ \left\{\begin{matrix}rs\\1\end{matrix}\right\}\frac{\partial x}{\partial u_1}
+ +
+ \left\{\begin{matrix}rs\\2\end{matrix}\right\}\frac{\partial x}{\partial u_2}
+ +b_{rs}X,
+\]
+或者用二阶协变导数（\S. 32）的记号更简洁地写成
+\[
+ x_{rs}=b_{rs}X.
+\]
+把它们用旧记号完全展开，就得到第一组基本方程
+\begin{equation}\tag{I}
+\left\{
+\begin{aligned}
+ \frac{\partial^2x}{\partial u^2}
+ &=
+ \left\{\begin{matrix}11\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
+ +\left\{\begin{matrix}11\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
+ +D\,X\\
+ \frac{\partial^2x}{\partial u\,\partial v}
+ &=
+ \left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
+ +\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
+ +D'\,X\\
+ \frac{\partial^2x}{\partial v^2}
+ &=
+ \left\{\begin{matrix}22\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
+ +\left\{\begin{matrix}22\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
+ +D''\,X,
+\end{aligned}\right.
+\end{equation}
+这里略去了 \(y,z\) 的完全类似的方程；只须分别把其中的 \(X\) 换成 \(Y,Z\) 即可得到。
+
+第二组基本公式是把 \(X,Y,Z\) 的一阶偏导数用
+\(\frac{\partial x}{\partial u}, \frac{\partial x}{\partial v}, X\) 等表示的公式。在 (a) 中先后令：
+\[
+ A=\frac{\partial X}{\partial u},\quad
+ B=\frac{\partial Y}{\partial u},\quad
+ C=\frac{\partial Z}{\partial u},
+\]
+\[
+ A=\frac{\partial X}{\partial v},\quad
+ B=\frac{\partial Y}{\partial v},\quad
+ C=\frac{\partial Z}{\partial v},
+\]
+便得到所求公式：
+\begin{equation}\tag{II}
+\left\{
+\begin{aligned}
+ \frac{\partial X}{\partial u}
+ &=
+ \frac{FD'-GD}{EG-F^2}\frac{\partial x}{\partial u}
+ +\frac{FD-ED'}{EG-F^2}\frac{\partial x}{\partial v}\\
+ \frac{\partial X}{\partial v}
+ &=
+ \frac{FD''-GD'}{EG-F^2}\frac{\partial x}{\partial u}
+ +\frac{FD'-ED''}{EG-F^2}\frac{\partial x}{\partial v},
+\end{aligned}
+\right.
+\end{equation}
+这里再次略去了 \(Y,Z\) 的类似公式。
+
+由此可见，公式 (I)、(II) 右端的系数完全由两个基本形式 \(f,\varphi\) 的系数组成\srcfn{1}{尤其必须始终记住，(I) 中出现的克里斯托费尔符号
+\(\left\{\begin{matrix}rs\\ t\end{matrix}\right\}\)，
+是相对于第 1.\({}^{\mathrm a}\) 基本形式 \(f\) 构造的。}。
+
+\subsection*{\S. 56.\quad 高斯方程与科达齐方程}
+
+两个基本形式的六个系数
+\[
+ E,F,G;\quad D,D',D''
+\]
+并非彼此独立，而是由我们现在要建立的三个重要关系联系起来。为此写出系统 (I) 的可积条件：
+\[
+ \frac{\partial}{\partial v}\left(\frac{\partial^2x}{\partial u^2}\right)
+ -
+ \frac{\partial}{\partial u}\left(\frac{\partial^2x}{\partial u\partial v}\right)=0
+\]
+\[
+ \frac{\partial}{\partial u}\left(\frac{\partial^2x}{\partial v^2}\right)
+ -
+ \frac{\partial}{\partial v}\left(\frac{\partial^2x}{\partial u\partial v}\right)=0,
+\]
+即
+\begin{equation}\tag{b}
+\left\{
+\begin{aligned}
+&\frac{\partial}{\partial v}\!\left[
+\left\{\begin{matrix}11\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
++\left\{\begin{matrix}11\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
++D X\right]
+-\frac{\partial}{\partial u}\!\left[
+\left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
++\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
++D' X\right]=0,\\
+&\frac{\partial}{\partial u}\!\left[
+\left\{\begin{matrix}22\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
++\left\{\begin{matrix}22\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
++D'' X\right]
+-\frac{\partial}{\partial v}\!\left[
+\left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{\partial x}{\partial u}
++\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{\partial x}{\partial v}
++D' X\right]=0.
+\end{aligned}
+\right.
+\end{equation}
+显然，利用基本公式 (I)(II)，(b) 的左端恒可写成
+\[
+ \alpha\frac{\partial x}{\partial u}+\beta\frac{\partial x}{\partial v}+\gamma X
+\]
+\[
+ \alpha'\frac{\partial x}{\partial u}+\beta'\frac{\partial x}{\partial v}+\gamma'X,
+\]
+而且下列方程必须同时成立：
+\[
+\left\{
+\begin{aligned}
+ \alpha\frac{\partial x}{\partial u}+\beta\frac{\partial x}{\partial v}+\gamma X&=0\\
+ \alpha\frac{\partial y}{\partial u}+\beta\frac{\partial y}{\partial v}+\gamma Y&=0\\
+ \alpha\frac{\partial z}{\partial u}+\beta\frac{\partial z}{\partial v}+\gamma Z&=0
+\end{aligned}\right.
+\qquad
+\left\{
+\begin{aligned}
+ \alpha'\frac{\partial x}{\partial u}+\beta'\frac{\partial x}{\partial v}+\gamma'X&=0\\
+ \alpha'\frac{\partial y}{\partial u}+\beta'\frac{\partial y}{\partial v}+\gamma'Y&=0\\
+ \alpha'\frac{\partial z}{\partial u}+\beta'\frac{\partial z}{\partial v}+\gamma'Z&=0,
+\end{aligned}\right.
+\]
+所以可积条件为：
+\[
+ \alpha=0,\quad \beta=0,\quad \gamma=0
+\]
+\[
+ \alpha'=0,\quad \beta'=0,\quad \gamma'=0.
+\]
+利用克里斯托费尔四指标符号（\S. 34，第 72 页），四个条件
+\[
+ \alpha=0,\quad \beta=0,\quad \alpha'=0,\quad \beta'=0,
+\]
+写成
+\[
+\begin{aligned}
+ \frac{DD''-D'^2}{EG-F^2}\,E&=\{12,12\}\\
+ \frac{DD''-D'^2}{EG-F^2}\,F&=\{11,21\}\\
+ \frac{DD''-D'^2}{EG-F^2}\,F&=\{22,12\}\\
+ \frac{DD''-D'^2}{EG-F^2}\,G&=\{21,21\}.
+\end{aligned}
+\]
+以 \(K\) 表示第一基本形式的曲率，它们一致地给出（\S. 37，公式 IV）：
+\begin{equation}\tag{III}
+ \frac{DD''-D'^2}{EG-F^2}=K,
+\end{equation}
+换言之，它们表示：\emph{两个基本形式 \(\varphi,f\) 的判别式之商，等于曲率 \(K\)，也就是第一基本形式 \(f\) 的曲率。}
+
+至于另外两个条件
+\[
+ \gamma=0,\qquad \gamma'=0,
+\]
+展开后成为：
+\begin{equation}\tag{IV}
+\left\{
+\begin{aligned}
+\frac{\partial D}{\partial v}-\frac{\partial D'}{\partial u}
+-\left\{\begin{matrix}12\\1\end{matrix}\right\}D
++\left(
+\left\{\begin{matrix}11\\1\end{matrix}\right\}
+-\left\{\begin{matrix}12\\2\end{matrix}\right\}
+\right)D'
++\left\{\begin{matrix}11\\2\end{matrix}\right\}D''&=0\\
+\frac{\partial D''}{\partial u}-\frac{\partial D'}{\partial v}
++\left\{\begin{matrix}22\\1\end{matrix}\right\}D
++\left(
+\left\{\begin{matrix}22\\2\end{matrix}\right\}
+-\left\{\begin{matrix}12\\1\end{matrix}\right\}
+\right)D'
+-\left\{\begin{matrix}12\\2\end{matrix}\right\}D''&=0
+\end{aligned}
+\right.
+\end{equation}
+根据 \S. 38（第 81 页），它们表示：\emph{协变三线性型 \((f,\varphi)\)，即由第二基本形式 \(\varphi\) 相对于第一基本形式 \(f\) 构造的形式，恒等于零。}
+
+方程 (III) 由高斯在 \emph{Disquisitiones etc.} 中给出；其中也已经具备推导 (IV) 的全部要素。后者通常以\emph{科达齐公式}之名引用，因为它们正好等价于这位几何学家给出的方程\srcfn{1}{\emph{Annali di mat.} T. II, p. 273 (1868).}；不过在更早以前，\emph{马伊纳尔迪}（1856）已经用另一种形式给出了这些方程\srcfn{2}{\emph{Giornale dell' Istituto Lombardo} T. IX, p. 395.}。
+
+借助 \S. 31 的公式 (20)，还可以把公式 (IV) 写成另一种值得注意的有用形式：
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial\log\sqrt{EG-F^2}}{\partial u}
+ &=
+ \left\{\begin{matrix}11\\1\end{matrix}\right\}
+ +\left\{\begin{matrix}12\\2\end{matrix}\right\}\\
+ \frac{\partial\log\sqrt{EG-F^2}}{\partial v}
+ &=
+ \left\{\begin{matrix}22\\2\end{matrix}\right\}
+ +\left\{\begin{matrix}12\\1\end{matrix}\right\};
+\end{aligned}
+\right.
+\]
+事实上，它们等价于以下系统：
+\begin{equation}\tag{IV*}
+\left\{
+\begin{aligned}
+&\frac{\partial}{\partial v}\left(\frac{D}{\sqrt{EG-F^2}}\right)
+-\frac{\partial}{\partial u}\left(\frac{D'}{\sqrt{EG-F^2}}\right)\\
+&\quad
++\left\{\begin{matrix}22\\2\end{matrix}\right\}\frac{D}{\sqrt{EG-F^2}}
+-2\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{D'}{\sqrt{EG-F^2}}
++\left\{\begin{matrix}11\\2\end{matrix}\right\}\frac{D''}{\sqrt{EG-F^2}}=0,\\[0.35em]
+&\frac{\partial}{\partial u}\left(\frac{D''}{\sqrt{EG-F^2}}\right)
+-\frac{\partial}{\partial v}\left(\frac{D'}{\sqrt{EG-F^2}}\right)\\
+&\quad
++\left\{\begin{matrix}22\\1\end{matrix}\right\}\frac{D}{\sqrt{EG-F^2}}
+-2\left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{D'}{\sqrt{EG-F^2}}
++\left\{\begin{matrix}11\\1\end{matrix}\right\}\frac{D''}{\sqrt{EG-F^2}}=0.
+\end{aligned}
+\right.
+\end{equation}
+
+基本形式系数之间的关系 (III)、(IV)，给出了这些系数必须满足的必要且充分条件。把这一性质说得更精确，便得到如下基本定理：
+
+\emph{给定两个二次微分形式}
+\[
+ f=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+\[
+ \varphi=D\,du^2+2D'\,du\,dv+D''\,dv^2,
+\]
+\emph{其中第一个为定号形式。要存在一个分别以它们为第一、第二基本形式的曲面，必要且充分的是关系 (III)、(IV) 得到满足。满足这些条件后，撇开空间中的运动不计，相应曲面是唯一且确定的。}
+
+我们现在将证明这个定理。证明之后，称 \(f,\varphi\) 为基本形式便有了根据，并且可以理解，曲面形状所固有的一切性质只能依赖于基本形式的六个系数。类比于曲线的内蕴方程这一名称（第一章，\S. 8），总之可以说方程
+\[
+ f=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+\[
+ \varphi=D\,du^2+2D'\,du\,dv+D''\,dv^2
+\]
+是曲面的内蕴方程。
+
+\subsection*{\S. 57.\quad 内蕴方程的积分}
+
+由于基本方程 (III)、(IV) 具有不变性，在证明上述定理时，可以采用最方便的自变量 \(u,v\)。这里利用第二章 \S. 38 的结果，我们选择同时使
+\[
+ F=0,\qquad D'=0.
+\]
+的变量 \(u,v\)。如在所引的一节中看到的，除非存在比例
+\[
+ D:D':D''=E:F:G,
+\]
+而且不难看出，这只会发生在球面（或平面）的情形\srcfn{1}{事实上，在这种情形下有
+\[
+ D=\lambda E,\quad D'=\lambda F,\quad D''=\lambda G.
+\]
+把它们代入 (IV)，并记住（\S. 38）恒有
+\[
+ \frac{\partial E}{\partial v}-\frac{\partial F}{\partial u}
+ -\left\{\begin{matrix}12\\1\end{matrix}\right\}E
+ +\left(
+ \left\{\begin{matrix}11\\1\end{matrix}\right\}
+ -\left\{\begin{matrix}12\\2\end{matrix}\right\}
+ \right)F
+ +\left\{\begin{matrix}11\\2\end{matrix}\right\}G=0
+\]
+\[
+ \frac{\partial G}{\partial u}-\frac{\partial F}{\partial v}
+ +\left\{\begin{matrix}22\\1\end{matrix}\right\}E
+ +\left(
+ \left\{\begin{matrix}22\\2\end{matrix}\right\}
+ -\left\{\begin{matrix}12\\1\end{matrix}\right\}
+ \right)F
+ -\left\{\begin{matrix}12\\2\end{matrix}\right\}G=0,
+\]
+便得到
+\[
+ E\frac{\partial\lambda}{\partial v}-F\frac{\partial\lambda}{\partial u}=0,
+ \qquad
+ F\frac{\partial\lambda}{\partial v}-G\frac{\partial\lambda}{\partial u}=0
+\]
+因而
+\[
+ \lambda=\hbox{常数}.
+\]
+于是第 117 页的 (II)，令
+\[
+ \lambda=-\frac{1}{R}\quad(R\hbox{ 为常数}),
+\]
+便给出
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial x}{\partial u}&=R\frac{\partial X}{\partial u}\\
+ \frac{\partial x}{\partial v}&=R\frac{\partial X}{\partial v}
+\end{aligned}\right.
+\quad
+\left\{
+\begin{aligned}
+ \frac{\partial y}{\partial u}&=R\frac{\partial Y}{\partial u}\\
+ \frac{\partial y}{\partial v}&=R\frac{\partial Y}{\partial v}
+\end{aligned}\right.
+\quad
+\left\{
+\begin{aligned}
+ \frac{\partial z}{\partial u}&=R\frac{\partial Z}{\partial u}\\
+ \frac{\partial z}{\partial v}&=R\frac{\partial Z}{\partial v},
+\end{aligned}\right.
+\]
+积分后得到
+\[
+ x=RX+a,\quad y=RY+b,\quad z=RZ+c,
+\]
+其中 \(a,b,c\) 为常数，故
+\[
+ (x-a)^2+(y-b)^2+(z-c)^2=R^2,
+\]
+这就是半径为 \(R\) 的球面方程。当 \(\lambda=0\) 时，\(X,Y,Z\) 为常数，即曲面是一个平面。反过来，在不失一般性的情况下，此时可设
+\[
+ X=0,\quad Y=0,\quad Z=1
+\]
+于是由第 113 页的 (1) 得
+\[
+ \frac{\partial z}{\partial u}=0,\qquad
+ \frac{\partial z}{\partial v}=0,
+\]
+即 \(z=\hbox{常数}\)。}，这些新变量 \(u,v\) 是完全确定的。令它们等于常数，便得到所谓曲面的\emph{曲率线}（参见 \S. 60）。
+
+在基本方程 (III)、(IV*) 中，把后一式的符号代以其实际值（第 92 页表 (A)），并把 \(K\) 代以第 93 页 (18) 给出的值，便成为
+\begin{equation}\tag{V}
+\left\{
+\begin{aligned}
+ \frac{DD''}{\sqrt{EG}}
+ +\frac{\partial}{\partial u}\left(\frac{1}{\sqrt E}
+   \frac{\partial\sqrt G}{\partial u}\right)
+ +\frac{\partial}{\partial v}\left(\frac{1}{\sqrt G}
+   \frac{\partial\sqrt E}{\partial v}\right)&=0\\
+ \frac{\partial}{\partial v}\left(\frac{D}{\sqrt E}\right)
+ -\frac{D''}{G}\frac{\partial\sqrt E}{\partial v}&=0\\
+ \frac{\partial}{\partial u}\left(\frac{D''}{\sqrt G}\right)
+ -\frac{D}{E}\frac{\partial\sqrt G}{\partial u}&=0.
+\end{aligned}
+\right.
+\end{equation}
+对于我们要证明其存在性与唯一性的曲面（假定 (V) 成立），在每一点考察一个三直角三面体，称为\emph{主标架}；它由 \(v\) 线切线、\(u\) 线切线和曲面法线的正方向组成。分别以 \((X_1,Y_1,Z_1)\)、\((X_2,Y_2,Z_2)\)、\((X_3,Y_3,Z_3)\) 表示这三个方向的方向余弦，则有：
+\[
+\left\{
+\begin{aligned}
+ X_1&=\frac{1}{\sqrt E}\frac{\partial x}{\partial u},
+ &Y_1&=\frac{1}{\sqrt E}\frac{\partial y}{\partial u},
+ &Z_1&=\frac{1}{\sqrt E}\frac{\partial z}{\partial u}\\
+ X_2&=\frac{1}{\sqrt G}\frac{\partial x}{\partial v},
+ &Y_2&=\frac{1}{\sqrt G}\frac{\partial y}{\partial v},
+ &Z_2&=\frac{1}{\sqrt G}\frac{\partial z}{\partial v}\\
+ X_3&=X,&Y_3&=Y,&Z_3&=Z.
+\end{aligned}
+\right.
+\]
+由第 116–117 页的基本公式 (I)、(II)，把克里斯托费尔符号代以它们目前的实际值，得到下列公式：
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial X_1}{\partial u}
+ &=-\frac{1}{\sqrt G}\frac{\partial\sqrt E}{\partial v}X_2
+   +\frac{D}{\sqrt E}X_3\\
+ \frac{\partial X_1}{\partial v}
+ &=\frac{1}{\sqrt E}\frac{\partial\sqrt G}{\partial u}X_2
+\end{aligned}\right.
+\]
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial X_2}{\partial u}
+ &=\frac{1}{\sqrt G}\frac{\partial\sqrt E}{\partial v}X_1\\
+ \frac{\partial X_2}{\partial v}
+ &=-\frac{1}{\sqrt E}\frac{\partial\sqrt G}{\partial u}X_1
+   +\frac{D''}{\sqrt G}X_3
+\end{aligned}\right.
+\]
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial X_3}{\partial u}
+ &=-\frac{D}{\sqrt E}X_1\\
+ \frac{\partial X_3}{\partial v}
+ &=-\frac{D''}{\sqrt G}X_2.
+\end{aligned}\right.
+\]
+因此，未知函数 \(X_1,X_2,X_3\) 必须满足三个关于全微分的齐次线性方程：
+\begin{equation}\tag{4}
+\left\{
+\begin{aligned}
+dX_1&=\left\{-\frac{1}{\sqrt G}\frac{\partial\sqrt E}{\partial v}X_2
++\frac{D}{\sqrt E}X_3\right\}du
++\frac{1}{\sqrt E}\frac{\partial\sqrt G}{\partial u}X_2\,dv\\
+dX_2&=\frac{1}{\sqrt G}\frac{\partial\sqrt E}{\partial v}X_1\,du
++\left\{-\frac{1}{\sqrt E}\frac{\partial\sqrt G}{\partial u}X_1
++\frac{D''}{\sqrt G}X_3\right\}dv\\
+dX_3&=-\frac{D}{\sqrt E}X_1\,du-\frac{D''}{\sqrt G}X_2\,dv.
+\end{aligned}
+\right.
+\end{equation}
+\((Y_1,Y_2,Y_3)\)、\((Z_1,Z_2,Z_3)\) 也必须满足同一系统 (4)。现在，系统 (4) 是一个\emph{无限可积}系统，因为其可积条件正好归结为我们假定已经满足的三个关系 (V)。
+
+\subsection*{\S. 58.\quad 存在性与唯一性}
+
+现在利用下述熟知定理：对于一个无限可积的全微分方程组，总存在一个积分系统，使它在自变量取初值
+\[
+ u=u_0,\quad v=v_0
+\]
+时化为任意预先给定的初值。借此，我们可以很容易地完成证明。为此还须注意：若 \((X_1,X_2,X_3)\)、\((X'_1,X'_2,X'_3)\) 是方程组 (4) 的两个积分系统，无论二者相异还是重合，由于这些方程的特殊形式，总有
+\[
+ X_1X'_1+X_2X'_2+X_3X'_3=\hbox{常数},
+\]
+因为借助 (4) 以及关于 \(X'_1,X'_2,X'_3\) 的同类方程，上式左端的全微分恒等于零。
+
+作此准备后，令 \((X_1X_2X_3)\)、\((Y_1Y_2Y_3)\)、\((Z_1Z_2Z_3)\) 为 (4) 的三个积分系统；当 \(u=u_0,\ v=v_0\) 时，它们化为一个正交代换的九个系数
+\[
+\begin{matrix}
+X_1^{(0)}&X_2^{(0)}&X_3^{(0)}\\
+Y_1^{(0)}&Y_2^{(0)}&Y_3^{(0)}\\
+Z_1^{(0)}&Z_2^{(0)}&Z_3^{(0)}
+\end{matrix}
+\]
+。由前面的观察可知，对于 \(u,v\) 的一切值，
+\[
+\begin{matrix}
+X_1&X_2&X_3\\
+Y_1&Y_2&Y_3\\
+Z_1&Z_2&Z_3
+\end{matrix}
+\]
+仍是一个正交代换的系数；特别地，有
+\[
+ X_1^2+Y_1^2+Z_1^2=1,\qquad
+ X_1X_2+Y_1Y_2+Z_1Z_2=0
+\]
+等等。
+
+再由 (4) 本身，三个表达式
+\[
+ \sqrt E\,X_1\,du+\sqrt G\,X_2\,dv,\quad
+ \sqrt E\,Y_1\,du+\sqrt G\,Y_2\,dv,\quad
+ \sqrt E\,Z_1\,du+\sqrt G\,Z_2\,dv
+\]
+都是恰当微分。令
+\[
+ x=\int(\sqrt E\,X_1\,du+\sqrt G\,X_2\,dv),\quad
+ y=\int(\sqrt E\,Y_1\,du+\sqrt G\,Y_2\,dv),
+\]
+\[
+ z=\int(\sqrt E\,Z_1\,du+\sqrt G\,Z_2\,dv),
+\]
+并把 \(x,y,z\) 看作某曲面上一动点的坐标，便可验证该曲面的两个基本型恰为所给的两个形式。
+
+最后，基本定理中关于唯一性的部分，既可由 (4) 的线性形式得出，也可重复我们在 \S. 8 中对曲线所作的论证而得到。
+
+\emph{注记。}——在证明上述定理时，为简单起见，我们采用了一个特殊的坐标线系统（曲率线）；但应当指出，也可以让自变量保持完全的一般性，例如把曲面每一点处坐标线切线的角平分线连同法线组成的三面体作为主标架。对于这三个方向的九个方向余弦，我们仍会得到一个类似于 (4) 的线性全微分方程组；由于基本方程 (III)、(IV)，这个方程组无限可积。又如 \S. 9 中那样，可以把确定曲面的问题归结为积分一个黎卡提型全微分方程，从而得到结论：
+
+\emph{为了实际求出与两个给定基本型相对应的曲面，必须积分一个黎卡提型方程。}
+
+\subsection*{\S. 59.\quad 曲率线}
+
+设在曲面 S 上任取一条曲线 L，并沿着它作曲面的法线；一般说来，这些法线形成一个不可展直纹面。在这个直纹面恰为可展面的特殊情形，也就是说，S 沿 L 的各法线是某一空间曲线的切线（或者通过同一点）时，称曲线 L 为该曲面的\emph{曲率线}。
+
+立即可以看出，按照这个定义，平面或球面上画出的每条曲线都应看作曲率线，因为相应法线所成的直纹面是圆柱面或圆锥面。
+
+对于任何其他曲面，正如我们现在要证明的那样，曲率线只有单参数无穷多个，并且组成一个总为实的正交双系统。
+
+首先指出曲率线的一些性质；这些性质直接由其定义以及 \S. 18（第 38 页）所给出的关于渐屈线的定理 A)、B) 得出。
+
+\emph{若两个曲面的交线 C 同时是二者的曲率线，则两曲面沿 C 相交的角为常数。反之，若两曲面以常角相交，而其交线是其中一个曲面的曲率线，则它也是另一个曲面的曲率线。}
+
+又因平面和球面上的每条曲线都是曲率线，故有推论：
+
+\emph{若一个平面或球面沿曲面 S 的一条曲率线截交 S，则它与 S 成常角。反之，若一个平面或球面与 S 成常角相交，则其交线是 S 的曲率线。}
+
+例如，在旋转曲面上，经线和平行圈都是曲率线。
+
+现在求曲率线 L 的解析特征条件。沿着 L，\(u,v;\ x,y,z;\ X,Y,Z\) 都应看作单一变量的函数，例如 L 的弧长 \(s\) 的函数。设 \(M\equiv(x,y,z)\) 是 L 上的一点，\(M_1\equiv(x_1,y_1,z_1)\) 是 \(M\) 点法线同可展面的回归棱 \(C_1\) 的接触点；该可展面由 S 沿 L 的法线生成。于是有
+\begin{equation}\tag{5}
+ x_1=x-rX,\quad y_1=y-rY,\quad z_1=z-rZ,
+\end{equation}
+其中 \(r\) 表示线段 \(M_1M\) 的代数值（这里 \(r\) 的正负按下述方式确定：从 \(M_1\) 指向 \(M\) 的方向同法线正向一致时为正，方向相反时为负）。
+
+将 (5) 对 \(s\) 求导，并注意到按假设
+\[
+ \frac{dx_1}{ds},\quad \frac{dy_1}{ds},\quad \frac{dz_1}{ds}
+\]
+与 \(X,Y,Z\) 成比例，得到
+\[
+\left\{
+\begin{aligned}
+ \lambda X&=\frac{dx}{ds}-r\frac{dX}{ds}-X\frac{dr}{ds}\\
+ \lambda Y&=\frac{dy}{ds}-r\frac{dX}{ds}-Y\frac{dr}{ds}\\
+ \lambda Z&=\frac{dz}{ds}-r\frac{dZ}{ds}-Z\frac{dr}{ds},
+\end{aligned}
+\right.
+\]
+依次乘以 \(X,Y,Z\) 后相加，得
+\[
+ \lambda=-\frac{dr}{ds},
+\]
+从而
+\[
+ \frac{dx}{ds}=r\frac{dX}{ds},\quad
+ \frac{dy}{ds}=r\frac{dY}{ds},\quad
+ \frac{dz}{ds}=r\frac{dZ}{ds},
+\]
+或者说：\emph{沿曲率线 L 移动时，必须有比例关系}
+\begin{equation}\tag{6}
+ dx:dy:dz=dX:dY:dZ.
+\end{equation}
+反过来，若沿 L 有比例关系 (6)，并以 \(r\) 表示三个比值
+\[
+ \frac{dx}{dX}=\frac{dy}{dY}=\frac{dz}{dZ},
+\]
+的公值，则立即可见，(5) 定义了一条曲线 \(C_1\)，其切线正是 S 沿 L 的法线。因此，\emph{比例关系 (6) 是曲率线的特征条件。}
+
+这里也没有排除曲线 \(C_1\) 退化为一点的情形；只是在此时
+\[
+ dx_1=dy_1=dz_1=0,
+\]
+因而还有 \(dr=0\)，即 \(r=\hbox{常数}\)。
+
+\subsection*{\S. 60.\quad 曲线坐标中的曲率线}
+
+现在把曲率线的特征方程
+\[
+ dx=r\,dX,\quad dy=r\,dY,\quad dz=r\,dZ,
+\]
+变换到曲线坐标中。把它们写成
+\[
+\left\{
+\begin{aligned}
+ \frac{\partial x}{\partial u}du+\frac{\partial x}{\partial v}dv
+ &=r\left(\frac{\partial X}{\partial u}du+\frac{\partial X}{\partial v}dv\right)\\
+ \frac{\partial y}{\partial u}du+\frac{\partial y}{\partial v}dv
+ &=r\left(\frac{\partial Y}{\partial u}du+\frac{\partial Y}{\partial v}dv\right)\\
+ \frac{\partial z}{\partial u}du+\frac{\partial z}{\partial v}dv
+ &=r\left(\frac{\partial Z}{\partial u}du+\frac{\partial Z}{\partial v}dv\right),
+\end{aligned}
+\right.
+\]
+可用一个等价方程组代替：第一次分别乘以
+\(\frac{\partial x}{\partial u},\frac{\partial y}{\partial u},\frac{\partial z}{\partial u}\)，
+第二次分别乘以
+\(\frac{\partial x}{\partial v},\frac{\partial y}{\partial v},\frac{\partial z}{\partial v}\)，
+第三次分别乘以 \(X,Y,Z\)，并在每次乘后相加。
+
+第三次所得是一个恒等式，因而得到方程（参见 \S. 54）：
+\begin{equation}\tag{7}
+\left\{
+\begin{aligned}
+ E\,du+F\,dv&=-r(D\,du+D'\,dv)\\
+ F\,du+G\,dv&=-r(D'\,du+D''\,dv).
+\end{aligned}
+\right.
+\end{equation}
+从这两式中消去 \(r\)，得到曲率线的微分方程
+\begin{equation}\tag{8}
+\left|
+\begin{matrix}
+ E\,du+F\,dv & F\,du+G\,dv\\
+ D\,du+D'\,dv & D'\,du+D''\,dv
+\end{matrix}
+\right|=0,
+\end{equation}
+
+这里写出的行列式恰好是两个基本型的雅可比式。因此，排除
+\[
+ D:D':D''=E:F:G,
+\]
+这一曲面为球面或平面的情形\srcfn{1}{\S. 57 的注中已经给出这一事实的解析证明；现在很容易再补上一个简单的几何证明。在比例关系
+\[
+ D:D':D''=E:F:G.
+\]
+成立时，由 (8) 可知，曲面 S 上画出的每条曲线都是曲率线。于是，若 \(M,M'\) 是 S 上任意两点，则这 \(M,M'\) 两点处的法线共面。事实上，过 \(M\) 点法线和 \(M'\) 点作一平面，它沿曲线 C 截交 S。S 沿 C 的法线形成一个可展面，也就是说，它们是 C 的某条渐屈线的切线；由于 M 点的法线位于 C 的平面内，沿 C 的每一条其他法线，特别是 \(M'\) 点的法线，也都位于同一平面内。因此，S 的任意两条法线相交；而它们又不能全位于同一平面内，所以必通过同一点 O。若 O 的距离有限，则 S 是以 O 为中心的球面；若 O 在无穷远处，则 S 是平面。}；再回顾 \S. 39 第 83 页的结果，便有定理：
+
+\emph{每个曲面上都存在一个总为实的正交曲率线双系统。只有球面和平面上存在不定性，因为在那里每条曲线都是曲率线。}
+
+曲面 S 的每一点 M 都通过两条曲率线 \(L_1,L_2\)，它们在该点正交相交。M 点的法线与由 S 沿 \(L_1\) 的法线所生成的可展面的回归棱相切于一点，记为 \(M_1\)；此点称为曲面在 M 点相对于曲率线 \(L_1\) 的\emph{曲率中心}。同样，在 M 点的法线上还有第二个曲率中心 \(M_2\)，它相对于 \(L_2\)，而线段
+\[
+ r_1=\overline{M_1M},\qquad r_2=\overline{M_2M}\srcfnmark{1}
+\]
+由于下面将说明的理由，称为曲面在 M 点的\emph{主曲率半径}。
+\srcfntext{1}{应记住，\(r_1,r_2\) 的正负这样计算：从 \(M_1\) 指向 \(M\)（或从 \(M_2\) 指向 \(M\)）的方向同法线正向一致时取正，方向相反时取负。}
+
+从方程 (7) 中消去比值 \(du:dv\)，显然得到：
+
+\emph{曲面在每一点的两个主曲率半径 \(r_1,r_2\)，由关于 \(r\) 的二次方程的两个根给出：}
+\begin{equation}\tag{9}
+ (DD''-D'^2)\pxChFourEquationNineR+(ED''+GD-2FD')r+EG-F^2=0.
+\end{equation}
+\ednote{原书第129页的公式 (9) 清楚地把首项印作 \((DD''-D'^2)r^2\)，而现有意大利文 TeX 漏掉了指数 2。本译按源图恢复该指数。}
+
+\subsection*{\S. 61.\quad 法截线的曲率}
+
+现在来考察同过曲面上一点 M 的无穷多条曲线的（第一）曲率半径之间的关系。
+
+设 C 是这样一条曲线；沿 C，\(u,v;\ x,y,z\) 都是 C 的弧长 \(s\) 的函数。沿用第一章中关于 C 的记号，首先得到其切线的方向余弦：
+\begin{equation}\tag{10}
+ \alpha=\frac{\partial x}{\partial u}\frac{du}{ds}
+ +\frac{\partial x}{\partial v}\frac{dv}{ds},\quad
+ \beta=\frac{\partial y}{\partial u}\frac{du}{ds}
+ +\frac{\partial y}{\partial v}\frac{dv}{ds},\quad
+ \gamma=\frac{\partial z}{\partial u}\frac{du}{ds}
+ +\frac{\partial z}{\partial v}\frac{dv}{ds}.
+\end{equation}
+以 \(\sigma\) 表示 C 的主法线正向与曲面法线正向所成的、介于 0 与 \(\pi\) 之间的角。由弗雷内公式有
+\[
+ \sum X\frac{d\alpha}{ds}=\frac{\cos\sigma}{\rho},
+\]
+因而由 (10) 得
+\[
+ \frac{\cos\sigma}{\rho}
+ =
+ \frac{D\,du^2+2D'\,du\,dv+D''\,dv^2}{ds^2},
+\]
+即
+\begin{equation}\tag{11}
+ \frac{\cos\sigma}{\rho}
+ =
+ \frac{D\,du^2+2D'\,du\,dv+D''\,dv^2}
+ {E\,du^2+2F\,du\,dv+G\,dv^2}.
+\end{equation}
+过曲面在 M 点的法线以及 C 在 M 点的切线作一平面；该平面在曲面上截出一条曲线 \(\Gamma\)，称为 C 的\emph{相切法截线}。它在 M 点的第一曲率 \(\frac{1}{R}\)，也就是 \(\Gamma\) 在该点的第一曲率，仍由公式 (11) 给出，其中应令
+\[
+ \cos\sigma=\pm1,
+\]
+正负号依 \(\Gamma\) 的凹侧朝向法线正向还是反向而定。由此先得到公式
+\[
+ \rho=\pm R\cos\sigma,
+\]
+也就是默尼耶定理：
+
+\emph{曲面 S 上的一条曲线 C 的第一曲率半径，在每一点 M 等于该点与 C 相切的法截线的曲率半径，乘以截平面同曲线密切平面所成角的余弦。}
+
+因此，我们可以把研究限于法截线。
+
+对于法截线，公式 (11) 变为
+\[
+ \frac{1}{R}=\pm
+ \frac{D\,du^2+2D'\,du\,dv+D''\,dv^2}
+ {E\,du^2+2F\,du\,dv+G\,dv^2},
+\]
+上号或下号的选择取决于刚才指出的情形；作此选择后（依照曲线论中令第一曲率恒取正值的约定），右端的实际符号在每种情形下都为正。
+
+但是在这里，无穷多个法截线的所有长度 R 都是在同一直线——M 点法线——上量取的，而该直线上已经规定了正向，所以最好也赋予 R 一个符号。我们约定：若从法截线的曲率中心指向法线足点 M 的方向同法线正向一致，则 R 为正；反之为负（参见上一节）。\emph{采用这个新约定}，在一切情形下直接有
+\begin{equation}\tag{12}
+ \frac{1}{R}=-
+ \frac{D\,du^2+2D'\,du\,dv+D''\,dv^2}
+ {E\,du^2+2F\,du\,dv+G\,dv^2}.
+\end{equation}
+
+\subsection*{\S. 62.\quad 欧拉公式}
+
+现在取曲率线作为坐标线，并以 \(r_1,r_2\) 分别表示 \S. 60 中引入的量。沿 \(u\) 曲率线移动时，有
+\[
+ dx=r_1\,dX,\quad dy=r_1\,dY,\quad dz=r_1\,dZ
+\]
+沿 \(v\) 曲率线移动时，有
+\[
+ dx=r_2\,dX,\quad dy=r_2\,dY,\quad dz=r_2\,dZ,
+\]
+也就是说：
+\begin{equation}\tag{13}
+\left\{
+\begin{aligned}
+ \frac{\partial x}{\partial u}&=r_2\frac{\partial X}{\partial u},&
+ \frac{\partial y}{\partial u}&=r_2\frac{\partial Y}{\partial u},&
+ \frac{\partial z}{\partial u}&=r_2\frac{\partial Z}{\partial u}\\
+ \frac{\partial x}{\partial v}&=r_1\frac{\partial X}{\partial v},&
+ \frac{\partial y}{\partial v}&=r_1\frac{\partial Y}{\partial v},&
+ \frac{\partial z}{\partial v}&=r_1\frac{\partial Z}{\partial v},
+\end{aligned}
+\right.\srcfnmark{1}
+\end{equation}
+\srcfntext{1}{这些公式通常称为罗德里格公式。}
+\ednote{原书正文先说沿 \(u\) 曲率线使用 \(r_1\)、沿 \(v\) 曲率线使用 \(r_2\)，紧接的公式 (13) 却把两者对调为 \(u\) 行的 \(r_2\) 与 \(v\) 行的 \(r_1\)。本译保留原书两处相互冲突的印法，不作静默统一。}
+所以
+\begin{equation}\tag{14}
+ D=-\frac{E}{r_2},\qquad D'=0,\qquad D''=-\frac{G}{r_1},
+\end{equation}
+于是由 (12) 得
+\[
+ \frac{1}{R}
+ =
+ \frac{\frac{E}{r_2}du^2+\frac{G}{r_1}dv^2}{E\,du^2+G\,dv^2}
+ =
+ \frac{E}{r_2}\left(\frac{du}{ds}\right)^2
+ +\frac{G}{r_1}\left(\frac{dv}{ds}\right)^2.
+\]
+以 \(\theta\) 表示所考察的法截线同 \(v\) 线所成的角，上式给出\emph{欧拉公式}
+\begin{equation}\tag{15}
+ \frac{1}{R}=\frac{\cos^2\theta}{r_2}+\frac{\sen^2\theta}{r_1}.
+\end{equation}
+由此首先可知：\emph{\(r_1,r_2\) 是与曲率线相切的法截线的曲率半径}。这些截线称为\emph{主截线}；因而，正如上面已经说过的，\(r_1,r_2\) 称为\emph{主曲率半径}。主截线的曲率中心就是 \S. 60 末尾所考察的两点 \(M_1,M_2\)，它们称为曲面在 M 点的\emph{曲率中心}。
+
+现在考察转动截平面时，法截线的曲率半径 R 如何变化。利用下列考察，可以最清楚地描绘这种变化：
+
+1.º 假设在所考察的点，\(r_1,r_2\) 同号，例如都为正。在 M 点的切平面上建立正交笛卡儿坐标轴 \(\xi,\eta\)，分别同 \(u,v\) 曲率线的切线重合，并考察椭圆
+\begin{equation}\tag{16}
+\frac{\xi^2}{r_1}+\frac{\eta^2}{r_2}=1.
+\end{equation}
+该椭圆的一条半径同坐标轴成角 \(\theta\)；这里所说的轴是 \(\eta\) 轴（\(v\) 线的切线）。这条半径的长度 \(\rho\) 由公式
+\[
+\frac{1}{\rho^2}=\frac{\cos^2\theta}{r_2}+\frac{\sen^2\theta}{r_1},
+\]
+给出；于是由 (15) 有
+\[
+\rho^2=\mathrm{R}.
+\]
+因此：\emph{椭圆 (16) 的任一半径的平方，等于通过该直径所作法截面的曲率半径。}
+
+由于这个原因，椭圆 (16) 称为\emph{示性椭圆}。应当指出，当 \(r_1=r_2\) 时，示性椭圆变为圆，并且通过 M 的所有法截线具有同一曲率半径。此时，点 M 称为\emph{圆点}或\emph{脐点}。处处都是圆点的唯一曲面是球面\srcfn{1}{事实上，此时有
+\[
+\mathrm{D}:\mathrm{D'}:\mathrm{D''}=\mathrm{E}:\mathrm{F}:\mathrm{G}.
+\]}。
+
+2.º 现在令 \(r_1,r_2\) 异号；为明确起见，假设 \(r_1\) 为正，\(r_2\) 为负。于是在切平面内考察一对共轭双曲线
+\begin{equation}\tag{17}
+\left\{
+\begin{aligned}
+\frac{\xi^2}{r_1}-\frac{\eta^2}{-r_2}&=1,\\
+-\frac{\xi^2}{r_1}+\frac{\eta^2}{-r_2}&=1,
+\end{aligned}
+\right.
+\end{equation}
+这一对双曲线给出的几何表示，同前面椭圆 (16) 所给出的一样。
+
+第一种情形中的椭圆 (16) 和第二种情形中的双曲线对 (17)，合称\emph{杜潘示性曲线}；这一名称取自最早对欧拉公式作出上述几何解释的几何学家。
+
+应当注意，在第 1.º 种情形中，曲面在 M 的邻域内完全位于切平面的一侧（所有法截线的凹侧都朝向法线的同一侧）；而在第 2.º 种情形中，曲面一会儿位于切平面的一侧，一会儿位于另一侧\srcfn{1}{也可更简短地得到同一结果。考察曲面在点 \((u,v)\) 处的切平面，并计算距离 \(\delta\)：这是无穷邻近点 \((u+h,v+k)\)（其中 \(h,k\) 视为一阶无穷小量）到该平面的距离。于是得到
+\[
+\delta=\frac12\left(\mathrm{D}h^2+2\mathrm{D'}hk+\mathrm{D''}k^2\right)+\eta
+\]
+其中 \(\eta\) 是三阶无穷小量。因此，\(\delta\) 的符号取决于
+\[
+(\alpha)\quad \mathrm{D}h^2+2\mathrm{D'}hk+\mathrm{D''}k^2.
+\]
+的符号。若 \(\mathrm{D}\mathrm{D''}-\mathrm{D'}^2>0\)，即该点为椭圆点，则二次型 \((\alpha)\) 是定号的，\(\delta\) 恒保持同一符号；若 \(\mathrm{D}\mathrm{D''}-\mathrm{D'}^2<0\)（双曲点），则二次型 \((\alpha)\)，从而 \(\delta\)，既取正值也取负值。}。更确切地说，其平面同第一条双曲线 (17) 交于实点的法截线，其凹侧全朝向一侧；其余法截线（其平面同共轭双曲线交于实点）的凹侧朝向另一侧。当法平面经过双曲线 (17) 的一条或另一条渐近线时，两类截线相互过渡；这时相应的截线满足
+\[
+\frac{1}{\mathrm{R}}=0,
+\]
+表示相应截线上有一个\emph{拐点}。因此，从 M 点出发、位于切平面内的这两个特殊方向称为\emph{渐近方向}；它们把曲面在 M 的邻域分成四个扇区，各扇区交替位于切平面的一侧和另一侧。
+
+\subsection*{§. 63.\quad 平均曲率与总曲率}
+
+正如刚才所见，曲面 S 在一点 M 邻域内的弯曲方式，本质上取决于\emph{两个主曲率半径} \(r_1,r_2\) 的值。为了刻画这种弯曲方式，也可不用 \(r_1,r_2\) 本身，而给出 \(r_1,r_2\) 的两个组合，只要反过来能由这些组合的值求出 \(r_1,r_2\)。需要考察的 \(r_1,r_2\) 的最重要函数，是两个主曲率 \(\dfrac{1}{r_1}\)、\(\dfrac{1}{r_2}\) 的乘积与和。我们分别记为
+\[
+\mathrm{K}=\frac{1}{r_1r_2}, \qquad \mathrm{H}=\frac{1}{r_1}+\frac{1}{r_2}.
+\]
+前者称为曲面的\emph{总曲率}或\emph{高斯曲率}，后者称为\emph{平均曲率}。回想在任意曲线坐标中，两个主曲率半径是第 129 页二次方程 (9) 的根，立即得到 K 与 H 的一般表达式：
+\begin{equation}\tag{18}
+\left\{
+\begin{aligned}
+\mathrm{K}&=\frac{\mathrm{D}\mathrm{D''}-\mathrm{D'}^2}{\mathrm{E}\mathrm{G}-\mathrm{F}^2},\\[0.4em]
+\mathrm{H}&=\frac{2\mathrm{F}\mathrm{D'}-\mathrm{E}\mathrm{D''}-\mathrm{G}\mathrm{D}}{\mathrm{E}\mathrm{G}-\mathrm{F}^2},
+\end{aligned}
+\right.
+\end{equation}
+其中右端是两个基本型的\emph{绝对不变量}（参见 §. 39）\srcfn{1}{这对应于总曲率和平均曲率具有完全独立于曲面上所选曲线坐标的意义这一事实。}。
+
+但对于总曲率，由 §. 56 的结果，还有一个极其重要的定理：\emph{曲面的总曲率等于第一基本型的曲率。}
+
+高斯曲率只依赖于表示线元的形式的系数；正是这一性质（以后在可适用性一章中会看到）使曲率在几何应用中具有首要的重要性。因此，它往往简称为\emph{曲率}。
+
+在示性曲线为椭圆的点，曲率 K 为正；在示性曲线为双曲线的点，曲率 K 为负。前者称为曲面的\emph{椭圆点}，后者称为\emph{双曲点}。
+
+一般说来，一个曲面上有一片椭圆点区域和一片双曲点区域；它们以一条\emph{抛物点}曲线为界，在这条曲线上曲率 K 为零。
+
+作为这些考察的补充，我们证明定理：\emph{处处曲率为零的曲面是可展面。}
+
+一切可展面的曲率都为零，这一点由曲线渐屈线的定理（§. 18）立即可见：可展面的曲率线是其母线及母线的正交轨线；两个主曲率中，同母线相应的那个恒为零。
+
+反过来，若曲面 S 的曲率 K 为零，则
+\[
+\mathrm{D}\mathrm{D''}-\mathrm{D'}^2=0
+\]
+并且若取 \(u,v\) 曲率线为坐标线，便有
+\[
+\mathrm{D'}=0,
+\]
+从而 D 或 D'' 也为零。设
+\[
+\mathrm{D}=0, \qquad \mathrm{D'}=0.
+\]
+由第 117 页的基本公式 (II)，于是
+\[
+\frac{\partial X}{\partial u}=0, \qquad \frac{\partial Y}{\partial u}=0, \qquad \frac{\partial Z}{\partial u}=0,
+\]
+即 \(X,Y,Z\) 仅为 \(v\) 的函数。但由公式
+\[
+\left\{
+\begin{aligned}
+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial x}{\partial u}X+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial y}{\partial u}Y+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial z}{\partial u}Z&=0,\\
+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial x}{\partial u}\frac{\partial X}{\partial v}+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial y}{\partial u}\frac{\partial Y}{\partial v}+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial z}{\partial u}\frac{\partial Z}{\partial v}&=0,
+\end{aligned}
+\right.
+\]
+其中第二式由 \(\mathrm{D'}=0\) 得出，可知 \(v\) 曲率线的切线方向余弦
+\[
+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial x}{\partial u},\qquad
+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial y}{\partial u},\qquad
+\frac{1}{\sqrt{\mathrm{E}}}\frac{\partial z}{\partial u}
+\]
+仅为 \(v\) 的函数，因而沿每一条 \(v\) 线都是常数。所以，\(v\) 曲率线是直线；由刚才引用的关于渐屈线的定理，S 因而是可展面。
+
+\subsection*{§. 64.\quad 共轭切线}
+
+按照杜潘的定义，从曲面上一点 M 出发的两条切线，如果相对于示性曲线共轭，就称为共轭切线。
+
+以曲率线 \(u,v\) 为参考，并以 \(\theta,\theta'\) 表示两条共轭切线相对于 \(v\) 线的倾角，根据定义有
+\[
+\tg\theta\,\tg\theta'=-\frac{r_1}{r_2}.
+\]
+另一方面，若以符号 \(d\) 表示沿第一方向的曲线坐标增量，以 \(\delta\) 表示沿其共轭方向的增量，则
+\[
+\tg\theta=\sqrt{\frac{\mathrm{G}}{\mathrm{E}}}\frac{dv}{du}, \qquad
+\tg\theta'=\sqrt{\frac{\mathrm{G}}{\mathrm{E}}}\frac{\delta v}{\delta u}
+\]
+所以
+\begin{equation}\tag{19}
+\frac{\mathrm{E}}{r_2}\,du\,\delta u+\frac{\mathrm{G}}{r_1}\,dv\,\delta v=0.
+\end{equation}
+
+下面的观察也引导我们考察曲面上的共轭方向。设 C 是曲面 S 上任意一条曲线，以任意曲线坐标系 \((u,v)\) 表示。S 沿 C 的切平面包络出一个沿 C 外切于 S 的可展面。我们证明：\emph{在 C 的每一点，C 的切线同外切可展面的母线互为共轭切线}\srcfn{1}{特别地，由此可知：\emph{在沿一条曲率线 C 外切于曲面 S 的可展面上，曲线 C 是母线的正交轨线。}这是曲率线的一个特征性质，也可以用来定义曲率线。}。
+
+为此，写出 S 在 C 上一点 \((x,y,z)\) 处的切平面方程
+\begin{equation}\tag{20}
+(\xi-x)X+(\eta-y)Y+(\zeta-z)Z=0,
+\end{equation}
+其中 \(\xi,\eta,\zeta\) 为动坐标。当 \((x,y,z)\) 沿 C 移动时，\(x,y,z\) 与 \(X,Y,Z\) 都是 C 的弧长 \(s\) 的函数。把 (20) 对 \(s\) 求导，所得方程
+\begin{equation}\tag{21}
+(\xi-x)\frac{dX}{ds}+(\eta-y)\frac{dY}{ds}+(\zeta-z)\frac{dZ}{ds}=0,
+\end{equation}
+同 (20) 联立，给出所述可展面上从 \((x,y,z)\) 出发的母线 G。现在以符号 \(\delta\) 表示在曲面上沿 G 方向移动时 \(x,y,z\) 的增量。注意 G 的方向余弦既同
+\[
+Y\frac{dZ}{ds}-Z\frac{dY}{ds},\qquad
+Z\frac{dX}{ds}-X\frac{dZ}{ds},\qquad
+X\frac{dY}{ds}-Y\frac{dX}{ds},
+\]
+成比例，也同 \(\delta x,\delta y,\delta z\) 成比例，因而有
+\[
+\delta x\,dX+\delta y\,dY+\delta z\,dZ=0,
+\]
+或者把 \(x,y,z,X,Y,Z\) 表为 \(u,v\) 的函数，得到
+\begin{equation}\tag{22}
+\mathrm{D}\,du\,\delta u+\mathrm{D'}(du\,\delta v+dv\,\delta u)+\mathrm{D''}\,dv\,\delta v=0.
+\end{equation}
+若取 \(u,v\) 为曲率线，则由 (14)，此式恰同 (19) 一致，从而证明了所述性质。
+
+应当注意，(22) 表示与增量 \(d,\delta\) 相应的两个线元互相共轭；它相对于第二基本型的构造，完全类似于第 91 页 §. 42 的正交条件 (11)
+\[
+\mathrm{E}\,du\,\delta u+\mathrm{F}(du\,\delta v+dv\,\delta u)+\mathrm{G}\,dv\,\delta v=0
+\]
+相对于第一基本型系数的构造。
+
+曲面上画出的一个曲线双系统，如果在每一点通过该点的两个曲线族的方向互相共轭，就称为一个\emph{共轭系统}。
+
+显然，两个曲线族中的一个可以任意选取；若其方程对任意常数解出后为
+\[
+\varphi(u,v)=c,
+\]
+则共轭曲线族的曲线就是一阶微分方程（参见 §. 42）
+\[
+\left(\mathrm{D}\frac{\partial\varphi}{\partial v}-\mathrm{D'}\frac{\partial\varphi}{\partial u}\right)du+
+\left(\mathrm{D'}\frac{\partial\varphi}{\partial v}-\mathrm{D''}\frac{\partial\varphi}{\partial u}\right)dv=0.
+\]
+的积分曲线。特别应注意：\emph{坐标线 \(u,v\) 构成共轭系统的充要条件是 \(\mathrm{D'}=0\)。}
+
+曲率线双系统同时是正交系统和共轭系统，并且是唯一具有这双重性质的系统。
+
+\subsection*{§. 65.\quad 渐近线}
+
+曲面上画出的一条曲线，如果在其每一点该曲线的切线同自身的共轭切线重合，就称为\emph{渐近线}。由 (22) 可知，沿渐近线必须满足条件
+\begin{equation}\tag{23}
+\mathrm{D}\,du^2+2\mathrm{D'}\,du\,dv+\mathrm{D''}\,dv^2=0
+\end{equation}
+反过来，若曲面上的一条曲线满足微分方程 (23)，它就是一条渐近线。同曲率线一样，以 (23) 为微分方程的渐近线构成一个双系统（一般并不正交）；在曲面的每一点，通过该点的两条渐近线的方向，同杜潘示性曲线的两条渐近线方向重合。
+
+自然，只有当 \(\mathrm{D}\mathrm{D''}-\mathrm{D'}^2<0\)，即在双曲点区域内，渐近线才为实；在椭圆点区域内则为虚。只有对可展面（§. 63），两个渐近线系统才重合（重合于可展面的母线）。
+
+再者，由渐近线的定义本身立即得到定理：
+\emph{在渐近线 A 的每一点，该曲线的密切平面同曲面的切平面重合。反之，若一条曲线 A 具有这一性质，则它是渐近线。}
+
+事实上，曲面沿渐近线 A 的外切可展面以 A 的切线为母线，而 A 正是该可展面的回归棱。反之，如果曲面沿 A 的外切可展面以 A 本身为回归棱，那么 A 是渐近线。
+
+这里指出的性质也可由第 130 页公式 (11) 立即作解析推导，因为由该式可知，若沿一条曲线有
+\[
+\mathrm{D}\,du^2+2\mathrm{D'}\,du\,dv+\mathrm{D''}\,dv^2=0,
+\]
+则还有 \(\dfrac{\cos\sigma}{\rho}=0\)，因而或 \(\cos\sigma=0\)，或 \(\dfrac{1}{\rho}=0\)；也就是说，或者该曲线的密切平面同曲面的切平面重合，或者该曲线是直线。但在后一情形，密切平面不定，仍可以把它看成同切平面重合。
+
+\subsection*{§. 66.\quad 共轭系统的性质}
+
+现在遵循达布\srcfn{1}{第一卷，第 127 页及以下。}，给出共轭系统和渐近线的一些重要性质。
+
+假设公式
+\[
+x=x(u,v), \qquad y=y(u,v), \qquad z=z(u,v)
+\]
+定义了一个以共轭系统 \((u,v)\) 为坐标的曲面。此时 \(\mathrm{D'}=0\)，所以第 116 页 §. 55 的基本方程 (I) 中间一式给出定理：
+\emph{曲面上一动点的笛卡儿坐标 \(x,y,z\)，都是同一个如下形式的拉普拉斯方程的解：}
+\begin{equation}\tag{24}
+\frac{\partial^2\theta}{\partial u\,\partial v}=a\frac{\partial\theta}{\partial u}+b\frac{\partial\theta}{\partial v}\quad
+\left(a=\chr{1}{2}{1},\ b=\chr{1}{2}{2}\right).
+\end{equation}
+反过来有定理：\emph{若 \(x(u,v),y(u,v),z(u,v)\) 是同一个拉普拉斯方程 (24) 的解，则在曲面}
+\[
+x=x(u,v), \qquad y=y(u,v), \qquad z=z(u,v)
+\]
+\emph{上，曲线 \((u,v)\) 构成一个共轭系统。}
+
+事实上，此时有
+\[
+\left|
+\begin{matrix}
+\dfrac{\partial^2x}{\partial u\,\partial v} & \dfrac{\partial^2y}{\partial u\,\partial v} & \dfrac{\partial^2z}{\partial u\,\partial v}\\[0.5em]
+\dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} & \dfrac{\partial z}{\partial u}\\[0.5em]
+\dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v} & \dfrac{\partial z}{\partial v}
+\end{matrix}
+\right|=0,
+\]
+即 \(\mathrm{D'}=0\)。
+
+现在改设 \(u,v\) 曲线为渐近线。在这种情形，由 (23) 有
+\[
+\mathrm{D}=0, \qquad \mathrm{D''}=0
+\]
+而 §. 55 的方程 (I) 给出定理：
+\emph{曲面上一动点的坐标 \(x,y,z\)，表示为渐近线参数 \(u,v\) 的函数时，同时满足如下形式的两个方程：}
+\begin{equation}\tag{25}
+\left\{
+\begin{aligned}
+\frac{\partial^2\theta}{\partial u^2}&=\alpha\frac{\partial\theta}{\partial u}+\beta\frac{\partial\theta}{\partial v},
+& \alpha&=\chr{1}{1}{1},& \beta&=\chr{1}{1}{2},\\[0.5em]
+\frac{\partial^2\theta}{\partial v^2}&=\gamma\frac{\partial\theta}{\partial u}+\delta\frac{\partial\theta}{\partial v},
+& \gamma&=\chr{2}{2}{1},& \delta&=\chr{2}{2}{2}.
+\end{aligned}
+\right.
+\end{equation}
+反过来，若两个联立方程 (25) 有三个线性无关的公共解 \(x,y,z\)\srcfn{1}{为此，方程组 (25) 必须构成一个无限可积系统。}，则公式
+\[
+x=x(u,v), \qquad y=y(u,v), \qquad z=z(u,v)
+\]
+定义一个以自身渐近线为坐标的曲面。
+
+这些性质可用来解析地证明定理：
+\emph{射影变换保持曲面的共轭系统和渐近线}\srcfn{2}{在几何上，这由下述事实立即可见：曲面沿一条曲线的外切可展面，经射影变换后变成变换曲面沿变换曲线的外切可展面。}。
+
+一个射影变换由公式
+\[
+x'=\frac{\alpha}{\delta}, \qquad y'=\frac{\beta}{\delta}, \qquad z'=\frac{\gamma}{\delta},
+\]
+给出，其中 \(\alpha,\beta,\gamma\) 是 \(x,y,z\) 的整线性表达式；所以，当 \((u,v)\) 是共轭系统时，它们是 (24) 的解，而当 \(u,v\) 是渐近线时，它们是方程组 (25) 的解。若令
+\[
+\theta'=\frac{\theta}{\delta},
+\]
+则 (24) 对 \(\theta'\) 变换为一个同类方程，方程组 (25) 也同样变为形式相同的方程组，这就证明了所述性质。在下一章处理切向坐标时，将类似地看到，对偶变换或空间互反变换也具有同一性质（见 §. 82）。
+
+共轭系统 \((u,v)\) 之中也包括曲率线系统。因此可以问：此时 \(x,y,z\) 所满足的方程 (24) 具有怎样的特殊性质？依照达布，我们可以看到，
+\[
+x^2+y^2+z^2
+\]
+也是 (24) 的一个解。事实上，令
+\[
+\rho=x^2+y^2+z^2,
+\]
+则由 §. 55 的 (I) 得
+\[
+\frac{\partial^2\rho}{\partial u\,\partial v}-\chr{1}{2}{1}\frac{\partial\rho}{\partial u}-\chr{1}{2}{2}\frac{\partial\rho}{\partial v}=2\mathrm{F}
+\]
+因而，当且仅当 \(\mathrm{F}=0\) 时，\(\rho\) 才是 (24) 的一个解。
+
+\begin{sloppypar}
+由这一观察，达布得到了定理的一个优美证明：\nobreak\ \emph{关于互逆向径的反演保持曲率线。}这种反演的熟知公式，在最简单的形式下为：
+\end{sloppypar}
+\[
+x'=\frac{\mathrm{R}^2x}{x^2+y^2+z^2}, \qquad
+ y'=\frac{\mathrm{R}^2y}{x^2+y^2+z^2}, \qquad
+ z'=\frac{\mathrm{R}^2z}{x^2+y^2+z^2}.
+\]
+现在，由于在当前情形
+\[
+\rho=x^2+y^2+z^2
+\]
+是 (24) 的一个解，变换
+\[
+\theta'=\frac{\mathrm{R}^2\theta}{\rho}
+\]
+便把 (24) 变为一个同类方程，而显然
+\[
+x', \qquad y', \qquad z'
+\]
+以及 \(x'^2+y'^2+z'^2=\dfrac{\mathrm{R}^4}{\rho}\) 都满足该方程，因为 \(\theta=\mathrm{R}^2\) 是 (24) 的一个解\srcfn{1}{\textsc{Darboux}，第一卷，第 208 页。}。由前面的观察，在以点 \((x'\ y'\ z')\) 为轨迹的曲面 S' 上，曲线 \((u,v)\) 也同样是曲率线。
+
+\subsection*{§. 67.\quad 特殊情形}
+
+现在给出上一节结果的几个应用。
+
+1.º 考察方程
+\[
+\frac{\partial^2\theta}{\partial u\,\partial v}=0\srcfnmark{1},
+\]
+\srcfntext{1}{\textsc{Darboux}，第一卷，第 98 页及以下。}
+它的一般积分是两个任意函数之和，一个只依赖 \(u\)，另一个只依赖 \(v\)。因此，令
+\begin{equation}\tag{26}
+x=f_1(u)+\varphi_1(v), \qquad y=f_2(u)+\varphi_2(v), \qquad z=f_3(u)+\varphi_3(v),
+\end{equation}
+则在这样定义的曲面上，曲线 \((u,v)\) 构成一个共轭系统。这些曲面称为\emph{平移曲面}，因为它们由一条曲线作平移运动而生成，该曲线的各点分别描出彼此由平移全等的曲线。事实上，只须使曲线
+\[
+x=f_1(u), \qquad y=f_2(u), \qquad z=f_3(u)
+\]
+作平移运动，使其每一点描出一条同曲线
+\[
+x=\varphi_1(v), \qquad y=\varphi_2(v), \qquad z=\varphi_3(v).
+\]
+全等的曲线。显然，这些曲面有两种生成方式：既可由一条 \(u\) 曲线平移生成，也可由一条 \(v\) 曲线平移生成。
+
+依照李，也可以如下看待平移曲面的生成。取两条曲线
+\[
+\begin{aligned}
+x&=2f_1(u),& y&=2f_2(u),& z&=2f_3(u),\\
+x&=2\varphi_1(v),& y&=2\varphi_2(v),& z&=2\varphi_3(v).
+\end{aligned}
+\]
+该曲面是所有连接第一条曲线上一点与第二条曲线上一点的线段中点的轨迹。
+
+应注意，平移曲面的渐近线微分方程为
+\[
+\left|
+\begin{matrix}
+f_1''(u),& f_2''(u),& f_3''(u)\\
+f_1'(u),& f_2'(u),& f_3'(u)\\
+\varphi_1'(v),& \varphi_2'(v),& \varphi_3'(v)
+\end{matrix}
+\right|du^2+
+\left|
+\begin{matrix}
+\varphi_1''(v),& \varphi_2''(v),& \varphi_3''(v)\\
+f_1'(u),& f_2'(u),& f_3'(u)\\
+\varphi_1'(v),& \varphi_2'(v),& \varphi_3'(v)
+\end{matrix}
+\right|dv^2=0;
+\]
+若特别假设
+\[
+f_2=0, \qquad \varphi_1=0,
+\]
+变量便可分离；也就是说：\emph{对于生成曲线位于相互垂直平面内的平移曲面，其渐近线可用求积法得到。}
+
+2.º 再考察方程\srcfn{1}{\textsc{Darboux}，第一卷，第 242 页。}
+\begin{equation}\tag{27}
+(u-v)\frac{\partial^2\theta}{\partial u\,\partial v}=m\frac{\partial\theta}{\partial v}-n\frac{\partial\theta}{\partial u}.
+\end{equation}
+立即可见，无论常数 \(A,a\) 取何值，
+\[
+\theta=A(u-a)^m(v-a)^n
+\]
+都是它的一个解。因而取
+\[
+x=A(u-a)^m(v-a)^n, \quad y=B(u-b)^m(v-b)^n, \quad z=C(u-c)^m(v-c)^n
+\]
+便得到一个曲面，其上的 \(u,v\) 曲线构成共轭系统。对于这些曲面的渐近线微分方程，求得
+\[
+\frac{m(m-1)\,du^2}{(u-a)(u-b)(u-c)}=\frac{n(n-1)\,dv^2}{(v-a)(v-b)(v-c)},
+\]
+它可用椭圆函数求积。
+
+若 \(m=n\)，曲面方程为
+\[
+\left(\frac{x}{A}\right)^{\!1/m}(b-c)+\left(\frac{y}{B}\right)^{\!1/m}(c-a)+\left(\frac{z}{C}\right)^{\!1/m}(a-b)=(a-b)(b-c)(a-c)
+\]
+而渐近线的积分是 \(u,v\) 的代数函数。
+
+特别考察
+\[
+m=n=\frac12,
+\]
+的情形。注意到这时 \(u+v\) 是 (27) 的一个积分，可以看出，若取
+\[
+A^2+B^2+C^2=0,
+\]
+则 \(u,v\) 曲线恰是该二次曲面的曲率线，因为 \(x^2+y^2+z^2\) 是 (27) 的一个解。因此，对于椭球面
+\[
+\frac{x^2}{\alpha^2}+\frac{y^2}{\beta^2}+\frac{z^2}{\gamma^2}=1, \qquad \alpha^2>\beta^2>\gamma^2
+\]
+只须取
+\[
+x^2=\frac{\alpha^2(\alpha^2+u)(\alpha^2+v)}{(\alpha^2-\beta^2)(\alpha^2-\gamma^2)},\quad
+y^2=\frac{\beta^2(\beta^2+u)(\beta^2+v)}{(\beta^2-\gamma^2)(\beta^2-\alpha^2)},\quad
+z^2=\frac{\gamma^2(\gamma^2+u)(\gamma^2+v)}{(\gamma^2-\alpha^2)(\gamma^2-\beta^2)},
+\]
+其中令 \(u\) 在 \(-\gamma^2\) 与 \(-\beta^2\) 之间变化，令 \(v\) 在 \(-\beta^2\) 与 \(-\alpha^2\) 之间变化，便得到椭球面的全部实点（以椭圆坐标表示）。
+
+\subsection*{§. 68.\quad 笛卡儿坐标中的曲率线与主曲率半径}
+
+经常需要把本章的一般公式应用于下述情形：在正交笛卡儿坐标中，曲面方程以通常形式 \(z=z(x,y)\) 给出。采用蒙日记号，令
+\[
+p=\frac{\partial z}{\partial x}, \qquad q=\frac{\partial z}{\partial y}, \qquad r=\frac{\partial^2 z}{\partial x^2}, \qquad s=\frac{\partial^2 z}{\partial x\,\partial y}, \qquad t=\frac{\partial^2 z}{\partial y^2};
+\]
+取 \(u=x\)、\(v=y\)，则线元的系数 E、F、G 为
+\begin{equation}\tag{\ensuremath{\alpha}}
+\mathrm{E}=1+p^2, \qquad \mathrm{F}=pq, \qquad \mathrm{G}=1+q^2,
+\end{equation}
+法线的方向余弦为
+\begin{equation}\tag{\ensuremath{\beta}}
+X=\frac{-p}{\sqrt{1+p^2+q^2}}, \qquad Y=\frac{-q}{\sqrt{1+p^2+q^2}}, \qquad Z=\frac{1}{\sqrt{1+p^2+q^2}},
+\end{equation}
+从而第二基本型的系数 D、D'、D'' 为
+\begin{equation}\tag{\ensuremath{\gamma}}
+\mathrm{D}=\frac{r}{\sqrt{1+p^2+q^2}}, \qquad \mathrm{D'}=\frac{s}{\sqrt{1+p^2+q^2}}, \qquad \mathrm{D''}=\frac{t}{\sqrt{1+p^2+q^2}},
+\end{equation}
+因此，平均曲率 H 与总曲率 K 由公式
+\begin{align}
+\tag{\ensuremath{\delta}}
+\mathrm{H}&=\frac{2pqs-(1+p^2)t-(1+q^2)r}{(1+p^2+q^2)^{3/2}},\\
+\tag{\ensuremath{\delta^*}}
+\mathrm{K}&=\frac{rt-s^2}{(1+p^2+q^2)^2}.
+\end{align}
+给出。最后，渐近线的微分方程为
+\begin{equation}\tag{\ensuremath{\varepsilon}}
+r\,dx^2+2s\,dx\,dy+t\,dy^2=0,
+\end{equation}
+而曲率线的微分方程为
+\begin{equation}\tag{\ensuremath{\varepsilon^*}}
+\{(1+p^2)s-pqr\}\,dx^2+\{(1+p^2)t-(1+q^2)r\}\,dx\,dy+\{pqt-(1+q^2)s\}\,dy^2=0.
+\end{equation}
+
+\subsection*{§. 69.\quad 微分参数的计算}
+
+本章最后给出 \(x,y,z,X,Y,Z\) 及其两个函数
+\[
+\rho=\frac12(x^2+y^2+z^2), \qquad W=Xx+Yy+Zz,
+\]
+的微分参数的重要表达式。前者表示原点到曲面上点 \((x,y,z)\) 的距离平方的一半，后者表示原点到切平面的距离。
+
+在计算中，我们利用微分参数的不变性质，在便利之处取曲率线为坐标线；并记住行列式
+\[
+\left|
+\begin{matrix}
+\dfrac{1}{\sqrt{\mathrm{E}}}\dfrac{\partial x}{\partial u},& \dfrac{1}{\sqrt{\mathrm{E}}}\dfrac{\partial y}{\partial u},& \dfrac{1}{\sqrt{\mathrm{E}}}\dfrac{\partial z}{\partial u}\\[0.8em]
+\dfrac{1}{\sqrt{\mathrm{G}}}\dfrac{\partial x}{\partial v},& \dfrac{1}{\sqrt{\mathrm{G}}}\dfrac{\partial y}{\partial v},& \dfrac{1}{\sqrt{\mathrm{G}}}\dfrac{\partial z}{\partial v}\\[0.8em]
+X,&Y,&Z
+\end{matrix}
+\right|=+1
+\]
+是一个正交代换的行列式，并在这种情形使用公式
+\[
+\frac{\partial x}{\partial u}=r_2\frac{\partial X}{\partial u}, \qquad
+\frac{\partial x}{\partial v}=r_1\frac{\partial X}{\partial v}.
+\]
+由于
+\[
+\Delta_1\varphi=\frac{1}{\mathrm{E}}\left(\frac{\partial\varphi}{\partial u}\right)^2+\frac{1}{\mathrm{G}}\left(\frac{\partial\varphi}{\partial v}\right)^2, \qquad
+\Delta(\varphi,\psi)=\frac{1}{\mathrm{E}}\frac{\partial\varphi}{\partial u}\frac{\partial\psi}{\partial u}+\frac{1}{\mathrm{G}}\frac{\partial\varphi}{\partial v}\frac{\partial\psi}{\partial v},
+\]
+可得
+\begin{align}
+\tag{28}
+\Delta_1x&=1-X^2, & \Delta_1y&=1-Y^2, & \Delta_1z&=1-Z^2,\\
+\tag{29}
+\Delta(x,y)&=-XY, & \Delta(x,z)&=-XZ, & \Delta(y,z)&=-YZ.
+\end{align}
+又有
+\[
+\Delta_1X=\frac{1}{r_2^2}\frac{1}{\mathrm{E}}\left(\frac{\partial x}{\partial u}\right)^2+\frac{1}{r_1^2}\frac{1}{\mathrm{G}}\left(\frac{\partial x}{\partial v}\right)^2
+\]
+对于 \(\Delta_1Y,\Delta_1Z\) 也有类似公式，所以
+\begin{equation}\tag{30}
+\Delta_1X+\Delta_1Y+\Delta_1Z=\frac{1}{r_1^2}+\frac{1}{r_2^2}.
+\end{equation}
+为计算 \(\Delta_2x\)，可以采用一般公式（第 67 页 §. 32）
+\[
+\Delta_2x=\frac{\mathrm{G}x_{11}+\mathrm{E}x_{22}-2\mathrm{F}x_{12}}{\mathrm{E}\mathrm{G}-\mathrm{F}^2},
+\]
+其中 \(x_{rs}\) 是 \(x\) 相对于第一基本型的二阶协变导数；但依照第 116 页 §. 55 的公式 (I)，
+\[
+x_{11}=\mathrm{D}X, \qquad x_{12}=\mathrm{D'}X, \qquad x_{22}=\mathrm{D''}X,
+\]
+故
+\[
+\Delta_2x=\frac{\mathrm{G}\mathrm{D}+\mathrm{E}\mathrm{D''}-2\mathrm{F}\mathrm{D'}}{\mathrm{E}\mathrm{G}-\mathrm{F}^2}X
+\]
+即（§. 55）
+\begin{equation}\tag{A}
+\Delta_2x=-\mathrm{H}X=-\left(\frac1{r_1}+\frac1{r_2}\right)X.
+\end{equation}
+这个重要公式（贝尔特拉米公式）表明：在平均曲率为零的曲面（极小曲面）上，一族平行平面所作的截线属于一个等温系统。
+
+构造微分参数（第 68 页 §. 32）
+\[
+\Delta_{22}x=\frac{x_{11}x_{22}-x_{12}^2}{\mathrm{E}\mathrm{G}-\mathrm{F}^2},
+\]
+再利用刚才所回顾的公式以及 (28)，便得到另一个对于可适用性理论极为重要的公式
+\begin{equation}\tag{B}
+\Delta_{22}x=(1-\Delta_1x)\mathrm{K}.
+\end{equation}
+这是关于 \(x\) 的一个二阶偏微分方程（\(y\) 与 \(z\) 也满足它），其系数只由第一基本型的系数组成。
+
+函数
+\[
+\rho=\frac12(x^2+y^2+z^2).
+\]
+也满足同一性质的方程。事实上，首先求得（取曲率线为坐标线）
+\[
+\Delta_1\rho=2\rho-W^2.
+\]
+再注意到 \(\rho\) 的二阶协变导数为
+\[
+\rho_{11}=\mathrm{E}+\mathrm{D}W, \qquad \rho_{12}=\mathrm{F}+\mathrm{D'}W, \qquad \rho_{22}=\mathrm{G}+\mathrm{D''}W,
+\]
+立即得到
+\[
+\Delta_2\rho=2-W\left(\frac1{r_1}+\frac1{r_2}\right),
+\]
+\[
+\Delta_{22}\rho=1-W\left(\frac1{r_1}+\frac1{r_2}\right)+W^2\mathrm{K}
+\]
+再消去 \(W,W^2\)；这里消去所依据的是 \(\Delta_1\rho,\Delta_2\rho,\Delta_{22}\rho\) 的三个表达式。由此得到所求公式：
+\begin{equation}\tag{C}
+\Delta_2\rho-\Delta_{22}\rho=1+\mathrm{K}(\Delta_1\rho-2\rho).
+\end{equation}
+
+\begin{center}
+\rule{2.5em}{0.4pt}\,\textbullet\textbullet\textbullet\,\rule{2.5em}{0.4pt}\\[-0.25em]
+\textbullet
+\end{center}

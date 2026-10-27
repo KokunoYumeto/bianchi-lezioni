@@ -1,0 +1,172 @@
+\subsection*{§. 186.\\ 常曲率空间线元 $ds^2$ 的典型形式。}
+
+为证明最后一个断言，取 Weingarten 方程组 (A) 的一个解 $U$，并把彼此测地平行的超曲面 $U=\text{常数}$ 作为坐标超曲面 $x_n=\text{常数}$；确切地说，以从其中一个固定超曲面起算的正交测地线弧长作为参数 $x_n$。线元便具有测地形式
+\[
+ ds^2=dx_n^2+\sum_{1}^{n-1}a_{ik}\,dx_i\,dx_k
+\]
+且 $U$ 只是 $x_n$ 的函数。这里有
+\[
+ a_{rn}=0\ (r\ne n),\qquad a_{nn}=1,
+\]
+因而
+\[
+ \chrB{ik}{n}=-\frac12\frac{\partial a_{ik}}{\partial x_n}.
+\]
+方程组 (A) 遂化为
+\[
+\tag{4}
+ U''=-KU,
+\]
+\[
+\tag{4*}
+ \frac{\partial a_{ik}}{\partial x_n}=\frac{2U'}{U}a_{ik},
+\]
+其中为简便起见记
+\[
+ U'=\frac{dU}{dx_n}.
+\]
+公式 (3*) 化为
+\[
+\tag{5}
+ U'^2+KU^2=C\quad(C\text{ 为常数})
+\]
+而将 (4*) 积分得到
+\[
+\tag{6}
+ a_{ik}=U^2c_{ik},
+\]
+其中 $c_{ik}$ 仅为 $x_1,x_2,\ldots,x_{n-1}$ 的函数。
+
+另一方面，以 $b_{ik}$ $(i,k=1,2,\ldots,n-1)$ 表示超曲面 $x_n$ 的第二基本形式系数，则有（§. 165）
+\[
+ b_{ik}=-\frac12\frac{\partial a_{ik}}{\partial x_n},
+\]
+亦即由 (4)、(4*)
+\[
+\tag{7}
+ b_{ik}= -\frac{U'}{U}a_{ik}.
+\]
+把这些值代入 §. 164（第362页）的 Gauss 公式 (H*)
+\[
+ b_{is}b_{kr}-b_{ir}b_{ks}=(ik,rs)-K(a_{ir}a_{ks}-a_{is}a_{kr}),
+\]
+得到
+\[
+\tag{8'}
+ (ik,rs)=\left(K+\frac{U'^2}{U^2}\right)(a_{ir}a_{ks}-a_{is}a_{kr}),
+\]
+即由 (5)
+\[
+ (ik,rs)=\frac{C}{U^2}(a_{ir}a_{ks}-a_{is}a_{kr}),
+\]
+亦即
+\[
+\tag{8}
+ (ik,rs)=C(c_{ir}c_{ks}-c_{is}c_{kr}).
+\]
+因此正有：\emph{超曲面 $U=\text{常数}$ 是 $n-1$ 维空间，其黎曼曲率为常数 $=C$。}
+
+a) 首先设 $K=0$（重新处理已在 §. 36 解决的情形）；于是
+\[
+ U'^2=C
+\]
+并可取 $U'=1$，从而
+\[
+ ds^2=dx_n^2+\sum c_{ik}\,dx_i\,dx_k,
+\]
+其中 $c_{ik}$ 与 $x_n$ 无关，而形式 $\sum c_{ik}dx_i dx_k$ 的曲率为零。当 $n=2$ 时便有
+\[
+ ds^2=dx_2^2+c_{11}dx_1^2
+\]
+其中 $c_{11}$ 只是 $x_1$ 的函数；改变参数 $x_1$，可令 $c_{11}=1$，于是
+\[
+ ds^2=dx_1^2+dx_2^2.
+\]
+现在假定已经证明：曲率为零的线元 $ds^2$ 在有 $n-1$ 个变量时可化为微分平方和
+\[
+ dx_1^2+dx_2^2+\cdots+dx_{n-1}^2,
+\]
+则同一结论也适用于曲率为零的线元 $ds^2$ 在有 $n$ 个变量时的情形，因而定理在一般情形下成立。
+
+b) 现在设常曲率 $K$ 为负：
+\[
+ K=-\frac1{R^2},
+\]
+其中 $R$ 是伪球空间的半径。利用方程组 (A) 的解 $U$ 及其导数的初值，可以令 (3*) 即 (5) 右端的常数 $C$ 为零。于是
+\[
+ U=e^{\frac{x_n}{R}},
+\]
+从而
+\[
+ ds^2=dx_n^2+e^{\frac{2x_n}{R}}\sum c_{ik}dx_i dx_k,
+\]
+其中形式 $\sum c_{ik}dx_i dx_k$ 由公式 (8) 所得定理知曲率为零，故可化为
+\[
+ dy_1^2+dy_2^2+\cdots+dy_{n-1}^2.
+\]
+于是
+\[
+ ds^2=dx_n^2+e^{\frac{2x_n}{R}}(dy_1^2+dy_2^2+\cdots+dy_{n-1}^2)
+\]
+并令
+\[
+ e^{\frac{x_n}{R}}=\frac{R}{y_n},
+\]
+便重新得到 §. 159（第345页）的典型形式 (E)
+\[
+\tag{I}
+ ds^2=\frac{R^2(dy_1^2+dy_2^2+\cdots+dy_n^2)}{y_n^2}
+\]
+作为伪球空间的线元。
+
+若 (3*) 即 (5) 右端的常数 $C$ 不为零，则须按 $C$ 为负或为正分别讨论；在第一种情形，不失一般性可令
+\[
+ U=R\cosh\left(\frac{x_n}{R}\right),
+\]
+在第二种情形则令
+\[
+ U=R\senh\left(\frac{x_n}{R}\right).
+\]
+由 (6)，线元 $ds^2$ 具有形式
+\[
+\tag{II}
+ ds^2=dx_n^2+\senh^2\left(\frac{x_n}{R}\right)\sum_{1}^{n-1}c_{ik}\,dx_i dx_k
+\]
+或另一形式
+\[
+\tag{III}
+ ds^2=dx_n^2+\cosh^2\left(\frac{x_n}{R}\right)\sum_{1}^{n-1}c_{ik}\,dx_i dx_k,
+\]
+其中 $c_{ik}$ 与 $x_n$ 无关；而由 (8) 立即可知，具有 $n-1$ 个变量的形式
+\[
+ \sum_{1}^{n-1}c_{ik}\,dx_i dx_k
+\]
+在第一种情形具有常黎曼曲率 $+\frac1{R^2}$，在第二种情形具有常黎曼曲率 $-\frac1{R^2}$。线元 $ds^2$ 的形式 (II)、(III) 分别对应于伪球曲面的线元 $ds^2$ 的椭圆型和双曲型，而 (I) 属于抛物型（参见 §. 102）。
+
+c) 最后设 $K$ 为正：
+\[
+ K=\frac1{R^2}.
+\]
+这时 (5) 中的常数 $C$ 必为正，并可令（这不损失一般性）
+\[
+ U=R\cos\frac{x_n}{R},
+ \qquad
+ U'=-\sen\frac{x_n}{R},
+ \qquad C=1,
+\]
+于是
+\[
+ ds^2=dx_n^2+\sen^2\left(\frac{x_n}{R}\right)\sum c_{ik}\,dx_i dx_k,
+\]
+其中具有 $n-1$ 个变量的形式 $\sum c_{ik}dx_i dx_k$ 本身也具有曲率 $K=\frac1{R^2}$。对这一新形式应用同一化简公式，如此继续，便显然得到下列线元 $ds^2$ 的典型形式，它属于 $n$ 维空间且曲率 $K=\frac1{R^2}$：
+\[
+\tag{IV}
+\begin{aligned}
+ ds^2={}&dx_n^2+
+ \sen^2\left(\frac{x_n}{R}\right)dx_{n-1}^2+
+ \sen^2\left(\frac{x_n}{R}\right)\sen^2\left(\frac{x_{n-1}}{R}\right)dx_{n-2}^2+\cdots\\
+&+\sen^2\left(\frac{x_n}{R}\right)\sen^2\left(\frac{x_{n-1}}{R}\right)\cdots
+ \sen^2\left(\frac{x_2}{R}\right)dx_1^2.
+\end{aligned}
+\]
+把常曲率空间的线元 $ds^2$ 化为这些固定的典型形式，便显然可推出上文所述、且已在 §. 160 证明的定理：具有相同常黎曼曲率的两个空间彼此适用。

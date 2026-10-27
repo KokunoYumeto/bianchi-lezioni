@@ -1,0 +1,1275 @@
+\section*{第十二章\\ 二维伪球几何}
+
+
+
+\begin{center}
+
+\small
+
+上半平面上的伪球面共形表示。—— 曲面在自身上的运动（弯曲）可由复变量线性变化表示。—— 平行测地线与平行角。—— 伪球三角学。—— 非欧几何提要。—— 贝尔特拉米测地表示。—— 寻找伪球面上一条测地线所依赖的黎卡提型方程。—— 非欧平面中的 Weierstrass 坐标。—— Weingarten 方程在 Weierstrass 坐标下的偏微分形式。
+
+\end{center}
+
+
+
+\subsection*{§. 174.\\ 上半平面上的伪球面共形表示。}
+
+
+
+我们现在把注意力转向黎曼常曲率空间，以研究其内绘制几何图形的几何性质。我们将从二维空间开始，也就是普通的常曲率曲面出发，在此先把这些曲面仅按其 $ds^2$（§. 98）来看，不考虑其在欧几里得空间或其他空间中的具体嵌入形状。由于常曲率为零或正的曲面几何与通常的平面或球面几何一致，所以我们可把这些最初的研究限制在伪球面曲面，也就是所谓的\emph{伪球几何}上。
+
+
+
+作为研究起点，我们将建立伪球面到普通平面的共形表示；在 Klein 和 Poincaré 关于\emph{自守函数}（Fuchs 型函数）的重要解析研究中，这种表示曾发挥很大作用。
+
+
+
+我们把二维\emph{伪球流形}的线元定义为
+
+\[
+\tag{1}
+ ds^2=du^2+e^{\frac{2u}{R}}\,dv^2,
+\]
+
+其中 R 是伪球面的半径。由于函数 \(\sqrt G=e^{\frac{u}{R}}\) 始终有限、连续且为正，对于 \(u_0,v_0\) 的每一对有限实值，也就是 \(u,v\) 的有限实值，我们都认为它对应于曲面上一个实的、距离有限的点，反之亦然；\(u,v\) 的无穷值则给出曲面上的无穷远点。
+
+
+
+将 $x,y$ 看作表示点在表示平面中的正交笛卡儿坐标，则公式
+
+\[
+\tag{2}
+ x=v,\qquad y=Re^{-\frac{u}{R}}
+\]
+
+给出上述共形表示。曲面上所有有限且距离有界的实点一一对应于半平面 $y>0$，即所谓上半平面；曲面上的无穷远点在平面上映成 $x$ 轴上的点，它们组成\emph{边界直线}\srcfn{1}{把表示平面看作 Gauss 复平面较为方便，此平面只有一个无穷远点，也就是 $x$ 轴的无穷远点。}。
+
+
+
+先观察这些表示平面上哪些图像对应于曲面的测地线。由于线元由(1)给出，有限形式下测地线方程为（第208页）
+
+\[
+ v=\pm k\int \frac{e^{-\frac{u}{R}}\,du}{\sqrt{e^{\frac{2u}{R}}-k^2}}+b
+=\pm\frac{R}{k}\sqrt{1-k^2e^{-\frac{2u}{R}}}+b,
+\]
+
+其中 $k,b$ 为两个任意常数。由(2)可知，平面上的像线方程为
+
+\[
+\tag{3}
+ (x-b)^2+y^2=\frac{R^2}{k^2};
+\]
+
+从而\emph{曲面上每一条测地线都对应于一条与边界直线正交的圆，反之亦然。}显然，连 $v=\text{常数}$ 的测地线都不例外，它们被表示为 $x$ 轴的法线（中心在无穷远处的圆）。
+
+
+
+此外，半平面任取两点都只穿过一条与边界直线正交的圆，所以重要结论是：
+
+\emph{曲面上任意两点 $M_1,M_2$ 都可且仅能用一条测地线连接。}
+
+
+
+再考察表示平面怎样给出两点 \(M_1,M_2\) 的客观测地距离。对于测地线弧长 \(s\)，有
+
+\[
+ s=\int\frac{e^{\frac{u}{R}}\,du}{\sqrt{e^{\frac{2u}{R}}-k^2}}
+ =R\log\left\{e^{\frac{u}{R}}+\sqrt{e^{\frac{2u}{R}}-k^2}\right\},
+\]
+
+即由(2)
+
+\[
+ s=R\log\left\{\frac Ry+\sqrt{\frac{R^2}{y^2}-k^2}\right\}+C.
+\]
+
+若把弧长 $s$ 从该圆的极值点 $y=\frac Rk$ 测起，则 $C=-R\log k$，即
+
+\[
+ s=R\log\left\{\frac R{ky}+\frac1k\sqrt{\frac{R^2}{y^2}-k^2}\right\}.
+\]
+
+对数内项显然就是该圆上一组四点的交比：该圆与边界直线的两个交点、上述纵坐标最大点以及弧的终点之客观点。
+
+
+
+故一般地有：\emph{两个客观点 \(M_1,M_2\) 的测地距离，等于 R 乘以如下交比的对数：像点 \(m_1,m_2\) 在测地线 \(M_1M_2\) 的像圆上，与该圆和边界直线的两个交点所成的交比。}
+
+
+
+若以 \(y_1,y_2\) 表示 \(m_1,m_2\) 的纵坐标，则给出测地距离 \(\delta\)——即客观点 \(M_1,M_2\) 之间的距离——的公式写成
+
+\[
+ \delta=R\log
+ \left|
+ \frac{\dfrac R{y_1}+\sqrt{\dfrac{R^2}{y_1^2}-k^2}}
+ {\dfrac R{y_2}\pm\sqrt{\dfrac{R^2}{y_2^2}-k^2}}
+ \right|,
+\]
+
+分母根式前应取上号或下号，取决于两点 \(m_1,m_2\) 位于最大纵坐标点的同一侧还是相反两侧。
+
+
+
+\subsection*{§. 175.\\ 第一类适用变换（运动）。}
+
+
+
+设
+
+\[
+ \omega=x+iy=v+iRe^{-\frac{u}{R}}
+\]
+
+并把复变量 \(\omega\) 的值看作铺展在伪球面上，使每一个纵坐标为正的 \(\omega\) 值给出曲面上一点，反之亦然；因而可以用复变量 \(\omega\) 的相应值表示曲面上一点。第七章已经看到，每个伪球面都容许一个三重无穷的、自身到自身的适用变换或运动（含弯曲）；现在假设在这样一个运动中点 \(\omega\) 移到 \(\omega'\)，我们便像处理球面时那样（第三章，§. 53）问这种运动的解析表达式是什么。结果与球面的结果完全类似，而且在某种意义上还更简单。
+
+
+
+由于 \(\omega'\) 所描出的图形与 \(\omega\) 所描出的图形全等，\(\omega'\) 应当是 \(\omega\) 的函数；如果承认变形连续，因而角度的方向直接保持，就排除了 \(\omega'\) 是共轭量 \(\omega_0\) 的函数这一情形。于是 \(\omega'\) 作为 \(\omega\) 的函数，最初只对上半平面中的 \(\omega\) 值定义；但由于 \(\omega'\) 在 \(\omega\) 为实数时也为实数（曲面上的无穷远点在运动以后仍在无穷远），便以如下条件把 \(\omega'\) 定义到下半平面内 \(\omega\) 的一切值：对于值 \(\omega_0\)（它与 \(\omega\) 共轭），\(\omega'\) 取共轭值 \(\omega'_0\)。现在只须注意，每一个 \(\omega\) 值恰对应一个 \(\omega'\) 值，反之亦然，便可断定 \(\omega'\) 是 \(\omega\) 的线性分式函数：
+
+\[
+\tag{5}
+ \omega'=\frac{\alpha\omega+\beta}{\gamma\omega+\delta}.
+\]
+
+此外，若 $\omega'$ 对实 $\omega$ 取实值，则 $\alpha,\beta,\gamma,\delta$ 均为实数（除一个可消去的公共因子）；更进一步，$\omega'$ 的纵坐标与 $\omega$ 的纵坐标同为正，故行列式 $\alpha\delta-\beta\gamma$ 为正，可不妨取为 $+1$。
+
+
+
+将线元 (1) 用复变量 $\omega$ 与其共轭 $\omega_0$ 表示后，得
+
+\[
+\tag{5*}
+ ds^2=-\frac{4R^2}{(\omega-\omega_0)^2}\,d\omega\,d\omega_0.
+\]
+
+由此可直接验证，具有实系数 $\alpha,\beta,\gamma,\delta$ 的线性分式变换 (5) 将线元保持不变，因此：
+
+
+
+\emph{伪球面在自身上的运动由复变量 $\omega$ 的线性分式变换给出：}
+
+\[
+\tag{6}
+ \omega'=\frac{\alpha\omega+\beta}{\gamma\omega+\delta},\qquad
+ \alpha\delta-\beta\gamma=1,
+\]
+
+\emph{且系数实数。}
+
+
+
+对每个变换(6)，有两个保持不变的 \(\omega\) 值；它们是二次方程
+
+\[
+\tag{7}
+ \gamma\omega^2+(\delta-\alpha)\omega-\beta=0.
+\]
+
+的两个根。按判别式符号有三种情形
+
+\[
+(\delta-\alpha)^2+4\beta\gamma=(\alpha+\delta)^2-4.
+\]
+
+1.\textsuperscript{o} $(\alpha+\delta)^2<4$。方程 (7) 的根为共轭复数：一个在上半平面，另一个在下半平面。前者对应于曲面上一个实且距离有限的点 P，并在运动中保持不动。此时运动称为\emph{椭圆型}，它是围绕 P 的旋转（含弯曲）。
+
+
+
+2.\textsuperscript{o} $(\alpha+\delta)^2=4$。方程 (7) 的根为两个重合的实数。于是曲面上只有一个无穷远点保持不动，运动称为\emph{抛物型}。
+
+
+
+3.\textsuperscript{o} $(\alpha+\delta)^2>4$。方程 (7) 的根为两个不同的实数。若 A、B 是半平面中实轴上的表示点，则以线段 AB 为直径所作的圆，在曲面上对应一条测地线；运动过程中，这条测地线沿自身滑动。此时运动称为\emph{双曲型}；它是曲面沿自身的一种滑移（含弯曲），其中一条确定的测地线沿自身滑动。
+
+
+
+考察椭圆型、抛物型和双曲型三类旋转伪球面绕其轴的旋转运动（§. 103），便可得到这三类运动的一幅很清楚的图像。
+
+
+
+与常曲率为正或零的曲面自身运动相比，也应加以对照，可取复球面或复平面作为典型曲面。
+
+
+
+不论情形如何，运动的解析表达式始终是复变量上的线性分式。对球面，Cayley 公式为（第111页）
+
+\[
+ \tau'=\frac{\alpha\tau+\beta}{-\beta_0\tau+\alpha_0},\qquad
+ \alpha\alpha_0+\beta\beta_0=1;
+\]
+
+其中有两个对跖点固定在球面上，因此球面只有一种运动类型，而且都是真正的转动。
+
+
+
+对复平面 $z$，运动由
+
+\[
+ z'=e^{i\alpha}z+C,
+\]
+
+给出，其中 $\alpha$ 为实常数，C 为复数。按 $e^{i\alpha}$ 是否等于1可分两类：前者为围绕有限中心的旋转，后者为平移。
+
+
+
+\subsection*{§. 176.\\ 第二类运动。}
+
+
+
+现考察伪球面在自身上的那些运动，其中曲面的两个面彼此交换；我们称它们为\emph{第二类运动}，而把上面考察过的运动称为第一类运动\srcfn{1}{参见 Klein--Fricke，\emph{Elliptische Modulfunctionen}，第一卷，第196页及以下。}。为了求出第二类运动的解析表达式，只须注意，曲面绕测地线 \(v=0\) 的翻折由下式简单表示：
+
+\[
+ \omega'=-\omega_0.
+\]
+
+由于两个第二类运动复合所得的是第一类运动，把前式与 (6) 复合，便立即得到：\emph{伪球面的第二类运动由线性分式变换}
+
+\[
+\tag{8}
+ \omega'=\frac{\alpha\omega_0-\beta}{\gamma\omega_0-\delta},
+\]
+
+表示，
+
+\emph{其系数实数且行列式为 $-1$。}
+
+
+
+一个 (8) 型运动连续施行两次，得到第一类运动
+
+\[
+\tag{8*}
+ \omega'=\frac{(\alpha^2-\beta\gamma)\omega+\beta(\delta-\alpha)}
+ {-\gamma(\delta-\alpha)\omega+(\delta^2-\beta\gamma)},
+\]
+
+若起初该变换与恒等变换不同，则必为双曲型，因为
+
+\[
+ (\alpha^2+\delta^2-2\beta\gamma)^2=
+ \left[(\alpha-\delta)^2+2\right]^2>4.
+\]
+
+若考察变换(8)是否有不动点，首先观察：任何不动点必在变换复合后仍不动，因此该点值 $\omega$ 必实。
+
+
+
+关于 \(\omega\) 的方程
+
+\[
+ \gamma\omega^2-(\delta+\alpha)\omega+\beta=0
+\]
+
+在实数域上有两个不同实根，因此在(8)下有两个不同的、位于曲面无穷远处的不动点；这两个点同时是重复变换(8*)的固定点。重复运动(8*)中保持不变的测地线在(8)下也仍固定；其余测地线则整体位置改变。
+
+
+
+再看一个特别有趣的情形：若(8)的重复得到恒等变换，只在 $\delta=\alpha$ 时发生。由(8)知此时平面上的所有不动点在 $\omega$ 平面上构成圆
+
+\[
+ \gamma(x^2+y^2)-2\alpha x+\beta=0,
+\]
+
+即
+
+\[
+ \left(x-\frac{\alpha}{\gamma}\right)^2+y^2=\frac1{\gamma^2},
+\]
+
+它是一条实圆，且与边界直线正交\srcfn{1}{当然若 $\gamma=0$，该圆应改为直线 $x=\frac{\beta}{2\alpha}$，同样与边界直线正交。}。因此：
+
+\emph{二周期第二类运动仅仅是绕一条实测地线的翻折，而该测地线上的全部点保持不变。}
+
+
+
+由上立即得
+
+\emph{任何其他第二类运动，都可把曲面绕一条实测地线的翻折与曲面沿同一测地线在自身上的滑移（双曲型运动）复合而得到。}
+
+
+
+读者可将这些结果与球面与平面上含翻面的运动作对照。
+
+
+
+\subsection*{§. 177.\\ 另一种共形表示。测地圆的保持。}
+
+
+
+对 §. 174 中的曲面像图，我们现在作反演（倒数向量），反演中心取在下半平面。边界直线由此变为\emph{边界圆}；曲面所有有限点被映入该边界圆内，曲面无穷远点落在边界圆上，而外部区域不再对应任何实点。曲面测地线被映成与边界圆正交的圆；两点间客观测地距离仍可用 §. 174 中完全类似的法则得到。
+
+
+
+与边界圆正交的圆中还包括它的直径；与这些直径对应的客观测地线从曲面上一个实的、距离有限的点发出。根据这一观察，可以从曲面线元的椭圆形式（第224页）
+
+\[
+ ds^2=du^2+R^2\senh^2\left(\frac uR\right)dv^2
+\]
+
+出发，把它同平面极坐标中的线元
+
+\[
+ ds^2=d\rho^2+\rho^2d\theta^2.
+\]
+
+相比较。化为等温参数后，可见表示公式为
+
+\[
+ \log\tgh\left(\frac u{2R}\right)+iv=m(\log\rho+i\theta)+a+ib,
+\]
+
+其中 $m,a,b$ 为实常数。考虑角度在 $\rho=0$ 附近也应被保存，故取 $m=1$。
+
+
+
+常数 $b$ 可取为零；再把图形作一次位似变换，也可令常数 $a$ 为零。因此表示公式简化为
+
+\[
+\tag{9}
+ \rho=\tgh\left(\frac u{2R}\right),\qquad \theta=v
+\]
+
+并且边界圆为半径 $=1$ 的圆；当 $\rho=1$ 时，$u=\infty$。
+
+
+
+这一表示同我们出发时所用的表示一样，与球面的极点立体投影共有下列重要性质：
+
+\emph{曲面上任一测地曲率为常数的曲线，在平面上的像都是圆，反之亦然。}
+
+
+
+为证明，先注意在任一伪球面（或任意常曲率曲面）中，按测地平行于一条常测地曲率曲线的各线，其测地曲率仍为常数，并与其正交轨道形成等温系统。事实上，取 \(u,v\) 为坐标曲线：以 \(v=\text{常数}\) 表示与 L 正交的测地线，以 \(u=\text{常数}\) 表示其正交轨道，并令 \(u=0\) 为曲线 L；又令参数 \(v\) 为 \(u=0\) 上自一固定点量起的弧长，而 \(u\) 为各测地线上自 \(u=0\) 量起的弧长。于是线元具有形式（第221页）
+
+\[
+ ds^2=du^2+\left(\varphi(v)e^{\frac uR}+\psi(v)e^{-\frac uR}\right)^2\,dv^2,
+\]
+
+由于 $u=0$ 的测地曲率按假设恒定
+
+\[
+ \frac1{\rho_0}=\frac1R\frac{\varphi(v)-\psi(v)}{\varphi(v)+\psi(v)}
+\]
+
+因此线元必属 §. 102 的三种典型形式之一 B)、A)、C)，由此证明了该引理。
+
+
+
+由此可知若 L 是曲面上一条测地曲率为常数的曲线，则其正交测地线在平面中为一组圆；由于它们构成一个双重等温系统，这组圆必为一圆束（§. 97）；因此这些圆的所有正交轨道，尤其 L 的像，都是正交圆束中的圆。
+
+
+
+反之，若 C' 是平面中的一条圆，它与边界圆（或边界直线）共同确定一个圆束；该圆束的正交圆是属于一个等温系统的测地线之像，所以这些测地线的正交轨道就是测地曲率为常数的曲线。
+
+
+
+半径为 R 的伪球面上测地曲率为常数的曲线，按上述线元的 B)、A)、C) 三种典型形式，分为截然不同的三类。第一类测地曲率为 $>\frac1R$，第二类为 $=\frac1R$，第三类为 $<\frac1R$。在平面图像中区分如下：取上半平面表示，设 L 的像圆方程为
+
+\[
+ (x-a)^2+(y-b)^2=r^2
+\]
+
+则由(5*)有
+
+\[
+ ds^2=\frac{R^2}{y^2}(dx^2+dy^2),
+\]
+
+再由 Bonnet 公式（第183页）得
+
+\[
+ \frac1{\rho_g}=\frac1R\cdot\frac br.
+\]
+
+这与前述结论一致，也表明 L 属于第一、第二或第三类，依次对应其像圆完全在上半平面内、与实轴相切，或与实轴相交\srcfn{1}{在后一种情况下，若以 $\psi$ 表示像圆与边界直线的倾角，则显然
+
+\[
+ \frac1{\rho_g}=\frac{\cos\psi}{R}.
+\]}. 第一类曲线是真正的测地圆，其中心实且距离有限。该中心在上半平面的像，是所有同时与边界直线及 L 的像圆正交的圆所通过的点。在第二类情形，此点落在边界直线上，而其在曲面上的客观点退至无穷远；因此测地曲率为 $\frac1R$ 的曲线可视为中心在无穷远的测地圆，也称\emph{极限圆（oricicli）}。最后，我们还把测地圆这一名称扩展到第三类；此时同时与边界直线及 L 的像圆正交的圆束具有虚基点，所以把测地曲率为常数且 $<\frac1R$ 的曲线称为\emph{具有理想中心的测地圆}。最后这一类圆也可定义为与一条测地线测地平行的曲线。
+
+
+
+最后再观察，在第二表示中，测地圆仍可按其像圆是否完全在边界圆内、内切或与边界圆相交，将三类分开。
+
+
+
+\subsection*{§. 178.\\ 平行测地线与平行角。}
+
+
+
+现在在伪球面上取一条测地线 \(g\) 和一点 \(o\)，其中该点位于 \(g\) 之外；考察由 \(o\) 发出的测地线束相对于测地线 \(g\) 的行为。我们使用第二种共形表示，并使点 \(o\) 的像是中心 \(O\)，即圆 \(\Gamma\) 的中心。测地线 \(g\) 的像是圆 \(G\)，它与 \(\Gamma\) 正交；而由 \(o\) 发出的测地线束之像是以 \(O\) 为中心的直线束。设 \(A,B\) 为 \(G\) 与 \(\Gamma\) 的交点；经过 \(O\) 且落在角 \(A\widehat O B\) 内的直线与 \(G\) 相交于实点，其他直线则不相交。在曲面上，\(OA,OB\) 所对应的客观测地线就是 \(oa,ob\)，称为与 \(g\) 平行，因为它们同 \(g\) 的交点位于无穷远。它们划定了测地线束 \((o)\) 的界限：一边是与 \(g\) 相交于实点的测地线，另一边是不与它相交的测地线。
+
+
+
+\figseven
+
+\figsevena
+
+\ednote{原扫描的 Fig. 7 将下方顶点标作 \(G\)，而紧随其后的正文明确规定 \(C\) 为圆 \(G\) 的圆心。本译图保留源图的字面 \(G\)；下文则依正文定义继续用 \(C\)。这一源内冲突不作静默校改。}
+
+
+
+若从点 \(o\) 降下测地线 \(op\)，使它垂直于 \(g\)，则其像是最短距离 \(OP\)，即 \(O\) 到圆 \(G\) 的最短距离；由于角 \(A\widehat OP\)、\(B\widehat OP\) 相等，也有 \(a\widehat op=b\widehat op\)。
+
+
+
+这个角 \(\alpha=a\widehat op\) 称为点 \(o\) 相对于测地线 \(g\) 的平行角；如下将见，它只依赖于测地距离 \(\delta=op\)，即点 \(o\) 到测地线 \(g\) 的距离。为了求 \(\alpha\) 与 \(\delta\) 的关系，设 \(C\) 为 \(G\) 的圆心（在 \(OP\) 上），由直角三角形 \(OCA\) 得
+
+\[
+ \overline{CA}^{2}+\overline{OA}^{2}=(\overline{CP}+\overline{OP})^{2}=\overline{CA}^{2}+\overline{OP}^{2}+2\,\overline{CA}\cdot\overline{OP},
+\]
+
+所以
+
+\[
+ \overline{CA}=\frac{\overline{OA}^{2}-\overline{OP}^{2}}{2\overline{OP}}.
+\]
+
+又有
+
+\[
+ \overline{OA}=1,\qquad \overline{CA}=\tg\alpha
+\]
+
+并由表示式(9)
+
+\[
+ \overline{OP}=\tgh\left(\frac{\delta}{2R}\right);
+\]
+
+故得
+
+\[
+\tag{10}
+ \cot\alpha=\senh\left(\frac{\delta}{R}\right),
+\]
+
+可写成等价形式
+
+\[
+\tag{10*}
+ \cot\frac{1}{2}\alpha=e^{\frac{\delta}{R}}.
+\]
+
+于是\emph{任一伪球面点 $o$ 都过两条与固定测地线 $g$ 平行的测地线；平行角 $\alpha$ 与测地距离 $\delta$（即 $o$ 到 $g$ 的距离）由公式 (10) 或 (10*) 联系。}
+
+
+
+当 $\delta$ 越小，$\alpha$ 越趋于 $\frac{\pi}{2}$，即两条平行测地线趋于合并成一条；这对应于 $o$ 趋近于 $g$。
+
+
+
+\subsection*{§. 179.\\ 测地三角形与伪球三角学。}
+
+
+
+取一个曲面上的测地三角形 \(oab\)，并作第二种共形表示，使顶点 \(o\) 的像落在边界圆的中心 \(O\)。像三角形 \(OAB\) 由两条直线段 \(OA,OB\) 与一段同边界圆正交的圆弧 \(AB\) 构成；若以 \(D,E\) 表示 \(OA,OB\) 与圆 \(AB\) 的另外两个交点，并设后者圆心为 \(C'\)，则有
+
+\[
+ OA\cdot OD=1,\\ OB\cdot OE=1,
+\]
+
+\[
+ \ang A=A\widehat ED,
+ \qquad \ang B=B\widehat DE,
+\]
+
+于是
+
+\[
+ \ang\widehat A+\ang\widehat B+\ang\widehat O=\pi-A\widehat{C'}B.
+\]
+
+
+
+\figeight
+
+
+
+按 Gauss 定理（第210页）可见，\emph{测地三角形三内角和小于两个直角；}而角亏等于面积除以 $R^2$（同上），本图中的角亏就是角 \(\alpha=A\widehat{C'}B\)，故有\ednote{意大利文在这里两次写作“超额”（eccesso），但同一句明确说三角形内角和小于两个直角，且随后给出的正面积公式所用的量是角亏。译文据此写作“角亏”；意大利文版仍须保留原字样。}
+
+\[
+ \Delta=R^2\alpha\srcfnmark{1}.
+\]
+
+\srcfntext{1}{从该简单公式可直接证明如下定理：1.\textsuperscript{o} 若一测地三角形在伪球面上面积固定且底边长度和位置固定，则顶点轨迹是一条理想中心圆。2.\textsuperscript{o} 在两边长度给定的测地三角形中，面积最大者是这两条给定边的夹角等于另两角之和的情形。最后这一定理为平面几何与球面几何所共有；众所周知，全部等周理论都可建立在它之上。}
+
+
+
+我们再观察，在任何测地三角形中，都可如平面和球面几何那样作其外切测地圆；在当前情形下，该圆可为实中心的真正测地圆，也可为极限圆，或有理想中心。在平面图像中区分这三种情形，只须作圆 $AOB$，观察它是完全位于边界圆内、与边界圆相切，还是与之相交。
+
+
+
+正如球面几何中一样，在伪球几何中，一个三角形由其三个元素确定；因此需要考察联系三边和三角的关系（其中三条独立），也就是伪球三角学公式。设 \(ABC\) 为测地三角形，以 \(A,B,C\) 表示三个角，以 \(a,b,c\) 表示其对边；全部伪球三角学都包含在下述观察中：
+
+
+
+\emph{半径 $R$ 的伪球面的三角公式，可由半径 $R$ 的球面的相应公式得到，只须把后者中的 $R$ 换成 $R\sqrt{-1}$。}
+
+
+
+于是边的三角函数由双曲函数代替三角函数。
+
+
+
+要证该定理，仅需证明三条基本公式
+
+\[
+\tag{11}
+ \frac{\senh\left(\frac aR\right)}{\sen A}=\frac{\senh\left(\frac bR\right)}{\sen B}=\frac{\senh\left(\frac cR\right)}{\sen C}.
+\]
+
+\[
+\tag{12}
+ \cos A=\sen B\sen C\cosh\left(\frac aR\right)-\cos B\cos C,
+\]
+
+即可；按上述替换，它们可由球面三角学的三条基本公式推出。
+
+
+
+将三角形 \(CAB\) 表示在平面上，使顶点 \(C\) 的像落在边界圆中心 \(C\)，并把像三角形的直线边 \(CA,CB\) 延长，使它们再分别在 \(A',B'\) 与第三边 \(AB\) 的像圆相交（图9），于是
+
+\[
+ \overline{CA}\cdot\overline{CA'}=1,
+ \qquad
+ \overline{CB}\cdot\overline{CB'}=1.
+\]
+
+
+
+\fignine
+
+
+
+若对角线 \(AB'\)、\(A'B\)，即四边形 \(ABB'A'\) 的两条对角线，相交于 \(M\)，则由相似三角形 \(AA'M\)、\(BB'M\) 得
+
+\[
+ \overline{AA'}:\overline{BB'}=\overline{MA'}:\overline{MB'}=\sen A:\sen B.
+\]
+
+按表示式
+
+\[
+ \overline{CA}=\tgh\left(\frac b{2R}\right),\qquad
+ \overline{CB}=\tgh\left(\frac a{2R}\right),
+\]
+
+故
+
+\[
+ \overline{AA'}=\frac1{\overline{CA}}-\overline{CA}=\frac{2}{\senh\left(\frac bR\right)},
+\]
+
+\[
+ \overline{BB'}=\frac1{\overline{CB}}-\overline{CB}=\frac{2}{\senh\left(\frac aR\right)},
+\]
+
+所以
+
+\[
+ \frac{\senh\left(\frac aR\right)}{\sen A}=\frac{\senh\left(\frac bR\right)}{\sen B}.
+\]
+
+而这两个比值显然同样等于
+
+\[
+ \frac{\senh\left(\frac cR\right)}{\sen C},
+\]
+
+故(11)成立。
+
+
+
+证(12)则注意
+
+\[
+ \frac{\overline{CB'}}{\overline{CA}}=\frac{\sen A'\widehat A B'}{\sen A\widehat B'C},
+ \qquad
+ \frac{\overline{CB}}{\overline{CA}}=\frac{\sen A'\widehat B B}{\sen B'\widehat A'A},
+\]
+
+所以
+
+\[
+ \frac{\overline{CB'}}{\overline{CB}}=\coth^2\left(\frac a{2R}\right)=
+ \frac{\sen A'\widehat A B'\,\sen B'\widehat A'A}
+ {\sen A\widehat B'C\,\sen A'\widehat B'B}.
+\]
+
+又
+
+\[
+ A+B+C=\pi-2A\widehat B'C,
+ \quad -A+B+C=\pi-2A'\widehat B'B,
+\]
+
+\[
+ A-B+C=\pi-2B'\widehat A'A,
+ \quad A+B-C=\pi-2A'\widehat A B',
+\]
+
+上述式可写为
+
+\[
+ \coth^2\left(\frac a{2R}\right)=
+ \frac{\cos\frac{A+B-C}{2}\cos\frac{A-B+C}{2}}
+ {\cos\frac{A+B+C}{2}\cos\frac{-A+B+C}{2}}
+ =\frac{\cos A+\cos(B-C)}{\cos A+\cos(B+C)},
+\]
+
+即
+
+\[
+ \cos A+\cos B\cos C=\sen B\sen C\left(\cosh^2\frac a{2R}+\senh^2\frac a{2R}\right),
+\]
+
+这恰是(12)。
+
+
+
+同一结论也可直接由旋转曲面的测地线定理在
+
+\[
+ ds^2=du^2+R^2\senh^2\left(\frac uR\right)dv^2.
+\]
+
+下推出；因此(11)也可由 Clairaut 定理（第208页）直接得到。
+
+
+
+\emph{观察。} —— 在应用伪球三角公式时须注意，伪球几何里可出现与通常球面几何完全不同的情形，例如一个顶点、两个顶点，乃至三个顶点都落在无穷远处。例如，设三角形在 $A$ 处为直角，并应用公式
+
+\[
+ \tgh\left(\frac bR\right)=\senh\left(\frac cR\right)\tg B,
+\]
+
+若保持 $A,B$ 不变而令 $C$ 顶点趋于无穷，则
+
+\[
+ \lim\tgh\left(\frac bR\right)=1,
+\]
+
+先前公式化为(10)，即平行角公式。
+
+
+
+\subsection*{§. 180.\\ 非欧几何与贝尔特拉米表示。}
+
+
+
+此前各节所发展的伪球几何主要定理，同平面几何和球面几何的定理显然有密切的类比。我们可以先验地看出这些类比以及三种几何之间差别的原因。考察 Euclid 第一卷所列平面几何的基本公理和公设，并在伪球面上以测地线代替直线，就会看到：撇开关于平行线的第 XII 公设，其余公理都原封不动地成立。特别是图形可叠合原理，以及一条测地线由其两点唯一确定的原理，都是如此。因此，不依赖平行公设的平面几何定理也适用于伪球几何；其余定理则有所改变，但当伪球面的半径 \(R\) 变得无限大时，又还原为旧有定理。
+
+
+
+前述说明已经表明了试图证明并行公设徒劳的原因。若该公设能由其他公理逻辑推出，它应当在欧几里得空间中的伪球面，乃至任意空间中的伪球面上都成立。
+
+
+
+事实上，当平面几何不采用 Euclid 的平行公设时，人们便得到所谓抽象几何或非欧几何；其基础由 Bolyai 与 Lobatschevsky 建立，并且在承认直线无限延伸的条件下，与伪球几何完全一致。
+
+
+
+第一个确定非欧几何定理在伪球面上具有实际解释的人是 Beltrami，他在著名论文\emph{Saggio d'interpretazione della geometria non-euclidea（《非欧几何解释试论》）}中建立了这一点。Beltrami 的这些研究以伪球面的一种平面表示为基础；它同前面研究的表示之间的关系，正如球面的中心投影同极点立体投影之间的关系。
+
+
+
+我们按照 Klein 指出的方法，从 §. 177 的表示推出 Beltrami 表示。设想一个球在边界圆中心与表示平面相切，并使球的直径等于边界圆的半径。从相反的球极把平面立体投影到球面上：边界圆投到球的赤道，圆内各点投到上半球，而与边界圆正交的各圆（曲面测地线的像）则化为所在平面与赤道平面正交的圆。现在把下半球各点正交投影到赤道平面；由此得到伪球面的一种新平面表示，其中全部实区域都落在赤道圆内，测地线的像则为这个边界圆的弦。这就是 Beltrami 表示。除图形中心附近的角以外，它不保持角度。
+
+
+
+把上述 Klein 构造写成解析形式，就能立即得到 Beltrami 表示公式。设球半径为 $a$，则边界圆半径为 $2a$；由 §. 177 的表示公式有
+
+\[
+ \rho=2a\,\tgh\left(\frac u{2R}\right),\qquad \theta=v.
+\]
+
+再以 $x,y$ 表示 Beltrami 表示中对应点在赤道平面上的正交笛卡儿坐标，以 $\rho_1,\theta_1$ 表示其极坐标，则
+
+\[
+ \rho_1=\frac{4a^2\rho}{\rho^2+4a^2}=a\,\tgh\left(\frac uR\right),\qquad \theta_1=\theta,
+\]
+
+即
+
+\[
+\tag{13}
+ x=a\,\tgh\left(\frac uR\right)\cos v,
+ \qquad
+ y=a\,\tgh\left(\frac uR\right)\sen v.
+\]
+
+若取曲面上的坐标线（测地线）\(x=\text{常数}\)、\(y=\text{常数}\)，则由曲面的线元
+
+\[
+ ds^2=du^2+R^2\senh^2\left(\frac uR\right)dv^2
+\]
+
+并利用式(13)，得到
+
+\[
+\tag{14}
+ ds^2=R^2\frac{(a^2-y^2)dx^2+2xy\,dx\,dy+(a^2-x^2)dy^2}{(a^2-x^2-y^2)^2},
+\]
+
+这就是贝尔特拉米基本形式。由前述，显然在这些 $x,y$ 坐标中任何测地线方程均为线性，反之亦然。
+
+
+
+\subsection*{§. 181.\\ 由线性方程表示测地线。}
+
+
+
+伪球面线元的公式（14）曾由 Beltrami 在一篇较早的论文中得到\srcfn{1}{\emph{Annali di matematica（《数学年刊》）}，第7卷，第185页（1866）。}；他在其中提出并解决了寻找可在平面上作测地表示的曲面这一问题，也就是说，要使曲面的测地线在平面上表示为直线。他发现，能作这种测地表示的曲面只有常曲率曲面。我们在这里要迅速建立这一重要结果。
+
+
+
+在表示平面上取笛卡儿坐标系 $(u,v)$，设
+
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+
+为该曲面对应的线元。按假设，测地线的一般积分为
+
+\[
+ v=au+b,
+\]
+
+其中 \(a,b\) 为任意常数；但其微分方程按(10*) §. 87（第188页）写为
+
+\[
+ v''=\chrB{22}{1}v'^3+\left[2\chrB{12}{1}-\chrB{22}{2}\right]v'^2+
+ \left[\chrB{11}{1}-2\chrB{12}{2}\right]v'-\chrB{11}{2},
+\]
+
+从而 \(E,F,G\) 必须满足
+
+\[
+ \chrB{11}{2}=0,
+ \quad \chrB{22}{1}=0,
+ \quad
+ \chrB{11}{1}=2\chrB{12}{2},
+ \quad
+ \chrB{22}{2}=2\chrB{12}{1}.
+\]
+
+再取 §. 37 关于曲率 $K$ 的四个公式 (IV)（第77页）；在本例中它们化为
+
+\[
+\tag{15}
+\begin{cases}
+KE=\chrB{12}{2}^{2}-\dfrac{\partial}{\partial u}\chrB{12}{2},&
+KF=\chrB{12}{1}\chrB{12}{2}-\dfrac{\partial}{\partial u}\chrB{12}{1},\\[.4em]
+KF=\chrB{12}{1}\chrB{12}{2}-\dfrac{\partial}{\partial v}\chrB{12}{2},&
+KG=\chrB{12}{1}^{2}-\dfrac{\partial}{\partial v}\chrB{12}{1}.
+\end{cases}
+\]
+
+对第一式对 $v$ 求导、对第二式对 $u$ 求导并相减，并用
+
+\[
+ \frac{\partial E}{\partial v}-\frac{\partial F}{\partial u}=\chrB{12}{1}E-\chrB{12}{2}F
+\]
+
+及前式，可得
+
+\[
+\tag{16}
+ E\frac{\partial K}{\partial v}-F\frac{\partial K}{\partial u}=0.
+\]
+
+同理对（15）的第二组作同样处理可得
+
+\[
+ F\frac{\partial K}{\partial v}-G\frac{\partial K}{\partial u}=0
+\]
+
+与之联立后得到
+
+\[
+ \frac{\partial K}{\partial u}=0,
+ \qquad
+ \frac{\partial K}{\partial v}=0,
+\]
+
+即 $K=\text{常数}$，与先前断言一致。
+
+
+
+由定理得证后，只需注意：若曲率为正常数的曲面，即球面，则所需表示由中心投影与表示平面的一个射影变换复合而得；同理对伪球面，只需在 §. 180 的表示之后再接一个射影变换即可。
+
+
+
+\subsection*{§. 182.\\ 求测地线的黎卡提方程。}
+
+
+
+在第七章（§. 101）我们已给出定理：\emph{给定常曲率曲面的测地线方程积分可约化为一类一阶黎卡提型微分方程。} 本节我们将专门证明该结论在伪球面中的情形（球面情形已由第IV章 §. 58 关于已给定两基本形式的曲面确定定理中一般论证）。
+
+
+
+设
+
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+
+为给定伪球面 \(S\) 的线元；为简单起见，把它的半径 \(R\) 取作 \(=1\)。为解求测地线的问题，只需知道曲面上的一个平行极限圆系，以及从曲面的同一无穷远点发出的正交测地线系；一旦知道这样的系统，就可以作 §. 172 的共形表示，从而知道所有测地线。
+
+
+
+现在用 $\theta$ 表示所定平行系测地线与等值线 $v=\text{常数}$ 的夹角，并按第90页基本公式定义为
+
+\[
+ \tg\theta=\frac{\sqrt{EG-F^2}\,dv}{E\,du+F\,dv},
+\]
+
+其中 \(du,dv\) 是沿其中一条平行测地线移动时曲线坐标 \(u,v\) 的增量。若 \(\theta(u,v)\) 已知，则积分下列微分方程即可得到这些测地线的有限方程：
+
+\[
+\tag{a}
+ E\sen\theta\,du+\left(F\sen\theta-\sqrt{EG-F^2}\cos\theta\right)dv=0,
+\]
+
+依 Lie 定理（§. 47，第 III 章），它可由求积得到。同样，正交极限圆的微分方程也可由求积积分：
+
+\[
+\tag{b}
+ E\cos\theta\,du+\left(F\cos\theta+\sqrt{EG-F^2}\sen\theta\right)dv=0.
+\]
+
+利用 Bonnet 公式（4*）§. 85（第183页）可知曲线 (a) 的测地曲率为零、(b) 的为 \(1\)；从而得方程组
+
+\[
+\begin{cases}
+\dfrac{\partial}{\partial u}\left(\dfrac{F}{\sqrt E}\cos\theta+
+\dfrac{\sqrt{EG-F^2}}{\sqrt E}\sen\theta\right)-
+\dfrac{\partial}{\partial v}(\sqrt E\cos\theta)=0,\\[.8em]
+\dfrac{\partial}{\partial u}\left(\dfrac{\sqrt{EG-F^2}}{\sqrt E}\cos\theta-
+\dfrac{F}{\sqrt E}\sen\theta\right)+
+\dfrac{\partial}{\partial v}(\sqrt E\sen\theta)=\sqrt{EG-F^2}.
+\end{cases}
+\]
+
+实行微分并解出 \(\frac{\partial\theta}{\partial u}\)、\(\frac{\partial\theta}{\partial v}\)，再引入 Christoffel 符号以及坐标线的夹角 \(\omega\)，后者由下式定义：
+
+\[
+ \cos\omega=\frac{F}{\sqrt{EG}},
+ \qquad
+ \sen\omega=\frac{\sqrt{EG-F^2}}{\sqrt{EG}},
+\]
+
+可得未知函数 $\theta(u,v)$ 满足
+
+\[
+\tag{c}
+\begin{cases}
+\dfrac{\partial\theta}{\partial u}=-\sqrt E\sen\theta-
+\chrB{11}{2}\dfrac{\sqrt\Delta}{E},\\[.7em]
+\dfrac{\partial\theta}{\partial v}=-\sqrt G\sen(\theta-\omega)-
+\dfrac{\sqrt\Delta}{E}\chrB{12}{2},
+\end{cases}
+\]
+
+即全微分方程
+
+\[
+\tag{15*}
+ d\theta+\left[\sqrt E\sen\theta+\chrB{11}{2}\frac{\sqrt\Delta}{E}\right]du+
+ \left[\sqrt G\sen(\theta-\omega)+\frac{\sqrt\Delta}{E}\chrB{12}{2}\right]dv=0,
+\]
+
+以 $\tg\frac12\theta$ 为未知量，上式立即化为黎卡提形式。由于存在一参数无穷族的平行测地线，所以上一方程有一个含任意常数的积分 $\theta$；因此事先即可看出，(15*) 的可积条件恒等满足。
+
+
+
+此可由取 $K=-1$ 并用曲率公式 (V) 第77页直接确认。
+
+
+
+\subsection*{§. 183.\\ 非欧平面上的 Weierstrass 坐标。}
+
+
+
+二维伪球流形的几何，正如 §. 180 所见，与\emph{非欧平面}的几何一致；流形的测地线对应于非欧平面的\emph{直线}。在许多非欧几何研究中，使用一组特殊坐标十分有用，它们称为\emph{Weierstrass 坐标}\srcfn{1}{Weierstrass 只在课程讲授中使用过这些坐标（见 Killing, \emph{Nicht-euklidische Raumformen}, Art. 12）。}，我们现在说明。它们可直接由 Beltrami 测地表示的正交笛卡儿坐标 $x,y$ 换成齐次坐标而得，即令
+
+\[
+ x=\frac{x_1}{x_0},\qquad y=\frac{x_2}{x_0}.
+\]
+
+为方便起见取 $R=1$，也就是把伪球流形的半径作为长度单位；又把 Beltrami 表示中边界圆的半径取作 \(=1\)。表示流形实点的点 \((x,y)\) 位于边界圆内，故
+
+\[
+ x^2+y^2<1,
+\]
+
+故
+
+\[
+ x_1^2+x_2^2<x_0^2;
+\]
+
+齐次坐标 \(x_0,x_1,x_2\) 中仍有任意比例因子；我们令
+
+\[
+\tag{17}
+ x_0^2-x_1^2-x_2^2=1.
+\]
+
+于是由（13）§. 180 得到
+
+\[
+\tag{18}
+ x_0=\cosh u,
+ \qquad x_1=\senh u\cos v,
+ \qquad x_2=\senh u\sen v,
+\]
+
+它们表示非欧平面上一点的 Weierstrass 坐标 \((x_0,x_1,x_2)\)，以与椭圆型线元相应的测地坐标 \((u,v)\) 表出：
+
+\[
+ ds^2=du^2+\senh^2 u\,dv^2
+\]
+
+（§. 102）。
+
+首先考察给出两点间测地距离 \(d\) 的公式。设第一点为 \(P=(u,v,x_0,x_1,x_2)\)，第二点为 \(P'=(u',v',x'_0,x'_1,x'_2)\)。按 (18) 令
+
+\[
+ x_0=\cosh u,
+ \qquad x_1=\senh u\cos v,
+ \qquad x_2=\senh u\sen v,
+\]
+
+由伪球三角公式得
+
+\[
+ \cosh d=\cosh u\cosh u'-\senh u\senh u'\cos(v-v');
+\]
+
+于是所求公式为
+
+\[
+\tag{19}
+ \cosh d=x_0x'_0-x_1x'_1-x_2x'_2.
+\]
+
+伪球面的测地线在 Weierstrass 坐标中满足线性齐次方程（§. 181）
+
+\[
+\tag{20}
+ \xi_0x_0-\xi_1x_1-\xi_2x_2=0.
+\]
+
+该直线在平面中对应曲面的真实测地线时，必须是边界圆弦，故
+
+\[
+ \xi_1^2+\xi_2^2>\xi_0^2.
+\]
+
+固定直线的齐次坐标 \(\xi_0,\xi_1,\xi_2\) 的比例因子，使
+
+\[
+\tag{20*}
+ \xi_1^2+\xi_2^2-\xi_0^2=1,
+\]
+
+并把 $\xi_0,\xi_1,\xi_2$ 称为该直线或该测地线的 Weierstrass 坐标；它们亦是直线 (20) 关于边界圆的极点坐标。
+
+
+
+现取两线元 $ds,\delta s$，由点 $(u,v)$ 分别到 $(u+du,v+dv)$、$(u+\delta u,v+\delta v)$，设 \(\Theta\) 为 \(ds\) 与 \(\delta s\) 的夹角，则
+
+\[
+ \cos\Theta=\frac{du\,\delta u+\senh^2u\,dv\,\delta v}{ds\,\delta s}.
+\]
+
+由(18)立刻得
+
+\[
+ ds^2=dx_0^2-dx_1^2-dx_2^2,
+\]
+
+\[
+ dx_0\delta x_0-dx_1\delta x_1-dx_2\delta x_2=du\,\delta u+\senh^2u\,dv\,\delta v,
+\]
+
+于是
+
+\[
+ \cos\Theta=\frac{dx_0\delta x_0-dx_1\delta x_1-dx_2\delta x_2}{ds\,\delta s},
+\]
+
+并且
+
+\[
+ \left(\frac{dx_0}{ds}\right)^2-\left(\frac{dx_1}{ds}\right)^2-\left(\frac{dx_2}{ds}\right)^2=1,
+\quad
+ \left(\frac{\delta x_0}{\delta s}\right)^2-\left(\frac{\delta x_1}{\delta s}\right)^2-\left(\frac{\delta x_2}{\delta s}\right)^2=1.
+\]
+
+若设线元 \(\delta s\) 在直线 \((\xi_0,\xi_1,\xi_2)\) 上，而线元 \(ds\) 在点 \((x_0,x_1,x_2)\) 处与它正交，则
+
+\[
+ \xi_0x_0-\xi_1x_1-\xi_2x_2=0,
+\]
+
+且
+
+\[
+ dx_0\delta x_0-dx_1\delta x_1-dx_2\delta x_2=0,
+\]
+
+\[
+ \xi_0\,\delta x_0-\xi_1\,\delta x_1-\xi_2\,\delta x_2=0,
+\]
+
+故
+
+\[
+ dx_0:dx_1:dx_2=\xi_0:\xi_1:\xi_2,
+\]
+
+从而
+
+\[
+ \xi_0=\frac{dx_0}{ds},\qquad \xi_1=\frac{dx_1}{ds},\qquad \xi_2=\frac{dx_2}{ds}.
+\]
+
+故可见：\emph{一条直线的 Weierstrass 坐标，等于该直线上一点的坐标沿直线法向的导数。}
+
+
+
+从上述式子还得出：若 $(\xi_0,\xi_1,\xi_2)$, $(\eta_0,\eta_1,\eta_2)$ 是两条有公共点 $(x_0,x_1,x_2)$（在边界圆内）的直线坐标，则其在非欧度量下夹角 $\Theta$ 满足
+
+\[
+\tag{21}
+ \cos\Theta=\xi_1\eta_1+\xi_2\eta_2-\xi_0\eta_0.
+\]
+
+特别当
+
+\[
+ \xi_1\eta_1+\xi_2\eta_2-\xi_0\eta_0=0,
+\]
+
+两直线在非欧意义下正交，即它们关于边界圆共轭。
+
+
+
+应注意，式(21)右端的绝对值只有在两条直线的交点位于边界圆内时才 \(<1\)，因而 \(\Theta\) 才为实数；若
+
+\[
+ \xi_1\eta_1+\xi_2\eta_2-\xi_0\eta_0>1
+\]
+
+交点在边界圆外，(21)给出纯虚的 $\Theta$。在临界情形
+
+\[
+ \xi_1\eta_1+\xi_2\eta_2-\xi_0\eta_0=1
+\]
+
+两条直线在非欧意义下平行（交于边界圆上）。
+
+
+
+现取一点 $(x_0,x_1,x_2)$ 与过它的直线 $(\xi_0,\xi_1,\xi_2)$，即
+
+\[
+ \xi_0x_0-\xi_1x_1-\xi_2x_2=0.
+\]
+
+在直线 \((\xi)\) 于点 \((x)\) 的法线上截取一段非欧长度为 $=\delta$ 的线段；设其端点坐标为 $\overline x_0,\overline x_1,\overline x_2$。因为这条法线经过该直线的极点 $\xi_0,\xi_1,\xi_2$，有
+
+\[
+ \overline x_0=\lambda x_0+\mu\xi_0,
+ \quad
+ \overline x_1=\lambda x_1+\mu\xi_1,
+ \quad
+ \overline x_2=\lambda x_2+\mu\xi_2.
+\]
+
+\(\lambda,\mu\) 可由下述观察确定：按(19)
+
+\[
+ \overline x_0x_0-\overline x_1x_1-\overline x_2x_2=\cosh\delta;
+\]
+
+又由
+
+\[
+ \overline x_0^2-\overline x_1^2-\overline x_2^2=1,
+\]
+
+得 $\lambda=\cosh\delta$, $\mu=\pm\senh\delta$。故所求为
+
+\[
+\tag{22}
+\begin{gathered}
+ \overline x_0=x_0\cosh\delta\pxChTwelvePlusMinus\xi_0\senh\delta,\qquad
+ \overline x_1=x_1\cosh\delta\pxChTwelvePlusMinus\xi_1\senh\delta,\\
+ \overline x_2=x_2\cosh\delta\pxChTwelvePlusMinus\xi_2\senh\delta.
+\end{gathered}
+\]
+
+\ednote{原书第410页公式 (22) 的三行在第二项前都清楚印有正负号；现有意大利文与英译 TeX 均把这三个正负号误录为单独的加号。本译依源图恢复。}
+
+由此可推出给出非欧距离 \(\delta\) 的公式，即点 \((x_0,x_1,x_2)\) 到直线 \((\xi_0,\xi_1,\xi_2)\) 的距离：
+
+\[
+\tag{23}
+ \senh\delta=\xi_0x_0-\xi_1x_1-\xi_2x_2.
+\]
+
+
+
+\subsection*{§. 184.\\ Weierstrass 坐标的 Weingarten 偏微分方程。}
+
+
+
+要在伪球面上建立一组 Weierstrass 坐标，必须知道曲面的测地线。若只给定一个二次微分形式
+
+\[
+ E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+
+其常曲率 $K$ 为负，并再取 $=-1$，它定义伪球面（或非欧平面）的 $ds^2$，那么为了求得相应的一组 Weierstrass 坐标 $x_0,x_1,x_2$，就必须积分一个黎卡提方程（§. 182）；这三个坐标是 $u,v$ 的函数，并满足联立方程
+
+\[
+\tag{24}
+\begin{cases}
+ x_0^2-x_1^2-x_2^2=1,\\
+ dx_1^2+dx_2^2-dx_0^2=E\,du^2+2F\,du\,dv+G\,dv^2.
+\end{cases}
+\]
+
+现在要注意，三个函数 $x(u,v)$ 是一个重要的二阶偏微分方程组的积分；该方程组与第152页的方程(4)完全类似，后者给出球面上一点的坐标 $X,Y,Z$，其中球的半径为 $1$，而这些坐标只由球的第一基本形式定义。为建立这一方程组（Weingarten 首次在《\emph{Giornale di Crelle}》第94卷中建立）\srcfn{1}{\emph{Ueber die Eigenschaften des Linienelementes der Flächen von constantem Krümmungsmass}.}，我们可以直接处理方程(24)，或者只须观察，若令
+
+\[
+ x_0=X,
+ \qquad x_1=iY,
+ \qquad x_2=iZ,
+\]
+
+则(24)化为
+
+\[
+\begin{cases}
+ X^2+Y^2+Z^2=1,\\
+ dX^2+dY^2+dZ^2=-(E\,du^2+2F\,du\,dv+G\,dv^2),
+\end{cases}
+\]
+
+而形式
+
+\[
+ -(E\,du^2+2F\,du\,dv+G\,dv^2)
+\]
+
+显然曲率为 $K=+1$，因此解析上被约化到上述方程(4) §. 72。故结论是：
+
+
+
+\emph{给定二次微分形式 $E\,du^2+2F\,du\,dv+G\,dv^2$，其曲率为 $K=-1$，因而它作为线元的平方属于非欧平面；平面上一点的 Weierstrass 坐标 $x_0,x_1,x_2$ 是下列联立方程组的解：}
+
+\[
+\tag{A}
+\begin{cases}
+\dfrac{\partial^2x}{\partial u^2}=
+\chrB{11}{1}\dfrac{\partial x}{\partial u}+
+\chrB{11}{2}\dfrac{\partial x}{\partial v}+Ex,\\[.7em]
+\dfrac{\partial^2x}{\partial u\partial v}=
+\chrB{12}{1}\dfrac{\partial x}{\partial u}+
+\chrB{12}{2}\dfrac{\partial x}{\partial v}+Fx,\\[.7em]
+\dfrac{\partial^2x}{\partial v^2}=
+\chrB{22}{1}\dfrac{\partial x}{\partial u}+
+\chrB{22}{2}\dfrac{\partial x}{\partial v}+Gx.
+\end{cases}
+\]
+
+由于 $K=-1$，这个系统是无限可积的（参见下一节）；从系统 (A) 的不变性质也可立即看出这一点：把 $ds^2$ 约化为典型形式
+
+\[
+ ds^2=du^2+e^{2u}dv^2
+\]
+
+时，它有三组线性无关解
+
+\[
+ e^u,
+ \qquad ve^u,
+ \qquad v^2e^u+e^{-u}.
+\]
+
+现在特别假设给定的非欧平面 $ds^2$ 具有正交形式，即 $F=0$；记一点的 Weierstrass 坐标为 $x_0,x_1,x_2$，并以
+
+\[
+ \xi_0,\xi_1,\xi_2,
+ \qquad
+ \eta_0,\eta_1,\eta_2
+\]
+
+分别表示坐标（正交）曲线 $u,v$ 的切线坐标；于是有（§. 183）：
+
+\[
+\tag{25}
+\begin{cases}
+\xi_0=\dfrac1{\sqrt E}\dfrac{\partial x_0}{\partial u},
+\quad
+\xi_1=\dfrac1{\sqrt E}\dfrac{\partial x_1}{\partial u},
+\quad
+\xi_2=\dfrac1{\sqrt E}\dfrac{\partial x_2}{\partial u},\\[.8em]
+\eta_0=\dfrac1{\sqrt G}\dfrac{\partial x_0}{\partial v},
+\quad
+\eta_1=\dfrac1{\sqrt G}\dfrac{\partial x_1}{\partial v},
+\quad
+\eta_2=\dfrac1{\sqrt G}\dfrac{\partial x_2}{\partial v}.
+\end{cases}
+\]
+
+在公式 (A) 中代入 Christoffel 符号的实际值（第92页），便得到下列线性系统：
+
+\[
+\tag{A*}
+\left\{
+\begin{aligned}
+\dfrac{\partial x}{\partial u}&=\sqrt E\,\xi,
+&\dfrac{\partial\xi}{\partial u}&=-\dfrac1{\sqrt G}\dfrac{\partial\sqrt E}{\partial v}\,\eta+\sqrt E\,x,
+&\dfrac{\partial\eta}{\partial u}&=\dfrac1{\sqrt G}\dfrac{\partial\sqrt E}{\partial v}\,\xi,\\[.8em]
+\dfrac{\partial x}{\partial v}&=\sqrt G\,\eta,
+&\dfrac{\partial\xi}{\partial v}&=\dfrac1{\sqrt E}\dfrac{\partial\sqrt G}{\partial u}\,\eta,
+&\dfrac{\partial\eta}{\partial v}&=-\dfrac1{\sqrt E}\dfrac{\partial\sqrt G}{\partial u}\,\xi+\sqrt G\,x.
+\end{aligned}
+\right.
+\]
+
+它的解是下列三个三元组：
+
+\[
+ (x_0,\xi_0,\eta_0),
+ \qquad (x_1,\xi_1,\eta_1),
+ \qquad (x_2,\xi_2,\eta_2).
+\]
+
+在一般 $F\ne0$ 的情形下，也可依照 §. 148 处理球面线元的方法，建立一个与系统 (A*) 完全类似的系统。为此，只须把 $(\xi_0,\xi_1,\xi_2)$、$(\eta_0,\eta_1,\eta_2)$ 作为新的未知量；它们是平分坐标线 $(u,v)$ 所成角的直线坐标。
+
+
+
+\begin{center}\rule{2.5cm}{0.4pt}\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

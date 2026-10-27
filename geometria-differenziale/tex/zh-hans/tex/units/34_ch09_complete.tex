@@ -1,0 +1,869 @@
+\section*{第九章}
+\begin{center}
+{\Large\bfseries 演化曲面和Weingarten定理。}
+\end{center}
+
+\noindent 演化曲面两片的一般性质---Ribaucour意义下曲面的平均演化曲面---曲面W，其主曲率半径由一关系式联系---Ribaucour关于演化曲面两片上渐近线对应的定理---按积分求曲面W的曲率线---曲面W的演化曲面两片可等距贴合于旋转曲面（Weingarten定理）---Weingarten逆定理---曲面W所对应的球面线元的特殊形式---用于求最小曲面（\(r_1+r_2=0\)）和Weingarten曲面（\(2(r_2-r_1)=\sen[2(r_1+r_2)]\)）的应用---伪球面曲面的演变曲面与互补曲面。
+
+\subsection*{\S. 124.\quad 演化曲面的两分支。}
+
+我们在本章前半部分回顾曲面的一般性质，然后把所得结果用于一类特别重要的曲面。
+
+我们已经看到，对于曲面S上的任一点M在法线上都有两个特殊点\(M_1,M_2\)，它们是其两条主截面（出自M）对应的主曲率中心。M在曲面S上移动时，曲率中心\(M_1,M_2\)描绘一曲面，这称为S的\emph{演化曲面}，而原曲面称为\emph{演变曲面}。演化曲面显然由两张分支\(S_1,S_2\)构成，一张由中心\(M_1\)描述，另一张由\(M_2\)描述。
+
+我们也可按以下方式生成\(S_1,S_2\)。设C是S的一条曲率线；沿C作法线则形成一可展曲面，其回归边\(\Gamma\)恰是沿C的法截面曲率中心轨迹。若在该系中变化C，则其演化曲线\(\Gamma\)将描绘演化曲面的某一分支。
+
+现先用一些基本几何讨论若干基本性质，并首先证下述定理：
+
+\emph{由沿曲面每一条曲率线的法线所生成的可展曲面，其回归边是演化曲面的测地线。}
+
+为了证明此定理，先注意演化曲面上每一法线都在两点与其相切：在第一分支\(S_1\)于中心\(M_1\)，在第二分支\(S_2\)于中心\(M_2\)。现在取第二族曲率线上一微元\(MM'\)。在\(M,M'\)处的法线相交于第二中心\(M_2\)（忽略高阶无穷小量），并在这些法线上切于第一分支\(S_1\)的各自第一中心\(M_1,M'_1\)。
+
+由此，平面\(MM_2M'\)包含两条不同方向\(M_1M_2,M_1M'_1\)，从\(M_1\)出发并与\(S_1\)相切。因此该平面是第一分支在\(M_1\)处的切平面。故可得
+
+\emph{\(M_1\)在第一分支的法线平行于M上一条第一曲率线的切线；第二分支亦然。}
+
+现若\(C_1\)是第一系的一条曲率线，\(\Gamma_1\)为由沿\(C_1\)的法线生成可展曲面的回归边，则\(C_1\)在M点的切线与对应\(\Gamma_1\)的主法线平行，于是上述定理得证。
+
+我们还可容易地确定演化曲面某一分支（例如第一分支）上这些测地线\(\Gamma_1\)的正交轨线。若\(t_1\)是\(S_1\)上的一条正交轨线，\(t\)是演变曲面上与之对应的曲线，则沿\(t\)的法线生成一可展曲面，而\(t,t_1\)是其母线的两条正交轨线。依定理(A)（第192页），该可展曲面母线上的线段\(MM_1\)，即夹在\(t,t_1\)之间的一段，为常长；所以当M沿\(t\)移动，也就是沿S的曲线\(t\)移动时，第一主曲率半径\(r_1\)保持不变。
+
+所以：
+\emph{由演变曲面的法线在演化曲面某一分支上所包络出的测地线，其正交轨线对应于演变曲面上相应主曲率半径为常数的曲线。}
+\srcfn{1}{值得注意的是，这里给出的\(r_1=\)常数是\(\Gamma_1\)的正交轨线这一性质的证明不依赖于\(\Gamma_1\)先已是测地线。事实上可由演化曲线性质得另一证明：按演化曲线特性，不同正交轨线之间的\(\Gamma_1\)弧段长度都相同（见\S. 89，第192页注）。}
+
+这里排除了所考察的主曲率半径为常数的情形；在这种情形下，如下文将见，相应的演化曲面分支退化为一条曲线。
+
+\subsection*{\S. 125.\quad 演化曲面的基本量计算。}
+
+我们在解析上确认上述基本性质，并据此推出若干更重要结果。
+
+最简便地，在曲面S上取其曲率线坐标\((u,v)\)，并令
+\[
+ ds^2=E\,du^2+G\,dv^2
+\]
+为线元平方，\(r_1,r_2\)为对应\(u,v\)方向的主曲率半径，则（\S. 62, p.131）
+\[
+ D=-\frac{E}{r_2},\quad D'=0,\quad D''=-\frac{G}{r_1},
+\]
+而Codazzi公式在本例中简化为（见\S. 54中（V），第122页）
+\[
+ \frac{\partial}{\partial v}\left(\frac{\sqrt E}{r_2}\right)=\frac1{r_1}\frac{\partial\sqrt E}{\partial v},
+ \qquad
+ \frac{\partial}{\partial u}\left(\frac{\sqrt G}{r_1}\right)=\frac1{r_2}\frac{\partial\sqrt G}{\partial u},
+\]
+即
+\begin{equation}\tag{1}
+\left\{
+\begin{aligned}
+\left(\frac1{r_1}-\frac1{r_2}\right)\frac{\partial\log\sqrt E}{\partial v}-\frac{\partial}{\partial v}\left(\frac1{r_2}\right)&=0,\\
+\left(\frac1{r_1}-\frac1{r_2}\right)\frac{\partial\log\sqrt G}{\partial u}+\frac{\partial}{\partial u}\left(\frac1{r_1}\right)&=0.
+\end{aligned}
+\right.
+\end{equation}
+Gauss方程则为
+\begin{equation}\tag{2}
+ \frac1{r_1r_2}=-\frac1{\sqrt{EG}}\left\{\frac{\partial}{\partial u}\left(\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\right)+\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\right)\right\}.
+\end{equation}
+在（1）中可将\(E,G\)换作球面线元系数\(e,g\)
+\[
+ ds'^2=e\,du^2+g\,dv^2;
+\]
+依据Rodrigues公式
+\begin{equation}\tag{3}
+\left\{
+\begin{aligned}
+\frac{\partial X}{\partial u}&=\frac1{r_2}\frac{\partial x}{\partial u},&
+\frac{\partial Y}{\partial u}&=\frac1{r_2}\frac{\partial y}{\partial u},&
+\frac{\partial Z}{\partial u}&=\frac1{r_2}\frac{\partial z}{\partial u},\\
+\frac{\partial X}{\partial v}&=\frac1{r_1}\frac{\partial x}{\partial v},&
+\frac{\partial Y}{\partial v}&=\frac1{r_1}\frac{\partial y}{\partial v},&
+\frac{\partial Z}{\partial v}&=\frac1{r_1}\frac{\partial z}{\partial v},
+\end{aligned}
+\right.
+\end{equation}
+即
+\[
+ e=\frac E{r_2^2},\qquad g=\frac G{r_1^2},
+\]
+故（1）可改写为
+\begin{equation}\tag{4}
+\left\{
+\begin{aligned}
+(r_1-r_2)\frac{\partial\log\sqrt e}{\partial v}-\frac{\partial r_2}{\partial v}&=0,\\
+(r_1-r_2)\frac{\partial\log\sqrt g}{\partial u}+\frac{\partial r_1}{\partial u}&=0.
+\end{aligned}
+\right.
+\end{equation}
+这些公式在\S. 78中（第167页）已给出。我们可直接将其用于求一类曲面，即一主曲率恒定者。
+
+取例如
+\[
+ r_2=\text{常数};
+\]
+由（1）与（4）有
+\[
+ \frac{\partial E}{\partial v}=0,
+ \qquad
+ \frac{\partial e}{\partial v}=0,
+\]
+即曲线\(v=\)常数在曲面与球面上均为测地线。于是S上任意\(v=\)常数线均位于法平面内，并且在该线上的曲率半径恒定
+\[
+ r_2=R,
+\]
+因此为半径为R的圆。作以此圆为大圆的球面；该球面沿此圆与S相切。因此S是半径恒为R、球心沿空间一条曲线运动的球族的包络面，也就是管状面（\S. 13）。显然反过来，每个半径为R的管状面都有一个主曲率半径恒定且等于R。在演化曲面两片中，与这些圆相应的一片显然退化为管状面的轴，即包络球面中心的轨迹曲线。第二片如由几何立即可见，是该轴线的极可展面。
+
+\subsection*{\S. 126.\quad 演化曲面的两个基本形式。}
+
+若以\(x_1,y_1,z_1\)表示第一曲率中心\(M_1\)坐标，则有
+\srcfn{1}{应记得\(r_1\)的方向按\S. 60定义。}
+\begin{equation}\tag{5}
+ x_1=x-r_1X,
+ \qquad y_1=y-r_1Y,
+ \qquad z_1=z-r_1Z,
+\end{equation}
+对这些式子求导，并利用（3），得
+\begin{equation}\tag{6}
+\left\{
+\begin{aligned}
+\frac{\partial x_1}{\partial u}&=\left(1-\frac{r_1}{r_2}\right)\frac{\partial x}{\partial u}-\frac{\partial r_1}{\partial u}X,&
+\frac{\partial y_1}{\partial u}&=\left(1-\frac{r_1}{r_2}\right)\frac{\partial y}{\partial u}-\frac{\partial r_1}{\partial u}Y,&
+\frac{\partial z_1}{\partial u}&=\left(1-\frac{r_1}{r_2}\right)\frac{\partial z}{\partial u}-\frac{\partial r_1}{\partial u}Z,\\
+\frac{\partial x_1}{\partial v}&=-\frac{\partial r_1}{\partial v}X,&
+\frac{\partial y_1}{\partial v}&=-\frac{\partial r_1}{\partial v}Y,&
+\frac{\partial z_1}{\partial v}&=-\frac{\partial r_1}{\partial v}Z.
+\end{aligned}
+\right.
+\end{equation}
+以下用下标1表示演化曲面第一分支\(S_1\)的量，可直接得到
+\begin{equation}\tag{7}
+ X_1=\pxChNinePrintedPositive\frac1{\sqrt G}\frac{\partial x}{\partial v},
+ \qquad Y_1=\pxChNinePrintedPositive\frac1{\sqrt G}\frac{\partial y}{\partial v},
+\qquad Z_1=\pxChNinePrintedPositive\frac1{\sqrt G}\frac{\partial z}{\partial v},
+\end{equation}
+该式证明了\S. 124中的第二个定理。再得
+\begin{equation}\tag{8}
+ E_1=E\left(1-\frac{r_1}{r_2}\right)^2+\left(\frac{\partial r_1}{\partial u}\right)^2,
+ \quad F_1=\frac{\partial r_1}{\partial u}\frac{\partial r_1}{\partial v},
+ \quad G_1=\left(\frac{\partial r_1}{\partial v}\right)^2,
+\end{equation}
+故
+\begin{equation}\tag{9}
+ ds_1^2=\left\{E\left(1-\frac{r_1}{r_2}\right)^2+\left(\frac{\partial r_1}{\partial u}\right)^2\right\}du^2+2\frac{\partial r_1}{\partial u}\frac{\partial r_1}{\partial v}\,du\,dv+\left(\frac{\partial r_1}{\partial v}\right)^2dv^2.
+\end{equation}
+在\(S_1\)上取坐标线为\(u=\)常数与\(r_1=\)常数时，上式写作
+\begin{equation}\tag{9*}
+ ds_1^2=dr_1^2+E\left(1-\frac{r_1}{r_2}\right)^2du^2,
+\end{equation}
+显示在\(S_1\)上\(u\)线为测地线，正交轨线为\(r_1=\)常数（见\S. 124）。
+
+参考（\S.57 c. IV）中的公式：
+\begin{equation}\tag{10}
+\frac{\partial X_1}{\partial u}=\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\cdot\frac1{\sqrt E}\frac{\partial x}{\partial u},
+\qquad
+\frac{\partial X_1}{\partial v}=-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\cdot\frac1{\sqrt E}\frac{\partial x}{\partial u}-\frac{\sqrt G}{r_1}X
+\end{equation}
+由（6）可求得
+\[
+ D_1,
+ \quad D'_1,
+ \quad D''_1,
+\]
+可得
+\[
+ D_1=-\sum\frac{\partial x_1}{\partial u}\frac{\partial X_1}{\partial u}
+ =-\frac{\sqrt E}{\sqrt G}\frac{\partial\sqrt E}{\partial v}\left(1-\frac{r_1}{r_2}\right),
+\]
+\[
+ D'_1=-\sum\frac{\partial x_1}{\partial v}\frac{\partial X_1}{\partial u}=0,
+\]
+\[
+ D''_1=-\sum\frac{\partial x_1}{\partial v}\frac{\partial X_1}{\partial v}
+ =-\frac{\sqrt G}{r_1}\frac{\partial r_1}{\partial v}.
+\]
+由\(D_1\)的值消去\(\dfrac{\partial\sqrt E}{\partial v}\)，借助（1）式，得到
+\begin{equation}\tag{11}
+ D_1=\frac{E}{\sqrt G}\frac{r_1}{r_2^2}\frac{\partial r_2}{\partial v},
+ \qquad
+ D'_1=0,
+ \qquad
+ D''_1=-\frac{\sqrt G}{r_1}\frac{\partial r_1}{\partial v}.
+\end{equation}
+由于\(D'_1=0\)，可知\emph{在演化曲面的第一、第二分支上，对应演变曲面的曲率线参数\(u,v\)组成一共轭系。}
+
+这一点也可由几何直接看出：在\(S_1\)上，各条\(u\)线在同一条\(v\)线各点的切线生成一个可展曲面，其回归边是对应的\(v\)线，位于第二片\(S_2\)上。
+
+再注意，若以\(K_1\)表示第一片\(S_1\)的曲率，则
+\[
+ K_1=\frac{D_1D''_1-D_1'^2}{E_1G_1-F_1^2},
+\]
+即
+\begin{equation}\tag{12}
+ K_1=-\frac1{(r_1-r_2)^2}\frac{\dfrac{\partial r_2}{\partial v}}{\dfrac{\partial r_1}{\partial v}}.
+\end{equation}
+同理，若以\(K_2\)表示第二片\(S_2\)的曲率，则
+\begin{equation}\tag{12*}
+ K_2=-\frac1{(r_1-r_2)^2}\frac{\dfrac{\partial r_1}{\partial u}}{\dfrac{\partial r_2}{\partial u}}.
+\end{equation}
+
+\subsection*{\S. 127.\quad Beltrami关于测地曲率半径的构造。}
+
+本段介绍Beltrami给出的构造：在曲面上任取曲线，其测地曲率半径可由该构造求得；并立即带来演化曲面理论中的重要结果。
+
+设曲面S上画有一个由\(\infty^1\)条测地线组成的系统\((g)\)，并设L是一条其切线与测地线\((g)\)共轭的曲线。沿L各点作\((g)\)的切线；这些切线生成一个可展曲面，其回归边记为\(\Gamma\)。设\(t\)为其中任一条切线，M为它与S的接触点，\(m\)为它与回归边\(\Gamma\)的接触点。要证
+\emph{点\(m\)就是从M出发的那条\((g)\)的正交轨线在M处的测地曲率中心。}
+
+取S上坐标\(v\)为\((g)\)，\(u\)为其正交轨线。若取适当参数\(u\)，则
+\[
+ ds^2=du^2+G\,dv^2
+\]
+且以\(\rho_u\)表示\(u\)线的测地曲率半径；其\emph{数值与符号}由\S. 84（第181页）的公式给出：
+\[
+ \frac1{\rho_u}=-\frac1{2G}\frac{\partial G}{\partial u}.
+\]
+现在设\(x,y,z\)为M的坐标，\(\xi,\eta,\zeta\)为\(m\)的坐标，并令线段\(Mm\)的\emph{代数值}等于\(r\)，则
+\[
+ \xi=x+r\frac{\partial x}{\partial u},
+ \quad
+ \eta=y+r\frac{\partial y}{\partial u},
+ \quad
+ \zeta=z+r\frac{\partial z}{\partial u}.
+\]
+
+如果沿L移动M，并以\(\delta\)表示相应增量，那么
+\[
+\left\{
+\begin{aligned}
+\delta\xi&=\frac{\partial x}{\partial u}\delta u+\frac{\partial x}{\partial v}\delta v+\delta r\frac{\partial x}{\partial u}+r\left(\frac{\partial^2x}{\partial u^2}\delta u+\frac{\partial^2x}{\partial u\partial v}\delta v\right),\\
+\delta\eta&=\frac{\partial y}{\partial u}\delta u+\frac{\partial y}{\partial v}\delta v+\delta r\frac{\partial y}{\partial u}+r\left(\frac{\partial^2y}{\partial u^2}\delta u+\frac{\partial^2y}{\partial u\partial v}\delta v\right),\\
+\delta\zeta&=\frac{\partial z}{\partial u}\delta u+\frac{\partial z}{\partial v}\delta v+\delta r\frac{\partial z}{\partial u}+r\left(\frac{\partial^2z}{\partial u^2}\delta u+\frac{\partial^2z}{\partial u\partial v}\delta v\right).
+\end{aligned}
+\right.
+\]
+
+由于\(d\xi,d\eta,d\zeta\)与切线\(t\)在\(\Gamma\)上的方向余弦成比例，以上各式分别乘以\(\dfrac{\partial x}{\partial v},\dfrac{\partial y}{\partial v},\dfrac{\partial z}{\partial v}\)求和，并利用
+\[
+\sum\frac{\partial x}{\partial u}\frac{\partial x}{\partial v}=0,
+\quad
+\sum\left(\frac{\partial x}{\partial v}\right)^2=G,
+\quad
+\sum\frac{\partial x}{\partial v}\frac{\partial^2x}{\partial u\partial v}=\frac12\frac{\partial G}{\partial u},
+\quad
+\sum\frac{\partial x}{\partial v}\frac{\partial^2x}{\partial u^2}=0,
+\]
+得
+\[
+ G\,\delta v+\frac r2\frac{\partial G}{\partial u}\delta v=0,
+\]
+即
+\[
+ \frac1r=-\frac1{2G}\frac{\partial G}{\partial u}.
+\]
+所以\(r\)与\(\rho_u\)同号同值，正如所欲证明。
+
+这样证明Beltrami定理以后，再来考察曲面S的演化曲面第一片\(S_1\)。在\(S_1\)上，\(u=\)常数线的正交轨线为\(r_1=\)常数线，而与\(u\)线切向共轭的曲线为\(v\)线。故
+\emph{一条\(r_1=\)常数线在第一片\(S_1\)上的点\(M_1\)处，其测地曲率中心就是对应点\(M_2\)，该点位于第二片\(S_2\)上。}
+
+于是\emph{曲线\(r_1=\)常数在\(S_1\)上的测地曲率半径，或曲线\(r_2=\)常数在\(S_2\)上的测地曲率半径（符号可能相反）都等于演变曲面主曲率差\(r_1-r_2\)。}
+
+\subsection*{\S. 128.\quad 平均演化曲面。}
+
+与一般演化曲面（由两分支\(S_1,S_2\)组成）一起，Ribaucour提出了另一种与S紧密相关的曲面，称作\emph{S的平均演化曲面}。取\(M_0\)，其为\(M_1,M_2\)的中点；在点\(M_0\)作与S在M处切平面平行并与线段\(M_1M_2\)垂直并过\(M_0\)的平面，记为\emph{中平面}。
+
+\(\Sigma\)为所有中平面的包络面，称其为S的\emph{平均演化曲面}；反过来，称S为\(\Sigma\)的平均演变曲面。
+
+中点\(M_0\)（由\(M_1\)与\(M_2\)而定）的坐标为
+\[
+ x_0=x-\frac{r_1+r_2}{2}X,
+ \quad
+ y_0=y-\frac{r_1+r_2}{2}Y,
+ \quad
+ z_0=z-\frac{r_1+r_2}{2}Z,
+\]
+又设\(\omega\)为中平面到原点的有向距离，则
+\[
+ \omega=\sum Xx_0=\sum Xx-\frac{r_1+r_2}{2}.
+\]
+其中\(\sum Xx\)亦即原点到S切平面的有向距离；记为W，则
+\[
+ \omega=W-\frac{r_1+r_2}{2}.
+\]
+由切向坐标下Weingarten公式（\S.81）
+\[
+ \frac{r_1+r_2}{2}=W+\frac12\Delta'_2 W,
+\]
+其中微分参数\(\Delta'_2 W\)是相对于代表S的球面线元计算的\srcfn{1}{由于S与\(\Sigma\)按切平面平行逐点对应，代表球面线元对S与\(\Sigma\)完全相同。}。于是
+\begin{equation}\tag{13}
+ \omega=-\frac12\Delta'_2 W.
+\end{equation}
+由此，问题\emph{已知演变曲面，求平均演化曲面}显然得到解决。已知W后，由（13）求\(\omega\)，再利用（34）（\S.81，第173页，置\(\omega\)于W的位置）即可求出平均演化曲面\(\Sigma\)。\ednote{原书第279页在本句开头明确提出“已知演变曲面求平均演化曲面”，句末却把应求的\(\Sigma\)印成“平均演变曲面”。由本节定义以及紧接着的逆问题可知，句末应为“平均演化曲面”；本译采用这一有直接上下文支持的读法，并在此保留原印信息。}
+
+反问题\emph{给定曲面\(\Sigma\)，求以\(\Sigma\)为平均演化曲面的各曲面S}，也由（13）归结为一个熟知的分析问题。在\(\Sigma\)上任取坐标系\((u,v)\)，便已知\(\omega\)关于\(u,v\)的函数，而须由下列偏微分方程确定W：
+\begin{equation}\tag{14}
+ \Delta'_2 W=-2\omega;
+\end{equation}
+显然，（14）的每一个解都给出原问题的一个解。特别地，若已知一个平均演变曲面，例如与（14）的解\(W_1\)相应的曲面，则令
+\[
+ W=W_1+\Omega,
+\]
+求其余平均演变曲面便归结为积分方程
+\begin{equation}\tag{14*}
+ \Delta'_2\Omega=0.
+\end{equation}
+取与球面上等温系对应的坐标\((u,v)\)，（14）、（14*）化为标准形式
+\begin{equation}\tag{15}
+ \frac{\partial^2 W}{\partial u^2}+\frac{\partial^2 W}{\partial v^2}=f(u,v),
+\end{equation}
+其中\(f(u,v)\)为\(u,v\)的已知函数；或
+\begin{equation}\tag{15*}
+ \frac{\partial^2 W}{\partial u^2}+\frac{\partial^2 W}{\partial v^2}=0.
+\end{equation}
+若平均演化曲面退化为一点，则其平均演变曲面正是Appell所研究的曲面。
+\srcfn{1}{见\emph{American Journal of Mathematics}, V. X。本文同卷中，Goursat亦研究了更一般曲面，其在本记号下满足
+\[
+ r_1+r_2=n W\quad(n\text{常数}).
+\]
+其决定式为
+\[
+ \Delta'_2 W=(n-2)W.
+\]
+对于该类，式（13）变为
+\[
+ \omega=-\frac{n-2}{2}W,
+\]
+并表明：\emph{Goursat曲面的平均演化曲面是与原曲面位似的另一Goursat曲面。}
+
+这显然是Goursat曲面的一个特征性质。}
+这些曲面的中平面通过一点；它们对应于（15*）的解。
+
+
+\subsection*{\S. 129.\quad 曲面W与演化曲面的两个分支。}
+
+将前面对演化曲面的性质的整体讨论应用于一类重要曲面，这类曲面满足主曲率半径\(r_1,r_2\)之间有关系
+\[
+ \varphi(r_1,r_2)=0.
+\]
+为缩短书写，我们将此类曲面称作\emph{曲面}W。
+
+对W而言，先在其演化曲面的两片\(S_1,S_2\)之间由其本身的几何生成关系建立对应：即每一第一主曲率中心\(M_1\)对应第二主曲率中心\(M_2\)。我们问：\emph{什么时候演化曲面两片上的渐近线相互对应？}其必要且充分条件，是\(S_1\)的第二基本形式系数与\(S_2\)的第二基本形式系数成比例。
+
+现在由（11）得\(S_1\)有
+\[
+ D_1:D'_1:D''_1=E r_1^2\frac{\partial r_2}{\partial v}:0:-G r_2^2\frac{\partial r_1}{\partial v}
+\]
+故\(S_2\)为
+\[
+ D_2:D'_2:D''_2=E r_1^2\frac{\partial r_2}{\partial u}:0:-G r_2^2\frac{\partial r_1}{\partial u}.
+\]
+由此得条件
+\[
+ \begin{vmatrix}
+ \dfrac{\partial r_1}{\partial u} & \dfrac{\partial r_1}{\partial v}\\[0.6em]
+ \dfrac{\partial r_2}{\partial u} & \dfrac{\partial r_2}{\partial v}
+ \end{vmatrix}=0,
+\]
+表示\(r_1,r_2\)之间有关系。故有Ribaucour定理：
+\emph{两片演化曲面对应渐近线成立的充分必要条件，是演变曲面为曲面W，即其主曲率半径受某关系约束。}
+
+显然，除了说\(S_1,S_2\)两片上的渐近线相互对应，也可说\(S_1\)上的每一个共轭系都对应于\(S_2\)上的一个共轭系。这样一来，即使\(S_1,S_2\)上的渐近线是虚曲线，也赋予了这一对应以实的形式。还应注意：对于任意演变曲面S，它的曲率线已经在两片\(S_1,S_2\)上对应出两个共轭系；所以只须再要求\(S_1\)上的一个新共轭系对应于\(S_2\)上的另一个新共轭系，就已处于这里所考察的对应情形。
+\srcfn{1}{可以把该结论应用于\(S_1,S_2\)两张第二基本形式（见\S.39 c. II，亦见第149页注）。}。
+
+再加入条件：两片演化曲面上的渐近线对应演变曲面自身的渐近线，其方程
+\[
+ \frac E{r_2}\,du^2+\frac G{r_1}\,dv^2=0,
+\]
+即得
+\[
+ \frac\partial{\partial u}(r_1r_2)=0,
+  \qquad
+ \frac\partial{\partial v}(r_1r_2)=0,
+\]
+故定理：
+\emph{只有当演变曲面为常曲率曲面时，其渐近线在两片上与演变曲面的渐近线一一对应。}
+
+最终，(12)、(12*)应用于W曲面两片的曲率得
+\begin{equation}\tag{16}
+ \left\{
+ \begin{aligned}
+ K_1&=-\frac1{(r_1-r_2)^2}\frac{dr_2}{dr_1},\\
+ K_2&=-\frac1{(r_1-r_2)^2}\frac{dr_1}{dr_2},
+ \end{aligned}
+ \right.
+\end{equation}
+于是有Halphen著名定理
+\begin{equation}\tag{17}
+ K_1K_2=\frac1{(r_1-r_2)^4}.
+\end{equation}
+由此特别可见：对应点上，W曲面两片演化曲面都有同号曲率。
+
+\subsection*{\S. 130.\quad Ribaucour关于曲率线对应的定理。}
+
+Ribaucour的另一个定理也可由我们的通用公式容易地推出。它讨论曲面S的演化曲面两个分支上的曲率线彼此对应的情形。第一分支\(S_1\)上曲率线的微分方程为
+\[
+ \begin{vmatrix}
+ E_1du+F_1dv & F_1du+G_1dv\\
+ D_1du+D'_1dv & D'_1du+D''_1dv
+ \end{vmatrix}=0,
+\]
+用（9）、（11）展开后，它成为
+\begin{equation}\tag{18}
+\begin{aligned}
+&Er_1^2\frac{\partial r_1}{\partial u}\frac{\partial r_2}{\partial v}\,du^2
++\left\{EG(r_2-r_1)^2+Gr_2^2\left(\frac{\partial r_1}{\partial u}\right)^2+Er_1^2\frac{\partial r_1}{\partial v}\frac{\partial r_2}{\partial v}\right\}du\,dv \\
+&\hspace{8em}+Gr_2^2\frac{\partial r_1}{\partial u}\frac{\partial r_1}{\partial v}\,dv^2=0.
+\end{aligned}
+\end{equation}
+第二分支\(S_2\)上曲率线的微分方程同理为
+\begin{equation}\tag{18*}
+\begin{aligned}
+&Er_1^2\frac{\partial r_2}{\partial u}\frac{\partial r_2}{\partial v}\,du^2
++\left\{EG(r_2-r_1)^2+Gr_2^2\frac{\partial r_1}{\partial u}\frac{\partial r_2}{\partial u}+Er_1^2\left(\frac{\partial r_2}{\partial v}\right)^2\right\}du\,dv \\
+&\hspace{8em}+Gr_2^2\frac{\partial r_1}{\partial u}\frac{\partial r_2}{\partial v}\,dv^2=0.
+\end{aligned}
+\end{equation}
+若两个分支上的曲率线彼此对应，方程（18）、（18*）必须重合，因而立即得到
+\[
+ \frac{\partial r_1}{\partial u}=\frac{\partial r_2}{\partial u},
+ \qquad
+ \frac{\partial r_1}{\partial v}=\frac{\partial r_2}{\partial v},
+\]
+即\(r_1-r_2=\)常数。因此：\emph{只有当曲面W的曲率半径满足关系}
+\[
+ r_1-r_2=R\quad(R\text{为常数}),
+\]
+\emph{其演化曲面的两个分支上的曲率线才彼此对应。}另一方面，公式（16）表明，在这种情形下，\emph{演化曲面的两个分支都是具有同一负常曲率的曲面}\(K=-\dfrac1{R^2}\)\srcfn{1}{公式（16）还表明：只有对满足\(r_1-r_2=\)常数的曲面以及最小曲面的演化曲面，对应点处两个分支的曲率才相等。}。
+
+还应注意，两个分支上的渐近线也彼此对应，并且：\emph{渐近线的对应弧长相等。}事实上，由（9*）有
+\[
+ ds_1^2=dr_1^2+\frac E{r_2^2}(r_2-r_1)^2du^2,
+\]
+\[
+ ds_2^2=dr_2^2+\frac G{r_1^2}(r_2-r_1)^2dv^2,
+\]
+又因\(dr_1^2=dr_2^2\)，并且沿渐近线有
+\[
+ Er_1^2du^2=Gr_2^2dv^2,
+\]
+所以正好得到
+\[
+ ds_1^2=ds_2^2.
+\]
+最后这一观察源于Lie。以上优美性质还可作重要推广，我们将在后文介绍。
+
+\subsection*{\S. 131.\quad Lie关于曲面W的定理。}
+
+Lie指出：
+\emph{在任一曲面W上，曲率线都可按积分法求得。}我们稍后再给出Lie的证明；先在此给出Weingarten对该定理的解析证明。回顾：曲面S上曲率线的微分方程可由两基本形式的协变二次式
+\[
+ \psi=\frac1{\sqrt{EG-F^2}}
+ \begin{vmatrix}
+ E\,du+F\,dv & F\,du+G\,dv\\
+ D\,du+D'\,dv & D'\,du+D''\,dv
+ \end{vmatrix}
+\]
+置零得到。记该微分形式的曲率为\(K_\psi\)，并按下列取曲率线参数
+\[
+ E=er_2^2,
+ \quad F=0,
+ \quad G=gr_1^2;
+ \qquad
+ D=-er_2,
+ \quad D'=0,
+ \quad D''=-gr_1;
+\]
+则
+\[
+ \psi=\sqrt{eg}\,(r_1-r_2)\,du\,dv,
+\]
+故由（\S. 37，公式(VI)，第78页）
+\[
+ K_\psi=-\frac1{(r_1-r_2)\sqrt{eg}}\left\{\frac{\partial^2\log\sqrt e}{\partial u\partial v}+\frac{\partial^2\log\sqrt g}{\partial u\partial v}+\frac{\partial^2\log(r_1-r_2)}{\partial u\partial v}\right\}.
+\]
+而由（4）\S.125（第274页）
+\[
+ \frac{\partial^2\log\sqrt e}{\partial u\partial v}=\frac\partial{\partial u}\frac{\dfrac{\partial r_2}{\partial v}}{r_1-r_2},
+\]
+\[
+ \frac{\partial^2\log\sqrt g}{\partial u\partial v}=\frac\partial{\partial v}\frac{\dfrac{\partial r_1}{\partial u}}{r_2-r_1},
+\]
+从而
+\[
+ K_\psi=\frac1{\sqrt{eg}(r_1-r_2)^3}
+ \begin{vmatrix}
+ \dfrac{\partial r_1}{\partial u} & \dfrac{\partial r_1}{\partial v}\\[0.6em]
+ \dfrac{\partial r_2}{\partial u} & \dfrac{\partial r_2}{\partial v}
+ \end{vmatrix}.
+\]
+故：
+\emph{对于曲面W且仅对曲面W，形式\(\psi\)是零曲率形式。}由此上述定理由\S.37（第79页）立即得出。
+
+对于曲面W的渐近线，不存在类似一般定理，除了两个特别重要的情形：最小曲面和伪球面。对前者，第二基本形式
+\[
+ D\,du^2+2D'\,du\,dv+D''\,dv^2
+\]
+是曲率为零的（不定）二次形式；对后者，该形式乘以\(r_1-r_2\)后也成为曲率为零的形式（见\S.\S.75，76）。于是由\S.37可知，渐近线可按积分求出。
+
+\subsection*{\S. 132.\quad Weingarten第一定理。}
+
+曲面W理论中最重要、最富成果的性质，由Weingarten的下述优美定理表达：
+
+A) 
+\emph{曲面W的演化曲面每一片都可等距贴合于一个旋转曲面；该旋转曲面的形状只取决于演变曲面W的主曲率半径\(r_1,r_2\)之间的关系。}
+
+此结论可直接由\S.\S.126、127的基本性质得到。实际上在演化曲面第一片\(S_1\)上，曲线\(r_1=\)常数在测地上是平行的，并且其测地曲率半径
+\[
+ r_1-r_2
+\]
+仅是\(r_1\)的函数，因此这些曲线也具有常测地曲率；故\(S_1\)可等距贴合于旋转曲面（第231页）。此外由于函数
+\[
+ f(r_1)=r_1-r_2
+\]
+仅依赖于\(r_1,r_2\)的关系式，定理后半部分亦显然。
+
+直接由（9*）第275页公式可得
+\[
+ ds_1^2=dr_1^2+E\left(1-\frac{r_1}{r_2}\right)^2du^2;
+\]
+并计算
+\[
+ \frac{\partial\log\left\{\sqrt E\left(1-\frac{r_1}{r_2}\right)\right\}}{\partial r_1}
+ =\frac{\partial\log\sqrt E}{\partial v}\frac1{\dfrac{\partial r_1}{\partial v}}+\frac{1-\dfrac{r_1}{r_2}\dfrac{dr_2}{dr_1}}{r_1-r_2},
+\]
+观察第一式（1）第273页可得
+\[
+ \frac{\partial\log\left\{\sqrt E\left(1-\frac{r_1}{r_2}\right)\right\}}{\partial r_1}=\frac1{r_1-r_2},
+\]
+故
+\[
+ \sqrt E\left(1-\frac{r_1}{r_2}\right)=e^{\int\frac{dr_1}{r_1-r_2}+\varphi(u)}
+\]
+把\(u\)换成\(\int e^{\varphi(u)}du\)，于是得到：
+
+\emph{曲面W的演化曲面第一片\(S_1\)的线元由下式给出：}
+\begin{equation}\tag{19}
+ ds_1^2=dr_1^2+e^{2\int\frac{dr_1}{r_1-r_2}}du^2.
+\end{equation}
+显然，演化曲面的第二片\(S_2\)可等距贴合于一个旋转曲面，其线元为
+\begin{equation}\tag{19*}
+ ds_2^2=dr_2^2+e^{2\int\frac{dr_2}{r_2-r_1}}dv^2.
+\end{equation}
+
+由刚得到的Weingarten定理，又可再次推出\S.131定理（Lie的方法）：在\(S_1\)上，先知\(r_1=\)常数线后，用积分（\S.47）得到其正交轨线；这些轨线在演变曲面W上对应第一组曲率线，第二组同理。
+
+\subsection*{\S. 133.\quad Weingarten第二定理。}
+
+Weingarten本人证明了与定理A)同时成立的逆定理，只有一个将在下文说明的例外。为证明它，我们采用Beltrami的下列几何考察\srcfn{1}{\emph{Ricerche di analisi applicata alla geometria}（Giornale di matematiche，第II、III卷）。}。
+
+在任意曲面S上画一族\(\infty^1\)条曲线\((g)\)，并考察它们的\(\infty^2\)条切线。若这些直线要成为某曲面\(\Sigma\)的法线，则\((g)\)是测地线这一条件是\emph{必要的}，因为这时\(\Sigma\)的一片演化曲面就是S（\S.124）。现在证明这一条件也是\emph{充分的}。若\((g)\)为测地线，令\(t\)为其一条正交轨线，并考察\(\infty^1\)条\((g)\)的渐开线C，它们以\(t\)为起始轨线；曲面\(\Sigma\)，即这些渐开线C的轨迹，其法线正是\((g)\)的切线。事实上，设MP是一段这样的切线，M为它与测地线\(g\)的接触点，P为它与\(\Sigma\)的交点。MP首先是渐开线C在P处的法线；若使M沿另一条正交轨线\(t'\)（它是族\(g\)的一条正交轨线）移动，MP保持常长，并等于\((g)\)上夹在\(t,t'\)之间的弧长，因此端点P在\(\Sigma\)上的轨迹也在P处垂直于MP。于是MP在P处同时垂直于\(\Sigma\)上两条不同的曲线，所以它是\(\Sigma\)在P处的法线，证毕。
+
+于是得：
+\emph{曲面S的一个\(\infty^2\)切直线系成为某一曲面、因而也成为无穷多个平行曲面\(\Sigma\)的法线系，其充要条件是：这些直线在S上所包络出的曲线为S的测地线。}
+
+显然，S是曲面\(\Sigma\)演化曲面的一片，而\(\Sigma\)的一个主曲率半径，是从一条固定正交轨线起计的测地线\((g)\)弧长。第二片\(S'\)（即\(\Sigma\)演化曲面的另一片），称为S关于测地线\((g)\)的\emph{互补曲面}；它也可定义为\((g)\)的正交轨线之测地曲率中心的轨迹（\S.127）。
+
+现在可轻松证明Weingarten的逆定理。设S可等距贴合于一个旋转曲面，并且\emph{由子午线变形而来的测地线\((g)\)不是直线}。上述\(\infty^2\)条\((g)\)的切线则是某曲面\(\Sigma\)的法线；若将S线元写成
+\[
+ ds^2=du^2+\varphi^2(u)\,dv^2
+\]
+表示参考于测地线族\((g)\)，即\(v=\)常数以及其正交轨线，且\(r_1,r_2\)为演变曲面的主曲率半径，则
+\[
+ r_1=u+\text{常数},
+ \qquad
+ \frac1{r_1-r_2}=\frac{\varphi'(u)}{\varphi(u)}
+\]
+从而\(r_1,r_2\)由一个只依赖于函数\(\varphi\)形状的关系式联系，也就是只依赖于S所等距贴合的旋转曲面。被排除的情形确实存在，而第八章关于直纹曲面的研究（\S.\S.121, 123）恰好完整刻画了它：若由子午线变形而来的测地线\((g)\)是直线，则该曲面是常挠率曲线的副法线轨迹，而它所等距贴合的旋转曲面是圆托链面（\S.107）\srcfn{1}{不借助第八章关于直纹曲面变形的定理，也可如下证明。设\(ds^2=du^2+r^2dv^2\)是一个旋转曲面的线元，而且也属于一个以\(v\)线为母线的直纹曲面。对该直纹曲面有\(D=0\)、\(\dfrac{\pxChNineDPrimeSquared}{r^2}=\dfrac{r''}{r}\)；Codazzi第一公式（IV*，第120页）又给出\(\dfrac{D'}{r}=\dfrac{c}{r^2}\)（\(c\)为常数）。所以\(r\)满足\(r''=\pxChNinePrintedPositive\dfrac{c^2}{r^3}\)。积分并略去\(r\)中的一个常数因子，得到\(r^2=u^2+m^2\)（\(m\)为常数）。相应的旋转曲面正是圆托链面。在它的一个直纹变形上，颈圆给出一条与母线正交的测地线；因此该直纹曲面是某条曲线的副法线轨迹，而该曲线的挠率立即可见必须为常数\(=m\)。}。于是可以表述Weingarten的逆定理：
+
+B) 
+\emph{除去作为常挠率曲线副法线轨迹的直纹曲面（它们可等距贴合于圆托链面）之外，任何其他可等距贴合于旋转曲面的曲面，都可看作某曲面W的演化曲面的一片。}
+
+\subsection*{\S. 134.\quad 曲面W的球面线元表示。}
+
+前述定理说明：求所有可在旋转曲面上按挠曲变形的曲面与求所有曲面W问题等价。后者又可按Weingarten所示约化为：在球上求满足一定球面线元形式的正交线系。具体是：
+\[
+ ds'^2=e\,du^2+g\,dv^2,
+\]
+其中\(g\)是\(e\)的函数。
+
+为此观察，若曲面属W类，则\S.125（第274页）中的（4）可写为
+\[
+ \frac{\partial\log\sqrt e}{\partial v}=\frac\partial{\partial v}\int\frac{dr_2}{r_1-r_2},
+\]
+\[
+ \frac{\partial\log\sqrt g}{\partial u}=\frac\partial{\partial u}\int\frac{dr_1}{r_2-r_1},
+\]
+积分并适当重选参数\(u,v\)后可取
+\begin{equation}\tag{20}
+ \sqrt e=e^{\int\frac{dr_2}{r_1-r_2}},
+ \qquad
+ \sqrt g=e^{\int\frac{dr_1}{r_2-r_1}},
+\end{equation}
+此时\(e,g\)彼此为函数。
+
+为了去掉积分号，设\(r_2\)非常数（故\(\sqrt e\)亦非常数），令
+\[
+ \sqrt e=\frac1\alpha
+\]
+则\(\sqrt g, r_1, r_2\)皆为\(\alpha\)函数。第一式（20）给出
+\[
+ r_1=r_2-\alpha\frac{dr_2}{d\alpha},
+ \qquad
+ \frac{dr_1}{d\alpha}=-\alpha\frac{d^2r_2}{d\alpha^2},
+\]
+第二式（20）又给出
+\[
+ \sqrt g=\frac1{\dfrac{dr_2}{d\alpha}}.
+\]
+再设
+\[
+ r_2=\theta(\alpha),
+\]
+则
+\[
+ r_1=\theta(\alpha)-\alpha\theta'(\alpha),
+ \qquad
+ \sqrt g=\frac1{\theta'(\alpha)}.
+\]
+由此可得：
+
+C) 
+\emph{若对曲面W作Gauss球面表示，则可选择其曲率线参数\(u,v\)，使球面线元具有下列形式：}
+\begin{equation}\tag{21}
+ ds'^2=\frac{du^2}{\alpha^2}+\frac{dv^2}{\theta'^2(\alpha)},
+\end{equation}
+\emph{其中\(\alpha\)为\(u,v\)的函数，而W的主曲率半径\(r_1,r_2\)由下列公式给出：}
+\begin{equation}\tag{22}
+ r_2=\theta(\alpha),
+ \qquad
+ r_1=\theta(\alpha)-\alpha\theta'(\alpha).
+\end{equation}
+
+对应逆定理为：
+
+C*) 
+\emph{若线元(21)属于半径为1的球面，则存在一个相应的曲面W；在其球面表示中，曲率线的像就是球面线系\((u,v)\)，而主曲率半径由（22）给出。}
+
+这由基本方程（4）\S.125可直接核验。
+
+进一步，若X、Y、Z为\(u,v\)的函数，则可用积分
+\[
+ x=\int\left(r_2\frac{\partial X}{\partial u}du+r_1\frac{\partial X}{\partial v}dv\right),
+ \quad
+ y=\int\left(r_2\frac{\partial Y}{\partial u}du+r_1\frac{\partial Y}{\partial v}dv\right),
+\]
+\[
+ z=\int\left(r_2\frac{\partial Z}{\partial u}du+r_1\frac{\partial Z}{\partial v}dv\right).
+\]
+表示曲面W。
+
+仿照将\S.125中的（1）处理（4）可得以下定理：
+
+D) 
+\emph{曲面W相对于曲率线\((u,v)\)的线元可写成}
+\begin{equation}\tag{23}
+ ds^2=\frac{du^2}{\beta^2}+\frac{dv^2}{\theta'^2(\beta)},
+\end{equation}
+\emph{其中\(\beta\)为\(u,v\)的函数，而W的主曲率半径由下列公式给出：}
+\begin{equation}\tag{24}
+ \frac1{r_2}=\theta(\beta),
+ \qquad
+ \frac1{r_1}=\theta(\beta)-\beta\theta'(\beta).
+\end{equation}
+给出。
+
+D*) 
+\emph{若线元（23）的曲率计算结果为}
+\[
+ K=\theta(\beta)\left[\theta(\beta)-\beta\theta'(\beta)\right],
+\]
+\emph{则该线元属于一个曲面W，而这个曲面的曲率半径由（24）给出。}
+
+此即高斯方程与Codazzi方程同时成立。
+
+\subsection*{\S. 135.\quad 曲面W的完整类。}
+
+先在两个情形中应用先前结果（尤其是C）与C*），在其中可按积分式求出满足指定关系式的曲面W全类，并由Weingarten定理得到能展开到给定旋转曲面的完整曲面族。
+
+第一类：使给球面线元形式为（21）的\((u,v)\)系为等温系时。则可取
+\[
+ \theta'(\alpha)=\alpha,
+ \qquad
+ \theta(\alpha)=\frac{\alpha^2}{2}
+\]
+故
+\[
+ r_2=\frac{\alpha^2}{2},
+ \qquad
+ r_1=-\frac{\alpha^2}{2}.
+\]
+对应曲面全都是最小曲面，并可按积分求得。圆托链面是一个最小旋转曲面，因此最小曲面的演化曲面可等距贴合于圆托链面的演化曲面；后者是一个旋转曲面，其子午线为悬链线的渐屈线，旋转轴为该悬链线的准线。
+\srcfn{1}{由（19）、（19*）可得任一片最小曲面演化曲面的公式
+\[
+ ds^2=d\alpha^2+\alpha\,d\beta^2.
+\]}
+因此此旋转曲面的挠曲变形也可按积分法获得。
+
+第二类由\S.91（第198页）关于椭圆与双曲测地线的定理给出。
+
+我们知道球面线元可一般写成
+\begin{equation}\tag{25}
+ ds'^2=\frac{du^2}{\sen^2\left(\dfrac\omega2\right)}+\frac{dv^2}{\cos^2\left(\dfrac\omega2\right)},
+\end{equation}
+其即（21）型。取
+\[
+ \alpha=\sen\frac\omega2,
+ \qquad
+ \theta'(\alpha)=\cos\frac\omega2,
+\]
+则
+\[
+ \theta'(\alpha)d\alpha=\frac{1+\cos\omega}{4}d\omega,
+\]
+\[
+ \theta(\alpha)=\frac{\omega+\sen\omega}{4}.
+\]
+由（22）得
+\begin{equation}\tag{26}
+ r_2=\frac{\omega+\sen\omega}{4},
+ \qquad
+ r_1=\frac{\omega-\sen\omega}{4}
+\end{equation}
+因此关系式为
+\[
+ 2(r_2-r_1)=\sen\left[2(r_2+r_1)\right].
+\]
+故可用积分法求得这类曲面W的完整类，即便其主曲率关系式较复杂。
+
+该类曲面W两片的演化曲面线元（用（19）、（19*）第286页）分别为
+\[
+ ds_1^2=\frac14\left\{\sen^4\left(\frac\omega2\right)d\omega^2+\cos^2\left(\frac\omega2\right)du^2\right\}
+\]
+\[
+ ds_2^2=\frac14\left\{\cos^4\left(\frac\omega2\right)d\omega^2+\sen^2\left(\frac\omega2\right)dv^2\right\};
+\]
+两者可相互等距贴合（因为把\(ds_1\)变为\(ds_2\)，只须将\(\omega\)换成\(\pi-\omega\)、将\(u\)换成\(v\)），并可等距贴合于同一个旋转曲面。因而，我们也能求出这个特殊旋转曲面的全部挠曲变形。
+
+我们将在后续章节再回到这一结果，并引入Darboux的几何构造，给出该类（27）曲面W。
+
+\subsection*{\S. 136.\quad 伪球面曲面的演变曲面与互补曲面。}
+
+我们再次利用Weingarten定理推进，得到关于伪球面的一些推论。
+
+所有伪球面的演化曲面都可等距贴合于同一个旋转曲面——伪球面的演化曲面，即\emph{圆托链面}；因此：
+
+\emph{伪球面演化曲面的每一片都可等距贴合于圆托链面。}
+
+在伪球面S上取无穷多个测地线系中的一个，以测地线\(v\)及其正交轨线作为坐标线，使线元成为抛物型、椭圆型或双曲型三种形式之一（\S.102，第224页）：
+\[
+\begin{aligned}
+\text{(I)}\quad &ds^2=du^2+e^{\frac{2u}{R}}\,dv^2,\\
+\text{(II)}\quad &ds^2=du^2+R^2\senh^2\left(\frac uR\right)dv^2,\\
+\text{(III)}\quad &ds^2=du^2+\cosh^2\left(\frac uR\right)dv^2.
+\end{aligned}
+\]
+\ednote{原书第293页在(I)式末项把\(dv^2\)漏印为\(dv\)；同页(II)、(III)式以及第224页对抛物型线元的定义均明确印作\(dv^2\)。本译采用由这些直接像素证据支持的\(dv^2\)，并在此保留原印信息。}
+在每一种情形中，测地线\(v\)的切线都构成某一曲面（演变曲面）W的法线；现在要考察W的主曲率半径\(r_1,r_2\)相应地由什么关系联系。把伪球面S看作W演化曲面的第一片，并将线元的(I)、(II)、(III)式与（19）\S.132（第286页）比较：
+\[
+ ds_1^2=dr_1^2+e^{2\int\frac{dr_1}{r_1-r_2}}dv_1^2,
+\]
+应取
+\[
+ u=r_1+C,
+ \qquad
+ v=\lambda v_1\quad(C,\lambda\text{常数}).
+\]
+则得到\(r_1,r_2\)的三种关系：
+\[
+\begin{aligned}
+\text{(I')}\quad &r_1-r_2=R,\\
+\text{(II')}\quad &r_1-r_2=R\,\tgh\left(\frac{r_1+C}{R}\right),\\
+\text{(III')}\quad &r_1-r_2=R\,\coth\left(\frac{r_1+C}{R}\right).
+\end{aligned}
+\]
+最后两式中的C取决于具体考虑的演变曲面\(\Sigma\)。
+
+现在问：\emph{在这三种情形下，S的相应互补曲面可等距贴合于哪个旋转曲面？}
+
+第一种可直接由\S.130定理给出：其互补面是半径为R的新伪球面。可将该结论记作（其推论将在第XXIV章展开）：
+
+\emph{伪球面上一族平行极限圆的测地曲率中心轨迹，是一个新的伪球面。}
+
+其余两种，利用第二片演化曲面线元，从（19*）\S.132（第286页）得
+\[
+ ds_2^2=\tangh^4\left(\frac{r_1+C}{R}\right)dr_1^2+\frac{dv^2}{\cosh^2\left(\frac{r_1+C}{R}\right)}
+\]
+（情形(II)），及
+\[
+ ds_2^2=\coth^4\left(\frac{r_1+C}{R}\right)dr_1^2+\frac{dv^2}{\senh^2\left(\frac{r_1+C}{R}\right)}
+\]
+（情形(III)）。对应旋转曲面的子午曲线可由下列方程定义：
+\[
+ r=\frac{R}{\sqrt{R^2k^2+1}}\sen\varphi,
+ \qquad
+ z=R\left\{\log\tang\frac12\varphi+\cos\varphi\right\}
+\]
+（第一类）与
+\[
+ r=\frac{R}{\sqrt{1-R^2k^2}}\sen\varphi,
+ \qquad
+ z=R\left\{\log\tang\frac12\varphi+\cos\varphi\right\}
+\]
+（第二类，\(k\)为常数）表示。与\S.103（第226页）方程
+\[
+ r=R\sen\varphi,
+ \qquad
+ z=R\left(\log\tang\frac12\varphi+\cos\varphi\right),
+\]
+比较这些公式可见，第一条曲线是普通曳物线在一个经过其渐近线的平面上的投影，称为\emph{缩短曳物线}；第二条曲线在这种平面上的正交投影是普通曳物线，称为\emph{延长曳物线}。
+
+故：
+\emph{在(I)、(II)、(III)三种情形下，伪球面的互补曲面分别可等距贴合于这样的旋转曲面：其子午线依次为普通曳物线、缩短曳物线、延长曳物线，而旋转轴为相应的渐近线。}
+
+\subsection*{\S. 136*.\quad 互补曲面的线元计算。}
+
+给定一个可等距贴合于旋转曲面的曲面S，其线元为
+\begin{equation}\tag{a}
+ ds^2=du^2+r^2dv^2
+\end{equation}
+有时需要直接计算互补曲面\(S'\)关于由子午线变形而来的测地线\(v\)的线元。下列计算正用于此目的，并再次证明由Weingarten定理已经推出的性质：\(S'\)可等距贴合于另一旋转曲面。
+
+沿用S的通常记号，并以\(x',y',z'\)表示点\(M'\)的坐标；该点位于互补曲面\(S'\)上，与S的点\(M\equiv(x,y,z)\)相对应。只须注意S上的\(u\)线之测地曲率为\(-\dfrac{r'}{r}\)，便得到
+\begin{equation}\tag{$\alpha$}
+ x'=x-\frac r{r'}\frac{\partial x}{\partial u},
+ \quad
+ y'=y-\frac r{r'}\frac{\partial y}{\partial u},
+ \quad
+ z'=z-\frac r{r'}\frac{\partial z}{\partial u}.
+\end{equation}
+现在由第116页的基本公式（I），在本情形下有
+\[
+ \frac{\partial^2x}{\partial u^2}=DX,
+ \qquad
+ \frac{\partial^2x}{\partial u\partial v}=\frac{r'}r\frac{\partial x}{\partial v}+D'X
+\]
+于是对（\(\alpha\)）求导，可得
+\[
+ \frac{\partial x'}{\partial u}=\frac{rr''}{r'^2}\frac{\partial x}{\partial u}-\frac{Dr}{r'}X,
+ \qquad
+ \frac{\partial x'}{\partial v}=-\frac{D'r}{r'}X.
+\]
+设\(ds'\)为\(S'\)线元，则
+\[
+ ds'^2=\left(\frac{rr''}{r'^2}\right)^2du^2+\frac1{r'^2}(rD\,du+rD'\,dv)^2;
+\]
+由Codazzi第一方程（第119页）知\(rD\,du+rD'\,dv\)是恰当微分。故令
+\[
+ v_1=\int r(D\,du+D'\,dv),
+\]
+可写为
+\begin{equation}\tag{b}
+ ds'^2=\left(\frac{rr''}{r'^2}\right)^2du^2+\frac1{r'^2}dv_1^2;
+\end{equation}
+该式正好证明\(S'\)可等距贴合于一个旋转曲面。公式（b）也可写成等价形式
+\begin{equation}\tag{b*}
+ ds'^2=\left[r\,d\left(\frac1{r'}\right)\right]^2+\frac1{r'^2}dv_1^2.
+\end{equation}
+例如，把上一节中\(ds^2\)的(I)、(II)、(III)三种形式依次代入（a），便再次得到那里已经建立的结果。
+
+\begin{center}\rule{4em}{0.4pt}\end{center}
+
+
+

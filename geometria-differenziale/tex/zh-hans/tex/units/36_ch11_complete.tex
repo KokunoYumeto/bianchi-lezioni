@@ -1,0 +1,2220 @@
+\section*{第十一章}
+
+\begin{center}
+{\Large \(n\) 维空间。这些空间中的超曲面与曲线}\par
+\vspace{0.5em}
+\rule{0.16\textwidth}{0.4pt}\,\(\bullet\)\,\rule{0.16\textwidth}{0.4pt}
+\end{center}
+
+\begin{center}\small
+空间 \(S_n\)，由其 \(ds^2\) 定义。-- 角度量。-- 测地线。-- 测地平行超曲面。-- Riemann 曲率。-- 常曲率空间。-- 三维空间的三个主曲率。-- 曲空间中超曲面的一般公式。-- Gauss 公式与 Codazzi 公式的推广。-- 曲线的曲率。-- Meusnier 定理与 Euler 公式的推广。-- 超曲面的曲率线。-- 共形表示的性质。-- \(n^2\) 正交系（位于 \(n\) 维空间中）。-- 三维空间的情形。-- Dupin 定理与 Darboux 定理。-- Lamé 族。
+\end{center}
+
+\subsection*{\S. 152.\quad 基本约定。}
+
+前几章研究了普通三维（Euclid）空间中无穷小几何的一般性质；现在我们要为把这些研究推广到任意维数、任意性质的空间奠定基础。
+
+考虑 \(n\) 个相互独立的\emph{实}变量
+\[
+ x_1,x_2,\ldots,x_n,
+\]
+每个变量都可以取从 \(-\infty\) 到 \(+\infty\) 的一切值。给这些变量指定的一组 \(n\) 个值
+\[
+ x_1^{(0)},x_2^{(0)},\ldots,x_n^{(0)},
+\]
+称为一个\emph{点}，各值 \(x_i^{(0)}\) \((i=1,2,\ldots,n)\) 称为该\emph{点的坐标}。我们常用记号
+\[
+ (x_i^{(0)})\quad (i=1,2,\ldots,n).
+\]
+表示这个点。所有这些点的总体称为\emph{空间} \(S_n\)，即一个\emph{\(n\) 维空间}。如果 \(x_1,x_2,\ldots,x_n\) 不是无界地从 \(-\infty\) 变化到 \(+\infty\)，而是分别在某些范围内变化，我们便称所得到的点集为 \(S_n\) 的一个\emph{区域}。
+
+现在考虑 \(S_n\) 中这样一组点：令坐标 \(x_1,x_2,\ldots,x_n\) 等于 \(m<n\) 个变量
+\[
+ u_1,u_2,\ldots,u_m,
+\]
+的某些确定函数，即令
+\begin{equation}\tag{1}
+ x_i=\varphi_i(u_1,u_2,\ldots,u_m)\qquad i=1,2,\ldots,n.
+\end{equation}
+由 (1) 表示的点集称为 \(S_n\) 中的一个\emph{流形}，也称\emph{从属空间}。更确切地说，若函数 \(\varphi_i(u_1,u_2,\ldots,u_m)\) 不能用少于 \(m\) 个变量表示，就把这个点集称为流形 \(V_m\)，即 \(m\) 维流形\srcfn{1}{为使这种降维不发生，矩阵
+\[
+\left\|\begin{matrix}
+\dfrac{\partial\varphi_1}{\partial u_1},&\dfrac{\partial\varphi_1}{\partial u_2},&\ldots,&\dfrac{\partial\varphi_1}{\partial u_m}\\
+\dfrac{\partial\varphi_2}{\partial u_1},&\dfrac{\partial\varphi_2}{\partial u_2},&\ldots,&\dfrac{\partial\varphi_2}{\partial u_m}\\
+\cdots&\cdots&\cdots&\cdots\\
+\dfrac{\partial\varphi_n}{\partial u_1},&\dfrac{\partial\varphi_n}{\partial u_2},&\ldots,&\dfrac{\partial\varphi_n}{\partial u_m}
+\end{matrix}\right\|
+\]
+必须恰有秩 \(m\)，也就是说，它必须至少有一个非零的 \(m\) 阶子式。}。特别地，\(m=1\) 时流形称为\emph{曲线}，\(m=2\) 时称为\emph{曲面}，\(m=n-1\) 时称为\emph{超曲面}。
+
+当 (1) 等价于关于 \(x\) 的一组线性方程时，我们称 \(V_m\) 为\emph{线性空间}，并把它记作 \(S_m\)。特别地，\emph{环境空间} \(S_n\) 本身也视为\emph{线性}的\srcfn{2}{严格说来，综合几何学家的线性空间在这里对我们只是一个表示空间。}。
+
+我们以二次微分形式
+\[
+ f=\sum_{i,k=1}^{n} a_{ik}\,dx_i\,dx_k,
+\]
+作为空间 \(S_n\) 中\emph{度量}的基础，并假设它的判别式 \(a=|a_{ik}|\) 在所考察的整个空间区域内不为零。我们还假设各系数 \(a_{ik}\) 以及至少它们的一阶、二阶偏导数，都是 \(x\) 的实的、有限的连续函数。最后，假设形式 \(f\) 在整个所考察区域内\emph{正定}\srcfn{3}{最后这个条件是出于几何原因而加的；从分析观点看，它并非真正必要。读者很容易从下文看出，去掉该条件后哪些结果仍然成立。}。
+
+我们把公式
+\begin{equation}\tag{2}
+ ds^2=\sum_{i,k=1}^{n} a_{ik}\,dx_i\,dx_k,
+\end{equation}
+给出的表达式 \(ds\) 定义为两个无限邻近点 \((x_i)\)、\((x_i+dx_i)\) 之间的\emph{距离}，并把 \(ds\) 称为空间的\emph{线元}。因此，若在 \(S_n\) 中考虑曲线 C
+\[
+ x_i=x_i(t)\quad(i=1,2,\ldots,n),
+\]
+其中 \(t\) 是确定曲线上各点的参数，则从 \(t=t_0\) 到 \(t=t_1\) 的弧长为定积分
+\[
+ s=\int_{t_0}^{t_1}\sqrt{\sum_{i,k}a_{ik}x_i'x_k'}\,dt,
+\]
+这里撇号表示对 \(t\) 求导。
+
+特别地，把坐标线 \((x_i)\) 定义为只有参数 \(x_i\) 沿其变化的曲线，并以 \(ds_i\) 表示其弧元素，显然有
+\[
+ ds_i=\sqrt{a_{ii}}\,dx_i.
+\]
+
+\subsection*{\S. 153.\quad 角的度量。}
+
+定义了 \(S_n\) 中长度的度量法则后，再来定义角的度量法则。为此，考虑两个线元 \(ds,\delta s\)，它们从一点 \((x_i)\) 分别引向两个无限邻近点 \((x_i+dx_i)\)、\((x_i+\delta x_i)\)，使得
+\[
+ ds^2=\sum_{i,k}a_{ik}\,dx_i\,dx_k,
+ \qquad
+ \delta s^2=\sum_{i,k}a_{ik}\,\delta x_i\,\delta x_k.
+\]
+表达式
+\[
+ \sum_{i,k}a_{ik}\frac{dx_i}{ds}\frac{\delta x_k}{\delta s}
+\]
+的绝对值小于一\srcfn{1}{要简单地验证这一点，只须注意：由于二次形式 \(\sum_{i,k}a_{ik}\xi_i\xi_k\) 是定号的，关于 \(\lambda/\mu\) 的二次方程
+\[
+ \sum_{i,k}a_{ik}(\lambda\xi_i+\mu\eta_i)(\lambda\xi_k+\mu\eta_k)=0
+\]
+必有虚根，因而
+\[
+\left(\sum_{i,k}a_{ik}\xi_i\eta_k\right)^2<
+\left(\sum_{i,k}a_{ik}\xi_i\xi_k\right)
+\left(\sum_{i,k}a_{ik}\eta_i\eta_k\right).
+\]
+令 \(\xi_i=dx_i/ds,\ \eta_i=\delta x_i/\delta s\)，便正好得到正文的断言。}，所以存在唯一确定的实角 \(\omega\)，它介于 \(0\) 与 \(\pi\) 之间，并且
+\begin{equation}\tag{3}
+ \cos\omega=\sum_{i,k}a_{ik}\frac{dx_i}{ds}\frac{\delta x_k}{\delta s}.
+\end{equation}
+这个角 \(\omega\) 称为两个线元 \(ds,\delta s\) 或其方向所成的角。为说明这一约定的合理性，按照 Beltrami（《微分参数》，第 14 页）的观察，距离 \(Ds\)，即两个无限邻近点 \((x_i+dx_i)\)、\((x_i+\delta x_i)\) 之间的距离，略去高阶无穷小后，等于
+\[
+ Ds^2=\sum_{i,k}a_{ik}(dx_i-\delta x_i)(dx_k-\delta x_k),
+\]
+即
+\[
+ Ds^2=ds^2+\delta s^2-2ds\,\delta s\cos\omega,
+\]
+与普通空间中的情形完全相同。
+
+由公式 (3)，若以 \(\omega_{ik}\) 表示相应坐标线 \((x_i),(x_k)\) 的正方向所成的角，特别得到
+\begin{equation}\tag{3*}
+ \cos\omega_{ik}=\frac{a_{ik}}{\sqrt{a_{ii}a_{kk}}}.
+\end{equation}
+关于角的定义，还应补充以下说明。若把变量 \(x\) 换成另一组变量 \(y\)，并相应变换基本二次形式，则按上述方式定义的长度与角均不改变。此外，若在 \(S_n\) 中考虑流形 \(V_m\)，并在 (2) 中代入各 \(x\) 用 \(u\) 表示的值，从而得到流形上的 \(ds^2\)
+\begin{equation}\tag{2*}
+ ds^2=\sum_{r,s=1}^{m}b_{rs}\,du_r\,du_s,
+\end{equation}
+则依 (2*) 在 \(V_m\) 中量得的长度和角，分别与依 (2) 在环境空间 \(S_n\) 中量得的长度和角相同。
+
+\subsection*{\S. 154.\quad 方向常数。}
+
+从一点 \((x_i^{(0)})\) 发出的一个方向，由 \(n\) 个常数
+\[
+ \xi_i=\frac{dx_i}{ds}\quad(i=1,2,\ldots,n),
+\]
+的值确定；我们把它们称为\emph{方向常数}，它们满足恒等式
+\[
+ \sum_{i,k}a_{ik}\xi_i\xi_k=1.
+\]
+简言之，我们把方向 \((\xi_i)\) 定义为：相对于给定点 \((x_i)\)，它的方向常数为 \(\xi_1,\xi_2,\ldots,\xi_n\)。
+
+若从同一点发出两个方向 \((\xi_i^{(1)})\)、\((\xi_i^{(2)})\)，则其夹角 \(\omega\) 满足
+\[
+ \cos\omega=\sum_{i,k}a_{ik}\xi_i^{(1)}\xi_k^{(2)}.
+\]
+若 \((\xi_i^{(1)}),\ (\xi_i^{(2)}),\ldots,(\xi_i^{(m)})\) 是 \(m\) 个方向，它们从一点 \((x_i^{(0)})\) 发出，并考虑由公式
+\begin{equation}\tag{4}
+ x_i=x_i^{(0)}+\xi_i^{(1)}u_1+\xi_i^{(2)}u_2+\cdots+\xi_i^{(m)}u_m,
+ \qquad (i=1,2,\ldots,n),
+\end{equation}
+所定义的线性流形，其中 \(u_1,u_2,\ldots,u_m\) 为参数。这个流形是 \(m\) 维的，即一个 \(S_m\)，条件是 \(m\) 为矩阵
+\[
+ \left\|\xi_i^{(1)}\ \xi_i^{(2)}\ \cdots\ \xi_i^{(m)}\right\|
+ \quad i=1,2,\ldots,n
+\]
+的秩；此时称这 \(m\) 个方向相互独立。若秩为 \(r<m\)，则这 \(m\) 个方向位于一个 \(S_r\) 中，并称它们相互依赖。
+
+设属于第一种情形，再考虑任意另一方向 \((\xi_i)\)，它从 \((x_i^{(0)})\) 发出，并位于 (4) 所定义的空间 \(S_m\) 中。由 (4)，这个方向的常数满足
+\[
+ \xi_i=\lambda_1\xi_i^{(1)}+\lambda_2\xi_i^{(2)}+\cdots+\lambda_m\xi_i^{(m)}
+ \qquad(i=1,2,\ldots,n),
+\]
+其中各 \(\lambda\) 满足二次恒等式
+\[
+ \lambda_1^2+\lambda_2^2+\cdots+\lambda_m^2+2\lambda_1\lambda_2\cos\alpha_{12}+\cdots=1,
+\]
+这里 \(\alpha_{rs}\) 表示两个方向 \((\xi_i^{(r)})\)、\((\xi_i^{(s)})\) 之间的角。
+
+应注意，对流形 \(V_m\)：
+\[
+ x_i=\varphi_i(u_1,u_2,\ldots,u_m)
+\]
+
+在其一个普通点，可以作 \(m\) 个相互独立且切于该流形的方向；例如，可以作 \(m\) 个方向，使其方向常数 \(\xi_i\) 分别正比于导数
+\[
+ \frac{\partial \varphi_i}{\partial u_r}\qquad (r=1,2,\ldots,m).
+\]
+的方向。它们确定一个 \(S_m\)，即 \(V_m\) 的\emph{切空间}。过该点 \((x_i^{(0)})\) 且垂直于全部 \(m\) 个确定切空间 \(S_m\) 的方向的任一方向，也垂直于 \(S_m\) 内的一切其他方向，因而称为流形 \(V_m\) 的法方向。这些法于流形的 \(S_1\) 组成一个 \(S_{n-m}\)；特别地，若 \(V_m\) 是超曲面 \((m=n-1)\)，则只有一个法方向。
+
+两个超曲面在其公共点 \(P\) 处所成的角，是指它们的两个法方向所成的角。
+
+现在考虑坐标超曲面 \(x_r=\) 常数，简称超曲面 \(x_r\)。立刻可见，其法线的方向常数 \(\xi_i\) 正比于第 \(r^{\text{ma}}\) 行在判别式 \(a\) 中的各余子式；所以沿用第二章的记号，有
+\[
+ \xi_i=\frac{A_{ri}}{\sqrt{A_{rr}}}.
+\]
+因此，若以 \(\Omega_{rs}\) 表示两个坐标超曲面 \(x_r\)、\(x_s\) 所成的角，则
+\[
+ \cos\Omega_{rs}=\sum_{i,k}\frac{a_{ik}A_{ri}A_{sk}}{\sqrt{A_{rr}A_{ss}}},
+\]
+即
+\[
+ \cos\Omega_{rs}=\frac{A_{rs}}{\sqrt{A_{rr}A_{ss}}},
+\]
+用微分参数的符号可写为
+\[
+ \cos\Omega_{rs}=\frac{\nabla(x_r,x_s)}{\sqrt{\Delta_1x_r\,\Delta_1x_s}}.
+\]
+由微分参数的不变性可知，若考虑分别由方程
+\[
+ U(x_1,x_2,\ldots,x_n)=0,
+\]
+\[
+ V(x_1,x_2,\ldots,x_n)=0,
+\]
+表示的任意两个超曲面，则它们在任一点的交角 \(\Omega\) 满足
+\begin{equation}\tag{5}
+ \cos\Omega=\frac{\nabla(U,V)}{\sqrt{\Delta_1U\,\Delta_1V}}.
+\end{equation}
+特别地，两超曲面正交相交的充要条件，是混合微分参数 \(\nabla(U,V)\) 为零。
+
+\subsection*{\S. 155.\quad 测地线。}
+
+在 \(S_n\) 中给定长度的度量法则，也就确定了\emph{测地线}的概念：一条曲线若在它的任意两点 \(A,B\) \emph{取得充分邻近}时，给出在 \(S_n\) 中从 \(A\) 到 \(B\) 的最短路径，就称为测地线。
+
+现在按照变分法的规则建立这些曲线的微分方程。在一条这样的测地线 \(g\) 上，把动点的坐标 \((x_i)\) 表为弧长 \(t\) 的函数；这个弧长沿 \(g\) 从某一固定点算起。于是
+\begin{equation}\tag{5*}
+ \sum_{i,k=1}^{n}a_{ik}\frac{dx_i}{dt}\frac{dx_k}{dt}=1.
+\end{equation}
+取测地线在其两点 \(A,B\) 之间的一段，这两点分别对应于值 \(t_0,t_1\) 的 \(t\)；若以具有相同端点的无限邻近曲线代替测地线 \(g\)，即仍以 \(A,B\) 为端点，则弧长变分为零。
+
+由
+\[
+ ds^2=\sum_{i,k=1}^{n}a_{ik}\,dx_i\,dx_k,
+\]
+以符号 \(\delta\) 表示变分，可得
+\[
+ \delta ds=\frac12\sum_{i,k,l=1}^{n}\frac{\partial a_{ik}}{\partial x_l}
+       \frac{dx_i}{ds}\frac{dx_k}{ds}\,ds\,\delta x_l
+       +\sum_{i,l=1}^{n}a_{il}\frac{dx_i}{ds}\,\delta dx_l,
+\]
+两边积分，并对积分
+\[
+ \int_{t_0}^{t_1}\sum_{i=1}^{n}a_{il}\frac{dx_i}{ds}\,d\delta x_l
+\]
+作分部积分；注意依假设，变分 \(\delta x_l\) 在端点 \(t_0,t_1\) 均为零，便得到
+\[
+ \delta\int_{t_0}^{t_1}ds=\int_{t_0}^{t_1}\sum_{l=1}^{n}\left\{
+ \sum_{i,k=1}^{n}\frac12\frac{\partial a_{ik}}{\partial x_l}
+       \frac{dx_i}{ds}\frac{dx_k}{ds}
+ -\frac{d}{ds}\sum_{i=1}^{n}a_{il}\frac{dx_i}{ds}\right\}ds\,\delta x_l.
+\]
+所以，使 \(\delta\int_{t_0}^{t_1}ds\) 为零的微分方程是
+\begin{equation}\tag{A}
+ \frac{d}{dt}\sum_{i=1}^{n}a_{il}\frac{dx_i}{dt}
+ =\frac12\sum_{i,k=1}^{n}\frac{\partial a_{ik}}{\partial x_l}\frac{dx_i}{dt}\frac{dx_k}{dt}
+ \qquad(l=1,2,3,\ldots,n);
+\end{equation}
+这正是所求的测地线微分方程。引入 Christoffel 符号（第二章），可把它们写成等价形式
+\begin{equation}\tag{B}
+ \sum_{i=1}^{n}a_{il}\frac{d^2x_i}{dt^2}
+ +\sum_{\lambda,\mu=1}^{n}\chrsqB{\lambda\mu}{l}_{a}\frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}=0,
+ \qquad l=(1,2,\ldots,n);
+\end{equation}
+Christoffel 符号所带的指标 \(a\) 表明，该符号是由形式 \(\sum_{i,k}a_{ik}\,dx_i\,dx_k\) 构造的。也可用由 (B) 解出二阶导数所得的方程来代替 (B)，即
+\begin{equation}\tag{B*}
+ \frac{d^2x_i}{dt^2}+\sum_{\lambda,\mu=1}^{n}\chrB{\lambda\mu}{i}_{a}\frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}=0,
+ \qquad (i=1,2,3,
+\ldots,n)\srcfnmark{1}.
+\end{equation}
+\srcfntext{1}{在 \(n=2\) 的特殊情形，这些微分方程已在第六章 \S. 87（第 186 页）建立。}
+若积分 (B) 或 (B*)，使 \(x_i\) 在 \(t=t_0\) 取预先指定的值 \(x_i^{(0)}\)，并使一阶导数 \(dx_i/dt\) 取任意指定但满足条件
+\[
+ \sum_{i,k}a_{ik}\xi_i\xi_k=1,
+\]
+的初值 \(\xi_i\)，则条件 (5*) 恒成立，因为由 (B) 有
+\[
+ \frac{d}{dt}\sum_{i,k}a_{ik}\frac{dx_i}{dt}\frac{dx_k}{dt}=0.
+\]
+相应曲线因而是测地线，而 \(t\) 是它的弧长。由此可见，\(S_n\) 中的一条测地线，一旦给定它的一点 \((x_i^{(0)})\) 以及它从该点发出的方向 \((\xi_i)\)，便完全确定。
+
+既已得到测地线的微分方程 (B) 或 (B*)，便可不再管其推导方式，而把测地线定义为满足这些微分方程的曲线。事实上，容易验证 (B) 对自变量的任意变换（坐标变换）具有不变性；这直接证明，无论坐标怎样变换，测地线仍是测地线。此外还将看到，空间 \(S_n\) 的一条测地线，在任一流形 \(V_m\) 上也是测地线，只要该流形位于 \(S_n\) 中。
+
+事实上，设
+\[
+ x_i=\varphi_i(u_1,u_2,\ldots,u_m)\qquad(i=1,2,\ldots,n)
+\]
+为流形 \(V_m\) 的方程；若 \(m=n\)，则它们是坐标变换公式。其 \(ds^2\)，即流形 \(V_m\) 的线元，为
+\[
+ ds^2=\sum_{r,s=1}^{m}b_{rs}\,du_r\,du_s,
+\]
+其中
+\begin{equation}\tag{6}
+ b_{rs}=\sum_{\lambda,\mu=1}^{n}a_{\lambda\mu}\frac{\partial x_\lambda}{\partial u_r}\frac{\partial x_\mu}{\partial u_s}.
+\end{equation}
+由此计算第二个微分形式的 Christoffel 符号 \(\chrsqB{ik}{l}_{b}\)，立即得到
+\begin{equation}\tag{6*}
+ \chrsqB{ik}{l}_{b}=\sum_{\lambda,\mu,\nu=1}^{n}\chrB{\lambda\mu}{\nu}_{a}
+ \frac{\partial x_\lambda}{\partial u_i}\frac{\partial x_\mu}{\partial u_k}\frac{\partial x_\nu}{\partial u_l}
+ +\sum_{\lambda,\mu=1}^{n}a_{\lambda\mu}\frac{\partial^2x_\lambda}{\partial u_i\partial u_k}\frac{\partial x_\mu}{\partial u_l}.
+\end{equation}
+现在 \(x\) 是 \(u\) 的函数，而后者又是 \(t\) 的函数，故
+\[
+ \frac{dx_\lambda}{dt}=\sum_{r=1}^{m}\frac{\partial x_\lambda}{\partial u_r}\frac{du_r}{dt},
+\]
+\[
+ \frac{d^2x_\lambda}{dt^2}=\sum_{r,s=1}^{m}\frac{\partial^2x_\lambda}{\partial u_r\partial u_s}\frac{du_r}{dt}\frac{du_s}{dt}
+ +\sum_{r=1}^{m}\frac{\partial x_\lambda}{\partial u_r}\frac{d^2u_r}{dt^2}.
+\]
+代入 (B)，得
+\[
+\begin{aligned}
+&\sum_{\lambda=1}^{n}a_{\lambda\nu}\sum_{r,s=1}^{m}\frac{\partial^2x_\lambda}{\partial u_r\partial u_s}\frac{du_r}{dt}\frac{du_s}{dt}
++\sum_{\lambda=1}^{n}\sum_{r=1}^{m}a_{\lambda\nu}\frac{\partial x_\lambda}{\partial u_r}\frac{d^2u_r}{dt^2}\; +{}\\
+&\qquad+\sum_{\lambda,\mu=1}^{n}\chrsqB{\lambda\mu}{\nu}_{a}
+ \sum_{r,s=1}^{m}\frac{\partial x_\lambda}{\partial u_r}\frac{\partial x_\mu}{\partial u_s}\frac{du_r}{dt}\frac{du_s}{dt}=0
+ \qquad(\nu=1,2,3,
+\ldots,n);
+\end{aligned}
+\]
+以 \(\partial x_\nu/\partial u_l\) 乘此式，并从 \(\nu=1\) 到 \(\nu=n\) 求和，利用 (6)、(6*) 得
+\[
+ \sum_{r=1}^{m}b_{rl}\frac{d^2u_r}{dt^2}+
+ \sum_{i,k=1}^{m}\chrsqB{ik}{l}_{b}\frac{du_i}{dt}\frac{du_k}{dt}=0
+ \qquad(l=1,2,3,
+\ldots,m),
+\]
+而这正是为流形 \(V_m\) 构造的测地线微分方程 (B)，从而证明了上面的断言。
+
+\subsection*{\S. 156.\quad \(ds^2\) 的测地形式。}
+
+设坐标线 \((x_1)\) 是测地线，并且参数 \(x_1\) 是这些测地线的弧长，从它们与某一指定坐标超曲面 \(x_1\) 的相应交点算起，例如从 \(x_1=0\) 算起；于是其他各超曲面 \(x_1\)，就是从 \(x_1=0\) 起在这些测地线上截取相等弧长所得端点的轨迹。把微分方程 (A) 应用于当前测地线 \((x_1)\)，由 \(a_{11}=1\) 立即得到
+\begin{equation}\tag{7}
+ \frac{\partial a_{11}}{\partial x_l}=0,
+ \qquad(l=2,3,\ldots,n).
+\end{equation}
+若再假设测地线 \((x_1)\) 正交于初始超曲面 \(x_1=0\)，因而
+\[
+ a_{1l}=0\quad\hbox{当 }x_1=0\quad(l=2,3,
+\ldots,n),
+\]
+则由 (7)，\(a_{1l}\) 与 \(x_1\) 无关，所以恒有 \(a_{1l}=0\)；也就是说，其他一切超曲面 \(x_1\) 也都垂直于测地线 \((x_1)\)。于是得到定理：
+
+\oldquote
+若从超曲面 \(\Sigma\) 的每一点引出法测地线，并在这些测地线上截取相等的弧，则各端点的轨迹是一个正交于这些测地线的超曲面 \(\Sigma'\)。
+\closeoldquote
+
+这样得到的超曲面 \(\Sigma'\) 称为与 \(\Sigma\) \emph{测地平行}。
+
+这个定理显然是普通曲面测地线的 Gauss 定理（\S. 89，第 192 页定理 (B)）的推广；不过也可从其 \(n=2\) 的特殊情形作如下几何推导。测地线 \(g\) 法于 \(\Sigma\)，并从它的一条任意曲线 \(L\) 的各点发出；这些测地线组成一个二维曲面，其中各 \(g\) 是测地线。因此轨迹 \(L'\)，即在各 \(g\) 上从 \(L\) 起截取相等弧所得的端点轨迹，是正交于各 \(g\) 的曲线。另一方面，这条 \(L'\) 是画在 \(\Sigma'\) 上的一条任意曲线，故 \(\Sigma'\) 正交于所有测地线 \(g\)。
+
+回到上述假设下的线元形式，因为
+\[
+ a_{11}=1,\qquad a_{1l}=0\quad(l=2,3,\ldots,n),
+\]
+所以
+\begin{equation}\tag{8}
+ ds^2=dx_1^2+\sum_{r,s=2}^{n}a_{rs}\,dx_r\,dx_s.
+\end{equation}
+这称为线元的\emph{测地形式}。
+
+注意
+\[
+ \Delta_1x_1=A_{11}=1;
+\]
+反过来说，如果函数 \(\theta(x_1,x_2,\ldots,x_n)\) 满足方程
+\begin{equation}\tag{9}
+ \Delta_1\theta=1,
+\end{equation}
+则超曲面 \(\theta=\) 常数彼此测地平行；而且两个超曲面 \(\theta=\theta_0\)、\(\theta=\theta_1\) 之间的恒定测地距离恰为 \(\theta_1-\theta_0\)。事实上，把变量 \(x\) 换成 \(x'\)，令
+\[
+ x'_1=\theta
+\]
+并选取 \(x'_2,x'_3,
+\ldots,x'_n\)，使
+\[
+ \nabla(x'_1,x'_2)=0,
+ \quad \nabla(x'_1,x'_3)=0,
+\ldots\quad
+ \nabla(x'_1,x'_n)=0,
+\]
+这在几何上表示：取坐标线 \((x'_1)\) 为超曲面 \(\theta=\) 常数的正交轨线。以
+\[
+ ds^2=\sum_{r,s}a'_{rs}\,dx'_r\,dx'_s
+\]
+表示变换后的线元，于是
+\[
+ A'_{12}=0\quad A'_{13}=0\ldots\quad A'_{1n}=0
+\]
+从而
+\[
+ a'_{12}=0\quad a'_{13}=0\ldots\quad a'_{1n}=0;
+\]
+此外，由
+\[
+ \Delta x'_1=A'_{11}=1
+\]
+得到
+\[
+ a'_{11}=\frac{1}{A'_{11}}=1,
+\]
+即 \(ds^2\) 具有测地形式
+\[
+ ds^2=dx_1'^2+\sum_{r,s=2}^{n}a'_{rs}\,dx'_r\,dx'_s,
+\]
+这就证明了所述性质。一般地，要使超曲面
+\[
+ U(x_1,x_2,\ldots,x_n)=\hbox{常数}
+\]
+测地平行，显然必须使 \(\Delta_1U\) 只是 \(U\) 的函数，即
+\[
+ \Delta_1U=f(U);
+\]
+但这个条件也是充分的，因为把参数 \(U\) 改为
+\[
+ \theta=\int\frac{dU}{\sqrt{f(U)}},
+\]
+所得函数 \(\theta\) 满足 (9)。
+
+现在设偏微分方程 (9)
+\[
+ \Delta_1\theta=1
+\]
+有一个\emph{完全解} \(\theta\)，即除 \(\theta\) 中的一个加法常数外，还含有另外 \(n-1\) 个任意常数
+\[
+ a_1,a_2,
+\ldots,a_{n-1}.
+\]
+由 (9) 对参数 \(a_i\) 求导，得到
+\[
+ \nabla\left(\theta,\frac{\partial\theta}{\partial a_i}\right)=0,
+\]
+可见超曲面
+\[
+ \frac{\partial\theta}{\partial a_i}=\hbox{常数}
+\]
+正交于超曲面 \(\theta=\) 常数。再以 \(b_1,b_2,
+\ldots,b_{n-1}\) 表示新的任意常数，便得到测地线方程的一般积分（参见 \S. 93，第 204 页）：
+\begin{equation}\tag{9*}
+ \frac{\partial\theta}{\partial a_1}=b_1,
+ \quad \frac{\partial\theta}{\partial a_2}=b_2,
+ \ldots
+ \frac{\partial\theta}{\partial a_{n-1}}=b_{n-1}.
+\end{equation}
+例如，当空间的线元具有\emph{Liouville 形式}（参见 \S. 94）
+\[
+ ds^2=(X_1+X_2+\cdots+X_n)(dx_1^2+dx_2^2+
+\cdots+dx_n^2),
+\]
+其中 \(X_i\) 表示只依赖于 \(x_i\) 的函数，方程 (9) 变为
+\[
+ \left(\frac{\partial\theta}{\partial x_1}\right)^2+
+ \left(\frac{\partial\theta}{\partial x_2}\right)^2+
+ \cdots+
+ \left(\frac{\partial\theta}{\partial x_n}\right)^2
+ =X_1+X_2+
+\cdots+X_n
+\]
+所需的完全解可立即取为
+\[
+ \theta=c+\sum_{i=1}^{n}\int\sqrt{X_i+a_i}\,dx_i,
+\]
+其中常数 \(a_1,a_2,
+\ldots,a_n\) 满足关系
+\[
+ a_1+a_2+
+\cdots+a_n=0.
+\]
+
+\subsection*{\S. 157.\quad Riemann 意义下的曲率。}
+
+现在来建立 Riemann 意义下\emph{空间曲率}这一重要概念。为此，考虑空间的一点 \(M_0\equiv(x_i^{(0)})\) 以及两个方向 \((\xi_i^{(1)})\)、\((\xi_i^{(2)})\)，它们从 \(M_0\) 发出；这两个方向确定一束方向
+\begin{equation}\tag{10}
+ \xi_i=\alpha\xi_i^{(1)}+\beta\xi_i^{(2)}
+\end{equation}
+这些方向位于一个 \(S_2\) 中；或者用下文的说法，它们确定 \(S_n\) 中的一个\emph{定向}。
+
+从 \(M_0\) 沿这束方向中的各个方向发出的测地线，其轨迹是一个曲面 \(\sigma\)，称为\emph{测地曲面}。我们要计算曲率 \(K\)，即曲面 \(\sigma\) 在 \(M_0\) 处的曲率；也就是给出它的 \(ds^2\) 的二元微分形式之曲率，其中该度量按 \(S_n\) 计算。这个曲率 \(K\) 称为 \(M_0\) 处的\emph{空间曲率}，\emph{相对于给定的} \(S_2\) 定向而言。
+
+对所考察的任一测地线，把其动点的坐标 \(x_i\) 按弧长 \(t\) 的幂展开；弧长从 \(M_0\) 起算。依照简写的 Taylor 公式保留到 \(t\) 的二次项；由基本假设（\S. 152），这样做是允许的。利用第 334 页测地线的微分方程 (B*)，有
+\[
+ x_i=x_i^{(0)}+\xi_i t-\sum_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}\xi_\lambda\xi_\mu\frac{t^2}{2}+\cdots,
+\]
+或者，把 \(\xi\) 的值 (10) 代入：
+\[
+ x_i=x_i^{(0)}+\xi_i^{(1)}t\alpha+\xi_i^{(2)}t\beta-
+ \frac12\sum_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ (\xi_\lambda^{(1)}t\alpha+\xi_\lambda^{(2)}t\beta)
+ (\xi_\mu^{(1)}t\alpha+\xi_\mu^{(2)}t\beta)+\cdots.
+\]
+若在测地曲面 \(\sigma\) 上取坐标变量
+\[
+ u_1=t\alpha,
+\quad u_2=t\beta,
+\]
+则由上式得到
+\begin{equation}\tag{11}
+ x_i=x_i^{(0)}+\xi_i^{(1)}u_1+\xi_i^{(2)}u_2-
+ \frac12\sum_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ (\xi_\lambda^{(1)}u_1+\xi_\lambda^{(2)}u_2)
+ (\xi_\mu^{(1)}u_1+\xi_\mu^{(2)}u_2)+\cdots.
+\end{equation}
+要计算 \(\sigma\) 在 \(M_0\) 处的曲率，只须考察 \(M_0\) 的一个小邻域；在这里 \(t\) 是一阶无穷小，因而 \(u_1,u_2\) 也是一阶无穷小。公式 (11) 中已经写出的各项，足以计算\emph{在} \(M_0\) 处的 \(x\) 对 \(u_1,u_2\) 的一阶、二阶导数值。用上标 \((0)\) 标记这些值，由 (11) 得
+\begin{equation}\tag{11*}
+ \left(\frac{\partial x_i}{\partial u_h}\right)^{(0)}=\xi_i^{(h)},
+ \quad
+ \left(\frac{\partial^2x_i}{\partial u_h\partial u_k}\right)^{(0)}
+ =-\sum_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}\xi_\lambda^{(h)}\xi_\mu^{(k)}.
+\end{equation}
+现在以
+\[
+ ds^2=b_{11}du_1^2+2b_{12}du_1du_2+b_{22}du_2^2
+\]
+表示 \(ds^2\)，即曲面 \(\sigma\) 在坐标 \(u_1,u_2\) 下的线元。由第 335 页的公式 (6)、(6*)，有
+\begin{equation}\tag{12}
+ b_{ik}=\sum_{\lambda,\mu=1}^{n}a_{\lambda\mu}
+ \frac{\partial x_\lambda}{\partial u_i}\frac{\partial x_\mu}{\partial u_k},
+\end{equation}
+\begin{equation}\tag{12*}
+ \chrsqB{ik}{l}_{b}=\sum_{\lambda,\mu,\nu}\chrB{\lambda\mu}{\nu}_{a}
+ \frac{\partial x_\lambda}{\partial u_i}\frac{\partial x_\mu}{\partial u_k}\frac{\partial x_\nu}{\partial u_l}
+ +\sum_{\lambda,\mu}a_{\lambda\mu}
+ \frac{\partial^2x_\lambda}{\partial u_i\partial u_k}\frac{\partial x_\mu}{\partial u_l}.
+\end{equation}
+所求曲率 \(K\)，即 \(\sigma\) 在 \(M_0\) 处的曲率，由 \S. 37 第 76 页公式 (32) 给出：
+\begin{equation}\tag{13}
+ K=\frac{(12,12)^{(0)}_b}{(b_{11}b_{22}-b_{12}^{2})^{(0)}}
+\end{equation}
+因此，应当计算符号 \(\chrsqB{ik}{l}_{b}\) 及其导数在 \(M_0\) 处的值。先由 (12*)、(11*) 以及第一类、第二类三指标 Christoffel 符号之间的关系，立即得到：所有符号 \(\chrsqB{ik}{l}_{b}\) 在 \(M_0\) 处都为零。
+
+\subsection*{\S. 158.\quad Riemann 曲率公式。}
+
+根据上述观察，把符号 \((12,12)_b\) 换成 \S. 35 第 73 页公式 (30) 所给的实际值，就需要计算差
+\begin{equation}\tag{$\alpha$}
+ \frac{\partial}{\partial u_2}\chrsqB{11}{2}_{b}-
+ \frac{\partial}{\partial u_1}\chrsqB{12}{2}_{b}
+\end{equation}
+在 \(u_1=u_2=0\) 时的值。由 (12*) 有
+\[
+ \chrsqB{11}{2}_{b}=\sum_{\lambda,\mu,\nu}\chrB{\lambda\mu}{\nu}_{a}
+ \frac{\partial x_\lambda}{\partial u_1}\frac{\partial x_\mu}{\partial u_1}\frac{\partial x_\nu}{\partial u_2}
+ +\sum_{\lambda,\mu}a_{\lambda\mu}
+ \frac{\partial^2x_\lambda}{\partial u_1^2}\frac{\partial x_\mu}{\partial u_2},
+\]
+\[
+ \chrsqB{12}{2}_{b}=\sum_{\lambda,\mu,\nu}\chrB{\lambda\mu}{\nu}_{a}
+ \frac{\partial x_\lambda}{\partial u_1}\frac{\partial x_\mu}{\partial u_2}\frac{\partial x_\nu}{\partial u_2}
+ +\sum_{\lambda,\mu}a_{\lambda\mu}
+ \frac{\partial^2x_\lambda}{\partial u_1\partial u_2}\frac{\partial x_\mu}{\partial u_2}.
+\]
+形成差 \((\alpha)\) 时，含 \(x\) 的三阶导数的项相消；三重和中对中间因子 \(\partial x_\mu/\partial u_1\)、\(\partial x_\nu/\partial u_2\) 求导所得的两个含二阶导数的项也相消。再以初值 (11*) 代入一阶导数，先得到
+\begin{equation}\tag{$\beta$}
+\begin{aligned}
+&\frac{\partial}{\partial u_2}\chrsqB{11}{2}_{b}-
+ \frac{\partial}{\partial u_1}\chrsqB{12}{2}_{b}  \\
+&=\sum_{\lambda,\mu,\nu,\tau}\left\{
+ \frac{\partial}{\partial x_\tau}\chrB{\lambda\mu}{\nu}_{a}-
+ \frac{\partial}{\partial x_\mu}\chrB{\lambda\tau}{\nu}_{a}\right\}
+ \xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)} \\
+&\quad +\sum_{\lambda,\mu,\nu}\chrB{\lambda\mu}{\nu}_{a}\xi_\lambda^{(1)}\xi_\nu^{(2)}\frac{\partial^2x_\mu}{\partial u_1\partial u_2}
+ +\sum_{\lambda,\mu,\nu}\chrB{\lambda\mu}{\nu}_{a}\xi_\lambda^{(1)}\xi_\mu^{(1)}\frac{\partial^2x_\nu}{\partial u_2^2} \\
+&\quad +\sum_{\lambda,\mu,\nu}\frac{\partial a_{\lambda\mu}}{\partial x_\nu}\xi_\mu^{(2)}\xi_\nu^{(2)}\frac{\partial^2x_\lambda}{\partial u_1^2}
+ +\sum_{\lambda,\mu}a_{\lambda\mu}\frac{\partial^2x_\lambda}{\partial u_1^2}\frac{\partial^2x_\mu}{\partial u_2^2} \\
+&\quad -\sum_{\lambda,\mu,\tau}\chrsqB{\lambda\tau}{\nu}_{a}\xi_\tau^{(2)}\xi_\nu^{(2)}\frac{\partial^2x_\lambda}{\partial u_1^2}
+ -\sum_{\lambda,\tau,\nu}\chrsqB{\lambda\tau}{\nu}_{a}\xi_\lambda^{(1)}\xi_\tau^{(2)}\frac{\partial^2x_\nu}{\partial u_1\partial u_2} \\
+&\quad -\sum_{\lambda,\mu,\nu}\frac{\partial a_{\lambda\mu}}{\partial x_\nu}\xi_\mu^{(2)}\xi_\nu^{(1)}\frac{\partial^2x_\lambda}{\partial u_1\partial u_2}
+ -\sum_{\lambda,\mu}a_{\lambda\mu}\frac{\partial^2x_\lambda}{\partial u_1\partial u_2}\frac{\partial^2x_\mu}{\partial u_1\partial u_2}.
+\end{aligned}
+\end{equation}
+现在注意，由 (11*) 中的第二式，有
+\[
+ \sum_{\mu}a_{\lambda\mu}\frac{\partial^2x_\mu}{\partial u_h^2}
+ =-\sum_{\mu}a_{\lambda\mu}\sum_{i,k}\chrB{ik}{\mu}_{a}\xi_i^{(h)}\xi_k^{(h)}
+ =-\sum_{i,k}\chrsqB{ik}{\lambda}_{a}\xi_i^{(h)}\xi_k^{(h)}
+\]
+同理
+\[
+ \sum_{\mu}a_{\lambda\mu}\frac{\partial^2x_\mu}{\partial u_1\partial u_2}
+ =-\sum_{i,k}\chrsqB{ik}{\lambda}_{a}\xi_i^{(1)}\xi_k^{(2)},
+\]
+把这些关系代入 \((\beta)\)，并合并含有 \(x\) 的相同二阶导数的项（为此适当地更换求和指标），得到
+\[
+\begin{aligned}
+&\frac{\partial}{\partial u_2}\chrsqB{11}{2}_{b}-
+ \frac{\partial}{\partial u_1}\chrsqB{12}{2}_{b} \\
+&=\sum_{\lambda,\mu,\nu,\tau}\left\{
+ \frac{\partial}{\partial x_\tau}\chrB{\lambda\mu}{\nu}_{a}-
+ \frac{\partial}{\partial x_\mu}\chrB{\lambda\tau}{\nu}_{a}\right\}
+ \xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)} \\
+&\quad +\sum_{\lambda,\mu,l}\chrsqB{\lambda\mu}{l}_{a}\xi_\lambda^{(1)}\xi_\mu^{(1)}\frac{\partial^2x_l}{\partial u_2^2}
+ -\sum_{\lambda,\mu,l}\chrsqB{\mu\nu}{l}_{a}\xi_\mu^{(1)}\xi_\nu^{(2)}\frac{\partial^2x_l}{\partial u_1\partial u_2}.
+\end{aligned}
+\]
+最后，把二阶导数换成初值 (11*)
+\[
+ \frac{\partial^2x_l}{\partial u_2^2}=-\sum_{\nu,\tau}\chrB{\nu\tau}{l}_{a}\xi_\nu^{(2)}\xi_\tau^{(2)},
+\qquad
+ \frac{\partial^2x_l}{\partial u_1\partial u_2}=-\sum_{\lambda,\tau}\chrB{\lambda\tau}{l}_{a}\xi_\lambda^{(1)}\xi_\tau^{(2)},
+\]
+便有
+\[
+\begin{aligned}
+(12,12)_b^{(0)}&=\sum_{\lambda,\mu,\nu,\tau}\left\{\frac{\partial}{\partial x_\tau}\chrB{\lambda\mu}{\nu}_{a}-\frac{\partial}{\partial x_\mu}\chrB{\lambda\tau}{\nu}_{a}
+ +\sum_l\left(\chrsqB{\lambda\mu}{l}_{a}\chrB{\lambda\tau}{l}_{a}-\chrsqB{\mu\nu}{l}_{a}\chrB{\nu\tau}{l}_{a}\right)\right\} \\
+&\qquad\times \xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)}.
+\end{aligned}
+\]
+四重和中乘积 \(\xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)}\) 的系数，正是第 73 页的 Riemann 符号 \((\lambda\nu,\mu\tau)_a\)，因而
+\[
+ (12,12)_b^{(0)}=\sum_{\lambda,\mu,\nu,\tau}(\lambda\nu,\mu\tau)_a\xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)},
+\]
+右端的和遍及四个指标从 \(1\) 到 \(n\) 的一切组合 \(\lambda,\mu,\nu,\tau\)。现在利用 \S. 35 第 74 页各公式所表示的 Riemann 符号性质
+\[
+ (\lambda\nu,\mu\tau)=-(\nu\lambda,\mu\tau)=-(\lambda\nu,\tau\mu)=(\mu\tau,\lambda\nu),
+\]
+可把前式写成
+\[
+ (12,12)_b^{(0)}=\sum_{\lambda,\nu;\mu,\tau}'(\lambda\nu,
+\mu\tau)_a
+ \begin{vmatrix}\xi_\lambda^{(1)}&\xi_\lambda^{(2)}\\\xi_\nu^{(1)}&\xi_\nu^{(2)}\end{vmatrix}
+ \begin{vmatrix}\xi_\mu^{(1)}&\xi_\mu^{(2)}\\\xi_\tau^{(1)}&\xi_\tau^{(2)}\end{vmatrix},
+\]
+和号 \(\sum\) 上的撇号表示，只对满足下列条件的指标对 \(\lambda,\nu\)；\(\mu,\tau\) 求和：
+\[
+ \lambda<\nu,
+ \qquad \mu<\tau.
+\]
+另一方面，
+\[
+ b_{11}b_{22}-b_{12}^2=
+ \sum_{\lambda,\mu}a_{\lambda\mu}\xi_\lambda^{(1)}\xi_\mu^{(1)}
+ \sum_{\nu,\tau}a_{\nu\tau}\xi_\nu^{(2)}\xi_\tau^{(2)}
+ -\sum_{\lambda,\tau}a_{\lambda\tau}\xi_\lambda^{(1)}\xi_\tau^{(2)}
+ \sum_{\mu,\nu}a_{\mu\nu}\xi_\mu^{(1)}\xi_\nu^{(2)},
+\]
+由行列式理论的一个已知恒等式\srcfn{1}{事实上，写成
+\[
+ b_{11}b_{22}-b_{12}^{2}=\sum_{\lambda,\nu,\mu,\tau}
+ (a_{\lambda\mu}a_{\nu\tau}-a_{\lambda\tau}a_{\nu\mu})
+ \xi_\lambda^{(1)}\xi_\mu^{(1)}\xi_\nu^{(2)}\xi_\tau^{(2)}
+\]
+只须注意二阶子式
+\[
+ \begin{vmatrix}a_{\lambda\mu}&a_{\lambda\tau}\\a_{\nu\mu}&a_{\nu\tau}\end{vmatrix}
+\]
+具有与上面提到的 Riemann 符号 \((\lambda\mu,\nu\tau)\) 相同的性质；应用同一变换，就得到正文公式。}，还可写成
+\[
+ b_{11}b_{22}-b_{12}^2=\sum_{\lambda,\nu,\mu,\tau}'
+ \begin{vmatrix}a_{\lambda\mu}&a_{\lambda\tau}\\a_{\nu\mu}&a_{\nu\tau}\end{vmatrix}
+ \begin{vmatrix}\xi_\lambda^{(1)}&\xi_\lambda^{(2)}\\\xi_\nu^{(1)}&\xi_\nu^{(2)}\end{vmatrix}
+ \begin{vmatrix}\xi_\mu^{(1)}&\xi_\mu^{(2)}\\\xi_\tau^{(1)}&\xi_\tau^{(2)}\end{vmatrix}.
+\]
+代入第 340 页的 (13)，得到 Riemann 的最终公式
+\begin{equation}\tag{C}
+ K=\frac{\displaystyle\sum_{\lambda,\nu;\mu,\tau}'(\lambda\nu,
+\mu\tau)_a
+ \begin{vmatrix}\xi_\lambda^{(1)}&\xi_\lambda^{(2)}\\\xi_\nu^{(1)}&\xi_\nu^{(2)}\end{vmatrix}
+ \begin{vmatrix}\xi_\mu^{(1)}&\xi_\mu^{(2)}\\\xi_\tau^{(1)}&\xi_\tau^{(2)}\end{vmatrix}}
+ {\displaystyle\sum_{\lambda,\nu;\mu,\tau}'
+ \begin{vmatrix}a_{\lambda\mu}&a_{\lambda\tau}\\a_{\nu\mu}&a_{\nu\tau}\end{vmatrix}
+ \begin{vmatrix}\xi_\lambda^{(1)}&\xi_\lambda^{(2)}\\\xi_\nu^{(1)}&\xi_\nu^{(2)}\end{vmatrix}
+ \begin{vmatrix}\xi_\mu^{(1)}&\xi_\mu^{(2)}\\\xi_\tau^{(1)}&\xi_\tau^{(2)}\end{vmatrix}}.
+\end{equation}
+可以看出，这里由 \(\xi\) 构成的二阶行列式，正是矩阵
+\[
+ \left\|\begin{matrix}
+ \xi_1^{(1)}&\xi_2^{(1)}&\cdots&\xi_n^{(1)}\\
+ \xi_1^{(2)}&\xi_2^{(2)}&\cdots&\xi_n^{(2)}
+ \end{matrix}\right\|,
+\]
+的各子式，也就是与指定定向相应的 \(S_2\) 的\emph{坐标}。依 (C)，Riemann 曲率 \(K\) 是这些坐标的两个二次形式之商；分母中的形式还同原来的 \(\sum a_{rs}\xi_r\xi_s\) 一样是\emph{定号的}。
+
+\subsection*{\S. 159.\quad 常曲率空间。}
+
+若空间 \(S_n\) 具有如下性质，就称它具有\emph{常 Riemann 曲率} \(K_0\)：无论在何处取一点 \(M_0\) 于 \(S_n\)，也无论在 \(M_0\) 处所考察的测地曲面 \(\sigma\) 之切平面具有何种定向，其曲率 \(K\)，即 \(\sigma\) 的曲率，总保持同一个值 \(K_0\)。
+
+下一节 \S. 161 将证明 Schur 的一个重要结果：只须假设在每一个单独点附近，曲率对一切定向均不变，即可推出 \(K\) 是绝对常数。
+
+容易求出系数 \(a_{rs}\)（即 \(ds^2\) 的系数）必须满足哪些条件，空间才有常曲率 \(K_0\)。事实上，在这个假设下，例如保持方向 \((\xi_i^{(1)})\) 固定而让另一个方向 \((\xi_i^{(2)})\) 完全任意变化，使相应方向常数 \(\xi_i\) 除
+\[
+ \sum_{r,s}a_{rs}\xi_r\xi_s=1,
+\]
+之外不受任何其他关系约束；Riemann 公式 (C) 中令 \(K=K_0\)，便给出关于 \(\xi\) 的齐次二次关系。这个关系必须是恒等式，因此对指标 \(\lambda,\nu;\mu,\tau\) 的一切值都有
+\[
+ (\lambda\nu,\mu\tau)=K_0(a_{\lambda\mu}a_{\nu\tau}-a_{\lambda\tau}a_{\nu\mu}).
+\]
+反之，若满足这些条件，空间显然具有常曲率 \(K_0\)。所以：
+
+\oldquote
+空间 \(S_n\) 具有常曲率 \(K_0\) 的充要条件是公式
+\closeoldquote
+\begin{equation}\tag{15}
+ (\lambda\nu,\mu\tau)=K_0(a_{\lambda\mu}a_{\nu\tau}-a_{\lambda\tau}a_{\nu\mu}),
+\end{equation}
+\oldquote
+对指标 \(\lambda,\nu,\mu,\tau\) 从 \(1\) 到 \(n\) 的一切取值都成立。
+\closeoldquote
+
+首先应确认，任意维数 \(n\) 的常曲率空间确实存在；这一点并非先验显然，因为关系式 (15) 的数目 \(N_n=\frac{n^2(n^2-1)}{12}\)（\S. 35）显然大于数目 \(n(n+1)\)，即系数 \(a_{rs}\) 的数目。我们将立即求得 Riemann 所给的常曲率 \(K_0\) 空间线元的典型形式，为此令
+\begin{equation}\tag{16}
+ ds^2=\frac{dx_1^2+dx_2^2+\cdots+dx_n^2}{U^2},
+\end{equation}
+其中 \(U\) 是 \(x_1,x_2,\ldots,x_n\) 的适当函数，并用它满足 (15)。注意，一般地，若 \(ds^2\) 具有\emph{正交形式}
+\[
+ ds^2=H_1^2dx_1^2+H_2^2dx_2^2+
+\cdots+H_n^2dx_n^2,
+\]
+则 Riemann 符号的值如下，其中 \(r,k,i,h\) 表示从序列 \(1,2,\ldots,n\) 中取得的四个\emph{互异}数：
+{\fontsize{9}{10.5}\selectfont
+\begin{equation}\tag{17}
+\left\{
+\begin{aligned}
+(rk,ih)&=0,\\
+(rk,kh)&=H_k\left\{\frac{\partial^2H_k}{\partial x_r\partial x_h}
+ -\frac1{H_r}\frac{\partial H_r}{\partial x_h}\frac{\partial H_k}{\partial x_r}
+ -\frac1{H_h}\frac{\partial H_h}{\partial x_r}\frac{\partial H_k}{\partial x_h}\right\},\\
+(rk,kr)&=H_rH_k\left[\frac{\partial}{\partial x_r}\left(\frac1{H_r}\frac{\partial H_k}{\partial x_r}\right)
+ +\frac{\partial}{\partial x_k}\left(\frac1{H_k}\frac{\partial H_r}{\partial x_k}\right)
+ +\sum_{i=1}^{n}\frac1{H_i^2}\frac{\partial H_r}{\partial x_i}\frac{\partial H_k}{\partial x_i}
+ -\frac1{H_k^2}\frac{\partial H_r}{\partial x_k}\frac{\partial H_k}{\partial x_k}
+ -\frac1{H_r^2}\frac{\partial H_r}{\partial x_r}\frac{\partial H_k}{\partial x_r}\right].
+\end{aligned}
+\right.
+\end{equation}
+}
+把这些公式用于线元 \(ds^2\) 的形式 (16)，并构造方程 (15)，便得到确定 \(U\) 的条件
+\begin{equation}\tag{18}
+\left\{
+\begin{aligned}
+ \frac{\partial^2U}{\partial x_r\partial x_h}&=0,\\
+ U\left(\frac{\partial^2U}{\partial x_r^2}+\frac{\partial^2U}{\partial x_k^2}\right)
+ &=K_0+\sum_i\left(\frac{\partial U}{\partial x_i}\right)^2.
+\end{aligned}
+\right.
+\end{equation}
+由第一组条件得到
+\[
+ U=X_1+X_2+
+\cdots+X_n,
+\]
+其中 \(X_i\) 只是 \(x_i\) 的函数。再为简便起见令
+\[
+ \frac{dX_i}{dx_i}=X'_i,
+ \qquad
+ \frac{d^2X_i}{dx_i^2}=X''_i,
+\]
+由 (18) 的第二组条件得到
+\[
+ X''_1=X''_2=
+\cdots=X''_n
+\]
+因而
+\[
+ X_i=ax_i^2+2b_ix_i+c_i,
+\]
+其中 \(a,b_i,c_i\) 为常数。于是 (18) 的第二组条件归结为唯一的等式
+\[
+ 4a\left(a\sum x_i^2+2\sum b_ix_i+\sum c_i\right)=K_0+4\sum_i(ax_i+b_i)^2,
+\]
+即归结为关系
+\begin{equation}\tag{19}
+ K_0=4a\sum c_i-4\sum b_i^2
+\end{equation}
+它联系常数 \(a,b_i,c_i\)。
+
+若令所有 \(b_i\) 为零，并取 \(\sum c_i=1\)，则
+\[
+ U=1+\frac{K_0}{4}\sum_i x_i^2;
+\]
+由此得到 Riemann 的典型形式
+\begin{equation}\tag{D}
+ ds^2=\frac{dx_1^2+dx_2^2+
+\cdots+dx_n^2}{\left[1+\frac{K_0}{4}(x_1^2+x_2^2+
+\cdots+x_n^2)\right]^2}
+\end{equation}
+它给出常曲率空间的 \(ds^2\)，其曲率为 \(K_0\)。
+
+若常曲率 \(K_0\) 为负，令
+\[
+ K_0=-\frac1{R^2},
+\]
+此时称该空间为\emph{伪球空间，其半径为} \(R\)。还可以采用 \(ds^2\) 的另一个重要典型形式：令所有 \(c_i=0\)、\(a=0\)，并令 \(b_1=\frac1{2R}\)、\(b_2=b_3=\cdots=b_n=0\)，从而满足 (19)，得到
+\begin{equation}\tag{E}
+ ds^2=\frac{R^2}{x_1^2}(dx_1^2+dx_2^2+
+\cdots+dx_n^2).
+\end{equation}
+
+\subsection*{\S. 160.\quad 两个空间 \(S_n\) 具有相同常曲率 \(K_0\) 时的可适用性。}
+
+寻找这样的空间：每个区域的几何都与任何其他区域相同，也就是说，其中任一图形都能移到空间的任意其他区域，并且还能绕其一个固定点任意改变定向；这必然把我们引向常曲率空间。为更鲜明地表达同一事实，引入\emph{可适用空间}的定义：若两个空间 \(S_n,S'_n\) 都是 \(n\) 维的，并且可以在这两个空间本身（或它们适当的有限区域）之间建立逐点对应，使对应长度相等，就称它们彼此可适用。换言之，若对应的 \(ds^2\)
+\[
+ ds^2=\sum_{i,k}a_{ik}\,dx_i\,dx_k,
+\qquad
+ ds'^2=\sum_{i,k}a'_{ik}\,dx'_i\,dx'_k,
+\]
+由等价二次形式给出，就称两空间可适用。因此，我们所求的空间必须使每个区域都可适用于空间本身的任意其他区域，并且还可绕一点任意改变定向。由 Riemann 曲率的定义立即可见，这种曲率必须是常数；事实上，只须假定一点 \(P\) 能移到任意另一点 \(P'\)，并能使一个顶点在 \(P\) 的角与任一顶点在 \(P'\) 的等角重合，就足以推出这一点。
+
+所以，凡是在各区域中具有同一几何、也就是图形叠合原理成立的空间，必有常 Riemann 曲率。反过来，在每个常曲率空间中，几何也与所考察的区域无关；换言之，图形叠合原理对所有这些空间的几何都成立。这个重要结果来自下列一般定理：
+
+\oldquote
+两个 \(n\) 维空间若具有同一个常 Riemann 曲率 \(K_0\)，总可以彼此适用；适用公式含有 \(\frac{n(n+1)}2\) 个任意参数，使一个空间的一点 \(P\) 可以移到另一个空间的任意一点 \(P'\)，并使一个 \(n\) 面体\srcfn{1}{所谓正交 \(n\) 面体，从 \(P\) 发出，是指 \(n\) 个从 \(P\) 发出且两两正交的方向所成的系统。} 正交地从 \(P\) 发出，与一个任意的正交 \(n\) 面体重合，后者从 \(P'\) 发出。
+\closeoldquote
+
+实质上，我们已在第二章 \S. 36 建立了这个基本结果；现在只须对当时所得定理作几何解释即可看出。两个（正定）形式
+\[
+ f=\sum_{i,k}a_{ik}\,dx_i\,dx_k,
+\qquad
+ f'=\sum_{i,k}a'_{ik}\,dx'_i\,dx'_k,
+\]
+给出两个空间的 \(ds^2\)，这两个空间具有同一个常曲率 \(K_0\)；这两个形式确实等价。为求 \(x\) 关于 \(x'\) 的函数，可以在 \(x'_i\) 的一组初值上，例如 \(x'_i=0\) 时，任意指定 \(x_i\) 的值，例如令 \(x_i=0\)；在同一点还可任意指定导数 \(\partial x_i/\partial x'_r\) 的初值，只须满足初始条件
+\[
+ a'_{rs}=\sum_{i,k}a_{ik}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}.
+\]
+现在为更清楚起见，对 \(x\) 与 \(x'\) 分别作线性代换，使在初始点 \(x_i=0\)、\(x'_i=0\) 有
+\[
+ a_{ik}=0\quad\hbox{当 } i\ne k,
+\qquad
+ a_{ii}=1,
+\]
+并且同样有 \(a'_{ik}=0\)，当 \(i\ne k\) 时，
+\[
+ a'_{ii}=1,
+\]
+上述条件变为
+\[
+ \sum_i\frac{\partial x_i}{\partial x'_r}\frac{\partial x_i}{\partial x'_s}=0\quad r\ne s,
+\qquad
+ \sum_i\left(\frac{\partial x_i}{\partial x'_r}\right)^2=1
+\]
+令
+\[
+ \frac{\partial x_i}{\partial x'_r}=\xi_i^{(r)},
+\]
+其中
+\[
+ \begin{matrix}
+ \xi_1^{(r)}&\xi_2^{(r)}&\cdots&\xi_n^{(r)}
+ \end{matrix}
+\]
+是一个方向的 \(n\) 个余弦；而 \(n\) 个方向（分别对应于 \(r=1,2,\ldots,n\)）组成一个任意正交 \(n\) 面体，它从 \(x_i=0\) 发出。在两空间之间建立的适用公式中，这个 \(n\) 面体恰与一个坐标正交 \(n\) 面体重合；后者从原点 \((0)\) 发出，位于 \(S'_n\) 中。这就完全证明了所述定理。
+
+反过来，上述考察证明：若两个空间 \(S_n,S'_n\) 的适用公式中含有 \(\frac{n(n+1)}2\) 个任意常数，则这两个空间必有同一个常 Riemann 曲率；因为使两个相应 \(ds^2\) 可以互相变换的方程，必须属于 \S. 36 所研究的无限可积情形。
+
+把已证的一般定理用于同一常曲率空间的两个不同区域，显然得到上述结论。若把空间 \(S_n\) 对自身的每一个适用称为该空间的一个\emph{运动}，则这一性质可等价地表述为：
+
+\oldquote
+每个具有常 Riemann 曲率的 \(n\) 维空间，都容许一个含 \(\frac{n(n+1)}2\) 个参数的连续运动群；反之，若空间 \(S_n\) 的运动组成一个含 \(\frac{n(n+1)}2\) 个参数的连续群，则该空间具有常 Riemann 曲率。
+\closeoldquote
+
+考察 Riemann 曲率为零的特殊空间，也就是所谓\emph{Euclid 空间}。它的线元可以化为典型形式
+\[
+ ds^2=dx_1^2+dx_2^2+
+\cdots+dx_n^2;
+\]
+它的测地线（直线）由线性方程
+\[
+ x_i=a_i t+b_i\qquad(i=1,2,\ldots,n),
+\]
+表示，其中 \(a_i,b_i\) 为常数；前 \(n\) 个常数满足恒等式
+\[
+ \sum a_i^2=1,
+\]
+并且是直线的\emph{方向余弦}。
+
+因此，距离 \(\delta\)，即两点 \((x_i)\)、\((x'_i)\) 之间的距离，由公式
+\[
+ \delta^2=\sum_{i=1}^{n}(x_i-x'_i)^2.
+\]
+
+\subsection*{\S. 161.\quad Schur 定理。}
+
+在 \S. 159 中，我们已经提到 Schur\srcfn{1}{Math. Annalen Bd. 27.} 所得的一个重要结果，它可表述为：
+
+\oldquote
+若空间的 Riemann 曲率在每一个单独点附近对任意定向都相同，那么它也不随点而变化；也就是说，空间具有绝对常曲率。
+\closeoldquote
+
+Schur（引文 \S. 7）的证明部分采用几何方法，并使用测地曲面的特殊性质；这里以一个纯分析证明代替它，这个证明以四指标 Riemann 符号的性质为基础。为此写出一个 Riemann 符号的实际值（\S. 35）：
+\[
+ (rk,ih)=\frac{\partial}{\partial x_h}\chrsqB{ri}{k}
+ -\frac{\partial}{\partial x_i}\chrsqB{rh}{k}
+ +\sum_{\lambda,\mu}A_{\lambda\mu}
+ \left\{\chrsqB{rh}{\lambda}\chrsqB{ik}{\mu}
+ -\chrsqB{ri}{\lambda}\chrsqB{hk}{\mu}\right\}
+\]
+再对任意一个 \(x\)，例如 \(x_l\)，求导\srcfn{2}{这当然要求假设基本形式的系数 \(a_{ik}\) 还有有限且连续的三阶导数。}；注意 \(A\) 的导数满足公式
+\begin{equation}\tag{a*}
+ \frac{\partial A_{\lambda\mu}}{\partial x_i}
+ =-\sum_t A_{\lambda t}\chrB{lt}{\mu}-\sum_t A_{\mu t}\chrB{lt}{\lambda}.
+\end{equation}
+事实上，对恒等式关于 \(x_i\) 求导，就很容易验证后式：
+\[
+ \sum_{\tau}a_{s\tau}A_{\lambda\tau}=\varepsilon_{s\lambda}
+ \quad\left(\varepsilon_{s\lambda}=0\quad\hbox{当 }s\ne\lambda,
+\quad \varepsilon_{ss}=1\right),
+\]
+由此得到
+\[
+ \sum_{\tau}a_{s\tau}\frac{\partial A_{\lambda\tau}}{\partial x_i}
+ =-\sum_{\tau}A_{\lambda\tau}\chrsqB{s l}{i}
+ -\sum_{\tau}A_{\lambda\tau}\chrsqB{i l}{s}.
+\]
+以 \(A_{s\mu}\) 乘上式，再从 \(s=1\) 到 \(s=n\) 求和，便得到 (a*)。
+
+利用 (a*)，对 \(x_l\) 求导时，符号 \((rk,ih)\) 给出：
+\begin{equation}\tag{b*}
+\begin{aligned}
+\frac{\partial}{\partial x_l}(rk,ih)&=
+ \frac{\partial^2}{\partial x_h\partial x_l}\chrsqB{ri}{k}
+ -\frac{\partial^2}{\partial x_i\partial x_l}\chrsqB{rh}{k}
+ +\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{rh}{\lambda}\frac{\partial}{\partial x_l}\chrsqB{ik}{\mu}\\
+&\quad+\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{ik}{\mu}\frac{\partial}{\partial x_l}\chrsqB{rh}{\lambda}
+ -\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{ri}{\lambda}\frac{\partial}{\partial x_l}\chrsqB{hk}{\mu}\\
+&\quad-\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{hk}{\mu}\frac{\partial}{\partial x_l}\chrsqB{ri}{\lambda}
+ -\sum_{\lambda\mu t}\left(\chrsqB{rh}{\lambda}\chrsqB{ik}{\mu}
+ -\chrsqB{ri}{\lambda}\chrsqB{hk}{\mu}\right)A_{\lambda t}\chrB{lt}{\mu}\\
+&\quad-\sum_{\lambda\mu t}\left(\chrsqB{rh}{\lambda}\chrsqB{ik}{\mu}
+ -\chrsqB{ri}{\lambda}\chrsqB{hk}{\mu}\right)A_{\mu t}\chrB{lt}{\lambda}.
+\end{aligned}
+\end{equation}
+现在按下述方法变换最后几个三重和中的各项；以第一项为例，把变换完整写出：
+\[
+ \sum_{\lambda\mu t}A_{\lambda t}\chrB{lt}{\mu}\chrsqB{rh}{\lambda}\chrsqB{ik}{\mu}.
+\]
+由于
+\[
+ \sum_\lambda A_{\lambda t}\chrsqB{rh}{\lambda}=\chrB{rh}{t},
+ \qquad
+ \chrB{lt}{\mu}=\sum_\lambda A_{\lambda\mu}\chrsqB{lt}{\lambda},
+\]
+所以可以写成
+\[
+ \sum_{\lambda\mu t}A_{\lambda\mu}\chrB{lt}{\mu}\chrsqB{rh}{\lambda}\chrsqB{ik}{\mu}
+ =\sum_t\chrB{rh}{t}\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{lt}{\lambda}\chrsqB{ik}{\mu}.
+\]
+对其余各项作同样处理，并对指标记号作轻微改变，便可把 (b*) 写成
+\begin{equation}\tag{c*}
+\begin{aligned}
+\frac{\partial}{\partial x_l}(rk,ih)&=
+ \frac{\partial^2}{\partial x_h\partial x_l}\chrsqB{ri}{k}
+ -\frac{\partial^2}{\partial x_i\partial x_l}\chrsqB{rh}{k}
+ +\sum_t\chrB{rh}{t}\frac{\partial}{\partial x_l}\chrsqB{ik}{t}\\
+&\quad+\sum_t\chrB{ik}{t}\frac{\partial}{\partial x_l}\chrsqB{rh}{t}
+ -\sum_t\chrB{ri}{t}\frac{\partial}{\partial x_l}\chrsqB{hk}{t}
+ -\sum_t\chrB{hk}{t}\frac{\partial}{\partial x_l}\chrsqB{ri}{t}\\
+&\quad+\sum_t\chrB{ri}{t}\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{hk}{\mu}\chrsqB{lt}{\lambda}
+ +\sum_t\chrB{hk}{t}\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{ri}{\lambda}\chrsqB{lt}{\mu}\\
+&\quad-\sum_t\chrB{rh}{t}\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{ik}{\mu}\chrsqB{lt}{\lambda}
+ -\sum_t\chrB{ik}{t}\sum_{\lambda\mu}A_{\lambda\mu}\chrsqB{rh}{\lambda}\chrsqB{lt}{\mu}.
+\end{aligned}
+\end{equation}
+现在在 (c*) 中把三个指标 \(i,h,l\) 作一次、再作一次循环置换，并把所得两式与 (c*) 本身相加。立即可见，右端含第一类三指标符号二阶导数的各项相消；再合并以同一个第二类三指标符号为因子的各项，得到恒等式
+\begin{equation}\tag{d*}
+\begin{aligned}
+&\frac{\partial}{\partial x_l}(rk,ih)+\frac{\partial}{\partial x_i}(rk,hl)+\frac{\partial}{\partial x_h}(rk,li)\\
+&=\sum_t\chrB{ri}{t}(kt,lh)+
+ \sum_t\chrB{rh}{t}(kt,il)+
+ \sum_t\chrB{rl}{t}(kt,hi)\\
+&\quad+
+ \sum_t\chrB{ki}{t}(rt,hl)+
+ \sum_t\chrB{kh}{t}(rt,li)+
+ \sum_t\chrB{kl}{t}(rt,ih).
+\end{aligned}
+\end{equation}
+这是四指标 Riemann 符号之间的重要关系；它对五个指标从 \(1\) 到 \(n\) 的一切取值都成立：
+\[
+ r h,
+\quad i k l,
+\]
+不过，后三个指标须彼此不同，前两个指标也须彼此不同，否则这些关系会化为纯形式恒等式\srcfn{1}{依照 Christoffel 的基本观察（引文 \S. 6），若用公式
+\[
+ (rk,ihl)=\frac{\partial}{\partial x_l}(rh,ik)
+ -\sum_t\chrB{lr}{t}(tk,ih)-\sum_t\chrB{lk}{t}(rt,ih)-
+ \sum_t\chrB{li}{t}(rk,th)-\sum_t\chrB{lh}{t}(rk,it),
+\]
+引入\emph{五指标}符号，那么依 Ricci 的术语，它们称为 Riemann 符号的一阶协变导数，而正文的恒等式 (d*) 写成
+\[
+ (rk,ihl)+(rk,hli)+(rk,lih)=0.
+\]}。
+由这样建立的关系式 (d*)，可按如下方式容易地证明 Schur 定理。
+
+依假设，空间的 Riemann 曲率 \(K\) 在每一个单独点附近不随定向而改变，所以对所有指标值都必须有 \S. 159 形式的方程
+\[
+ (rk,ih)=K(a_{ri}a_{kh}-a_{rh}a_{ik}),
+\]
+其中 \(K\) 是 \(x_1,x_2,\ldots,x_n\) 的函数。只须证明 \(K\) 必为常数，即
+\[
+ \frac{\partial K}{\partial x_1}=\frac{\partial K}{\partial x_2}=\cdots=\frac{\partial K}{\partial x_n}=0.
+\]
+在恒等式 (d*) 中，以 (a*) 所给的值代入 Riemann 符号，立即看出所有不含 \(K\) 的导数的项都相消，于是只剩
+\[
+ (a_{ri}a_{kh}-a_{rh}a_{ik})\frac{\partial K}{\partial x_l}
+ +(a_{rh}a_{il}-a_{rl}a_{hi})\frac{\partial K}{\partial x_i}
+ +(a_{rl}a_{ik}-a_{ri}a_{kl})\frac{\partial K}{\partial x_h}=0.
+\]
+以 \(A_{ri}\) 乘此式，再对 \(r\) 从 \(1\) 到 \(n\) 求和（其中 \(i,h,l\) 为三个不同指标），便简单得到
+\[
+ a_{kh}\frac{\partial K}{\partial x_l}-a_{lk}\frac{\partial K}{\partial x_h}=0.
+\]
+固定 \(h,l\)，并令 \(k\) 取从 \(1\) 到 \(n\) 的一切值，便推出必有
+\[
+ \frac{\partial K}{\partial x_l}=\frac{\partial K}{\partial x_h}=0,
+\]
+否则，矩阵的一切子式都必须为零：
+\[
+ \left\|\begin{matrix}
+ a_{h1}&a_{h2}&\cdots&a_{hn}\\
+ a_{l1}&a_{l2}&\cdots&a_{ln}
+ \end{matrix}\right\|;
+\]
+但后一假设是荒谬的，因为该形式的判别式 \(a\) 不为零。因此 Schur 定理得证。
+
+\subsection*{\S. 162.\quad 空间 \(S_3\) 中的三个主曲率\srcfnmark{1}.}
+
+\srcfntext{1}{本节所述结果，可视为已经隐含在 Christoffel（1869）的奠基性论文中；该文确认，三变量的 \(ds^2\) 有三个微分不变量，而它们恰对应于三个主曲率。就目前所知，考察曲率的三个极大值（或极小值）最早见于 Souvórof 的论文 \emph{Sur les caractéristiques des systèmes de trois dimensions}，以俄文发表于 Kazan（1871）；作者又在 \emph{Bulletin des sciences mathématiques} 第 IV 卷（1873）发表了该工作的分析。后来 Schur 在上述著作（1886）中简要重论 Riemann 曲率随不同定向变化的规律。正文所用“主曲率”一名，由 Ricci 在论文 \emph{Sui gruppi continui di movimenti}（Società dei XL，第 XII 卷，1899）中引入。}
+现在回到 \(ds^2\) 取任意形式的曲空间，但假设 \(n=3\)，即专门考察三维曲空间。在这种情形，若要求曲率达到极大、极小时的定向，第 343 页的 Riemann 曲率公式 (C) 很容易讨论。由于 \(n=3\)，一点附近的一个定向（一个 \(S_2\)）只须给出三个方向常数 \(\xi_1,\xi_2,\xi_3\)，该方向法于这个 \(S_2\)。引入这个 \(S_2\) 的齐次坐标：
+\[
+ \eta_1:\eta_2:\eta_3=
+ \begin{vmatrix}\xi_2^{(1)}&\xi_2^{(2)}\\\xi_3^{(1)}&\xi_3^{(2)}\end{vmatrix}:
+ \begin{vmatrix}\xi_3^{(1)}&\xi_3^{(2)}\\\xi_1^{(1)}&\xi_1^{(2)}\end{vmatrix}:
+ \begin{vmatrix}\xi_1^{(1)}&\xi_1^{(2)}\\\xi_2^{(1)}&\xi_2^{(2)}\end{vmatrix},
+\]
+显然有
+\begin{equation}\tag{20}
+ \xi_1:\xi_2:\xi_3=
+ \sum_iA_{1i}\eta_i:
+ \sum_iA_{2i}\eta_i:
+ \sum_iA_{3i}\eta_i,
+\end{equation}
+而公式 (C) 给出 \(K\)，它是三个\emph{独立}变量 \(\eta_1,\eta_2,\eta_3\) 的两个二次形式之商。各指标对 \(\lambda,\nu;\mu,\tau\) 分别由互异指标组成；若以 \(r\) 表示 \(\lambda,\nu\) 之外的第三个指标，并以 \(s\) 表示 \(\mu,\tau\) 之外的第三个指标，那么与其像以前那样假设 \(\lambda<\nu\)、\(\mu<\tau\)，这里不如约定选择 \(\lambda,
+\nu;\mu,\tau\)，使排列 \(\lambda,
+\nu,r\) 和 \(\mu,
+\tau,s\) 都是 \(1,2,3\) 的正循环排列。这样做显然可行，因为在 Riemann 公式 (C) 中，例如交换 \(\lambda\) 与 \(\nu\)，并不改变相应的项。
+
+在这一约定下有
+\[
+ \begin{vmatrix}\xi_\lambda^{(1)}&\xi_\lambda^{(2)}\\\xi_\nu^{(1)}&\xi_\nu^{(2)}\end{vmatrix}=\eta_r,
+ \qquad
+ \begin{vmatrix}\xi_\mu^{(1)}&\xi_\mu^{(2)}\\\xi_\tau^{(1)}&\xi_\tau^{(2)}\end{vmatrix}=\eta_s,
+\]
+\[
+ a_{\lambda\mu}a_{\nu\tau}-a_{\lambda\tau}a_{\nu\mu}=aA_{rs}.
+\]
+若令
+\[
+ ab_{rs}=(\lambda\nu,
+\mu\tau),
+\]
+从而
+\[
+ b_{sr}=\frac1a(\mu\tau,
+\lambda\nu)=b_{rs},
+\]
+则
+\begin{equation}\tag{21}
+\left\{
+\begin{aligned}
+ b_{11}&=\frac1a(23,23),& b_{22}&=\frac1a(31,31),& b_{33}&=\frac1a(12,12),\\
+ b_{12}&=\frac1a(23,31),& b_{23}&=\frac1a(31,12),& b_{31}&=\frac1a(12,23),
+\end{aligned}
+\right.
+\end{equation}
+Riemann 曲率公式 (C) 写成
+\begin{equation}\tag{C*}
+ K=\frac{\sum_{r,s=1}^{3}b_{rs}\eta_r\eta_s}{\sum_{r,s=1}^{3}A_{rs}\eta_r\eta_s}.
+\end{equation}
+现在求曲率 \(K\) 达到极大、极小的定向；称这些定向为主定向，并称法于它们的方向为\emph{主方向}。为简便起见，以 \(\varphi\) 表示 (C*) 分子中的二次形式，以 \(F\) 表示分母中的（定号）形式；必须求满足下式的 \(\eta\) 值：
+\[
+ \varphi\frac{\partial F}{\partial\eta_s}=F\frac{\partial\varphi}{\partial\eta_s}
+ \qquad(s=1,2,3),
+\]
+即
+\[
+ \frac{\partial F}{\partial\eta_s}=\rho\frac{\partial\varphi}{\partial\eta_s},
+ \qquad \rho=\frac{F}{\varphi}.
+\]
+未知量 \(\rho\) 的值是三次方程
+\begin{equation}\tag{22}
+\begin{vmatrix}
+A_{11}-\rho b_{11}&A_{12}-\rho b_{12}&A_{13}-\rho b_{13}\\
+A_{21}-\rho b_{21}&A_{22}-\rho b_{22}&A_{23}-\rho b_{23}\\
+A_{31}-\rho b_{31}&A_{32}-\rho b_{32}&A_{33}-\rho b_{33}
+\end{vmatrix}=0,
+\end{equation}
+的根，记为 \(\rho_1,\rho_2,\rho_3\)。这三个根总是全为实数，其倒数 \(1/\rho_1\)、\(1/\rho_2\)、\(1/\rho_3\) 给出曲率的极大值或极小值，也就是三个主曲率
+\[
+ K_1=\frac1{\rho_1},
+\qquad
+ K_2=\frac1{\rho_2},
+\qquad
+ K_3=\frac1{\rho_3}.
+\]
+(22) 的一个根 \(\rho\)，对应于一组唯一的 \(\eta\) 比值，可由方程
+\begin{equation}\tag{22*}
+ \sum_{k}(A_{ik}-\rho b_{ik})\eta_k=0\qquad(i=1,2,3),
+\end{equation}
+算得；若该根为单根，便只有一个主定向。若根 \(\rho\) 为二重根，因而使行列式 (22) 的一切二阶子式为零，则各 \(\eta\) 只受一个齐次线性方程约束，相应的主方向组成一束（位于一个 \(S_2\) 中）。一般地，若 \(\rho,\rho'\) 是两个不同的根，而 \(\eta_1,\eta_2,\eta_3\)；\(\eta'_1,\eta'_2,\eta'_3\) 是相应的 \(\eta\) 值，则众所周知
+\[
+ \sum_{r,s}A_{rs}\eta_r\eta'_s=0.
+\]
+因此，以 \((\xi_1,\xi_2,\xi_3)\)、\((\xi'_1,\xi'_2,\xi'_3)\) 表示相应的两个主方向，由 (20) 得
+\[
+ \sum_{r,s,i,k}A_{rs}a_{ri}a_{sk}\xi_i\xi'_k=0,
+\]
+即
+\[
+ \sum_{i,k}a_{ik}\xi_i\xi'_k=0,
+\]
+这证明了定理：\emph{对应于 (22) 的不同根的两个主方向总互相正交}。
+
+\subsection*{\S. 163.\quad \(S_3\) 中的主三面体。}
+
+对于曲空间 \(S_3\)，三次方程 (22) 的三个根 \(\rho_1,\rho_2,\rho_3\)（相对于一点 \(M\)）一般互不相同；因而有三个从 \(M\) 发出的相应主方向，组成一个正交三元组。由它们组成的三面体称为点 \(M\) 的\emph{主三面体}。
+
+若三次方程的一个根是二重根，另一根 \(\rho_3\) 是单根，则有一个完全确定的主方向对应于单根 \(\rho_3\)，而任何法于这个方向的其他方向，都可视为对应于二重根的主方向。此时，可取由对应于 \(\rho_3\) 的方向，以及任意另外两个既法于它又彼此正交的方向所成的三面体，作为主三面体。
+
+最后，还可能三次方程只有一个（三重）根；这时，顶点在该点的任一三直角三面体都应视为主三面体。若空间的每一点都如此，则在每一单独点附近，曲率对任意定向都相同；由 Schur 定理（\S. 161），曲率绝对恒定，即空间具有常 Riemann 曲率。利用主三面体的概念，可以把 Riemann 曲率公式 (C*) 化成一个重要形式，它与普通空间曲面法截线曲率的 Euler 公式（\S. 62，第 131 页）完全类似。为此，在空间中固定一点 \(M_0\)，选择坐标线 \((x_1)(x_2)(x_3)\)，使它们从 \(M_0\equiv(x_i^{(0)})\) 沿三个主方向发出；这样的选择显然有无穷多种。
+
+于是
+\[
+ a_{12}=a_{23}=a_{13}=0\quad\hbox{当 }x_i=x_i^{(0)},
+\]
+再利用参数 \(x_1,x_2,x_3\) 的任意性，为简单起见令
+\[
+ a_{11}=a_{22}=a_{33}=1,
+\quad\hbox{当 }x_i=x_i^{(0)}.
+\]
+于是方向常数 \(\xi_1,\xi_2,\xi_3\) 在点 \(M_0\) 处与通常的方向余弦相同，并且由 (20)
+\[
+ \eta_1:\eta_2:\eta_3=\xi_1:\xi_2:\xi_3.
+\]
+由于坐标线在 \(M_0\) 处的方向是主方向，故依次作下列代入时，(22*) 必须成立：
+\[
+ \eta_1=1,
+\quad \eta_2=\eta_3=0,
+\quad \rho=\rho_1,
+\]
+\[
+ \eta_1=0,
+\quad \eta_2=1,
+\quad \eta_3=0,
+\quad \rho=\rho_2,
+\]
+\[
+ \eta_1=0,
+\quad \eta_2=0,
+\quad \eta_3=1,
+\quad \rho=\rho_3,
+\]
+由此
+\[
+ b_{11}=\frac1{\rho_1},
+ \quad b_{22}=\frac1{\rho_2},
+ \quad b_{33}=\frac1{\rho_3},
+\]
+\[
+ b_{12}=b_{23}=b_{13}=0,
+\]
+所以 (C*) 变为
+\[
+ K=\frac{\frac{\xi_1^2}{\rho_1}+\frac{\xi_2^2}{\rho_2}+\frac{\xi_3^2}{\rho_3}}
+ {\xi_1^2+\xi_2^2+\xi_3^2},
+\]
+即
+\begin{equation}\tag{23}
+ K=K_1\xi_1^2+K_2\xi_2^2+K_3\xi_3^2,
+\end{equation}
+其中 \(K_1,K_2,K_3\) 表示三个主曲率，\(\xi_1,\xi_2,\xi_3\) 表示所考察定向的法方向与三个主方向所成各角的余弦。这个公式与上述 Euler 公式的类比显而易见。还可进一步作类比：为考察曲率 \(K\) 随定向的变化，引入\emph{指标二次曲面}
+\[
+ K_1x^2+K_2y^2+K_3z^2=\pm1,
+\]
+它在这里代替 Dupin 指标曲面（参见 \S. 62）。
+
+在 \(S_3\) 的每一点引入主方向，自然导致\emph{主线}的概念：主线就是其切线在每一点都是主方向的曲线。若以 \(\xi_1,\xi_2,\xi_3\) 表示一个主方向的常数，则它们是 \(x_1,x_2,x_3\) 的已知函数，相应的主线显然是联立微分方程
+\[
+ \frac{dx_1}{\xi_1}=\frac{dx_2}{\xi_2}=\frac{dx_3}{\xi_3}.
+\]
+的积分曲线。对应于每一个主方向，都有双无穷多条充满空间的主线；或者用我们的说法，它们构成一个\emph{主线汇}。于是共有三个主线汇；空间的每一点有三条主线通过，每个线汇各一条，并在该点两两正交。
+
+一般地，三个主线汇的曲线并不构成一个\emph{三重正交曲面系}；但确有无穷多个曲空间满足这一性质。
+
+\subsection*{\S. 164.\quad 曲空间中的超曲面。}
+
+现在回到任意维数的空间，考察其中的\emph{超曲面}，并为它们建立与第四章中三维欧几里得空间曲面公式相对应的公式。
+
+稍微改换记号，考虑一个空间 \(S_{n+1}\)，其维数为 \(n+1\)，以
+\[
+ x_0,x_1,x_2,
+\ldots,x_n
+\]
+表示其一点的变动坐标，并设
+\begin{equation}\tag{24}
+ ds^2=\mathop{\mathrm{S}}_{i,k=0}^{n}a_{ik}\,dx_i\,dx_k
+ \qquad(i,k=0,1,
+\ldots,n)
+\end{equation}
+是给出其 \(ds^2\) 的基本形式。在 \(S_{n+1}\) 中考虑一个超曲面 \(V_n\)，由公式
+\[
+ x_i=\varphi_i(u_1,u_2,
+\ldots,u_n)\qquad(i=0,1,
+\ldots,n)
+\]
+给出，并设
+\begin{equation}\tag{25}
+ ds^2=\sum_{\lambda,\mu=1}^{n}b_{\lambda\mu}\,du_\lambda\,du_\mu
+\end{equation}
+是它的 \(ds^2\)，因而
+\begin{equation}\tag{26}
+ b_{\lambda\mu}=\mathop{\mathrm{S}}_{i,k}a_{ik}\frac{\partial x_i}{\partial u_\lambda}\frac{\partial x_k}{\partial u_\mu}\srcfnmark{1}.
+\end{equation}
+\srcfntext{1}{本节及以下同时使用两个求和符号 \(\mathrm{S},\Sigma\)；前者对从 \(0\) 到 \(n\) 的变动指标求和，后者对从 \(1\) 到 \(n\) 的变动指标求和。}
+考虑与 \(V_n\) 测地平行的超曲面（\S. 156），并以 \(u_0\) 表示正交测地线的弧长，从 \(V_n\) 起算。\(S_{n+1}\) 的线元在坐标 \(u_0,u_1,\ldots,u_n\) 中取测地形式
+\begin{equation}\tag{27}
+ ds^2=du_0^2+\sum_{i,k}c_{ik}\,du_i\,du_k,
+\end{equation}
+其中 \(c_{ik}\) 是 \(u_0,u_1,\ldots,u_n\) 的函数，在 \(u_0=0\) 时分别化为 \(b_{ik}\)。对任意函数 \(\phi(u_0,u_1,u_2,\ldots,u_n)\)，引入简记
+\[
+ \overline{\phi}=\phi(0,u_1,u_2,
+\ldots,u_n),
+\]
+于是
+\[
+ \overline{c}_{ik}=b_{ik}.
+\]
+为得到所需的基本公式，除 \(V_n\) 外，再考虑无限接近的平行超曲面 \(u_0=\varepsilon\)，其中 \(\varepsilon\) 是一个无穷小常数。略去 \(\varepsilon\) 的高次幂，以
+\begin{equation}\tag{28}
+ \delta ds^2=-2\varepsilon\sum_{i,k}\Omega_{ik}\,du_i\,du_k
+\end{equation}
+表示 \(ds^2\) 从 \(V_n\) 到这个无限接近超曲面时的变分，则显然有
+\begin{equation}\tag{29}
+ \Omega_{ik}=-\frac12\overline{\left(\frac{\partial c_{ik}}{\partial u_0}\right)}.
+\end{equation}
+两个二次微分形式
+\[
+ \sum_{i,k}b_{ik}\,du_i\,du_k,
+ \qquad
+ \sum_{i,k}\Omega_{ik}\,du_i\,du_k
+\]
+分别称为超曲面 \(V_n\) 的\emph{第一基本形式和第二基本形式}；它们与第四章引入的欧几里得 \(S_3\) 中曲面的两个基本形式完全对应。
+
+另在 \(V_n\) 的一点考虑法方向，其方向常数为 \(X_0,X_1,\ldots,X_n\)；则
+\[
+ X_i=\overline{\left(\frac{\partial x_i}{\partial u_0}\right)}
+ \qquad(i=0,1,
+\ldots,n)
+\]
+并有公式
+\begin{equation}\tag{30}
+\left\{
+\begin{aligned}
+\mathop{\mathrm{S}}_{i,k}a_{ik}\frac{\partial x_i}{\partial u_r}X_k&=0\qquad(r=1,2,
+\ldots,n),\\
+\mathop{\mathrm{S}}_{i,k}a_{ik}X_iX_k&=1,
+\end{aligned}
+\right.
+\end{equation}
+由此正可求出 \(X_0,X_1,\ldots,X_n\) 的各值，只要给出方程 \(x_i=\varphi_i(u_1,\ldots,u_n)\) 所定义的 \(V_n\)。
+
+\subsection*{\S. 165.\quad Gauss 方程与 Codazzi 方程的推广。}
+
+在上述准备之后，现在建立超曲面的两个基本形式的系数 \(b_{ik},\Omega_{ik}\) 之间的关系（参见第四章）。
+
+为此，只须对等价的两个微分形式 (24)、(27) 应用第二章的公式。首先取 Christoffel 公式 (II)（\S. 30，第 64 页）：
+\begin{equation}\tag{a}
+ \frac{\partial^2x_\nu}{\partial u_r\partial u_s}
+ =\mathop{\mathrm{S}}_{\lambda}\chrB{rs}{\lambda}_{c}\frac{\partial x_\nu}{\partial u_\lambda}
+ -\mathop{\mathrm{S}}_{i,k,\lambda}\chrB{ik}{\nu}_{a}
+ \frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s}\srcfnmark{1}.
+\end{equation}
+\srcfntext{1}{Christoffel 符号上所附的指标 \(a,b,c\) 表明，这些符号分别对二次形式 (24)、(25)、(27) 构成。}
+在这些公式中令 \(u_0=0\)，把与零指标对应的项分开，并注意：若 \(i,k,l\) 是数列 \(1,2,\ldots,n\) 中的指标，则有
+\begin{equation}\tag{b}
+\chrsqB{ik}{l}_{c}=\chrsqB{ik}{l}_{b},
+\quad
+\chrsqB{ik}{0}_{c}=\Omega_{ik},
+\quad
+\chrsqB{i0}{l}_{c}=-\Omega_{il},
+\quad
+\chrB{ik}{l}_{c}=\chrB{ik}{l}_{b},
+\quad
+\chrB{ik}{0}_{c}=\Omega_{ik}.
+\end{equation}
+由 (a) 得到所需的基本公式：
+\begin{equation}\tag{F}
+\begin{aligned}
+\frac{\partial^2x_\nu}{\partial u_r\partial u_s}
+ &=\sum_l\chrB{rs}{l}_{b}\frac{\partial x_\nu}{\partial u_l}+\Omega_{rs}X_\nu
+ -\mathop{\mathrm{S}}_{i,k}\chrB{ik}{\nu}_{a}\frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s},\\[-0.2em]
+&\hspace{11em} r,s=1,2,
+\ldots,n,\qquad \nu=0,1,2,
+\ldots,n,
+\end{aligned}
+\end{equation}
+\begin{equation}\tag{G}
+ \frac{\partial X_\nu}{\partial u_s}
+ =-\sum_{\lambda,\mu}B_{\lambda\mu}\Omega_{\mu s}\frac{\partial x_\nu}{\partial u_\lambda}
+ -\mathop{\mathrm{S}}_{i,k}\chrB{ik}{\nu}_{a}\frac{\partial x_i}{\partial u_s}X_k;
+\end{equation}
+这就是第四章（第 116--117 页）公式 (I)、(II) 所求的推广。
+
+现在对第二章的公式 (III)（\S. 34，第 72 页）作同样的代换：
+\[
+ (\alpha\delta,\beta\gamma)_c=
+ \mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_k}{\partial u_\delta}
+ \frac{\partial x_i}{\partial u_\beta}\frac{\partial x_h}{\partial u_\gamma},
+\]
+其中假定 \(\alpha,\beta,\gamma\) 均不为零。
+
+回忆 Riemann 符号 \((\alpha\delta,\beta\gamma)\) 的实际值由下式给出（\S. 35，第 73 页）：
+\[
+ (\alpha\delta,
+\beta\gamma)_c=
+ \frac{\partial}{\partial u_\gamma}\chrsqB{\alpha\beta}{\delta}_{c}
+ -\frac{\partial}{\partial u_\beta}\chrsqB{\alpha\gamma}{\delta}_{c}
+ +\sum_{l,m}C_{lm}\left\{\chrsqB{\alpha\gamma}{m}\chrsqB{\beta\delta}{l}
+ -\chrsqB{\alpha\beta}{m}\chrsqB{\gamma\delta}{l}\right\},
+\]
+另一方面，由于
+\[
+ C_{00}=1,
+\qquad C_{0m}=0\quad\hbox{当 }m\ne0,
+\]
+可写成
+\[
+\begin{aligned}
+(\alpha\delta,
+\beta\gamma)_c&=
+ \chrsqB{\alpha\gamma}{0}\chrsqB{\beta\delta}{0}
+ -\chrsqB{\alpha\beta}{0}\chrsqB{\gamma\delta}{0}
+ +\frac{\partial}{\partial u_\gamma}\chrsqB{\alpha\beta}{\delta}_{c}
+ -\frac{\partial}{\partial u_\beta}\chrsqB{\alpha\gamma}{\delta}_{c}\\
+&\quad+\sum_{l,m}C_{lm}\left\{\chrsqB{\alpha\gamma}{m}\chrsqB{\beta\delta}{l}
+ -\chrsqB{\alpha\beta}{m}\chrsqB{\gamma\delta}{l}\right\}.
+\end{aligned}
+\]
+现在先假设 \(\delta\ne0\)，作上述代换，得公式
+\begin{equation}\tag{H}
+ \Omega_{\alpha\beta}\Omega_{\delta\gamma}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+ =(\alpha\delta,
+\beta\gamma)_b-
+ \mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_k}{\partial u_\delta}
+ \frac{\partial x_i}{\partial u_\beta}\frac{\partial x_h}{\partial u_\gamma},
+\end{equation}
+它们对从 \(1\) 到 \(n\) 的指标 \(\alpha,\beta,\gamma,\delta\) 的所有值均成立，并显然是 Gauss 方程
+\[
+ \frac{DD''-D'^2}{EG-F^2}=K
+\]
+的推广；后者给出欧几里得空间 \(S_3\) 中曲面的曲率。
+
+在 \(\delta=0\) 的情形，同一代换导出下列方程，它们就是\emph{广义 Codazzi 公式}：
+\begin{equation}\tag{J}
+ \frac{\partial\Omega_{\alpha\beta}}{\partial u_\gamma}
+ -\frac{\partial\Omega_{\alpha\gamma}}{\partial u_\beta}
+ +\sum_t\chrB{\alpha\beta}{t}_{b}\Omega_{t\gamma}
+ -\sum_t\chrB{\alpha\gamma}{t}_{b}\Omega_{\beta t}
+ =\mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_i}{\partial u_\beta}\frac{\partial x_h}{\partial u_\gamma}X_k,
+\end{equation}
+它们对从 \(1\) 到 \(n\) 的指标 \(\alpha,\beta,\gamma\) 的所有值均成立。
+
+在任意曲空间的一般情形下，方程 (H)（我们称为 Gauss 方程）和 Codazzi 方程 (J)，除了含有系数 \(b_{rs},\Omega_{rs}\)及其导数（它们属于 \(V_n\) 的两个基本形式）以外，还含有未知函数 \(x\) 对 \(u\) 的一阶导数。
+
+但只要假设环境空间 \(S_{n+1}\) 具有常曲率 \(K_0\)，这些关于 \(x\) 的一阶导数便从 (H)、(J) 中消失，只剩两个基本形式的系数之间的关系。
+
+事实上，在此假设下（\S. 159）有
+\[
+ (rk,ih)_a=K_0(a_{ri}a_{kh}-a_{rh}a_{ik})
+\]
+因而
+\[
+\begin{aligned}
+&\mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_i}{\partial u_\beta}
+ \frac{\partial x_h}{\partial u_\gamma}\frac{\partial x_k}{\partial u_\delta} \\
+&=K_0\left[
+ \mathop{\mathrm{S}}_{r,i}a_{ri}\frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_i}{\partial u_\beta}
+ \cdot\mathop{\mathrm{S}}_{h,k}a_{hk}\frac{\partial x_h}{\partial u_\gamma}\frac{\partial x_k}{\partial u_\delta}
+ -\mathop{\mathrm{S}}_{r,h}a_{rh}\frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_h}{\partial u_\gamma}
+ \cdot\mathop{\mathrm{S}}_{i,k}a_{ik}\frac{\partial x_i}{\partial u_\beta}\frac{\partial x_k}{\partial u_\delta}
+ \right]
+\end{aligned}
+\]
+所以由 (26)
+\[
+ \mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_i}{\partial u_\beta}
+ \frac{\partial x_h}{\partial u_\gamma}\frac{\partial x_k}{\partial u_\delta}
+ =K_0(b_{\alpha\beta}b_{\gamma\delta}-b_{\alpha\gamma}b_{\beta\delta}).
+\]
+类似地还有
+\[
+ \mathop{\mathrm{S}}_{r,k,l,h}(rk,ih)_a
+ \frac{\partial x_r}{\partial u_\alpha}\frac{\partial x_i}{\partial u_\beta}
+ \frac{\partial x_h}{\partial u_\gamma}X_k
+ =K_0\left\{b_{\alpha\beta}\mathop{\mathrm{S}}_{h,k}a_{hk}\frac{\partial x_h}{\partial u_\gamma}X_k
+ -b_{\alpha\gamma}\mathop{\mathrm{S}}_{i,k}a_{ik}\frac{\partial x_i}{\partial u_\beta}X_k\right\}
+\]
+由 (30)，右边括号中的两个和都为零。因此：\emph{若环境空间} \(S_{n+1}\) \emph{具有常曲率} \(K_0\)\emph{，Gauss 方程 (H) 和 Codazzi 方程 (J) 分别变为}：
+\begin{equation}\tag{H*}
+ \Omega_{\alpha\beta}\Omega_{\delta\gamma}-\Omega_{\alpha\gamma}\Omega_{\beta\delta}
+ =(\alpha\delta,
+\beta\gamma)_b-K_0(b_{\alpha\beta}b_{\gamma\delta}-b_{\alpha\gamma}b_{\beta\delta})
+\end{equation}
+\begin{equation}\tag{J*}
+ \frac{\partial\Omega_{\alpha\beta}}{\partial u_\gamma}
+ -\frac{\partial\Omega_{\alpha\gamma}}{\partial u_\beta}
+ +\sum_t\chrB{\alpha\beta}{t}_{b}\Omega_{t\gamma}
+ -\sum_t\chrB{\alpha\gamma}{t}_{b}\Omega_{\beta t}=0.
+\end{equation}
+很值得注意的是，在当前情形下，两个基本形式的系数之间的关系 (H*)、(J*)，对相应超曲面 \(V_n\) 的存在既是必要的，也是\emph{充分的}。
+
+这可由下述事实推出：此时，基本方程 (F)、(G) 对 \((n+1)(n+3)\) 个未知量组成一个\emph{无限可积}的系统：
+\[
+ x_i,
+ \quad X_i,
+ \quad \frac{\partial x_i}{\partial u_r},
+\]
+从 (H*)、(J*) 正是 (F)、(G) 的可积条件这一点便能看出此事；这也正是它们的推导方式（参见第二章，\S. 34）。在后面的第十四章中，还将以更直接的方式再次验证这一性质。
+
+再回到一般情形。必须注意下列公式：给定超曲面 \(V_n\) 后，它们可求出其第二基本形式的系数 \(\Omega_{rs}\)。为此，以 \(a_{\mu\nu}X_\mu\) 乘 (F)，并对 \(\mu,\nu\) 从 \(0\) 到 \(n\) 求和，便得
+\begin{equation}\tag{K}
+ \Omega_{rs}=\mathop{\mathrm{S}}_{\mu,\nu}a_{\mu\nu}X_\mu
+ \frac{\partial^2x_\nu}{\partial u_r\partial u_s}
+ +\mathop{\mathrm{S}}_{i,k,\mu,\nu}\chrsqB{ik}{\mu}_{a}
+ \frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s}X_\mu,
+\end{equation}
+这些公式实现了所定目标。考虑 (30)，它们也可写成等价形式：
+\begin{equation}\tag{K*}
+ \Omega_{rs}=-\mathop{\mathrm{S}}_{\mu,\nu}a_{\mu\nu}
+ \frac{\partial x_\nu}{\partial u_r}\frac{\partial X_\mu}{\partial u_s}
+ -\mathop{\mathrm{S}}_{i,k,\mu}\chrsqB{k\mu}{i}_{a}
+ \frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s}X_\mu.
+\end{equation}
+
+\subsection*{\S. 166.\quad 空间 \(S_{n+1}\) 中的曲线。}
+
+考察任意曲线 \(C\)，它位于空间 \(S_{n+1}\) 中；设
+\[
+ x_0=x_0(t),
+\quad x_1=x_1(t),
+\ldots,
+\quad x_n=x_n(t)
+\]
+是其一个动点的坐标，它们表示为曲线弧长 \(t\) 的函数，弧长从曲线上任意一点 \(M^0\) 起算。为了定义曲线 \(C\) 在 \(M_0\) 处的\emph{曲率或弯曲度}，我们按 Voss\srcfn{1}{参见 \emph{Mathematische Annalen}，第 16 卷。} 的方法作如下处理。在 \(M_0\) 作测地线 \(g\)，使它与 \(C\) 相切；在两条曲线上，从 \(M_0\equiv(x_i^{(0)})\) 起分别截取长度相等的无穷小弧 \(t\)。以 \(M\equiv(x_i)\) 表示 \(C\) 上该弧的端点，以 \(\overline M\equiv(\overline x_i)\) 表示测地线 \(g\) 上对应的端点。
+
+以 \(d\) 表示 \(M,\overline M\) 之间的距离。我们将证明，比值
+\[
+ \frac{2d}{t^2},
+\]
+当 \(t\) 趋于零时有一个确定而有限的极限，记为
+\[
+ \frac1\rho=\lim\frac{2d}{t^2};
+\]
+这个极限称为曲线 \(C\) 在 \(M_0\) 处的第一曲率或\emph{弯曲度}\srcfn{2}{读者不难立即验证：在三维欧几里得空间中，曲线弯曲度的这一定义与通常定义一致；而在任意二维空间（一个通常曲面）中，它对应于测地曲率。}。为了实际计算这个极限，将 \(x_i,\overline x_i\) 展开成 \(t\) 的幂级数，略去 \(t\) 的二次以上幂，得
+\[
+ x_i=x_i^{(0)}+t\left(\frac{dx_i}{dt}\right)_0+\frac{t^2}{2}\left(\frac{d^2x_i}{dt^2}\right)_0+\cdots
+\]
+再由测地线的微分方程 (B*)（\S. 155，第 334 页）有
+\[
+ \overline x_i=x_i^{(0)}+t\left(\frac{dx_i}{dt}\right)_0-
+ \frac{t^2}{2}\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ \left(\frac{dx_\lambda}{dt}\right)_0\left(\frac{dx_\mu}{dt}\right)_0+
+\cdots
+\]
+因而
+\[
+ x_i-\overline x_i=\frac{t^2}{2}\left\{\left(\frac{d^2x_i}{dt^2}\right)_0+
+ \mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ \left(\frac{dx_\lambda}{dt}\right)_0\left(\frac{dx_\mu}{dt}\right)_0\right\}.
+\]
+
+略去 \(t\) 的二次以上幂，有
+\[
+ d=\sqrt{\mathop{\mathrm{S}}_{i,k}a_{ik}(x_i-\overline{x}_i)(x_k-\overline{x}_k)},
+\]
+从而 \(\frac1\rho\) 的实际值为
+\[
+\tag{31}
+\frac1{\rho^2}=
+\mathop{\mathrm{S}}_{i,k}a_{ik}
+\left[
+\frac{d^2x_i}{dt^2}+
+\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+\frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}
+\right]
+\left[
+\frac{d^2x_k}{dt^2}+
+\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{k}_{a}
+\frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}
+\right],
+\]
+这一公式给出了所求弯曲度的表达式。
+
+应当注意，由于二次形式 \(\mathop{\mathrm{S}}_{i,k}a_{ik}\xi_i\xi_k\) 是定号的，它只有在所有 \(\xi\) 都为零时才能消失。因此，(31) 证明：\emph{弯曲度只对空间的测地线才等于零。}
+
+这里不能逐一追踪通常曲线理论（第一章）自然提供的所有类比与推广；只须确立\emph{主法线}的概念。前述公式表明，线元 \(M\overline M\) 在 \(M,\overline M\) 趋于 \(M_0\) 时，趋于一个从 \(M_0\) 发出的极限方向，其方向常数为
+\[
+\tag{32}
+ \xi_i=\rho\left\{\frac{d^2x_i}{dt^2}+
+ \mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ \frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}\right\}.
+\]
+我们把沿 \((\xi_i)\) 的这个方向称为曲线 C 在 \(M_0\) 处的\emph{主法线}。从几何上很明显，它法于曲线在 \(M_0\) 处的方向；分析上，这由下列关系的成立得到验证：
+\[
+ \mathop{\mathrm{S}}_{i,k}a_{ik}\xi_i\frac{dx_k}{dt}=0.
+\]
+相对于点 \(M_0\)，由包含曲线 C 的切向和主法向而确定的测地曲面，可称为 C 在 \(M_0\) 处的\emph{密切测地曲面}。不难看出：取通过 \(M_0\) 处切测地线和 C 上近于 \(M_0\) 的点 M 的变动测地曲面，当 M 趋于 \(M_0\) 时，它的极限就是这个密切测地曲面。所以，主法线正是曲线 C 的法线中与密切测地曲面相切的那一条。
+
+\subsection*{\S. 167.\quad 超曲面上曲线的曲率。}
+
+在 \(S_{n+1}\) 中考虑一个由 \S. 164 的通常公式定义的超曲面 \(V_n\)，以及画在 \(V_n\) 上的任意曲线 C。设 \(M_0\) 是 C 上的任意点，在 \(M_0\) 处需要考察：
+
+1.\textsuperscript{o} C 的（绝对）曲率 \(\frac1\rho\)，相对于环境空间 \(S_{n+1}\) 而言；
+
+2.\textsuperscript{o} C 相对于超曲面 \(V_n\)（即 C 所浸入的从属空间）的相对曲率；记这个相对曲率为 \(\frac1{\rho_g}\)，并且（原因将在下文看到）也称它为 C 相对于超曲面的\emph{测地曲率}；
+
+3.\textsuperscript{o} C 相对于 \(S_{n+1}\) 的（绝对）主法线，其方向常数仍以 \(\xi_i\) 表示；
+
+4.\textsuperscript{o} C 相对于 \(V_n\) 的相对主法线，其方向常数以 \(\overline{\xi}_i\) 表示。
+
+引入这些名称和记号后，注意沿 C 各 \(x\) 是 \(u\) 的函数，而后者又是弧长 \(t\) 的函数，故
+\[
+ \frac{dx_i}{dt}=\mathop{\mathrm{S}}_r\frac{\partial x_i}{\partial u_r}\frac{du_r}{dt},
+\]
+\[
+ \frac{d^2x_i}{dt^2}=
+ \mathop{\mathrm{S}}_{r,s}\frac{\partial^2x_i}{\partial u_r\partial u_s}
+ \frac{du_r}{dt}\frac{du_s}{dt}
+ +\mathop{\mathrm{S}}_r\frac{\partial x_i}{\partial u_r}\frac{d^2u_r}{dt^2}.
+\]
+现在在后一式中，以第 360 页基本公式 (F) 所给出的值代入 \(\frac{\partial^2x_i}{\partial u_r\partial u_s}\)，立即得到下列基本公式：
+\[
+\begin{aligned}
+\frac{d^2x_i}{dt^2}
+&+\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}_{a}
+ \frac{dx_\lambda}{dt}\frac{dx_\mu}{dt}\\
+&=X_i\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\frac{du_r}{dt}\frac{du_s}{dt}
++\mathop{\mathrm{S}}_r\frac{\partial x_i}{\partial u_r}
+\left[
+\frac{d^2u_r}{dt^2}
++\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{r}_{b}
+ \frac{du_\lambda}{dt}\frac{du_\mu}{dt}
+\right].
+\end{aligned}
+\tag{$\sigma$}
+\]
+由 (32)，其左边等于 \(\frac{\xi_i}{\rho}\)；同样根据这些公式，右边第二个求和号下括号中的量等于 \(\frac{\eta_i}{\rho_g}\)，其中 \(\eta_i\) 表示 C 的（相对）主法线在从属空间 \(V_n\) 中的方向常数。因此
+\[
+ \mathop{\mathrm{S}}_r\frac{\partial x_i}{\partial u_r}
+\left[
+\frac{d^2u_r}{dt^2}+\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{r}_{b}
+\frac{du_\lambda}{dt}\frac{du_\mu}{dt}
+\right]=\frac{\overline{\xi}_i}{\rho_g};
+\]
+于是 \((\sigma)\) 可写成
+\[
+\tag{33}
+ \frac{\xi_i}{\rho}
+=X_i\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\frac{du_r}{dt}\frac{du_s}{dt}
++\frac{\overline{\xi}_i}{\rho_g}.
+\]
+将这些一般公式应用于 C 是 \(V_n\) 的测地线这一特殊情形，于是
+\[
+ \frac1{\rho_g}=0;
+\]
+以 \(\frac1R\) 表示 \(V_n\) 的这条测地线的绝对曲率，则
+\[
+ \xi_i=X_i\cdot R\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\frac{du_r}{dt}\frac{du_s}{dt},
+\]
+因为 \(\xi_i\) 和 \(X_i\) 都是方向常数，必有
+\[
+ R\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\frac{du_r}{dt}\frac{du_s}{dt}=1,
+\]
+即
+\[
+\tag{33*}
+ \frac1R=\frac{\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\,du_r\,du_s}
+ {\mathop{\mathrm{S}}_{r,s}b_{rs}\,du_r\,du_s}.\srcfnmark{1}
+\]
+\srcfntext{1}{严格说，(33*) 的右边应带有两种符号。像正文那样书写公式，就不仅赋予 R 一个绝对值，而且赋予它一个符号（参见第四章 \S. 61）。}
+
+由此首先得到定理：
+\emph{超曲面 \(V_n\) 的一条测地线，其特征是：在每一点，它的（绝对）主法向与超曲面的法向重合。}
+
+重要的公式 (33*) 还给出了那条测地线 \(g\) 的（绝对）曲率：该线位于 \(V_n\) 上，并从所考察的点沿增量 \(du_r\) 所指定的方向发出。
+
+回到 \(V_n\) 上任意曲线 C 的情形，(33) 现写成
+\[
+\tag{$\beta$}
+ \frac{\xi_i}{\rho}=\frac{X_i}{R}+\frac{\overline{\xi}_i}{\rho_g},
+\]
+其中 \(\frac1R\) 表示测地线 \(g\) 的曲率；该线位于 \(V_n\) 上，并在 \(M_0\) 处与 C 相切。显然，两个方向 \((X_i)\)、\((\overline{\xi}_i)\) 互相正交；前述公式证明，绝对主法线的方向 \((\xi_i)\) 位于由这两个方向所确定的 \(S_2\) 中。也就是说：
+\emph{对于画在超曲面 \(V_n\) 上的任意曲线 C，\(V_n\) 的法向以及 C 的绝对主法向和相对主法向，都位于同一个 \(S_2\) 中。}
+
+现以 \(\sigma\) 表示绝对主法线 \((\xi_i)\) 与超曲面法线 \((X_i)\) 所成的角，则
+\[
+ \cos\sigma=\mathop{\mathrm{S}}_{i,k}a_{ik}\xi_iX_k,
+\]
+从而由上述讨论
+\[
+ \sen\sigma=\mathop{\mathrm{S}}_{i,k}a_{ik}\xi_i\overline{\xi}_k,
+\]
+由 \((\beta)\) 立即得到重要公式（参见 \S. 154）
+\[
+\tag{34}
+ \frac1R=\frac{\cos\sigma}{\rho},
+\]
+\[
+\tag{34*}
+ \frac1{\rho_g}=\frac{\sen\sigma}{\rho}.
+\]
+第一个公式把 Meunier 定理（\S. 61，第 130 页）推广到任意维曲空间。事实上，\(\frac1R\) 是 \(V_n\) 上与 C 相切的测地线的曲率，同时也度量了 \(V_n\) 的那个法截面的曲率；该法截面由 \(V_n\) 与一个测地曲面相交而得，后一曲面由 C 的切向和 \(V_n\) 的法向所确定。
+
+至于 (34*)，它证明 C 的相对曲率 \(\frac1{\rho_g}\)（相对于超曲面 \(V_n\)）与通常的测地曲率完全对应（参见 \S. 84）。
+
+\subsection*{\S. 168.\quad 超曲面的主曲率与 Euler 公式。}
+
+公式 (33*) 显然可写成
+\[
+\tag{$\gamma$}
+ \frac1R=\frac{\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\eta_r\eta_s}
+ {\mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r\eta_s},
+\]
+其中 \(\eta_1,\eta_2,\ldots,\eta_n\) 是所考察的测地线\emph{在超曲面内}（该超曲面为 \(V_n\)）的方向常数；该测地线位于 \(V_n\) 上，并从固定点 \(M_0\) 发出。该公式也给出了 \(V_n\) 在方向 \((\eta_i)\) 上的相应法截面的曲率。现在求这些曲率的极大值、极小值及其所对应的方向，从而把第四章对通常曲面上曲线的曲率所建立的结果推广开来。为得到这些极值，应使两个关于 \(\eta\) 的二次形式之商对各 \(\eta\) 的导数等于零；这个商出现在 \((\gamma)\) 的右边。
+
+由此得到 \(n\) 个关于 \(\eta\) 的线性齐次方程：
+\[
+\tag{35}
+ \mathop{\mathrm{S}}_s(b_{rs}-R\Omega_{rs})\eta_s=0\qquad (r=1,2,\ldots,n),
+\]
+其中 \(\frac1R\) 正是 \(V_n\) 上沿相应方向 \((\eta_i)\) 发出的测地线的曲率。从 (35) 中消去 \(\eta\)，得到众所周知的方程：
+\[
+\tag{36}
+\left|\begin{matrix}
+b_{11}-R\Omega_{11},& b_{12}-R\Omega_{12},& \cdots,& b_{1n}-R\Omega_{1n}\\
+b_{21}-R\Omega_{21},& b_{22}-R\Omega_{22},& \cdots,& b_{2n}-R\Omega_{2n}\\
+\cdots&\cdots&\cdots&\cdots\\
+b_{n1}-R\Omega_{n1},& b_{n2}-R\Omega_{n2},& \cdots,& b_{nn}-R\Omega_{nn}
+\end{matrix}\right|=0,
+\]
+它称为\emph{久期方程}。
+
+因为二次形式 \(\mathop{\mathrm{S}}_{\lambda,\mu}b_{\lambda\mu}\eta_\lambda\eta_\mu\) 是定号的，故 (36) 的 \(n\) 个根
+\[
+ R_1,\quad R_2,\ldots,R_n
+\]
+总是全部为实数；它们的倒数
+\[
+ \frac1{R_1},\quad \frac1{R_2},\ldots,\frac1{R_n}
+\]
+给出所求的极大值和极小值。对于 (36) 的一个单根 \(R_h\)，只对应一个方向；它称为超曲面 \(V_n\) 的相应\emph{主方向}。其 \(n\) 个方向常数，即 \(\eta\) 的相应值，记为
+\[
+ \eta_1^{(h)},\ \eta_2^{(h)},\ldots,\eta_n^{(h)};
+\]
+它们由方程
+\[
+\tag{35*}
+ \mathop{\mathrm{S}}_s(b_{rs}-R_h\Omega_{rs})\eta_s^{(h)}=0\qquad (r=1,2,\ldots,n),
+\]
+再加上条件
+\[
+ \mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r^{(h)}\eta_s^{(h)}=1.
+\]
+求得。当根 \(R_h\) 是 \(h\) 重根时，它使行列式
+\[
+ |\,b_{rs}-R_h\Omega_{rs}\,|
+\]
+的秩恰为 \(n-h\)；因此，在 (35) 或 (35*) 中有 \(n-h\) 个线性无关的方程，从而存在 \(\infty^{h-1}\) 个相应的主方向，它们位于一个 \(S_{h-1}\) 中。当然，\(h>1\) 只在例外情形下出现；换言之，(36) 的 \(n\) 个根一般互不相同。
+
+若两个主方向
+\[
+(\eta_i^{(h)})\qquad (\eta_i^{(l)})
+\]
+分别对应于 (36) 的两个不同根 \(R_h,R_l\)，则众所周知，有关系
+\[
+ \mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r^{(h)}\eta_s^{(l)}=0\srcfnmark{1},
+\]
+\srcfntext{1}{这可以由下列方程立即得到：
+\[
+\mathop{\mathrm{S}}_s b_{rs}\eta_s^{(h)}=R_h\mathop{\mathrm{S}}_s\Omega_{rs}\eta_s^{(h)},\qquad
+\mathop{\mathrm{S}}_r b_{rs}\eta_r^{(l)}=R_l\mathop{\mathrm{S}}_r\Omega_{rs}\eta_r^{(l)},
+\]
+它们给出
+\[
+\mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r^{(l)}\eta_s^{(h)}
+=R_h\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\eta_r^{(l)}\eta_s^{(h)},
+\]
+\[
+\mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r^{(l)}\eta_s^{(h)}
+=R_l\mathop{\mathrm{S}}_{r,s}\Omega_{rs}\eta_r^{(l)}\eta_s^{(h)},
+\]
+因而
+\[
+\left(\frac1{R_h}-\frac1{R_l}\right)
+\mathop{\mathrm{S}}_{r,s}b_{rs}\eta_r^{(l)}\eta_s^{(h)}=0.
+\]}
+因而这两个主方向互相正交。所以，对任意超曲面 \(V_n\)，有 \(n\) 个\emph{主曲率}
+\[
+ \frac1{R_1},\ \frac1{R_2},\ldots,\frac1{R_n},
+\]
+和相应的 \(n\) 个主方向
+\[
+(\eta_i^{(1)}),\ (\eta_i^{(2)}),\ldots,(\eta_i^{(n)}),
+\]
+它们组成一个正交 \(n\) 面体。
+
+现以 \(\alpha_1,\alpha_2,\ldots,\alpha_n\) 表示任意方向 \((\eta_i)\) 与 \(n\) 个主方向所成的各角，则
+\[
+ \eta_i=\cos\alpha_1\,\eta_i^{(1)}+\cos\alpha_2\,\eta_i^{(2)}+\cdots+\cos\alpha_n\,\eta_i^{(n)}
+ \qquad i=1,\ldots,n
+\]
+而公式 (33*)
+\[
+ \frac1R=\mathop{\mathrm{S}}_{\lambda,\mu}\Omega_{\lambda\mu}\eta_\lambda\eta_\mu,
+\]
+给出方向 \((\eta_i)\) 上法截面的曲率。考虑恒等式
+\[
+ \frac1{R_i}=\mathop{\mathrm{S}}_{\lambda,\mu}\Omega_{\lambda\mu}\eta_\lambda^{(i)}\eta_\mu^{(i)}
+\]
+\[
+ \mathop{\mathrm{S}}_{\lambda,\mu}\Omega_{\lambda\mu}\eta_\lambda^{(i)}\eta_\mu^{(k)}=0,\qquad \text{当 } i\ne k
+\]
+便得
+\[
+\tag{36}
+ \frac1R=\frac{\cos^2\alpha_1}{R_1}+\frac{\cos^2\alpha_2}{R_2}+\cdots+
+ \frac{\cos^2\alpha_n}{R_n}.
+\]
+\ednote{原书第368页已经把久期方程编号为 (36)，第370页又把这条 Euler 公式编号为 (36)。本译保留两处原印编号，不作静默重编号。}
+这显然是 Euler 公式的类比形式，从而把它推广到任意维数的任意曲空间。
+
+显然，为了用几何方式表示法截面曲率随方向变化的规律，可以使用一个\emph{指示二次曲面}：
+\[
+ \frac{x_1^2}{R_1}+\frac{x_2^2}{R_2}+\cdots+\frac{x_n^2}{R_n}=\pm1
+\]
+它位于通常的 \(n\) 维欧几里得空间中。
+
+超曲面 \(V_n\) 的主方向概念，还导致\emph{曲率线}的定义：这些曲线在每一点的方向都与一个主方向重合。显然，一般有 \(n\) 个曲率线系，从 \(V_n\) 的每一点，这 \(n\) 个线系中的每一系各发出一条曲线。对应于主方向 \((\eta_s^{(\lambda)})\) 的曲率线的微分方程显然为
+\[
+ \frac{du_1}{\eta_1^{(\lambda)}}=\frac{du_2}{\eta_2^{(\lambda)}}=\cdots=\frac{du_n}{\eta_n^{(\lambda)}},
+\]
+它们也可写成下列形式（\S. 167）：
+\[
+ \mathop{\mathrm{S}}_s(b_{rs}-R_\lambda\Omega_{rs})\,du_s=0,\qquad r=1,2,\ldots,n.
+\]
+
+\subsection*{\S. 169.\quad 特殊情形。}
+
+先把前述一般结果应用于 \(n=3\) 的情形：在四维空间 \(S_4\) 中考察超曲面 \(V_3\)，并进一步假定环境空间 \(S_4\) 具有常 Riemann 曲率 \(K_0\)。作为三维曲空间，\(V_3\) 在每一点有三个组成正交三面体的主方向，以及三个 Riemann 主曲率 \(K_1,K_2,K_3\)（\S\S. 162, 163）。现证明：\emph{任意曲空间 \(V_3\) 若浸入一个具有常曲率的四维空间 \(S_4\)，则其三个主方向恰与曲率线的方向重合；而三个 Riemann 主曲率 \(K_1,K_2,K_3\)（把 \(V_3\) 视为三维空间），与主曲率半径 \(R_1,R_2,R_3\) 满足简单关系}
+\[
+ K_1-K_0=\frac1{R_2R_3},\quad K_2-K_0=\frac1{R_1R_3},\quad K_3-K_0=\frac1{R_1R_2}.
+\]
+事实上，在 \(V_3\) 的一点，可以合法地令
+\[
+ b_{11}=b_{22}=b_{33}=1,\qquad b_{ik}=\Omega_{ik}=0,\quad \text{当 }i\ne k,
+\]
+为此，只须选取坐标线 \((u_1),(u_2),(u_3)\)（在 \(V_3\) 上），使它们在该点的方向与曲率线的方向一致。于是（\S. 168）
+\[
+ \Omega_{11}=\frac1{R_1},\quad \Omega_{22}=\frac1{R_2},\quad \Omega_{33}=\frac1{R_3}.
+\]
+应用第 362 页的 Codazzi 公式 (H*)，立即得到\ednote{原书第372页把 (H*) 称为 Codazzi 公式；但本章 \S.165 第362页明确把 (H*) 列为 Gauss 方程、把 (J*) 列为 Codazzi 方程。本译保留此处原印称谓，并明确记录这一内部冲突。}
+\[
+ (23,23)_b=\frac1{R_2R_3}+K_0,\quad
+ (31,31)_b=\frac1{R_1R_3}+K_0,\quad
+ (12,12)_b=\frac1{R_1R_2}+K_0,
+\]
+\[
+ (23,31)=(31,12)=(12,23)=0.
+\]
+后一组公式证明，这些坐标线 \((u_1),(u_2),(u_3)\)（属于空间 \(V_3\)）在所考察的点恰具有主方向；对主曲率 \(K_1,K_2,K_3\) 则恰有
+\[
+ K_1=\frac1{R_2R_3}+K_0,\quad
+ K_2=\frac1{R_1R_3}+K_0,\quad
+ K_3=\frac1{R_1R_2}+K_0,\quad \text{c. d. d.}
+\]
+由这些公式特别可知：若一个主曲率为 \(K_1,K_2,K_3\) 的三维空间能浸入一个具有常曲率 \(K_0\) 的四维空间，则必有
+\[
+ (K_1-K_0)(K_2-K_0)(K_3-K_0)>0.
+\]
+特别地：
+\emph{在具有常曲率 \(K_0\) 的四维空间中，不存在常曲率 \(K<K_0\) 的三维空间。}
+
+因此，四维欧几里得空间不包含任何三维伪球空间（即具有负常曲率的空间）。同样可见，在这种欧几里得空间中，也不能嵌入一个三维空间，使其三个主曲率全部为负，或其中两个为正、一个为负。
+
+再把前一节的一般结果应用于 \(n=2\) 的情形：考虑一个曲面 \(V_2\)，它浸入任意三维曲空间 \(S_3\) 中。称曲面 \(V_2\) 的\emph{相对曲率}为主曲率半径的倒数之积 \(\frac1{R_1R_2}\)\srcfn{1}{有些作者一般把超曲面 \(V_n\)（位于空间 \(S_{n+1}\) 中）的主曲率半径之积 \(R_1R_2\ldots R_n\) 的倒数称为超曲面的曲率。我们不采用这一名称，因为它可能与 Riemann 曲率的概念混淆。}；而把曲面的\emph{绝对曲率} \(K\) 这一名称，保留给由 \(ds^2\) 所确定的曲率，这个线元在 \(S_3\) 中度量。有
+\[
+ \frac1{R_1R_2}=\frac{\Omega_{11}\Omega_{22}-\Omega_{12}^2}{b_{11}b_{22}-b_{12}^2},
+\]
+并且由 Codazzi 公式（(H)，第 361 页）得\ednote{原书第373页把 (H) 称为 Codazzi 公式；但本章 \S.165 第361页明确把 (H) 称为 Gauss 方程、把 (J) 称为 Codazzi 方程。本译保留此处原印称谓，并明确记录这一内部冲突。}
+\[
+ \frac1{R_1R_2}=\frac{(12,12)_b}{b_{11}b_{22}-b_{12}^2}-
+ \frac{\mathop{\mathrm{S}}_{r,h,i,k}\left(\begin{matrix}rk,ik\\a\end{matrix}\right)
+ \frac{\partial x_r}{\partial u_1}\frac{\partial x_h}{\partial u_1}
+ \frac{\partial x_i}{\partial u_2}\frac{\partial x_k}{\partial u_2}}
+ {b_{11}b_{22}-b_{12}^2}.
+\]
+右边第一项显然正是绝对曲率 \(K\)（属于 \(V_2\)）；对第二项则不难认出（\S. 158），它恰是空间的曲率 \(K_0\)，取在 \(V_2\) 的切平面定向上，也就是相切测地曲面的曲率。因而
+\[
+\tag{37}
+ \frac1{R_1R_2}=K-K_0,
+\]
+用文字说：\emph{三维空间中一个曲面 \(V_2\) 在某点的相对曲率，等于其绝对曲率减去空间在 \(V_2\) 于该点所取定向上的 Riemann 曲率。}
+
+\subsection*{\S. 170.\quad 共形表示中的空间与 Liouville 定理。}
+
+回到超曲面 \(V_n\) 的一般情形：它浸入任意空间 \(S_{n+1}\) 中，后者有 \(n+1\) 维。考虑第二个空间 \(S'_{n+1}\)，它与 \(S_{n+1}\) 逐点对应，并使角度保持不变；也就是说，两空间之间存在\emph{共形表示}。保留前几节的记号，并以
+\[
+ ds'^2=\mathop{\mathrm{S}}_{i,k}a'_{ik}\,dx_i\,dx_k
+\]
+表示 \(S'_{n+1}\) 的线元平方。要使 \(S_{n+1}\) 在 \(S'_{n+1}\) 上的表示为共形表示，系数 \(a'_{ik}\) 与 \(a_{ik}\) 显然必须成比例；因此写成
+\[
+ a'_{ik}=U^2a_{ik}.
+\]
+对于线元为下式的超曲面 \(V_n\)
+\[
+ ds^2=\mathop{\mathrm{S}}_{\lambda,\mu}b_{\lambda\mu}\,du_\lambda\,du_\mu
+\]
+在 \(S'_{n+1}\) 中对应一个线元为下式的超曲面 \(V'_n\)：
+\[
+ ds'^2=U^2\mathop{\mathrm{S}}_{\lambda,\mu}b_{\lambda\mu}\,du_\lambda\,du_\mu.
+\]
+以撇号表示属于 \(V'_n\) 的量，首先有
+\[
+ b'_{\lambda\mu}=U^2b_{\lambda\mu},\qquad X'_\mu=\frac{X_\mu}{U}.
+\]
+现在，对应于 Christoffel 符号 \(\chrsqB{ik}{\mu}_{a'}\)，它们由形式 \(\mathop{\mathrm{S}}_{i,k}a'_{ik}dx_i\,dx_k\) 构成，立即得
+\[
+ \chrsqB{ik}{\mu}_{a'}=
+ U^2\chrsqB{ik}{\mu}_{a}
+ +U\left[
+ a_{k\mu}\frac{\partial U}{\partial x_i}
+ +a_{i\mu}\frac{\partial U}{\partial x_k}
+ -a_{ik}\frac{\partial U}{\partial x_\mu}
+ \right].
+\]
+因而，若使用 (K)（\S. 165，第 362 页）构造系数 \(\Omega'_{rs}\)，也就是 \(V'_n\) 的第二基本形式系数，首先得
+\[
+ \Omega'_{rs}=U\Omega_{rs}+
+ \mathop{\mathrm{S}}_{i,k,\mu}\left(a_{k\mu}\frac{\partial U}{\partial x_i}
++a_{i\mu}\frac{\partial U}{\partial x_k}
+-a_{ik}\frac{\partial U}{\partial x_\mu}\right)
+\frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s}X_\mu.
+\]
+但由第 358--359 页的 (26)、(30) 有
+\[
+ \mathop{\mathrm{S}}_{i,k}a_{ik}\frac{\partial x_i}{\partial u_r}\frac{\partial x_k}{\partial u_s}=b_{rs},\qquad
+ \mathop{\mathrm{S}}_{k,\mu}a_{k\mu}\frac{\partial x_k}{\partial u_s}X_\mu=0,
+\]
+\[
+ \mathop{\mathrm{S}}_{i,\mu}a_{i\mu}\frac{\partial x_i}{\partial u_r}X_\mu=0,
+\]
+因而剩下
+\[
+ \Omega'_{rs}=U\Omega_{rs}-b_{rs}\mathop{\mathrm{S}}_\mu X_\mu\frac{\partial U}{\partial x_\mu}.
+\]
+回忆（\S. 164），法向方向常数 \(X_\mu\)（属于 \(V_n\)）无非是导数
+\[
+ X_\mu=\frac{\partial x_\mu}{\partial u_0}
+\]
+即 \(x_\mu\) 沿超曲面法向的导数，因而可把上一公式写成更富表现力的形式：
+\[
+\tag{38}
+ \Omega'_{rs}=U\Omega_{rs}-b_{rs}\frac{\partial U}{\partial u_0}.
+\]
+于是，\(V'_n\) 的曲率线微分方程 (35)（第 368 页）
+\[
+ \mathop{\mathrm{S}}_s(b'_{rs}-R'\Omega'_{rs})\,du_s=0\qquad (r=1,2,\ldots,n)
+\]
+变成
+\[
+ \mathop{\mathrm{S}}_s\left(\frac{b_{rs}}{R'}-\frac{\Omega_{rs}}{U}
++\frac{b_{rs}}{U}\frac{\partial\log U}{\partial u_0}\right)du_s=0.
+\]
+而这些方程只须在与之对应的方程
+\[
+ \mathop{\mathrm{S}}_s\left(\frac{b_{rs}}R-\Omega_{rs}\right)du_s=0
+\]
+中代入
+\[
+\tag{39}
+ \frac1R=\frac{U}{R'}+\frac{\partial\log U}{\partial u_0}.
+\]
+就可从 \(V_n\) 的方程得到。因此得到一般定理：
+\emph{若任意维数的两个空间之间存在共形表示，则在任意两个对应的超曲面上，曲率线总是彼此对应；主曲率 \(\frac1R,\frac1{R'}\) 由线性关系 (39) 相联系，其系数只依赖于该表示的模 U\srcfn{1}{表示的模正是两个对应线元之比 \(\frac{ds'}{ds}=U\)。}及其法向导数。}
+
+前一定理特别可应用于（曲率为零的）欧几里得空间。求 \(n\) 维欧几里得空间在自身上的一切共形表示，这一问题不难解决。事实上，当 \(n>2\) 时，欧几里得空间 \(S_n\) 的共形表示群是一个有限连续群，也就是只有有限个参数；而众所周知，当 \(n=2\)（普通平面）时，该群是无限的。设
+\[
+ ds^2=dx_1^2+dx_2^2+\cdots+dx_n^2
+\]
+是欧几里得空间的线元。要把它共形地表示在自身上，必须令
+\[
+ ds'^2=\frac{dx_1^2+dx_2^2+\cdots+dx_n^2}{U^2},
+\]
+并确定 \(U\)，使线元为 \(ds'\) 的空间也具有零曲率，从而可写成
+\[
+ ds'^2=dx_1'^2+dx_2'^2+\cdots+dx_n'^2.
+\]
+这个问题在 \S. 159 实质上已经解决。函数 \(U\) 在 \(n>2\) 时必须具有形式
+\[
+ U=a(x_1^2+x_2^2+\cdots+x_n^2)+2\mathop{\mathrm{S}} b_i x_i+C,
+\]
+其中由第 345 页的 (19) 必须有
+\[
+\tag{40}
+ aC=\mathop{\mathrm{S}}b_i^2,
+\]
+假定 \(a\ne0\)，则可写成
+\[
+ U=a\mathop{\mathrm{S}}\left(x_i+\frac{b_i}{a}\right)^2
+\]
+再把 \(x_i\) 改换为 \(x_i-\frac{b_i}{a}\)，则取
+\[
+ U=a(x_1^2+x_2^2+\cdots+x_n^2),
+\]
+并不失一般性；也就是说
+\[
+ ds'^2=\frac{dx_1^2+dx_2^2+\cdots+dx_n^2}{a^2(x_1^2+x_2^2+\cdots+x_n^2)^2}.
+\]
+现以公式
+\[
+ x'_1=\frac{x_1}{a\mathop{\mathrm{S}}x_i^2},\quad
+ x'_2=\frac{x_2}{a\mathop{\mathrm{S}}x_i^2},\ldots,\quad
+ x'_n=\frac{x_n}{a\mathop{\mathrm{S}}x_i^2},
+\]
+它们就是互逆径向量的反演公式，恰得
+\[
+ ds'^2=\mathop{\mathrm{S}}dx_i'^2=
+ \frac{\mathop{\mathrm{S}}dx_i^2}{a^2(\mathop{\mathrm{S}}x_i^2)^2};
+\]
+因此，把上述反演与空间 \(S'\) 在自身上的一次等距适用（即一个运动）组合起来，就得到所求的最一般公式。另一方面，在刚才略去的 \(a=0\) 情形下，(40) 给出
+\[
+ b_1=b_2=\cdots=b_n=0,
+\]
+因此 U 是常数，相应的空间变换只是一个相似变换。由此得到：
+\emph{\(n>2\) 维欧几里得空间在自身上的最一般共形变换，由互逆径向量的反演与运动、相似变换相组合而得。}
+
+这就是 Liouville 定理（Liouville 对 \(n=3\) 的情形证明了它）。
+
+\subsection*{\S. 171.\quad 正交 \(n^{pli}\) 系（在 \(n\) 维空间中）。}
+
+给定 \(ds^2\)，它属于任意空间 \(S_n\)，该空间为 \(n\) 维：
+\[
+ ds^2=\mathop{\mathrm{S}}_{i,k}^{1,\ldots,n} a_{ik}\,dx_i\,dx_k,
+\]
+一般不可能引入 \(n\) 个新的独立变量 \(y_1,y_2,\ldots,y_n\)，使 \(ds^2\) 取正交形式
+\[
+\tag{41}
+ ds^2=H_1^2dy_1^2+H_2^2dy_2^2+\cdots+H_n^2dy_n^2.
+\]
+事实上，\(n\) 个未知函数 \(y_i\)（关于 \(x\)）必须满足
+\[
+ \frac{n(n-1)}2
+\]
+联立偏微分方程：
+\[
+ \nabla(y_i,y_k)=0,\qquad \text{当 }i\ne k,
+\]
+因为 \(\frac{n(n-1)}2>n\) 一旦 \(n>3\) 就成立，所以很明显：对三维以上的空间，只有在特殊情形下才能化为正交形式。但现在假设，在所考察的空间中，确实可以化为正交形式 (41)。此时称坐标超曲面 \((y_1),(y_2)\ldots(y_n)\) 组成一个\emph{正交 \(n^{plo}\) 系}。现求坐标超曲面的曲率线，例如 \(y_n=\text{常数}\) 的曲率线。
+
+为此，计算这些超曲面的第二基本形式的系数 \(\Omega_{rs}\)：
+\[
+ \mathop{\mathrm{S}}_{r,s}^{1,\ldots,n-1}\Omega_{rs}\,dy_r\,dy_s
+\]
+超曲面 \(y_n=\text{常数}\) 的法向方向常数就是（\S. 154）
+\[
+ X_i=\frac{A_{ni}}{\sqrt{A_{nn}}},\quad i=1,2,\ldots,n,
+\]
+即
+\[
+ X_1=X_2=\cdots=X_{n-1}=0,\quad X_n=\frac1{H_n}.
+\]
+因而，从 (K)（\S. 165，注意记号已经改换）计算 \(\Omega_{rs}\)，立即得
+\[
+ \Omega_{rs}=\chrsqB{rs}{n}\frac1{H_n},\qquad (r,s=1,2,\ldots,n-1)
+\]
+因而
+\[
+\tag{42}
+ \begin{cases}
+ \Omega_{rr}=-\dfrac{H_r}{H_n}\dfrac{\partial H_r}{\partial y_n},\\
+ \Omega_{rs}=0\quad \text{当 }r\ne s.
+ \end{cases}
+\]
+因为一切指标互异的 \(\Omega\) 都等于零，可见 \(y_n=\text{常数}\) 的曲率线正是坐标线 \((y_1),(y_2)\ldots(y_{n-1})\)。因此得到定理：
+\emph{若在一个 \(n\) 维曲空间中存在一个正交 \(n^{plo}\) 超曲面系 \((y_1),(y_2)\ldots(y_n)\)，则在每一个超曲面上，坐标线 \((y_1),(y_2),\ldots,(y_n)\) 就是曲率线。}
+
+对 \(n=3\) 的情形，特别可把定理表述为：
+\emph{在任意三维空间的任意三重正交曲面系中，属于不同线系的曲面沿曲率线（正交地）相交。}
+
+对通常欧几里得空间，这就是著名的 Dupin 定理。下一节将再证明 Darboux 的逆定理，以补充它。
+
+回到正交 \(n^{plo}\) 系的一般情形（在 \(S_n\) 中）。现再从 \(\Omega_{rs}\) 的值 (42) 计算坐标超曲面的主曲率半径。为此引入记号：\emph{以 \(r_{ik}\) 表示超曲面 \(y_i=\text{常数}\) 沿曲率线 \((y_k)\) 的主曲率半径}。曲率半径 \(r_{nn}\)（属于 \(y_n=\text{常数}\)）由下式给出：
+\[
+ \frac1{r_{nn}}=\frac{\Omega_{nn}}{a_{nn}},
+\]
+即由 (42)
+\[
+ \frac1{r_{nn}}=-\frac1{H_nH_n}\frac{\partial H_n}{\partial y_n}.
+\]
+一般地，得到结果：在正交 \(n^{plo}\) 系中，
+\[
+ ds^2=H_1^2dy_1^2+H_2^2dy_2^2+\cdots+H_n^2dy_n^2
+\]
+坐标超曲面的主曲率半径由公式
+\[
+\tag{43}
+ \frac1{r_{ik}}=-\frac1{H_iH_k}\frac{\partial H_k}{\partial y_i}.
+\]
+还可由坐标线 \((y_i)\) 的弯曲度得到另一些重要公式，记这些弯曲度为 \(\frac1{R_i}\)。例如，用第 364 页的公式 (31) 计算 \(\frac1{R_n^2}\)，在此它变成
+\[
+\tag{44}
+ \frac1{R_n^2}=\mathop{\mathrm{S}}_i H_i^2
+ \left(\frac{d^2y_i}{dt^2}
+ +\mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}
+ \frac{dy_\lambda}{dt}\frac{dy_\mu}{dt}\right)^2.
+\]
+但在这里 \(dt=H_n\,dy_n\)，因而
+\[
+ \frac{dy_\lambda}{dt}=0,\quad \frac{d^2y_\lambda}{dt^2}=0\quad \text{当 }\lambda\ne n,
+\]
+\[
+ \frac{dy_n}{dt}=\frac1{H_n},\quad
+ \frac{d^2y_n}{dt^2}=-\frac1{H_n^3}\frac{\partial H_n}{\partial y_n}.
+\]
+从而
+\[
+ \mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{i}\frac{dy_\lambda}{dt}\frac{dy_\mu}{dt}
+=\frac1{H_n^2}\chrB{nn}{i}
+=\frac1{H_iH_n^2}\chrsqB{nn}{i},
+\]
+即
+\[
+ \mathop{\mathrm{S}}_{\mu,\lambda}\chrB{\lambda\mu}{i}\frac{dy_\lambda}{dt}\frac{dy_\mu}{dt}
+=-\frac1{H_nH_i^2}\frac{\partial H_n}{\partial y_i}\quad \text{当 }i\ne n,
+\]
+\[
+ \mathop{\mathrm{S}}_{\lambda,\mu}\chrB{\lambda\mu}{n}\frac{dy_\lambda}{dt}\frac{dy_\mu}{dt}
+=\frac1{H_n^3}\frac{\partial H_n}{\partial y_n}.
+\]
+所以，(44) 右边求和中的最后一项消失，剩下
+\[
+ \frac1{R_n^2}=\mathop{\mathrm{S}}_{i}^{1,\ldots,n-1}
+ \frac1{H_i^2H_n^2}\left(\frac{\partial H_n}{\partial y_i}\right)^2,
+\]
+也就是，由 (43)
+\[
+ \frac1{R_n^2}=\frac1{r_{1n}^2}+\frac1{r_{2n}^2}+\cdots+\frac1{r_{n-1,n}^2},
+\]
+一般地，
+\[
+ \frac1{R_i^2}=\mathop{\mathrm{S}}_{\lambda}'\frac1{r_{\lambda i}^2},
+\]
+其中求和号上的撇号表示，\(\lambda\) 取从 1 到 \(n\) 的值，但排除值 \(i\)。
+
+\subsection*{§. 172.\\ 三维空间的情形。}
+
+本章最后把前面的定理应用于三维（曲）空间；在这种情形下，问题很容易得到明确而完整的处理。首先要证明：在任意（曲）空间 \(S_3\) 中，下述关于曲率线的定理成立；对欧几里得空间，我们曾在 \S. 59 中由渐屈面的性质导出这些定理：
+
+\emph{若曲空间 \(S_3\) 中两个曲面沿曲线 C 相交，而 C 是这两个曲面的曲率线，则两曲面以常角相交。反之，若 \(S_3\) 中两个曲面以常角相交，并且交线是其中一个曲面的曲率线，则它也是另一个曲面的曲率线。}
+
+为证明这一定理，在空间 \(S_3\) 中取坐标系 \((x_1,x_2,x_3)\)，使所讨论的两个曲面成为坐标曲面，例如 \(x_2=0\)、\(x_3=0\)；于是它们沿坐标线 \((x_1)\) 相交。令
+\[
+ ds^2=\mathop{\mathrm{S}}_{i,k}^{1,\ldots,3}a_{ik}\,dx_i\,dx_k
+\]
+为该空间的线元。首先表示曲面 \(x_3=0\) 上的曲线 \(x_2=0\) 是一条曲率线。为此，计算第二基本形式的系数 \(\Omega_{11},\Omega_{12},\Omega_{22}\)（对应于 \(x_3=0\)）。法线的方向常数为（第 332 页）：
+\[
+ X_1=\frac{A_{13}}{\sqrt{A_{33}}},\quad X_2=\frac{A_{23}}{\sqrt{A_{33}}},\quad X_3=\frac{A_{33}}{\sqrt{A_{33}}},
+\]
+而第 362 页的公式 (K) 给出
+\[
+ \Omega_{rs}=\mathop{\mathrm{S}}_\mu\chrsqB{rs}{\mu}X_\mu
+=\frac1{\sqrt{A_{33}}}\chrB{rs}{3}.
+\]
+曲面 \(x_3=0\) 上曲率线的微分方程为
+\[
+ \left|\begin{matrix}
+ a_{11}\,dx_1+a_{12}\,dx_2& a_{12}\,dx_1+a_{22}\,dx_2\\
+ \Omega_{11}\,dx_1+\Omega_{12}\,dx_2& \Omega_{12}\,dx_1+\Omega_{22}\,dx_2
+ \end{matrix}\right|=0
+\]
+因此，曲线 \(x_2=0\) 在曲面 \(x_3=0\) 上是曲率线的条件为：
+\[
+ a_{11}\Omega_{12}=a_{12}\Omega_{11},\qquad \text{当 }x_2=x_3=0,
+\]
+即
+\[
+\tag{$\alpha$}
+ a_{11}\chrB{12}{3}-a_{12}\chrB{11}{3}=0,\qquad \text{当 }x_2=x_3=0.
+\]
+同样，曲面 \(x_2=0\) 上的曲线 \(x_3=0\) 是曲率线的条件，可由上式交换指标 2、3 得到，即：
+\[
+\tag{$\beta$}
+ a_{11}\chrB{13}{2}-a_{13}\chrB{11}{2}=0,\qquad \text{当 }x_2=x_3=0.
+\]
+另一方面，上述两个坐标曲面相交所成的角 \(\Omega\) 由下式给出（第 332 页）：
+\[
+ \cos\Omega=\frac{A_{23}}{\sqrt{A_{22}A_{33}}}\qquad (x_2=x_3=0).
+\]
+要表示这个角沿曲线 \((x_1)\) 为常数，只须令 \(\cos\Omega\) 对 \(x_1\) 的导数为零；亦即
+\[
+ 2A_{22}A_{33}\frac{\partial A_{23}}{\partial x_1}
+=A_{23}\left(A_{22}\frac{\partial A_{33}}{\partial x_1}
++A_{33}\frac{\partial A_{22}}{\partial x_1}\right).
+\]
+对任意变量数目的微分形式，公式（第 349 页的 \(\alpha^*\)）成立：
+\[
+ \frac{\partial A_{ik}}{\partial x_l}
+=-\mathop{\mathrm{S}}_tA_{it}\chrB{lt}{k}
+-\mathop{\mathrm{S}}_tA_{kt}\chrB{lt}{i},
+\]
+故前式化为
+\[
+ A_{22}A_{33}\left(\mathop{\mathrm{S}}_tA_{2t}\chrB{1t}{3}
++\mathop{\mathrm{S}}_tA_{3t}\chrB{1t}{2}\right)
+=A_{23}A_{33}\mathop{\mathrm{S}}_tA_{3t}\chrB{1t}{3}
++A_{23}A_{22}\mathop{\mathrm{S}}_tA_{2t}\chrB{1t}{2}.
+\]
+删去彼此抵消的项，得：
+\[
+\begin{aligned}
+&A_{22}(A_{12}A_{33}-A_{23}A_{13})\chrB{11}{3}
++A_{22}(A_{22}A_{33}-A_{23}^2)\chrB{12}{3}\\
+&\quad
++A_{33}(A_{23}A_{13}-A_{33}A_{12})\chrB{11}{2}
++A_{33}(A_{22}A_{33}-A_{23}^2)\chrB{13}{2}=0.
+\end{aligned}
+\]
+利用把 \(A_{rs}\) 的（逆）行列式的二阶子式同原行列式元素联系起来的熟知关系，角 \(\Omega\) 为常数的条件化为：
+\[
+ A_{22}\left(a_{11}\chrB{12}{3}-a_{12}\chrB{11}{3}\right)
++A_{33}\left(a_{11}\chrB{13}{2}-a_{13}\chrB{11}{2}\right)=0,\quad \text{当 }x_2=x_3=0.
+\]
+若 \((\alpha),(\beta)\) 同时成立，此式显然成立；反之，由其中一个式子和 \((\gamma)\) 可推出另一个，因为二次形式 \(\mathop{\mathrm{S}}a_{ik}dx_i\,dx_k\) 是正定的，所以 \(A_{22},A_{33}\) 均不为零。所述定理因而得证。
+
+现在作第二项研究，以求 Dupin 定理（\S. 171）的逆命题。设 \(S_3\) 中有两个曲面族 \(\infty^1\)，分别记为 \(\Sigma,\Sigma'\)，它们彼此正交相交；问在什么条件下存在同时正交于二者的第三个曲面族 \(\Sigma''\)。由 Dupin 定理已知，必要条件是任意两个曲面 \(\Sigma,\Sigma'\) 沿一条曲率线相交。现证明这个条件也是充分的；而且不预先假定 Dupin 定理已证，我们将同时证明它的必要性与充分性。为此，把坐标曲面 \(x_3=\text{常数}\) 取为第一个族的曲面 \(\Sigma\)，把它们的正交轨线取为坐标线 \((x_3)\)\srcfn{1}{这些正交轨线的存在在几何上是显然的。解析地说，给定一个曲面族 \(\infty^1\)，以 \(X_1,X_2,X_3\) 表示在空间点 \((x_1,x_2,x_3)\) 处、通过该点的族中曲面的法线方向常数，则积分常微分方程组即可得到正交轨线：
+\[
+ \frac{dx_1}{X_1}=\frac{dx_2}{X_2}=\frac{dx_3}{X_3}.
+\]} 最后，把坐标线 \((x_1)\) 取为 \(\Sigma\) 与第二个族中曲面 \(\Sigma'\) 的交线；因此后一个曲面族为 \(x_2=\text{常数}\)。空间的线元便具有形式
+\[
+\tag{45}
+ ds_3^2=a_{11}dx_1^2+2a_{12}dx_1dx_2+a_{22}dx_2^2+a_{33}dx_3^2,
+\]
+因为曲线 \((x_3)\) 正交于曲面 \(x_3=\text{常数}\)，故 \(a_{13}=a_{23}=0\)。
+
+现在，为表示曲面 \(x_3=\text{常数}\) 上的曲线 \((x_1)\)，即 \(x_2=\text{常数}\)，是曲率线，可用 \((\alpha)\)：
+\[
+ a_{11}\chrB{12}{3}=a_{12}\chrB{11}{3};
+\]
+但在此
+\[
+ A_{13}=0,\qquad A_{23}=0,\qquad A_{33}=\frac1{a_{33}},
+\]
+上式可写成
+\[
+ a_{11}\chrsqB{12}{3}=a_{12}\chrsqB{11}{3}
+\]
+即
+\[
+\tag{$\alpha^*$}
+ a_{11}\frac{\partial a_{12}}{\partial x_3}
+=a_{12}\frac{\partial a_{11}}{\partial x_3},
+\]
+积分得
+\[
+ a_{12}=a_{11}f(x_1,x_2),
+\]
+其中 \(f(x_1,x_2)\) 只是 \(x_1,x_2\) 的函数。以 \(\lambda\) 表示微分式
+\[
+ dx_1+f\,dx_2,
+\]
+的一个积分因子，则可写成
+\[
+ ds^2=\frac{a_{11}}{\lambda^2}(\lambda dx_1+\lambda f dx_2)^2
+ +(a_{22}-a_{11}f^2)dx_2^2+a_{33}dx_3^2.
+\]
+现令
+\[
+ y_1=\int \lambda(dx_1+f dx_2),
+\]
+便把 \(ds^2\) 化为正交形式
+\[
+ ds^2=\frac{a_{11}}{\lambda^2}dy_1^2+(a_{22}-a_{11}f^2)dx_2^2+a_{33}dx_3^2
+\]
+而不改变坐标曲面 \(x_2=\text{常数}\)、\(x_3=\text{常数}\)。这证明了所述条件是充分的；但立刻可见（不借助已证的 Dupin 定理）它也是必要的。事实上，若保持坐标曲面 \(x_2=\text{常数}\)、\(x_3=\text{常数}\) 不变而能把 (45) 化为正交形式，就只能把变量 \(x_1\) 改换为 \(\varphi(y_1,x_2)\)，这给出：
+\[
+ \frac{\partial\varphi}{\partial y_1}\left(a_{11}\frac{\partial\varphi}{\partial x_2}+a_{12}\right)=0
+\]
+而且必须有 \(\frac{\partial\varphi}{\partial y_1}\ne0\)，所以 \(\frac{a_{12}}{a_{11}}\) 只能是 \(x_1,x_2\) 的函数，因而 \((\alpha^*)\) 必然成立。于是证明了定理：
+\emph{在任意三维空间中，要使两个彼此正交的曲面族能够配上一个同时正交于二者的第三曲面族，其充分必要条件是前两个曲面族沿曲率线相交。}
+
+在欧几里得空间中，Dupin 定理的这一重要逆命题是 Darboux 所得；这里我们把它推广到了任意三维曲空间。
+
+\subsection*{§. 173.\\ \(S_3\) 中的三重正交系。}
+
+当空间为三维时，无论 \(ds^2\) 取何种形式，借助 Cauchy 关于偏微分方程积分存在性的一般定理，很容易证明空间 \(S_3\) 中存在无穷多个三重正交系；也就是说，三个未知函数所满足的三个联立方程（\S. 171）
+\[
+ \nabla(y_1,y_2)=0,\quad \nabla(y_2,y_3)=0,\quad \nabla(y_1,y_3)=0
+\]
+有无穷多组解。我们将证明：要使曲面族 \(\infty^1\)
+\[
+\tag{$a$}
+ y_1(x_1,x_2,x_3)=c,
+\]
+其中 \(c\) 为可变参数，能够配上另外两个既与它正交、又彼此正交的曲面族，其充分必要条件是函数 \(y_1\)（关于三个变量 \(x_1,x_2,x_3\)）满足一个单独的\emph{三阶偏微分方程}。这一重要结果最初由 Darboux 对欧几里得空间建立；这里将对任意曲空间证明它。
+
+给定曲面族 \((a)\)，在我们的 \(S_3\) 中再给定任意线元
+\[
+ ds^2=\mathop{\mathrm{S}}_{i,k}a_{ik}\,dx_i\,dx_k,
+\]
+若有另外两个曲面族同 \((a)\) 构成所求的三重正交系，则其中任一曲面族的正交轨线，必为所有曲面 \((a)\) 上某一族曲率线。反之，若 \((a)\) 上\emph{某一族}曲率线容许一族正交曲面，则这些曲面会沿曲率线正交地截交 \((a)\)；于是（\S. 172）存在同时正交于二者的第三个曲面族。因此，所求的充分必要条件归结为：曲面族 \((a)\) 上某一族的双无穷多条曲率线容许一族正交曲面。现以 \(X_1,X_2,X_3\) 表示这些曲率线切线的方向常数；若所求的正交曲面存在，它们可由积分下列全微分方程得到：
+\[
+ \mathop{\mathrm{S}}_{i,k}^{1,\ldots,3}a_{ik}X_k\,dx_i=0.
+\]
+因此，这个方程必须是完全可积的；反之，一旦满足此条件，所求的正交曲面便存在。令
+\[
+ Y_i=\mathop{\mathrm{S}}_k^{1,\ldots,3}a_{ik}X_k,
+\]
+则可积条件写为
+\[
+\tag{$b$}
+Y_1\left(\frac{\partial Y_2}{\partial x_3}-\frac{\partial Y_3}{\partial x_2}\right)
++Y_2\left(\frac{\partial Y_3}{\partial x_1}-\frac{\partial Y_1}{\partial x_3}\right)
++Y_3\left(\frac{\partial Y_1}{\partial x_2}-\frac{\partial Y_2}{\partial x_1}\right)=0.
+\]
+由关于任意超曲面及其曲率线的一般公式（\S\S. 165--168）可知，\(X_1,X_2,X_3\)，从而 \(Y_1,Y_2,Y_3\)，都能用 \(x_1,x_2,x_3\) 以及函数 \(y_1\) 的一阶、二阶导数表示。代入 \((b)\) 后，该式必须成为关于 \(x_1,x_2,x_3\) 的恒等式，因而归结为 \(y_1\) 的一个三阶偏微分方程；并且这个方程对三阶导数还是线性的。
+
+这个方程的每个解 \(y_1\)，都给出一个属于三重正交系的曲面族 \((a)\)，也就是所谓的一个 \emph{Lamé 族}。
+
+以后还将在另一章回到这些一般结果，较为详细地研究欧几里得空间中的三重正交系。
+
+\begin{center}
+\begin{tikzpicture}[x=0.8em,y=0.8em]
+\draw[line width=0.4pt] (-2,0)--(2,0);
+\foreach \x in {-0.8,-0.4,0,0.4,0.8}{\fill (\x,0) circle (0.7pt);}
+\end{tikzpicture}
+\end{center}

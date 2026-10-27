@@ -1,0 +1,84 @@
+\subsection*{\S. 21.\quad 第一曲率为常数的曲线与球面螺线。}
+任意曲线 C 的 Combescure 变换曲线中，总有一条第一曲率为常数的曲线，而且可以预先指定第一曲率的值，例如令 \(\rho_1=1\)。为得到这一特定变换曲线，显然只需令 \(f(s)=\dfrac{1}{\rho}\)。所以，给定任意曲线 C，求积式
+\[
+x_1=\int\frac{\alpha\,\diff s}{\rho},
+\qquad
+y_1=\int\frac{\beta\,\diff s}{\rho},
+\qquad
+z_1=\int\frac{\gamma\,\diff s}{\rho}
+\]
+给出 Combescure 变换曲线 C\(_1\)，其第一曲率恒为 \(=1\)。再注意到
+\[
+\frac{\diff s}{\rho}=\sqrt{\diff\alpha^2+\diff\beta^2+\diff\gamma^2}=\diff\sigma,
+\]
+可见：\emph{公式}
+\begin{equation}\tag{45}
+x=\int\alpha\,\diff\sigma,
+\qquad y=\int\beta\,\diff\sigma,
+\qquad z=\int\gamma\,\diff\sigma,
+\end{equation}
+\emph{其中 \(\alpha,\beta,\gamma\) 是参数的任意函数，并由关系 \(\alpha^2+\beta^2+\gamma^2=1\) 联系起来，而}
+\begin{equation}\tag{45*}
+\diff\sigma=\sqrt{\diff\alpha^2+\diff\beta^2+\diff\gamma^2},
+\end{equation}
+\emph{定义了最一般的第一曲率为常数 \(\dfrac{1}{\rho}=1\) 的曲线。}
+
+现在再应用 Combescure 变换来求\emph{球面螺线}。
+
+为此，先一般地注意到，由 (44) 有公式
+\[
+\frac{\diff\rho_1}{\diff s_1}=\frac{1}{f}(\rho f)',
+\qquad
+T_1\frac{\diff\rho_1}{\diff s_1}=T(\rho f)',
+\]
+其中撇号表示对 \(s\) 求导。若要使 C 的 Combescure 变换曲线 C\(_1\) 画在半径为 \(=1\) 的球面上，就必须由方程
+\[
+(\rho f)^2+T^2(\rho f)'^2=1\,\srcfnmark{1},
+\]
+确定 \(f\)；积分得
+\[
+\rho f=\sen(\tau+c),
+\qquad
+\tau=\int_0^s\frac{\diff s}{T},
+\]
+其中 \(c\) 是任意常数。因此，所求球面变换曲线由下列求积式定义：
+\begin{equation}\tag{46}
+x_1=\int\frac{\alpha\sen(\tau+c)\,\diff s}{\rho},
+\qquad
+ y_1=\int\frac{\beta\sen(\tau+c)\,\diff s}{\rho},
+\qquad
+ z_1=\int\frac{\gamma\sen(\tau+c)\,\diff s}{\rho}.
+\end{equation}
+显然，这样确定的单参数球面曲线族，给出了球面上一族大圆的正交轨迹；这些大圆位于过球心且分别平行于 C 的各法平面的平面内。因此，利用前面的公式，一个 \(\infty^1\) 大圆（球面的测地线）族的正交轨迹问题，便通过求积得到解决。
+
+特别地，把上述结果用于求球面螺线；所谓球面螺线，就是画在球面上、其切线与一个固定方向成恒定角的曲线。它们是圆螺线的球面 Combescure 变换曲线，也就是球面上一族大圆的正交轨迹，而这些大圆都与同一个小圆相切。从圆螺线的方程
+\[
+x=\cos u,
+\qquad y=\sen u,
+\qquad z=u\cot\varepsilon,
+\]
+出发；该螺线画在半径为 \(=1\) 的直圆柱面上，其中 \(\varepsilon\) 表示切线与母线之间的恒定夹角。于是
+\[
+s=\frac{u}{\sen\varepsilon},
+\qquad
+\frac{1}{\rho}=\sen^2\varepsilon,
+\qquad
+\frac{1}{T}=\sen\varepsilon\cos\varepsilon,
+\]
+继而
+\[
+\tau=\int\frac{\diff s}{T}=u\cos\varepsilon
+\]
+\srcfntext{1}{严格说来，根据第17节的说明，正文中的方程并不是球面曲线的特征方程；它还可能属于一条满足 \(\rho_1=\rho f=1\) 的曲线。正文把奇解 \(\rho f=1\) 排除在外，因而排除了这种情形。}
+在 (46) 中令 \(c=0\)\srcfn{1}{从几何上显然可见，若给 \(c\) 另一个值，所得仍是同一条曲线，只是通过绕极轴（\(Oz\) 轴）旋转而在球面上移动了位置。}，并完成求积，便得到定义球面螺线的下列公式：
+\[
+\left\{
+\begin{aligned}
+x_1&=\frac{\sen^2\varepsilon}{2}\left\{\frac{\sen\bigl(u(1+\cos\varepsilon)\bigr)}{1+\cos\varepsilon}
+       -\frac{\sen\bigl(u(1-\cos\varepsilon)\bigr)}{1-\cos\varepsilon}\right\},\\[0.4em]
+y_1&=-\frac{\sen^2\varepsilon}{2}\left\{\frac{\cos\bigl(u(1+\cos\varepsilon)\bigr)}{1+\cos\varepsilon}
+       -\frac{\cos\bigl(u(1-\cos\varepsilon)\bigr)}{1-\cos\varepsilon}\right\},\\[0.4em]
+z_1&=\sen\varepsilon\cos(u\cos\varepsilon).
+\end{aligned}\right.
+\]
+应当注意，若角 \(\varepsilon\) 所对应的 \(\cos\varepsilon\) 是有理数，则球面螺线是一条有理代数曲线。

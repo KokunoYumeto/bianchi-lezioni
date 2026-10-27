@@ -1,0 +1,7 @@
+*.aux
+*.log
+*.out
+*.toc
+geometria-differenziale/tex/*.pdf
+geometria-differenziale/tex/zh-hans/*.pdf
+gruppi-continui/tex/*.pdf

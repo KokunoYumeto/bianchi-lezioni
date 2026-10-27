@@ -1,0 +1,67 @@
+\subsection*{§. 202.\\ 对常挠率曲线的应用。}
+
+本章最后，从 Frenet 公式推出若干以后有用的简单结果。
+
+考察一个 Clifford 直纹面（§. 200）：它的曲率为零，而其母线的正交轨线是该曲面的（彼此全等的）测地线。因此，这样的直纹面是某条曲线的副法线所成的轨迹；现在立即证明，这条曲线具有常挠率，而且准确地说
+\[
+ \frac1T=\pm\frac1R.
+\]
+事实上，考察直纹面 \(S'\)，它由一条曲线 \(C\) 的副法线构成；为确定 \(S\) 上的点，取下列曲线坐标：第一，以弧长 \(v\) 为坐标，它沿曲线 \(C\) 量取；第二，以线段 \(u\) 为坐标，它沿一条母线（副法线）从曲线上的点 \((x_i)\) 量到所考察的曲面点 \((\overline{x}_i)\)。于是
+\[
+ \overline{x}_i=x_i\cos\left(\frac uR\right)+\lambda_i\sen\left(\frac uR\right)
+\]
+分别对 \(u\) 与 \(v\) 求导，并利用 Frenet 公式 (49)\ednote{更正参照号。1902 年意大利文原版印作 (48)，但式 (48) 只给出挠率的平方；此处求导实际使用式 (49) 的 Frenet 方程组，特别是 \(d\lambda_i/ds=\xi_i/T\)。意大利文转写保留原印。}，得到
+\[
+\left\{
+\begin{aligned}
+\frac{\partial\overline{x}_i}{\partial v}
+&=\frac{\alpha_i}{R}\cos\left(\frac uR\right)+\frac{\xi_i}{T}\sen\left(\frac uR\right),\\
+\frac{\partial\overline{x}_i}{\partial u}
+&=-\frac{x_i}{R}\sen\left(\frac uR\right)+\frac{\lambda_i}{R}\cos\left(\frac uR\right),
+\end{aligned}\right.
+\]
+由此，对于曲面的线元
+\[
+ ds^2=R^2(d\overline{x}_0^2+d\overline{x}_1^2+d\overline{x}_2^2+d\overline{x}_3^2)
+\]
+可推出
+\[
+\tag{50}
+ ds^2=\left[\cos^2\left(\frac uR\right)+\frac{R^2}{T^2}\sen^2\left(\frac uR\right)\right]dv^2+du^2.
+\]
+因此，直纹面的曲率为零，当且仅当
+\[
+ \frac{R^2}{T^2}=1,
+ \qquad \text{即}\qquad \frac1T=\pm\frac1R.
+\]
+由此可见，Clifford 直线汇中的每个直纹面上，母线的正交轨线都是常挠率曲线，且 \(\frac1T=\pm\frac1R\)，正如所断言的。不仅如此，我们还看出，椭圆空间中所有挠率为常数 \(\frac1T=\pm\frac1R\) 的曲线都以这种方式得到；换言之，每条这类曲线的副法线在 Clifford 意义下彼此平行。
+
+为证明这一点，并判定相应副法线平行性的旋向，例如考察一条具有正的常挠率 \(\frac1T=+\frac1R\) 的曲线。依照第 451 页式 (43)，计算一条副法线相应的右旋滑移参数 \(B,C,D\)，得到
+\[
+ B=\begin{vmatrix}x_0&x_1\\ \lambda_0&\lambda_1\end{vmatrix}+\begin{vmatrix}x_2&x_3\\ \lambda_2&\lambda_3\end{vmatrix}
+\]
+\[
+ C=\begin{vmatrix}x_0&x_2\\ \lambda_0&\lambda_2\end{vmatrix}+\begin{vmatrix}x_3&x_1\\ \lambda_3&\lambda_1\end{vmatrix}
+\]
+\[
+ D=\begin{vmatrix}x_0&x_3\\ \lambda_0&\lambda_3\end{vmatrix}+\begin{vmatrix}x_1&x_2\\ \lambda_1&\lambda_2\end{vmatrix}
+\]
+
+再对 \(s\) 求导，利用 Frenet 公式 (49) 以及正交行列式 (47) 的二阶子式之间的关系，立即得到
+\[
+\frac{dB}{ds}=0,\qquad \frac{dC}{ds}=0,\qquad \frac{dD}{ds}=0 .
+\]
+因此，我们这条曲线的所有副法线都有相同的右旋滑移参数，故它们在右旋意义下平行。于是得出结论：\emph{在任一由 Clifford 意义下的一族平行直线构成的（零曲率）直纹面上，母线的正交轨线都是常挠率曲线；当母线的平行性为右旋时，\(\frac1T=+\frac1R\)，当其为左旋时，\(\frac1T=-\frac1R\)。反过来，任何挠率恒为 \(\frac1T=\pm\frac1R\) 的曲线，其副法线都在右旋或左旋意义下彼此平行。}
+
+因此，为得到挠率为 \(\frac1T=\pm\frac1R\) 的最一般曲线，只须任意选取一个零曲率直纹面，再以一次求积求出母线的正交轨线\srcfn{1}{关于零曲率直纹面的其他性质，尤其关于其测地线（椭圆几何中的螺线）的研究，参见我在《年刊》（1895）中已经引用的论文。}。
+
+现在更一般地考察椭圆空间中挠率 \(\frac1T\) 为常数但不等于 \(\pxChThirteenUnequalTorsionMagnitude\) 的曲线。由给出副法线轨迹曲面线元的公式 (50) 可知，只要 \(\frac1T\) 保持相同，该线元就与曲线的形状无关；另一方面，它属于某个旋转曲面。双曲空间中也有完全类似的结果，只须在式 (50) 中以双曲函数代替圆函数。因此得出：\emph{在椭圆空间与双曲空间中（正如在欧几里得空间中），挠率取同一常值 \(\frac1T=C\) 的曲线，其副法线轨迹曲面彼此等距适用，并且都等距适用于同一个旋转曲面，其中母线展开到子午线上。}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,0)--(2.2,0);
+\fill (0.9,0) circle (1.5pt);
+\fill (1.1,0) circle (1.5pt);
+\fill (1.3,0) circle (1.5pt);
+\end{tikzpicture}
+\end{center}

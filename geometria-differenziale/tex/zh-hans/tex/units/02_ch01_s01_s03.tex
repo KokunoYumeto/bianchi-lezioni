@@ -1,0 +1,150 @@
+%% UNIT ch01_s01_s03 | IT authority lines 189--341
+\section*{第一章}
+\begin{center}
+{\Large\bfseries 双曲率曲线}
+\end{center}
+
+\begin{center}\footnotesize
+切线与法平面。-- 第一曲率或弯曲率。-- 密切平面。-- 主三面形。-- 第二曲率或挠率。-- 弗雷内公式。-- 内蕴方程。-- 柱面螺线。-- 包络面。-- 管状面。-- 可展曲面。-- 曲线的矫直可展面与极可展面。-- 极可展面的回归棱。-- 渐开线与渐屈线。-- 单参数平面族的正交轨迹。-- Combescure 变换。-- 第一曲率为常数的曲线与球面螺线。-- 单参数球面族的正交轨迹。-- 贝特朗曲线。
+\end{center}
+
+\subsection*{§. 1.\quad 切线与法平面}
+为了用解析方法定义曲线 \(C\)，我们把它参照于一组正交笛卡儿坐标轴 \(Ox, Oy, Oz\)，并把曲线上动点的坐标 \(x,y,z\) 表示为参数 \(u\) 的函数：
+\[
+  x=x(u), \qquad y=y(u), \qquad z=z(u).
+\]
+关于函数 \(x(u),y(u),z(u)\)，我们在此一劳永逸地约定：在独立变量 \(u\) 的整个定义区间内，除至多若干特殊点外，\emph{这些函数连同其一阶、二阶和三阶导数均为有限且连续的}。
+
+在所考察的区间内，每一个特定值 \(u_1\)，当把它赋给参数 \(u\) 时，都对应于曲线生成点的一个特定位置 \(M_1\)，这个生成点记为 \(M\)。当 \(u\) 连续变化时，点 \(M\) 依连续规律在空间中运动，从而描出曲线 \(C\)。我们还始终约定：生成点 \(M\) 在参数 \(u\) 增大时的运动方向，取为曲线 \(C\) 的正向；相反方向则为负向。
+
+多数情况下，我们取作参数或辅助变量 \(u\) 的是弧长 \(s\)，即曲线 \(C\) 的弧长；它从一个固定点（原点）起算。无论如何，为了把 \(s\) 定义成 \(u\) 的函数，我们有熟知的
+
+\noindent 公式：
+\[
+\frac{\diff s}{\diff u}=\sqrt{\left(\frac{\diff x}{\diff u}\right)^2+\left(\frac{\diff y}{\diff u}\right)^2+\left(\frac{\diff z}{\diff u}\right)^2},
+\]
+其中，既然规定 \(s\) 沿 \(u\) 增大的方向计量，根式就必须取正号。
+
+在一点 \(M\) 处考虑曲线 \(C\) 的切线，并规定其正向与曲线的正向一致。此后我们将始终用 \(\alpha,\beta,\gamma\) 表示这条切线正向的方向余弦，于是有公式：
+\[
+\alpha=\frac{\dfrac{\diff x}{\diff u}}{\sqrt{\left(\dfrac{\diff x}{\diff u}\right)^2+\left(\dfrac{\diff y}{\diff u}\right)^2+\left(\dfrac{\diff z}{\diff u}\right)^2}},\qquad
+\beta=\frac{\dfrac{\diff y}{\diff u}}{\sqrt{\left(\dfrac{\diff x}{\diff u}\right)^2+\left(\dfrac{\diff y}{\diff u}\right)^2+\left(\dfrac{\diff z}{\diff u}\right)^2}},
+\]
+\[
+\gamma=\frac{\dfrac{\diff z}{\diff u}}{\sqrt{\left(\dfrac{\diff x}{\diff u}\right)^2+\left(\dfrac{\diff y}{\diff u}\right)^2+\left(\dfrac{\diff z}{\diff u}\right)^2}},
+\]
+或者
+\begin{equation}\tag{1}
+\alpha=\frac{\diff x}{\diff s},\qquad \beta=\frac{\diff y}{\diff s},\qquad \gamma=\frac{\diff z}{\diff s}.
+\end{equation}
+在公式 (1) 中，把右端看成微分之商，或者看成对弧长所取的导数，二者并无区别。
+
+在 \(M\) 处与切线垂直的平面称为曲线的法平面；以 \(X,Y,Z\) 表示动点的坐标，它的方程为
+\[
+(X-x)\alpha+(Y-y)\beta+(Z-z)\gamma=0,
+\]
+
+\subsection*{§. 2.\quad 第一曲率或弯曲率}
+曲线生成点偏离直线方向的快慢，使我们判断曲线本身的\emph{弯曲率}较大还是较小。为了精确规定这一概念并使之可以度量，取曲线的一点 \(M\) 和一个邻近点 \(M_1\)。两条切线方向所成的极小角记为 \(\Delta\varepsilon\)，这里的切线分别取在 \(M,M_1\) 处；把这个角除以弧长 \(MM_1=\Delta s\)。商 \(\Delta\varepsilon/\Delta s\) 在 \(M_1\) 无限趋近于 \(M\) 时（即 \(\Delta s\) 趋于零）趋于一个确定的有限极限；我们取这个极限作为曲线在 \(M\) 处的\emph{第一曲率或弯曲率}的度量。以 \(1/\rho\) 表示该极限；其倒数 \(\rho\) 被解释为长度，称为\emph{第一曲率半径}。
+
+为了证明这一极限存在并同时求出它的表达式，我们采用如下考察。
+
+以原点为球心、以单位长度为半径作一球面，并用此球面截取那些分别平行于曲线各相继切线正向的射线。这些射线端点的轨迹称为切线的\emph{球面指标曲线}。生成点 \(M=(x,y,z)\) 在曲线 \(C\) 上的每一个位置，都对应于一点 \(M'=(x',y',z')\)，该点位于切线的球面指标曲线 \(C'\) 上；显然有
+\begin{equation}\tag{2}
+x'=\alpha,\qquad y'=\beta,\qquad z'=\gamma.
+\end{equation}
+现在取一点 \(M_1\)，它在曲线 \(C\) 上邻近 \(M\)。角 \(\Delta\varepsilon\) 恰由表示球面上连接像点 \(M',M'_1\) 的大圆弧来度量。为了计算极限
+\[
+\frac{1}{\rho}=\lim_{\Delta s\to0}\left(\frac{\Delta\varepsilon}{\Delta s}\right),
+\]
+可以用指标曲线上相应的弧代替 \(\Delta\varepsilon\)：当 \(\Delta s\) 趋于零时，这条弧是无穷小量，而它与 \(\Delta\varepsilon\) 的比趋于一。以 \(\diff s'\) 表示球面指标曲线的弧微元，于是立即得到
+\[
+\frac{1}{\rho}=\frac{\diff s'}{\diff s},
+\]
+或者由 (2) 得
+\begin{equation}\tag{3}
+\frac{1}{\rho}=\sqrt{\left(\frac{\diff\alpha}{\diff s}\right)^2+\left(\frac{\diff\beta}{\diff s}\right)^2+\left(\frac{\diff\gamma}{\diff s}\right)^2}.
+\end{equation}
+
+若取 \(s\) 为独立变量，利用 (1)，该公式可写成
+\begin{equation}\tag{3*}
+\frac{1}{\rho}=\sqrt{\left(\frac{\diff^2x}{\diff s^2}\right)^2+\left(\frac{\diff^2y}{\diff s^2}\right)^2+\left(\frac{\diff^2z}{\diff s^2}\right)^2}.
+\end{equation}
+在这些公式中，\emph{我们约定第一曲率只取绝对值}，因而总是取根式的正值。
+
+立即可以看出，曲线 \(C\) 不可能在某一\emph{曲线段}上弯曲率处处为零而该段却不是直线。事实上，由随之而来的方程
+\[
+\frac{\diff\alpha}{\diff s}=0,\qquad \frac{\diff\beta}{\diff s}=0,\qquad \frac{\diff\gamma}{\diff s}=0,
+\]
+可知 \(\alpha,\beta,\gamma\) 均为常数，于是有
+\[
+x=\alpha s+a,\qquad y=\beta s+b,\qquad z=\gamma s+c,
+\]
+其中 \(a,b,c\) 为常数；这些公式定义一条直线。
+
+\subsection*{§. 3.\quad 密切平面}
+在所有通过一点 \(M\) 的平面中——这里说的是曲线 \(C\) 上的一点——有一个平面在 \(M\) 的邻域内比任何其他平面偏离曲线 \(C\) 都更少；它称为曲线在 \(M\) 处的\emph{密切平面}。事实上，把通过 \(M=(x,y,z)\) 的任意平面方程写成
+\begin{equation}\tag{4}
+a(X-x)+b(Y-y)+c(Z-z)=0,
+\end{equation}
+其中 \(a,b,c\) 是该平面法线的方向余弦。取参数 \(u\) 为曲线的弧长 \(s\)，并考虑一点 \(M'\)，它邻近 \(M\)，且对应于弧长值 \(s+h\)，其中 \(h\) 被看作一阶无穷小量。若 \(\Delta x,\Delta y,\Delta z\) 是 \(x,y,z\) 从 \(s\) 变到 \(s+h\) 时的相应增量，则距离 \(\delta\)，也就是点 \(M'\) 到平面 (4) 的距离，满足
+\[
+\delta=a\Delta x+b\Delta y+c\Delta z.
+\]
+
+现在有
+\begin{equation}\tag{a}
+\left\{
+\begin{aligned}
+\Delta x&=\frac{\diff x}{\diff s}h+\frac{\diff^2x}{\diff s^2}\frac{h^2}{2}+\varepsilon_1,\\
+\Delta y&=\frac{\diff y}{\diff s}h+\frac{\diff^2y}{\diff s^2}\frac{h^2}{2}+\varepsilon_2,\\
+\Delta z&=\frac{\diff z}{\diff s}h+\frac{\diff^2z}{\diff s^2}\frac{h^2}{2}+\varepsilon_3,
+\end{aligned}
+\right.
+\end{equation}
+其中 \(\varepsilon_1,\varepsilon_2,\varepsilon_3\) 是\emph{三阶}无穷小量，因而
+\[
+\delta=\left(a\frac{\diff x}{\diff s}+b\frac{\diff y}{\diff s}+c\frac{\diff z}{\diff s}\right)h+
+\left(a\frac{\diff^2x}{\diff s^2}+b\frac{\diff^2y}{\diff s^2}+c\frac{\diff^2z}{\diff s^2}\right)\frac{h^2}{2}+\eta,
+\]
+其中 \(\eta\) 是三阶无穷小量。
+
+由条件
+\[
+a\frac{\diff x}{\diff s}+b\frac{\diff y}{\diff s}+c\frac{\diff z}{\diff s}=0,
+\]
+\[
+a\frac{\diff^2x}{\diff s^2}+b\frac{\diff^2y}{\diff s^2}+c\frac{\diff^2z}{\diff s^2}=0,
+\]
+确定的平面，就是在 \(M\) 的邻域内比其他平面偏离曲线更少的那个平面；第一个条件表示该平面包含切线。这样，我们已经证明了密切平面的存在。根据以上结果，它的方程可以写成如下行列式形式\footnote{即使采用任意独立变量 \(u\)，密切平面的方程显然仍保持同一形式：
+\[
+\detmat{X-x & Y-y & Z-z\\ x' & y' & z'\\ x'' & y'' & z''}=0,
+\]
+其中撇号表示对 \(u\) 求导。}：
+\begin{equation}\tag{5}
+\detmat{X-x & Y-y & Z-z\\
+\dfrac{\diff x}{\diff s} & \dfrac{\diff y}{\diff s} & \dfrac{\diff z}{\diff s}\\
+\dfrac{\diff^2x}{\diff s^2} & \dfrac{\diff^2y}{\diff s^2} & \dfrac{\diff^2z}{\diff s^2}}=0.
+\end{equation}
+
+曲线在一点 \(M\) 处的密切平面一般是唯一且确定的。
+
+唯一的例外，是下列矩阵的三个二阶子式同时为零的那些点：
+\[
+\left\|\begin{matrix}
+\dfrac{\diff x}{\diff s} & \dfrac{\diff y}{\diff s} & \dfrac{\diff z}{\diff s}\\
+\dfrac{\diff^2x}{\diff s^2} & \dfrac{\diff^2y}{\diff s^2} & \dfrac{\diff^2z}{\diff s^2}
+\end{matrix}\right\|.
+\]
+但是，由于公式
+\[
+\left(\frac{\diff x}{\diff s}\right)^2+\left(\frac{\diff y}{\diff s}\right)^2+\left(\frac{\diff z}{\diff s}\right)^2=1,
+\]
+\[
+\frac{\diff x}{\diff s}\frac{\diff^2x}{\diff s^2}+\frac{\diff y}{\diff s}\frac{\diff^2y}{\diff s^2}+\frac{\diff z}{\diff s}\frac{\diff^2z}{\diff s^2}=0,
+\]
+这个矩阵的平方由 (3*) 等于弯曲率的平方，所以可见，上述奇点正是弯曲率为零的点。
+
+我们还要提及密切平面的另外一些定义；不难看出，它们总是导出方程 (5)。
+
+通过 \(M\) 处的切线和一个邻近点 \(M'\) 作一平面，其中该点属于曲线 \(C\)；当 \(M'\) 趋于 \(M\) 时，该平面作为极限平面趋于密切平面。又，通过 \(M\) 和另外两个邻近点 \(M',M''\) 作一平面；当 \(M',M''\) 同时趋于 \(M\) 时，该平面趋于密切平面（这里要求 \(M',M''\) 两点相应坐标之差，不成为比它们各自与 \(M\) 的相应坐标之差更高阶的无穷小量）。根据最后这一性质，也可以简略地说：一点处的密切平面，就是通过该点和曲线上继后的两个点所作的平面。

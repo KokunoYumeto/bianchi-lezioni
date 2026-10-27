@@ -1,0 +1,76 @@
+\subsection*{\S. 25.\quad 全部贝特朗曲线的确定。}
+满足内蕴方程 (54*) 的曲线称为\emph{贝特朗曲线}。它们成对出现，每一对具有共同的主法线，而两个对应点处的切线成恒定角 \(\sigma\)。
+
+正如第21节对第一曲率为常数的曲线所做的那样，对于一般的贝特朗曲线，也可以应用 Combescure 变换，通过求积给出这些曲线的显式方程。事实上，只需注意：任意给定一条曲线 C，在它的 Combescure 变换曲线中，总有一条贝特朗曲线 C\(_1\)，其两个曲率满足预先指定的线性关系
+\[
+\frac{A}{\rho_1}+\frac{B}{T_1}+C=0,
+\]
+由原书第41页的 (44)，这个关系给出
+\[
+f(s)=-\frac{1}{C}\left(\frac{A}{\rho}+\frac{B}{T}\right).
+\]
+把 \(f(s)\) 的这个值代入 (43)，便得到一条贝特朗曲线 C\(_1\)。
+
+也可以用下面的第二种方法解决同一问题。为此提出问题：\emph{给定一条曲线 C，求第二条曲线 C'，使它与 C 按等弧长对应，并使它在每一点的主法线平行于 C 在对应点的主法线。}
+
+以 \(\sigma\) 表示 C、C' 两条对应切线之间的角，则有
+\begin{equation}\tag{56}
+\alpha'=\alpha\cos\sigma+\lambda\sen\sigma,
+\qquad
+\beta'=\beta\cos\sigma+\mu\sen\sigma,
+\qquad
+\gamma'=\gamma\cos\sigma+\nu\sen\sigma
+\end{equation}
+并且按照假设
+\begin{equation}\tag{56*}
+\xi'=\pm\xi,
+\qquad \eta'=\pm\eta,
+\qquad \zeta'=\pm\zeta.
+\end{equation}
+把 (56) 微分，立即得到
+\[
+\sigma=\hbox{常数}
+\]
+所以，所求曲线 C' 必须由公式
+\begin{equation}\tag{57}
+\begin{aligned}
+x'&=\int(\alpha\cos\sigma+\lambda\sen\sigma)\,\diff s,
+&\qquad y'&=\int(\beta\cos\sigma+\mu\sen\sigma)\,\diff s,\\
+z'&=\int(\gamma\cos\sigma+\nu\sen\sigma)\,\diff s.
+\end{aligned}
+\end{equation}
+给出。反过来，令 \(\sigma\) 取任意常值，(57) 就定义了一条曲线 C'（相差一个平移），它与 C 具有所要求的关系。由 (56)、(56*) 还可推出
+\begin{equation}\tag{56**}
+\lambda'=\pm\lambda\cos\sigma+\alpha\sen\sigma,
+\qquad
+\mu'=\pm\mu\cos\sigma+\beta\sen\sigma,
+\qquad
+\nu'=\pm\nu\cos\sigma+\gamma\sen\sigma
+\end{equation}
+再把 (56)、(56*)、(56**) 微分，得到
+\[
+\left\{
+\begin{aligned}
+\frac{1}{\rho'}&=\pm\left(\frac{\cos\sigma}{\rho}+\frac{\sen\sigma}{T}\right),\\[0.4em]
+\frac{1}{T'}&=\frac{\cos\sigma}{T}-\frac{\sen\sigma}{\rho},
+\end{aligned}\right.
+\]
+即 C' 的两个曲率是 C 的两个曲率的齐次线性组合；还应注意：\emph{两个曲率的平方和是这一变换的不变量。}
+
+由此显然可见，每一条贝特朗曲线的所有变换曲线也都是贝特朗曲线；特别地，每条这样的曲线都有一条第一曲率为常数的变换曲线。因此，最一般的贝特朗曲线，可由本节变换作用于第21节已经确定的第一曲率为常数的曲线而得到。
+
+最后，考察变换中令 \(\sigma=\dfrac{\pi}{2}\) 的特殊情形：\emph{公式}
+\[
+x'=\int\lambda\,\diff s,
+\qquad y'=\int\mu\,\diff s,
+\qquad z'=\int\nu\,\diff s
+\]
+\emph{定义一条曲线 C'，它与 C 按等弧长对应；这一变换把两个曲率互换，也把切线方向与副法线方向互换。}
+\begin{center}
+\rule{1.25em}{0.4pt}\hspace{0.18em}\raisebox{0.15ex}{$\bullet\!\bullet\!\bullet\!\bullet$}\hspace{0.18em}\rule{1.25em}{0.4pt}
+\end{center}
+
+
+
+\providecommand{\chrone}[3]{\left[\begin{matrix}#1\ #2\\ #3\end{matrix}\right]}
+\providecommand{\chrtwo}[3]{\left\{\begin{matrix}#1\ #2\\ #3\end{matrix}\right\}}

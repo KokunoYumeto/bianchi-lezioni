@@ -1,0 +1,1025 @@
+%% UNIT ch02_complete | IT authority lines 2041--3061
+\section*{第二章}
+\begin{center}
+{\Large\bfseries 二次微分形式}
+\end{center}
+
+\begin{center}\footnotesize
+代数二次型。-- 二次微分形式的不变量与微分参数的定义。-- 第一微分参数 \(\Delta_1 U\)。-- 混合微分参数 \(\nabla(U,V)\)。-- 两个二次微分形式的等价性。-- 克里斯托费尔基本方程。-- 三指标克里斯托费尔符号 \(\chrone{r}{s}{t}\)、\(\chrtwo{r}{s}{t}\)。-- 二阶协变导数。-- 第二微分参数 \(\Delta_2 U\)。-- 克里斯托费尔方程的可积条件与四指标符号。-- 二元微分形式的曲率。-- 两个联立二次微分形式的协变三线性型。-- 两个联立二元形式向正交形式的化归。
+\end{center}
+
+\subsection*{\S. 26.\quad 代数二次型}
+为了沿用高斯所开创、也是本课程所遵循的方向，系统地论述曲面理论，我们必须先介绍二次微分形式理论的若干基本概念。这就是本章的内容；不过我们只限于本书目的所必需的部分\srcfn{1}{撰写本章主要采用了以下论文：\par\textsc{Beltrami}. --- \emph{Sulla teoria generale dei parametri differenziali}. (Atti dell'Accademia di Bologna, 25 febbraio 1859).\par\textsc{Christoffel}. --- \emph{Ueber die Transformation der homogenen Differentialausdrücke zweiten Grades}. (Crelle's Journal, Bd. 70).\par\textsc{Ricci}. --- 1.\textsuperscript{a} \emph{Sui parametri e sugli invarianti delle forme quadratiche differenziali}. (Annali di matematica, s.\textsuperscript{a} 2\textsuperscript{a}, t. XIV). --- 2.\textsuperscript{a} \emph{Delle derivazioni covarianti e controvarianti}. (Padova 1888).\par\textsc{Weingarten}. --- \emph{Ueber die Theorie der auf einander abwickelbaren Oberflächen}. (Festschrift der Tecnischen Hochschule zu Berlin 1883).}。我们从这一理论中导出的简洁算法，将使我们能够用少数几个清晰的公式概括曲面理论的基本方程。
+
+适宜先依照贝尔特拉米（\emph{同上}），简述有关二次型的若干\emph{代数}定理。考虑二次型 \(f\)，它具有 \(n\) 个独立变量 \(x_1,x_2,\ldots x_n\)：
+\begin{equation}\tag{1}
+f=\sum_{r,s}^{1,\ldots,n}a_{rs}x_rx_s\qquad (a_{rs}=a_{sr}),
+\end{equation}
+这里所示的求和遍及指标 \(r,s\) 从序列 \(1,2,\ldots n\) 中取值的一切组合。对于系数（常数）\(a_{rs}\)，我们只假定行列式
+\[
+a=\left|\begin{matrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\cdot&\cdot&\cdot&\cdot\\
+a_{n1}&a_{n2}&\cdots&a_{nn}
+\end{matrix}\right|,
+\]
+即该形式的\emph{判别式}，\emph{不等于零}。通过齐次线性代换，把变量 \(x\) 换成新变量 \(x'\)：
+\begin{equation}\tag{2}
+x_r=\sum_i^{1,\ldots,n}p_{ri}x'_i\qquad (r=1,2,\ldots n),
+\end{equation}
+对于 \(n^2\) 个系数（常数）\(p_{ri}\)，只假定行列式
+\[
+\mathrm P=\left|\begin{matrix}
+p_{11}&p_{12}&\cdots&p_{1n}\\
+p_{21}&p_{22}&\cdots&p_{2n}\\
+\cdot&\cdot&\cdot&\cdot\\
+p_{n1}&p_{n2}&\cdots&p_{nn}
+\end{matrix}\right|
+\]
+（亦即该代换的模）不等于零；由于 \(x_1,x_2,\ldots x_n\) 相互独立，这是必要的。代换 (2) 把 \(f\) 变成一个新二次型 \(f'\)，它关于 \(x'\)：
+\begin{equation}\tag{3}
+f'=\sum_{r,s}^{1,\ldots,n}a'_{rs}x'_rx'_s,
+\end{equation}
+新系数 \(a'_{rs}\) 由旧系数 \(a\) 和代换的系数 \(p\) 通过下式表示：
+\begin{equation}\tag{4}
+a'_{rs}=\sum_{i,k}^{1,\ldots,n}a_{ik}p_{ir}p_{ks}.
+\end{equation}
+以 \(a'\) 表示 \(f'\) 的判别式，根据行列式乘法法则，由这些公式便得到下式所表达的基本定理：
+\begin{equation}\tag{5}
+a'=a\mathrm P^2.
+\end{equation}
+
+现在令
+\begin{equation}\tag{6}
+X_s=\frac{1}{2}\frac{\partial f}{\partial x_s}=\sum_r^{1,\ldots,n}a_{rs}x_r,
+\end{equation}
+由此解出 \(x\)，得
+\begin{equation}\tag{6*}
+x_k=\sum_s^{1,\ldots,n}A_{ks}X_s,
+\end{equation}
+这里以及下文始终以 \(A_{ks}\) 表示\emph{元素 \(a_{ks}\) 在判别式 \(a\) 中的代数余子式除以 \(a\) 本身所得之数}。利用 (6)、(6*) 作和 \(\sum X_rx_r\)，便有
+\[
+\sum_r^{1,\ldots,n}X_rx_r
+=\sum_{r,s}^{1,\ldots,n}a_{rs}x_rx_s
+=\sum_{r,s}^{1,\ldots,n}A_{rs}X_rX_s.
+\]
+二次型
+\begin{equation}\tag{7}
+\mathrm F=\sum_{r,s}^{1,\ldots,n}A_{rs}X_rX_s
+\end{equation}
+经代换 (6) 变成 \(f\)；反过来，\(f\) 经代换 (6*) 变成 F，而 (6*) 也可写成
+\[
+x_k=\frac{1}{2}\frac{\partial \mathrm F}{\partial X_k}.
+\]
+可见，\(f\) 与 F 之间的关系是相互的，因此两个二次型 \(f,\mathrm F\) 称为\emph{互反型}。
+
+现在假设线性代换 (2) 把 \(f\) 变成 \(f'\)，并令
+\[
+\mathrm F'=\sum_{r,s}^{1,\ldots,n}A'_{rs}X'_rX'_s
+\]
+为 \(f'\) 的互反型。通过代换
+\[
+X'_r=\sum_s^{1,\ldots,n}a'_{rs}x'_s
+\]
+可把 \(\mathrm F'\) 变成 \(f'\)；再由 (2) 的逆代换，即
+\[
+x'_s=\sum_i^{1,\ldots,n}P_{is}x_i
+\]
+把后者变成 \(f\)（这里 \(P_{is}\) 表示 P 中元素 \(p_{is}\) 的代数余子式除以 P 本身所得之数）；最后，再通过 (6*)，即
+\[
+x_i=\sum_k^{1,\ldots,n}A_{ik}X_k.
+\]
+把 \(f\) 变成 F。因此，由这三个相继代换合成的代换
+\begin{equation}\tag{8}
+X'_r=\sum_{s,i,k}^{1,\ldots,n}a'_{rs}P_{is}A_{ik}X_k,
+\end{equation}
+可把 F\(^{\prime}\) 变成 F。若在 (8) 中以 (5) 所给的值代入 \(a'_{rs}\)：
+\[
+a'_{rs}=\sum_{\lambda,\mu}^{1,\ldots,n}a_{\lambda\mu}p_{\lambda r}p_{\mu s},
+\]
+\ednote{原书在这里把系数 \(a'_{rs}\) 的公式指作 (5)，但上面的 (5) 是判别式关系 \(a'=a\mathrm P^2\)；此处实际重写的是公式 (4)。本译本保留原书的交叉引用，不静默改号。}
+便有
+\[
+X'_r=\sum_{s,i,k,\lambda,\mu}^{1,\ldots,n}a_{\lambda\mu}A_{ik}p_{\lambda r}p_{\mu s}P_{is}X_k.
+\]
+但若以 \(\varepsilon_{rs}\) 表示在 \(r=s\) 时等于一、在 \(r\ne s\) 时等于零的数，则
+\[
+\sum_s p_{\mu s}P_{is}=\varepsilon_{i\mu}
+\]
+因而
+\[
+X'_r=\sum_{i,k,\lambda}a_{\lambda i}A_{ik}p_{\lambda r}X_k;
+\]
+又因为
+\[
+\sum_i a_{\lambda i}A_{ik}=\varepsilon_{\lambda k}
+\]
+最后便只剩下简单公式
+\begin{equation}\tag{2*}
+X'_r=\sum_kp_{kr}X_k.
+\end{equation}
+这一代换与 (2) 的差别仅在于 \(p\) 的两个指标互换，因此称为 (2) 的\emph{转置代换}。由此得到：
+\oldquote
+\emph{若形式 \(f\) 通过代换变成 \(f'\)，该代换为 \(\pxMatrixOriginal\)，则 \(\mathrm F'\)，即 \(f'\) 的互反型，变成 \(f\) 的互反型 F 所用的转置代换为 \(|p_{ri}|\)。}
+\closeoldquote
+\ednote{原书第57页在前一个矩阵中印作 \(|p_{ir}|\)，在“转置代换”中印作 \(|p_{ri}|\)。现有意大利文 TeX 把两者都录成 \(|p_{ri}|\)，丢失了印本的指标区别；本译按源图恢复。}
+由此可知，\(A_{rs}\) 由 \(A'_{rs}\) 表示的方式，与 \(a'_{rs}\) 由 \(a_{rs}\) 表示的方式相同，只须把 \(p\) 的指标互换。于是得到应当注意的公式：
+\begin{equation}\tag{9}
+A_{rs}=\sum_{i,k}^{1,\ldots,n}A'_{ik}p_{ri}p_{sk}.
+\end{equation}
+
+\subsection*{\S. 27.\quad 二次微分形式}
+设 \(x_1,x_2,\ldots x_n\) 是 \(n\) 个独立变量，而 \(dx_1,dx_2,\ldots dx_n\) 是它们的微分。考虑\emph{二次微分形式}
+\begin{equation}\tag{10}
+f=\sum_{r,s}^{1,\ldots,n}a_{rs}\,dx_r\,dx_s,
+\end{equation}
+其中各系数是给定的 \(x\) 的函数。
+
+一般说来，我们把 \(x_1,x_2,\ldots x_n\) 看作 \(n\) 个实变量，并假设在所考察的变动域内，\(a_{rs}\) 是 \(x\) 的实函数；这些函数为单值、有限且连续，并且关于 \(x\) 的所有一阶和二阶偏导数也都有限且连续\srcfn{1}{偶尔需要考虑更高阶导数时，我们总是默认为这些导数也有限且连续。}；此外，在同一域内，始终假设判别式 \(a\)（属于 \(f\)）\emph{不等于零}。不过，正如读者容易看出的那样，如果把 \(x\) 假设为\emph{复}变量，并把系数 \(a_{rs}\) 假设为它们的\emph{解析}函数，我们将要展开的理论仍然成立\srcfn{2}{对此应当回想：联立偏微分方程积分的存在定理（我们以后需要应用这类定理），局限于实数域时，其一般性远大于推广到复数域时。本讲义一般也正是在实数域内应用这些定理。}。
+
+若把 \(n\) 个变量 \(x\) 用 \(n\) 个任意的新变量 \(x'\) 表示，所用公式为
+\[
+x'_i=f_i(x_1,x_2,\ldots x_n)\qquad (i=1,2,\ldots n),
+\]
+\ednote{原书此式印作 \(x'_i=f_i(x_1,\ldots,x_n)\)，但紧接的正文称 \(f_i\) 为 \(x'\) 的函数，公式 (11) 又定义 \(p_{ri}=\partial x_r/\partial x'_i\)。因此后续推导所需的方向是 \(x_i=f_i(x'_1,\ldots,x'_n)\)。本译保留印出的公式，并明确记录这一冲突。}
+这里 \(f_i\) 是 \(x'\) 的函数；仍对它们采用先前对 \(a_{rs}\) 所作的假设。于是微分
+\[
+dx_1,\;dx_2,\;\ldots dx_n
+\]
+将经历线性代换
+\begin{equation}\tag{11}
+dx_r=\sum_i^{1,\ldots,n}p_{ri}\,dx'_i,
+\qquad
+p_{ri}=\frac{\partial x_r}{\partial x'_i}.
+\end{equation}
+而 \(f\) 将变成一个新的二次微分形式
+\begin{equation}\tag{12}
+f'=\sum_{r,s}a'_{rs}\,dx'_r\,dx'_s,
+\end{equation}
+其中
+\begin{equation}\tag{13}
+a'_{rs}=\sum_{i,k}a_{ik}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}.
+\end{equation}
+此时，作用于微分的线性代换 (11) 的模 P，就是 \(x\) 关于 \(x'\) 的函数行列式：
+\[
+\mathrm P=\frac{\partial(x_1,x_2,\ldots x_n)}{\partial(x'_1,x'_2,\ldots x'_n)};
+\]
+因为 \(x\) 相互独立，所以它不等于零，并且有
+\[
+a'=a\mathrm P^2,
+\]
+其中 \(a,a'\) 分别是 \(f,f'\) 的判别式。
+
+继续赋予 \(A_{rs},A'_{rs}\) 上一节中的意义，由 (9) 得
+\begin{equation}\tag{14}
+A_{rs}=\sum_{i,k}^{1,\ldots,n}A'_{ik}\frac{\partial x_r}{\partial x'_i}\frac{\partial x_s}{\partial x'_k}.
+\end{equation}
+
+\subsection*{\S. 28.\quad 不变量与微分参数}
+现在假设有一个由系数 \(a_{rs}\)（属于形式 \(f\)）及其一阶、二阶等等导数组成的表达式
+\[
+\varphi\left(a_{rs},\frac{\partial a_{rs}}{\partial x_i},\frac{\partial^2a_{rs}}{\partial x_i\partial x_k},\ldots\right)
+\]
+它具有如下性质：把变量 \(x\) 任意地变换为新变量 \(x'\) 时，该表达式变成同一个表达式
+\[
+\varphi\left(a'_{rs},\frac{\partial a'_{rs}}{\partial x'_i},\frac{\partial^2a'_{rs}}{\partial x'_i\partial x'_k},\ldots\right)
+\]
+后者以同样方式由系数 \(a'_{rs}\)（属于变换后的形式 \(f'\)）及其导数组成；此时我们称 \(\varphi\) 是\emph{形式 \(f\) 的一个微分不变量}。
+
+如果在上述类型的表达式 \(\varphi\) 中，除基本形式 \(f\) 的系数及其导数之外，还出现若干任意函数 U、V\ldots 及其导数，并且任意变换变量以后仍有
+\[
+\begin{aligned}
+&\varphi\left(a_{rs},\frac{\partial a_{rs}}{\partial x_i},\ldots,U,V,\ldots,\frac{\partial U}{\partial x_i},\frac{\partial V}{\partial x_i},\ldots\right)\\
+&\qquad =\varphi\left(a'_{rs},\frac{\partial a'_{rs}}{\partial x'_i},\ldots,U',V',\ldots,\frac{\partial U'}{\partial x'_i},\frac{\partial V'}{\partial x'_i},\ldots\right),
+\end{aligned}
+\]
+其中 U\(^{\prime}\)、V\(^{\prime}\)\ldots 就是把 \(x\) 换成它们关于 \(x'\) 的表达式后所得的 U、V\ldots 本身，那么我们称 \(\varphi\) 是一个\emph{微分参数}。如果其中任意函数的最高阶导数为 \(r\) 阶，就称该微分参数为 \(r\) 阶微分参数。--- 由此可见，相对于二次型 \(f\) 的微分参数，是由 \(f\) 的系数、若干任意函数以及这些系数和函数的导数组成，并且在任意变量变换下形式不变的表达式。如果这种表达式中完全没有任意函数，就得到一个微分不变量。
+
+在实际构造我们最需要了解的那些微分参数之前，宜先用下列说明阐明所要遵循的方法\srcfn{1}{特别参见 \textsc{Ricci}，\emph{同上}。}。
+
+假设我们已知一个二次或更高次的微分形式 \(\psi\)，它的系数由基本形式 \(f\) 的系数及其导数，以及若干任意函数及其导数组成；并且这个 \(\psi\) 具有如下性质：无论怎样变换变量，它都变成微分形式 \(\psi'\)，后者相对于变换后的形式 \(f'\) 和任意函数以同样方式组成。此时我们称形式 \(\psi\) \emph{协变于} \(f\)。显然，如果把 \(f,\psi\) 看作关于微分的代数形式，并构造它们的联立绝对不变量，那么所得的正是 \(f\) 的微分参数或微分不变量，二者取决于 \(\psi\) 的系数中是否出现任意函数。
+
+\subsection*{\S. 29.\quad 第一微分参数 \(\Delta_1 U,\nabla(U,V)\)}
+若 U 是 \(x_1,x_2,\ldots x_n\) 的任意函数，则其一阶微分的平方
+\[
+(dU)^2=\sum_{r,s}^{1,\ldots,n}\frac{\partial U}{\partial x_r}\frac{\partial U}{\partial x_s}\,dx_r\,dx_s
+\]
+显然是一个协变于给定形式的二次微分形式。以 \(\lambda\) 表示任意参数，则
+\[
+\varphi=\sum_{r,s}\left(a_{rs}+\lambda\frac{\partial U}{\partial x_r}\frac{\partial U}{\partial x_s}\right)dx_r\,dx_s
+\]
+也协变于 \(f\)。因此，在 \(\lambda\) 的各次幂中，\(\varphi\) 的判别式与判别式 \(a\)（属于 \(f\)）之商的相应系数，都是由任意函数 U 构成的一阶微分参数。特别地，作为 \(\lambda\) 一次幂系数的微分参数，我们以 \(\Delta_1 U\) 表示；它显然具有如下值：
+\begin{equation}\tag{15}
+\Delta_1 U=\sum_{r,s}^{1,\ldots,n}A_{rs}\frac{\partial U}{\partial x_r}\frac{\partial U}{\partial x_s};
+\end{equation}
+依照贝尔特拉米，我们称它为函数 U 的\emph{第一微分参数}。
+
+现在设 V 为第二个任意函数。在两个一阶微分的乘积
+\[
+dU\,dV=\sum_{r,s}^{1,\ldots,n}\frac{\partial U}{\partial x_r}\frac{\partial V}{\partial x_s}\,dx_r\,dx_s
+\]
+中，我们又得到一个协变于 \(f\) 的形式；上述同样的考察证明，表达式
+\[
+\sum_{r,s}^{1,\ldots,n}A_{rs}\frac{\partial U}{\partial x_r}\frac{\partial V}{\partial x_s}
+\]
+是包含两个任意函数 U、V 的一阶微分参数。依照贝尔特拉米，它用符号
+\[
+\nabla(U,V)
+\]
+表示，并称为 U、V 的\emph{混合微分参数}。显然，在混合微分参数
+\begin{equation}\tag{16}
+\nabla(U,V)=\sum_{r,s}^{1,\ldots,n}A_{rs}\frac{\partial U}{\partial x_r}\frac{\partial V}{\partial x_s}
+\end{equation}
+中令 \(V=U\)，就得到第一微分参数 \(\Delta_1U\)。
+
+\subsection*{\S. 30.\quad 二次型的等价性与克里斯托费尔公式}
+考虑两个二次微分形式
+\[
+f=\sum_{r,s}a_{rs}\,dx_r\,dx_s,
+\qquad
+f'=\sum_{r,s}a'_{rs}\,dx'_r\,dx'_s,
+\]
+其中 \(a_{rs}\) 是独立变量 \(x_1,x_2,\ldots x_n\) 的给定函数，同样，\(a'_{rs}\) 是 \(x'_1,x'_2,\ldots x'_n\) 的给定函数。如果能够把 \(x_1,x_2,\ldots x_n\) 取成 \(x'_1,x'_2,\ldots x'_n\) 的适当函数，使第一个形式变成第二个形式，我们就称这两个形式\emph{等价}。因此，两形式等价的充要条件是：能够确定 \(n\) 个未知函数
+\[
+x_i(x'_1,x'_2,\ldots x'_n),\qquad i=1,2,\ldots n
+\]
+使它们满足 \(\dfrac{n(n+1)}{2}\) 个一阶联立偏微分方程
+\begin{equation}\tag{I}
+a'_{rs}=\sum_{i,k}a_{ik}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}.
+\end{equation}
+仅从这个初步计数 \(\left(\hbox{因为 }\dfrac{n(n+1)}{2}>n\right)\) 就可看出，两形式的等价性要求它们的系数之间满足某些特殊关系。为了考察方程 (I) 的相容性，适宜遵循一般理论所教的方法，即考察由它们微分后得到的方程。第一次微分便立即给出一个重要结果：\emph{未知函数 \(x\) 的所有二阶导数，都可以用一阶导数、函数本身和独立变量表示}。这就是我们现在要建立的克里斯托费尔基本公式。为此，把 (I) 对任意一个 \(x'\)，例如 \(x'_t\)，求导，得到\srcfn{1}{应当记得，\(a'_{rs}\) 直接是 \(x'\) 的函数，而 \(a_{rs}\) 是 \(x\) 的函数，并且后者含有 \(x'\)，所以：\[\frac{\partial a_{ik}}{\partial x'_t}=\sum_l\frac{\partial a_{ik}}{\partial x_l}\frac{\partial x_l}{\partial x'_t}\quad\hbox{等等。}\]}：
+\begin{equation}\tag{a}
+\frac{\partial a'_{rs}}{\partial x'_t}=\sum_{i,k,l}\frac{\partial a_{ik}}{\partial x_l}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t}
++\sum_{i,k}a_{ik}\left(\frac{\partial^2x_i}{\partial x'_r\partial x'_t}\frac{\partial x_k}{\partial x'_s}
++\frac{\partial x_i}{\partial x'_r}\frac{\partial^2x_k}{\partial x'_s\partial x'_t}\right).
+\end{equation}
+在这个方程中互换指标 \(s\) 与 \(t\)，并在右端的三重和中互换求和指标 \(k,l\)，便得
+\begin{equation}\tag{b}
+\frac{\partial a'_{rt}}{\partial x'_s}=\sum_{i,k,l}\frac{\partial a_{il}}{\partial x_k}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t}
++\sum_{i,k}a_{ik}\left(\frac{\partial^2x_i}{\partial x'_r\partial x'_s}\frac{\partial x_k}{\partial x'_t}
++\frac{\partial x_i}{\partial x'_r}\frac{\partial^2x_k}{\partial x'_s\partial x'_t}\right).
+\end{equation}
+在最后这个方程中互换 \(r\) 与 \(s\)，并像对二重和的第二项那样，在右端的三重和中互换 \(i\) 与 \(k\)，得到
+\begin{equation}\tag{c}
+\frac{\partial a'_{st}}{\partial x'_r}=\sum_{i,k,l}\frac{\partial a_{kl}}{\partial x_i}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t}
++\sum_{i,k}a_{ik}\left(\frac{\partial^2x_k}{\partial x'_r\partial x'_s}\frac{\partial x_i}{\partial x'_t}
++\frac{\partial x_k}{\partial x'_s}\frac{\partial^2x_i}{\partial x'_r\partial x'_t}\right).
+\end{equation}
+把 (b) 与 (c) 相加，再减去 (a)，得到
+\[
+\begin{aligned}
+&\frac{\partial a'_{rt}}{\partial x'_s}+\frac{\partial a'_{st}}{\partial x'_r}-\frac{\partial a'_{rs}}{\partial x'_t}\\
+&=\sum_{i,k,l}\left(\frac{\partial a_{il}}{\partial x_k}+\frac{\partial a_{kl}}{\partial x_i}-\frac{\partial a_{ik}}{\partial x_l}\right)
+\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t}
++2\sum_{i,k}a_{ik}\frac{\partial^2x_i}{\partial x'_r\partial x'_s}\frac{\partial x_k}{\partial x'_t},
+\end{aligned}
+\]
+这显然可以写成
+\[
+\begin{aligned}
+&\frac{1}{2}\left(\frac{\partial a'_{rt}}{\partial x'_s}+\frac{\partial a'_{st}}{\partial x'_r}-\frac{\partial a'_{rs}}{\partial x'_t}\right)\\
+&=\sum_l\frac{\partial x_l}{\partial x'_t}
+\left\{\sum_{i,k}\frac{1}{2}\left(\frac{\partial a_{il}}{\partial x_k}+\frac{\partial a_{kl}}{\partial x_i}-\frac{\partial a_{ik}}{\partial x_l}\right)
+\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}
++\sum_i a_{il}\frac{\partial^2x_i}{\partial x'_r\partial x'_s}\right\}.
+\end{aligned}
+\]
+依照克里斯托费尔，引入（三指标第一类）符号
+\begin{equation}\tag{17}
+\chrone{i}{k}{l}=\frac{1}{2}\left(\frac{\partial a_{il}}{\partial x_k}+\frac{\partial a_{kl}}{\partial x_i}-\frac{\partial a_{ik}}{\partial x_l}\right)
+\end{equation}
+并用撇号表示 \(f'\) 的同类符号；于是上式写成
+\[
+\chrone{r}{s}{t}'=\sum_l\frac{\partial x_l}{\partial x'_t}\left\{\sum_{i,k}\chrone{i}{k}{l}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}+\sum_i a_{il}\frac{\partial^2x_i}{\partial x'_r\partial x'_s}\right\}.
+\]
+现在不难由最后一个公式得到的这 \(n\) 个方程解出二阶导数：先固定 \(r,s\)，依次令 \(t=1,2,\ldots n\)，于是所得方程可关于 \(n\) 个二阶导数 \(\dfrac{\partial^2x_i}{\partial x'_r\partial x'_s}\;(i=1,2,\ldots n)\) 求解。为此，把最后一个公式乘以
+\[
+A'_{\mu t}\frac{\partial x_\nu}{\partial x'_\mu}
+\]
+并对 \(\mu,t\) 从 1 到 \(n\) 求和；同时记住，由 (14)（第59页）有
+\[
+\sum_{\mu t}A'_{\mu t}\frac{\partial x_\nu}{\partial x'_\mu}\frac{\partial x_l}{\partial x'_t}=A_{\nu l},
+\]
+而 \(\sum_l a_{il}A_{\nu l}=\varepsilon_{i\nu}\;\left(\hbox{其中 }\varepsilon_{i\nu}=\begin{cases}0&\hbox{当 }i\ne\nu,\\1&\hbox{当 }i=\nu,\end{cases}\right)\)；于是得到
+\[
+\sum_\mu\left\{\sum_t A'_{\mu t}\chrone{r}{s}{t}'\right\}\frac{\partial x_\nu}{\partial x'_\mu}
+=\sum_{i,k}\left\{\sum_l A_{\nu l}\chrone{i}{k}{l}\right\}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}
++\frac{\partial^2x_\nu}{\partial x'_r\partial x'_s}.
+\]
+引入新的（三指标第二类）克里斯托费尔符号
+\begin{equation}\tag{18}
+\chrtwo{i}{k}{\nu}=\sum_l A_{\nu l}\chrone{i}{k}{l},
+\end{equation}
+并用撇号表示变换后形式的同类符号，便得到最后的公式
+\begin{equation}\tag{II}
+\frac{\partial^2x_\nu}{\partial x'_r\partial x'_s}
+=\sum_\mu\chrtwo{r}{s}{\mu}'\frac{\partial x_\nu}{\partial x'_\mu}
+-\sum_{i,k}\chrtwo{i}{k}{\nu}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}.
+\end{equation}
+这些正是克里斯托费尔公式；它们按照上述方式表示未知函数的所有二阶导数。
+
+\subsection*{\S. 31.\quad 三指标符号的性质}
+以后将不断使用三指标克里斯托费尔符号，因此有必要稍加讨论它们的性质。
+
+由 (17) 定义的第一类符号 \(\chrone{i}{k}{l}\) 显然具有公式
+\[
+\chrone{i}{k}{l}=\chrone{k}{i}{l},
+\]
+所表示的性质；因而由 (18) 可知，对于第二类符号 \(\chrtwo{i}{k}{l}\)，互换两个上指标也不改变其值。
+
+其次应注意：第一类符号 \(\chrone{i}{k}{l}\) 可以由各系数的导数表示；反过来，每一个这样的导数也可以表示为两个此类符号之和。事实上，有
+\begin{equation}\tag{19}
+\frac{\partial a_{ik}}{\partial x_l}=\chrone{i}{l}{k}+\chrone{k}{l}{i}.
+\end{equation}
+还应注意，第二类符号由 (18) 通过第一类符号表示；反过来，第一类符号通过下式由第二类符号表示：
+\begin{equation}\tag{18*}
+\chrone{i}{k}{l}=\sum_\nu a_{l\nu}\chrtwo{i}{k}{\nu}.
+\end{equation}
+由此可见，(19) 也可写成
+\begin{equation}\tag{19*}
+\frac{\partial a_{ik}}{\partial x_l}=\sum_\mu\chrtwo{i}{l}{\mu}a_{k\mu}+\sum_\mu\chrtwo{k}{l}{\mu}a_{i\mu}.
+\end{equation}
+最后应当说明一个公式，它把判别式 \(a\) 关于任意一个 \(x\) 的对数导数表示为第二类符号之和。
+
+根据行列式求导法则，有
+\[
+\frac{1}{a}\frac{\partial a}{\partial x_l}=\sum_{i,k}A_{ik}\frac{\partial a_{ik}}{\partial x_l},
+\]
+或者由 (19)，
+\[
+\frac{1}{a}\frac{\partial a}{\partial x_l}=\sum_{i,k}A_{ik}\chrone{i}{l}{k}+\sum_{i,k}A_{ik}\chrone{k}{l}{i};
+\]
+又因为右端两和相等，
+\[
+\frac{1}{2a}\frac{\partial a}{\partial x_l}=\sum_i\sum_kA_{ik}\chrone{i}{l}{k}.
+\]
+利用 (18) 引入第二类符号，便得到所求公式：
+\begin{equation}\tag{20}
+\frac{\partial\log\sqrt{a}}{\partial x_l}=\sum_i\chrtwo{i}{l}{i}.
+\end{equation}
+由 (20) 还能导出一个不久就要使用的公式。为此，把它写成（如上）
+\[
+\frac{\partial\log\sqrt{a}}{\partial x_l}=\sum_{i,k}A_{ik}\chrone{i}{l}{k}
+\]
+并在两端都加上 \(\sum_{i,k}A_{ik}\chrone{i}{k}{l}\)，再注意 (19)，便有
+\[
+\frac{\partial\log\sqrt{a}}{\partial x_l}+\sum_{i,k}A_{ik}\chrone{i}{k}{l}=\sum_{i,k}A_{ik}\frac{\partial a_{kl}}{\partial x_i}.
+\]
+现在把恒等式
+\[
+\sum_k A_{ik}a_{kl}=\varepsilon_{il}
+\]
+对 \(x_i\) 求导，并对 \(i\) 求和，得到
+\[
+\sum_{i,k}A_{ik}\frac{\partial a_{kl}}{\partial x_i}=-\sum_{i,k}a_{kl}\frac{\partial A_{ik}}{\partial x_i},
+\]
+最后便得到所求公式：
+\begin{equation}\tag{21}
+\sum_{i,k}A_{ik}\chrone{i}{k}{l}=-\frac{\partial\log\sqrt{a}}{\partial x_l}-\sum_{i,k}a_{kl}\frac{\partial A_{ik}}{\partial x_i}.
+\end{equation}
+
+\subsection*{\S. 32.\quad 第二微分参数 \(\Delta_2 U\)}
+利用第64页的公式 (II)，现在可以构造一个协变于给定形式 \(f\) 的二次微分形式；它的系数由 \(f\) 的系数以及任意函数 U 的一阶和二阶导数组成。
+
+事实上，以 U\(^{\prime}\) 表示把 \(x\) 用 \(x'\) 表示之后 U 所变成的函数，显然有
+\[
+\frac{\partial U'}{\partial x'_r}=\sum_\nu\frac{\partial U}{\partial x_\nu}\frac{\partial x_\nu}{\partial x'_r},
+\]
+进而
+\[
+\frac{\partial^2U'}{\partial x'_r\partial x'_s}=\sum_{\mu,\nu}\frac{\partial^2U}{\partial x_\mu\partial x_\nu}\frac{\partial x_\nu}{\partial x'_r}\frac{\partial x_\mu}{\partial x'_s}
++\sum_\nu\frac{\partial U}{\partial x_\nu}\frac{\partial^2x_\nu}{\partial x'_r\partial x'_s},
+\]
+也就是说，根据 (II)，
+\[
+\frac{\partial^2U'}{\partial x'_r\partial x'_s}-\sum_\mu\chrtwo{r}{s}{\mu}'\frac{\partial U'}{\partial x'_\mu}
+=\sum_{\mu,\nu}\left[\frac{\partial^2U}{\partial x_\mu\partial x_\nu}-\sum_i\chrtwo{\mu}{\nu}{i}\frac{\partial U}{\partial x_i}\right]
+\frac{\partial x_\mu}{\partial x'_r}\frac{\partial x_\nu}{\partial x'_s}.
+\]
+现在引入记号
+\begin{equation}\tag{22}
+U_{\mu\nu}=\frac{\partial^2U}{\partial x_\mu\partial x_\nu}-\sum_i\chrtwo{\mu}{\nu}{i}\frac{\partial U}{\partial x_i}
+\end{equation}
+并对变换后的形式使用带撇号的类似记号，便有
+\begin{equation}\tag{23}
+U'_{rs}=\sum_{\mu,\nu}U_{\mu\nu}\frac{\partial x_\mu}{\partial x'_r}\frac{\partial x_\nu}{\partial x'_s}.
+\end{equation}
+这个公式表明，由任意函数 U 的一阶和二阶导数组成、并在 (22) 中以 \(U_{\mu\nu}\) 表示的组合，恰好是一个\emph{协变}于基本形式 \(f\) 的二次型的系数，因为由 (23) 显然有
+\[
+\sum_{r,s}U'_{rs}\,dx'_r\,dx'_s=\sum_{\mu,\nu}U_{\mu\nu}\,dx_\mu\,dx_\nu.
+\]
+因此，\(U_{rs}\) 称为（里奇）函数 U 相对于基本形式 \(f\) 构造的\emph{二阶协变导数}。
+
+像 §. 29 对一阶微分 \(dU\) 的平方所作的那样，对协变形式
+\[
+\sum_{r,s}U_{rs}\,dx_r\,dx_s,
+\]
+（它可以称为 U 的二阶协变微分）进行同样的运算，就可断定：在 \(\lambda\) 的各次幂中，形式
+\[
+\sum_{r,s}(a_{rs}+\lambda U_{rs})\,dx_r\,dx_s
+\]
+的判别式与判别式 \(a\)（属于 \(f\)）之商的相应系数，都是 U 的（二阶）\emph{微分参数}。特别地，对 \(\lambda\) 的系数，我们始终以 \(\Delta_2U\) 表示，并称它为 U 的\emph{第二微分参数}；它由下式给出：
+\begin{equation}\tag{24}
+\Delta_2U=\sum_{i,k}A_{ik}U_{ik}=\sum_{i,k}A_{ik}\left\{\frac{\partial^2U}{\partial x_i\partial x_k}-\sum_\lambda\chrtwo{i}{k}{\lambda}\frac{\partial U}{\partial x_\lambda}\right\}.
+\end{equation}
+利用第66页的 (21)，可以把 \(\Delta_2U\) 写成另一种形式；这也是以后应用中更常用的形式。在 (24) 中用第一类符号代替第二类符号 \(\chrtwo{r}{s}{i}\)，得到
+\[
+\Delta_2U=\sum_{i,k}A_{ik}\frac{\partial^2U}{\partial x_i\partial x_k}-\sum_{i,k,\lambda,l}A_{ik}A_{\lambda l}\chrone{i}{k}{l}\frac{\partial U}{\partial x_\lambda},
+\]
+也就是，由所引的 (21)，
+\[
+\Delta_2U=\sum_{i,k}A_{ik}\frac{\partial^2U}{\partial x_i\partial x_k}
++\frac{1}{\sqrt{a}}\sum_{\lambda,l}\frac{\partial\sqrt{a}}{\partial x_l}A_{\lambda l}\frac{\partial U}{\partial x_\lambda}
++\sum_{i,k,\lambda,l}a_{kl}A_{\lambda l}\frac{\partial A_{ik}}{\partial x_i}\frac{\partial U}{\partial x_\lambda}.
+\]
+由于
+\[
+\sum_l a_{kl}A_{\lambda l}=\varepsilon_{k\lambda},
+\]
+只剩下
+\[
+\Delta_2U=\sum_{i,k}A_{ik}\frac{\partial^2U}{\partial x_i\partial x_k}
++\frac{1}{\sqrt{a}}\sum_{\lambda,l}\frac{\partial\sqrt{a}}{\partial x_l}A_{\lambda l}\frac{\partial U}{\partial x_\lambda}
++\sum_{i,k}\frac{\partial A_{ik}}{\partial x_i}\frac{\partial U}{\partial x_k},
+\]
+在中间一和中更换指标记号后，可以写成最终形式：
+\begin{equation}\tag{25}
+\Delta_2U=\frac{1}{\sqrt{a}}\sum_i\frac{\partial}{\partial x_i}\left(\sum_k A_{ik}\sqrt{a}\frac{\partial U}{\partial x_k}\right).
+\end{equation}
+对于曲面理论中出现的二元形式，已经引入的微分参数
+\[
+\Delta_1U,\quad \nabla(U,V),\quad \Delta_2U
+\]
+就已足够，因为正如可以证明的那样\srcfn{1}{见 \textsc{Darboux}. \emph{Leçons etc.}, T. III, pag. 260.}，其他任何微分参数都可以化为前三个算子符号的反复应用。
+
+不过，还应当明确考察另一个二阶微分参数，它对等距适用性理论非常重要。我们把它定义为下列两个形式的判别式之商：
+\[
+U_{11}\,dx_1^2+2U_{12}\,dx_1\,dx_2+U_{22}\,dx_2^2,
+\]
+\[
+a_{11}\,dx_1^2+2a_{12}\,dx_1\,dx_2+a_{22}\,dx_2^2,
+\]
+并以 \(\Delta_{22}U\) 表示它，于是
+\begin{equation}\tag{26}
+\Delta_{22}U=\frac{U_{11}U_{22}-U_{12}^2}{a_{11}a_{22}-a_{12}^2}.
+\end{equation}
+此外，它可以通过基本参数由下式表示：
+\begin{equation}\tag{26*}
+\Delta_{22}U=\frac{2\Delta_2U\cdot\nabla(U,\Delta_1U)-\Delta_1(\Delta_1U)}{4\Delta_1U},
+\end{equation}
+只须注意，当 \(a_{11}=a_{22}=0\) 时该公式成立，而通过变量变换总可以化到这种情形，便容易验证此式。
+
+\subsection*{\S. 33.\quad 关于 \(p_{ik}\) 的全微分方程}
+回到克里斯托费尔方程 (II)（第64页）；我们曾从 (I) 微分导出这些方程。除 \(x_1,x_2,\ldots x_n\) 之外，再把它们的 \(n^2\) 个一阶导数
+\[
+p_{ir}=\frac{\partial x_i}{\partial x'_r},
+\]
+作为同样数目的新未知函数引入，就可以用下列关于 \(n(n+1)\) 个未知函数
+\[
+x_1,\;x_2\ldots x_n,\;p_{ir}
+\]
+的微分方程组代替 (II)：
+\begin{equation}\tag{II*}
+\left\{
+\begin{aligned}
+dx_i&=\sum_s p_{is}\,dx'_s,\\
+dp_{\nu r}&=\sum_s\left\{\sum_\mu\chrtwo{r}{s}{\mu}'p_{\nu\mu}-\sum_{i,k}\chrtwo{i}{k}{\nu}p_{ir}p_{ks}\right\}dx'_s,
+\end{aligned}
+\right.
+\end{equation}
+
+
+此外，还须在 \(x,p\) 之间加入有限形式的方程 (I)，即
+\begin{equation}\tag{I*}
+\sum_{i,k}a_{ik}p_{ir}p_{ks}=a'_{rs}.
+\end{equation}
+现在依照克里斯托费尔（\emph{同上}）应当注意：假设 \(x_i,p_{\nu r}\) 是满足 (II*) 的 \(x'\) 的函数，那么只要 (I*) 对独立变量的一组初值 \(\pxInitialXPrime\) 成立，它们就会恒等地成立。\ednote{原书第69页此处清楚印作 \(\overline{x}'_i\)，而现有意大利文 TeX 漏掉了撇号。本译按源图恢复。}事实上，在上述假设下令
+\[
+\Omega_{rs}=\sum_{i,k}a_{ik}p_{ir}p_{ks}.
+\]
+把它对任意一个 \(x'_t\) 求导，得
+\[
+\frac{\partial\Omega_{rs}}{\partial x'_t}=\sum_{i,k,l}\frac{\partial a_{ik}}{\partial x_l}p_{ir}p_{ks}p_{lt}+\sum_{i,k}a_{ik}\frac{\partial p_{ir}}{\partial x'_t}p_{ks}+\sum_{i,k}a_{ik}p_{ir}\frac{\partial p_{ks}}{\partial x'_t},
+\]
+利用 (II*) 并回想三指标符号的性质（§. 31），便可导出方程
+\[
+\frac{\partial\Omega_{rs}}{\partial x'_t}=\sum_\mu\chrtwo{r}{t}{\mu}'\Omega_{s\mu}+\sum_\mu\chrtwo{s}{t}{\mu}'\Omega_{r\mu},
+\]
+
+
+我们可以把它们看成关于 $\Omega_{rs}$ 的全微分的一个\emph{线性齐次}方程组。又因为根据 (19*)（第65页），$a'_{rs}$ 也满足同样的方程，所以，由这种方程组在给定未知函数初值时的积分唯一性定理可知：如果在初始时，即 $x'_i=\bar x'_i$ 时，有
+\[
+\Omega_{rs}=a'_{rs}
+\]
+那么\emph{对于} $x'$ \emph{的一切值}也有
+\[
+\Omega_{rs}=a'_{rs},
+\]
+这正好证明了上面的断言。因此，我们可以只考察\emph{不定}方程 (II*)，同时把下式作为初始条件加入：
+\[
+\sum a_{ik}p_{ir}p_{ks}=a'_{rs}\quad (\text{当 }x'_i=\bar x'_i).
+\]
+众所周知，全微分方程组 (II*) \emph{至多}能够有一个含 $n(n+1)$ 个任意常数的积分系，这些常数就是未知函数 $x_i,p_{rs}$ 的初值。但由于这些初值受 $\dfrac{n(n+1)}{2}$ 个（显然独立的）关系 (I*) 约束，我们得到结论：\emph{把一个二次微分形式 $f$（具有 $n$ 个变量）变为另一个形式 $f'$ 的最一般变换公式，至多可含 $\dfrac{n(n+1)}{2}$ 个任意常数。}
+
+这尤其适用于把形式 $f$ 变为自身的变换；在这种情况下，这些变换显然组成一个群，而变换公式中是否含有任意常数，决定该群是连续群还是离散群。因此得到：
+\emph{具有 $n$ 个变量的二次微分形式到自身的变换，至多组成一个含 $\dfrac{n(n+1)}{2}$ 个参数的连续群。}
+
+为了继续研究全微分方程 (II*)、(I*) 的混合系统，现在适宜构造 (II*) 的可积条件。如果这些可积条件——它们是 \(x,p\) 之间的有限关系——恒等成立，或者是 (I*) 的代数推论，那么我们的系统将无限可积，其一般积分中恰好出现 $\dfrac{n(n+1)}{2}$ 个任意常数。
+
+无论如何，考察把 $f$ 变为 $f'$ 的可能性，并计算变换公式中可能出现的任意常数个数，就这样归结为逐次微分和考察代数方程的相容性。此外，这些可积条件的构造还会使我们在二元形式的情形中构造出一个重要的微分不变量。
+
+\subsection*{\S. 34.\quad 可积条件}
+为了构造上述条件，可以按如下方式对 (II*) 运算，或者等价地对 (II) 运算。写出 (II) 中的两个公式：
+\[
+\left\{
+\begin{aligned}
+\frac{\partial^2x_\nu}{\partial x'_\alpha\partial x'_\beta}
++\sum_{r,i}\chrtwo{r}{i}{\nu}\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}
+&=\sum_t\chrtwo{\alpha}{\beta}{t}'\frac{\partial x_\nu}{\partial x'_t},\\
+\frac{\partial^2x_\nu}{\partial x'_\alpha\partial x'_\gamma}
++\sum_{r,h}\chrtwo{r}{h}{\nu}\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_h}{\partial x'_\gamma}
+&=\sum_t\chrtwo{\alpha}{\gamma}{t}'\frac{\partial x_\nu}{\partial x'_t};
+\end{aligned}
+\right.
+\]
+把第一个公式对 $x'_\gamma$ 求导，把第二个公式对 $x'_\beta$ 求导，再相减并省去相消的项，得到
+\[
+\begin{aligned}
+&\sum_{r,i,h}\left[\frac{\partial}{\partial x_h}\chrtwo{r}{i}{\nu}-\frac{\partial}{\partial x_i}\chrtwo{r}{h}{\nu}\right]
+\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}
++\sum_{l,i}\chrtwo{l}{i}{\nu}\frac{\partial^2x_l}{\partial x'_\alpha\partial x'_\gamma}\frac{\partial x_i}{\partial x'_\beta}\\
+&\quad -\sum_{l,h}\chrtwo{l}{h}{\nu}\frac{\partial^2x_l}{\partial x'_\alpha\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}
+=\sum_t\left[\frac{\partial}{\partial x'_\gamma}\chrtwo{\alpha}{\beta}{t}'-\frac{\partial}{\partial x'_\beta}\chrtwo{\alpha}{\gamma}{t}'\right]\frac{\partial x_\nu}{\partial x'_t}\\
+&\quad +\sum_t\chrtwo{\alpha}{\beta}{t}'\frac{\partial^2x_\nu}{\partial x'_t\partial x'_\gamma}
+-\sum_t\chrtwo{\alpha}{\gamma}{t}'\frac{\partial^2x_\nu}{\partial x'_t\partial x'_\beta}.
+\end{aligned}
+\]
+在这里以 (II) 所给的值代入 $x$ 的二阶导数，含两个一阶导数乘积的各项便相消；再适当地改变某些和式中的指标记号（使同类项中出现相同的导数），得到公式
+\[
+\begin{aligned}
+&\sum_{r,i,h}\left[\frac{\partial}{\partial x_h}\chrtwo{r}{i}{\nu}-\frac{\partial}{\partial x_i}\chrtwo{r}{h}{\nu}
++\sum_l\left(\chrtwo{r}{i}{l}\chrtwo{l}{h}{\nu}-\chrtwo{r}{h}{l}\chrtwo{l}{i}{\nu}\right)\right]
+\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}\\
+&\quad =\sum_t\left[\frac{\partial}{\partial x'_\gamma}\chrtwo{\alpha}{\beta}{t}'-\frac{\partial}{\partial x'_\beta}\chrtwo{\alpha}{\gamma}{t}'
++\sum_l\left(\chrtwo{\alpha}{\beta}{l}'\chrtwo{l}{\gamma}{t}'-\chrtwo{\alpha}{\gamma}{l}'\chrtwo{l}{\beta}{t}'\right)\right]
+\frac{\partial x_\nu}{\partial x'_t}.
+\end{aligned}
+\]
+右端和式中 $\dfrac{\partial x_\nu}{\partial x'_t}$ 的系数，与左端和式中乘积 $\dfrac{\partial x_r}{\partial x'_\alpha}\dfrac{\partial x_i}{\partial x'_\beta}\dfrac{\partial x_h}{\partial x'_\gamma}$ 的系数，分别相对于 $f'$ 与 $f$ 的系数按同一法则构造，并且每次都依赖四个指标。引入新的四指标符号
+\begin{equation}\tag{27}
+\left\{r\nu,ih\right\}=\frac{\partial}{\partial x_h}\chrtwo{r}{i}{\nu}-\frac{\partial}{\partial x_i}\chrtwo{r}{h}{\nu}
++\sum_l\left(\chrtwo{r}{i}{l}\chrtwo{l}{h}{\nu}-\chrtwo{r}{h}{l}\chrtwo{l}{i}{\nu}\right),
+\end{equation}
+上式便写成
+\begin{equation}\tag{28}
+\sum_{r,i,h}\left\{r\nu,ih\right\}\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}
+=\sum_t\left\{\alpha t,\beta\gamma\right\}'\frac{\partial x_\nu}{\partial x'_t}.
+\end{equation}
+在 (27) 的\emph{第二类}四指标符号之外，再通过定义
+\begin{equation}\tag{29}
+(rk,ih)=\sum_\nu a_{\nu k}\left\{r\nu,ih\right\},
+\end{equation}
+引入新的\emph{第一类}四指标符号；由此公式解出 $\left\{r\nu,ih\right\}$，便得
+\begin{equation}\tag{29*}
+\left\{r\nu,ih\right\}=\sum_k A_{\nu k}(rk,ih).
+\end{equation}
+把 (28) 乘以
+\[
+a_{\nu k}\frac{\partial x_k}{\partial x'_\delta}
+\]
+并对 $\nu,k$ 的一切值求和，再利用 (I)，最后得到公式
+\begin{equation}\tag{III}
+(\alpha\delta,\beta\gamma)'=\sum_{r,k,i,h}(rk,ih)\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}\frac{\partial x_k}{\partial x'_\delta},
+\end{equation}
+这些正是可积条件所提供的、一阶导数之间的新关系。
+
+\subsection*{\S. 35.\quad 黎曼符号及其性质}
+四指标符号 $(rk,ih)$ 在克里斯托费尔以前，已经由黎曼在一篇遗著中引入\srcfn{1}{\textsc{Riemann}'s Werke. --- \emph{Commentatio mathematica etc.}, pag. 391 (2.\textsuperscript{a} ediz.)}，因此称为黎曼符号。适宜稍加讨论其性质，首先用第一类三指标符号表示它们。由 (27)、(29) 有
+\[
+\begin{aligned}
+(rk,ih)&=\sum_\nu a_{\nu k}\frac{\partial}{\partial x_h}\chrtwo{r}{i}{\nu}
+-\sum_\nu a_{\nu k}\frac{\partial}{\partial x_i}\chrtwo{r}{h}{\nu}\;+\\
+&\quad+\sum_l\left(\chrtwo{r}{i}{l}\sum_\nu a_{\nu k}\chrtwo{l}{h}{\nu}-\chrtwo{r}{h}{l}\sum_\nu a_{\nu k}\chrtwo{l}{i}{\nu}\right).
+\end{aligned}
+\]
+现在
+\[
+\sum_\nu a_{\nu k}\chrtwo{r}{i}{\nu}=\chrone{r}{i}{k},\quad
+\sum_\nu a_{\nu k}\chrtwo{r}{h}{\nu}=\chrone{r}{h}{k},
+\]
+\[
+\sum_\nu a_{\nu k}\chrtwo{l}{h}{\nu}=\chrone{l}{h}{k},\quad
+\sum_\nu a_{\nu k}\chrtwo{l}{i}{\nu}=\chrone{l}{i}{k},
+\]
+因而
+\[
+\begin{aligned}
+(rk,ih)&=\frac{\partial}{\partial x_h}\chrone{r}{i}{k}-\frac{\partial}{\partial x_i}\chrone{r}{h}{k}
++\sum_\nu\chrtwo{r}{h}{\nu}\frac{\partial a_{\nu k}}{\partial x_i}
+-\sum_\nu\chrtwo{r}{i}{\nu}\frac{\partial a_{\nu k}}{\partial x_h}\;+\\
+&\quad+\sum_l\left(\chrtwo{r}{i}{l}\chrone{l}{h}{k}-\chrtwo{r}{h}{l}\chrone{l}{i}{k}\right).
+\end{aligned}
+\]
+分别以
+\[
+\chrone{\nu}{i}{k}+\chrone{i}{k}{\nu},\quad \chrone{\nu}{h}{k}+\chrone{h}{k}{\nu},
+\]
+代入 $\dfrac{\partial a_{\nu k}}{\partial x_i}$、$\dfrac{\partial a_{\nu k}}{\partial x_h}$，得到
+\[
+(rk,ih)=\frac{\partial}{\partial x_h}\chrone{r}{i}{k}-\frac{\partial}{\partial x_i}\chrone{r}{h}{k}
++\sum_l\left(\chrone{i}{k}{l}\chrtwo{r}{h}{l}-\chrone{h}{k}{l}\chrtwo{r}{i}{l}\right),
+\]
+或者，把第二类符号 $\chrtwo{r}{h}{l}$、$\chrtwo{r}{i}{l}$ 用第一类符号表示，得
+\begin{equation}\tag{30}
+(rk,ih)=\frac{\partial}{\partial x_h}\chrone{r}{i}{k}-\frac{\partial}{\partial x_i}\chrone{r}{h}{k}
++\sum_{l,m}A_{lm}\left\{\chrone{r}{h}{m}\chrone{i}{k}{l}-\chrone{r}{i}{m}\chrone{h}{k}{l}\right\}.
+\end{equation}
+实际展开右端的前两项——只有它们含有系数的二阶导数——便有
+\begin{equation}\tag{30*}
+\begin{aligned}
+(rk,ih)&=\frac12\left(\frac{\partial^2a_{rh}}{\partial x_i\partial x_k}
++\frac{\partial^2a_{ik}}{\partial x_r\partial x_h}
+-\frac{\partial^2a_{ri}}{\partial x_h\partial x_k}
+-\frac{\partial^2a_{hk}}{\partial x_r\partial x_i}\right)\;+\\
+&\quad+\sum_{l,m}A_{lm}\left(\chrone{r}{h}{m}\chrone{i}{k}{l}-\chrone{r}{i}{m}\chrone{h}{k}{l}\right).
+\end{aligned}
+\end{equation}
+由最后这个公式立即得到
+\begin{equation}\tag{a}
+\left\{
+\begin{aligned}
+(kr,ih)&=-(rk,ih)\\
+(rk,hi)&=-(rk,ih),
+\end{aligned}
+\right.
+\end{equation}
+也就是说，在一个黎曼符号中互换前两个指标或后两个指标，只会改变符号的正负；特别地，如果前两个指标相等或后两个指标相等，该符号恒为零。由 (30*) 还得到恒等式
+\begin{equation}\tag{b}
+\left\{
+\begin{aligned}
+(rk,ih)+(ri,hk)+(rh,ki)&=0.\\
+(ih,rk)&=(rk,ih).
+\end{aligned}
+\right.
+\end{equation}
+考虑这些关系后，不难看出，具有 $n$ 个变量的形式所含不同黎曼符号的数目为（克里斯托费尔，\emph{同上}）
+\[
+N_n=\frac{n^2(n^2-1)}{12};
+\]
+所以 $N_2=1$、$N_3=6$、$N_4=20$ 等等。
+
+\subsection*{\S. 36.\quad 无限可积的情形}
+一般说来，方程 (III) 在 (II) 之外又加上新的一阶条件；但有一种非常重要的情形，在其中 (III) 恒等成立，或者归结为 (II) 本身。这时基本方程 (I)、(II) 构成一个无限可积的系统。我们立即考察这一情形；它的重要性将在另一章讨论常曲率空间时更加清楚（第十一章）。
+
+先从最简单的情形开始：假设形式 $f$ 与 $f'$ 的所有黎曼符号都恒等于零；于是 (III) 全都成为恒等式。
+
+因此，第一个形式等价于第二个形式，而变换公式含有 $\dfrac{n(n+1)}{2}$ 个任意常数。不过从实数观点来看，还必须加入一个必要条件：两个代数形式
+\[
+\sum \bar a_{rs}\xi_r\xi_s,\quad \sum \bar a'_{rs}\xi_r\xi_s
+\]
+（其中 $\bar a_{rs}$、$\bar a'_{rs}$ 表示当变量分别取特殊值组 $\bar x$、$\bar x'$ 时系数所取的值）必须能够通过实线性代换在代数上等价；也就是说，化为正交形式后，它们必须含有相同数目的正系数（惯性定律）。现在注意，系数为常数的微分形式 $f$ 的黎曼符号必定为零，因而有结论：\emph{形式 $f$ 等价于一个常系数形式的充要条件，是所有四指标黎曼符号都等于零。}
+
+现在假设，对于形式 $f$，黎曼符号以常数比 $c$ 与判别式 $a$ 的二阶子式相联系，公式为
+\begin{equation}\tag{31}
+(rk,ih)=c\left(a_{ri}a_{hk}-a_{rh}a_{ik}\right).
+\end{equation}
+由于将在第十一章中说明的理由，此时我们称：\emph{形式 $f$ 具有常黎曼曲率 $=c$}。前一种情形显然对应于曲率取值 $c=0$。现在 (III) 给出
+\[
+(\alpha\delta,\beta\gamma)'=c\sum_{r,k,i,h}\left(a_{ri}a_{hk}-a_{rh}a_{ik}\right)
+\frac{\partial x_r}{\partial x'_\alpha}\frac{\partial x_i}{\partial x'_\beta}\frac{\partial x_h}{\partial x'_\gamma}\frac{\partial x_k}{\partial x'_\delta},
+\]
+根据 (I)，它们化为
+\begin{equation}\tag{31*}
+(\alpha\delta,\beta\gamma)'=c\left(a'_{\alpha\beta}a'_{\gamma\delta}-a'_{\alpha\gamma}a'_{\beta\delta}\right),
+\end{equation}
+这正是对 $f'$ 构造的同一组 (31)。所以：\emph{如果形式 $f$ 具有常黎曼曲率 $=c$，那么形式 $f'$ 只要等价于 $f$，也具有同一常黎曼曲率。}
+
+反过来，假设两个形式 $f,f'$ 具有相同的常黎曼曲率 $c$。由于 (31)、(31*) 成立，条件 (III) 就是 (I) 的代数推论，因此基本方程 (I)、(II) 的系统无限可积。由此得到结论：\emph{具有相同常黎曼曲率的两个二次微分形式总是等价的，而把其中一个变为另一个的变换公式含有 $\dfrac{n(n+1)}{2}$ 个任意常数。}
+
+特别地，有如下结果：\emph{具有常黎曼曲率的形式 $f$，允许一个含 $\dfrac{n(n+1)}{2}$ 个参数、把它变为自身的连续变换群。}
+
+\subsection*{\S. 37.\quad 二元形式的曲率}
+在二元情形 $n=2$ 中，公式 (III) 立即使我们看出一个微分不变量的存在。
+
+事实上，在此情形下，由黎曼符号的性质（§. 35），非零符号 $(rk,ih)$ 只有四个，即
+\[
+(12,12),\quad (12,21),\quad (21,12),\quad (21,21),
+\]
+但其中两端的符号相等，中间两个符号也相等，并且等于前者的相反数。因此，公式 (III) 化为唯一一个公式，即
+\[
+(12,12)'=(12,12)\left(\frac{\partial x_1}{\partial x'_1}\frac{\partial x_2}{\partial x'_2}-\frac{\partial x_1}{\partial x'_2}\frac{\partial x_2}{\partial x'_1}\right)^2
+\]
+而对于判别式 $a'$、$a$（分别属于 $f'$、$f$），也有同一关系
+\[
+a'=a\left(\frac{\partial x_1}{\partial x'_1}\frac{\partial x_2}{\partial x'_2}-\frac{\partial x_1}{\partial x'_2}\frac{\partial x_2}{\partial x'_1}\right)^2,
+\]
+因此
+\[
+\frac{(12,12)'}{a'}=\frac{(12,12)}{a}.
+\]
+所以：\emph{对于二元形式，唯一的黎曼符号与判别式之商是该形式的一个微分不变量。}
+
+这个微分不变量用符号 $\mathrm K$ 表示，并称为形式的\emph{曲率}；于是
+\begin{equation}\tag{32}
+\mathrm K=\frac{(12,12)}{a}.
+\end{equation}
+曲率 $\mathrm K$ 还可以写成另外若干形式；以后需要考察这些形式。由 (29*) 以及黎曼符号 $(rk,ih)$ 在 $n=2$ 情形中的性质，立即得到下列四个公式：
+\[
+\mathrm K a_{11}=\{12,12\},\quad \mathrm K a_{12}=\{11,21\},\quad \mathrm K a_{12}=\{22,12\},\quad \mathrm K a_{22}=\{21,21\},
+\]
+将它们用三指标符号展开，可写成
+\begingroup\small
+\begin{equation}\tag{IV}
+\left\{
+\begin{aligned}
+\mathrm K a_{11}&=\frac{\partial}{\partial x_2}\chrtwo{1}{1}{2}-\frac{\partial}{\partial x_1}\chrtwo{1}{2}{2}
++\chrtwo{1}{1}{1}\chrtwo{1}{2}{2}+\chrtwo{1}{1}{2}\chrtwo{2}{2}{2}-\chrtwo{1}{2}{1}\chrtwo{1}{1}{2}-\chrtwo{1}{2}{2}^{2},\\
+\mathrm K a_{12}&=\frac{\partial}{\partial x_1}\chrtwo{1}{2}{1}-\frac{\partial}{\partial x_2}\chrtwo{1}{1}{1}
++\chrtwo{1}{2}{1}\chrtwo{1}{2}{2}-\chrtwo{1}{1}{2}\chrtwo{2}{2}{1},\\
+\mathrm K a_{12}&=\frac{\partial}{\partial x_2}\chrtwo{1}{2}{2}-\frac{\partial}{\partial x_1}\chrtwo{2}{2}{2}
++\chrtwo{1}{2}{1}\chrtwo{1}{2}{2}-\chrtwo{1}{1}{2}\chrtwo{2}{2}{1},\\
+\mathrm K a_{22}&=\frac{\partial}{\partial x_1}\chrtwo{2}{2}{1}-\frac{\partial}{\partial x_2}\chrtwo{1}{2}{1}
++\chrtwo{2}{2}{2}\chrtwo{1}{2}{1}+\chrtwo{2}{2}{1}\chrtwo{1}{1}{1}-\chrtwo{1}{2}{2}\chrtwo{2}{2}{1}-\chrtwo{1}{2}{1}^{2}.
+\end{aligned}
+\right.
+\end{equation}
+\endgroup
+现在把 (IV) 的第一个公式写成
+\[
+\begin{aligned}
+\mathrm K a_{11}&=\frac{\partial}{\partial x_2}\chrtwo{1}{1}{2}-\frac{\partial}{\partial x_1}\chrtwo{1}{2}{2}
+-\chrtwo{1}{2}{2}\left(\chrtwo{1}{1}{1}+\chrtwo{1}{2}{2}\right)
++\chrtwo{1}{1}{2}\left(\chrtwo{2}{2}{2}+\chrtwo{1}{2}{1}\right)\;+\\
+&\quad+2\left(\chrtwo{1}{1}{1}\chrtwo{1}{2}{2}-\chrtwo{1}{2}{1}\chrtwo{1}{1}{2}\right),
+\end{aligned}
+\]
+回想 §. 31（第65页）的 (20)，有
+\[
+\chrtwo{1}{1}{1}+\chrtwo{1}{2}{2}=\frac{1}{\sqrt a}\frac{\partial\sqrt a}{\partial x_1},\quad
+\chrtwo{2}{2}{2}+\chrtwo{1}{2}{1}=\frac{1}{\sqrt a}\frac{\partial\sqrt a}{\partial x_2},
+\]
+代入后得到
+\[
+\begin{aligned}
+\mathrm K&=\frac{1}{\sqrt a}\left\{\frac{\partial}{\partial x_2}\left(\frac{\sqrt a}{a_{11}}\chrtwo{1}{1}{2}\right)
+-\frac{\partial}{\partial x_1}\left(\frac{\sqrt a}{a_{11}}\chrtwo{1}{2}{2}\right)\right\}\;+\\
+&\quad+\frac{1}{a_{11}^{2}}\left[\chrtwo{1}{1}{2}\frac{\partial a_{11}}{\partial x_2}-\chrtwo{1}{2}{2}\frac{\partial a_{11}}{\partial x_1}
++2a_{11}\left(\chrtwo{1}{1}{1}\chrtwo{1}{2}{2}-\chrtwo{1}{2}{1}\chrtwo{1}{1}{2}\right)\right].
+\end{aligned}
+\]
+由第65页的 (19*) 可知，$\dfrac{1}{a_{11}^2}$ 的因子恒等于零，因此只剩下公式
+\begin{equation}\tag{V}
+\mathrm K=\frac{1}{\sqrt a}\left\{\frac{\partial}{\partial x_2}\left(\frac{\sqrt a}{a_{11}}\chrtwo{1}{1}{2}\right)-\frac{\partial}{\partial x_1}\left(\frac{\sqrt a}{a_{11}}\chrtwo{1}{2}{2}\right)\right\}.
+\end{equation}
+为了用这个公式计算 $\mathrm K$，必须有 $a_{11}\ne0$。如果 $a_{11}=0$ 而 $a_{22}\ne0$，则可由另一个对称公式计算 $\mathrm K$：
+\begin{equation}\tag{V*}
+\mathrm K=\frac{1}{\sqrt a}\left\{\frac{\partial}{\partial x_1}\left(\frac{\sqrt a}{a_{22}}\chrtwo{2}{2}{1}\right)-\frac{\partial}{\partial x_2}\left(\frac{\sqrt a}{a_{22}}\chrtwo{1}{2}{1}\right)\right\}.
+\end{equation}
+当 $a_{11}=a_{22}=0$ 时，由于这时
+\[
+\chrtwo{1}{2}{1}=\chrtwo{1}{2}{2}=\chrtwo{1}{1}{2}=\chrtwo{2}{2}{1}=0,
+\]
+\[
+\chrtwo{1}{1}{1}=\frac{\partial\log a_{12}}{\partial x_1},\quad
+\chrtwo{2}{2}{2}=\frac{\partial\log a_{12}}{\partial x_2},
+\]
+中间的 (IV) 给出
+\begin{equation}\tag{VI}
+\mathrm K=-\frac{1}{a_{12}}\frac{\partial^2\log a_{12}}{\partial x_1\partial x_2}.
+\end{equation}
+现在考虑二元形式的曲率 $\mathrm K$ 为零的特殊情形。由 §. 35 的一般定理，形式 $f$ 可以变为另一个常系数形式；如果从实数观点考察实形式 $f$，只须区分不定形式（判别式 $a_{11}a_{22}-a_{12}^2$ 为负）与定形式（$a_{11}a_{22}-a_{12}^2>0$）。
+
+在第一种情形中，可以取典型常系数形式
+\[
+f=dy_1dy_2,
+\]
+在第二种情形中则取 $f=dy_1^2+dy_2^2$。例如考察第一种情形，把 $f$ 分解为两个实线性因子 $\alpha\,dx_1+\beta\,dx_2$、$\gamma\,dx_1+\delta\,dx_2$，便有
+\[
+(\alpha\,dx_1+\beta\,dx_2)(\gamma\,dx_1+\delta\,dx_2)=dy_1dy_2,
+\]
+因而
+\[
+dy_1=\lambda(\alpha\,dx_1+\beta\,dx_2),\quad dy_2=\frac{1}{\lambda}(\gamma\,dx_1+\delta\,dx_2),
+\]
+其中 $\lambda$ 是一个适当的因子。
+
+所以，如果 $f$ 的曲率 $\mathrm K$ 为零，把 $f$ 分解成线性因子后，第一个因子存在一个积分因子，而这个积分因子的倒数就是第二个因子的积分因子。由此可知，该因子可以通过一次求积确定。事实上，令 $\lambda=e^\nu$，便有
+\[
+\frac{\partial(e^\nu\alpha)}{\partial x_2}=\frac{\partial(e^\nu\beta)}{\partial x_1},\quad
+\frac{\partial(e^{-\nu}\gamma)}{\partial x_2}=\frac{\partial(e^{-\nu}\delta)}{\partial x_1},
+\]
+即
+\[
+\left\{
+\begin{aligned}
+\beta\frac{\partial\nu}{\partial x_1}-\alpha\frac{\partial\nu}{\partial x_2}&=\frac{\partial\alpha}{\partial x_2}-\frac{\partial\beta}{\partial x_1},\\
+\delta\frac{\partial\nu}{\partial x_1}-\gamma\frac{\partial\nu}{\partial x_2}&=\frac{\partial\delta}{\partial x_1}-\frac{\partial\gamma}{\partial x_2},
+\end{aligned}
+\right.
+\]
+因为 $\alpha\delta-\beta\gamma\ne0$，这是由于 $a_{11}a_{22}-a_{12}^2\ne0$，所以可求得 $\dfrac{\partial\nu}{\partial x_1}$、$\dfrac{\partial\nu}{\partial x_2}$ 的值，即通过一次求积求得 $\nu$，随后再通过另外两次求积得到 $y_1,y_2$。对于定形式，结果相同，因此有定理：
+\emph{曲率为零的二元形式，如果是不定形式，只用求积运算就可以化为标准形式 $dy_1dy_2$；如果是定形式，则可以化为另一标准形式 $dy_1^2+dy_2^2$。}
+
+\subsection*{\S. 38.\quad 联立二次型}
+现在回到 $n$ 个变量的一般情形，研究两个联立二次型
+\[
+f=\sum_{r,s}a_{rs}\,dx_r\,dx_s,\quad \varphi=\sum_{r,s}b_{rs}\,dx_r\,dx_s,
+\]
+其中始终要求第一个形式的判别式 $a$ 不为零。至于第二个形式的系数 $b_{rs}$，它们可以只是 $x$ 的函数，也可以是 $a$、系数 $a_{rs}$ 及其导数的函数，还可以含有若干任意函数及其导数；但在后一种情形中，必须另加条件，要求形式 $\varphi$ 协变于 $f$。我们的目标是构造一个关于三组微分、协变于 $f$、$\varphi$ 的三线性型；这个三线性型在几何应用中极为重要。
+
+假设变量从 $x$ 变换为 $x'$ 时，$f$、$\varphi$ 分别变成
+\[
+f'=\sum_{r,s}a'_{rs}\,dx'_r\,dx'_s,\quad \varphi'=\sum_{r,s}b'_{rs}\,dx'_r\,dx'_s
+\]
+并取公式
+\[
+b'_{rs}=\sum_{i,k}b_{ik}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s},
+\]
+把它对 $x'_t$ 求导，并以第64页克里斯托费尔基本公式 (II) 所给的值代入二阶导数，得到
+\begin{equation}\tag{33}
+\begin{aligned}
+\frac{\partial b'_{rs}}{\partial x'_t}-\sum_\mu\chrtwo{s}{t}{\mu}'b'_{r\mu}-\sum_\mu\chrtwo{r}{t}{\mu}'b'_{s\mu}
+&=\sum_{i,k,l}\left\{\frac{\partial b_{ik}}{\partial x_l}-\sum_\mu\chrtwo{i}{l}{\mu}b_{k\mu}-\sum_\mu\chrtwo{k}{l}{\mu}b_{i\mu}\right\}\\
+&\quad\times\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t},
+\end{aligned}
+\end{equation}
+其中克里斯托费尔符号照例分别相对于形式 $f$ 及其变换 $f'$ 构造。
+
+(33) 的左端与右端三重和中三个一阶导数乘积的系数，是按同一方式构造的：前者相对于变换后的形式 $f'$、$\varphi'$，后者相对于原形式 $f$、$\varphi$。因此，三次型
+\[
+\sum_{i,k,l}\left\{\frac{\partial b_{ik}}{\partial x_l}-\sum_\mu\chrtwo{i}{l}{\mu}b_{k\mu}-\sum_\mu\chrtwo{k}{l}{\mu}b_{i\mu}\right\}dx_i\,dx_k\,dx_l
+\]
+是一个协变于 $f,\varphi$ 系统的形式。因此，三指标表达式
+\begin{equation}\tag{34}
+\frac{\partial b_{ik}}{\partial x_l}-\sum_\mu\chrtwo{i}{l}{\mu}b_{k\mu}-\sum_\mu\chrtwo{k}{l}{\mu}b_{i\mu}
+\end{equation}
+依照里奇称为系数族 $b_{ik}$ 相对于原形式的\emph{协变导数}。当令 $\varphi=f$，即 $b_{ik}=a_{ik}$ 时，由第65页的 (19*) 可知，它们恒等于零。为了本书的目的，我们需要考察由 (34) 减去其中互换 $k$ 与 $l$ 后所得表达式而产生的三指标表达式，即
+\begin{equation}\tag{35}
+b_{ikl}=\frac{\partial b_{ik}}{\partial x_l}-\frac{\partial b_{il}}{\partial x_k}+\sum_\mu\chrtwo{i}{k}{\mu}b_{l\mu}-\sum_\mu\chrtwo{i}{l}{\mu}b_{k\mu},
+\end{equation}
+我们以符号 $b_{ikl}$ 表示它，于是有
+\begin{equation}\tag{35*}
+b'_{rst}=\sum_{i,k,l} b_{ikl}\frac{\partial x_i}{\partial x'_r}\frac{\partial x_k}{\partial x'_s}\frac{\partial x_l}{\partial x'_t}.
+\end{equation}
+立即可以验证公式
+\[
+b_{ikl}+b_{ilk}=0,
+\]
+\[
+b_{ikl}+b_{kli}+b_{lik}=0.
+\]
+现在以符号 $d,\delta,\mathrm D$ 表示独立变量 $x$ 的三组不同微分；把 (35*) 乘以 $dx'_r$、$\delta x'_s$、$\mathrm D x'_t$，并对 $r,s,t$ 求和，得到
+\[
+\sum_{r,s,t}b'_{rst}\,dx'_r\,\delta x'_s\,\mathrm D x'_t
+=\sum_{i,k,l}b_{ikl}\,dx_i\,\delta x_k\,\mathrm D x_l.
+\]
+因此，三线性型
+\[
+\sum_{i,k,l}b_{ikl}\,dx_i\,\delta x_k\,\mathrm D x_l
+\]
+协变于 $f,\varphi$；它称为\emph{形式 $\varphi$ 相对于 $f$ 所构造的三线性型}，并记作
+\[
+(f,\varphi)=\sum_{i,k,l}b_{ikl}\,dx_i\,\delta x_k\,\mathrm D x_l.
+\]
+由此可见：\emph{三线性型 $(f,\varphi)$ 恒等于零，表示两个形式 $f,\varphi$ 之间的一种关系，而这种关系在任意变量变换下不变。}
+
+根据上面的说明，三线性型 $(f,\varphi)$ 在令 $\varphi=f$ 时恒等于零。
+
+现在特别假设 $n=2$；这时，不恒等于零的 $b_{ikl}$ 只有四个，即
+\[
+b_{112},\quad b_{121},\quad b_{122},\quad b_{221},
+\]
+但前两个互为相反数，后两个也互为相反数。在这种情况下：\emph{三线性型 $(f,\varphi)$ 恒等于零，由下列两个关系表示：}
+\[
+b_{112}=0,\quad b_{221}=0,
+\]
+即由 (35) 展开为
+\begin{equation}\tag{VII}
+\left\{
+\begin{aligned}
+\frac{\partial b_{11}}{\partial x_2}-\frac{\partial b_{12}}{\partial x_1}-\chrtwo{1}{2}{1}b_{11}
++\left[\chrtwo{1}{1}{1}-\chrtwo{1}{2}{2}\right]b_{12}+\chrtwo{1}{1}{2}b_{22}&=0\\
+\frac{\partial b_{22}}{\partial x_1}-\frac{\partial b_{12}}{\partial x_2}+\chrtwo{2}{2}{1}b_{11}
++\left[\chrtwo{2}{2}{2}-\chrtwo{1}{2}{1}\right]b_{12}-\chrtwo{1}{2}{2}b_{22}&=0.
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection*{\S. 39.\quad 联立二元二次型}
+最后考虑两个联立二元二次型
+\[
+\left\{
+\begin{aligned}
+f&=a_{11}\,dx_1^2+2a_{12}\,dx_1\,dx_2+a_{22}\,dx_2^2\\
+\varphi&=b_{11}\,dx_1^2+2b_{12}\,dx_1\,dx_2+b_{22}\,dx_2^2,
+\end{aligned}
+\right.
+\]
+并至少假设第一个形式的判别式 $a=a_{11}a_{22}-a_{12}^2$ 不等于零。
+
+表达式
+\[
+\left\{
+\begin{aligned}
+\mathrm H&=\frac{a_{11}b_{22}-2a_{12}b_{12}+a_{22}b_{11}}{a_{11}a_{22}-a_{12}^2}\\[0.4em]
+\mathrm K&=\frac{b_{11}b_{22}-b_{12}^2}{a_{11}a_{22}-a_{12}^2}
+\end{aligned}
+\right.
+\]
+给出 $f,\varphi$ 的两个联立\emph{代数}不变量\srcfn{1}{$\mathrm H$ 和 $\mathrm K$ 是下列商式中 $\lambda$、$\lambda^2$ 的系数：
+\[
+\frac{1}{a}\left|\begin{matrix}
+a_{11}+\lambda b_{11}&a_{12}+\lambda b_{12}\\
+a_{12}+\lambda b_{12}&a_{22}+\lambda b_{22}
+\end{matrix}\right|.
+\]}。现在构造两个形式的雅可比式
+\[
+\left|\begin{matrix}
+a_{11}\,dx_1+a_{12}\,dx_2,&a_{12}\,dx_1+a_{22}\,dx_2\\
+b_{11}\,dx_1+b_{12}\,dx_2,&b_{12}\,dx_1+b_{22}\,dx_2
+\end{matrix}\right|,
+\]
+就得到一个二次型；在任意变量变换下，它恰如判别式 $a=a_{11}a_{22}-a_{12}^2$ 的平方根一样，取得该代换的模作为因子。
+
+因此，二次型
+\[
+\Theta=\frac{1}{\sqrt{a_{11}a_{22}-a_{12}^2}}
+\left|\begin{matrix}
+a_{11}\,dx_1+a_{12}\,dx_2,&a_{12}\,dx_1+a_{22}\,dx_2\\
+b_{11}\,dx_1+b_{12}\,dx_2,&b_{12}\,dx_1+b_{22}\,dx_2
+\end{matrix}\right|
+\]
+是 $f,\varphi$ 的一个联立（无理）协变量。对于这第三个形式
+\[
+\Theta=c_{11}\,dx_1^2+c_{12}\,dx_1\,dx_2+c_{22}\,dx_2^2
+\]
+其判别式 $4c_{11}c_{22}-c_{12}^2$ 恒可写成
+\[
+4c_{11}c_{22}-c_{12}^2=-\frac{1}{a}\left\{\left[a_{11}b_{22}-a_{22}b_{11}-\frac{2a_{12}}{a_{11}}(a_{11}b_{12}-a_{12}b_{11})\right]^2
++\frac{4a}{a_{11}^2}(a_{11}b_{12}-a_{12}b_{11})^2\right\},
+\]
+这里假设 $a_{11}\ne0$。现在假设\emph{形式 $f$ 是定形式}，即 $a=a_{11}a_{22}-a_{12}^2>0$；那么 $4c_{11}c_{22}-c_{12}^2$ 为负，并且只有在比例 $b_{11}:b_{12}:b_{22}=a_{11}:a_{12}:a_{22}$ 成立时才为零，也就是说，只有当 $\varphi$ 与 $f$ 只相差一个因子时才为零；在这种情形下，$\Theta$ 恒等于零。
+
+因此，在此情形中，二次微分方程 $\Theta=0$ 分解成两个互异的实线性因子
+\[
+\begin{array}{ll}
+(a)&\alpha\,dx_1+\beta\,dx_2=0\\
+(b)&\gamma\,dx_1+\delta\,dx_2=0.
+\end{array}
+\]
+若分别以 $x'_1=\mathrm{常数}$、$x'_2=\mathrm{常数}$ 表示 $(a),(b)$ 的积分，并取 $x'_1,x'_2$ 为新变量（因为 $\alpha\delta-\beta\gamma\ne0$，它们必定相互独立），则容易看出，在两个变换后的形式
+\[
+\left\{
+\begin{aligned}
+f'&=a'_{11}\,dx_1'^2+2a'_{12}\,dx'_1\,dx'_2+a'_{22}\,dx_2'^2\\
+\varphi'&=b'_{11}\,dx_1'^2+2b'_{12}\,dx'_1\,dx'_2+b'_{22}\,dx_2'^2
+\end{aligned}
+\right.
+\]
+中同时有
+\[
+a'_{12}=0,\quad b'_{12}=0.
+\]
+事实上，协变量
+\[
+\Theta=\frac{1}{\sqrt{a'}}
+\left|\begin{matrix}
+a'_{11}\,dx'_1+a'_{12}\,dx'_2,&a'_{12}\,dx'_1+a'_{22}\,dx'_2\\
+b'_{11}\,dx'_1+b'_{12}\,dx'_2,&b'_{12}\,dx'_1+b'_{22}\,dx'_2
+\end{matrix}\right|
+\]
+按照假设，除一个因子外，必须化为乘积 $dx'_1dx'_2$，所以
+\begin{equation}\tag{c}
+\left\{
+\begin{aligned}
+a'_{11}b'_{12}-a'_{12}b'_{11}&=0\\
+a'_{12}b'_{22}-a'_{22}b'_{12}&=0.
+\end{aligned}
+\right.
+\end{equation}
+例如从 (c) 中消去 $b'_{12}$，得到
+\[
+a'_{12}(a'_{11}b'_{22}-a'_{22}b'_{11})=0,
+\]
+而假设 $a'_{11}b'_{22}-a'_{22}b'_{11}=0$ 必须排除，因为它与 (c) 一起会导出比例
+\[
+b'_{11}:b'_{12}:b'_{22}=a'_{11}:a'_{12}:a'_{22},
+\]
+所以必有 $a'_{12}=0$，再由 (c) 也有 $b'_{12}=0$。
+
+反过来，立即可见，若已把 $f,\varphi$ 变换为 $f',\varphi'$，并且 $a'_{12}=b'_{12}=0$，则令新变量 $x'_1,x'_2$ 等于常数，恰好给出 $(a),(b)$ 的积分。因此有定理：\emph{给定两个二元二次微分形式，其中至少一个为定形式，可以通过实变量变换使二者同时不含交叉项（中间项），或者如通常所说，同时化为正交形式。应当引入的新变量，是那些在等于常数时给出二次方程 $\Theta=0$ 之积分的变量。}
+
+最后应注意，在已排除的两个形式成比例的情形中，这一化归反而可以用无穷多种方式完成。
+
+\begin{center}
+$\rule{2.4em}{0.4pt}\!\ast\!\ast\!\ast\!\rule{2.4em}{0.4pt}$
+\end{center}
+
+
+
+
+% Current-slice local macros for Christoffel symbols and scan-style labels.
+\providecommand{\chrone}[3]{\left[\begin{matrix}#1\ #2\\ #3\end{matrix}\right]}
+\providecommand{\chrtwo}[3]{\left\{\begin{matrix}#1\ #2\\ #3\end{matrix}\right\}}
+\providecommand{\cst}{\mathrm{cost}^{\mathrm{te}}}

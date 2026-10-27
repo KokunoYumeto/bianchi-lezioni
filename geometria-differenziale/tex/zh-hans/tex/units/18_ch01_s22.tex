@@ -1,0 +1,131 @@
+\subsection*{\S. 22.\quad 一个 \(\infty^1\) 球面族的正交轨迹。}
+现在来讨论一个 \(\infty^1\) 球面族的问题；这个问题对于平面族已在第19节解决，即求它们的 \(\infty^2\) 条正交轨迹曲线。这里所介绍的结果出自达布（Darboux）；他曾在\emph{《正交系与曲线坐标讲义》（Leçons sur les systèmes orthogonaux et les coordonnées curvilignes）}第一卷第35页及以后各页，以另一种形式阐述这些结果。
+
+为了定义这个 \(\infty^1\) 球面族，我们给出\srcfn{2}{显然的同心球面族情形不在讨论之列。}各球心的轨迹曲线 C，并对它采用通常的记号；此外，还把球面半径 R 给成 C 的弧长 \(s\) 的函数。任一球面上的任一点 M'\(=(x',y',z')\) 可以由公式
+\begin{equation}\tag{47}
+\left\{
+\begin{aligned}
+x'&=x+R\sen\theta\cos\varphi\,\alpha+R\sen\theta\sen\varphi\,\xi+R\cos\theta\,\lambda,\\
+y'&=y+R\sen\theta\cos\varphi\,\beta+R\sen\theta\sen\varphi\,\eta+R\cos\theta\,\mu,\\
+z'&=z+R\sen\theta\cos\varphi\,\gamma+R\sen\theta\sen\varphi\,\zeta+R\cos\theta\,\nu,
+\end{aligned}\right.
+\end{equation}
+来确定。其中 R、\(\theta,\varphi\) 是 M' 关于 C 在 M 处的主三面形的极坐标。为了使曲线 C' 与所有球面正交，\(\theta,\varphi\) 必须取为 \(s\) 的函数，使三个导数
+\[
+\frac{\diff x'}{\diff s},
+\qquad
+\frac{\diff y'}{\diff s},
+\qquad
+\frac{\diff z'}{\diff s}
+\]
+与下列三个二项式成比例：
+\[
+x'-x,
+\qquad y'-y,
+\qquad z'-z.
+\]
+简单计算便给出关于 \(\theta,\varphi\) 的一阶微分方程：
+\begin{equation}\tag{48}
+\left\{
+\begin{aligned}
+\frac{\diff\theta}{\diff s}+\frac{\sen\varphi}{T}+\frac{\cos\theta\cos\varphi}{R}&=0,\\[0.4em]
+\frac{\diff\varphi}{\diff s}+\frac{1}{\rho}+\frac{\cot\theta\cos\varphi}{T}-\frac{\sen\varphi}{\sen\theta}\frac{1}{R}&=0.
+\end{aligned}\right.
+\end{equation}
+与原书第17页的 (13) 一样（后者是 \(\dfrac{1}{R}=0\) 时的特殊情形），也可以在这里引入球面上的复变量，把这两个方程换成一个黎卡提型方程：
+\[
+\sigma=R\cot\frac{\theta}{2}\,e^{i\varphi};
+\]
+由此得到
+\begin{equation}\tag{48*}
+\frac{\diff\sigma}{\diff s}=-\frac{i\sigma^2}{2T}+\frac{\sigma^2}{2R}+\biggl(\frac{1}{R}\frac{\diff R}{\diff s}-\frac{i}{\rho}\biggr)\sigma+\frac{i}{2T}-\frac{1}{2R},
+\end{equation}
+反过来，把它分成实部与虚部，就得到 (48)。
+
+因此：\emph{给定一个 \(\infty^1\) 球面族，求其正交轨迹的问题取决于一个黎卡提方程的积分；所以，一旦知道其中一条正交轨迹，整个问题便可通过求积解决。}
+
+通过直接计算，很容易验证：若球面族的一条正交轨迹已知，黎卡提方程就化为线性方程，因而可以通过求积积分。事实上，设给定曲线 C 本身就是一条正交轨迹，而 \(R=R(s)\) 是球面半径。球面上一点 M' 的坐标 \(x',y',z'\) 现在可以写成
+\begin{equation}\tag{49}
+\left\{
+\begin{aligned}
+x'&=x+R(1+\cos\theta)\alpha+R\sen\theta\cos\varphi\,\xi+R\sen\theta\sen\varphi\,\lambda,\\
+y'&=y+R(1+\cos\theta)\beta+R\sen\theta\cos\varphi\,\eta+R\sen\theta\sen\varphi\,\mu,\\
+z'&=z+R(1+\cos\theta)\gamma+R\sen\theta\cos\varphi\,\zeta+R\sen\theta\sen\varphi\,\nu.
+\end{aligned}\right.
+\end{equation}
+若要使点 M' 描出球面族的一条正交轨迹，就必须把 \(\theta,\varphi\) 取为 \(s\) 的函数，使
+\[
+\frac{\diff x'}{\diff s},
+\qquad
+\frac{\diff y'}{\diff s},
+\qquad
+\frac{\diff z'}{\diff s}
+\]
+依次与
+\[
+x'-x-R\alpha,
+\qquad y'-y-R\beta,
+\qquad z'-z-R\gamma,
+\]
+成比例。这给出 \(\theta,\varphi\) 的两个联立方程：
+\begin{equation}\tag{49*}
+\left\{
+\begin{aligned}
+\frac{\diff\theta}{\diff s}&=\frac{R'+1}{R}\sen\theta-\frac{(1+\cos\theta)\cos\varphi}{\rho},\\[0.4em]
+\frac{\diff\varphi}{\diff s}&=\frac{\cot\dfrac{\theta}{2}\sen\varphi}{\rho}+\frac{1}{T}.
+\end{aligned}\right.
+\end{equation}
+再次令
+\[
+\sigma=R\cot\frac{\theta}{2}\,e^{i\varphi},
+\]
+则 \(\sigma\) 满足方程
+\[
+\frac{\diff\sigma}{\diff s}=\frac{\sigma^2}{R\rho}+\biggl(\frac{i}{T}-\frac{1}{R}\biggr)\sigma,
+\]
+这个方程关于 \(\dfrac{1}{\sigma}\) 是线性的；积分得到
+\begin{equation}\tag{50}
+\frac{1}{\sigma}=e^{\int\left(\frac{1}{R}-\frac{i}{T}\right)\diff s}
+\left\{C-\int e^{-\int\left(\frac{1}{R}-\frac{i}{T}\right)\diff s}\frac{\diff s}{R\rho}\right\},
+\end{equation}
+其中 C 是任意（复）常数；所以，问题确实通过求积解决，而使 C 中所含的两个任意常数变化，就得到所求的双参数正交轨迹族。由 (50) 还可以推出达布所注意到的球面族的另一个优美几何性质。把这个公式应用于球面族中两个不同的球面 S、S\(_1\)，并以 \(\sigma,\sigma_1\) 表示相应的复变量；在 \(\sigma,\sigma_1\) 之间消去 C，显然可知这两个复变量互为线性函数。这个事实的几何解释（如第三章第52节将说明的）给出定理：
+\emph{在球面族的任意两个球面 S、S\(_1\) 上，把同一条正交轨迹与它们的交点看作对应点，则一个球面到另一个球面的表示保持角和圆（Möbius 圆亲合，affinità circolare）。}
+
+最后应当指出，若想在上述计算中避免引入虚数，只需按如下方式进行。用下列函数代替 \(\theta,\varphi\) 作为未知函数：
+\[
+\tg\frac{\theta}{2}\cos\varphi=L,
+\qquad
+\tg\frac{\theta}{2}\sen\varphi=M
+\]
+则 (49*) 化为线性形式
+\[
+\left\{
+\begin{aligned}
+\frac{\diff L}{\diff s}-\frac{R'+1}{R}L+\frac{1}{T}M+\frac{1}{\rho}&=0,\\[0.4em]
+\frac{\diff M}{\diff s}-\frac{R'+1}{R}M-\frac{1}{T}L&=0.
+\end{aligned}\right.
+\]
+用达朗贝尔（D'Alembert）方法求一个乘子 \(\lambda\)，使 \(L+\lambda M\) 满足一个线性方程，就立即把这两个方程化为求积；\(\lambda\) 的方程为
+\begin{equation}\tag{50*}
+\frac{\diff\lambda}{\diff s}=\frac{\lambda^2+1}{T},
+\end{equation}
+积分得
+\[
+\lambda=\tg(\tau+c),
+\qquad
+\tau=\int_0^s\frac{\diff s}{T}.
+\]
+所以可以取
+\[
+\lambda_1=\tg\tau,
+\qquad
+\lambda_2=-\cot\tau
+\]
+而两个未知量
+\[
+L+\lambda_1M=\frac{\tg\dfrac{\theta}{2}\cos(\tau-\varphi)}{\cos\tau},
+\]
+\[
+L+\lambda_2M=\frac{\tg\dfrac{\theta}{2}\sen(\tau-\varphi)}{\cos\tau}
+\]
+各自由一个线性方程确定\srcfn{1}{若取 \(\lambda_1,\lambda_2\) 为奇解 \(\lambda_1=i,\lambda_2=-i\)，就回到前面含虚数的公式。}。

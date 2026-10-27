@@ -1,0 +1,124 @@
+\subsection*{\S. 12.\quad 包络面。}
+在研究空间曲线的进一步性质以前，先介绍一些关于\emph{包络面}的简要知识是有用的。
+
+设
+\begin{equation}\tag{17}
+f(x,y,z,\alpha)=0
+\end{equation}
+为一个含任意参数 \(\alpha\) 的曲面方程；我们设该参数在一个给定区间内连续变化。再设在所考察的 \(x,y,z,\alpha\) 变动范围内，这四个变量的函数 \(f\) 有限且连续，并且具有偏导数
+\[
+\frac{\partial f}{\partial x},\quad
+\frac{\partial f}{\partial y},\quad
+\frac{\partial f}{\partial z},\quad
+\frac{\partial f}{\partial\alpha},\quad
+\frac{\partial^2 f}{\partial\alpha^2}
+\]
+而这些偏导数也有限且连续。对于特定值 \(\alpha_1\)，即参数 \(\alpha\) 的一个值，方程 (17) 的 \(\infty^1\) 曲面族中都有一个特定曲面与之对应；当 \(\alpha\) 连续变化时，该曲面本身也在空间中连续变形并运动。
+
+现在考察曲面族中的一个特定曲面
+\begin{equation}\tag{18}
+f(x,y,z,\alpha_1)=0
+\end{equation}
+以及参数发生变化 \(h\) 时所对应的一个与它极为邻近的曲面
+\[
+f(x,y,z,\alpha_1+h)=0.
+\]
+这两个曲面的交线（实的或虚的）在 \(h\) 趋于零时，趋近于曲面 (18) 上的一个极限位置；按照蒙日的说法，这条极限曲线称为曲面 (18) 的\emph{特征线}。为了证明这条极限曲线的存在，把前面两个方程换成等价的方程组
+\[
+f(x,y,z,\alpha_1)=0,
+\qquad
+\frac{f(x,y,z,\alpha_1+h)-f(x,y,z,\alpha_1)}{h}=0.
+\]
+其中第二个方程在 \(h\) 趋于零时，趋近于极限方程
+\[
+\left(\frac{\partial f}{\partial\alpha}\right)_{\alpha=\alpha_1}=0,
+\]
+而且可以完全严格地证明，由下列两个联立方程
+\[
+f(x,y,z,\alpha_1)=0,
+\qquad
+\left(\frac{\partial f(x,y,z,\alpha)}{\partial\alpha}\right)_{\alpha=\alpha_1}=0
+\]
+所确定的曲线，正是所求的极限曲线。所有特征线的轨迹是一个称为包络面的曲面，而方程族 (17) 中的每一个单独曲面则称为一个\emph{被包络面}。根据上面的讨论，包络面的方程由消去下列两个方程中的 \(\alpha\) 而得：
+\[
+f=0,
+\qquad
+\frac{\partial f}{\partial\alpha}=0,
+\]
+或者等价地，从第二个方程解出 \(\alpha\) 关于 \(x,y,z\) 的函数，再把它代入第一个方程。
+
+因此，方程
+\[
+f(x,y,z,\alpha)=0,
+\]
+在 \(\alpha\) 为常数时给出一个被包络面；而当在其中以由方程
+\[
+\frac{\partial f}{\partial\alpha}=0.
+\]
+对 \(\alpha\) 解得的 \(x,y,z\) 的函数代替 \(\alpha\) 时，同一方程又表示包络面。
+
+由此立即可见：\emph{每一个被包络面都沿着整条特征线与包络面相切。}
+
+事实上，包络面在点 \((x,y,z)\) 处的切平面方程为
+\[
+\left(\frac{\partial f}{\partial x}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial x}\right)(X-x)+
+\left(\frac{\partial f}{\partial y}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial y}\right)(Y-y)+
+\left(\frac{\partial f}{\partial z}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial z}\right)(Z-z)=0;
+\]
+但由于此处的 \(\alpha\) 是从 \(\dfrac{\partial f}{\partial\alpha}=0\) 解出的，这一方程恒等于
+\[
+\frac{\partial f}{\partial x}(X-x)+\frac{\partial f}{\partial y}(Y-y)+\frac{\partial f}{\partial z}(Z-z)=0
+\]
+即被包络面在 \((x,y,z)\) 处的切平面方程，证毕。
+
+曲面 (18) 的特征线将与邻近曲面
+\[
+f(x,y,z,\alpha_1+h)=0,
+\]
+相交于若干个离散点；当 \(h\) 变化时，这些点沿特征线运动，而当 \(h\) 趋于零时，它们趋向某些极限点。下面来确定这些点。
+
+对于上述每一个交点，下列三个方程同时成立：
+\begin{equation}\tag{a}
+f=0,
+\qquad
+\frac{\partial f}{\partial\alpha}=0,
+\qquad
+f(x,y,z,\alpha+h)=0,
+\end{equation}
+其中最后一个方程可以换成
+\[
+f+h\frac{\partial f}{\partial\alpha}+\frac{h^2}{2}\frac{\partial^2 f}{\partial\alpha^2}+\eta=0,
+\]
+这里 \(\eta\) 是相对于 \(h\) 高于二阶的无穷小量。方程组 (a) 可以换成等价的方程组
+\[
+f=0,
+\qquad
+\frac{\partial f}{\partial\alpha}=0,
+\qquad
+\frac{\partial^2 f}{\partial\alpha^2}+\frac{2\eta}{h^2}=0;
+\]
+现在，当 \(h\) 趋于零时，其中最后一个方程趋近于极限方程
+\[
+\frac{\partial^2 f}{\partial\alpha^2}=0.
+\]
+所以，与参数值 \(\alpha\) 对应的特征线上的所求极限点，由下列三个联立方程确定：
+\[
+f=0,
+\qquad
+\frac{\partial f}{\partial\alpha}=0,
+\qquad
+\frac{\partial^2 f}{\partial\alpha^2}=0.
+\]
+
+各条特征线的极限点的轨迹，称为包络面上的\emph{回归棱}。消去上面三个方程中的 \(\alpha\)，便得到它的方程；也就是说，从第三个方程解出 \(\alpha\) 关于 \(x,y,z\) 的函数，再代入前两个方程。由于前两个方程在 \(\alpha\) 为常数时表示特征线，所以每一条特征线都在极限点处与回归棱相切\srcfn{1}{若 \(dx,dy,dz\) 表示沿回归棱所取的微分，则有方程
+\[
+\left(\frac{\partial f}{\partial x}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial x}\right)dx+
+\left(\frac{\partial f}{\partial y}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial y}\right)dy+
+\left(\frac{\partial f}{\partial z}+\frac{\partial f}{\partial\alpha}\frac{\partial\alpha}{\partial z}\right)dz=0
+\]
+\[
+\left(\frac{\partial^2 f}{\partial\alpha\partial x}+\frac{\partial^2 f}{\partial\alpha^2}\frac{\partial\alpha}{\partial x}\right)dx+
+\left(\frac{\partial^2 f}{\partial\alpha\partial y}+\frac{\partial^2 f}{\partial\alpha^2}\frac{\partial\alpha}{\partial y}\right)dy+
+\left(\frac{\partial^2 f}{\partial\alpha\partial z}+\frac{\partial^2 f}{\partial\alpha^2}\frac{\partial\alpha}{\partial z}\right)dz=0,
+\]
+由于 \(\dfrac{\partial f}{\partial\alpha}=0\)、\(\dfrac{\partial^2 f}{\partial\alpha^2}=0\)，它们化为确定沿特征线所取微分的那些方程。}；总之，回归棱（若存在）是包络面上所有特征线的包络。

@@ -1,0 +1,153 @@
+\subsection*{\S. 18.\quad 渐开线与渐屈线。}
+考察曲线 C 的切线可展面 \(\Sigma\)，并求曲线 \(C'\)；这些曲线画在 \(\Sigma\) 上，并与所有母线（即 C 的切线）成直角相交。设 \(\mathrm{M}\equiv(x,y,z)\) 是 C 上任一点，\(\mathrm{M'}\equiv(x',y',z')\) 是这些曲线 \(C'\) 上的一点，曲线 \(C'\) 在该点与 C 在 M 处的切线正交相交。若令 \(\overline{MM'}=\tau\)，则
+\[
+x'=x+\tau\alpha,
+\qquad
+ y'=y+\tau\beta,
+\qquad
+ z'=z+\tau\gamma;
+\]
+\(\tau\) 是 \(s\) 的待定函数，应使 \(C'\) 的切线垂直于 C 的切线。现在有
+\[
+\left\{
+\begin{aligned}
+\frac{\diff x'}{\diff s}&=\left(1+\frac{\diff\tau}{\diff s}\right)\alpha+\tau\frac{\xi}{\rho},\\
+\frac{\diff y'}{\diff s}&=\left(1+\frac{\diff\tau}{\diff s}\right)\beta+\tau\frac{\eta}{\rho},\\
+\frac{\diff z'}{\diff s}&=\left(1+\frac{\diff\tau}{\diff s}\right)\gamma+\tau\frac{\zeta}{\rho},
+\end{aligned}\right.
+\]
+又因必须有
+\[
+\alpha\frac{\diff x'}{\diff s}+\beta\frac{\diff y'}{\diff s}+\gamma\frac{\diff z'}{\diff s}=0,
+\]
+所以 \(\dfrac{\diff\tau}{\diff s}=-1\)，即
+\[
+\tau=c-s,
+\]
+其中 \(c\) 是（任意）常数。
+
+所以，公式
+\begin{equation}\tag{40}
+x'=x+(c-s)\alpha,
+\qquad
+ y'=y+(c-s)\beta,
+\qquad
+ z'=z+(c-s)\gamma
+\end{equation}
+定义了一个与 C 的切线正交的单参数曲线族 \(C'\)。由于 \(\overline{MM'}=c-s\)，或者在 C 上从适当的点起算 \(s\) 时，\(\overline{MM'}=-s\)，可以看出：若把一根柔软而不可伸长的线缠在曲线 C 上，再从弧长原点开始解开，并使线始终绷紧，那么解开部分的直线段 \(MM'\) 始终是曲线在 M 处的切线，其长度等于弧长 \(s\)。所以，线的自由端 \(M'\) 描出曲线 \(C'\)；正因如此，它称为 C 的\emph{渐开线}（意大利文亦称 sviluppante），而 C 称为曲线 \(C'\) 的\emph{渐屈线}（意大利文亦称 sviluppata）。
+
+因此：\emph{每一条曲线 C 都有一个单参数渐开线族；它们是 C 的切线可展面上各母线的正交轨迹。}
+
+对 (40) 微分（设 \(c=0\)），得到
+\[
+\frac{\diff x'}{\diff s}=-\frac{s}{\rho}\xi,
+\qquad
+\frac{\diff y'}{\diff s}=-\frac{s}{\rho}\eta,
+\qquad
+\frac{\diff z'}{\diff s}=-\frac{s}{\rho}\zeta,
+\]
+继而令 \(s'\) 随 \(s\) 增大，有
+\[
+\frac{\diff s'}{\diff s}=\frac{s}{\rho},
+\]
+从而
+\[
+\alpha'=-\xi,
+\qquad
+\beta'=-\eta,
+\qquad
+\gamma'=-\zeta.
+\]
+这些公式证明：\emph{渐开线的切线与渐屈线的主法线平行，且方向相反。}
+
+现在考察逆问题：
+\begin{center}
+\emph{求一条给定曲线 C 的全部渐屈线。}
+\end{center}
+以 \(C'\) 表示任一条所求渐屈线；它必定是这样一个可展面的回归棱，而这个可展面由曲线 C 的一个单参数法线族构成。设点 \(M'\) 属于渐屈线 \(C'\)，并位于渐开线 C 在 M 处的法平面内；以主法线和副法线为辅助动轴来表示 \(M'\)，并以 \(u,v\) 表示相应坐标，则通常坐标 \(x',y',z'\)，即 \(M'\) 的坐标，为
+\[
+x'=x+u\xi+v\lambda,
+\qquad
+ y'=y+u\eta+v\mu,
+\qquad
+ z'=z+u\zeta+v\nu.
+\]
+现在要把 \(u,v\) 确定为 \(s\) 的函数，使在 \(M'\) 处，曲线 \(C'\)（点 \(M'\) 的轨迹）的切线恰好就是 C 的法线 \(M'M\)；也就是说，必须表示
+\[
+\frac{\diff x'}{\diff s},\qquad \frac{\diff y'}{\diff s},\qquad \frac{\diff z'}{\diff s}
+\]
+依次与
+\[
+u\xi+v\lambda,
+\qquad
+u\eta+v\mu,
+\qquad
+u\zeta+v\nu.
+\]
+成比例。进行微分，立即得到 \(u,v\) 的下列条件：
+\[
+u=\rho,
+\qquad
+\frac{1}{u}\left(\frac{\diff u}{\diff s}+\frac{v}{T}\right)=\frac{1}{v}\left(\frac{\diff v}{\diff s}-\frac{u}{T}\right),
+\]
+即
+\[
+u=\rho,
+\qquad
+\frac{\rho\dfrac{\diff v}{\diff s}-v\dfrac{\diff\rho}{\diff s}}{\rho^2+v^2}=\frac{1}{T},
+\]
+积分后一式，得到
+\[
+\operatorname{arc\,tg}\frac{v}{\rho}=\int_0^s\frac{\diff s}{T}+c,
+\]
+即
+\[
+v=\rho\tg(\tau+c),
+\]
+其中 \(c\) 是任意常数，并令
+\[
+\tau=\int_0^s\frac{\diff s}{T}.
+\]
+因此，通过一次求积，利用下列公式便可解决所提问题：
+\begin{equation}\tag{41}
+x'=x+\rho\xi+\rho\tg(\tau+c)\lambda,
+\quad
+ y'=y+\rho\eta+\rho\tg(\tau+c)\mu,
+\quad
+ z'=z+\rho\zeta+\rho\tg(\tau+c)\nu.
+\end{equation}
+再看由此立即得到的公式
+\begin{equation}\tag{41*}
+\alpha'=\cos(\tau+c)\xi+\sen(\tau+c)\lambda,
+\qquad
+\beta'=\cos(\tau+c)\eta+\sen(\tau+c)\mu,
+\end{equation}
+\[
+\gamma'=\cos(\tau+c)\zeta+\sen(\tau+c)\nu,
+\]
+它们表明：\emph{渐屈线的切线与渐开线的主法线所成的角为 \(\tau+c\)。}
+
+对应于 (41) 中任意常数 \(c\) 的无穷多个取值，给定曲线 C 有 \(\infty^1\) 条渐屈线，它们全都画在该曲线的极可展面上。此外，每条渐屈线的主法线都平行于渐开线的切线，因而就是极可展面的法线；可见，所有渐屈线都是极可展面的测地线。若把这个可展面展开到一个平面上，各渐屈线变成一族直线；更确切地说，可以证明它们变成一个直线束\srcfn{1}{预先用到后文第三章的概念，注意到：若在 (41) 中把 \(c\) 看作变量，并令
+\[
+\frac{\rho}{\cos(\tau+c)}=R,
+\]
+再构造极可展面的线元平方，就得到
+\[
+\diff s^2=\diff x'^2+\diff y'^2+\diff z'^2=\diff R^2+R^2\diff c^2,
+\]
+这正是极坐标下平面的线元，因而证明了正文所述的性质。}。
+
+应当注意，若渐开线是平面曲线，它只有一条平面渐屈线，即其各曲率中心的轨迹；其他渐屈线则是直圆柱面（极可展面）的螺线，该圆柱面以平面渐屈线为底。
+
+由上面对 (41)、(41*) 中 \(\tau+c\) 几何意义的说明，可以得到一个在应用中非常重要的定理。考察分别对应于两个不同值 \(c_1,c_2\)，即任意常数 \(c\) 的两个值，的两条渐屈线，则差 \((\tau+c_1)-(\tau+c_2)=c_1-c_2\) 表示从渐开线上同一点 M 出发的两条相应渐屈线切线之间的夹角。因此：
+
+\begin{enumerate}[label=\Alph*)]
+\item \emph{从渐开线 C 上同一点出发的两条不同渐屈线的切线，沿 C 始终彼此成恒定角。}
+\end{enumerate}
+
+把这个定理换成稍有不同的形式来陈述也是有用的：
+
+\begin{enumerate}[label=\Alph*)]
+\setcounter{enumi}{1}
+\item \emph{若使一个可展面的各条母线，分别绕它们与某一条正交轨迹的交点，在该轨迹的法平面内转过同一个恒定角，则这些母线的新位置的轨迹是另一个可展面。}
+\end{enumerate}

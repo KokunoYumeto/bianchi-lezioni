@@ -1,0 +1,26 @@
+\subsection*{\S. 20.\quad 曲线的 Combescure 变换。}
+给定两条曲线 C、C\(_1\)，若能在二者之间建立一种对应，使 C 的每一点 M 对应于 C\(_1\) 的一点 M\(_1\)，\emph{并使两个对应点处的切线始终互相平行}，就称这两条曲线通过\emph{Combescure 变换}互相得到\srcfn{2}{Combescure 变换原本适用于以后将研究的曲面正交三重系；把它应用于曲线，恰好导出正文所考察的几何关系，所以采用同一名称看来是适宜的。}。两条曲线 C、C\(_1\) 互为 Combescure 变换的充要条件，显然是它们具有同一条切线球面指标曲线；例如，两条位似曲线，或位于平行平面内的两条平面曲线，便是如此。又由弗雷内公式可知，一条曲线的切线球面指标曲线的切线平行于该曲线的主法线；所以：\emph{若曲线 C\(_1\) 由曲线 C 作 Combescure 变换而得，则 C\(_1\) 上一点 M\(_1\) 的三个主方向，分别平行于 C 上对应点 M 的三个相应主方向。}
+
+特别地，C、C\(_1\) 在对应点 M、M\(_1\) 的密切平面互相平行；反过来也立即可见，若两条曲线 C、C\(_1\) 逐点对应，且对应点 M、M\(_1\) 的密切平面互相平行，则二者互为 Combescure 变换。
+
+由这些说明可知，从给定曲线 C 几何地构造任一条 Combescure 变换曲线的方法如下：\emph{对曲线 C 的每一个密切平面，作一个与之平行的平面，其距离可以任意给定，并随 C 的密切平面连续变化；这些新平面的包络可展面的回归棱，就是给定曲线的一条 Combescure 变换曲线 C\(_1\)。}
+
+对曲线 C 仍采用通常的记号，并用下标 1 表示一条 Combescure 变换曲线 C\(_1\) 的相应要素；定义 C\(_1\) 的公式显然为
+\begin{equation}\tag{43}
+x_1=\int\alpha f(s)\,\diff s,
+\qquad y_1=\int\beta f(s)\,\diff s,
+\qquad z_1=\int\gamma f(s)\,\diff s,
+\end{equation}
+其中 \(f(s)\) 是 \(s\) 的一个\emph{任意}函数\srcfn{1}{若取 \(f(s)\) 为常数，就得到 C 的一条\emph{位似}变换曲线。}。所以 C\(_1\) 的内蕴方程为
+\[
+\diff s_1=f(s)\,\diff s,
+\qquad
+\frac{\diff s_1}{\rho_1}=\frac{\diff s}{\rho},
+\qquad
+\frac{\diff s_1}{T_1}=\frac{\diff s}{T},
+\]
+即
+\begin{equation}\tag{44}
+\frac{\diff s_1}{\diff s}=f(s),\qquad \rho_1=\rho f(s),\qquad T_1=T f(s).
+\end{equation}
+特别地，由此得到 \(\dfrac{\rho_1}{T_1}=\dfrac{\rho}{T}\)；也就是说，Combescure 变换保持两个曲率之比不变。

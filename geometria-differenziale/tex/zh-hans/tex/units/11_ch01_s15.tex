@@ -1,0 +1,128 @@
+\subsection*{\S. 15.\quad 矫直可展面。}
+现在来研究这两个可展面，先从后一个开始。
+此处动平面的方程为
+\begin{equation}\tag{22}
+(X-x)\xi+(Y-y)\eta+(Z-z)\zeta=0
+\end{equation}
+它的特征线由该方程与它对参数 \(s\) 微分所得的方程联立而得：
+\begin{equation}\tag{23}
+(X-x)\left(\frac{\alpha}{\rho}+\frac{\lambda}{T}\right)+
+(Y-y)\left(\frac{\beta}{\rho}+\frac{\mu}{T}\right)+
+(Z-z)\left(\frac{\gamma}{\rho}+\frac{\nu}{T}\right)=0.
+\end{equation}
+这第二个平面也经过曲线 C 上的点 \(\mathrm{M}\equiv(x,y,z)\)，所以特征线是从 C 上的点 M 出发、位于切线与副法线所成平面内的一条直线；它称为\emph{矫直直线}。因此，我们的可展面 \(\Sigma\) 经过曲线 C，而 C 的主法线与曲面 \(\Sigma\) 的法线重合。
+
+当画在一个曲面上的曲线，在每一点的主法线都与曲面的法线重合时，这条曲线称为该曲面的\emph{测地线}；它给出曲面上一点到另一点的最短路径（以后将证明）。所以，矫直可展面包含给定曲线 C，并以它为测地线；把可展面展开到平面上时，曲线 C 被矫直，名称“矫直可展面”正由此而来。显然，不存在另一个包含该曲线并以它为测地线的可展面。
+
+矫直直线是两个平面 (22)、(23) 的交线，其方向余弦显然与下列三个二项式成比例：
+\[
+\frac{\alpha}{T}-\frac{\lambda}{\rho},
+\qquad
+\frac{\beta}{T}-\frac{\mu}{\rho},
+\qquad
+\frac{\gamma}{T}-\frac{\nu}{\rho}
+\]
+因此，以 \(\sigma\) 表示矫直直线与切线的夹角，可以令
+\[
+\cos\sigma=\frac{\dfrac{1}{T}}{\sqrt{\dfrac{1}{\rho^2}+\dfrac{1}{T^2}}},
+\qquad
+\sen\sigma=\frac{\dfrac{1}{\rho}}{\sqrt{\dfrac{1}{\rho^2}+\dfrac{1}{T^2}}},
+\]
+即
+\begin{equation}\tag{24}
+\tg\sigma=\frac{T}{\rho}.
+\end{equation}
+可见，角 \(\sigma\) 仅对柱面螺线为常数；在这种情形下，矫直可展面正是螺线所在的柱面，而矫直直线与柱面母线重合。
+
+把 (23) 再微分一次，就能得到确定矫直可展面回归棱所需的要素。但逆问题更有意义：\emph{求所有曲线 \(C_1\)，使一条给定曲线 C 成为其矫直可展面的回归棱}；换言之：\emph{给定一个可展面，求它的全部测地线}。容易证明，这个问题可以通过求积解决。
+
+事实上，以 \(x_1,y_1,z_1\) 表示一点 \(M_1\) 的坐标；该点属于所求曲线 \(C_1\)，并位于给定曲线 C 在点 \(\mathrm{M}\equiv(x,y,z)\) 处的切线上。于是
+\begin{equation}\tag{25}
+x_1=x+t\alpha,
+\qquad
+ y_1=y+t\beta,
+\qquad
+ z_1=z+t\gamma,
+\end{equation}
+其中 \(t\) 表示线段 \(MM_1\) 的（代数）值。因此，我们的问题是把 \(t\) 确定为 \(s\) 的函数，使曲线 \(C_1\)，即由 (25) 所定义的点 \((x_1,y_1,z_1)\) 所描出的曲线，以原曲线副法线的方向 \((\lambda,\mu,\nu)\) 为其主法线方向。
+现在把 (25) 微分，得到
+\[
+\frac{\diff x_1}{\diff s}=\left(1+\frac{\diff t}{\diff s}\right)\alpha+t\frac{\xi}{\rho},
+\qquad
+\frac{\diff y_1}{\diff s}=\left(1+\frac{\diff t}{\diff s}\right)\beta+t\frac{\eta}{\rho},
+\]
+\[
+\frac{\diff z_1}{\diff s}=\left(1+\frac{\diff t}{\diff s}\right)\gamma+t\frac{\zeta}{\rho}
+\]
+因而，用下标 1 表示与曲线 \(C_1\) 有关的各要素：
+\[
+\frac{\diff s_1}{\diff s}=\sqrt{\frac{t^2}{\rho^2}+\left(1+\frac{\diff t}{\diff s}\right)^2}
+\]
+\begin{equation}\tag{26}
+\alpha_1=\alpha\cos\sigma+\xi\sen\sigma,
+\qquad
+\beta_1=\beta\cos\sigma+\eta\sen\sigma,
+\qquad
+\gamma_1=\gamma\cos\sigma+\zeta\sen\sigma,
+\end{equation}
+这里令
+\[
+\cos\sigma=\frac{1+\dfrac{\diff t}{\diff s}}{\sqrt{\dfrac{t^2}{\rho^2}+\left(1+\dfrac{\diff t}{\diff s}\right)^2}},
+\qquad
+\sen\sigma=\frac{\dfrac{t}{\rho}}{\sqrt{\dfrac{t^2}{\rho^2}+\left(1+\dfrac{\diff t}{\diff s}\right)^2}},
+\]
+即
+\begin{equation}\tag{26*}
+\cot\sigma=\frac{\rho}{t}\left(1+\frac{\diff t}{\diff s}\right),
+\end{equation}
+所以 \(\sigma\) 表示 \(C_1\) 与 C 的切线之间的夹角。
+
+再把 (26) 微分，左端得到与 \(\xi_1,\eta_1,\zeta_1\) 成比例的量；按照假设，也就是与 \(\lambda,\mu,\nu\) 成比例的量。因此必有
+\begin{equation}\tag{\ensuremath{\alpha}}
+\begin{aligned}
+\frac{\diff}{\diff s}(\alpha\cos\sigma+\xi\sen\sigma)&=K\lambda,\qquad
+\frac{\diff}{\diff s}(\beta\cos\sigma+\eta\sen\sigma)=K\mu,\\
+\frac{\diff}{\diff s}(\gamma\cos\sigma+\zeta\sen\sigma)&=K\nu,
+\end{aligned}
+\end{equation}
+其中 \(K\) 是比例因子。
+
+进行微分，得到
+\begin{equation}\tag{\ensuremath{\beta}}
+\left\{
+\begin{aligned}
+-\sen\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\alpha
++\cos\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\xi
+-\frac{\sen\sigma}{T}\lambda&=K\lambda,\\
+-\sen\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\beta
++\cos\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\eta
+-\frac{\sen\sigma}{T}\mu&=K\mu,\\
+-\sen\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\gamma
++\cos\sigma\left(\frac{\diff\sigma}{\diff s}+\frac{1}{\rho}\right)\zeta
+-\frac{\sen\sigma}{T}\nu&=K\nu.
+\end{aligned}\right.
+\end{equation}
+
+所以必须有
+\[
+\frac{\diff\sigma}{\diff s}=-\frac{1}{\rho},
+\]
+从而通过一次求积得到 \(\sigma\)：
+\begin{equation}\tag{27}
+\sigma=c-\int\frac{\diff s}{\rho}
+\end{equation}
+继而由 (26*) 积分一个一阶线性微分方程，便得到 \(t\)：
+\begin{equation}\tag{28}
+t=\frac{1}{\sen\sigma}\left(c'-\int\sen\sigma\,\diff s\right).
+\end{equation}
+反过来，按照这些公式取 \(\sigma,t\)，就满足全部所需条件。
+
+这样，借助引入两个任意常数 \(c,c'\) 的两次求积，我们解决了这个问题；因此得到：\emph{给定一个可展面，只需两次求积 (27)、(28)，就能以有限形式求出它的双参数测地线族。}
+
+应当注意，(27)、(28) 不含 \(\dfrac{1}{T}\)，所以只依赖于可展面回归棱 C 的第一曲率 \(\dfrac{1}{\rho}\)。因此，若以任意方式扭曲曲线 C 而不改变其第一曲率，(28) 中 \(t\) 的值总保持不变。现在任取 C 的两个这种形态，记为 \(C,C'\)；相应的两个可展面 \(\Sigma,\Sigma'\) 可以相互展开，使 \(C,C'\) 的对应点彼此重合，并使 \(\Sigma\) 的各条母线展开到 \(\Sigma'\) 的对应母线上\srcfn{1}{从几何上看，这是显然的，因为每一个可展面都可以看成由相邻两条母线之间的连续条带组成。上述变形通过如下方式进行：把每个条带绕它与前一个条带共有的母线旋转一个适当角度；显然，这不会改变回归棱的第一曲率。}。于是，上面的说明显然具有如下意义：\emph{\(\Sigma\) 的每一条测地线都展开到 \(\Sigma'\) 的一条测地线上。}这是以后研究中将遇到的一个一般定理的特殊情形。
+
+特别地，若取 \(C'\) 为 C 的平面变形，则可展面 \(\Sigma'\) 成为曲线所在的平面，它的测地线就是平面中的直线。这也可以从原书第29页的 \((\alpha),(\beta)\) 解析地得到；事实上，\((\beta)\) 在 \(\dfrac{1}{T}=0\) 时给出 \(K=0\)，再由 \((\alpha)\) 得到
+\[
+\frac{\diff\alpha_1}{\diff s}=\frac{\diff\beta_1}{\diff s}=\frac{\diff\gamma_1}{\diff s}=0.
+\]
+因此，每一条曲线 \(C_1\) 的切线方向固定，它就是一条直线。

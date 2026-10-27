@@ -1,0 +1,630 @@
+\section*{第八章}
+\begin{center}
+{\Large\bfseries 直纹曲面的变形。}\par
+\vspace{0.5em}
+\rule{3em}{0.4pt}\hspace{-0.2em}\raisebox{0.05em}{\(\bullet\)}\hspace{-0.2em}\rule{3em}{0.4pt}
+\end{center}
+
+\begin{center}\footnotesize\bfseries
+等距适用的直纹曲面。-- 直纹曲面的线元。-- 腰线及Bonnet的相关定理。-- 第二族渐近线。-- Chasles公式。-- 依Minding方法变形直纹曲面。-- Beltrami方法及其基本方程。-- 将直纹曲面变形，使曲面上的一条给定曲线成为渐近线、平面曲线或曲率线的问题。-- 与旋转曲面等距适用的直纹曲面。
+\end{center}
+
+\subsection*{\S. 115.\quad 等距适用的直纹曲面。}
+
+我们刚刚确认其存在的那些直纹曲面的特殊变形，具有特别的意义。本章将专门研究这些变形，而且只需相当简单的方法。但首先我们要随Bonnet证明：研究这些变形，便能解决求出与一个固定直纹曲面等距适用的一切直纹曲面这一一般问题。
+
+事实上有如下定理（Bonnet）：\emph{若两个直纹曲面并非由同一个二次曲面变形而来，而且彼此等距适用，则其中一个曲面的母线必定对应于另一个曲面的母线。}
+
+由具有实母线的二次曲面的变形所得的曲面，确实是这个定理的例外。这一点很清楚：二次曲面有两族直母线，因此既可在变形时保持第一族母线为直线而使另一族弯曲，也可反过来进行。
+
+我们用如下简单方法证明这个定理。设S、\(S_1\)为两个彼此等距适用的直纹曲面，并假设在这一等距对应中，S的母线\(u\)与母线\(v\)不相对应，而后者位于\(S_1\)上。于是分别在S、\(S_1\)上取\(u,v\)为坐标曲线；两个曲面S、\(S_1\)具有共同的第一基本形式，而若以
+\begin{equation}\tag{1}
+\left\{
+\begin{aligned}
+&D_1\,du^2+2D'_1\,du\,dv+D''_1\,dv^2,\\
+&D\,du^2+2D'\,du\,dv+D''\,dv^2
+\end{aligned}
+\right.
+\end{equation}
+为各自的第二基本形式，则有
+\[
+ D''=0,
+ \qquad D_1=0,
+\]
+因为\(u\)曲线在S上是渐近线，而\(v\)曲线在\(S_1\)上是渐近线。又因式(1)中两个二次形式的判别式依Gauss定理相等，故有
+\[
+ D'_1=\pm D'.
+\]
+现在表示式(1)中的两个二次形式都满足Codazzi方程（IV*），\S. 56（第120页）。注意\(u,v\)都是测地线，因而
+\[
+ \chr{2}{2}{1}=0,
+ \qquad
+ \chr{1}{1}{2}=0;
+\]
+所以得到
+\[
+ \frac{\partial}{\partial v}\left(\frac{D'}{\sqrt{EG-F^2}}\right)
+  +2\chr{1}{2}{1}\frac{D'}{\sqrt{EG-F^2}}=0,
+\]
+\[
+ \frac{\partial}{\partial u}\left(\frac{D'}{\sqrt{EG-F^2}}\right)
++2\chr{1}{2}{2}\frac{D'}{\sqrt{EG-F^2}}=0.
+\]
+这些方程还表明，若取
+\[
+ D=0,
+ \qquad D''=0
+\]
+并让\(D'\)保持原值，同样仍满足这些Codazzi方程。因此存在第三个曲面\(S_2\)，它与S、\(S_1\)等距适用，并以\(u,v\)为渐近线。于是\(S_2\)是双重直纹曲面，从而是二次曲面。这正是所要证明的。
+
+至于与二次曲面等距适用的直纹曲面，由上述论证（亦参见\S. 114）可知，其母线将对应于该二次曲面两族母线中的一族或另一族。
+
+\subsection*{\S. 116.\quad 直纹曲面的线元。}
+
+在研究直纹曲面的等距适用性之前，先对这类曲面作若干一般考察。
+
+设在直纹曲面S上任取一条曲线C，把它看作\emph{准线}，只要求它与全部母线相交。要确定直纹曲面S，只须给出准线C，并在C的每一点给出通过该点的母线方向。
+
+令\(v\)为准线C的弧长，从其上某个固定点起算；令\(p,q,r\)为C上动点的坐标，并把它们表示成\(v\)的函数；又令\(l,m,n\)表示通过C上点\((p,q,r)\)的母线之正方向余弦，它们也都是\(v\)的确定函数。再以\(u\)表示从准线上的点\((p,q,r)\)到S上任一点\((x,y,z)\)之间那一段母线的代数长度。于是公式
+\begin{equation}\tag{1}
+ x=p+lu,
+ \qquad y=q+mu,
+ \qquad z=r+nu
+\end{equation}
+把\(x,y,z\)表示为\(u,v\)的函数，从而确定曲面S。现在计算S的线元；用撇号表示对\(v\)求导，并令
+\begin{equation}\tag{2}
+\left\{
+\begin{aligned}
+ l'^2+m'^2+n'^2&=M^2,\\
+ l'p'+m'q'+n'r'&=N,\\
+ lp'+mq'+nr'&=\cos\theta,
+\end{aligned}
+\right.
+\end{equation}
+其中\(M,N,\theta\)都是\(v\)的函数，而最后一个显然表示母线与准线的夹角。还须加上
+\begin{equation}\tag{2'}
+\left\{
+\begin{aligned}
+ l^2+m^2+n^2&=1,\\
+ p'^2+q'^2+r'^2&=1.
+\end{aligned}
+\right.
+\end{equation}
+于是曲面的线元为
+\begin{equation}\tag{3}
+ ds^2=du^2+2\cos\theta\,du\,dv+(M^2u^2+2Nu+1)\,dv^2.
+\end{equation}
+首先注意，母线的正交轨迹满足微分方程
+\[
+ du+\cos\theta\,dv=0;
+\]
+因此经一次积分便立即得到这些正交轨迹的有限形式方程
+\[
+ u+\int\cos\theta\,dv=\hbox{常数}\srcfnmark{1}.
+\]
+\srcfntext{1}{这实际上只是\S. 93中A)定理的一个特例（第202页）。}
+
+考察母线\((v)\)和与它无穷接近的母线\((v+dv)\)。若以\(d\varphi\)表示二者之间的无穷小夹角，显然有
+\[
+ d\varphi^2=dl^2+dm^2+dn^2,
+\]
+即
+\begin{equation}\tag{4}
+ d\varphi=M\,dv.
+\end{equation}
+再以\(d\sigma\)表示二者最短距离的无穷小长度，以U表示相应的\(u\)值，也就是这条最短距离在母线\(v\)上的垂足所对应的数值。由解析几何中的熟知公式可得
+\[
+ d\sigma=\frac{\detmat{p'&q'&r'\\ l&m&n\\ l'&m'&n'}}{M}\,dv;
+\]
+并且
+\[
+ \detmat{p'&q'&r'\\ l&m&n\\ l'&m'&n'}^2=M^2\sen^2\theta-N^2,
+\]
+故
+\begin{equation}\tag{5}
+ d\sigma=\frac{\sqrt{M^2\sen^2\theta-N^2}}{M}\,dv.
+\end{equation}
+再令
+\[
+ A=\detmat{m&n\\ m'&n'},
+ \qquad
+ B=\detmat{n&l\\ n'&l'},
+ \qquad
+ C=\detmat{l&m\\ l'&m'},
+\]
+则
+\[
+ U=\frac{\detmat{p'&l+l'\,dv&A\\ q'&m+m'\,dv&B\\ r'&n+n'\,dv&C}}{A^2+B^2+C^2}
+\]
+并忽略第二列中的无穷小项，得
+\begin{equation}\tag{6}
+ U=-\frac{N}{M^2}.
+\end{equation}
+
+\subsection*{\S. 117.\quad 腰线。}
+
+过空间中同一点、分别平行于一个直纹曲面各条母线所作的直线组成一个锥面，称为\emph{方向锥}。取该锥面的顶点为原点，并以顶点为球心、以\(=1\)为半径作球面，则锥面与球面的截线称为\emph{母线的球面指标曲线}。这一指标曲线的弧长元显然是\(d\varphi=M\,dv\)。
+
+母线\(v\)与下一条母线之间的最短距离，在该母线上的垂足称为它的\emph{中心点}。这些中心点的轨迹在直纹曲面理论中十分重要，称为\emph{腰线（收缩线）}。由(6)，腰线的方程为
+\begin{equation}\tag{7}
+ M^2u+N=0;
+\end{equation}
+当\(N=0\)时，腰线与准线重合。
+
+腰线总是唯一确定的，只有\(M=0,N=0\)同时成立时例外；这时由(2)的第一式可知，曲面是柱面。对于由关系
+\[
+ M^2\sen^2\theta-N^2=0,
+\]
+所刻画的可展曲面，腰线与回归边重合。
+
+用公式（\S. 86，第184页）计算测地曲率\(\dfrac1{\rho_0}\)；这里的准线为\(u=0\)：
+\[
+ \frac1{\rho_0}=\frac{\sqrt{EG-F^2}}{G\sqrt G}\chr{2}{2}{1},
+\]
+在(3)下有
+\[
+ E=1,
+ \quad F=\cos\theta,
+ \quad G=M^2u^2+2Nu+1,
+\]
+故
+\[
+ -\frac1{\rho_0}=\frac{N}{\sen\theta}+\frac{d\theta}{dv}.
+\]
+由此可见，若下列三量中有两个
+\[
+ \frac1{\rho_0},
+ \quad N,
+ \quad \frac{d\theta}{dv}
+\]
+为零，第三个也为零。把这一结果作几何解释，便得到Bonnet定理：
+
+\emph{直纹曲面上的一条曲线若具有下列三种性质中的两种：第一，是测地线；第二，是腰线；第三，与母线成定角，那么它也具有第三种性质。}
+
+显然，凡存在这样一条曲线的直纹曲面，都是如下直线的轨迹：这条直线与某条曲线（即腰线）相交，垂直于该曲线的主法线，并与该曲线成定角。特别地，只有当直纹曲面是某条曲线的副法线的轨迹时，腰线才是母线的正交轨迹。
+
+最后注意，若取母线的一条正交轨迹为准线，则\(\theta=\dfrac\pi2\)；对于测地曲率\(\dfrac1{\rho_u}\)，相应曲线为\(u=\)常数，有
+\[
+ \frac1{\rho_u}=-\frac{M^2u+N}{M^2u^2+2Nu+1},
+\]
+因而：\emph{腰线也可定义为直纹曲面上那些点的轨迹；在这些点处，通过该点的母线正交轨迹之测地曲率为零。}
+
+\subsection*{\S. 118.\quad 切平面分布参数。}
+
+在任何直纹曲面上，母线都是一族渐近线；这在几何上是显然的。解析上，计算第二基本形式的系数\(D,D',D''\)也立即证实这一点；事实上得到
+\[
+\begin{aligned}
+D&=0,\\
+D'&=\frac1{\sqrt{M^2u^2+2Nu+\sen^2\theta}}
+\detmat{l'&m'&n'\\ l&m&n\\ p'+l'u&q'+m'u&r'+n'u}\\
+&=\frac1{\sqrt{M^2u^2+2Nu+\sen^2\theta}}
+\detmat{l'&m'&n'\\ l&m&n\\ p'&q'&r'},\\
+D''&=\frac1{\sqrt{M^2u^2+2Nu+\sen^2\theta}}
+\detmat{p''+l''u&q''+m''u&r''+n''u\\ l&m&n\\ p'+l'u&q'+m'u&r'+n'u}.
+\end{aligned}
+\]
+因此第二族渐近线的微分方程
+\[
+ 2D'\,du+D''\,dv=0,
+\]
+显然具有\emph{Riccati}方程的形式
+\[
+ \frac{du}{dv}+Au^2+Bu+C=0,
+\]
+其中\(A,B,C\)仅是\(v\)的函数。这类方程有一个熟知性质：四个特解的交比\((u_1u_2u_3u_4)\)为常数。结合\(u\)的意义，立即得到Paul Serret定理：\emph{任一母线与第二族中四条固定渐近线的四个交点，其交比为常数。}
+
+此外还可看出：\emph{只须知道第二族中的一条渐近线，就能用积分求出其余各条。}
+
+现在计算曲面法线的方向余弦\(X,Y,Z\)；它们由下列公式给出：
+\[
+ X=\frac{\detmat{m&n\\ q'+m'u&r'+n'u}}{\sqrt{M^2u^2+2Nu+\sen^2\theta}},
+ \qquad
+ Y=\frac{\detmat{n&l\\ r'+n'u&p'+l'u}}{\sqrt{M^2u^2+2Nu+\sen^2\theta}},
+\]
+\[
+ Z=\frac{\detmat{l&m\\ p'+l'u&q'+m'u}}{\sqrt{M^2u^2+2Nu+\sen^2\theta}}.
+\]
+若以\(X_0,Y_0,Z_0\)表示\(X,Y,Z\)在中心点\(u=-\dfrac{N}{M^2}\)处的值，并以\(\Omega\)表示一个介于0与\(\pi\)之间的角，即两个正方向\((X,Y,Z),(X_0,Y_0,Z_0)\)之间的夹角，则由\(\cos\Omega=XX_0+YY_0+ZZ_0\)可得
+\[
+ \cos\Omega=\frac{\sqrt{M^2\sen^2\theta-N^2}}{M\sqrt{M^2u^2+2Nu+\sen^2\theta}}.
+\]
+由于各根式以及\(M\)本身都取正值，可见角\(\Omega\)总是锐角；这一点从几何上也容易预见。
+
+现在为简单起见，假设准线是母线的一条正交轨迹；于是
+\[
+ \theta=\frac\pi2,
+ \qquad
+ ds^2=du^2+\left(u^2+2\frac{N}{M^2}u+\frac1{M^2}\right)M^2\,dv^2,
+\]
+并把参数\(v\)改成
+\[
+ v_1=\int M\,dv
+\]
+（于是\(v_1\)表示母线球面指标曲线的弧长），再令
+\[
+ -\frac{N}{M^2}=\alpha,
+ \qquad
+ \frac{\sqrt{M^2-N^2}}{M^2}=\beta,
+\]
+则\(\alpha,\beta\)是\(v_1\)的函数，线元化为
+\begin{equation}\tag{8}
+ ds^2=du^2+\{(u-\alpha)^2+\beta^2\}\,dv_1^2.
+\end{equation}
+上式中\(\cos\Omega\)即成
+\[
+ \cos\Omega=\frac{\beta}{\sqrt{(u-\alpha)^2+\beta^2}},
+\]
+故得Chasles公式
+\begin{equation}\tag{9}
+ \operatorname{tang}\Omega=\frac{u-\alpha}{\beta},
+\end{equation}
+这里\(\Omega\)现在取在\(-\dfrac\pi2\)与\(\dfrac\pi2\)之间；当切点从中心点移向所考察的点时，它的符号取决于切平面的旋转方向。
+
+当切点沿母线向一个方向或另一个方向移动时，切平面绕母线的旋转若从右向左或从左向右，便分别称该直纹曲面为\emph{左旋}或\emph{右旋}。在左旋直纹曲面上，曲线渐近线是右旋的；反之亦然（参见\S. 74，第159页）。
+
+由(9)立即得到若干值得注意的推论。把中心点处的切平面绕母线\((v)\)旋转角\(\Omega\)，所得平面在关系
+\[
+ u_1-\alpha=\beta\operatorname{tang}\Omega,
+\]
+所确定的点\((u_1,v)\)处与曲面相切；它又在公式
+\[
+ u_2-\alpha=-\beta\cot\Omega,
+\]
+所给出的点\((u_2,v)\)处成为曲面的法平面。因此
+\[
+ (u_1-\alpha)(u_2-\alpha)=-\beta^2.
+\]
+因此，每个通过一条母线的平面，都在该母线上确定两个点\(P_1,P_2\)，在这两点处它分别是曲面的切平面和法平面。当该平面绕母线旋转时，点对\(P_1,P_2\)生成一个对合，其中心就是中心点。
+
+最后，从(8)得曲率\(K\)为
+\[
+ K=-\frac{\beta^2}{\left[(u-\alpha)^2+\beta^2\right]^2};
+\]
+它恒为负，这也是自然的，因为渐近线是实的。沿任一不满足\(\beta=0\)的母线，K的绝对值在中心点处达到最大；离开中心点后，该绝对值递减并趋于零。
+
+\subsection*{\S. 119.\quad 依Minding方法变形直纹曲面。}
+
+现在来讨论本章的核心问题，即求出具有给定线元的一切直纹曲面。线元既已给定，并取为一般形式(3)，那么
+\[
+ \theta,
+ \quad M,
+ \quad N
+\]
+作为\(v\)的函数都是已知的。问题就在于确定\emph{六个未知函数}\(p,q,r,l,m,n\)；它们只依赖变量\(v\)，并须满足五个基本方程
+\begin{equation}\tag{10}
+\left\{
+\begin{aligned}
+ l^2+m^2+n^2&=1,\\
+ l'^2+m'^2+n'^2&=M^2,
+\end{aligned}
+\right.
+\end{equation}
+\begin{equation}\tag{11}
+\left\{
+\begin{aligned}
+ p'^2+q'^2+r'^2&=1,\\
+ lp'+mq'+nr'&=\cos\theta,\\
+ l'p'+m'q'+n'r'&=N.
+\end{aligned}
+\right.
+\end{equation}
+处理这个问题有两种不同的方法：可以先把\(l,m,n\)看作已知而求\(p,q,r\)，也可以反过来，假定\(p,q,r\)已知而求\(l,m,n\)。第一种就是Minding所提出的方法，它给出如下结果。
+
+设\(l,m,n\)是\(v\)的三个函数，并满足方程组(10)中的两个方程。方程组(11)便给出\(\pxChEightDerivatives\)的值，再由这些值经积分求得\(p,q,r\)。
+\ednote{原书第261页此句第一次也印作\(p,q,r\)，使前后两个三元组完全相同；但方程组(11)含有并确定的是\(p',q',r'\)，而下一步才由积分得到\(p,q,r\)。因此本译在第一次出现处采用导数读法，并在此明确保留原印信息。}
+
+现在若取
+\[
+ l=\sen\omega\cos\psi,
+ \quad
+ m=\sen\omega\sen\psi,
+ \quad
+ n=\cos\omega,
+\]
+其中\(\omega,\psi\)是\(v\)的两个函数，那么只剩下满足(10)中的第二个方程；它给出
+\[
+ \omega'^2+\psi'^2\sen^2\omega=M^2,
+\]
+因此可让\(\omega\)保持任意，而由下式的一次积分求得\(\psi\)：
+\[
+ \psi=\int\frac{\sqrt{M^2-\omega'^2}}{\sen\omega}\,dv.
+\]
+解中因任意函数\(\omega(v)\)而保留的任意性，在几何上可解释为：可以把曲面S变形，使它取得一个形状任意指定的方向锥。
+
+事实上，给定母线球面指标曲线，其上一点的坐标\(l,m,n\)只要使该指标曲线的弧长\(\varphi\)与准线弧长\(v\)满足关系
+\[
+ \varphi=\int M\,dv.
+\]
+就满足方程组(10)。相应曲面的方向锥于是具有指定的形状。
+
+再注意，把方程组(11)对\(p',q',r'\)求解可得
+\begin{equation}\tag{12}
+\left\{
+\begin{aligned}
+ p'&=l\cos\theta+\frac{l'N\pm a\sqrt{M^2\sen^2\theta-N^2}}{M^2},\\
+ q'&=m\cos\theta+\frac{m'N\pm b\sqrt{M^2\sen^2\theta-N^2}}{M^2},\\
+ r'&=n\cos\theta+\frac{n'N\pm c\sqrt{M^2\sen^2\theta-N^2}}{M^2},
+\end{aligned}
+\right.
+\end{equation}
+其中
+\[
+ a=\detmat{m&n\\ m'&n'},
+ \qquad
+ b=\detmat{n&l\\ n'&l'},
+ \qquad
+ c=\detmat{l&m\\ l'&m'}.
+\]
+且由于曲面不可展，由
+\[
+ M^2\sen^2\theta-N^2>0,
+\]
+根式的正负两个符号给出两组\(p',q',r'\)的值，并导出两个本质不同的曲面。
+
+于是得到结论：\emph{每个直纹曲面都能以两种不同方式变形，使其方向锥取得任意指定的形状。}
+
+确定这两个变形后曲面所需的计算只有积分。
+
+\subsection*{\S. 120.\quad Beltrami方法。}
+
+用前一种方法，确实可以求出与给定直纹曲面等距适用的一切直纹曲面。但是，如果要选定任意函数\(\omega(v)\)以满足某个给定条件，多半会遇到不可克服的困难。
+
+因此最好采用下面将要说明的第二种方法；这一方法源于Beltrami\srcfn{1}{《论直纹曲面的弯曲》，\emph{Annali di matem.}，1865年，第VII卷，第105页。}。
+
+该方法首先考察曲面变形时，准线能够取得哪些形状。对每一种这样的形状，注意到准线的测地曲率和角\(\theta\)在弯曲中不变，便可确定相应曲面的形状。问题的一般解只含一个任意函数，所以准线的可能形状必然受到某个条件的约束；我们所要寻找的正是这个条件。
+
+一般变形理论也能导出同一事实：通过曲面的变形，虽然可以使给定曲线取得任何形状，但这只有在母线本身也允许弯曲时才成立。
+
+考察准线的一个这样的形状，并沿用曲线论中的通常记号。以\(\sigma\)表示准线的密切平面与曲面切平面之间的夹角，则有
+\begin{equation}\tag{13}
+\left\{
+\begin{aligned}
+ l&=\alpha\cos\theta+(\xi\cos\sigma+\lambda\sen\sigma)\sen\theta,\\
+ m&=\beta\cos\theta+(\eta\cos\sigma+\mu\sen\sigma)\sen\theta,\\
+ n&=\gamma\cos\theta+(\zeta\cos\sigma+\nu\sen\sigma)\sen\theta.
+\end{aligned}
+\right.
+\end{equation}
+利用Frenet公式计算\(l',m',n'\)，则\(l,m,n\)所须满足的基本方程组(10)、(11)化为下面两个方程：
+\[
+ \theta'+\frac{\cos\sigma}{\rho}=-\frac{N}{\sen\theta}
+\]
+\[
+\begin{aligned}
+&\sen^2\theta\left(\theta'+\frac{\cos\sigma}{\rho}\right)^2\\
+&\quad+\left\{\frac{\cos\theta}{\rho}+(\cos\sigma\sen\theta)'+\frac{\sen\sigma\sen\theta}{T}\right\}^2\\
+&\quad+\left\{(\sen\sigma\sen\theta)'-\frac{\cos\sigma\sen\theta}{T}\right\}^2=M^2\srcfnmark{2},
+\end{aligned}
+\]
+\srcfntext{2}{为简便起见，\((\cos\sigma\sen\theta)'\)、\((\sen\sigma\sen\theta)'\)表示括号内函数对\(v\)的导数。}
+即
+\begin{equation}\tag{14}
+ \frac{\cos\sigma}{\rho}=-\frac{N}{\sen\theta}-\theta'\srcfnmark{1}
+\end{equation}
+\srcfntext{1}{这个方程表示准线的测地曲率在弯曲中不变（参见\S. 117）。}
+\begin{equation}\tag{15}
+\begin{aligned}
+&\left\{\frac{\cos\theta}{\rho}+(\cos\sigma\sen\theta)'+\frac{\sen\sigma\sen\theta}{T}\right\}^2\\
+&\qquad+\left\{(\sen\sigma\sen\theta)'-\frac{\cos\sigma\sen\theta}{T}\right\}^2=M^2-N^2.
+\end{aligned}
+\end{equation}
+未知量有
+\[
+ \sigma,
+ \quad \rho,
+ \quad T
+\]
+显然，若从(14)求出\(\sigma\)并代入(15)，后者便化为关系式
+\begin{equation}\tag{16}
+  f\left(v,\rho,T,\frac{d\rho}{dv}\right)=0,
+\end{equation}
+它约束变形后准线的第一曲率半径和第二曲率半径。
+
+每一条曲线，只要它的曲率半径与挠率半径满足(16)，就对应于该直纹曲面的一个特殊变形；这个变形的各元素可由(14)、(13)计算。这样，当前问题便同曲线论中的另一个问题联系起来，即由曲线的内蕴方程确定曲线（\S\S. 8, 9）。
+
+\subsection*{\S. 121.\quad 把准线变为渐近线的变形。}
+
+现在给出上述一般结果的几个最重要应用。
+
+首先考虑把直纹曲面变形，使准线成为渐近线的问题。为此必须令
+\[
+ \sigma=0\quad (\text{或 }\sigma=\pi)
+\]
+并得
+\[
+ (a)\qquad \frac1\rho=\mp\left(\frac{N}{\sen\theta}+\theta'\right),
+\]
+其中右端的符号自然由\(\rho\)须取正值这一条件决定。于是(15)给出
+\[
+ (b)\qquad \frac1T=\frac{\sqrt{M^2\sen^2\theta-N^2}}{\sen^2\theta}.
+\]
+所以：\emph{每个直纹曲面都可以弯曲，使曲面上任意画出的一条曲线变成渐近线。变形后的准线由内蕴方程(a)、(b)唯一确定。}\srcfn{1}{这样，对于直纹曲面，我们证明了此前在第249页仅作一般陈述的定理：总能弯曲一个曲面，使其任意一条曲线成为渐近线。这里的变形是确定的，因为我们只考察保持母线为直线的直纹曲面弯曲。}
+
+考察准线是测地线这一特殊情形；此时
+\[
+ \frac1\rho=0,
+\]
+也就是说，变形后的准线是一条直线。因此：\emph{直纹曲面的每一条测地线都可以通过曲面变形而展直。}
+
+为了得到这个情形下的简单公式，取变形后的准线为\(z\)轴，于是
+\[
+ p=0,
+ \quad q=0,
+ \quad r=v,
+ \qquad n=\cos\theta;
+\]
+并令
+\[
+ l=\sen\theta\cos\psi,
+ \quad m=\sen\theta\sen\psi;
+\]
+由
+\[
+ l'^2+m'^2+n'^2=M^2
+\]
+便得到（同第261页）
+\[
+ \psi=\int\frac{\sqrt{M^2-\theta'^2}}{\sen\theta}\,dv;
+\]
+所以变形后曲面的方程为
+\[
+ x=u\sen\theta\cos\psi,
+ \quad y=u\sen\theta\sen\psi,
+ \quad z=v+u\cos\theta.
+\]
+特别地，当\(\theta=\dfrac\pi2\)时，也就是曲面由准线的副法线生成时，变形后的曲面是一个正锥状面；在此情形下
+\[
+ M=\frac1T,
+\]
+其中\(\dfrac1T\)是原准线的挠率，故
+\[
+ \psi=\int\frac{dv}{T}.
+\]
+更特别地，若原准线具有常挠率，变形后的正锥状面就是极小直纹螺旋面。
+
+反过来，若要寻找与这一极小直纹螺旋面等距适用的一切直纹曲面，而该螺旋面的线元（第237页）为
+\[
+ ds^2=du^2+\left(\frac{u^2}{m^2}+1\right)dv^2,
+\]
+则有
+\[
+ \sigma=\frac\pi2,
+ \quad \theta=\frac\pi2,
+ \quad M=\frac1m,
+ \quad N=0,
+\]
+故(15)给
+\[
+ \frac1T=\frac1m.
+\]
+于是：\emph{与螺旋参数为\(m\)的极小直纹螺旋面等距适用的直纹曲面，恰好是由挠率恒为\(\dfrac1m\)的曲线之副法线生成的全部曲面。}
+
+\subsection*{\S. 122.\quad 其他变形。}
+
+现在假设当前的准线是母线的一条正交轨迹；若通过曲面变形使它成为渐近线，那么它的主法线便是变形后曲面的母线。因此：
+\emph{弯曲一个直纹曲面时，可以使其一条正交轨迹的主法线成为母线。}
+
+现在来把曲面变形，使其准线\(u=0\)成为平面曲线。为此只须在(15)中令\(\dfrac1T=0\)，便得到决定\(\rho\)的一阶方程
+\[
+ \psi\left(v,\rho,\frac{d\rho}{dv}\right)=0
+\]
+由此可得：\emph{可以用\(\infty^1\)种方式变形一个直纹曲面，使其上任意给定的一条曲线变成平面曲线。}
+
+特别地，如果给定曲线是母线的一条正交轨迹，那么
+\[
+ \theta=\frac\pi2,
+ \quad \frac1T=0,
+\]
+则(15)成
+\[
+ \sigma'^2=M^2-N^2,
+\]
+所以经积分
+\[
+ \sigma=\int\sqrt{M^2-N^2}\,dv,
+\]
+而由(14)可知，变形后的平面曲线满足
+\[
+ \rho=-\frac{\cos\sigma}{N},
+\]
+随后便可用积分求出这条变形后的平面曲线（\S. 9）。
+
+最后考察能否通过变形使一条预先指定的曲线成为曲率线。若
+\[
+ X=\lambda\cos\sigma-\xi\sen\sigma,
+ \quad Y=\mu\cos\sigma-\eta\sen\sigma,
+ \quad Z=\nu\cos\sigma-\zeta\sen\sigma
+\]
+是沿变形后准线的曲面法线之方向余弦，那么依\S. 18必须有
+\[
+ \frac1T=\frac{d\sigma}{dv};
+\]
+利用(14)和前式，从(15)中消去\(\dfrac1\rho,\dfrac1T\)，便得到一个决定\(\sigma\)的一阶微分方程。当然这里假设并不满足\(\theta=\dfrac\pi2\)，否则曲面必须是可展曲面\srcfn{1}{刚才的计算也证实这一点，因为此时(15)的左端为零。}。
+
+所以：\emph{总能把一个直纹曲面变形，使其上一条任意曲线成为曲率线，只要这条曲线不是母线的正交轨迹。}
+
+再注意，若给定曲线是测地线，那么当它成为曲率线时也会成为平面曲线；这在几何上是明显的，也可由公式看出。事实上(14)给出
+\[
+ \cos\sigma=0,\quad \text{即 } \frac1T=0,
+\]
+而(15)化为
+\[
+ \frac{\cos^2\theta}{\rho^2}+\cos^2\theta\,\sigma'^2=M^2-N^2,
+\]
+这个方程确定\(\rho\)，从而确定变形后的曲线。
+
+\subsection*{\S. 123.\quad 与旋转曲面等距适用的直纹曲面。}
+
+最后解决如下问题：\emph{哪些实直纹曲面与旋转曲面等距适用？}
+
+这样的曲面必须容许一个映入自身的连续变形；在这一变形中，整族母线也映入自身（\S. 115）。这里由于变形是连续的，连与二次曲面等距适用的情形也不排除（第115节）。
+
+设
+\[
+ ds^2=du^2+\left\{(u-\alpha(v))^2+\beta^2(v)\right\}dv^2
+\]
+为该曲面的线元，其中坐标线取作母线及其正交轨迹。在上述连续变形中，腰线沿自身滑动，因而始终与母线成定角，并由此成为测地线（\S. 117）；此外，曲面的曲率\(K_0\)沿腰线保持常数。在腰线\(u=\alpha\)上有
+\[
+ K_0=-\frac1{\beta^2},
+\]
+故可得
+\[
+ \beta(v)=k\quad (k\text{ 为常数}).
+\]
+再以\(\omega\)表示母线与腰线之间的（常）夹角，则
+\[
+ \cot\omega=\frac1\beta\frac{du}{dv}=\frac1k\alpha'(v),
+\]
+故
+\[
+ \alpha(v)=kv\cot\omega,
+\]
+其中加法常数可以并入\(u\)。
+
+因此所求曲面的线元必具有形式
+\begin{equation}\tag{17}
+ ds^2=du^2+\left\{(u-k\cot\omega\,v)^2+k^2\right\}dv^2 .
+\end{equation}
+当\(\omega=\dfrac\pi2\)时，它是螺旋参数为\(k\)的极小直纹螺旋面的线元；而当
+\[
+ \omega\ne\frac\pi2
+\]
+时，它属于单叶旋转双曲面；该曲面的子午双曲线之实半轴和虚半轴\(a,b\)由下式给出：
+\[
+ a=k\cot\omega,\quad b=k,
+\]
+这一点马上就会看到\srcfn{1}{直接验证留给读者。}。因此：\emph{与旋转曲面等距适用的实直纹曲面，只有极小直纹螺旋面和单叶旋转双曲面的变形曲面。}
+
+第一类曲面的全体已在\S. 121中刻画：它们就是由常挠率曲线的副法线生成的曲面。
+
+对于第二类，有一个归于Laguerre的优美定理；现在用如下方式重新得到它。
+
+在(17)中令
+\[
+ \frac{k}{\sen\omega}v=v_1,
+ \qquad u-k\cot\omega\,v=u_1,
+\]
+便得到所论曲面的线元
+\[
+ ds^2=du_1^2+2\cos\omega\,du_1\,dv_1+\left(\frac{u_1^2\sen^2\omega}{k^2}+1\right)dv_1^2
+\]
+与原来的记号比较可得
+\[
+ \omega=\theta,
+ \qquad M=\frac{\sen\omega}{k},
+ \qquad N=0.
+\]
+把这些值代入(15)，并注意\(\sigma=\dfrac\pi2\)，得到
+\begin{equation}\tag{18}
+ \frac{\cos\omega}{\rho}+\frac{\sen\omega}{T}=\frac{\sen\omega}{k},
+\end{equation}
+由此得到定理：\emph{在曲面变形中（母线仍保持为直线），单叶双曲面的腰圆所变成的曲线，都是Bertrand（贝特朗）曲线。}
+
+这也检验了上述性质：前面的线元确实属于单叶双曲面。事实上，若把腰线变成平面曲线（\S. 122），由(18)有
+\[
+ \frac1T=0,
+ \qquad \rho=k\cot\omega,
+\]
+于是腰线变为半径\(=k\cot\omega\)的圆；相应曲面显然是单叶双曲面，而这个圆正是它的腰圆。
+
+\begin{center}\rule{4em}{0.4pt}\end{center}

@@ -1,0 +1,131 @@
+\subsection*{§. 194.\\ 双曲度量。}
+
+现在给出具有实绝对形的 Cayley 度量公式；在齐次坐标中，把绝对形方程写成
+\[
+ x_1^2+x_2^2+\cdots+x_n^2-x_0^2=0.
+\]
+如前所述，把公式变换为齐次坐标以后，该度量与 Beltrami 度量（§. 191）一致。
+
+仿照上一节的做法直接建立这些公式。双曲空间表示在绝对形的\emph{内部}区域（§. 192），即双曲空间中任意有限距离点的坐标满足不等式
+\[
+ x_0^2-x_1^2-x_2^2-\cdots-x_n^2>0
+\]
+并固定齐次坐标中的任意因子，使
+\[
+\tag{31}
+ x_0^2-x_1^2-x_2^2-\cdots-x_n^2=x_0^2-\sum_i x_i^2=1.
+\]
+令
+\[
+ \Omega_{xx}=x_0^2-\sum_i x_i^2,
+ \qquad \Omega_{xx'}=x_0x'_0-\sum_i x_ix'_i,
+\]
+由 (23) 得
+\[
+ M=\frac{\Omega_{xx'}+\sqrt{\Omega_{xx'}^2-1}}
+ {\Omega_{xx'}-\sqrt{\Omega_{xx'}^2-1}},
+\]
+于是两点的距离 $\delta$ 为
+\[
+ \delta=\frac R2\log M
+\]
+亦即
+\[
+\tag{32}
+ \cosh\left(\frac\delta R\right)=x_0x'_0-\sum_i x_ix'_i.
+\]
+令两点无限接近，便得到空间线元 $ds$ 的公式（参见 §. 193）
+\[
+ ds^2=R^2(dx_1^2+dx_2^2+\cdots+dx_n^2-dx_0^2);
+\]
+如已知（§. 191），这个 $ds^2$ 属于半径为 $R$ 的伪球空间。
+
+现在考察一个点，其齐次坐标为
+\[
+ \xi_0,\xi_1,\xi_2,\ldots,\xi_n,
+\]
+该点在绝对形之外，因而
+\[
+ \xi_1^2+\xi_2^2+\cdots+\xi_n^2>\xi_0^2,
+\]
+并在此固定比例因子，使
+\[
+\tag{31*}
+ \sum_i\xi_i^2-\xi_0^2=1.
+\]
+点 $(\xi_i)$ 关于绝对形的极超平面，以方程
+\[
+\tag{33}
+ \sum_i\xi_i x_i-\xi_0x_0=0.
+\]
+表示双曲空间的一个测地超曲面。把由 (31) 联系的 $x_i$ 称为点的 Weierstrass 坐标，把由 (31*) 联系的 $\xi_i$ 称为超平面的 Weierstrass 坐标。
+
+从点 $(x)$ 向两个无限邻近点 $(x+dx)$、$(x+\delta x)$ 作两个线元，则它们的正交条件写成
+\[
+ \sum_i dx_i\,\delta x_i-dx_0\,\delta x_0=0.
+\]
+与 §. 192 一样，由此可知，在 Cayley 度量中，过一点向一个超平面作的法线，是连接该点与超平面极点的直线。
+
+因此，若以直线上一点的坐标 $(x_i)$ 和该点处垂直于直线的超平面坐标 $(\xi_i)$ 来定义一条直线，则直线上任一点的坐标 $(x'_i)$ 由类似于 (28) 的公式给出：
+\[
+\tag{34}
+ x'_i=x_i\cosh\left(\frac\delta R\right)+\xi_i\senh\left(\frac\delta R\right),
+ \qquad i=0,1,2,\ldots,n;
+\]
+同样，垂直于直线的超平面坐标 $\xi'_i$，在 $(x'_i)$ 处为
+\[
+\tag{34*}
+ \xi'_i=x_i\senh\left(\frac\delta R\right)+\xi_i\cosh\left(\frac\delta R\right).
+\]
+在双曲度量中，直线是无限的，并有两个互异的无穷远点，即它与绝对形的两个交点；从空间中每一点可向一条给定直线作两条互异的平行线（非欧几里得意义下），等等（参见第十二章）。
+
+若两个超平面在绝对形内部相交，它们的夹角 $\varphi$ 由公式
+\[
+\tag{35}
+ \cos\varphi=\sum_i\xi_i\xi'_i-\xi_0\xi'_0;
+\]
+给出；距离 $\delta$，即点 $(x)$ 到超平面 $(\xi)$ 的距离，则由公式
+\[
+\tag{36}
+ \senh\left(\frac\delta R\right)=\sum_i x_i\xi_i-x_0\xi_0.
+\]
+公式 (35) 引出\emph{角元素}，它与线元对偶对应。考察一族单参数超平面，其坐标 $\xi$ 表示为参数 $t$ 的函数；可以考察该族中一个超平面与下一超平面形成的无穷小角 $d\varphi$。为计算称为角元素的 $d\varphi$，在 (35) 中给参数 $t$ 一个无穷小增量 $h$，并按 $h$ 的幂展开两边；得到
+\[
+ \varphi=h\left(\frac{d\varphi}{dt}\right)+\cdots,
+\]
+\[
+ \xi'=\xi+h\frac{d\xi}{dt}+\frac{h^2}{2}\frac{d^2\xi}{dt^2}+\cdots
+\]
+从而
+\[
+\tag{a}
+\begin{aligned}
+1-\frac{h^2}{2}\left(\frac{d\varphi}{dt}\right)^2+\cdots
+&=1+h\left(\sum_i\xi_i\frac{d\xi_i}{dt}-\xi_0\frac{d\xi_0}{dt}\right) \\
+&\quad +\frac{h^2}{2}\left(\sum_i\xi_i\frac{d^2\xi_i}{dt^2}-\xi_0\frac{d^2\xi_0}{dt^2}\right)+\cdots .
+\end{aligned}
+\]
+但因
+\[
+ \sum_i\xi_i^2-\xi_0^2=1,
+\]
+可得
+\[
+ \sum_i\xi_i\frac{d\xi_i}{dt}-\xi_0\frac{d\xi_0}{dt}=0,
+\]
+\[
+ \sum_i\xi_i\frac{d^2\xi_i}{dt^2}-\xi_0\frac{d^2\xi_0}{dt^2}
+ =-\sum_i\left(\frac{d\xi_i}{dt}\right)^2+\left(\frac{d\xi_0}{dt}\right)^2,
+\]
+比较 (a) 中 $h^2$ 的系数，得到所求公式
+\[
+\tag{37}
+ d\varphi^2=\sum_i d\xi_i^2-d\xi_0^2.
+\]
+这个公式适用于任意两个无限邻近的超平面；因而若把超平面坐标 $\xi$ 表示为 $n$ 个独立变量 $u_r\ (\pxChThirteenIndependentRange)$ 的函数，则 (37) 的右端是二次微分形式
+\[
+ \sum_{r,s}a'_{rs}\,du_r\,du_s
+\]
+（不定形式），其曲率立即可见为常数 $=+1$。
+
+\ednote{原书第440页把上述 \(n\) 个独立变量的指标范围印作 \(r=1,2,4\)；这与“\(n\) 个独立变量”以及随后对 \(r,s\) 的一般求和相矛盾。故本译正文改作 \(r=1,2,\ldots,n\)，同时在此保留并明确记录原印读法。}

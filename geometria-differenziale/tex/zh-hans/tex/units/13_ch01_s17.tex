@@ -1,0 +1,103 @@
+\subsection*{\S. 17.\quad 极可展面的回归棱。}
+现在联系给定曲线 C，来研究轨迹曲线 \(C_0\)，它是点 \(M_0\) 的轨迹，即极可展面的回归棱，也就是各密切球面球心的轨迹。
+
+首先，把 (32) 对 \(s\) 微分，得到
+\begin{equation}\tag{32*}
+\begin{aligned}
+\frac{\diff x_0}{\diff s}&=-\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\}\lambda,\qquad
+\frac{\diff y_0}{\diff s}=-\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\}\mu,\\
+\frac{\diff z_0}{\diff s}&=-\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\}\nu.
+\end{aligned}
+\end{equation}
+先考察下列表达式为零的特殊情形：
+\[
+\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right).
+\]
+这时，由 (32*) 可知，\(x_0,y_0,z_0\) 都是常数，也就是说，密切球面的球心不动。另一方面，对 (33) 微分得到
+\begin{equation}\tag{33*}
+R\frac{\diff R}{\diff s}=T\frac{\diff\rho}{\diff s}\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\},
+\end{equation}
+所以在这种情形下 \(\dfrac{\diff R}{\diff s}=0\)，即 R 为常数；曲线因而画在半径为 R 的球面上。反过来，若曲线是球面曲线，它的所有法平面都经过球心，而该球面在每一点都是密切球面。由此可见：\emph{内蕴方程}
+\[
+\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)=0
+\]
+\emph{是球面曲线的特征方程}\srcfn{1}{应当注意，对于任意曲线 C，若 \(\dfrac{\rho}{T}+\dfrac{\diff}{\diff s}\left(T\dfrac{\diff\rho}{\diff s}\right)\) 在某一点为零，则密切球面在该处是驻定的，而曲线 \(C_0\) 在对应点有一个回归点。}。
+
+若曲线 C 不是球面曲线，密切球面球心便形成一条真正的轨迹曲线 \(C_0\)。用下标 0 表示这条曲线的各要素，由 (32*) 得
+\begin{equation}\tag{34}
+\frac{\diff s_0}{\diff s}=\varepsilon\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\},
+\end{equation}
+其中 \(\varepsilon\) 表示正或负的单位；若约定 \(s_0\) 随 \(s\) 增大，就必须使 \(\varepsilon\) 取与 \(\dfrac{\rho}{T}+\dfrac{\diff}{\diff s}\left(T\dfrac{\diff\rho}{\diff s}\right)\) 相同的符号。
+
+于是有
+\begin{equation}\tag{35}
+\alpha_0=-\varepsilon\lambda,
+\qquad
+\beta_0=-\varepsilon\mu,
+\qquad
+\gamma_0=-\varepsilon\nu,
+\end{equation}
+再微分一次，得到
+\[
+\frac{\diff s_0}{\rho_0}\xi_0=-\varepsilon\frac{\diff s}{T}\xi,
+\qquad
+\frac{\diff s_0}{\rho_0}\eta_0=-\varepsilon\frac{\diff s}{T}\eta,
+\qquad
+\frac{\diff s_0}{\rho_0}\zeta_0=-\varepsilon\frac{\diff s}{T}\zeta.
+\]
+由此
+\begin{equation}\tag{36}
+\frac{\diff s_0}{\rho_0}=\varepsilon'\frac{\diff s}{T},
+\end{equation}
+其中 \(\varepsilon'\) 表示正或负的单位，其正负取决于 \(\dfrac{1}{T}\) 为正还是为负。
+
+所以有
+\begin{equation}\tag{37}
+\xi_0=-\varepsilon\varepsilon'\xi,
+\qquad
+\eta_0=-\varepsilon\varepsilon'\eta,
+\qquad
+\zeta_0=-\varepsilon\varepsilon'\zeta,
+\end{equation}
+由这些式子和 (35) 可得
+\begin{equation}\tag{38}
+\lambda_0=-\varepsilon'\alpha,
+\qquad
+\mu_0=-\varepsilon'\beta,
+\qquad
+\nu_0=-\varepsilon'\gamma,
+\end{equation}
+最后再微分，并利用 (37)，得到
+\begin{equation}\tag{39}
+\frac{\diff s_0}{T_0}=\varepsilon\frac{\diff s}{\rho}.
+\end{equation}
+前面的公式证明，在两条曲线 \(C,C_0\) 中，每一条的切线都平行于另一条的副法线，而二者的主法线互相平行；撇开符号的精确确定不谈，从几何上也很容易\emph{先验地}看出这些结果。
+
+应当注意，只用 (34)、(36)、(39) 三个公式
+\[
+\frac{\diff s_0}{\diff s}=\varepsilon\left\{\frac{\rho}{T}+\frac{\diff}{\diff s}\left(T\frac{\diff\rho}{\diff s}\right)\right\},
+\qquad
+\frac{\diff s_0}{\rho_0}=\varepsilon'\frac{\diff s}{T}
+\]
+\[
+\frac{\diff s_0}{T_0}=\varepsilon\frac{\diff s}{\rho}
+\]
+就足以由 C 的内蕴方程，通过一次求积算出 \(C_0\) 的内蕴方程。因此，若 C 是柱面螺线，则 \(C_0\) 也是柱面螺线；若 C 还是圆螺线或柱锥螺线，则 \(C_0\) 也相应如此。
+
+对于球面曲线，密切球面的半径为常数；但由 (33*) 可见，还有第二种半径为常数的情形，即 \(\dfrac{\diff\rho}{\diff s}=0\)，也就是曲线的第一曲率为常数。这时，(32) 中的第三项消失，密切球面的球心与密切圆的圆心重合；对于这些圆心的轨迹曲线 \(C_0\)，此处有 \(\varepsilon'=\varepsilon\)，由前面的公式得到
+\[
+\diff s_0=\varepsilon\frac{\rho}{T}\,\diff s
+\]
+\[
+\rho_0=\rho,
+\qquad
+T_0T=\rho^2
+\]
+\[
+\xi_0=-\xi,
+\qquad
+\eta_0=-\eta,
+\qquad
+\zeta_0=-\zeta.
+\]
+因此：\emph{曲线 \(C_0\)，即第一曲率为常数 \(\dfrac{1}{a}\) 的曲线 C 的各密切圆圆心的轨迹，具有同一第一曲率；两条曲线的挠率之积等于共同第一曲率的平方 \(\dfrac{1}{a^2}\)；此外，\(C,C_0\) 之间的关系是对合的，也就是说，C 是 \(C_0\) 的各曲率中心的轨迹。}

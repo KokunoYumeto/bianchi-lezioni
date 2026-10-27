@@ -1,0 +1,99 @@
+\subsection*{\S. 11.\quad 特殊柱面螺线。}
+为了建立有关柱面螺线的一般公式，令 \(z\) 轴平行于柱面的母线，并设一点的坐标 \(x,y\) 位于柱面的正截面 \(z=0\) 上，且由该截面自身的弧长 \(u\) 按下列公式表示：
+
+\[
+x=x(u),\qquad y=y(u),
+\]
+那么立即可见，螺线上一个动点的坐标为
+\[
+x=x(u),\qquad y=y(u),\qquad z=u\cot\varepsilon^{(1)},
+\]
+\srcfntext{1}{为简单起见，弧长 \(u\) 从正截面与螺线相交的点起算。}
+其中 \(\varepsilon\) 表示螺线在柱面母线上的恒定倾角（可设为锐角）。
+
+应用前面各节的公式，得到
+\[
+\diff s=\frac{\diff u}{\sen\varepsilon},\qquad
+s=\frac{u}{\sen\varepsilon}^{(2)},
+\]
+\srcfntext{2}{螺线的弧长 \(s\) 从它在正截面 \(z=0\) 上的起点起算。}
+\[
+\alpha=\sen\varepsilon\,x'(u),\qquad
+\beta=\sen\varepsilon\,y'(u),\qquad
+\gamma=\cos\varepsilon,
+\]
+\[
+\frac{\diff\alpha}{\diff s}=\sen^2\varepsilon\,x''(u),\qquad
+\frac{\diff\beta}{\diff s}=\sen^2\varepsilon\,y''(u),\qquad
+\frac{\diff\gamma}{\diff s}=0,
+\]
+其中撇号表示对 \(u\) 求导。于是，螺线的第一曲率为
+\[
+\frac{1}{\rho}=\sen^2\varepsilon\sqrt{x''^2(u)+y''^2(u)},
+\]
+即
+\begin{equation}\tag{15}
+\frac{1}{\rho}=\frac{\sen^2\varepsilon}{R},
+\end{equation}
+其中 \(\dfrac{1}{R}\) 是正截面的曲率。对于挠率 \(\dfrac{1}{T}\)，再由公式
+\[
+\frac{\rho}{T}=-\frac{\gamma}{\nu},
+\]
+并注意到 \(\nu=\dfrac{\pi}{2}\pm\varepsilon\)，可得
+\begin{equation}\tag{16}
+\frac{1}{T}=\pm\frac{\sen\varepsilon\cos\varepsilon}{R}.
+\end{equation}
+\ednote{1902年意大利文原书此处直接排作 \(\nu=\pi/2\pm\varepsilon\)，这与本版此前以 \(\nu\) 表示副法线的方向余弦不相容。1899年经作者授权的德译本第18页仍使用方向角记号，排作 \(\rho/T=-\cos\gamma/\cos\nu\)，继而令 \(\nu=\pi/2\pm\varepsilon\)。因此，在意大利文第二版的方向余弦记号下，此处意旨应为 \(\nu=\cos(\pi/2\pm\varepsilon)=\mp\sin\varepsilon\)。正文保留原书所印关系，未作静默改写。}
+根据第4节所确立的判据，或由直接的几何考察可知，上号适用于左旋螺线，下号适用于右旋螺线。
+
+由这些公式可知，只有直圆柱面上的螺线，其曲率半径和挠率半径才都是常数。
+
+这样的螺线称为\emph{圆螺线}\srcfn{1}{它可以看成由一个点生成：该点沿圆柱面的一条母线作匀速运动，同时这条母线绕轴作匀速转动。}。按照皮瑟（Puiseux）的说法，它的特征性质是两个曲率半径均为常数；这等价于它的每一部分都能与自身重合。由第8节的基本定理可知，除直线和圆以外，只有它具有后一性质。
+
+由公式 (15)、(16) 可见，从内蕴方程确定一条螺线的问题，归结为正截面的同类问题；因此：\emph{给定一条柱面螺线的内蕴方程，就能通过求积用有限形式求出它}\srcfn{2}{从第9节的一般说明也立即可得同一结论：在黎卡提基本方程 (14) 中，由于 \(\dfrac{T}{\rho}\) 是常数 \(=k\)，我们立即知道两个常数特解，即二次方程 \(\sigma^2+2k\sigma-1=0\) 的两个根：
+\[
+\sigma_1=-k+\sqrt{k^2+1},\qquad \sigma_2=-k-\sqrt{k^2+1}.
+\]
+}。
+
+现在把这些考察应用于另一条螺线；除圆螺线外，它也特别值得一提，称为\emph{柱锥螺线}。
+
+用下列内蕴方程定义这条曲线：
+\[
+\rho=as,
+\qquad
+T=bs,
+\]
+其中 \(a,b\) 为常数。这条螺线所在柱面的正截面，其曲率半径与弧长成正比；由第9节末尾的说明，该截面因而是一条对数螺线。所以，我们这条螺线的方程可以写成
+\[
+x=Ae^{ht}\cos t,
+\qquad y=Ae^{ht}\sen t,
+\qquad z=Be^{ht},
+\]
+其中 \(t\) 是确定曲线上各点的变参数，\(A,B,h\) 为常数。因此，该螺线画在曲面
+\[
+x^2+y^2-\frac{A^2}{B^2}z^2=0,
+\]
+上；这是一个以 \(z\) 轴为旋转轴、以原点为顶点的旋转锥面。
+
+它以恒定角度截切锥面的母线，即为锥面的一条\emph{等角线}\srcfn{1}{在任一旋转曲面上，以恒定角度截切各条子午线的曲线称为等角线。}。事实上，螺线切线的方向余弦为
+\[
+\alpha=\frac{A(h\cos t-\sen t)}{\sqrt{A^2+h^2(A^2+B^2)}},
+\qquad
+\beta=\frac{A(h\sen t+\cos t)}{\sqrt{A^2+h^2(A^2+B^2)}},
+\qquad
+\gamma=\frac{Bh}{\sqrt{A^2+h^2(A^2+B^2)}}
+\]
+而锥面母线的方向余弦为
+\[
+a=\frac{A\cos t}{\sqrt{A^2+B^2}},
+\qquad
+b=\frac{A\sen t}{\sqrt{A^2+B^2}},
+\qquad
+c=\frac{B}{\sqrt{A^2+B^2}},
+\]
+所以
+\[
+a\alpha+b\beta+c\gamma=\frac{h\sqrt{A^2+B^2}}{\sqrt{A^2+h^2(A^2+B^2)}}=\hbox{常数}.
+\]
+“柱锥螺线”这一名称便来自这些性质\srcfn{2}{应当注意，把锥面展平到一个平面上时，柱锥螺线展开成一条对数螺线。}。

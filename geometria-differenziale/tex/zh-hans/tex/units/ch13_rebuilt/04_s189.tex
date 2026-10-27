@@ -1,0 +1,89 @@
+\subsection*{§. 189.\\ 三维双曲空间的运动。}
+
+具有常曲率的 $n$ 维空间容许一个含 $\frac{n(n+1)}2$ 个参数的连续运动群（§. 160）。对于负曲率且 $n=2$ 的情形，上一章已用复变量 $z$ 上具有实系数的线性代换给出了这些运动的解析表示。现在拟为三维双曲空间解决相应问题，以得到 Poincaré 在《Acta mathematica》第3卷中建立的重要公式。
+
+在双曲空间的每个运动下，极限平面作为无穷远点的轨迹必须变为自身。再者，任意两个垂直于极限平面的球面必须变为另外两个同样的球面，并且保持相交角；因而极限平面上的相应变换必须是共形的，并把圆变为圆，所以它是 Möbius 的圆亲和变换。
+
+现在设双曲空间的 $ds^2$ 由公式
+\[
+\tag{14}
+ ds^2=\frac{d\xi^2+d\eta^2+d\zeta^2}{\zeta^2},
+\]
+给出，极限平面为 $\zeta=0$。
+
+在这个平面上铺展复变量的值
+\[
+ z=\xi+i\eta;
+\]
+双曲空间的每个运动都在极限平面上对应一个圆亲和变换；该变换由复变量 $z$ 上的线性代换（§. 53，脚注）
+\[
+\tag{15}
+ z'=\frac{\alpha z+\beta}{\gamma z+\delta}
+\]
+或共轭变量 $z_0$ 上的另一代换
+\[
+\tag{16}
+ z'=\frac{\alpha z_0+\beta}{\gamma z_0+\delta}.
+\]
+表示。但若先限于考察可由无穷小运动连续生成的直接运动，就必须排除公式 (16)。
+
+现在要找出把一点的坐标 $\xi,\eta,\zeta$（该点记作 $P$）与另一点的坐标 $\xi',\eta',\zeta'$（该点记作 $P'$）联系起来的公式；在与 (15) 对应的运动下，$P$ 移到后者。只须依 Poincaré（同前引文）按下述方法进行。通过 $P$ 且垂直于极限平面的球面，变为通过 $P'$ 且垂直于极限平面的球面。采用通常的记号（§. 53），令
+\[
+\tag{a}
+ Azz_0+Bz+B_0z_0+C=0
+\]
+为这些通过 $P'$ 的球面之一在极限平面上的圆方程；于是令
+\[
+ \rho'^2=\xi'^2+\eta'^2+\zeta'^2,
+\]
+便有
+\[
+\tag{a*}
+ A\rho'^2+Bz'+B_0z'_0+C=0
+\]
+作为该球面本身的方程。在代换 (15) 下，圆 (a) 变为
+\[
+\begin{aligned}
+&(A\alpha\alpha_0+B\alpha\gamma_0+B_0\alpha_0\gamma+C\gamma\gamma_0)zz_0
+ +(A\alpha\beta_0+B\alpha\delta_0+B_0\beta_0\gamma+C\gamma\delta_0)z\\
+&\quad +(A\alpha_0\beta+B_0\alpha_0\delta+B\beta\gamma_0+C\delta\gamma_0)z_0
+ +(A\beta\beta_0+B\beta\delta_0+B_0\beta_0\delta+C\delta\delta_0)=0;
+\end{aligned}
+\]
+而以此圆为大圆的球面必须通过 $P=(\xi,\eta,\zeta)$，故有
+\[
+\begin{aligned}
+&A(\alpha\alpha_0\rho^2+\alpha\beta_0z+\alpha_0\beta z_0+\beta\beta_0)
++B(\alpha\gamma_0\rho^2+\alpha\delta_0z+\beta\gamma_0z_0+\beta\delta_0)\\
+&+B_0(\gamma\alpha_0\rho^2+\gamma\beta_0z+\delta\alpha_0z_0+\delta\beta_0)
++C(\gamma\gamma_0\rho^2+\gamma\delta_0z+\gamma_0\delta z_0+\delta\delta_0)=0.
+\end{aligned}
+\]
+每当常数 $A,B,C$ 满足 (a) 时，也必须满足最后这个方程；比较系数便得到 Poincaré 公式：
+\[
+\tag{17}
+\begin{cases}
+\rho'^2=\dfrac{\alpha\alpha_0\rho^2+\alpha\beta_0z+\alpha_0\beta z_0+\beta\beta_0}
+{\gamma\gamma_0\rho^2+\gamma\delta_0z+\gamma_0\delta z_0+\delta\delta_0},\\[1.0em]
+z'=\dfrac{\alpha\gamma_0\rho^2+\alpha\delta_0z+\beta\gamma_0z_0+\beta\delta_0}
+{\gamma\gamma_0\rho^2+\gamma\delta_0z+\gamma_0\delta z_0+\delta\delta_0},\\[1.0em]
+z'_0=\dfrac{\alpha_0\gamma\rho^2+\alpha_0\delta z_0+\beta_0\gamma z+\beta_0\delta}
+{\gamma\gamma_0\rho^2+\gamma\delta_0z+\gamma_0\delta z_0+\delta\delta_0}.
+\end{cases}
+\]
+还可如通常那样假设
+\[
+ \alpha\delta-\beta\gamma=1,
+\]
+即代换 (15) 为幺模代换；由此计算 $\zeta'^2=\rho'^2-z'z'_0$，得到另一公式
+\[
+\tag{17*}
+ \zeta'=\frac{\zeta}{\gamma\gamma_0\rho^2+\gamma\delta_0z+\gamma_0\delta z_0+\delta\delta_0}.
+\]
+反过来容易看出，每个线性代换 (15) 都对应一个由 Poincaré 公式 (17) 给出的双曲空间运动。事实上，对下列三种基本形式的代换可立即验证：
+\[
+ z'=z+a,
+ \qquad z'=kz,
+ \qquad z'=\frac1z,
+\]
+而其他任意线性代换都可分解为这种形式的代换。

@@ -1,0 +1,37 @@
+\subsection*{\S. 16.\quad 极可展面。}
+现在来研究曲线 C 的法平面族的包络。从法平面方程
+\begin{equation}\tag{29}
+(X-x)\alpha+(Y-y)\beta+(Z-z)\gamma=0,
+\end{equation}
+出发，对 \(s\) 微分，得到
+\begin{equation}\tag{30}
+(X-x)\xi+(Y-y)\eta+(Z-z)\zeta=\rho.
+\end{equation}
+这第二个平面在点 \(M_1\) 处垂直于主法线；该点位于主法线的正向，并与曲线上的点 M 相距 \(\rho\)。这个点称为\emph{曲率中心}；而在密切平面内，以 \(M_1\) 为圆心、以 \(MM_1=\rho\) 为半径所画的圆称为\emph{密切圆}\srcfn{1}{事实上，在所有通过 M 的圆中，密切圆是在 M 的邻域内偏离曲线最少的圆。}。因此，极可展面的母线是在密切圆圆心处垂直于密切平面的直线，或者通常所说的\emph{密切圆轴}。
+
+为了确定该轴与极可展面回归棱相切的点 \(M_0\)，必须把 (29)、(30) 与 (30) 再微分一次所得的方程联立，即
+\[
+(X-x)\lambda+(Y-y)\mu+(Z-z)\nu=-T\frac{\diff\rho}{\diff s}.
+\]
+\ednote{原书未给此式印出编号，紧接的正文却称它为式 (31)。本译本保留这一版面事实，不静默补号。}
+把坐标 \(x_0,y_0,z_0\)，即 \(M_0\) 的坐标，代入 (29)、(30)、(31) 中的
+
+\(X,Y,Z\)，它们必须同时满足这三个方程；解得
+\begin{equation}\tag{32}
+\left\{
+\begin{aligned}
+x_0&=x+\rho\xi-T\frac{\diff\rho}{\diff s}\lambda,\\
+y_0&=y+\rho\eta-T\frac{\diff\rho}{\diff s}\mu,\\
+z_0&=z+\rho\zeta-T\frac{\diff\rho}{\diff s}\nu.
+\end{aligned}\right.
+\end{equation}
+以 \(M_0\) 为球心、以 \(M_0M\) 为半径所画的球面，称为曲线 C 在 M 处的\emph{密切球面}；因为采用与第3节定义密切平面时完全相似的方法，可以证明，在所有通过 M 的球面中，它是在 M 的邻域内偏离曲线最少的球面\srcfn{1}{用不那么严格的说法，也可以把它定义为通过 M 以及曲线上随后三个点的球面。}。显然，密切圆就是密切球面与密切平面的交线。
+
+以 R 表示密切球面的半径，则
+\[
+R^2=(x_0-x)^2+(y_0-y)^2+(z_0-z)^2,
+\]
+即由 (32) 得
+\begin{equation}\tag{33}
+R^2=\rho^2+T^2\left(\frac{\diff\rho}{\diff s}\right)^2.
+\end{equation}

@@ -1,0 +1,131 @@
+\subsection*{§. 199.\\ 滑移参数与平行角。}
+
+现在来解决下述问题：从空间中的一个给定点，作出与给定直线 \(r\) 平行的两条直线\srcfn{1}{正文以下的讨论由 G. Fubini 博士在其学位论文 \emph{Il parallelismo di Clifford negli spazî ellittici}（《比萨皇家高等师范学校年刊》，第 IX 卷，1900 年）中展开。}。
+
+为此，照通常的方法规定直线 \(r\)：给出其上一点的坐标 \((x_i)\)，以及与该直线垂直之平面的坐标 \((\xi_i)\)，该法平面经过 \((x_i)\)；换言之，以关于绝对形共轭（相距一个象限）的两点之坐标 \((x_i)(\xi_i)\) 来确定这条直线。
+
+这条直线确定两个幅度为 \(=\frac\pi2R\) 的滑移，一个右旋，另一个左旋；每个滑移都先把 \((x)\) 移到 \((\xi)\)，再把 \((\xi)\) 移到 \((-x)\)。对于这两个滑移，在式 (III)、(III*) 中都有 \(A=0\)，其余三个参数 \(B,C,D\) 受关系
+\[
+ B^2+C^2+D^2=1,
+\]
+约束；例如在式 (III) 中，它们由下列公式确定：
+\[
+\begin{aligned}
+\xi_0&=-Bx_1-Cx_2-Dx_3,\\
+\xi_1&=Bx_0-Dx_2+Cx_3,\\
+\xi_2&=Cx_0+Dx_1-Bx_3,\\
+\xi_3&=Dx_0-Cx_1+Bx_2,
+\end{aligned}
+\]
+把这些公式对 \(B,C,D\) 求解，并利用关系
+\[
+ \mathop{\mathrm{S}}x^2=1,
+ \qquad \mathop{\mathrm{S}}x\xi=0,
+\]
+便立即得到：
+\[
+\tag{42}
+\left\{
+\begin{aligned}
+ B&=(x_0\xi_1-x_1\xi_0)+(x_2\xi_3-x_3\xi_2),\\
+ C&=(x_0\xi_2-x_2\xi_0)+(x_3\xi_1-x_1\xi_3),\\
+ D&=(x_0\xi_3-x_3\xi_0)+(x_1\xi_2-x_2\xi_1).
+\end{aligned}\right.
+\]
+类似地，以 \(\beta,\gamma,\delta\) 表示由直线 \(r\) 确定的第二类滑移的参数，可得
+\[
+\tag{42*}
+\left\{
+\begin{aligned}
+ \beta&=(x_0\xi_1-x_1\xi_0)-(x_2\xi_3-x_3\xi_2),\\
+ \gamma&=(x_0\xi_2-x_2\xi_0)-(x_3\xi_1-x_1\xi_3),\\
+ \delta&=(x_0\xi_3-x_3\xi_0)-(x_1\xi_2-x_2\xi_1).
+\end{aligned}\right.
+\]
+可以看出，这六个滑移参数不过是直线的六个通常坐标
+\[
+ p_{ik}=x_i\xi_k-x_k\xi_i
+\]
+的和与差的简单组合；准确地说，
+\[
+\tag{43}
+\left\{
+\begin{array}{lll}
+B=p_{01}+p_{23},& C=p_{02}+p_{31},& D=p_{03}+p_{12},\\
+\beta=p_{01}-p_{23},& \gamma=p_{02}-p_{31},& \delta=p_{03}-p_{12}.
+\end{array}\right.
+\]
+在研究椭圆空间中的平行性时，把这六个滑移参数作为直线的坐标很有用；它们满足两个关系
+\[
+ B^2+C^2+D^2=1,
+ \qquad \beta^2+\gamma^2+\delta^2=1)
+\]
+；这一点在上述 Fubini 博士的论文中已有展开。
+
+算出一条直线的六个滑移参数后，便可立即求出从空间中一点 \((y_0,y_1,y_2,y_3)\) 向该直线所作的两条平行线。事实上，以 \(\eta_0,\eta_1,\eta_2,\eta_3\) 表示例如第一条平行线上与 \((y_i)\) 相距一个象限之点的坐标，则有
+\[
+\tag{44}
+\left\{
+\begin{array}{ll}
+\eta_0=-By_1-Cy_2-Dy_3,& \eta_2=Cy_0+Dy_1-By_3,\\
+\eta_1=By_0-Dy_2+Cy_3,& \eta_3=Dy_0-Cy_1+By_2,
+\end{array}\right.
+\]
+同样，以 \(\bar\eta_i\) 表示第二条平行线上与 \((y_i)\) 相距一个象限之点的坐标，则有
+\[
+\tag{44*}
+\left\{
+\begin{aligned}
+\bar\eta_0&=-\beta y_1-\gamma y_2-\delta y_3,\\
+\bar\eta_1&=\beta y_0+\delta y_2-\gamma y_3,\\
+\bar\eta_2&=\gamma y_0-\delta y_1+\beta y_3,\\
+\bar\eta_3&=\delta y_0+\gamma y_1-\beta y_2.
+\end{aligned}\right.
+\]
+这里我们只把这些观察应用于确定\emph{平行角 \(\Omega\)}。所谓平行角，是指从空间中一点 \((y_i)\) 向给定直线 \(r\) 所作的两条平行线之间的夹角。
+
+先验地显然可知，这个角 \(\Omega\) 只能依赖于该点到直线的距离 \(d\)：若点 \(P\) 到直线 \(r\) 的距离，等于点 \(P'\) 到直线 \(r'\) 的距离，就能用一个空间运动把 \(r\) 移到 \(r'\)，并把 \(P\) 移到 \(P'\)；于是，从 \(P\) 向 \(r\) 所作的两条平行线，便变成从 \(P'\) 向 \(r'\) 所作的两条平行线。
+
+现在取直线 \(r\) 为两点 \((1,0,0,0)\)、\((0,1,0,0)\) 的连线；它的坐标 \(p_{ik}\) 除 \(p_{01}=1\) 外全为零。因此由式 (43)，其滑移参数为
+\[
+ B=1,
+ \qquad C=0,
+ \qquad D=0,
+\]
+\[
+ \beta=1,
+ \qquad \gamma=0,
+ \qquad \delta=0.
+\]
+再考察坐标为
+\[
+ y_0=\cos\left(\frac dR\right),\qquad y_1=0,
+ \qquad y_2=\sen\left(\frac dR\right),
+ \qquad y_3=0,
+\]
+的点；它到直线 \(r\) 的距离恰为 \(d\)。应用式 (44)、(44*)，得到
+\[
+ \eta_0=0,
+ \quad \eta_1=\cos\left(\frac dR\right),
+ \quad \eta_2=0,
+ \quad \eta_3=\sen\left(\frac dR\right),
+\]
+\[
+ \bar\eta_0=0,
+ \quad \bar\eta_1=\cos\left(\frac dR\right),
+ \quad \bar\eta_2=0,
+ \quad \bar\eta_3=-\sen\left(\frac dR\right).
+\]
+两条平行线之间的夹角 \(\Omega\)，也就是分别垂直于这两条直线的两个平面 \((\bar\eta_i),(\eta_i)\) 在 \((y_i)\) 处形成的夹角，由下式给出：
+\[
+ \cos\Omega=\mathop{\mathrm{S}}\eta_i\bar\eta_i,
+\]
+即
+\[
+ \cos\Omega=\cos^2\left(\frac dR\right)-\sen^2\left(\frac dR\right)=\cos\left(\frac{2d}R\right).
+\]
+于是得到简单的结果：\emph{从一点向一条直线所作的两条平行线之间的夹角 \(\Omega\)，依距离 \(d\)，即点 \(P\) 到直线 \(r\) 的距离，按下式而定：}
+\[
+ \Omega=\frac{2d}{R}.
+\]
+应当注意，当 \(d=0\) 时以及当 \(d=\frac\pi2R\) 时，两条平行线都重合；在后一种情形，如上所述，它们重合于极线 \(r'\)，即 \(r\) 关于绝对形的极线。

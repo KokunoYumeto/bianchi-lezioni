@@ -1,0 +1,40 @@
+\subsection*{\S. 19.\quad 一个 \(\infty^1\) 平面族的正交轨迹。}
+上一节用来求给定曲线的渐屈线的方法，也可以用来解决另一个问题：\emph{求所有曲线 \(C'\)，使一条给定曲线 C 是其密切球面球心的轨迹。}由于 C 的密切平面必须是 C' 的法平面，所提问题显然等价于求与一个给定的 \(\infty^1\) 平面族正交相交的曲线 C'。若 C' 是这样一条曲线，M' 是它与 C 在 M 处的密切平面正交相交的点，则在该平面内，以切线和主法线为坐标轴，用正交笛卡尔坐标 \(u,v\) 确定 M' 的位置。于是，M' 的通常坐标 \(x',y',z'\) 为
+\begin{equation}\tag{42}
+x'=x+u\alpha+v\xi,\qquad y'=y+u\beta+v\eta,\qquad z'=z+u\gamma+v\zeta,
+\end{equation}
+而对 M' 的轨迹 C' 所施加的条件，要求 \(\dfrac{\diff x'}{\diff s}\)、\(\dfrac{\diff y'}{\diff s}\)、\(\dfrac{\diff z'}{\diff s}\) 与 \(\lambda,\mu,\nu\) 成比例；所以，未知函数 \(u,v\) 关于 \(s\) 满足
+\[
+\frac{\diff v}{\diff s}=-\frac{u}{\rho},\qquad
+\frac{\diff u}{\diff s}=\frac{v}{\rho}-1,
+\]
+继而有公式
+\begin{equation}\tag{42*}
+\frac{\diff x'}{\diff s}=-\frac{v}{T}\lambda,\qquad
+\frac{\diff y'}{\diff s}=-\frac{v}{T}\mu,\qquad
+\frac{\diff z'}{\diff s}=-\frac{v}{T}\nu.
+\end{equation}
+令
+\[
+\sigma=\int\frac{\diff s}{\rho},
+\]
+以此把自变量 \(s\) 换掉，则有
+\[
+u=-\frac{\diff v}{\diff\sigma},\qquad \frac{\diff u}{\diff\sigma}=v-\rho
+\]
+即
+\[
+\frac{\diff^2 v}{\diff\sigma^2}+v=\rho,
+\]
+积分得到
+\[
+v=c\cos\sigma+c'\sen\sigma-\cos\sigma\int\sen\sigma\,\diff s+\sen\sigma\int\cos\sigma\,\diff s,
+\]
+其中 \(c,c'\) 是任意常数。继而有
+\[
+u=-\frac{\diff v}{\diff s}=c\sen\sigma-c'\cos\sigma-\sen\sigma\int\sen\sigma\,\diff s-\cos\sigma\int\cos\sigma\,\diff s
+\]
+\ednote{原书此处印作 \(u=-\diff v/\diff s\)，但本节刚由 \(\sigma=\int \diff s/\rho\) 推得 \(u=-\diff v/\diff\sigma\)，且 Bianchi 授权的 1899 年德译本也印作对 \(\sigma\) 求导。正文公式仍按原书保留；按推导，此处的微分变量应为 \(\sigma\)。}
+把 \(u,v\) 的这些值代入 (42)，便通过求积确定了所求曲线 C'；如同从几何上已经显然可见的那样，它们构成一个双参数族。
+
+与第15节的问题类似，应当注意（参看原书第30页），未知量 \(u,v\) 的值以及球面半径 \(R=\sqrt{u^2+v^2}\) 的值，仅依赖于第一曲率 \(\dfrac{1}{\rho}\)。任意扭曲曲线 C，并使其密切平面随之运动，同一批点 M' 的轨迹仍是一条与这些平面正交的曲线 C'。特别地，若令 \(\dfrac{1}{T}=0\)，则 (42*) 证明 \(x',y',z'\) 都化为常数，也就是说，曲线 C' 退化为一个点。由此，我们可以把这个问题（Jamet 问题）的几何解答，写成切萨罗（Cesàro）教授所给出的下列优美形式\srcfn{1}{《内蕴几何学讲义》（\emph{Lezioni di geometria intrinseca}），原书第146页。}：\emph{给定一条曲线 C，为构造所有这样的球面族：其球心在 C 上，且这些球面密切于某一曲线 C'；应只改变 C 的挠率，把它变成一条平面曲线 \(\Gamma\)，并考察球心在 \(\Gamma\) 上、且通过其平面内一个固定点 M' 的全部球面。若曲线 \(\Gamma\) 携带这些球面作刚性运动而恢复为 C 的形状，则新球面将密切于一条曲线 C'，这条曲线是 M' 各个新位置的轨迹。}

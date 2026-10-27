@@ -1,0 +1,75 @@
+\subsection*{\S. 10.\quad 柱面螺线。}
+我们继续运用弗雷内公式来研究一类重要的曲线，它们称为\emph{柱面螺线}。这一名称是指画在任意柱面上，并以恒定角度截切其母线的曲线。把柱面展平到一个平面上时，螺线便展开成一条直线；又由于展开并不改变线段长度，所以柱面螺线还有一个特征性质：它在柱面上给出其任意两点之间的最短路径。
+
+令 \(z\) 轴平行于柱面的母线，于是有
+\[
+\gamma=\hbox{常数}.
+\]
+由弗雷内公式
+\[
+\frac{\diff\gamma}{\diff s}=\frac{\zeta}{\rho},\qquad
+\frac{\diff\zeta}{\diff s}=-\frac{\gamma}{\rho}-\frac{\nu}{T},\qquad
+\frac{\diff\nu}{\diff s}=\frac{\zeta}{T}
+\]
+可得
+\[
+\zeta=0^{(1)},\qquad \nu=\hbox{常数},\qquad \frac{\rho}{T}=-\frac{\gamma}{\nu}=\hbox{常数}.
+\]
+\srcfntext{1}{这里自然排除了 \(\dfrac{1}{\rho}=0\) 的情形，因为它只属于直线。}
+因此有：
+
+\begin{enumerate}[label=\arabic*.\textdegree, leftmargin=2.5em]
+\item \emph{在柱面螺线的每一点，螺线的主法线都与柱面的法线重合。}
+\end{enumerate}
+
+这个性质显然是螺线的特征性质。
+
+\begin{enumerate}[label=\arabic*.\textdegree, leftmargin=2.5em, start=2]
+\item \emph{对于每一条柱面螺线，两个曲率之比都是常数。}
+\end{enumerate}
+借助贝特朗定理，这第二个性质也可以逆转：
+\begin{center}
+\emph{两个曲率之比为常数的每一条曲线，都是柱面螺线。}
+\end{center}
+为证明这一点，设曲线 C 满足
+\[
+\frac{\rho}{T}=k,
+\]
+其中 \(k\) 为常数。由弗雷内公式可得
+\[
+\frac{\diff\lambda}{\diff s}=\frac{\rho}{T}\frac{\diff\alpha}{\diff s},\qquad
+\frac{\diff\mu}{\diff s}=\frac{\rho}{T}\frac{\diff\beta}{\diff s},\qquad
+\frac{\diff\nu}{\diff s}=\frac{\rho}{T}\frac{\diff\gamma}{\diff s},
+\]
+即
+\[
+\frac{\diff}{\diff s}(\lambda-k\alpha)=0,
+\qquad
+\frac{\diff}{\diff s}(\mu-k\beta)=0,
+\qquad
+\frac{\diff}{\diff s}(\nu-k\gamma)=0,
+\]
+积分后得到
+\[
+\lambda-k\alpha=A,
+\qquad
+\mu-k\beta=B,
+\qquad
+\nu-k\gamma=C,
+\]
+其中 \(A,B,C\) 是三个常数，显然它们的平方和满足
+\[
+A^2+B^2+C^2=1+k^2.
+\]
+因此令
+\[
+a=\frac{A}{\sqrt{A^2+B^2+C^2}},\qquad
+b=\frac{B}{\sqrt{A^2+B^2+C^2}},\qquad
+c=\frac{C}{\sqrt{A^2+B^2+C^2}},
+\]
+则 \(a,b,c\) 是空间中某一固定方向的方向余弦，并由前面的关系得到
+\[
+a\alpha+b\beta+c\gamma=-\frac{k}{\sqrt{1+k^2}}.
+\]
+所以，曲线 C 的切线与这个固定方向成恒定角；因此，C 是这样一个柱面上的螺线：该柱面由经过 C 上各点且平行于这个固定方向的直线构成。
+

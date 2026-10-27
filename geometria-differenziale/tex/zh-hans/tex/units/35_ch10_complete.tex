@@ -1,0 +1,1200 @@
+%% UNIT ch10_complete | IT authority lines 10701--11902
+\section*{第十章}
+\begin{center}
+{\Large\bfseries \(\infty^2\) 条射线的系统，亦即直线汇}
+\end{center}
+
+\noindent 直线汇。 --- 极限点与主曲面。 --- Ribaucour 的各向同性直线汇。 --- 直线汇的焦点与可展曲面。 --- 法向直线汇。 --- Beltrami 定理。 --- Malus--Dupin 定理。 --- 主曲面具有给定球面像的直线汇。 --- 可展曲面具有给定球面像的直线汇。 --- 关于两张焦曲面的公式。 --- 伪球直线汇。 --- Guichard 直线汇。 --- Guichard 曲面与 Voss 曲面。
+
+\subsection*{\S. 137.\quad 直线汇的基本形式.}
+
+本章所要阐述的理论，研究的是在空间中这样分布的双参数无穷直线系统：空间中的每一点，或某一适当空间区域中的每一点，都有该系统的一条或有限条直线通过。这样的 \(\infty^2\) 条直线（射线）系统也称为\emph{直线汇}，或简称直线汇。一个曲面的全部法线所成的系统，不过是这类系统的一个特殊情形。
+
+这门理论起源于几何光学问题，并在曲面理论中越来越重要；可以毫无疑问地说，它今后将更大程度地推动几何发展。
+
+我们将在这里建立这一理论的基础，尤其以 Kummer 的经典论文\srcfn{1}{\emph{Allgemeine Theorie der geradlinigen Strahlensysteme} (Crelle's Journal 57).}为依据；并将在本章及后续各章中介绍它的主要应用。
+
+首先来解析地定义直线汇。为此，用一个曲面 S 截切整个直线系统；对于系统中的每一条射线，把它与 S 相交的点（或诸交点之一）视为起点。以一组曲线坐标 \((u,v)\) 表示曲面 S 后，我们便通过把起点的坐标
+\[
+ x,y,z
+\]
+以及射线的方向余弦
+\[
+ X,Y,Z.
+\]
+表示为 \(u,v\) 的函数，来解析地定义这个直线汇。我们假定 \(x,y,z,X,Y,Z\) 这些关于 \(u,v\) 的函数，连同其偏导数，都是有限且连续的。
+
+从球面
+\[
+ x^2+y^2+z^2=1
+\]
+的中心引出一条射线，使之与直线汇中射线的正向平行；其端点 \(M_1\) 的坐标就是 \(X,Y,Z\)。我们把这一点视为直线汇中直线 \((u,v)\) 的球面像。当直线 \((u,v)\) 在系统中变化时，点 \(M_1\) 描绘出直线汇的\emph{球面像}。
+
+注意，任一点 P 的坐标 \(\xi,\eta,\zeta\)——这里 P 位于射线 \((u,v)\) 上——由下式给出：
+\begin{equation}\tag{1}
+ \xi=x+tX,
+ \qquad
+ \eta=y+tY,
+ \qquad
+ \zeta=z+tZ,
+\end{equation}
+其中 \(t\) 是点 P 在射线上的横坐标，以起点 \(P_0\equiv(x,y,z)\) 为原点量取。
+
+按照 Kummer，引入下列基本函数：
+\begin{equation}\tag{2}
+ \sum\left(\frac{\partial X}{\partial u}\right)^2=E,
+ \qquad
+ \sum\frac{\partial X}{\partial u}\frac{\partial X}{\partial v}=F,
+ \qquad
+ \sum\left(\frac{\partial X}{\partial v}\right)^2=G
+\end{equation}
+\begin{equation}\tag{3}
+ \sum\frac{\partial X}{\partial u}\frac{\partial x}{\partial u}=e,
+ \quad
+ \sum\frac{\partial X}{\partial u}\frac{\partial x}{\partial v}=f,
+ \quad
+ \sum\frac{\partial X}{\partial v}\frac{\partial x}{\partial u}=f',
+ \quad
+ \sum\frac{\partial X}{\partial v}\frac{\partial x}{\partial v}=g,
+\end{equation}
+借助这些函数，可以表示下列两个二次微分形式：
+\begin{equation}\tag{4}
+ ds_1^2=\sum dX^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\end{equation}
+\begin{equation}\tag{5}
+ \sum dx\,dX=e\,du^2+(f+f')du\,dv+g\,dv^2,
+\end{equation}
+我们称它们为\emph{两个基本形式}。第一个表示球面表示上线元的平方；还应注意，\(ds_1\) 也度量相继两条母线 \((u,v)\)、\((u+du,v+dv)\) 之间的无穷小夹角。
+
+再以 \(dp\) 表示射线 \((u,v)\) 与一条无穷邻近射线之间最短距离的无穷小长度，以 \(\cos a,\cos b,\cos c\) 表示这条最短距离的方向余弦；最后以 \(\gamma\) 表示横坐标 \(t\) 在 \(dp\) 位于射线 \((u,v)\) 上的垂足处之值。
+
+我们有：
+\[
+ \cos a:\cos b:\cos c=(Y\,dZ-Z\,dY):(Z\,dX-X\,dZ):(X\,dY-Y\,dX)
+\]
+\[
+\begin{aligned}
+\cos a:\cos b:\cos c={}&
+\left\{\left(Y\frac{\partial Z}{\partial u}-Z\frac{\partial Y}{\partial u}\right)du+\left(Y\frac{\partial Z}{\partial v}-Z\frac{\partial Y}{\partial v}\right)dv\right\}:\\
+&\left\{\left(Z\frac{\partial X}{\partial u}-X\frac{\partial Z}{\partial u}\right)du+\left(Z\frac{\partial X}{\partial v}-X\frac{\partial Z}{\partial v}\right)dv\right\}:\\
+&\left\{\left(X\frac{\partial Y}{\partial u}-Y\frac{\partial X}{\partial u}\right)du+\left(X\frac{\partial Y}{\partial v}-Y\frac{\partial X}{\partial v}\right)dv\right\}.
+\end{aligned}
+\]
+利用第 77 节第 162 页（注）中所指出的恒等式，可以写成
+\[
+\begin{aligned}
+\cos a:\cos b:\cos c={}&
+\left\{\left(E\frac{\partial X}{\partial v}-F\frac{\partial X}{\partial u}\right)du-\left(G\frac{\partial X}{\partial u}-F\frac{\partial X}{\partial v}\right)dv\right\}:\\
+&\left\{\left(E\frac{\partial Y}{\partial v}-F\frac{\partial Y}{\partial u}\right)du-\left(G\frac{\partial Y}{\partial u}-F\frac{\partial Y}{\partial v}\right)dv\right\}:\\
+&\left\{\left(E\frac{\partial Z}{\partial v}-F\frac{\partial Z}{\partial u}\right)du-\left(G\frac{\partial Z}{\partial u}-F\frac{\partial Z}{\partial v}\right)dv\right\},
+\end{aligned}
+\]
+因此得到
+\begin{equation}\tag{6}
+\left\{
+\begin{aligned}
+\cos a&=\frac{\left(E\dfrac{\partial X}{\partial v}-F\dfrac{\partial X}{\partial u}\right)du+\left(F\dfrac{\partial X}{\partial v}-G\dfrac{\partial X}{\partial u}\right)dv}{\sqrt{EG-F^2}\sqrt{E\,du^2+2F\,du\,dv+G\,dv^2}},\\[0.6em]
+\cos b&=\frac{\left(E\dfrac{\partial Y}{\partial v}-F\dfrac{\partial Y}{\partial u}\right)du+\left(F\dfrac{\partial Y}{\partial v}-G\dfrac{\partial Y}{\partial u}\right)dv}{\sqrt{EG-F^2}\sqrt{E\,du^2+2F\,du\,dv+G\,dv^2}},\\[0.6em]
+\cos c&=\frac{\left(E\dfrac{\partial Z}{\partial v}-F\dfrac{\partial Z}{\partial u}\right)du+\left(F\dfrac{\partial Z}{\partial v}-G\dfrac{\partial Z}{\partial u}\right)dv}{\sqrt{EG-F^2}\sqrt{E\,du^2+2F\,du\,dv+G\,dv^2}}.
+\end{aligned}
+\right.
+\end{equation}
+现在有
+\[
+ dp=\sum \cos a\,dx,
+\]
+因而由前式可得
+\begin{equation}\tag{7}
+ dp=\frac1{\sqrt{EG-F^2}\,ds_1}
+ \begin{vmatrix}
+ E\,du+F\,dv & F\,du+G\,dv\\
+ e\,du+f\,dv & f'\,du+g\,dv
+ \end{vmatrix}.
+\end{equation}
+
+设 \(r\) 是 \(dp\) 在射线 \((u,v)\) 上的垂足的横坐标，\(t\) 是它与射线 \((u+du,v+dv)\) 相交之点的横坐标，则有
+\[
+ x+rX+dp\cos a=x+dx+t(X+dX),
+\]
+连同关于 \(y,z\) 的两个类似公式；换言之，
+\[
+\left\{
+\begin{aligned}
+rX+dp\cos a&=dx+t(X+dX)\\
+rY+dp\cos b&=dy+t(Y+dY)\\
+rZ+dp\cos c&=dz+t(Z+dZ).
+\end{aligned}
+\right.
+\]
+把这些等式依次乘以 \(X,Y,Z\) 后相加，得到
+\[
+ t=r-\sum X\,dx.
+\]
+也就是说，正如自然应当如此，\(t\) 与 \(r\) 只相差一个无穷小量。若改为依次乘以 \(dX,dY,dZ\) 后相加，则得到
+\[
+ \sum dx\,dX+\left(r-\sum X\,dx\right)\sum dX^2=0,
+\]
+于是，略去高阶无穷小量，便有
+\[
+ r=-\frac{\sum dx\,dX}{\sum dX^2},
+\]
+即
+\begin{equation}\tag{8}
+ r=-\frac{e\,du^2+(f+f')du\,dv+g\,dv^2}{E\,du^2+2F\,du\,dv+G\,dv^2}.
+\end{equation}
+
+\subsection*{\S. 138.\quad 极限点与 Hamilton 公式.}
+
+刚刚建立的公式可导出若干重要结论；我们借助曲线坐标 \((u,v)\) 的一种适当变换，以最简单的方式证明这些结论。为此，先排除两个基本形式 (4)、(5) 的系数成比例的情形，即排除下列比例成立的情形：
+ \[
+E:F:G=e:\frac{f+f'}2:g.
+\]
+此时，通过对坐标 \(u,v\) 作一种实的\emph{确定}变换，可以同时令
+\[
+ F=0,\qquad f+f'=0.
+\]
+假定已经实行这一变换，(8) 便成为
+\begin{equation}\tag{8*}
+ r=-\frac{e\,du^2+g\,dv^2}{E\,du^2+G\,dv^2}.
+\end{equation}
+以 \(r_1\) 表示 \(r\) 在 \(dv=0\) 时所取的值，以 \(r_2\) 表示它在 \(du=0\) 时所取的值，则有
+\[
+ r_1=-\frac eE,
+ \qquad r_2=-\frac gG,
+\]
+根据所作的假设，\(r_1=r_2\) 的情形已经排除。因此 (8*) 可写为
+\begin{equation}\tag{9}
+ r=\frac{E r_1\,du^2+G r_2\,dv^2}{E\,du^2+G\,dv^2},
+\end{equation}
+例如假定 \(r_2>r_1\)，则有
+\[
+ r=r_1+\frac{G(r_2-r_1)dv^2}{E\,du^2+G\,dv^2}
+  =r_2-\frac{E(r_2-r_1)du^2}{E\,du^2+G\,dv^2},
+\]
+从而
+\[
+ r_1\leq r\leq r_2.
+\]
+以 \(L_1,L_2\) 分别表示射线 \((u,v)\) 到两条无穷邻近射线 \((u+du,v)\)、\((u,v+dv)\) 的最短距离的垂足；它们的横坐标是 \(r_1,r_2\)。由上面的结果，射线 \((u,v)\) 到任意另一条无穷邻近射线 \((u+du,v+dv)\) 的最短距离的垂足，都落在线段 \(L_1L_2\) 内。因此，这条线段的端点 \(L_1,L_2\) 称为\emph{极限点}。
+
+若用
+\[
+\begin{matrix}
+\cos a_1,&\cos b_1,&\cos c_1,\\
+\cos a_2,&\cos b_2,&\cos c_2
+\end{matrix}
+\]
+表示 \(\cos a,\cos b,\cos c\) 在相应极限点 \(L_1,L_2\) 处的值，则由 (6) 有
+\[
+ \cos a_1=\frac1{\sqrt G}\frac{\partial X}{\partial v},\quad
+ \cos b_1=\frac1{\sqrt G}\frac{\partial Y}{\partial v},\quad
+ \cos c_1=\frac1{\sqrt G}\frac{\partial Z}{\partial v},
+\]
+\[
+ \cos a_2=-\frac1{\sqrt E}\frac{\partial X}{\partial u},\quad
+ \cos b_2=-\frac1{\sqrt E}\frac{\partial Y}{\partial u},\quad
+ \cos c_2=-\frac1{\sqrt E}\frac{\partial Z}{\partial u},
+\]
+故
+\[
+ \cos a_1\cos a_2+\cos b_1\cos b_2+\cos c_1\cos c_2=0.
+\]
+因此得到如下定理：\emph{射线 \((u,v)\) 到直线汇中那两条射线的最短距离，其垂足分别落在极限点 \(L_1,L_2\) 上；这两条最短距离的方向彼此正交。}
+
+把通过射线 \((u,v)\) 且分别垂直于上述两条最短距离的平面，称为该射线的主平面。因而前面的结果可表述为：\emph{每一条射线的两个主平面彼此正交。}
+
+现在可以换一种方式写出 (9)。为此引入角 \(\omega\)：最短距离 \(dp\) 是射线 \((u,v)\) 到射线 \((u+du,v+dv)\) 的最短距离，它与最短距离 \(dp_1\)（后者对应于极限点 \(L_1\)）所成的角就是所引入的角。事实上，
+\[
+ \cos\omega=\sum\cos a\cos a_1=\frac{\sqrt E\,du}{\sqrt{E\,du^2+G\,dv^2}},
+\]
+\[
+ \cos^2\omega=\frac{E\,du^2}{E\,du^2+G\,dv^2},
+ \qquad
+ \sen^2\omega=\frac{G\,dv^2}{E\,du^2+G\,dv^2},
+\]
+所以 (9) 给出 Hamilton 公式：
+\begin{equation}\tag{10}
+ r=r_1\cos^2\omega+r_2\sen^2\omega.
+\end{equation}
+
+\subsection*{\S. 139.\quad 各向同性直线汇.}
+
+我们再看排除的情形
+\[
+ e:\frac{f+f'}2:g=E:F:G;
+\]
+上一节的论证仍然适用，唯一的差别是：这里所用的变换可以用无穷多种方式实行。由于 \(r_1=r_2\)，极限点 \(L_1,L_2\) 在每条射线上重合为一个点；该射线到所有无穷邻近射线的最短距离，其垂足都落在这个点上。Ribaucour 最先研究了这些特殊的直线汇，并把它们称为\emph{各向同性直线汇}。研究这类直线汇十分重要，因为它们与极小面积曲面之间有一种关系，我们不久便会建立这一关系。
+
+先作如下观察。方程
+\[
+ \varphi(u,v)=0
+\]
+若 \(u,v\) 是任意直线汇中一条射线的坐标，则它们之间的一个方程表示一张直纹曲面，其母线就是这个直线汇的射线；简言之，我们称它为直线汇的一张直纹曲面。对于各向同性直线汇的每一张直纹曲面，它的腰线显然都与其各条射线的极限点轨迹重合。对于一般直线汇，这只对下列两族直纹曲面成立：
+\[
+ u=\text{常数},\qquad v=\text{常数},
+\]
+其中 \(u,v\) 是上一节所引入的变量。对于每一张 \(v=\text{常数}\) 的曲面，腰线是极限点 \(L_1\) 在相应射线上的轨迹；同样，对于一张 \(u=\text{常数}\) 的曲面，腰线是极限点 \(L_2\) 的轨迹。因此，这两族直纹曲面称为直线汇的\emph{主曲面}。在各向同性直线汇中，而且只在这类直线汇中，直线汇的每一张直纹曲面都是主曲面。
+
+对于一个各向同性直线汇，若在球面上选取一组正交曲线 \((u,v)\)，并把极限点轨迹曲面选作起点曲面——这张曲面称为直线汇的\emph{中位曲面}——则有
+\[
+ r_1=r_2=0,
+\]
+因此
+\[
+ e=0,
+ \qquad f+f'=0,
+ \qquad g=0,
+\]
+即恒成立
+\[
+ dx\,dX+dy\,dY+dz\,dZ=0.
+\]
+因此，若把中位曲面 \(S\) 表示到球面上时，不采用 Gauss 的方式，而是引球面的半径，使之平行于各向同性直线汇中射线的方向，那么前式表明：\(S\) 的每一个线元都垂直于球面上的对应线元。于是得到 Ribaucour 定理：
+
+\emph{各向同性直线汇的中位曲面 \(S\)，以线元彼此正交的方式对应于球面。}
+
+反过来也立即可见：若一张曲面 \(S\) 以线元彼此正交的方式对应于球面，那么通过 \(S\) 上各点，引出平行于从球心到球面对应点之半径的直线，便形成一个各向同性直线汇。
+
+最后注意：从中位曲面 \(S\) 出发，若在每一条射线上截取一个常长度 \(t\)，则端点的坐标为
+\[
+ \xi=x+tX,
+ \qquad \eta=y+tY,
+ \qquad \zeta=z+tZ,
+\]
+则端点轨迹曲面的线元为
+\[
+ d\xi^2+d\eta^2+d\zeta^2=dx^2+dy^2+dz^2+t^2(dX^2+dY^2+dZ^2),
+\]
+所以当 \(t\) 换成 \(-t\) 时，线元不变。由在射线的一侧或另一侧截取而成的两张曲面 \(S_1,S_2\) 彼此等距适用；这里截取的常线段为 \(t\)，同一条射线上的点相互对应，而两个对应点之间的距离恒定，等于 \(2t\)。反过来显然也有：\emph{若一对彼此等距适用的曲面，其对应点之间的距离为常数，则连接各对对应点的直线构成一个各向同性直线汇。}
+
+\subsection*{\S. 140.\quad 极限点的横坐标.}
+
+现在回到第 138 节的一般结果；这些结果是通过引入一组特殊变量而得到的，也就是那些在分别等于常数时给出直线汇主曲面的变量。现在假定变量 \(u,v\) 是任意的，我们要建立给出极限点横坐标 \(r_1,r_2\) 的基本公式。令两个基本形式 (4)、(5) 的 Jacobian 为零（第 39 节），也就是令下列行列式为零，便得到主曲面的微分方程：
+\[
+\left|
+\begin{matrix}
+E\,du+F\,dv & F\,du+G\,dv\\[0.4em]
+e\,du+\dfrac{f+f'}2\,dv & \dfrac{f+f'}2\,du+g\,dv
+\end{matrix}
+\right|.
+\]
+因此，这个方程写成
+\begin{equation}\tag{A}
+\left\{\frac{f+f'}2E-eF\right\}du^2+\{gE-eG\}du\,dv+
+\left\{gF-\frac{f+f'}2G\right\}dv^2=0.
+\end{equation}
+对于满足这个方程的 \(\dfrac{dv}{du}\) 的各个值，(8)
+\[
+ r=-\frac{\left(e\,du+\dfrac{f+f'}2\,dv\right)du+
+\left(\dfrac{f+f'}2\,du+g\,dv\right)dv}{(E\,du+F\,dv)du+(F\,du+G\,dv)dv}
+\]
+可以写成
+\[
+ r=-\frac{e\,du+\dfrac{f+f'}2\,dv}{E\,du+F\,dv}
+  =-\frac{\dfrac{f+f'}2\,du+g\,dv}{F\,du+G\,dv}.
+\]
+于是
+\[
+\left\{
+\begin{aligned}
+(Er+e)du+\left(Fr+\frac{f+f'}2\right)dv&=0,\\
+\left(Fr+\frac{f+f'}2\right)du+(Gr+g)dv&=0.
+\end{aligned}
+\right.
+\]
+从这两个方程中消去比值 \(du:dv\)，便得到关于 \(r\) 的二次方程
+\begin{equation}\tag{B}
+ (EG-F^2)r^2+\left\{gE-(f+f')F+eG\right\}r+eg-\left(\frac{f+f'}2\right)^2=0,
+\end{equation}
+\emph{它的两个根就是极限点的横坐标。}
+
+\subsection*{\S. 141.\quad 焦点与可展曲面.}
+
+现在来考察直线汇的各张直纹曲面中是否有可展曲面。对于这样一张曲面
+\begin{equation}\tag{11}
+ \varphi(u,v)=0,
+\end{equation}
+必须有 \(dp=0\)，即由 (7) 得
+\[
+\left|
+\begin{matrix}
+E\,du+F\,dv & F\,du+G\,dv\\
+e\,du+f\,dv & f'\,du+g\,dv
+\end{matrix}
+\right|=0,
+\]
+即展开得
+\begin{equation}\tag{C}
+ (f'E-eF)du^2+\{gE+(f'-f)F-eG\}du\,dv+(gF-fG)dv^2=0.
+\end{equation}
+因此：\emph{直线汇的各条射线可以组合成两族（实的或虚的）可展曲面。}
+
+我们还可以用下面的方法得到直线汇可展曲面的同一微分方程 (C)，同时由此得到另一个重要元素。假定 (11) 是直线汇中一张可展曲面的方程，以 \(\rho\) 表示点 \(F\) 的横坐标；射线 \((u,v)\) 正是在点 \(F\) 处与 (11) 的回归棱相切。该点的坐标为
+\[
+ x_1=x+\rho X,
+ \qquad y_1=y+\rho Y,
+ \qquad z_1=z+\rho Z.
+\]
+对这些公式作微分，同时认为 \(u,v\) 由 (11) 联系起来。根据假设，\(dx_1,dy_1,dz_1\) 与 \(X,Y,Z\) 成比例，因而有
+\[
+ dx+\rho\,dX=\lambda X,
+ \qquad dy+\rho\,dY=\lambda Y,
+ \qquad dz+\rho\,dZ=\lambda Z,
+\]
+其中 \(\lambda\) 是一个（无穷小的）比例因子。把这三个方程依次乘以 \(\dfrac{\partial X}{\partial u},\dfrac{\partial Y}{\partial u},\dfrac{\partial Z}{\partial u}\)，再依次乘以 \(\dfrac{\partial X}{\partial v},\dfrac{\partial Y}{\partial v},\dfrac{\partial Z}{\partial v}\)，并分别相加，得到
+\[
+ e\,du+f\,dv+\rho(E\,du+F\,dv)=0,
+\]
+\[
+ f'\,du+g\,dv+\rho(F\,du+G\,dv)=0.
+\]
+消去 \(\rho\)，便恰好得到直线汇可展曲面的微分方程 (C)。若改为消去比值 \(du:dv\)，则对于 \(\rho\) 得到二次方程
+\begin{equation}\tag{D}
+ (EG-F^2)\rho^2+\{gE-(f+f')F+eG\}\rho+eg-ff'=0;
+\end{equation}
+它的两个根 \(\rho_1,\rho_2\)，显然就是两个点 \(F_1,F_2\) 的横坐标；射线 \((u,v)\) 分别在这两点与通过该射线的两族可展曲面之一或另一族中的回归棱相切。这两个点称为射线 \((u,v)\) 的\emph{焦点}；也可以把它们看作射线 \((u,v)\) 分别与两条无穷邻近射线相交的点，而这两条邻近射线各属于一族或另一族可展曲面\srcfn{1}{这里的相交只在忽略高阶无穷小的意义下成立；也就是说，\(dp\) 在 \(F_1,F_2\) 处是高于一阶的无穷小量。}。随着直线汇的可展曲面是实的或虚的，这些焦点也相应为实的或虚的。
+
+比较 (B) 与 (D)
+\[
+ \rho_1+\rho_2=r_1+r_2,
+\]
+因此：\emph{两个极限点的中点与两个焦点的中点重合。}所以，这一点称为射线的中点，而所有中点的轨迹曲面称为\emph{中位曲面}。由 (B)、(D) 还可得到
+\[
+ \rho_1\rho_2=r_1r_2+\frac{(f-f')^2}{4(EG-F^2)},
+\]
+故
+\[
+ (r_1-r_2)^2-(\rho_1-\rho_2)^2=\frac{(f-f')^2}{EG-F^2}.
+\]
+若以 \(2d\) 表示两个极限点之间的距离，以 \(2\delta\) 表示两个焦点之间的距离，则有
+\begin{equation}\tag{12}
+ d^2-\delta^2=\frac{(f-f')^2}{4(EG-F^2)}.
+\end{equation}
+所以，当两个焦点为实点时，它们位于两个极限点之间的线段内；这也可以由第 138 节直接看出。
+
+为简便起见，以中位曲面作起点曲面，则 Hamilton 公式 (10)（页302）取
+\[
+ r_1=d,
+ \qquad r_2=-d,
+\]
+写为
+\[
+ r=d\cos2\omega,
+\]
+由此可见：当射线 \((u,v)\) 到一条无穷邻近射线的最短距离的垂足，沿极限点线段从 \(+d\) 移动到 \(-d\) 时，角 \(\omega\) 从 \(0\) 增大到 \(\dfrac\pi2\)，并在射线的中点取值 \(\dfrac\pi4\)。以 \(\omega_1,\omega_2\) 表示它在两个焦点处的值，
+\[
+ \rho_1=\delta,
+ \qquad \rho_2=-\delta,
+\]
+则
+\[
+ \cos2\omega_1=\frac\delta d,
+ \qquad \cos2\omega_2=-\frac\delta d,
+\]
+故
+\[
+ \omega_1+\omega_2=\frac\pi2.
+\]
+把通过一条射线以及与它相交的两条无穷邻近射线的平面，称为\emph{焦平面}。于是有：\emph{两个焦平面与两个主平面具有相同的两个角平分平面。}
+
+若记
+\[
+ \gamma=\omega_2-\omega_1=\frac\pi2-2\omega_1
+\]
+表示两个焦平面之间的夹角，则由前式得到
+\begin{equation}\tag{13}
+ \sen\gamma=\frac\delta d,
+ \qquad
+ \cos\gamma=\frac{\sqrt{d^2-\delta^2}}{d}.
+\end{equation}
+
+\subsection*{\S. 142.\quad 焦曲面.}
+
+对于一个给定的直线汇，需要考察五张曲面：一张\emph{中位曲面}，即中点的轨迹；两张\emph{极限曲面}，即极限点的轨迹；最后是两张\emph{焦曲面}，即焦点的轨迹\srcfn{1}{在许多研究中，考察第六张曲面也很有用；Ribaucour 把它称为\emph{中位包络面}。它是各个中位平面——即在中点处垂直于射线的平面——的包络面。}。前三张曲面总是实的，后两张只有在直线汇具有实可展曲面时才是实的。在后一情形，直线汇由焦曲面两叶 \(S_1,S_2\) 的公切线组成。两个焦点 \(F_1,F_2\) 是射线分别与焦曲面 \(S_1,S_2\) 的接触点，所以焦平面显然就是焦曲面在 \(F_1,F_2\) 处的切平面。直线汇的各条射线在 \(S_1\) 上包络出一个 \(\infty^1\) 曲线系统；这些曲线就是两族可展曲面中一族的回归棱 \(\Gamma_1\)，在 \(S_2\) 上也有类似情形。马上就会看到，在 \(F_1\) 处，通过该点的曲线 \(\Gamma_1\) 的密切平面，同时也是在 \(F_2\) 处与 \(S_2\) 相切的平面。直线汇的两族可展曲面，在每一张焦曲面上都截出一个共轭系统。
+
+\emph{两张焦曲面能否重合？}在这种情形下，直线汇的射线在焦曲面上所包络的曲线，与共轭系统中的曲线重合；也就是说，它们是一族渐近线。还容易证明，这时两个极限点之间的距离 \(2d\) 为
+\[
+ 2d=\frac1{\sqrt{-K}},
+\]
+其中 \(K\) 是焦曲面的曲率。
+
+事实上，取焦曲面为起点曲面，并把所考察的渐近线 \(v\) 及其正交轨线 \(u\) 取作坐标线；设
+\[
+ ds^2=E'\,du^2+G'\,dv^2
+\]
+是该曲面的线元。对于第二基本形式的系数，有
+\[
+ D=0,
+ \qquad \frac{D'^2}{E'G'}=-K,
+\]
+置
+\[
+ X_1=\frac1{\sqrt{E'}}\frac{\partial x}{\partial u},
+ \qquad Y_1=\frac1{\sqrt{E'}}\frac{\partial y}{\partial u},
+ \qquad Z_1=\frac1{\sqrt{E'}}\frac{\partial z}{\partial u},
+\]
+\[
+ X_2=\frac1{\sqrt{G'}}\frac{\partial x}{\partial v},
+ \qquad Y_2=\frac1{\sqrt{G'}}\frac{\partial y}{\partial v},
+ \qquad Z_2=\frac1{\sqrt{G'}}\frac{\partial z}{\partial v},
+\]
+由第 116--117 页的基本公式 (I)、(II)，可推出
+\[
+ \frac{\partial X_1}{\partial u}=-\frac1{\sqrt{G'}}\frac{\partial\sqrt{E'}}{\partial v}X_2,
+ \qquad
+ \frac{\partial X_1}{\partial v}=\frac1{\sqrt{E'}}\frac{\partial\sqrt{G'}}{\partial u}X_2+\frac{D'}{\sqrt{E'}}X.
+\]
+由于 \(X_1,Y_1,Z_1\) 恰是直线汇中射线 \((u,v)\) 的方向余弦，根据第 298 页的基本量 (2)、(3)，得到
+\[
+ E=\left(\frac1{\sqrt{G'}}\frac{\partial\sqrt{E'}}{\partial v}\right)^2,
+ \quad
+ F=-\frac1{\sqrt{E'G'}}\frac{\partial\sqrt{E'}}{\partial v}\frac{\partial\sqrt{G'}}{\partial u},
+ \quad
+ G=\left(\frac1{\sqrt{E'}}\frac{\partial\sqrt{G'}}{\partial u}\right)^2+\frac{D'^2}{E'},
+\]
+\[
+ e=0,
+ \qquad f=\frac{\partial\sqrt{E'}}{\partial v},
+ \qquad f'=0,
+ \qquad g=\sqrt{\frac{G'}{E'}}\frac{\partial\sqrt{G'}}{\partial u},
+\]
+进而
+\[
+ EG-F^2=\frac{D'^2}{E'G'}\left(\frac{\partial\sqrt{E'}}{\partial v}\right)^2,
+\]
+\[
+ eg-\left(f+f'\right)^2=-\frac14\left(\frac{\partial\sqrt{E'}}{\partial v}\right)^2.
+\]
+由于 (B) 的一次项为零，所以
+\[
+ \frac1{4r^2}=\frac{D'^2}{E'G'}=-K,
+ \quad \text{证毕。}
+\]
+
+\subsection*{\S. 143.\quad 法向直线汇.}
+
+如果存在一张垂直于全部射线的曲面，并因而存在（第 133 节）这样一个 \(\infty^1\) 曲面族，那么这个射线系统就称为\emph{法向}系统或法向直线汇。
+
+若一个直线汇是法向的，则在第 298 页的 (1) 中，必能把 \(t\) 取为 \(u,v\) 的适当函数，使点 \((\xi,\eta,\zeta)\) 的轨迹曲面垂直于各条射线。因此，微分 \(d\xi,d\eta,d\zeta\) 必须满足条件
+\[
+ X\,d\xi+Y\,d\eta+Z\,d\zeta=0.
+\]
+又
+\[
+ d\xi=dx+dt\cdot X+t\,dX,
+ \quad d\eta=dy+dt\cdot Y+t\,dY,
+ \quad d\zeta=dz+dt\cdot Z+t\,dZ
+\]
+所以所要求的条件成为
+\[
+ dt+\sum X\,dx=0;
+\]
+若置
+\begin{equation}\tag{14}
+ U=\sum X\frac{\partial x}{\partial u},
+ \qquad V=\sum X\frac{\partial x}{\partial v},
+\end{equation}
+则用来确定 \(t\) 的关系为
+\[
+ dt=-(U\,du+V\,dv),
+\]
+从而该条件转为方程
+\begin{equation}\tag{15}
+ \frac{\partial U}{\partial v}=\frac{\partial V}{\partial u},
+\end{equation}
+并可由 (3) 写作
+\begin{equation}\tag{15*}
+ f=f'.
+\end{equation}
+假定 (15) 或 (15*) 得到满足，则存在一个垂直于该直线汇的（平行）曲面族，由公式
+\begin{equation}\tag{16}
+ t=C-\int(U\,du+V\,dv).
+\end{equation}
+所定义。
+由于 \(f=f'\)，有
+\[
+ \delta=d,
+ \qquad \gamma=\frac\pi2,
+\]
+反过来，由这后两个关系中的任一个都可推出 \(f=f'\)。因此：\emph{一个直线汇成为法向直线汇的充分必要条件，是焦点与极限点重合，或者两个焦平面彼此垂直。}\srcfn{1}{这个定理也可由第 142 节的几何论证立即得到。}
+
+对于法向直线汇，两张焦曲面显然与那些垂直于射线的曲面之演化面的两叶重合。
+
+\subsection*{\S. 144.\quad Malus-Dupin 定理.}
+
+把 (15) 写成另一种形式。为此，引入角 \(\alpha,\beta\)：它们是射线 \((u,v)\) 分别与起点曲面的坐标线 \(v,u\) 所成的角；把这张起点曲面记为 \(S\)。若
+\[
+ ds^2=E'\,du^2+2F'\,du\,dv+G'\,dv^2
+\]
+是该曲面的线元，则
+\[
+ \cos\alpha=\sum X\frac1{\sqrt{E'}}\frac{\partial x}{\partial u}=\frac{U}{\sqrt{E'}},
+ \qquad
+ \cos\beta=\sum X\frac1{\sqrt{G'}}\frac{\partial x}{\partial v}=\frac{V}{\sqrt{G'}},
+\]
+故 (15) 可写成
+\begin{equation}\tag{17}
+ \frac{\partial(\sqrt{E'}\cos\alpha)}{\partial v}
+ =
+ \frac{\partial(\sqrt{G'}\cos\beta)}{\partial u}
+\end{equation}
+并在此成立时，(16) 成为
+\begin{equation}\tag{18}
+ t=C-\int\left(\sqrt{E'}\cos\alpha\,du+\sqrt{G'}\cos\beta\,dv\right),
+\end{equation}
+这些公式中只出现角 \(\alpha,\beta\) 和起点曲面的线元系数。Beltrami 由此推出下列有趣结论。假定 (17) 得到满足，设想 \(S\) 发生形变，同时把与曲面刚性相连的射线系统一起带动；也就是说，角 \(\alpha,\beta\) 保持不变。此时 (17) 始终得到满足，而 (18) 给出的 \(t\) 值在形变中保持不变。因此得到 Beltrami 定理：
+
+\emph{设一个法向直线汇的射线从曲面 \(S\) 的各点出发，并设想这些射线终止在一张与它们正交的曲面 \(\Sigma\) 上。当 \(S\) 作任意弯曲形变，同时把与曲面刚性相连的直线汇射线一起带动时，这些射线端点的轨迹仍总是一张与射线正交的曲面。}\srcfn{1}{应注意，因为 (17) 和 (18) 中只出现 \(E',G'\)，也可以只要求可弯曲曲面 \(S\) 是\emph{部分不可伸长的}，即沿坐标线 \(u,v\) 不可伸长；在这些更一般的形变下，Beltrami 定理仍然成立。}
+
+由公式 (17) 还可直接得出 Malus-Dupin 定理：
+
+\emph{一个法向光线直线汇经过任意次数的反射或折射以后，仍然是法向直线汇。}
+
+把反射面或折射面取作起点曲面 \(S\)。把坐标线 \(u\)——它位于 \(S\) 上——取为射线在 \(S\) 的切平面上的正交投影所包络的曲线，把坐标线 \(v\) 取为它们的正交轨线，则有
+\[
+ \alpha=\frac\pi2,
+ \qquad \beta=\frac\pi2-\gamma,
+\]
+其中 \(\gamma\) 是射线与 \(S\) 的法线所成的角。于是 (17) 成为
+\[
+ \frac{\partial(\sqrt{G'}\sen\gamma)}{\partial u}=0,
+\]
+如果这个方程得到满足，那么在条件
+\[
+ \sen\gamma'=n\sen\gamma,
+ \qquad (n\text{ 为常数}),
+\]
+下，把 \(\gamma\) 换成 \(\gamma'\) 后，它仍然得到满足。这就证明了定理。
+
+\subsection*{\S. 145.\quad 主曲面具有给定球面像的直线汇.}
+
+现在回到一般直线汇，依次研究两个问题。它们可以看作另一问题的推广：求曲率线具有给定球面像的曲面，亦即求可展曲面具有给定球面像的法向直线汇（第 83 节）。对于法向直线汇，直线汇的可展曲面与主曲面重合；而对于一般直线汇，这两个系统彼此不同。因此，适宜依次研究下列两个问题：
+
+\emph{1.\textsuperscript{a} 求主曲面具有给定球面像的直线汇。}
+
+\emph{2.\textsuperscript{a} 求可展曲面具有给定球面像的直线汇。}
+
+本节研究第一个问题；无论可展曲面是实的还是虚的，这个问题始终具有实的意义。
+
+主曲面的像所成的球面系统 \((u,v)\)，必须是一个正交系统（第 138 节）；设
+\[
+ ds^2=E\,du^2+G\,dv^2
+\]
+为球面表示的线元。取中位曲面为起点曲面，于是问题中的未知量就是射线中点的坐标 \(x,y,z\)，其中射线记作 \((u,v)\)。按照假设，必须有
+\[
+ F=0,
+ \qquad f+f'=0,
+ \qquad eG+gE=0
+\]
+并且，若以 \(2r\) 表示两个极限点之间的距离，便有
+\begin{equation}\tag{19}
+ \sum\frac{\partial x}{\partial u}\frac{\partial X}{\partial u}=rE,
+ \quad
+ \sum\frac{\partial x}{\partial v}\frac{\partial X}{\partial v}=-rG,
+ \quad
+ \sum\frac{\partial x}{\partial v}\frac{\partial X}{\partial u}+\sum\frac{\partial x}{\partial u}\frac{\partial X}{\partial v}=0.
+\end{equation}
+引入一个新的未知函数 \(\varphi\)，令
+\begin{equation}\tag{20}
+ f=\sum\frac{\partial x}{\partial v}\frac{\partial X}{\partial u}=\varphi\sqrt{EG},
+ \qquad
+ f'=\sum\frac{\partial x}{\partial u}\frac{\partial X}{\partial v}=-\varphi\sqrt{EG};
+\end{equation}
+\(\varphi\) 的几何意义立即由第 306 页的 (D) 得出：若以 \(2\rho\) 表示两个焦点之间的距离，则
+\begin{equation}\tag{21}
+ \varphi^2=r^2-\rho^2.
+\end{equation}
+从 (20) 的第一个方程计算 \(\dfrac{\partial(\varphi\sqrt{EG})}{\partial u}\)。注意，由第五章第 152 页的基本公式，有
+\[
+ \frac{\partial^2X}{\partial u^2}=\chr{1}{1}{1}\frac{\partial X}{\partial u}+\chr{1}{1}{2}\frac{\partial X}{\partial v}-EX
+\]
+并且由 (19) 的第一式
+\[
+ \sum\frac{\partial^2x}{\partial u\partial v}\frac{\partial X}{\partial u}
+ =\frac{\partial(rE)}{\partial v}-\sum\frac{\partial x}{\partial u}
+ \left(\chr{1}{2}{1}\frac{\partial X}{\partial u}+\chr{1}{2}{2}\frac{\partial X}{\partial v}\right).
+\]
+由此并利用 (19)、(20) 本身，得到
+\[
+\frac{\partial(\varphi\sqrt{EG})}{\partial u}
+=\varphi\sqrt{EG}\left(\chr{1}{1}{1}+\chr{1}{2}{2}\right)
+-r\left[E\chr{1}{2}{1}+G\chr{1}{1}{2}\right]
++\frac{\partial(rE)}{\partial v}-E\sum X\frac{\partial x}{\partial v};
+\]
+而在当前情形下有
+\[
+ E\chr{1}{2}{1}+G\chr{1}{1}{2}=0,
+ \qquad
+ \frac{\partial\log\sqrt{EG}}{\partial u}=\chr{1}{1}{1}+\chr{1}{2}{2},
+\]
+故
+\begin{equation}\tag{a}
+ \sum X\frac{\partial x}{\partial v}
+ =\frac1E\frac{\partial(rE)}{\partial v}-\sqrt{\frac GE}\frac{\partial\varphi}{\partial u}.
+\end{equation}
+同样，把 (20) 的第二个方程对 \(v\) 求导，得到
+\begin{equation}\tag{b}
+ \sum X\frac{\partial x}{\partial u}
+ =-\frac1G\frac{\partial(rG)}{\partial u}+\sqrt{\frac EG}\frac{\partial\varphi}{\partial v}.
+\end{equation}
+现在只须把 (a)、(b) 与 (19)、(20) 联立，并对
+\(\dfrac{\partial x}{\partial u},\dfrac{\partial y}{\partial u},\dfrac{\partial z}{\partial u};
+\dfrac{\partial x}{\partial v},\dfrac{\partial y}{\partial v},\dfrac{\partial z}{\partial v}\)
+求解，便得到公式
+\begin{equation}\tag{22}
+\left\{
+\begin{aligned}
+\frac{\partial x}{\partial u}&=r\frac{\partial X}{\partial u}-\sqrt{\frac EG}\,\varphi\frac{\partial X}{\partial v}
++\left\{\sqrt{\frac EG}\frac{\partial\varphi}{\partial v}-\frac1G\frac{\partial(rG)}{\partial u}\right\}X,\\[0.4em]
+\frac{\partial x}{\partial v}&=-r\frac{\partial X}{\partial v}+\sqrt{\frac GE}\,\varphi\frac{\partial X}{\partial u}
++\left\{\frac1E\frac{\partial(rE)}{\partial v}-\sqrt{\frac GE}\frac{\partial\varphi}{\partial u}\right\}X
+\end{aligned}
+\right.
+\end{equation}
+关于 \(y,z\) 的公式与此类似。
+
+反过来，若 \(r,\varphi\) 是 \(u,v\) 的两个函数，并且使 (22) 的可积条件得到满足，那么这些方程就通过求积定义一个直线汇，其主曲面具有所指定的球面像。现在实际计算 (22) 的可积条件，并利用给出 \(X,Y,Z\) 二阶导数的基本方程（第 72 节，第 152 页），便发现这些条件归结为 \(r\) 与 \(\varphi\) 之间唯一的条件：
+\begin{equation}\tag{23}
+2\frac{\partial^2 r}{\partial u\partial v}
++\frac{\partial r}{\partial u}\frac{\partial\log E}{\partial v}
++\frac{\partial r}{\partial v}\frac{\partial\log G}{\partial u}
++r\frac{\partial^2\log(EG)}{\partial u\partial v}
+=\sqrt{EG}\,(\Delta_2\varphi+2\varphi),
+\end{equation}
+其中 \(\Delta_2\varphi\) 是 \(\varphi\) 的第二微分参数：
+\[
+ \Delta_2\varphi=\frac1{\sqrt{EG}}
+ \left\{\frac{\partial}{\partial u}\left(\sqrt{\frac GE}\frac{\partial\varphi}{\partial u}\right)
+ +\frac{\partial}{\partial v}\left(\sqrt{\frac EG}\frac{\partial\varphi}{\partial v}\right)\right\}.
+\]
+由此可见，所提出问题的解具有很大的任意性：可以任意选取 \(r\) 或 \(\varphi\)，再由偏微分方程 (23) 依次求出 \(\varphi\) 或 \(r\)。
+
+特别地，若要求直线汇是法向的，则有 \(\varphi=0\)，而关于 \(r\) 的方程成为
+\begin{equation}\tag{24}
+\frac{\partial^2 r}{\partial u\partial v}
++\frac{\partial\log\sqrt E}{\partial v}\frac{\partial r}{\partial u}
++\frac{\partial\log\sqrt G}{\partial u}\frac{\partial r}{\partial v}
++\frac{\partial^2\log\sqrt{EG}}{\partial u\partial v}r=0,
+\end{equation}
+这恰好是另一方程
+\begin{equation}\tag{25}
+\frac{\partial^2 W}{\partial u\partial v}
+-\frac{\partial\log\sqrt E}{\partial v}\frac{\partial W}{\partial u}
+-\frac{\partial\log\sqrt G}{\partial u}\frac{\partial W}{\partial v}=0,
+\end{equation}
+的\emph{伴随方程}\srcfn{1}{参见 Darboux，第 II 卷，第 71 页及以下各页。}；我们在第 83 节已经看到，同一个问题依赖于后一个方程。众所周知，方程 (24) 与其伴随方程 (25) 的积分在解析上彼此等价。
+
+\subsection*{\S. 146\quad 各向同性直线汇的中位包络面.}
+
+这里只把 (23) 应用于各向同性直线汇的情形，这时 \(r=0\)。由 (23)，求各向同性直线汇归结为方程
+\[
+ \Delta_2\varphi+2\varphi=0,
+\]
+根据关于切向坐标的 Weingarten 公式（参见第 81 节），这个方程也可以解释为极小面积曲面的切向方程。
+
+正是借助下列基本定理，Ribaucour 把各向同性直线汇理论与极小曲面理论联系起来：
+
+\emph{各向同性直线汇的中位包络面}\srcfn{1}{参见第 142 节的注（第 308 页）。}\emph{是一张极小面积曲面。}
+
+这个定理很容易由一般公式 (22) 得到。对于各向同性直线汇，主曲面是不确定的，所以我们可以在表示球面上任意选取正交曲线 \((u,v)\)；假定它们是等温曲线，并令
+\[
+ E=G=\lambda,
+ \qquad r=0.
+\]
+则 (22) 化为
+\[
+\left\{
+\begin{aligned}
+\frac{\partial x}{\partial u}&=X\frac{\partial\varphi}{\partial v}-\varphi\frac{\partial X}{\partial v},\\
+\frac{\partial x}{\partial v}&=-X\frac{\partial\varphi}{\partial u}+\varphi\frac{\partial X}{\partial u},
+\end{aligned}
+\right.
+\]
+若以 \(W\) 表示中位平面到原点的距离，则
+\[
+ W=\sum Xx,
+\]
+并有
+\[
+\left\{
+\begin{aligned}
+\frac{\partial W}{\partial u}&=\frac{\partial\varphi}{\partial v}+\sum x\frac{\partial X}{\partial u},\\
+\frac{\partial W}{\partial v}&=-\frac{\partial\varphi}{\partial u}+\sum x\frac{\partial X}{\partial v}.
+\end{aligned}
+\right.
+\]
+由此得
+\[
+\frac{\partial^2W}{\partial u^2}+\frac{\partial^2W}{\partial v^2}
+=\sum x\left(\frac{\partial^2X}{\partial u^2}+\frac{\partial^2X}{\partial v^2}\right)
+=-2\lambda\sum xX,
+\]
+即
+\[
+ \frac{\partial^2W}{\partial u^2}+\frac{\partial^2W}{\partial v^2}+2\lambda W=0,
+\]
+从而证得 Ribaucour 定理。
+
+\subsection*{\S. 147.\quad 可展曲面具有给定球面像的直线汇.}
+
+现在讨论第 145 节所提出的第二个问题。马上就会看到，这个问题的解具有小得多的任意性。下面要建立的重要结果归功于 Guichard；他用如下方式证明了这些结果\srcfn{1}{\emph{Surfaces rapportées à leurs lignes asymptotiques et congruences rapportées à leurs développables} (Annales scientifiques de l'École Normale Supérieure, t. VI, 3.ª série).}。
+
+令
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+为指定的球面线元，其中 \((u,v)\) 是直线汇各张可展曲面的像。在这里也把直线汇的中位曲面取作起点曲面，并把射线中点的坐标 \(x,y,z\) 作为未知量。若以 \(2\rho\) 表示两个焦点之间的距离，则
+\[
+ x+\rho X,\quad y+\rho Y,\quad z+\rho Z
+\]
+为一个焦点坐标，
+\[
+ x-\rho X,\quad y-\rho Y,\quad z-\rho Z
+\]
+是另一个焦点的坐标。假定第一个焦点对应于曲线 \(v=\) 常数，第二个焦点对应于曲线 \(u=\) 常数；于是必有
+\[
+ \frac{\partial(x+\rho X)}{\partial u}=hX,
+ \quad
+ \frac{\partial(y+\rho Y)}{\partial u}=hY,
+ \quad
+ \frac{\partial(z+\rho Z)}{\partial u}=hZ,
+\]
+\[
+ \frac{\partial(x-\rho X)}{\partial v}=lX,
+ \quad
+ \frac{\partial(y-\rho Y)}{\partial v}=lY,
+ \quad
+ \frac{\partial(z-\rho Z)}{\partial v}=lZ,
+\]
+其中 \(h,l\) 是适当的比例因子。把这些方程写成
+\begin{equation}\tag{26}
+\left\{\begin{aligned}
+\frac{\partial x}{\partial u}&=\left(h-\frac{\partial\rho}{\partial u}\right)X-\rho\frac{\partial X}{\partial u},\\[0.25em]
+\frac{\partial x}{\partial v}&=\left(l+\frac{\partial\rho}{\partial v}\right)X+\rho\frac{\partial X}{\partial v},
+\end{aligned}
+\right.
+\end{equation}
+连同关于 \(y,z\) 的类似方程。随后写出可积条件
+\[
+ \frac{\partial}{\partial v}\left(\frac{\partial x}{\partial u}\right)-
+ \frac{\partial}{\partial u}\left(\frac{\partial x}{\partial v}\right)=0,
+\]
+并注意
+\[
+ \frac{\partial^2X}{\partial u\partial v}
+ =\chr{1}{2}{1}\frac{\partial X}{\partial u}
+ +\chr{1}{2}{2}\frac{\partial X}{\partial v}-FX,
+\]
+可得
+\begin{equation}\tag{$\alpha$}
+ \frac{\partial h}{\partial v}-\frac{\partial l}{\partial u}-2\frac{\partial^2\rho}{\partial u\partial v}+2\rho F=0,
+\end{equation}
+\begin{equation}\tag{$\beta$}
+\left\{\begin{aligned}
+ l&=-2\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right],\\
+ h&= 2\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right].
+\end{aligned}
+\right.
+\end{equation}
+从而 (26) 改写为
+\begin{equation}\tag{27}
+\left\{\begin{aligned}
+\frac{\partial x}{\partial u}&=\left[\frac{\partial\rho}{\partial u}+2\chr{1}{2}{2}\rho\right]X-\rho\frac{\partial X}{\partial u},\\[0.25em]
+\frac{\partial x}{\partial v}&=-\left[\frac{\partial\rho}{\partial v}+2\chr{1}{2}{1}\rho\right]X+\rho\frac{\partial X}{\partial v},
+\end{aligned}
+\right.
+\end{equation}
+而在 (\(\alpha\)) 中，把 \(l,h\) 换成它们由 (\(\beta\)) 给出的值，便得到关于 \(\rho\) 的方程
+\begin{equation}\tag{28}
+ \frac{\partial^2\rho}{\partial u\partial v}
+ +\chr{1}{2}{1}\frac{\partial\rho}{\partial u}
+ +\chr{1}{2}{2}\frac{\partial\rho}{\partial v}
+ +\left[\frac{\partial}{\partial u}\chr{1}{2}{1}
+ +\frac{\partial}{\partial v}\chr{1}{2}{2}+F\right]\rho=0.
+\end{equation}
+反过来，若 \(\rho\) 是这个方程的一个解，则 (27) 通过求积给出一个相应的直线汇，它的可展曲面具有指定的像。
+
+应当注意，问题所依赖的 Laplace 方程 (28)，是下列方程的伴随方程：
+\[
+ \frac{\partial^2 W}{\partial u\partial v}
+ -\chr{1}{2}{1}\frac{\partial W}{\partial u}
+ -\chr{1}{2}{2}\frac{\partial W}{\partial v}+F W=0,
+\]
+在第 82 节中，我们已经看到：求一个曲面，使它的一组共轭系统以球面系统 \((u,v)\) 为球面像的问题，依赖于这个方程。因此，这两个问题是等价的。
+
+\subsection*{\S. 148.\quad 关于球面的一般公式.}
+
+现在要表示焦曲面两叶的有关元素。为此，适宜建立一组公式；这些公式在其他研究中也会有用。
+
+在球面的每一点 \((u,v)\)，考察由球面法线以及坐标线 \((u,v)\) 的两个角平分方向所组成的三直角三面形。后两个方向的方向余弦分别记为
+\[
+\begin{array}{ccc}
+X_1,&Y_1,&Z_1,\\
+X_2,&Y_2,&Z_2,
+\end{array}
+\]
+以 \(\Omega\) 表示球面曲线 \((u,v)\) 的夹角；它由下列公式定义：
+\[
+ \cos\Omega=\frac{F}{\sqrt{EG}},\qquad
+ \sen\Omega=\frac{\sqrt{EG-F^2}}{\sqrt{EG}},
+\]
+可立即得到
+\begin{equation}\tag{29}
+\left\{\begin{aligned}
+X_1&=\frac{1}{2\sen\frac\Omega2}
+\left\{\frac1{\sqrt E}\frac{\partial X}{\partial u}-\frac1{\sqrt G}\frac{\partial X}{\partial v}\right\},\\[0.35em]
+X_2&=\frac{1}{2\cos\frac\Omega2}
+\left\{\frac1{\sqrt E}\frac{\partial X}{\partial u}+\frac1{\sqrt G}\frac{\partial X}{\partial v}\right\},
+\end{aligned}
+\right.
+\end{equation}
+连同关于 \(Y,Z\) 的类似公式。
+
+我们所要建立的公式，要把九个方向余弦
+\[
+\begin{array}{ccc}
+X,&X_1,&X_2,\\
+Y,&Y_1,&Y_2,\\
+Z,&Z_1,&Z_2
+\end{array}
+\]
+的偏导数，线性地表示为这些方向余弦本身以及球面线元系数的函数。
+
+由 (29) 可得
+\[
+\left\{\begin{aligned}
+\frac{\partial X}{\partial u}&=\sqrt E\sen\frac\Omega2\,X_1+\sqrt E\cos\frac\Omega2\,X_2,\\
+\frac{\partial X}{\partial v}&=-\sqrt G\sen\frac\Omega2\,X_1+\sqrt G\cos\frac\Omega2\,X_2,
+\end{aligned}
+\right.
+\]
+故
+\[
+\left\{\begin{aligned}
+\sum X\frac{\partial X_1}{\partial u}&=-\sum X_1\frac{\partial X}{\partial u}=-\sqrt E\sen\frac\Omega2,\\
+\sum X\frac{\partial X_1}{\partial v}&=-\sum X_1\frac{\partial X}{\partial v}=\sqrt G\sen\frac\Omega2,\\
+\sum X\frac{\partial X_2}{\partial u}&=-\sum X_2\frac{\partial X}{\partial u}=-\sqrt E\cos\frac\Omega2,\\
+\sum X\frac{\partial X_2}{\partial v}&=-\sum X_2\frac{\partial X}{\partial v}=-\sqrt G\cos\frac\Omega2.
+\end{aligned}
+\right.
+\]
+计算两个和
+\[
+ \sum X_2\frac{\partial X_1}{\partial u}=-\sum X_1\frac{\partial X_2}{\partial u},
+\qquad
+ \sum X_2\frac{\partial X_1}{\partial v}=-\sum X_1\frac{\partial X_2}{\partial v}.
+\]
+由 (29) 有
+\[
+\sum X_2\frac{\partial X_1}{\partial u}=
+\frac1{2\sen\Omega}\sum\left\{
+\frac1{\sqrt G}\frac{\partial X}{\partial v}\frac{\partial}{\partial u}\left(\frac1{\sqrt E}\frac{\partial X}{\partial u}\right)-
+\frac1{\sqrt E}\frac{\partial X}{\partial u}\frac{\partial}{\partial u}\left(\frac1{\sqrt G}\frac{\partial X}{\partial v}\right)\right\}
+\]
+且
+\[
+ \cos\Omega=\sum \frac1{\sqrt E}\frac{\partial X}{\partial u}\cdot\frac1{\sqrt G}\frac{\partial X}{\partial v},
+\]
+对 \(u\) 求导，得到
+\[
+\sum\frac1{\sqrt G}\frac{\partial X}{\partial v}\frac{\partial}{\partial u}\left(\frac1{\sqrt E}\frac{\partial X}{\partial u}\right)
+=-\sen\Omega\frac{\partial\Omega}{\partial u}
+-\sum\frac1{\sqrt E}\frac{\partial X}{\partial u}\frac{\partial}{\partial u}\left(\frac1{\sqrt G}\frac{\partial X}{\partial v}\right),
+\]
+因此前式改为
+\[
+ \sum X_2\frac{\partial X_1}{\partial u}=-\frac1{2\sen\Omega}\left[
+\sen\Omega\frac{\partial\Omega}{\partial u}+\frac2{\sqrt E}\sum\frac{\partial X}{\partial u}\frac{\partial}{\partial u}\left(\frac1{\sqrt G}\frac{\partial X}{\partial v}\right)\right].
+\]
+若展开并利用
+\[
+ \frac{\partial^2X}{\partial u\partial v}=
+ \chr{1}{2}{1}\frac{\partial X}{\partial u}+
+ \chr{1}{2}{2}\frac{\partial X}{\partial v}-FX,
+\]
+可得
+\[
+\sum X_2\frac{\partial X_1}{\partial u}=-\frac1{2\sen\Omega}\left[
+\sen\Omega\frac{\partial\Omega}{\partial u}+\frac2{\sqrt{EG}}\left\{E\chr{1}{2}{1}+F\chr{1}{2}{2}-\frac F{2G}\frac{\partial G}{\partial u}\right\}\right].
+\]
+又
+\[
+\frac{\partial G}{\partial u}=2\left[\begin{matrix}12\\2\end{matrix}\right]
+ =2F\chr{1}{2}{1}+2G\chr{1}{2}{2},
+\]
+故
+\[
+ E\chr{1}{2}{1}+F\chr{1}{2}{2}-\frac F{2G}\frac{\partial G}{\partial u}
+=\frac{EG-F^2}{G}\chr{1}{2}{1}=E\sen^2\Omega\,\chr{1}{2}{1},
+\]
+于是
+\[
+ \sum X_2\frac{\partial X_1}{\partial u}
+=-\sum X_1\frac{\partial X_2}{\partial u}
+=-\frac12\frac{\partial\Omega}{\partial u}-\sqrt{\frac EG}\chr{1}{2}{1}\sen\Omega.
+\]
+同理
+\[
+ \sum X_2\frac{\partial X_1}{\partial v}
+=-\sum X_1\frac{\partial X_2}{\partial v}
+=\frac12\frac{\partial\Omega}{\partial v}+\sqrt{\frac GE}\chr{1}{2}{2}\sen\Omega.
+\]
+这两公式结合 (a) 与恒等式
+\[
+ \sum X_1\frac{\partial X_1}{\partial u}=0,
+ \qquad
+ \sum X_1\frac{\partial X_1}{\partial v}=0\quad\hbox{等},
+\]
+可得要求的公式组
+\begin{equation}\tag{30}
+\left\{\begin{aligned}
+\frac{\partial X}{\partial u}&=\sqrt E\sen\frac\Omega2\,X_1+\sqrt E\cos\frac\Omega2\,X_2,
+&\quad
+\frac{\partial X}{\partial v}&=-\sqrt G\sen\frac\Omega2\,X_1+\sqrt G\cos\frac\Omega2\,X_2,\\[0.25em]
+\frac{\partial X_1}{\partial u}&=-A X_2-\sqrt E\sen\frac\Omega2\,X,
+&
+\frac{\partial X_1}{\partial v}&=B X_2+\sqrt G\sen\frac\Omega2\,X,\\[0.25em]
+\frac{\partial X_2}{\partial u}&=A X_1-\sqrt E\cos\frac\Omega2\,X,
+&
+\frac{\partial X_2}{\partial v}&=-B X_1-\sqrt G\cos\frac\Omega2\,X,
+\end{aligned}
+\right.
+\end{equation}
+其中为简写，置
+\begin{equation}\tag{31}
+ A=\frac12\frac{\partial\Omega}{\partial u}+\sqrt{\frac EG}\chr{1}{2}{1}\sen\Omega,
+ \qquad
+ B=\frac12\frac{\partial\Omega}{\partial v}+\sqrt{\frac GE}\chr{1}{2}{2}\sen\Omega.
+\end{equation}
+值得注意的是，根据第 86 节（第 184 页）所展开的公式，也可以把 \(A,B\) 用坐标线的测地曲率 \(1/\rho_u,1/\rho_v\) 表示，如下：
+\begin{equation}\tag{31*}
+ A=-\frac{\sqrt E}{\rho_v}-\frac12\frac{\partial\Omega}{\partial u},
+ \qquad
+ B=-\frac{\sqrt G}{\rho_u}-\frac12\frac{\partial\Omega}{\partial v}.
+\end{equation}
+给定球面线元以后，公式 (30) 对 \(X,X_1,X_2\) 给出第 58 节已经提到的全微分方程组；这个方程组是无条件可积的，而它的积分归结为一个 Riccati 方程。
+\subsection*{\S. 149.\quad 焦曲面两叶的元素.}
+
+现在回到 Guichard 的问题和公式。在这里，角 \(\Omega\)——即球面曲线 \((u,v)\) 的夹角——同时也表示两个焦平面的夹角\srcfn{1}{球面曲线 \(u,v\) 是直线汇中可展曲面 \(u,v\) 的回归棱切线的指标曲线，所以这一断言立即成立。解析地也可以得到同一结果：注意有
+\[
+ e=-\rho E,\quad f=\rho F,\quad f'=-\rho F,\quad g=\rho G,
+\]
+因而第 305 页的 (B) 给出
+\[
+ \frac{\rho^2}{r^2}=\frac{EG-F^2}{EG}=\sen^2\Omega.
+\]}。
+式 (27) 可改写为
+\begin{equation}\tag{32}
+\left\{
+\begin{aligned}
+\frac{\partial x}{\partial u}&=\left[\frac{\partial\rho}{\partial u}+2\chr{1}{2}{2}\rho\right]X
+-\sqrt E\sen\frac\Omega2\,\rho X_1-\sqrt E\cos\frac\Omega2\,\rho X_2,\\
+\frac{\partial x}{\partial v}&=-\left[\frac{\partial\rho}{\partial v}+2\chr{1}{2}{1}\rho\right]X
+-\sqrt G\sen\frac\Omega2\,\rho X_1+\sqrt G\cos\frac\Omega2\,\rho X_2.
+\end{aligned}
+\right.
+\end{equation}
+以 \(S_1,S_2\) 表示两张焦曲面，以 \(x_1,y_1,z_1;\ x_2,y_2,z_2\) 表示相应焦点 \(F_1,F_2\) 的坐标，于是有
+\[
+ x_1=x+\rho X,
+\quad y_1=y+\rho Y,
+\quad z_1=z+\rho Z,
+\]
+\[
+ x_2=x-\rho X,
+\quad y_2=y-\rho Y,
+\quad z_2=z-\rho Z;
+\]
+再记
+\[
+\begin{array}{ccc@{\quad;\quad}ccc}
+E_1,&F_1,&G_1& D_1,&D'_1,&D''_1,\\
+E_2,&F_2,&G_2& D_2,&D'_2,&D''_2
+\end{array}
+\]
+分别表示 \(S_1,S_2\) 的两个基本形式的系数。由 (30)、(31) 得到
+\[
+\left\{
+\begin{aligned}
+\frac{\partial x_1}{\partial u}&=2\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right]X,\\[0.25em]
+\frac{\partial x_1}{\partial v}&=-2\chr{1}{2}{1}\rho X-2\sqrt G\sen\frac\Omega2\,\rho X_1+2\sqrt G\cos\frac\Omega2\,\rho X_2,\\[0.25em]
+\frac{\partial x_2}{\partial u}&=2\chr{1}{2}{2}\rho X-2\sqrt E\sen\frac\Omega2\,\rho X_1-2\sqrt E\cos\frac\Omega2\,\rho X_2,\\[0.25em]
+\frac{\partial x_2}{\partial v}&=-2\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right]X.
+\end{aligned}
+\right.
+\]
+由此直接得到
+\begin{equation}\tag{33}
+\left\{
+\begin{aligned}
+E_1&=4\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right]^2,\\
+F_1&=-4\chr{1}{2}{1}\rho\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right],\\
+G_1&=4\rho^2\left\{\left(\chr{1}{2}{1}\right)^2+G\right\},\\
+E_1G_1-F_1^2&=16G\rho^2\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right]^2.
+\end{aligned}
+\right.
+\end{equation}
+同理有
+\begin{equation}\tag{33*}
+\left\{
+\begin{aligned}
+E_2&=4\rho^2\left\{\left(\chr{1}{2}{2}\right)^2+E\right\},\\
+F_2&=-4\chr{1}{2}{2}\rho\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right],\\
+G_2&=4\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right]^2,\\
+E_2G_2-F_2^2&=16E\rho^2\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right]^2.
+\end{aligned}
+\right.
+\end{equation}
+设 \(\xi_1,\eta_1,\zeta_1\) 表示 \(S_1\) 的法线方向余弦，\(\xi_2,\eta_2,\zeta_2\) 表示 \(S_2\) 的法线方向余弦，则有
+\[
+ \xi_1=\cos\frac\Omega2\,X_1+\sen\frac\Omega2\,X_2,
+\]
+\[
+ \xi_2=\cos\frac\Omega2\,X_1-\sen\frac\Omega2\,X_2.
+\]
+计算
+\[
+\begin{array}{lll}
+D_1=-\sum\dfrac{\partial\xi_1}{\partial u}\dfrac{\partial x_1}{\partial u},&
+D'_1=-\sum\dfrac{\partial\xi_1}{\partial v}\dfrac{\partial x_1}{\partial u},&
+D''_1=-\sum\dfrac{\partial\xi_1}{\partial v}\dfrac{\partial x_1}{\partial v},\\[0.8em]
+D_2=-\sum\dfrac{\partial\xi_2}{\partial u}\dfrac{\partial x_2}{\partial u},&
+D'_2=-\sum\dfrac{\partial\xi_2}{\partial u}\dfrac{\partial x_2}{\partial v},&
+D''_2=-\sum\dfrac{\partial\xi_2}{\partial v}\dfrac{\partial x_2}{\partial v},
+\end{array}
+\]
+则
+\begin{equation}\tag{34}
+\left\{
+\begin{aligned}
+D_1&=2\sqrt E\sen\Omega\left[\frac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right],
+& D'_1&=0,
+& D''_1&=-2\sqrt G\rho\left[\frac{\partial\Omega}{\partial v}+\sqrt{\frac GE}\chr{1}{2}{2}\sen\Omega\right],\\[0.4em]
+D_2&=2\sqrt E\rho\left[\frac{\partial\Omega}{\partial u}+\sqrt{\frac EG}\chr{1}{2}{1}\sen\Omega\right],
+& D'_2&=0,
+& D''_2&=-2\sqrt G\sen\Omega\left[\frac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right].
+\end{aligned}
+\right.
+\end{equation}
+公式 \(D'_1=0,\ D'_2=0\) 表示一个熟知的性质：曲线 \((u,v)\) 在两张焦曲面上都组成一个共轭系统。\(D''_1,D_2\) 的值也可以写成
+\[
+ D''_1=\frac{2G\rho}{\rho_u},\qquad D_2=-\frac{2E\rho}{\rho_v}.
+\]
+两叶的曲率 \(K_1,K_2\) 则由下列公式给出：
+\begin{equation}\tag{53}
+\left\{
+\begin{aligned}
+K_1&=-\frac{\sqrt{\frac EG}\sen\Omega\left[\dfrac{\partial\Omega}{\partial v}+\sqrt{\dfrac GE}\chr{1}{2}{2}\sen\Omega\right]}
+{4\rho\left[\dfrac{\partial\rho}{\partial u}+\chr{1}{2}{2}\rho\right]},\\[0.8em]
+K_2&=-\frac{\sqrt{\frac GE}\sen\Omega\left[\dfrac{\partial\Omega}{\partial u}+\sqrt{\dfrac EG}\chr{1}{2}{1}\sen\Omega\right]}
+{4\rho\left[\dfrac{\partial\rho}{\partial v}+\chr{1}{2}{1}\rho\right]}.
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection*{\S. 150.\quad 对伪球直线汇的应用.}
+
+把上一节的一般公式应用于两个特殊情形。首先提出如下问题：\emph{是否存在这样的直线汇，其中两个焦点之间的距离与两个极限点之间的距离同时为常数？}由第 130 节知道，这种法向直线汇确实存在；它们由一张曲面 \(W\) 的法线组成，而该曲面的主曲率半径 \(r_1,r_2\) 满足关系
+\[
+ r_1-r_2=\hbox{常数}.
+\]
+现在研究一般问题；在上一节的公式中，必须假定
+\[
+ \rho=\hbox{常数},\qquad \Omega=\hbox{常数};
+\]
+于是公式 (53)\ednote{原书此处印作“(35)”，但本页紧邻的两叶曲率公式明确标作“(53)”；本译据这一直接像素证据改引 (53)。}变为
+\[
+ K_1=K_2=-\frac{\sen^2\Omega}{4\rho^2},
+\]
+并且由于
+\[
+ \frac{2\rho}{\sen\Omega}=2r
+\]
+就是两个极限点之间的距离，所以得到定理：\emph{若一个直线汇中两个焦点之间的距离与两个极限点之间的距离都是常数，则两张焦曲面都是伪球面，其半径等于两个极限点之间的距离。}
+
+这一类直线汇称为\emph{伪球直线汇}；以后将证明，对于 \(\rho\) 和 \(\Omega\) 的所有取值，它们都存在。这里先在假定它们存在的前提下，再推出焦曲面两叶上各点之间对应关系的若干性质。由 (34)，焦曲面两叶上的渐近线都满足微分方程
+\[
+ E\,du^2-G\,dv^2=0,
+\]
+因而一侧的渐近线对应另一侧；此外对线元 \(ds_1,ds_2\)，有
+\[
+ ds_1^2=4\rho^2\left[\left(\chr{1}{2}{2}du-\chr{1}{2}{1}dv\right)^2+G\,dv^2\right],
+\]
+\[
+ ds_2^2=4\rho^2\left[\left(\chr{1}{2}{2}du-\chr{1}{2}{1}dv\right)^2+E\,du^2\right],
+\]
+可见对应渐近弧长相等。由 (33)、(34) 还可得在两侧焦面上的曲率线微分方程
+\[
+ E\chr{1}{2}{1}\chr{1}{2}{2}du^2-
+\left[EG+E\left(\chr{1}{2}{1}\right)^2+G\left(\chr{1}{2}{2}\right)^2\right]du\,dv+
+G\chr{1}{2}{1}\chr{1}{2}{2}dv^2=0.
+\]
+于是得到定理：\emph{在伪球直线汇的焦曲面两叶上，曲率线与渐近线彼此对应，而且相应的渐近线弧长相等。}\srcfn{1}{值得注意的是，由第 145 节的公式可以推出关于伪球直线汇主曲面之球面像 \((u,v)\) 的结论。由于 \(r\) 与 \(\rho\) 是常数，因而 \(\varphi=\sqrt{r^2-\rho^2}\)，第 314 页的 (23) 成为
+\[
+ \frac{\partial^2\log\sqrt{EG}}{\partial u\partial v}-\frac{\varphi}{r}\sqrt{EG}=-\cos\Omega\sqrt{EG}.
+\]
+因此：\emph{若球面曲线 \((u,v)\) 是伪球直线汇主曲面的像，则球面线元具有形式}
+\[
+ ds^2=E\,du^2+G\,dv^2,
+\]
+\emph{其中 \(\sqrt{EG}\) 是 Liouville 方程解：}
+\[
+ \frac{\partial^2\log\sqrt{EG}}{\partial u\partial v}=\cos\Omega\sqrt{EG}\quad(\Omega\ \hbox{常数}).
+\]
+反过来，根据第 145 节很清楚：每当球面线元能化为上述形式并满足前一方程时，就存在相应的伪球直线汇。特别地，若这个伪球直线汇是法向的，则 \(\Omega=\pi/2\)、\(\partial^2\log\sqrt{EG}/\partial u\partial v=0\)，并且可以直接令 \(\sqrt{EG}=1\)。这时把 \(u,v\) 看作表示平面上一点的正交笛卡尔坐标，便得到一个保持面积的球面到平面表示；表示平面上两族分别平行于坐标轴的正交直线，对应于球面上的一个双重正交系统。也可以根据第 290 页的定理 C)，直接寻找那些曲面 \(W\) 的曲率线之球面像而得到这些结果；这些曲面的两个主曲率半径之差为常数。另一个值得注意的情形是 \(\Omega=0\)；这时直线汇由一张伪球面上一族渐近线的切线组成。参见第 142 节，第 308 页。}。
+
+\subsection*{\S. 151.\quad Guichard 直线汇.}
+
+我们提出的第二个问题如下\srcfn{2}{参见 Guichard 前引文。}：\emph{对于哪些直线汇，直线汇的可展曲面沿曲率线截焦曲面？}
+
+因此应当有
+\[
+ F_1=0,
+ \qquad F_2=0,
+\]
+因此，由 (33)、(33*)（假定焦曲面不退化为曲线）得到下列充分必要条件：
+\[
+ \chr{1}{2}{1}=0,
+ \qquad
+ \chr{1}{2}{2}=0.
+\]
+而这些等式表示（第 76 节）球面曲线 \(u,v\) 是一张伪球面之渐近线的像。因此：\emph{所求直线汇恰好是这样的直线汇：其可展曲面的像，是一张伪球面之渐近线的像。}
+
+于是可按 \S. 76 取
+\[
+ E=G=1,
+ \qquad F=\cos\Omega,
+\]
+定义 \(\rho\) 的 Laplace 方程 (28) 变为
+\begin{equation}\tag{36}
+ \frac{\partial^2\rho}{\partial u\partial v}+\rho\cos\Omega=0.
+\end{equation}
+这个方程的每一个解 \(\rho\) 都对应一个刚才所考察种类的直线汇；我们把这些直线汇称为\emph{Guichard 直线汇}。
+
+对于 Guichard 直线汇焦曲面两叶的线元，由 (33) 得到下列简单公式：
+\[
+\left\{
+\begin{aligned}
+ds_1^2&=4\left(\frac{\partial\rho}{\partial u}\right)^2du^2+4\rho^2dv^2,\\
+ds_2^2&=4\rho^2du^2+4\left(\frac{\partial\rho}{\partial v}\right)^2dv^2.
+\end{aligned}
+\right.
+\]
+在 (36) 中，\(\Omega\) 表示下列方程的任意一个解：
+\[
+ \frac{\partial^2\Omega}{\partial u\partial v}=-\sen\Omega
+\]
+并且可以像 Guichard 那样注意到，\(\partial\Omega/\partial u,\ \partial\Omega/\partial v\) 是 (36) 的两个特解；在这种情形下，焦曲面两叶之一是一张球面。
+
+在 Guichard 曲面 \(S_1\) 上，曲率线 \(v=\) 常数的切线就是直线汇的射线。以 \(\Gamma_1\) 表示 \(S_1\) 关于曲线 \(v=\) 常数的演化曲面。\(\Gamma_1\) 在一点的法线平行于 Guichard 直线汇的相应射线；又因为 \((u,v)\) 在 \(\Gamma_1\) 上是共轭的，所以对于 \(\Gamma_1\) 有如下性质：对它作 Gauss 球面表示时，共轭系统 \((u,v)\) 在 \(\Gamma_1\) 上的像与一张伪球面的渐近线之像重合。现在只须回到第 78 节第 167 页的公式 (25)，便可看出：若以 \(\left\{\begin{matrix}rs\\ t\end{matrix}\right\}_1\) 表示由 \(\Gamma_1\) 构造的 Christoffel 符号，则有
+\[
+ \left\{\begin{matrix}22\\1\end{matrix}\right\}_1=0,
+ \qquad
+ \left\{\begin{matrix}11\\2\end{matrix}\right\}_1=0,
+\]
+也就是说，\(u,v\) 在 \(\Gamma_1\) 上都是测地线。具有这种性质——存在一个由测地线组成的共轭系统——的曲面，最先由 Voss 研究\srcfn{1}{\emph{Sitzungsberichte der Münchener Akademie der Wissenschaften} (März 1888).}，我们称它们为\emph{Voss 曲面}。因此：\emph{每一张 Guichard 曲面的演化面都有一叶是 Voss 曲面。}
+
+反过来也立即可见：\emph{一张 Voss 曲面相对于其共轭系统中任一族测地线的演变曲面，都是 Guichard 曲面。}
+
+以后我们还会回到本节所考察曲面的性质，以及它们与伪球面的关系。
+

@@ -1,0 +1,115 @@
+\subsection*{§. 9.\quad 内蕴方程的积分。}
+根据保证微分方程解存在的那些定理，我们不难进一步看出：\emph{任意给定作为曲线内蕴方程的关系式
+\[
+\frac{1}{\rho}=f(s),\qquad \frac{1}{T}=\varphi(s)
+\]
+相应的曲线确实存在。}
+
+以 \(l,m,n\) 表示 \(s\) 的三个未知函数，写出如下三个线性齐次方程组：
+\begin{equation}\tag{12}
+\frac{\diff l}{\diff s}=m f(s),\qquad
+\frac{\diff m}{\diff s}=-l f(s)-n\varphi(s),\qquad
+\frac{\diff n}{\diff s}=m\varphi(s),
+\end{equation}
+若曲线存在，则根据弗雷内公式，
+\[
+(\alpha,\xi,\lambda),\qquad (\beta,\eta,\mu),\qquad (\gamma,\zeta,\nu)
+\]
+恰好是它的三个积分组。由微分方程理论可知：任意指定未知函数的初值，例如在 \(s=0\) 时指定 \(l,m,n\) 的初值，便存在方程组 (12) 的一个积分组 \((l,m,n)\)，它在 \(s=0\) 时化为所指定的初始组 \((l_0,m_0,n_0)\)；而且，由于 (12) 是线性的，积分 \(l,m,n\) 在 \(s\) 的整个区间内都存在并且是正则的，只要已给函数 \(f(s),\varphi(s)\) 在该区间内保持有限且连续。
+
+还要指出，若 \((l,m,n)\)、\((l',m',n')\) 是 (12) 的两个积分组，无论二者相异还是重合，由微分方程本身可得
+\[
+\frac{\diff}{\diff s}(ll'+mm'+nn')=0,
+\]
+因而
+\[
+ll'+mm'+nn'=\hbox{常数}.
+\]
+
+于是，取九个常数
+\[
+\begin{matrix}
+l_0 & l'_0 & l''_0\\
+m_0 & m'_0 & m''_0\\
+n_0 & n'_0 & n''_0,
+\end{matrix}
+\]
+使它们构成一个正交代换的系数；并以
+\[
+(l,m,n),\qquad (l',m',n'),\qquad (l'',m'',n'')
+\]
+表示 (12) 的三个积分组，它们在 \(s=0\) 时分别化为
+\[
+(l_0,m_0,n_0),\qquad (l'_0,m'_0,n'_0),\qquad (l''_0,m''_0,n''_0).
+\]
+由上面的说明可知，对于\emph{\(s\) 的一切值}，
+\[
+\begin{matrix}
+l & l' & l''\\
+m & m' & m''\\
+n & n' & n''
+\end{matrix}
+\]
+仍是一个正交代换的系数；特别地，
+\[
+l^2+l'^2+l''^2=1.
+\]
+现在令
+\[
+x=\int l\,\diff s,
+\qquad y=\int l'\,\diff s,
+\qquad z=\int l''\,\diff s,
+\]
+并把 \(x,y,z\) 解释为一个动点 \(M\) 的坐标；点 \(M\) 的轨迹曲线显然以 \(s\) 为弧长，并以 \(l,l',l''\) 为切线的方向余弦。若再考虑 \((l,m,n),(l',m',n'),(l'',m'',n'')\) 所满足的微分方程 (12) 以及弗雷内公式，立即可见，该曲线的两个曲率 \(1/\rho,1/T\) 恰有指定的值
+\[
+\frac{1}{\rho}=f(s),\qquad \frac{1}{T}=\varphi(s).
+\]
+最后，我们依照达布（Darboux）证明：方程组 (12) 的积分可以归结为一个黎卡提型微分方程的积分。对于 (12) 的任一积分组，都有
+\[
+l^2+m^2+n^2=\hbox{常数}
+\]
+而将 \(l,m,n\) 同乘一个常数因子（由于齐次性，这样得到的仍是一个新的积分组），便不妨设
+\[
+l^2+m^2+n^2=1.
+\]
+于是将 \(l,m,n\) 用两个角 \(\theta,\varphi\) 按照下列公式表示：
+\[
+l=\sen\theta\cos\varphi,
+\qquad m=\sen\theta\sen\varphi,
+\qquad n=\cos\theta,
+\]
+而 (12) 对 \(\theta,\varphi\) 给出两个联立方程
+\begin{equation}\tag{13}
+\frac{\diff\theta}{\diff s}+\frac{\sen\varphi}{T}=0,
+\qquad
+\frac{\diff\varphi}{\diff s}+\frac{\cot\theta\cos\varphi}{T}+\frac{1}{\rho}=0.
+\end{equation}
+再引入复函数
+\[
+\sigma=\cot\frac{\theta}{2}\,e^{i\varphi}
+\]
+作为唯一的未知函数（以后在第三章中，我们将认出它的意义是\emph{球面上的复变量}）；由 (13)，\(\sigma\) 满足唯一的方程
+\refstepcounter{footnote}
+\begin{equation}\tag{14}
+\frac{\diff\sigma}{\diff s}+\frac{i\sigma^2}{2T}+\frac{i\sigma}{\rho}-\frac{i}{2T}=0^{(\thefootnote)},
+\end{equation}
+\footnotetext{最简便的计算方法是对 \(\sigma\) 作对数微分，利用 (13)，再用 \(\sen\varphi,\cos\varphi\) 的指数表示式来代换它们。}
+反过来，将这个方程的实部与虚部分开，便得到 (13)。因此：\emph{由内蕴方程确定一条曲线的问题，归结为黎卡提型方程 (14) 的积分。}
+
+根据这类方程的熟知性质，只要知道一个特解，就足以通过求积得到通积分。
+
+作为例子，考虑一条由其内蕴方程
+\[
+\frac{1}{\rho}=f(s),\qquad \frac{1}{T}=0.
+\]
+所确定的\emph{平面}曲线。这时，(14)，或等价地 (13)，立即可以积分。显然 \(\theta\) 取常值；在不失一般性的情况下，可以令 \(\theta=\pi/2\)；继而由求积式
+\begin{equation}\tag{15}
+\varphi=-\int f(s)\,\diff s
+\end{equation}
+
+
+\noindent 求得 \(\varphi\)。最后，对于所求曲线有
+\begin{equation}\tag{15*}
+x=a+\int \cos\varphi\,\diff s,\qquad y=b+\int \sen\varphi\,\diff s,\qquad z=c,
+\end{equation}
+其中 \(a,b,c\) 为常数。因此，若设 \(f(s)=\dfrac{k}{s}\)（\(k\) 为常数），也就是说，所求平面曲线的曲率半径与弧长成正比，那么由 (15*) 立即可知，所求曲线是一条对数螺线。

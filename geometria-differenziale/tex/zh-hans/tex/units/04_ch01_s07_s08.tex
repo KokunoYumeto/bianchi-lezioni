@@ -1,0 +1,126 @@
+%% UNIT ch01_s07_s08 | IT authority lines 526--653
+\subsection*{§. 7.\quad 挠率的符号}
+现在考察挠率的正号或负号具有何种几何意义。由最后一行公式 (A) 已经可以看出，这个符号与沿曲线 \(C\) 所取的正向无关：把该方向改为反向时，\(\xi,\eta,\zeta\) 不变，而 \(\lambda,\mu,\nu\) 与 \(s\) 的正向一起改变符号。
+
+为此，我们计算有向距离 \(\delta\)：它是曲线上一点 \(M'\) 到密切平面的距离，该点邻近 \(M\)，而密切平面取在 \(M\) 处；计算保留到三阶无穷小量。该密切平面的方程为
+\[
+(X-x)\lambda+(Y-y)\mu+(Z-z)\nu=0.
+\]
+采用前几节通常的记号，有
+\[
+\delta=\lambda\Delta x+\mu\Delta y+\nu\Delta z;
+\]
+而
+\[
+\left\{
+\begin{aligned}
+\Delta x&=\frac{\diff x}{\diff s}h+\frac{\diff^2x}{\diff s^2}\frac{h^2}{2}+\frac{\diff^3x}{\diff s^3}\frac{h^3}{6}+\varepsilon_1,\\[0.4em]
+\Delta y&=\frac{\diff y}{\diff s}h+\frac{\diff^2y}{\diff s^2}\frac{h^2}{2}+\frac{\diff^3y}{\diff s^3}\frac{h^3}{6}+\varepsilon_2,\\[0.4em]
+\Delta z&=\frac{\diff z}{\diff s}h+\frac{\diff^2z}{\diff s^2}\frac{h^2}{2}+\frac{\diff^3z}{\diff s^3}\frac{h^3}{6}+\varepsilon_3,
+\end{aligned}\right.
+\]
+其中 \(\varepsilon_1,\varepsilon_2,\varepsilon_3\) 相对于 \(h\) 是高于三阶的无穷小量。另一方面，由弗雷内公式得到
+\[
+\frac{\diff x}{\diff s}=\alpha,
+\qquad
+\frac{\diff^2x}{\diff s^2}=\frac{\xi}{\rho},
+\qquad
+\frac{\diff^3x}{\diff s^3}=-\frac{1}{\rho}\left\{\frac{\alpha}{\rho}+\frac{\lambda}{T}+\frac{\xi}{\rho}\frac{\diff\rho}{\diff s}\right\}
+\]
+从而
+\[
+\delta=-\frac{1}{6\rho T}h^3+\eta,
+\]
+其中 \(\eta/h^3\) 在 \(h\) 趋于零时为无穷小量。若假定两曲率 \(1/\rho,1/T\) 在 \(M\) 处都不为零，则可见 \(\delta\) 的符号随 \(h\) 的符号而改变，也就是说：\emph{曲线在 \(M\) 处穿过密切平面}。更确切地说，前式表明：若 \(1/T>0\)，生成点沿曲线正向运动时，从密切平面的正面移到负面；若 \(1/T<0\)，则情形相反。由此也可看出，挠率的符号与曲线上所选的正向无关，因为把该方向反转时，密切平面的正面与负面也同时互换。
+
+为了更简洁地表述所得结果，设想一个观察者位于 \(M\) 处密切平面的任一面，并朝向主法线的正向。曲线相对于观察者\emph{升起}时，在 \(M\) 处从左向右或从右向左通过；前一种情形称曲线在 \(M\) 处为\emph{右旋的}，后一种称为\emph{左旋的}。
+
+现在一劳永逸地规定：在 \(xy\) 平面的正面上，\(Oy\) 的正向位于 \(Ox\) 正向的左侧。于是立即可见：\emph{由弗雷内公式计算的曲线 \(C\) 的挠率，在所考察点处将依曲线 \(C\) 为左旋或右旋而分别为正或负。}
+
+\subsection*{§. 8.\quad 内蕴方程}
+我们可以立即应用弗雷内公式来证明如下重要定理：\emph{一条空间曲线 \(C\) 的形状，完全由两曲率 \(1/\rho\)、\(1/T\) 关于弧长的表达式所确定。}
+
+换句话说，若两条曲线 \(C,C'\) 在相等的弧长处具有相等的弯曲率和挠率，则它们可以重合。用撇号表示属于 \(C'\) 的量，根据假设先有
+\[
+s'=s,
+\qquad \rho'=\rho,
+\qquad T'=T.
+\]
+现在在空间中移动曲线 \(C'\)，使它的一点，例如弧长原点 \(s=0\)，与 \(C\) 的对应点重合，同时使它的主三面形与 \(C\) 的主三面形在同一点 \(s=0\) 处重合。于是
+\[
+\left.
+\begin{aligned}
+\alpha'&=\alpha,& \beta'&=\beta,& \gamma'&=\gamma,\\
+\xi'&=\xi,& \eta'&=\eta,& \zeta'&=\zeta,\\
+\lambda'&=\lambda,& \mu'&=\mu,& \nu'&=\nu
+\end{aligned}
+\right\}\quad \hbox{当 }s=0.
+\]
+
+把第11页表 (A) 第一列的三个弗雷内公式，分别对曲线 \(C\) 和 \(C'\) 写出：
+\[
+\frac{\diff\alpha}{\diff s}=\frac{\xi}{\rho},\qquad
+\frac{\diff\xi}{\diff s}=-\frac{\alpha}{\rho}-\frac{\lambda}{T},\qquad
+\frac{\diff\lambda}{\diff s}=\frac{\xi}{T},
+\]
+\[
+\frac{\diff\alpha'}{\diff s}=\frac{\xi'}{\rho},\qquad
+\frac{\diff\xi'}{\diff s}=-\frac{\alpha'}{\rho}-\frac{\lambda'}{T},\qquad
+\frac{\diff\lambda'}{\diff s}=\frac{\xi'}{T};
+\]
+依次把前三式乘以 \(\alpha',\xi',\lambda'\)，后三式乘以 \(\alpha,\xi,\lambda\)，再相加，右端等于零，故
+\[
+\frac{\diff}{\diff s}(\alpha\alpha'+\xi\xi'+\lambda\lambda')=0,
+\]
+即
+\[
+\alpha\alpha'+\xi\xi'+\lambda\lambda'=\hbox{常数}.
+\]
+但在初始位置 \(s=0\)，左端的值为一，所以对 \(s\) 的每个值都有
+\[
+\alpha\alpha'+\xi\xi'+\lambda\lambda'=1,
+\]
+而由于恒等式
+\[
+\alpha^2+\xi^2+\lambda^2=1,
+\]
+\[
+\alpha'^2+\xi'^2+\lambda'^2=1,
+\]
+这个公式可以写成
+\[
+(\alpha-\alpha')^2+(\xi-\xi')^2+(\lambda-\lambda')^2=0;
+\]
+由此得到
+\[
+\alpha'=\alpha,
+\qquad \xi'=\xi,
+\qquad \lambda'=\lambda.
+\]
+同理可得
+\[
+\beta'=\beta,
+\qquad \eta'=\eta,
+\qquad \mu'=\mu
+\]
+\[
+\gamma'=\gamma,
+\qquad \zeta'=\zeta,
+\qquad \nu'=\nu,
+\]
+因而
+\[
+\frac{\diff(x'-x)}{\diff s}=0,
+\qquad
+\frac{\diff(y'-y)}{\diff s}=0,
+\qquad
+\frac{\diff(z'-z)}{\diff s}=0.
+\]
+所以差 \(x'-x,y'-y,z'-z\) 都是常数；它们初始为零，故始终为零，这就证明了定理。
+
+若已知 \(1/\rho\)、\(1/T\) 关于 \(s\) 的表达式
+\[
+\frac{1}{\rho}=f(s),\qquad \frac{1}{T}=\varphi(s),
+\]
+
+\noindent （按照已经作出的约定，函数 \(f(s)\) 应始终为正），则曲线的形状便已确定，而无须考虑它在空间中的具体位置；因此，上面的方程恰当地称为曲线的\emph{内蕴方程}。

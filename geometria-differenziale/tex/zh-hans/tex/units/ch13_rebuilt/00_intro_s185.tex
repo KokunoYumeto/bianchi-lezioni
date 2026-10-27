@@ -1,0 +1,60 @@
+\section*{第十三章\\ 常曲率空间的几何学}
+
+\begin{center}\small
+常曲率空间线元 $ds^2$ 的典型形式。 --- 伪球空间在欧几里得半空间上的共形表示。 --- 测地线与测地子流形的像。 --- 三维双曲空间的运动与 Poincaré 公式。 --- Beltrami 的测地表示。 --- Cayley 度量与 Weierstrass 坐标。 --- Weierstrass 坐标所满足的 Weingarten 偏微分方程。 --- 椭圆几何中的滑移与 Clifford 意义下的平行性。 --- 滑移参数与平行角。 --- 零曲率直纹面与 Clifford 曲面。 --- 椭圆几何与双曲几何中的 Frenet 公式。 --- 对常挠率曲线的应用。
+\end{center}
+
+\subsection*{§. 185.\\ Weingarten 联立方程。}
+
+在研究了常曲率曲面的几何学以后，本章拟把这些研究推广到任意维数的常曲率空间。首先，我们将以一种新方法证明已在 §. 160（第346页）建立的定理：两个 $n$ 维空间若具有相同常黎曼曲率 $K$，总能以 $\frac{n(n+1)}2$ 种不同的方式彼此适用。这种新方法还有一个优点，即同时给出这类空间线元的若干重要典型形式。
+
+回顾 §. 159：由
+\[
+\tag{1}
+ ds^2=\sum_{1}^{n}a_{ik}\,dx_i\,dx_k,
+\]
+定义的空间 $S_n$ 具有常黎曼曲率 $K$ 的条件，已由下列公式表示：
+\[
+\tag{2}
+ (rh,ik)=K(a_{ri}a_{hk}-a_{rk}a_{hi}).
+\]
+现在注意，若以第二类四指标符号代替第一类四指标符号（§. 34），则 (2) 可写成等价形式：
+\[
+\tag{2*}
+\begin{cases}
+ \pxChThirteenSecondKindZeroSymbol=0\quad\text{当 }k\ne i,h,\\
+ \pxChThirteenSecondKindCurvatureSymbol=K\pxChThirteenSecondKindCurvatureCoefficient.
+\end{cases}
+\]
+有了这些准备，我们从 Weingarten（同前引文）的下述观察出发；它把上一节方程组 (A) 的性质推广到 $n$ 个变量的情形。设 $U$ 是 $n$ 个变量的未知函数，考察由 $\frac{n(n+1)}2$ 个联立方程组成的方程组
+\[
+\tag{A}
+ \frac{\partial^2U}{\partial x_i\partial x_k}=\sum_r\chrB{ik}{r}\frac{\partial U}{\partial x_r}-K a_{ik}U
+ \qquad (i,k=1,2,\ldots,n),
+\]
+它把 $U$ 的一切二阶导数表示为 $U$ 及其一阶导数的线性组合。由于 (2*) 成立且 $K$ 为常数，方程组 (A) 是完全可积的；这也可立即验证。因此，可以求得 (A) 的一个解 $U$：在 $S_n$ 的任一点任意指定 $U$ 及其 $n$ 个一阶导数的（初始）值即可。
+
+再注意，若 $U,V$ 是方程组 (A) 的两个解，无论二者不同还是重合，都有
+\[
+\tag{3}
+ \Delta_1(U,V)+KUV=\text{常数}.
+\]
+事实上，令
+\[
+ A=\Delta_1(U,V)+KUV=
+ \sum_{i,k}a^{ik}\frac{\partial U}{\partial x_i}\frac{\partial V}{\partial x_k}+KUV
+\]
+并对任意一个 $x_r$ 求导，例如取 $x_1$。利用 $U,V$ 满足 (A)，以及第349页公式 (a*)
+\[
+ \frac{\partial a^{ik}}{\partial x_1}=-\sum_m a^{im}\chrB{1m}{k}-\sum_m a^{mk}\chrB{1m}{i},
+\]
+立即得到
+\[
+ \frac{\partial A}{\partial x_1}=0.
+\]
+在 (3) 中令 $V=U$，特别得到
+\[
+\tag{3*}
+ \Delta_1 U+KU^2=\text{常数}.
+\]
+由此可知（§. 156）：\emph{若 $U$ 是 (A) 的一个解，则超曲面 $U=\text{常数}$ 彼此测地平行。}下面还要证明，这些超曲面 $U=\text{常数}$ 本身就是具有常黎曼曲率的 $n-1$ 维空间；由此便容易得到基本定理的新证明。

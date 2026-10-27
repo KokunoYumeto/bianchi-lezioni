@@ -1,0 +1,1070 @@
+%% UNIT ch03_complete | IT authority lines 3062--4132
+\section*{第三章}
+\begin{center}
+{\Large\bfseries 曲面上的曲线坐标。--- 共形表示}
+\end{center}
+
+\begin{center}\footnotesize
+曲面上的曲线坐标。--- 线元。--- 曲面上曲线与坐标线的夹角。--- 克里斯托费尔符号、微分参数与曲率。--- 等温系统。--- 等距参数。--- 李定理。--- 曲面到平面上或一个曲面到另一曲面上的共形表示。--- 旋转曲面上的等温系统。--- 球面的极点球极投影。--- 球面和平面上的圆的双重正交系统。--- 用线性代换表示复球面到自身的运动（凯莱）。
+\end{center}
+
+\subsection*{\S. 40.\quad 曲线坐标}
+
+一条曲线在空间中连续变形并运动时，便生成一个曲面。我们可以用类似于 \S. 1 中处理曲线的方法，对曲面作解析确定。为此，设一条曲线上动点的坐标
+\[
+ x=x(u),\qquad y=y(u),\qquad z=z(u)
+\]
+除了变量 \(u\)（其各个值确定曲线上的点）之外，还含有参数 \(v\)；也就是说，它们是变量 \(u,v\) 的函数（在某一区域内有限且连续），因而可以写成
+\begin{equation}\tag{1}
+ x=x(u,v),\qquad y=y(u,v),\qquad z=z(u,v).
+\end{equation}
+每给定 \(v_1\) 这个 \(v\) 的特定值，就对应一条特定曲线
+\[
+ x=x(u,v_1),\qquad y=y(u,v_1),\qquad z=z(u,v_1)
+\]
+而当 \(v\) 连续变化时，这条曲线就在空间中连续运动，描出一个曲面；该曲面由公式 (1) 解析地定义。从 (1) 的三个方程中消去 \(u,v\)，显然得到一个关系式
+\[
+ f(x,y,z)=0,
+\]
+这就是曲面的通常方程。
+
+这个曲面将由刚才所考察的线系覆盖；其中每一条线对应于 \(v\) 的一个特定值，因此称为一条 \(v=\mathrm{常数}\) \emph{线}，或简称 \(v\) 线。
+
+现在很明显，对于方程 (1) 中的变量 \(v\) 所作的论述，也可以对 \(u\) 重复一遍。也就是说，给 \(u\) 一个常值 \(u_1\)，曲线
+\[
+ x=x(u_1,v),\qquad y=y(u_1,v),\qquad z=z(u_1,v)
+\]
+就完全位于曲面 (1) 上；当 \(u\) 连续变化时，这条曲线也将运动并描出该曲面。由此得到曲面上的第二个线系，我们称之为 \(u=\mathrm{常数}\) \emph{线}，或称 \(u\) \emph{线}。
+
+当知道曲面上一点 P 处的值 \(u,v\)，也就是变量 \(u,v\) 在该点的取值时，该点 P 也就确定了。换一种说法，点 P 被确定为两条线
+\[
+ u=u_1,\qquad v=v_1,
+\]
+的交点，这两条线分别属于 \(u\) 系和 \(v\) 系。参数值 \(u_1,v_1\) 称为该点的\emph{曲线坐标}，而 \(u,v\) 线则称为\emph{坐标线}。
+
+动点 P 的曲线坐标之间的一个方程
+\begin{equation}\tag{2}
+ \varphi(u,v)=0
+\end{equation}
+显然把该点的运动限制在曲面上所画的一条线上；因此，我们称 (2) 为这条线的方程。
+
+在一个给定曲面
+\begin{equation}\tag{3}
+ f(x,y,z)=0.
+\end{equation}
+上，可以选择无穷多个曲线坐标系。每当把曲面动点的坐标 \(x,y,z\) 表示为两个独立变量 \(\alpha,\beta\) 的函数，并且从相应的三个方程
+\[
+ x=x(\alpha,\beta),\qquad y=y(\alpha,\beta),\qquad z=z(\alpha,\beta)
+\]
+中消去 \(\alpha,\beta\) 后重新得到曲面方程 (3)，就得到一个这样的坐标系。如果曲面上已经建立了一个曲线坐标系 \((u,v)\)，那么最一般的新坐标系 \((\alpha,\beta)\)，是通过令 \(u,v\) 为 \(\alpha,\beta\) 的函数而得到的：
+\[
+ u=u(\alpha,\beta),\qquad v=v(\alpha,\beta).
+\]
+不过应当注意，例如，若 \(u(\alpha,\beta)\) 只含一个新变量，假定为 \(\alpha\)，则这种变换并不改变 \(u\) 坐标线，因为 \(\alpha\) 与 \(u\) 同时为常数，反之亦然；改变的只是标识该线系各条线的参数，即由 \(u\) 变为 \(\alpha\)。最后，我们指出，对于给出曲面各点笛卡儿坐标的函数
+\[
+ x(u,v),\qquad y(u,v),\qquad z(u,v),
+\]
+此后始终作如下假设：\emph{在所考察的 \(u,v\) 整个变域内，它们是有限且连续的，并且关于 \(u,v\) 存在同样有限且连续的一阶、二阶和三阶偏导数，至多只在孤立的奇点或奇线上例外}。
+
+这样引入的曲线坐标也称为\emph{高斯坐标}。它们在分析曲面性质时极为有用，因为就其本性而言，它们已经与曲面本身紧密相联，而与曲面在空间中的位置无关。
+
+\subsection*{\S. 41.\quad 线元与面积元}
+
+设在一个曲面 S 上选定了曲线坐标系 \((u,v)\)，从而曲面上一点的流动坐标由公式 (1) 表示。
+
+如果考察曲面上任意一条曲线
+\begin{equation}\tag{a}
+ \varphi(u,v)=0
+\end{equation}
+并以 \(ds\) 表示其弧元，则有
+\[
+ ds^2=dx^2+dy^2+dz^2,
+\]
+其中要用 (1) 的值代替 \(x,y,z\)，而在这些值中，\(u,v\) 由 (a) 联系起来。现在有
+\[
+ dx=\frac{\partial x}{\partial u}du+\frac{\partial x}{\partial v}dv,
+ \quad
+ dy=\frac{\partial y}{\partial u}du+\frac{\partial y}{\partial v}dv,
+ \quad
+ dz=\frac{\partial z}{\partial u}du+\frac{\partial z}{\partial v}dv,
+\]
+因此，依高斯的记号，令
+\begin{equation}\tag{4}
+\left\{
+\begin{aligned}
+E&=\left(\frac{\partial x}{\partial u}\right)^2+
+\left(\frac{\partial y}{\partial u}\right)^2+
+\left(\frac{\partial z}{\partial u}\right)^2,\\
+F&=\frac{\partial x}{\partial u}\frac{\partial x}{\partial v}+
+\frac{\partial y}{\partial u}\frac{\partial y}{\partial v}+
+\frac{\partial z}{\partial u}\frac{\partial z}{\partial v},\\
+G&=\left(\frac{\partial x}{\partial v}\right)^2+
+\left(\frac{\partial y}{\partial v}\right)^2+
+\left(\frac{\partial z}{\partial v}\right)^2,
+\end{aligned}
+\right.
+\end{equation}
+便得到
+\begin{equation}\tag{5}
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2,
+\end{equation}
+这里，由于 \(u,v\) 由 (a) 联系，微分 \(du,dv\) 相应地受到关系式
+\[
+ \frac{\partial\varphi}{\partial u}du+\frac{\partial\varphi}{\partial v}dv=0.
+\]
+的约束。因为 (5) 对曲面上所画的任意曲线都成立，故称 (5) 给出的 \(ds^2\) 表达式为曲面的\emph{线元}。
+
+与其平方相等的二次微分形式
+\[
+ E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+称为\emph{第一基本二次形式}。它的判别式
+\[
+ EG-F^2=\left|
+\begin{matrix}
+\dfrac{\partial x}{\partial u}&\dfrac{\partial y}{\partial u}&\dfrac{\partial z}{\partial u}\\[0.5em]
+\dfrac{\partial x}{\partial v}&\dfrac{\partial y}{\partial v}&\dfrac{\partial z}{\partial v}
+\end{matrix}\right|^2
+\]
+为正，也就是说，该形式本身是\emph{正定的}。
+
+显然，由 (4) 给出的系数 \(E,F,G\) 是 \(u,v\) 的有限连续函数，并且（根据已经作出的假设）存在同样有限且连续的一阶和二阶偏导数。此外，\(E,G\) 和 \(EG-F^2\) 一样总是为正；此后用符号
+\[
+ \sqrt E,
+ \quad \sqrt G,
+ \quad \sqrt{EG-F^2}
+\]
+时，\emph{我们总是表示根式的正值}。
+
+在每条坐标线 \(u\) 或 \(v\) 的任一点，我们把该线的\emph{正}方向与相反的负方向区别开来，并约定：\(u\) 线的正方向取为另一参数 \(v\) 增大的方向；同样，\(v\) 线的正方向取为参数 \(u\) 增大的方向。因此，如果 \(ds_u,ds_v\) 表示 \(u,v\) 线的正向弧元，由 (5) 可得
+\[
+ ds_u=\sqrt G\,dv,
+ \qquad
+ ds_v=\sqrt E\,du.
+\]
+若
+\[
+\begin{array}{ccc}
+\cos(\widehat{ux}),&\cos(\widehat{uy}),&\cos(\widehat{uz}),\\
+\cos(\widehat{vx}),&\cos(\widehat{vy}),&\cos(\widehat{vz})
+\end{array}
+\]
+表示坐标线 \(u,v\) 的（正向）切线的方向余弦，则有：
+\begin{equation}\tag{b}
+\left\{
+\begin{aligned}
+\cos(\widehat{ux})&=\frac{1}{\sqrt G}\frac{\partial x}{\partial v},&
+\cos(\widehat{uy})&=\frac{1}{\sqrt G}\frac{\partial y}{\partial v},&
+\cos(\widehat{uz})&=\frac{1}{\sqrt G}\frac{\partial z}{\partial v},\\[0.4em]
+\cos(\widehat{vx})&=\frac{1}{\sqrt E}\frac{\partial x}{\partial u},&
+\cos(\widehat{vy})&=\frac{1}{\sqrt E}\frac{\partial y}{\partial u},&
+\cos(\widehat{vz})&=\frac{1}{\sqrt E}\frac{\partial z}{\partial u}.
+\end{aligned}
+\right.
+\end{equation}
+
+以 \(\omega\) 表示这样一个角，其值介于 0 与 \(\pi\) 之间，即在曲面一点处通过该点的坐标线 \(u,v\) 的正方向所成的角，则有
+\[
+\cos\omega=\cos(\widehat{ux})\cos(\widehat{vx})+
+\cos(\widehat{uy})\cos(\widehat{vy})+
+\cos(\widehat{uz})\cos(\widehat{vz}),
+\]
+或者根据前述公式及 (4)，有
+\begin{equation}\tag{6}
+ \cos\omega=\frac{F}{\sqrt{EG}};
+\end{equation}
+从而又得到
+\begin{equation}\tag{6*}
+ \sen\omega=\frac{\sqrt{EG-F^2}}{\sqrt{EG}},
+\end{equation}
+其中对根式所取的值照例为正值。
+
+由 (6) 得到：\emph{坐标线 \(u,v\) 相互正交的充要条件，是在线元的表达式 (5) 中有 \(F=0\)。}
+
+考察曲面上由四条坐标线 \(u,u+du,v,v+dv\) 围成的无穷小四边形；略去高阶无穷小量，它可以看作一个平行四边形。由于
+\[
+ \sqrt E\,du,
+ \qquad
+ \sqrt G\,dv
+\]
+是它两边的长度，而角 \(\omega\)，即头两边 \((u,v)\) 所夹的角，由 (6*) 给出，所以它的面积为
+\[
+ \sqrt{EG-F^2}\,du\,dv
+\]
+由此得到定理：\emph{曲面的面积元 \(d\sigma\) 由公式给出}
+\[
+ d\sigma=\sqrt{EG-F^2}\,du\,dv.
+\]
+
+\subsection*{\S. 42.\quad 曲线与 \(v\) 线的夹角}
+
+考察曲面上所画的任意一条曲线 C，并任意规定其弧长 \(s\) 的正方向。为了无歧义地度量曲线 C 在每一点与坐标线 \(u,v\) 所成的角，我们设想曲面上每一点 P 处的切平面，并约定：在这个平面上，从 \(v\) 线正向切线转向 \(u\) 线切线，转过上面定义的角 \(\omega\) 时，若旋转沿正向发生，则所面对的一侧为该平面的正面；我们所取的旋转正向是从右向左\srcfn{1}{这里沿用我们已在 \S. 7（第13页）中对坐标轴取向作出的约定；也就是说，在平面 \(\widehat{xy}\) 的正面上，\(Oy\) 的正方向位于 \(Ox\) 正方向的左侧。}。在作出这一约定后，以 \(\theta\) 表示 0 与 \(2\pi\) 之间的角：在切平面上，\(v\) 线正向切线的方向须沿正向转过此角，才能与曲线 C 正向切线的方向重合。
+
+如果动点 M 沿 C 移动，它的曲线坐标 \(u,v\) 和笛卡儿坐标 \(x,y,z\) 均可视为 \(s\) 的函数。若以
+\[
+\cos(\widehat{Cx}),\qquad \cos(\widehat{Cy}),\qquad \cos(\widehat{Cz})
+\]
+表示曲线 C 的切线的方向余弦，则有：
+\begin{equation}\tag{c}
+\begin{aligned}
+\cos(\widehat{Cx})&=\frac{\partial x}{\partial u}\frac{du}{ds}+\frac{\partial x}{\partial v}\frac{dv}{ds},&
+\cos(\widehat{Cy})&=\frac{\partial y}{\partial u}\frac{du}{ds}+\frac{\partial y}{\partial v}\frac{dv}{ds},\\
+\cos(\widehat{Cz})&=\frac{\partial z}{\partial u}\frac{du}{ds}+\frac{\partial z}{\partial v}\frac{dv}{ds},
+\end{aligned}
+\end{equation}
+于是
+\[
+\cos\theta=\cos(\widehat{Cx})\cos(\widehat{vx})+
+\cos(\widehat{Cy})\cos(\widehat{vy})+
+\cos(\widehat{Cz})\cos(\widehat{vz}),
+\]
+即根据上一节的 (b)：
+\begin{equation}\tag{7}
+ \cos\theta=\frac{1}{\sqrt E}\left(E\frac{du}{ds}+F\frac{dv}{ds}\right),
+\end{equation}
+现在，由于 (5)，有恒等式
+\[
+\frac{1}{E}\left(E\frac{du}{ds}+F\frac{dv}{ds}\right)^2+
+\frac{EG-F^2}{E}\left(\frac{dv}{ds}\right)^2=1,
+\]
+从而
+\[
+ \sen\theta=\pm\frac{\sqrt{EG-F^2}}{\sqrt E}\frac{dv}{ds}.
+\]
+符号的不确定性可以这样消除：按照我们约定的 \(\theta\) 计量方式，\(\sen\theta\) 在 \(v\) 随 \(s\) 增大时为正；反之则为负。因此有
+\begin{equation}\tag{7*}
+ \sen\theta=\frac{\sqrt{EG-F^2}}{\sqrt E}\frac{dv}{ds}.
+\end{equation}
+由这些公式和上一节的 (6)、(6*) 还可推出
+\begin{equation}\tag{8}
+ \sen(\omega-\theta)=\frac{\sqrt{EG-F^2}}{\sqrt G}\frac{du}{ds}.
+\end{equation}
+从公式
+\begin{equation}\tag{9}
+ \operatorname{tang}\theta=\sqrt{EG-F^2}\,\frac{dv}{E\,du+F\,dv},
+\end{equation}
+可以看出，曲面上所画曲线对于坐标线的倾角，只依赖于沿曲线本身的曲线坐标增量 \(du,dv\) 之比。
+
+如果坐标线 \(u,v\) 正交 \((F=0)\)，我们的公式就简化为
+\begin{equation}\tag{10}
+ \cos\theta=\sqrt E\frac{du}{ds},\qquad
+ \sen\theta=\sqrt G\frac{dv}{ds},\qquad
+ \tg\theta=\sqrt{\frac{G}{E}}\frac{dv}{du}.
+\end{equation}
+
+现在设在曲面 S 上，从曲线 C 的一点 M 发出第二条曲线 C'，它与 C 正交；我们来表示这两条曲线正交的条件。
+
+在点 M 处，C 的切线方向余弦由 (c) 给出。若以 \(\delta s\) 表示 C' 的弧元，以 \(\delta u,\delta v\) 表示从 M 沿 C' 方向移动时曲线坐标的增量，则同样有：
+\[
+\begin{aligned}
+\cos(C'x)&=\frac{\partial x}{\partial u}\frac{\delta u}{\delta s}+\frac{\partial x}{\partial v}\frac{\delta v}{\delta s},&
+\cos(C'y)&=\frac{\partial y}{\partial u}\frac{\delta u}{\delta s}+\frac{\partial y}{\partial v}\frac{\delta v}{\delta s},\\
+\cos(C'z)&=\frac{\partial z}{\partial u}\frac{\delta u}{\delta s}+\frac{\partial z}{\partial v}\frac{\delta v}{\delta s},
+\end{aligned}
+\]
+而正交条件
+\[
+\cos(Cx)\cos(C'x)+\cos(Cy)\cos(C'y)+\cos(Cz)\cos(C'z)=0
+\]
+因而化为
+\begin{equation}\tag{11}
+ E\,du\,\delta u+F(du\,\delta v+dv\,\delta u)+G\,dv\,\delta v=0.
+\end{equation}
+归根结底，它表示这样的条件：从曲面上的点 \((u,v)\) 分别引向两个无限邻近点 \((u+du,v+dv)\)、\((u+\delta u,v+\delta v)\) 的两个线元彼此正交。
+
+利用 (11)，我们很容易解决如下问题：\emph{给定曲面上的一个 \(\infty^1\) 曲线系，求其正交轨迹的微分方程}。设给定曲线系的方程对任意常数 \(c\) 解出后为
+\[
+ \varphi(u,v)=c.
+\]
+如果 \(\delta u,\delta v\) 是一点的曲线坐标 \((u,v)\) 的增量，而该点沿通过它的 \(\varphi\) 线移动，则显然有：
+\[
+ \frac{\partial\varphi}{\partial u}\delta u+
+ \frac{\partial\varphi}{\partial v}\delta v=0,
+\]
+即
+\[
+ \delta u:\delta v=\frac{\partial\varphi}{\partial v}:-\frac{\partial\varphi}{\partial u}
+\]
+于是 (11) 给出所求正交轨迹的微分方程
+\begin{equation}\tag{12}
+\left(E\frac{\partial\varphi}{\partial v}-F\frac{\partial\varphi}{\partial u}\right)du+
+\left(F\frac{\partial\varphi}{\partial v}-G\frac{\partial\varphi}{\partial u}\right)dv=0.
+\end{equation}
+但有一点很重要：即使 \(\varphi\) 系的曲线并非已知，而只是由一个一阶微分方程
+\[
+ M\,du+N\,dv=0,
+\]
+定义，由于有比例式
+\[
+ M:N=\frac{\partial\varphi}{\partial u}:\frac{\partial\varphi}{\partial v},
+\]
+我们仍可立即把正交轨迹的微分方程写成
+\begin{equation}\tag{13}
+ (EN-FM)\,du+(FN-GM)\,dv=0.
+\end{equation}
+
+\subsection*{\S. 43.\quad 克里斯托费尔符号、微分参数与曲率}
+
+在上一节所处理的问题中，也像在一切只涉及所谓\emph{曲面几何}的问题中一样，出现的只有第一基本形式的系数 \(E,F,G\)。因此，现在就为我们的形式
+\[
+ E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+计算克里斯托费尔符号、微分参数和曲率的显式值是有益的。把 \(u\) 看作第一变量，\(v\) 看作第二变量，令
+\[
+ u=x_1,
+ \quad v=x_2,
+ \qquad
+ a_{11}=E,
+ \quad a_{12}=F,
+ \quad a_{22}=G,
+\]
+于是
+\[
+ A_{11}=\frac{G}{EG-F^2},\qquad
+ A_{12}=-\frac{F}{EG-F^2},\qquad
+ A_{22}=\frac{E}{EG-F^2}.
+\]
+第一类和第二类克里斯托费尔符号因而具有下列各值，我们把它们汇集在如下表中：
+\begingroup\small
+\begin{equation}\tag{A}
+\left\{
+\begin{gathered}
+\chrone{1}{1}{1}=\frac12\frac{\partial E}{\partial u},\quad
+\chrone{1}{2}{1}=\frac12\frac{\partial E}{\partial v},\quad
+\chrone{2}{2}{1}=\frac{\partial F}{\partial v}-\frac12\frac{\partial G}{\partial u},\\[0.5em]
+\chrone{1}{1}{2}=\frac{\partial F}{\partial u}-\frac12\frac{\partial E}{\partial v},\quad
+\chrone{1}{2}{2}=\frac12\frac{\partial G}{\partial u},\quad
+\chrone{2}{2}{2}=\frac12\frac{\partial G}{\partial v},\\[0.8em]
+\chrtwo{1}{1}{1}=\frac{G\frac{\partial E}{\partial u}+F\frac{\partial E}{\partial v}-2F\frac{\partial F}{\partial u}}{2(EG-F^2)},\quad
+\chrtwo{1}{1}{2}=\frac{-F\frac{\partial E}{\partial u}+2E\frac{\partial F}{\partial u}-E\frac{\partial E}{\partial v}}{2(EG-F^2)},\\[0.8em]
+\chrtwo{1}{2}{1}=\frac{G\frac{\partial E}{\partial v}-F\frac{\partial G}{\partial u}}{2(EG-F^2)},\quad
+\chrtwo{1}{2}{2}=\frac{E\frac{\partial G}{\partial u}-F\frac{\partial E}{\partial v}}{2(EG-F^2)},\\[0.8em]
+\chrtwo{2}{2}{1}=\frac{-F\frac{\partial G}{\partial v}+2G\frac{\partial F}{\partial v}-G\frac{\partial G}{\partial u}}{2(EG-F^2)},\quad
+\chrtwo{2}{2}{2}=\frac{E\frac{\partial G}{\partial v}+F\frac{\partial G}{\partial u}-2F\frac{\partial F}{\partial v}}{2(EG-F^2)}.
+\end{gathered}
+\right.
+\end{equation}
+\endgroup
+
+任意函数 \(\varphi\) 的一阶、二阶微分参数，以及任意两个函数 \(\varphi,\psi\) 的混合微分参数，分别具有如下表达式：
+\begin{equation}\tag{14}
+\Delta_1\varphi=\frac{E\left(\dfrac{\partial\varphi}{\partial v}\right)^2-2F\dfrac{\partial\varphi}{\partial u}\dfrac{\partial\varphi}{\partial v}+G\left(\dfrac{\partial\varphi}{\partial u}\right)^2}{EG-F^2}
+\end{equation}
+\begin{equation}\tag{15}
+\Delta_2\varphi=\frac{1}{\sqrt{EG-F^2}}\left\{
+\frac{\partial}{\partial u}\left[\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}\right]
++
+\frac{\partial}{\partial v}\left[\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}\right]
+\right\},
+\end{equation}
+\begin{equation}\tag{16}
+\nabla(\varphi,\psi)=\frac{E\dfrac{\partial\varphi}{\partial v}\dfrac{\partial\psi}{\partial v}-F\left(\dfrac{\partial\varphi}{\partial u}\dfrac{\partial\psi}{\partial v}+\dfrac{\partial\varphi}{\partial v}\dfrac{\partial\psi}{\partial u}\right)+G\dfrac{\partial\varphi}{\partial u}\dfrac{\partial\psi}{\partial u}}{EG-F^2}.
+\end{equation}
+
+对于我们的基本形式的曲率（以后我们将认识它的几何意义就是曲面的曲率），在第77页 \S. 37 的 (V) 中，用表 (A) 所给的实际值代替符号 \(\chrtwo{1}{1}{2}, \chrtwo{1}{2}{2}\)，便得到表达式：
+\begin{equation}\tag{17}
+\begin{aligned}
+\mathrm K=\frac{1}{2\sqrt{EG-F^2}}\Bigg\{&
+\frac{\partial}{\partial u}\left[\frac{F}{E\sqrt{EG-F^2}}\frac{\partial E}{\partial v}-\frac{1}{\sqrt{EG-F^2}}\frac{\partial G}{\partial u}\right]\\
+&+\frac{\partial}{\partial v}\left[\frac{2}{\sqrt{EG-F^2}}\frac{\partial F}{\partial u}-\frac{1}{\sqrt{EG-F^2}}\frac{\partial E}{\partial v}-\frac{F}{E\sqrt{EG-F^2}}\frac{\partial E}{\partial u}\right]\Bigg\}.
+\end{aligned}
+\end{equation}
+特别设坐标线正交，即 \(F=0\)；那么前述 \(K\) 的表达式化为：
+\begin{equation}\tag{18}
+ K=-\frac{1}{\sqrt{EG}}\left\{\frac{\partial}{\partial u}\left(\frac{1}{\sqrt E}\frac{\partial\sqrt G}{\partial u}\right)+
+\frac{\partial}{\partial v}\left(\frac{1}{\sqrt G}\frac{\partial\sqrt E}{\partial v}\right)\right\}.
+\end{equation}
+更特殊地，若仍有 \(F=0\)，并且还有
+\[
+ E=G=\lambda
+\]
+（正如我们马上将看到的，这对任意曲面都可以做到），则 \(K\) 具有极其简单的表达式：
+\begin{equation}\tag{19}
+ K=-\frac{1}{2\lambda}\left\{\frac{\partial^2\log\lambda}{\partial u^2}+\frac{\partial^2\log\lambda}{\partial v^2}\right\}.
+\end{equation}
+
+\subsection*{\S. 44.\quad 等温系统}
+
+借助微分参数，我们可以解决如下问题：当把变量 \(u,v\) 换成任意两个新变量 \(\varphi,\psi\) 时，计算基本形式
+\[
+ E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+变换后所得形式的系数。设变换后的形式为
+\[
+ E_1\,d\varphi^2+2F_1\,d\varphi\,d\psi+G_1\,d\psi^2
+\]
+根据微分参数的基本性质，用原形式计算的
+\[
+ \Delta_1\varphi,
+ \quad \nabla(\varphi,\psi),
+ \quad \Delta_1\psi
+\]
+各值，等于用变换后形式计算的相应各值。而对于后一个形式，由 (14)、(16) 得
+\[
+\Delta_1\varphi=\frac{G_1}{E_1G_1-F_1^2},\qquad
+\nabla(\varphi,\psi)=-\frac{F_1}{E_1G_1-F_1^2},\qquad
+\Delta_1\psi=\frac{E_1}{E_1G_1-F_1^2},
+\]
+由此
+\[
+ \Delta_1\varphi\,\Delta_1\psi-\nabla^2(\varphi,\psi)=\frac{1}{E_1G_1-F_1^2}
+\]
+因而
+\begin{equation}\tag{20}
+\begin{aligned}
+E_1&=\frac{\Delta_1\psi}{\Delta_1\varphi\,\Delta_1\psi-\nabla^2(\varphi,\psi)},&
+F_1&=\frac{-\nabla(\varphi,\psi)}{\Delta_1\varphi\,\Delta_1\psi-\nabla^2(\varphi,\psi)},\\[0.4em]
+G_1&=\frac{\Delta_1\varphi}{\Delta_1\varphi\,\Delta_1\psi-\nabla^2(\varphi,\psi)}.
+\end{aligned}
+\end{equation}
+由此可见，新坐标线
+\[
+ \varphi=\cst,
+ \qquad
+ \psi=\cst
+\]
+正交的条件是：
+\[
+ \nabla(\varphi,\psi)=0,
+\]
+这也可由 \S. 42 得到。
+
+再注意，(20) 中的公分母可以恒等地写成
+\[
+\Delta_1\varphi\,\Delta_1\psi-\nabla^2(\varphi,\psi)=
+\frac{1}{EG-F^2}
+\left|
+\begin{matrix}
+\dfrac{\partial\varphi}{\partial u}&\dfrac{\partial\varphi}{\partial v}\\[0.4em]
+\dfrac{\partial\psi}{\partial u}&\dfrac{\partial\psi}{\partial v}
+\end{matrix}
+\right|^2.
+\]
+现在立即用公式 (20) 证明上面已经提到的一项重要性质：可以（以无穷多种方式）作变量变换，使变换后有
+\[
+ E_1=G_1,
+ \qquad
+ F_1=0.
+\]
+为此，取 \(\varphi\) 为二阶偏微分方程
+\[
+ \Delta_2\varphi=0,
+\]
+的一个解，即：
+\[
+\frac{\partial}{\partial u}\left(\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}\right)+
+\frac{\partial}{\partial v}\left(\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}\right)=0.
+\]
+因此，表达式
+\[
+-\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}\,du+
+\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}\,dv
+\]
+是某一函数的全微分；我们以 \(\psi\) 表示该函数，于是有：
+\begin{equation}\tag{21}
+\left\{
+\begin{aligned}
+\frac{\partial\psi}{\partial u}&=-\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}},\\[0.7em]
+\frac{\partial\psi}{\partial v}&=\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}.
+\end{aligned}
+\right.
+\end{equation}
+把这些方程对 \(\varphi\) 的导数解出，得到
+\begin{equation}\tag{21*}
+\left\{
+\begin{aligned}
+\frac{\partial\varphi}{\partial u}&=\frac{E\dfrac{\partial\psi}{\partial v}-F\dfrac{\partial\psi}{\partial u}}{\sqrt{EG-F^2}},\\[0.7em]
+\frac{\partial\varphi}{\partial v}&=-\frac{G\dfrac{\partial\psi}{\partial u}-F\dfrac{\partial\psi}{\partial v}}{\sqrt{EG-F^2}};
+\end{aligned}
+\right.
+\end{equation}
+由此可见，由 (21) 确定到一个加法常数的函数 \(\psi\)，本身又是
+\[
+ \Delta_2\psi=0
+\]
+的一个解；我们称它为 \(\varphi\) 的\emph{共轭解}。此外还可推出
+\[
+ \nabla(\varphi,\psi)=0,
+ \qquad
+ \Delta_1\varphi=\Delta_1\psi
+\]
+因而令
+\[
+ \lambda=\frac{1}{\Delta_1\varphi}=\frac{1}{\Delta_1\psi},
+\]
+则根据 (20)，变换后形式成为上述形式
+\[
+ \lambda(d\varphi^2+d\psi^2).
+\]
+
+\subsection*{\S. 45.\quad 零长度线}
+
+刚刚得到的结果非常重要，值得用另一种方法重新推导。
+
+把二次形式
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+分解成两个共轭虚线性因子
+\[
+ ds^2=\left\{\sqrt E\,du+(F+i\sqrt{EG-F^2})\frac{dv}{\sqrt E}\right\}
+\left\{\sqrt E\,du+(F-i\sqrt{EG-F^2})\frac{dv}{\sqrt E}\right\}.
+\]
+由积分学可知，
+\begin{equation}\tag{a}
+ \sqrt E\,du+(F+i\sqrt{EG-F^2})\frac{dv}{\sqrt E};
+\end{equation}
+存在积分因子；设其中一个为
+\[
+ \mu+i\nu
+\]
+并以 \(\varphi+i\psi\) 表示一个（复）函数，使 (a) 乘以 \(\mu+i\nu\) 后成为该函数的全微分，则有：
+\[
+(\mu+i\nu)\left\{\sqrt E\,du+(F+i\sqrt{EG-F^2})\frac{dv}{\sqrt E}\right\}=d\varphi+i\,d\psi
+\]
+从而
+\[
+(\mu-i\nu)\left\{\sqrt E\,du+(F-i\sqrt{EG-F^2})\frac{dv}{\sqrt E}\right\}=d\varphi-i\,d\psi,
+\]
+将最后两个等式相乘，并令 \(\lambda=\dfrac{1}{\mu^2+\nu^2}\)，便得到
+\begin{equation}\tag{22}
+ ds^2=\lambda(d\varphi^2+d\psi^2).
+\end{equation}
+这些特殊的正交系统 \((\varphi,\psi)\) 使曲面的线元具有特征形式 (22)，称为\emph{等温系统}。由此可见，求这种系统归结为积分方程
+\[
+ \sqrt E\,du+(F+i\sqrt{EG-F^2})\frac{dv}{\sqrt E}=0,
+\]
+即
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2=0.
+\]
+由这个方程确定的曲面\emph{虚}线因此称为零长度线；其特征性质是，它们的切线与无穷远处的虚圆相接。\srcfn{1}{要看出这一点，只须注意：设 \(z=z(x,y)\) 为曲面方程，则零长度线的微分方程（采用 \textsc{Monge} 的记号）为：
+\[
+ dx^2+dy^2+(p\,dx+q\,dy)^2=0.
+\]
+若把原点 O 取在曲面上一点，并把切平面取作 \(xy\) 平面，则有 \(p=q=0\)，其所对应的位置是 \(x=y=0\)；而零长度线的切线方向由 \(dx^2+dy^2=0\) 确定。后式分解为 \(dx\pm i\,dy=0\) 两式，它们恰好给出圆方向。}
+
+等温系统 \((\varphi,\psi)\) 具有一项表征它们的几何性质。为说明这一性质，注意曲面上由两条 \(\varphi,\psi\) 线以及各自线系中两条无限邻近的线
+\[
+ \varphi+d\varphi,
+ \qquad
+ \psi+d\psi,
+\]
+围成的四边形，略去高阶无穷小量后可视为一个矩形。如果系统 \((\varphi,\psi)\) 是等温的，并使 \(\varphi,\psi\) 分别增加常无穷小增量 \(d\varphi,d\psi\)，且取 \(d\varphi=d\psi\)，便得到所说的结果：\emph{等温系统把曲面分割成无穷小正方形}。
+
+最后，回到公式 (21)，注意若原系统 \((u,v)\) 已是等温系统，则这些公式简化为：
+\[
+\left\{
+\begin{aligned}
+\frac{\partial\varphi}{\partial u}&=\frac{\partial\psi}{\partial v},\\[0.4em]
+\frac{\partial\varphi}{\partial v}&=-\frac{\partial\psi}{\partial u}.
+\end{aligned}
+\right.
+\]
+众所周知，这些公式表示
+\[
+ \varphi+i\psi
+\]
+是 \(u+iv\) 的\emph{复变量函数}。
+
+此外，把 \(\psi\) 换成 \(-\psi\) 并不改变特征形式 (22)，所以得到如下结果。\emph{已知曲面 S 上的一个等温系统 \((\varphi,\psi)\)，则任意另一个等温系统 \((\varphi',\psi')\) 都可由下式得到}
+\[
+ \varphi'+i\psi'=F(\varphi\pm i\psi),
+\]
+\emph{其中 \(F\) 是任意复变量函数的符号。}
+
+再补充一点：每一个复函数
+\[
+ \varphi+i\psi,
+\]
+若由方程
+\[
+ \Delta_2\varphi=0,
+\]
+的两个共轭解构成，就称为一个\emph{曲面上的复变量}。
+
+\subsection*{\S. 46.\quad 等距参数}
+
+在一个使曲面线元具有形式
+\[
+ ds^2=\lambda(du_1^2+dv_1^2),
+\]
+的等温系统中，如果不改变坐标线 \(u_1,v_1\)，而通过令
+\[
+ u_1=\varphi(u),
+ \qquad
+ v_1=\psi(v),
+\]
+改变确定这些坐标线的参数，则线元变成
+\[
+ ds^2=\lambda\left(\varphi'^2(u)\,du^2+\psi'^2(v)\,dv^2\right),
+\]
+其中
+\[
+ E=\lambda\varphi'^2(u)\quad \hbox{与}\quad G=\lambda\psi'^2(v)
+\]
+两者之商，显然是一个只含 \(u\) 的函数与一个只含 \(v\) 的函数之商（或乘积）。反过来，如果在正交系统 \((u,v)\) 中
+\begin{equation}\tag{23}
+ ds^2=E\,du^2+G\,dv^2
+\end{equation}
+有
+\begin{equation}\tag{24}
+ \frac{E}{G}=\frac{U}{V},
+\end{equation}
+其中 \(U\) 只依赖于 \(u\)，\(V\) 只依赖于 \(v\)，那么也可以写成
+\[
+ E=\lambda U,
+ \qquad
+ G=\lambda V,
+\]
+从而
+\[
+ ds^2=\lambda(U\,du^2+V\,dv^2)
+\]
+再令
+\[
+ \int\sqrt U\,du=u_1,
+ \qquad
+ \int\sqrt V\,dv=v_1,
+\]
+以此改变参数 \((u,v)\)，便得到形式
+\[
+ ds^2=\lambda(du_1^2+dv_1^2).
+\]
+因此，如果正交系统 \((u,v)\) 满足条件 (24)，这个系统 \((u,v)\) 仍称为等温系统。参数 \(u_1,v_1\) 使线元具有 \(E=G\) 的特征形式，故称为\emph{等距参数}。
+
+经过这些说明，我们很容易表示这样的条件：线
+\[
+ \varphi=\cst,
+\]
+与其正交轨迹共同构成一个等温系统。其充要条件是，适当地改变参数 \(\varphi\)，令
+\[
+ \varphi_1=F(\varphi),
+\]
+之后有
+\[
+ \Delta_2\varphi_1=0.
+\]
+但由第93页 \S. 43 的 (15) 立即得到
+\[
+ \Delta_2[F(\varphi)]=F'(\varphi)\Delta_2\varphi+F''(\varphi)\Delta_1\varphi,
+\]
+其中撇号表示对 \(\varphi\) 的导数，因而
+\begin{equation}\tag{25}
+ \frac{\Delta_2\varphi}{\Delta_1\varphi}=-\frac{F''(\varphi)}{F'(\varphi)}.
+\end{equation}
+右端只是 \(\varphi\) 的函数，所以左端也必须如此。反过来，如果 \(\dfrac{\Delta_2\varphi}{\Delta_1\varphi}\) 只是 \(\varphi\) 的函数，就可以（由前式）确定 \(F(\varphi)\)，使得
+\[
+ \Delta_2F(\varphi)=0.
+\]
+因此：\emph{线 \(\varphi=\cst\) 与其正交轨迹共同构成等温系统的充要条件，是 \(\varphi\) 的一阶与二阶微分参数之比仅为 \(\varphi\) 的函数。}
+
+\subsection*{\S. 47.\quad 李定理}
+
+设刚才所述条件成立；也就是说，在一个正交等温双重系统中，已知其中一个线系
+\[
+ \varphi=\cst,
+\]
+则另一个线系可以用求积法得到。事实上，把第95页 \S. 44 的 (21) 中 \(\varphi\) 换成 \(F(\varphi)\)，便有
+\[
+\left\{
+\begin{aligned}
+\frac{\partial\psi}{\partial u}&=-F'(\varphi)\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}},\\[0.7em]
+\frac{\partial\psi}{\partial v}&=F'(\varphi)\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}},
+\end{aligned}
+\right.
+\]
+而由 (25) 得
+\[
+ F'(\varphi)=e^{-\int \frac{\Delta_2\varphi}{\Delta_1\varphi}\,d\varphi}.
+\]
+我们可以把这个结果表述如下：\emph{如果线 \(\varphi=\cst\) 属于一个双重等温系统，并把正交轨迹的微分方程写成第91页 (12) 的形式}
+\[
+\frac{E\dfrac{\partial\varphi}{\partial v}-F\dfrac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}du-
+\frac{G\dfrac{\partial\varphi}{\partial u}-F\dfrac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}dv=0,
+\]
+\emph{那么立刻得到它的一个积分因子}
+\[
+ \mu=e^{-\int \frac{\Delta_2\varphi}{\Delta_1\varphi}\,d\varphi}.
+\]
+我们可以依照李把这项研究再推进一步，并证明：\emph{如果对于一个等温系统中的一个线系，只知道以这些线为积分曲线的一阶微分方程}
+\[
+ M\,du+N\,dv=0,
+\]
+\emph{那么可以用求积法得到它的有限形式方程。}
+
+事实上，由 \S. 44 的 (21) 可知，在此假设下，
+\[
+ M\,du+N\,dv,
+\]
+存在一个积分因子 \(\lambda\)，而它同时也是
+\[
+ \frac{EN-FM}{\sqrt{EG-F^2}}du+\frac{FN-GM}{\sqrt{EG-F^2}}dv.
+\]
+的积分因子。暂令
+\[
+ M_1=\frac{EN-FM}{\sqrt{EG-F^2}},
+ \qquad
+ N_1=\frac{FN-GM}{\sqrt{EG-F^2}},
+\]
+于是有两个方程
+\[
+\left\{
+\begin{aligned}
+\frac{\partial(\lambda M)}{\partial v}&=\frac{\partial(\lambda N)}{\partial u},\\[0.4em]
+\frac{\partial(\lambda M_1)}{\partial v}&=\frac{\partial(\lambda N_1)}{\partial u}
+\end{aligned}
+\right.
+\]
+由此
+\begin{equation}\tag{26}
+\begin{aligned}
+\frac{\partial\log\lambda}{\partial u}&=
+\frac{M_1\left(\dfrac{\partial N}{\partial u}-\dfrac{\partial M}{\partial v}\right)-M\left(\dfrac{\partial N_1}{\partial u}-\dfrac{\partial M_1}{\partial v}\right)}{MN_1-M_1N},\\[0.8em]
+\frac{\partial\log\lambda}{\partial v}&=
+\frac{N_1\left(\dfrac{\partial N}{\partial u}-\dfrac{\partial M}{\partial v}\right)-N\left(\dfrac{\partial N_1}{\partial u}-\dfrac{\partial M_1}{\partial v}\right)}{MN_1-NM_1},
+\end{aligned}
+\end{equation}
+所以可用求积法得到 \(\lambda\)\srcfn{1}{注意
+\[
+ -MN_1+NM_1=EN^2-2FMN+GM^2,
+\]
+由于 \(EG-F^2>0\)，它不可能为零。}。
+
+还应注意，这同时给出了一种判别方法：从微分方程
+\[
+ M\,du+N\,dv=0,
+\]
+判定其积分曲线是否属于某个等温系统。根据 (26)，其充要条件是表达式
+\[
+\frac{M_1\left(\dfrac{\partial N}{\partial u}-\dfrac{\partial M}{\partial v}\right)-M\left(\dfrac{\partial N_1}{\partial u}-\dfrac{\partial M_1}{\partial v}\right)}{MN_1-M_1N}\,du+
+\frac{N_1\left(\dfrac{\partial N}{\partial u}-\dfrac{\partial M}{\partial v}\right)-N\left(\dfrac{\partial N_1}{\partial u}-\dfrac{\partial M_1}{\partial v}\right)}{MN_1-M_1N}\,dv
+\]
+为全微分。
+
+\subsection*{\S. 48.\quad 共形表示}
+
+设在一个曲面上已知一个化为等距参数 \((u,v)\) 的等温系统，因而使线元具有形式
+\[
+ ds^2=\lambda(du^2+dv^2),
+\]
+并把 \(u,v\) 解释为辅助平面（表示平面）上一点的正交笛卡儿坐标 \(\xi,\eta\)，即令
+\[
+ \xi=u,
+ \qquad
+ \eta=v.
+\]
+这样，对于曲面上的每一点 \(P\equiv(u,v)\)，或我们所考察的曲面区域中的每一点，都让一点 \(P'\) 与之对应；该点位于表示平面 \(\xi,\eta\) 上，其笛卡儿坐标等于 P 的曲线坐标。总之，我们便得到曲面在平面上的一个\emph{表示}。现在我们来证明，在这个表示中\emph{角保持不变}；也就是说，曲面上任意两条线相交的角，等于平面上相应表示线所成的角。
+
+为了证实这一点，只须回忆 \S. 42 的基本公式，特别是第90页的 (9)；在我们的情形，它化为
+\[
+ \operatorname{tang}\theta=\frac{dv}{du}
+\]
+并证明曲面上的每条（原像）线与 \(v=\cst\) 线相交的角，恰等于它在平面上的像线与直线 \(\eta=\cst\) 所成的角。
+
+一般地，如果在两个曲面 S、S'（或曲面区域）的点 P、P' 之间建立一种对应，使一个曲面的每一点 P 都对应另一曲面的一点 P'，而且当 P 在 S 上连续运动时，像点 P' 也在 S' 上连续运动，我们就说作出了\emph{一个曲面在另一曲面上的表示}。
+
+如果这种表示保持角不变，就称为\emph{共形的}。同一事实有时也表述为：这种表示保持\emph{无穷小部分的相似性}；显然，这恰好等价于保持角。
+
+根据本节开头得到的结果，很明显，为了解决曲面 S 在曲面 S' 上的一般共形表示问题，只须把两个曲面分别共形地表示在一个平面上，然后求一个平面在另一平面上的最一般共形表示。
+
+\subsection*{\S. 49.\quad 两个平面之间的共形表示}
+
+为了解决刚才提出的问题，应把两种情形区别开来：一种情形中，两个平面图形的对应角相等且方向相同；另一种情形中，对应角虽仍相等，方向却相反\srcfn{1}{这里假定两个平面的正面都已固定，并假定两平面的正交笛卡儿坐标轴 \(Ox,Oy;\ O'x',O'y'\) 具有相同取向。}。在两个平面 \(\pi,\pi'\) 中各选一组正交笛卡儿坐标轴 \(Ox,Oy;\ O'x',O'y'\)。设 \(x,y\) 是 \(\pi\) 中一点 P 的坐标，\(x',y'\) 是 \(\pi'\) 中对应点 P' 的坐标；我们的表示由公式
+\[
+ x'=x'(x,y),
+ \qquad
+ y'=y'(x,y)
+\]
+解析地表示。现在要寻找应当加在函数 \(x',y'\)（它们是 \(x,y\) 的函数）上的条件；设这些函数及其偏导数在所表示的区域内有限且连续，使该表示成为共形表示。
+
+设 \(P\equiv(x,y)\) 是 \(\pi\) 中的一点，\(P'\equiv(x',y')\) 是 \(\pi'\) 中的对应点；考察 \(\pi\) 中从 P 沿任意方向发出的一条曲线。以 \(\theta\) 表示其切线相对于 \(x\) 轴的倾角，按旋转正向度量，满足公式
+\begin{equation}\tag{27}
+ \operatorname{tang}\theta=\frac{dy}{dx}
+\end{equation}
+而对于像曲线 C'，同样有
+\begin{equation}\tag{27*}
+ \operatorname{tang}\theta'=\frac{dy'}{dx'}=
+ \frac{\dfrac{\partial y'}{\partial x}dx+\dfrac{\partial y'}{\partial y}dy}{\dfrac{\partial x'}{\partial x}dx+\dfrac{\partial x'}{\partial y}dy}.
+\end{equation}
+若从 P 发出的第二条曲线 C\(_1\) 的 \(\theta\) 值为 \(\theta_1\)，而相应的 \(\theta'\) 值为 \(\theta'_1\)，则在角的直接保持情形中必须有
+\[
+ \theta_1-\theta=\theta'_1-\theta'
+\]
+而在逆向保持情形中则有
+\[
+ \theta_1-\theta=\theta'-\theta'_1
+\]
+因此，在第一种情形中有
+\[
+ \theta'=\theta+\alpha
+\]
+在第二种情形中有
+\[
+ \theta'=-\theta+\alpha
+\]
+其中 \(\alpha\) 只依赖于点 P，而对于由比值 \(\dfrac{dy}{dx}\) 确定的方向则为常数。为简便起见，令
+\[
+ \operatorname{tang}\alpha=m,
+\]
+于是有
+\[
+ \operatorname{tang}\theta'=\frac{m\pm\tg\theta}{1\mp m\tg\theta},
+\]
+上面的符号用于第一种情形，下面的符号用于第二种情形。由 (27)、(27*) 得到方程：
+\[
+\frac{\dfrac{\partial y'}{\partial x}+\dfrac{\partial y'}{\partial y}\dfrac{dy}{dx}}{\dfrac{\partial x'}{\partial x}+\dfrac{\partial x'}{\partial y}\dfrac{dy}{dx}}=
+\frac{m\pm\dfrac{dy}{dx}}{1\mp m\dfrac{dy}{dx}},
+\]
+它必须对 \(\dfrac{dy}{dx}\) 的一切值成立。由此得到关系式
+\[
+\left\{
+\begin{aligned}
+\frac{\partial x'}{\partial x}&=\pm\frac{\partial y'}{\partial y},\\[0.4em]
+\frac{\partial x'}{\partial y}&=\mp\frac{\partial y'}{\partial x},
+\end{aligned}
+\right.
+\]
+这些关系表明 \(x'+iy'\) 是复变量 \(x\pm iy\) 的函数。
+
+因此得到结论：\emph{一个平面在另一个平面上的最一般共形表示，是令一个平面的复变量等于另一平面的复变量或其共轭的（任意）函数而得到的。在第一种情形中，角得到直接保持；在第二种情形中，对应角相等但方向相反。}
+
+现在回忆上一节开头的结果，便更一般地推出：\emph{一个曲面在另一曲面上的最一般共形表示，是令一个曲面上的复变量等于另一曲面上的复变量（或其共轭）的函数而得到的。}
+
+\subsection*{\S. 50.\quad 旋转曲面的情形}
+
+把前几节的一般结果应用于一类能够立即确定等温系统的曲面，即\emph{旋转曲面}。在这样一个曲面上，取子午线和纬圆为坐标线。以一个变动子午面同固定子午面所成的角 \(\omega\)（经度）作为变动子午线的参数，以纬圆的半径 \(r\) 作为纬圆的参数；这样暂时排除了（正圆）柱面的情形。取旋转轴为 \(z\) 轴，并以经度 \(\omega\) 从 \(xz\) 平面内选作固定子午线的那条子午线起算，则曲面上一点的坐标由公式
+\begin{equation}\tag{28}
+ x=r\cos\omega,
+ \qquad
+ y=r\sen\omega,
+ \qquad
+ z=\varphi(r),
+\end{equation}
+给出，其中
+\[
+ z=\varphi(r)
+\]
+是子午曲线的方程。因此，曲面的线元 \(ds\) 在坐标 \(r,\omega\) 下为
+\[
+ ds^2=\{1+\varphi'^2(r)\}\,dr^2+r^2\,d\omega^2.
+\]
+通过令
+\[
+ u=\int\sqrt{1+\varphi'^2(r)}\,dr,
+\]
+把参数 \(r\) 换成从一个固定点起算的子午线弧长 \(u\)，便有
+\[
+ r=\psi(u),
+\]
+其中函数 \(\psi\) 的性质决定子午曲线的类型，并且有
+\begin{equation}\tag{29}
+ ds^2=du^2+r^2\,d\omega^2.
+\end{equation}
+这个公式也适用于柱面的情形，此时有
+\[
+ x=r\cos\omega,
+ \qquad
+ y=r\sen\omega,
+ \qquad
+ z=u,
+\]
+而 \(r\) 为常数。由于在 (29) 中 \(r\) 只是 \(u\) 的函数，由 \S. 46 得到：\emph{在任意旋转曲面上，子午线和纬圆构成一个正交等温系统。}
+
+再把 (29) 写成
+\[
+ ds^2=r^2\left(\frac{du^2}{r^2}+d\omega^2\right),
+\]
+便看出：\emph{等距参数是 \(\omega\) 和 \(u_1=\displaystyle\int\frac{du}{r}\)。}
+
+因此，对于每个旋转曲面，我们都知道怎样解决把它共形地表示在平面上的问题。特别地，令
+\[
+ \xi=\omega,
+ \qquad
+ \eta=\int\frac{du}{r},
+\]
+并把 \(\xi,\eta\) 看作表示平面上一点的正交笛卡儿坐标，便得到一个共形表示；其中，子午线和纬圆的像分别是平行于 \(\eta\) 轴或 \(\xi\) 轴的直线\srcfn{1}{注意，在这个表示中，\emph{等角线}，即曲面上以恒定角度与子午线相交的曲线，其像是表示平面上的直线。例如由此得到如下定理：\emph{在旋转曲面上由三段等角线围成的任意三角形中，内角和等于两个直角。}}。
+
+\subsection*{\S. 51.\quad 复球面}
+
+考察球面
+\[
+ x^2+y^2+z^2=1,
+\]
+为简单起见，我们把它的半径取为单位长度。它可以看作绕 \(z\) 轴旋转的旋转曲面，此时其上一点的坐标为
+\[
+ x=\sen u\cos v,
+ \quad
+ y=\sen u\sen v,
+ \quad
+ z=\cos u,
+\]
+其中 \(v\) 是\emph{经度}，而 \(u\) 是该点到极点 \(u=0\) 的角距离，即\emph{纬度}的余角（余纬）；因此线元为
+\[
+ ds^2=du^2+\sen^2u\,dv^2,
+\]
+而等距参数为
+\[
+ u_1=\int\frac{du}{\sen u}=\log\tg\frac{1}{2}u,
+ \quad v,
+\]
+所以可以取 \(\tau=e^{-u_1+iv}\) 为球面上的复变量，即
+\begin{equation}\tag{30}
+ \tau=\cot\frac{1}{2}u\cdot e^{+iv}.
+\end{equation}
+在赤道平面上，可以取 \(\zeta\) 为复变量，令
+\[
+ \zeta=\rho e^{i\theta}
+\]
+（其中 \(\rho,\theta\) 为极坐标）；再令 \(\tau=\zeta\)，即
+\begin{equation}\tag{31}
+ \rho=\cot\frac{1}{2}u,
+ \qquad
+ \theta=v,
+\end{equation}
+便得到球面在赤道平面上的一个共形表示。这个表示也可如下用几何方法得到：从极点 \(u=0\) 把球面上的点 \(M\equiv(u,v)\) 投影到赤道平面上的 \(m\)，所得的点恰好就是公式 (31) 给出的表示点。因此，球面在平面上的这种表示称为\emph{极点球极投影}。
+
+除了保持角这一性质外，这个表示还具有另一项极其重要的性质：球面上的每个圆以平面上的一个圆为像，反之亦然；这个性质可以用初等几何考察证明\srcfn{1}{一种很简单的证明如下。先注意，若 M、M' 是球面上两点，而 \(m,m'\) 是它们在赤道平面上的两个像点，则四边形 \(MM'm'm\) 可内接于一圆。设 M 描绘球面上的一个圆 C，M' 是 M 的一个特定位置，\(m'\) 是它的像。通过 C 与 \(m'\) 的球面，根据上面的结论，包含整个圆 \(MM'm'm\)（该圆在球面上有三个点），因而像点 \(m\) 的轨迹就是上述球面与赤道平面的交圆 C。}。
+
+由表示公式 (31) 也能立即得到这一性质。注意，球面上一个圆的方程为
+\[
+ a\sen u\cos v+b\sen u\sen v+c\cos u+d=0
+\]
+其中 \(a,b,c,d\) 为常数；而根据 (31)，它的平面像以极坐标表示的方程为
+\[
+ 2a\rho\cos\theta+2b\rho\sen\theta+c(\rho^2-1)+d(\rho^2+1)=0,
+\]
+所以是一个圆（或一条直线）。逆命题显然也成立。
+
+\subsection*{\S. 52.\quad 平面上的圆的正交系统}
+
+利用球面的球极投影，我们很容易解决如下问题：\emph{确定平面上圆（或直线）的一切可能的双重正交系统}。
+
+把这样的系统移到球面上，仍应得到两个圆系 \((C)\)、\((C')\) 所构成的双重正交系统。现在立刻可以看出，球面上两个圆以直角相交的充要条件，是一个圆的平面通过另一个圆的平面的极点。因此，系统 \((C)\) 中各圆平面的极点必须位于 \((C')\) 中每个圆的平面上，它们的轨迹是一条直线 \(r'\)，第二个系统的所有平面都通过这条直线。同样，系统 \((C)\) 中各圆的所有平面都通过一条直线 \(r\)，显然，它是 \(r'\) 关于球面的互极线。
+
+因此，构造球面上最一般的圆的双重正交系统的方法，是用两个平面束截球面，而两个平面束的轴关于球面互为极线。
+
+先设直线 \(r\) 不与球面相切，则它或它的互极线 \(r'\) 将在两个相异实点处与球面相交；这两个点是相应系统中所有圆的公共点。作球极投影到平面上，得到：
+
+\emph{A) 两个正交圆束，其中一个具有两个实基点，另一个具有虚基点。}
+
+特别地，如果 \(r\) 是球面的极轴，则系统 A) 化为一个直线束和以该束中心为圆心的圆系。
+
+如果 \(r\) 与球面相切，则 \(r'\) 在同一点以垂直于 \(r\) 的方向与球面相切；作球极投影到平面上，得到：
+
+\emph{B) 两个圆系，它们在同一点分别与两条彼此正交的直线相切。}
+
+特别地，如果 \(r,r'\) 与球面的切点就是投影极点，则在平面上得到一个直线的双重正交系统，作为极限情形。
+
+\subsection*{\S. 53.\quad 凯莱公式}
+
+设球面绕球心旋转到自身，并以球面各点处复变量 \(\tau\) 的值（第107页）标识这些点\srcfn{1}{这显然是允许的，因为复变量 \(\tau\) 的各值与球面各点之间有一一对应关系，其中也包括在投影极点处取得的值 \(\tau=\infty\)。}；设 \(\tau'\) 是点 \(\tau\) 运动后到达的点。由于对应点 \(\tau,\tau'\) 所描绘的两个图形不仅共形而且全等，\(\tau'\) 是复变量 \(\tau\) 的函数；现在我们断言，\(\tau'\) 是 \(\tau\) 的线性函数：
+\begin{equation}\tag{32}
+ \tau'=\frac{\alpha\tau+\beta}{\gamma\tau+\delta}.
+\end{equation}
+利用复变量函数的基本定理，只须注意 \(\tau'\) 对每一个 \(\tau\) 值恰有一个值，反之亦然，就可立即证明这一点。还可以用更初等的方法证明：在球面上，也像在表示平面上一样，\(\tau\) 所描绘的每个圆，都对应一个由 \(\tau'\) 描绘的圆。把圆变为圆的平面到自身的共形表示，必由线性代换给出\srcfn{2}{线性代换
+\[
+ z'=\frac{\alpha z+\beta}{\gamma z+\delta}
+\tag{1}
+\]
+把 \(z'\) 所描绘的圆变成 \(z\) 所描绘的圆（反之亦然），可作如下证明。依 Hermite 的记号，以 \(a_0\) 表示任意量 \(a\) 的共轭，则由 \(z'\) 描绘的圆的最一般方程可写成
+\[
+ A z'z'_0+Bz'+B_0z'_0+C=0,
+\]
+其中 \(A,C\) 为实常数。根据 (1)，由 \(z\) 描绘的相应曲线的方程为：
+\[
+\begin{aligned}
+& A(\alpha z+\beta)(\alpha_0z_0+\beta_0)
+ +B(\alpha z+\beta)(\gamma_0z_0+\delta_0)\\
+&\quad +B_0(\alpha_0z_0+\beta_0)(\gamma z+\delta)
+ +C(\gamma z+\delta)(\gamma_0z_0+\delta_0)=0
+\end{aligned}
+\]
+所以仍是一个圆。再注意，如果 \(z_1\) 是平面上任意一点，线性代换
+\[
+ z'=\frac{c}{z-z_1}\quad(c\hbox{ 为常数})
+\]
+把在固定点 \(z_1\) 沿某一给定方向相切的圆变为平行直线；适当地选取 \(c\)（即 \(c\) 的辐角），可使这些直线平行于一条坐标轴。现在设 \(z''=f(z)\) 是一个保持圆的平面到自身的共形表示。图形 \((z'')\) 中平行于坐标轴的直线，在图形 \((z)\) 中变成两个圆系，它们在同一点分别与两条正交直线相切。通过适当的线性代换 \(z'=\frac{c}{z-z_1}\)，这些圆在图形 \((z)\) 中又变成平行于坐标轴的直线。现在令 \(z''=x''+iy''\)、\(z'=x'+iy'\)，则 \(x''\) 必须只是 \(x'\) 或 \(y'\) 的函数，而相应地 \(y''\) 只依赖于 \(y'\) 或 \(x'\)，所以 \(z'',z'\) 之间的关系显然为
+\[
+ z''=a z'
+\]
+其中 \(a\) 是实常数（或纯虚常数）。因此 \(z''\) 与 \(z\) 线性相关，证毕。}。
+
+线性代换 (32) 的行列式 \(\alpha\delta-\beta\gamma\) 必不为零；不失一般性，可以设它等于一：
+\begin{equation}\tag{33}
+ \alpha\delta-\beta\gamma=1;
+\end{equation}
+现在我们来寻找系数 \(\alpha,\beta,\gamma,\delta\) 必须满足哪些特殊关系，才能使 (32) 实际表示球面的一个纯运动。为此，用复变量 \(\tau\) 及其共轭 \(\tau_0\) 表示球面的线元
+\[
+ ds^2=du^2+\sen^2u\,dv^2
+\]
+由于
+\[
+ \tau=\cot\frac{1}{2}u\,e^{iv},\qquad
+ \tau_0=\cot\frac{1}{2}u\,e^{-iv},
+\]
+立即得到
+\[
+ ds^2=\frac{4\,d\tau\,d\tau_0}{(\tau\tau_0+1)^2}.
+\]
+因此，(32) 表示运动的充要条件是
+\[
+ \frac{d\tau'\,d\tau'_0}{(\tau'\tau'_0+1)^2}
+ =
+ \frac{d\tau\,d\tau_0}{(\tau\tau_0+1)^2},
+\]
+或者，由 (32) 有
+\[
+ d\tau'=\frac{d\tau}{(\gamma\tau+\delta)^2},
+ \qquad
+ d\tau'_0=\frac{d\tau_0}{(\gamma_0\tau_0+\delta_0)^2},
+\]
+\[
+ (\alpha\tau+\beta)(\alpha_0\tau_0+\beta_0)
+ +(\gamma\tau+\delta)(\gamma_0\tau_0+\delta_0)=\tau\tau_0+1.
+\]
+最后一个关系必须对 \(\tau\) 的任意值成立，因而给出：
+\[
+\left\{
+\begin{aligned}
+ \alpha\alpha_0+\gamma\gamma_0&=1\\
+ \beta\alpha_0+\delta\gamma_0&=0
+\end{aligned}\right.
+\qquad
+\left\{
+\begin{aligned}
+ \alpha\beta_0+\gamma\delta_0&=0\\
+ \beta\beta_0+\delta\delta_0&=1.
+\end{aligned}\right.
+\]
+利用 (33)，这些方程化为充要条件
+\[
+ \delta=\alpha_0,\qquad \gamma=-\beta_0;
+\]
+也就是说，\(\delta\) 是 \(\alpha\) 的共轭，而 \(\gamma\) 是 \(\beta\) 的共轭再变号。因此得到结论：
+
+\emph{复球面到自身的最一般运动，由复变量上的线性代换表示}
+\begin{equation}\tag{34}
+ \tau'=\frac{\alpha\tau+\beta}{-\beta_0\tau+\alpha_0},
+ \qquad
+ \alpha\alpha_0+\beta\beta_0=1.
+\end{equation}
+这个公式由凯莱给出。
+
+在球面到自身的每一个这种运动 (34) 中，与二次方程
+\[
+ \beta_0\tau^2+(\alpha-\alpha_0)\tau+\beta=0,
+\]
+的两个 \(\tau\) 根相对应的点保持不动。显然，这两点在直径上相对，而运动就是绕连接它们的直径作纯旋转。对于这个旋转的幅度 \(\Theta\)，很容易得到公式：
+\begin{equation}\tag{35}
+ \cos\left(\frac{\Theta}{2}\right)=\frac{\alpha+\alpha_0}{2}\srcfnmark{1}
+\end{equation}
+\srcfntext{1}{在 \(\beta=\beta_0=0\) 的情形，公式 (35) 立即可见。现在以 \(S\) 表示任意一个代换 (34)，以 \(T\) 表示一个把 \(S\) 的两个不动点移到球面极点 \(\tau=0,\tau=\infty\) 的代换 (34)，则 \(S\) 借助 \(T\) 所作的变换：
+\[
+ T^{-1}ST
+\]
+是绕极轴旋转的运动，其幅度与 \(S\) 相同。另一方面，\(S\) 与 \(T^{-1}ST\) 的第一和第四系数之和相同，这一点用直接计算即可立即验证。}
+
+\begin{center}
+\(\longrightarrow\!\!\!\!\!\!\!\!-\!\!\!\!\!\!\!\!\longleftarrow\)
+\end{center}

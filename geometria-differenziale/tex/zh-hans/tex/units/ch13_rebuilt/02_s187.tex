@@ -1,0 +1,85 @@
+\subsection*{§. 187.\\ 伪球空间在欧几里得半空间上的共形表示。}
+
+为了研究 $n$ 维伪球空间的几何学，即 $n$ 维伪球几何，我们首先把上一章在 $n$ 为任意数时所需的共形表示加以推广；上一章曾在 $n=2$ 时采用这一表示。
+
+为此从线元的典型形式 (I) 出发：
+\[
+\tag{I*}
+ ds^2=\frac{dy_1^2+dy_2^2+\cdots+dy_n^2}{y_n^2}
+\]
+这里为简便先规定 $=1$，即把伪球空间的半径 $R$ 取为此值。把 $y_1,y_2,\ldots,y_n$ 看作一个欧几里得空间的普通正交笛卡尔坐标，该空间的线元为
+\[
+ ds_0^2=dy_1^2+dy_2^2+\cdots+dy_n^2,
+\]
+则 (I*) 建立了伪球空间在欧几里得空间上的共形表示。第一空间的实点在第二空间中的像全部位于极限超平面 $y_n=0$ 的同一侧；该超平面上的点表示对象空间的无穷远点。为明确起见，约定欧几里得空间中表示伪球空间实点的区域为 $y_n>0$。
+
+先求线元 (I) 的 Weingarten 方程组 (A) 的最一般解。一般地，当 $ds^2$ 具有正交形式
+\[
+ ds^2=H_1^2dy_1^2+H_2^2dy_2^2+\cdots+H_n^2dy_n^2,
+\]
+且 $i,k,l$ 表示三个互异指标时，Christoffel 符号的值由下列公式给出：
+\[
+\tag{a}
+ \chrB{ik}{l}=0,
+ \qquad
+ \chrB{ik}{k}=\frac{\partial\log H_k}{\partial y_i},
+\]
+\[
+ \chrB{kk}{l}=-\frac{H_k}{H_l^2}\frac{\partial H_k}{\partial y_l},
+ \qquad
+ \chrB{kh}{k}=\frac{\partial\log H_k}{\partial y_h}.
+\]
+对于线元 (I*)，于是有
+\[
+ \chrB{nk}{k}=-\frac1{y_n},
+ \qquad
+ \chrB{kk}{n}=\frac1{y_n},
+ \qquad
+ \chrB{nn}{n}=-\frac1{y_n},
+\]
+其余符号全为零，而 (A) 化为下式，其中指标 $r,s$ 取自序列 $1,2,\ldots,n-1$：
+\[
+ \frac{\partial^2U}{\partial y_r\partial y_s}=0\quad(r\ne s),
+ \qquad
+ \frac{\partial^2U}{\partial y_r^2}=\frac1{y_n}\frac{\partial U}{\partial y_n}+\frac{U}{y_n^2},
+\]
+\[
+ \frac{\partial^2U}{\partial y_n\partial y_r}= -\frac1{y_n}\frac{\partial U}{\partial y_r},
+ \qquad
+ \frac{\partial^2U}{\partial y_n^2}= -\frac1{y_n}\frac{\partial U}{\partial y_n}+\frac{U}{y_n^2}.
+\]
+立即可得，此方程组的最一般解 $U$（相差一个乘法常数）由公式
+\[
+\tag{9}
+ U=\frac1{y_n}\left\{(y_1-a_1)^2+(y_2-a_2)^2+\cdots+(y_{n-1}-a_{n-1})^2+y_n^2+c\right\}
+\]
+给出，其中 $a_1,a_2,\ldots,a_{n-1},c$ 为任意常数；由此得到
+\[
+\tag{10}
+ \Delta_1U=U^2-4c.
+\]
+令 $U=\text{常数}$，并以 $2a_n$ 表示右端的常数，则这些超曲面的方程为
+\[
+\tag{11}
+ (y_1-a_1)^2+(y_2-a_2)^2+\cdots+(y_n-a_n)^2=r^2,
+ \qquad r^2=a_n^2-c,
+\]
+即在表示空间中，它们是中心和半径任意的球面。由 §. 184 的定理（公式 (8)），这些球面是 $n-1$ 维从属空间之像，其黎曼曲率 $k$ 为常数。又因这里由 (10) 有
+\[
+ C=-4c,
+ \qquad K=-1,
+\]
+故
+\[
+ k=\frac{4c}{U^2-4c}=\frac{c}{a_n^2-c},
+\]
+最后即
+\[
+\tag{12}
+ k=\frac{a_n^2-r^2}{r^2}.
+\]
+因此：\emph{表示欧几里得空间中的每个超球面，都是 $n-1$ 维从属空间之像，其常曲率 $k=\frac{a_n^2-r^2}{r^2}$；若超球面完全处在正半空间 $y_n>0$ 内，亦即 $(a_n^2>r^2)$，该曲率为正；若它穿过极限超平面，亦即 $(a_n^2<r^2)$，该曲率为负；若超球面与极限超平面相切，亦即 $(a_n^2=r^2)$，该曲率为零。}
+
+在最后一种情形，这一超曲面称为伪球空间的极限球面。
+
+特别值得注意的是 $a_n=0$ 的情形，即超球面的中心位于极限超平面上。这时 (12) 给出 $k=-1$，亦即对象超曲面的曲率与环境空间相同；下一节将看到，它是测地超曲面，即它的一切测地线也是环境空间的测地线。

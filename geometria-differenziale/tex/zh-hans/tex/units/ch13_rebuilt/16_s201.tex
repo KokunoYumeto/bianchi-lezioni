@@ -1,0 +1,137 @@
+\subsection*{§. 201.\\ 椭圆几何与双曲几何中的 Frenet 公式。}
+
+本章最后的研究，将把第一章所述的曲线理论推广到三维椭圆度量与双曲度量。我们只建立这些空间中的\emph{Frenet 公式}\srcfn{1}{这些公式最初见于我在上文引用的《年刊》论文。}；借助这些基本公式，读者可以重新考察第一章的各项研究，并观察空间曲率对最后结果所造成的轻微改变。
+
+考察三维椭圆空间中的一条曲线 \(C\)，以其动点的 Weierstrass 坐标
+\[
+ x_0,x_1,x_2,x_3
+\]
+作为弧长 \(s\) 的函数来规定它。若以 \(\alpha_0,\alpha_1,\alpha_2,\alpha_3\) 表示曲线在 \((x_i)\) 处的法平面的坐标，则
+\[
+\tag{45}
+ \alpha_i=R\frac{dx_i}{ds},\qquad (i=0,1,2,3);
+\]
+\(\alpha_i\) 也称为切线的方向余弦。先来计算曲率 \(\frac1\rho\)，即曲线 \(C\) 的曲率。采用 §. 166 中 \(\frac1\rho\) 的一般定义：它是比值 \(\frac{2d}{t^2}\) 的极限，其中 \(d\) 表示两点 \(M',\overline{M}\) 之间的距离；这两点分别由在曲线上和在 \(M\) 点的切线上截取无穷小弧 \(=t\) 而得。我们有
+\[
+ x'_i=x_i+\frac tR\alpha_i+\frac{t^2}{2R}\frac{d\alpha_i}{ds}+\cdots
+\]
+\[
+ \overline{x}_i=x_i\cos\left(\frac tR\right)+\alpha_i\sen\left(\frac tR\right)
+\]
+或
+\[
+ \overline{x}_i=x_i+\frac tR\alpha_i-\frac{t^2}{2R^2}x_i+\cdots,
+\]
+这里略去了 \(t\) 的二次以上各次幂。于是
+\[
+ x'_i-\overline{x}_i=\frac{t^2}{2R}\left(\frac{d\alpha_i}{ds}+\frac{x_i}{R}\right)+\cdots,
+ \qquad
+ d=R\sqrt{\mathop{\mathrm{S}}(x'_i-\overline{x}_i)^2},
+\]
+从而
+\[
+ \frac1\rho=\lim\frac{2d}{t^2}=\sqrt{\mathop{\mathrm{S}}\left(\frac{d\alpha_i}{ds}+\frac{x_i}{R}\right)^2}.
+\]
+这里同欧几里得几何中一样，我们约定只赋予曲率一个绝对值，因而取根式的正值。
+
+同时可见，曲线主法线的方向余弦 \(\xi_0,\xi_1,\xi_2,\xi_3\)，指其在 \(M\) 点的取值，由 §. 166 给为
+\[
+\tag{46}
+ \xi_i=\rho\left(\frac{d\alpha_i}{ds}+\frac{x_i}{R}\right).
+\]
+切线与主法线确定密切平面；以 \(\lambda_0,\lambda_1,\lambda_2,\lambda_3\) 表示这个平面的坐标，亦即曲线副法线的方向余弦。行列式
+\[
+\tag{47}
+\left|
+\begin{matrix}
+ x_0&x_1&x_2&x_3\\
+ \alpha_0&\alpha_1&\alpha_2&\alpha_3\\
+ \xi_0&\xi_1&\xi_2&\xi_3\\
+ \lambda_0&\lambda_1&\lambda_2&\lambda_3
+\end{matrix}\right|
+\]
+于是是一个正交代换的行列式；为完全确定这些 \(\lambda\)，约定该行列式的值必须为正，即 \(=+1\)。在 \((x_i)\) 处的密切平面方程为
+\[
+\left|
+\begin{matrix}
+ X_0&X_1&X_2&X_3\\
+ x_0&x_1&x_2&x_3\\
+ \dfrac{dx_0}{ds}&\dfrac{dx_1}{ds}&\dfrac{dx_2}{ds}&\dfrac{dx_3}{ds}\\
+ \dfrac{d^2x_0}{ds^2}&\dfrac{d^2x_1}{ds^2}&\dfrac{d^2x_2}{ds^2}&\dfrac{d^2x_3}{ds^2}
+\end{matrix}\right|=0,
+\]
+其中 \(X_i\) 表示动点坐标。读者容易验证，采用 §. 3 对密切平面的定义，或采用该节末尾所述的其他定义之一，也得到同一方程。
+
+密切平面的概念既定，就可完全按照 §. 4 定义第二曲率或挠率 \(\frac1T\)，并推出挠率的值
+\[
+\tag{48}
+ \frac1{T^2}=\mathop{\mathrm{S}}\left(\frac{d\lambda_i}{ds}\right)^2.
+\]
+随后立即建立 \emph{Frenet 公式}。这些公式把行列式 (47) 各元素对弧长的导数，用这些元素本身以及第一、第二曲率半径 \(\rho,T\) 表出。式 (45)、(46) 已经给出其中两组。现在由恒等式
+\[
+ \mathop{\mathrm{S}}x\lambda=0,
+ \qquad \mathop{\mathrm{S}}\alpha\lambda=0,
+ \qquad \mathop{\mathrm{S}}\lambda^2=1,
+\]
+对 \(s\) 求导并利用式 (45)、(46)，得到
+\[
+ \mathop{\mathrm{S}}x\frac{d\lambda}{ds}=0,
+ \qquad \mathop{\mathrm{S}}\alpha\frac{d\lambda}{ds}=0,
+ \qquad \mathop{\mathrm{S}}\lambda\frac{d\lambda}{ds}=0
+\]
+因而
+\[
+ \frac{d\lambda_i}{ds}=K\xi_i\qquad (i=0,1,2,3),
+\]
+其中 \(K\) 是比例因子。
+
+由式 (48) 得 \(K^2=\frac1{T^2}\)，我们取 \(K=\frac1T\)；这样赋予挠率的不仅是绝对值，还有确定的符号。因此
+\[
+ \frac{d\lambda_i}{ds}=\frac{\xi_i}{T}.
+\]
+现在只剩下计算导数 \(\frac{d\xi_i}{ds}\)；利用正交行列式 (47) 的性质和已经得到的公式，便可立即完成。
+
+综上，椭圆几何中的 Frenet 公式为
+\[
+\tag{49}
+ \frac{dx_i}{ds}=\frac{\alpha_i}{R},
+ \qquad
+ \frac{d\alpha_i}{ds}=\frac{\xi_i}{\rho}-\frac{x_i}{R},
+ \qquad
+ \frac{d\xi_i}{ds}=-\frac{\alpha_i}{\rho}-\frac{\lambda_i}{T},
+ \qquad
+ \frac{d\lambda_i}{ds}=\frac{\xi_i}{T},
+ \qquad i=0,1,2,3.
+\]
+从这些基本公式出发，完全仿照第一章 §§. 8、9 的步骤，可推出在椭圆空间中，一条曲线的形状也完全由其\emph{内蕴方程}
+\[
+ \frac1\rho=f(s),
+ \qquad \frac1T=\varphi(s),
+\]
+确定；这两个方程可以任意给定。
+
+采用与上述完全类似的方法，可以建立双曲空间中的 Frenet 公式。沿用同一记号，这些公式写成
+\[
+\tag{49*}
+ \frac{dx_i}{ds}=\frac{\alpha_i}{R},
+ \qquad
+ \frac{d\alpha_i}{ds}=\frac{\xi_i}{\rho}+\frac{x_i}{R},
+ \qquad
+ \frac{d\xi_i}{ds}=-\frac{\alpha_i}{\rho}-\frac{\lambda_i}{T},
+ \qquad
+ \frac{d\lambda_i}{ds}=\frac{\xi_i}{T},
+\]
+此时 \(x,\alpha,\xi,\lambda\) 之间的关系为
+\[
+ x_0^2-\sum x_i^2=1,
+ \quad \sum\alpha_i^2-\alpha_0^2=1,
+ \quad \sum\xi_i^2-\xi_0^2=1,
+ \quad \sum\lambda_i^2-\lambda_0^2=1,
+\]
+\[
+ \sum x_i\alpha_i-x_0\alpha_0=0,
+ \qquad
+ \sum\alpha_i\xi_i-\alpha_0\xi_0=0,
+ \quad \text{等等。}
+\]
+此外，只须在椭圆几何的式 (49) 中把 \(R\) 换成 \(iR\)，把 \(x_1,x_2,x_3\) 换成 \(-ix_1,-ix_2,-ix_3\)，并把 \(\alpha_0,\xi_0,\lambda_0\) 分别换成 \(i\alpha_0,i\xi_0,i\lambda_0\)，便立即得到式 (49*)\srcfn{1}{关于式 (49*) 的直接推导，参见 A. Bazzaroni 的论文 \emph{Le formole del Frenet in geometria iperbolica e loro applicazioni}（Bologna，Gamberini，1897）。}。

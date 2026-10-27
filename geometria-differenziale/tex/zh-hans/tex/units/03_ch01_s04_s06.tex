@@ -1,0 +1,183 @@
+%% UNIT ch01_s04_s06 | IT authority lines 342--525
+\subsection*{§. 4.\quad 主三面形}
+在曲线于 \(M\) 处的所有法线中，位于密切平面内的那一条称为\emph{主法线}，也就是密切平面与法平面的交线。密切平面的法线则称为曲线的\emph{副法线}。
+
+我们已经规定了切线的正向；现在还须借助适当的约定，规定主法线和副法线的正向。这三个正向确定一个三直角三面形，我们称之为曲线在所考察点 \(M\) 处的\emph{主三面形}。
+
+以下始终以
+\[
+\xi,\ \eta,\ \zeta
+\]
+表示主法线（正向）的方向余弦，并以
+\[
+\lambda,\ \mu,\ \nu
+\]
+表示副法线的方向余弦。由密切平面的方程 (5) 立即得到比例式
+\[
+\lambda:\mu:\nu=
+\detmat{\dfrac{\diff y}{\diff s} & \dfrac{\diff z}{\diff s}\\[0.6em]
+\dfrac{\diff^2y}{\diff s^2} & \dfrac{\diff^2z}{\diff s^2}}
+:
+\detmat{\dfrac{\diff z}{\diff s} & \dfrac{\diff x}{\diff s}\\[0.6em]
+\dfrac{\diff^2z}{\diff s^2} & \dfrac{\diff^2x}{\diff s^2}}
+:
+\detmat{\dfrac{\diff x}{\diff s} & \dfrac{\diff y}{\diff s}\\[0.6em]
+\dfrac{\diff^2x}{\diff s^2} & \dfrac{\diff^2y}{\diff s^2}},
+\]
+因而（由于 \(\xi\alpha+\eta\beta+\zeta\gamma=0,\ \xi\lambda+\eta\mu+\zeta\nu=0\)）：
+\[
+\xi:\eta:\zeta=\frac{\diff^2x}{\diff s^2}:\frac{\diff^2y}{\diff s^2}:\frac{\diff^2z}{\diff s^2};
+\]
+所以由 (3*) 推得
+\begin{equation}\tag{6}
+\xi=\pm\rho\frac{\diff^2x}{\diff s^2},\qquad
+\eta=\pm\rho\frac{\diff^2y}{\diff s^2},\qquad
+\zeta=\pm\rho\frac{\diff^2z}{\diff s^2}.
+\end{equation}
+现在考虑由切线和副法线确定的平面，其方程为
+\begin{equation}\tag{7}
+(X-x)\xi+(Y-y)\eta+(Z-z)\zeta=0,
+\end{equation}
+并计算有向距离 \(\delta\)：它是曲线上一点 \(M'\) 到这个平面的距离，而该点邻近 \(M\)。沿用 §. 3 的记号，有
+\[
+\delta=\xi\Delta x+\eta\Delta y+\zeta\Delta z,
+\]
+由解析几何所熟知，\(\delta\) 的正负取决于 \(M'\) 位于平面 (7) 的正侧还是负侧，也就是说，位于该平面法线正向
+
+\noindent \((\xi,\eta,\zeta)\) 所指的区域，还是相反的区域。现在应用第5页的公式 (a)，并注意 (6)，得到
+\begin{equation}\tag{8}
+\delta=\pm\frac{h^2}{2\rho}+\eta,
+\end{equation}
+这里的 \(\eta\) 表示一个三阶无穷小量。由此式可见，\(\delta\) 的符号与 \(h\) 的符号无关，因而：\emph{在曲线每一点的邻域内，曲线完全位于由切线和副法线所成平面的同一侧}\footnote{须排除弯曲率为零的奇点。}。我们把该平面在 \(M\) 的邻域内朝向曲线的一侧定为正侧；这样也就规定了主法线的正向。根据这一约定，(8) 中的 \(\delta\) 应为正，因此 (6) 中必须取上面的符号。于是得到最后的公式
+\begin{equation}\tag{9}
+\xi=\rho\frac{\diff^2x}{\diff s^2},\qquad
+\eta=\rho\frac{\diff^2y}{\diff s^2},\qquad
+\zeta=\rho\frac{\diff^2z}{\diff s^2}.
+\end{equation}
+最后，我们约定副法线的正向 \((\lambda,\mu,\nu)\)：它相对于已经规定的切线与主法线的正向，正如 \(Oz\) 轴的正向相对于 \(Ox,Oy\) 两轴的正向。三个主方向的九个方向余弦所成的行列式
+\[
+\detmat{\alpha & \beta & \gamma\\
+\xi & \eta & \zeta\\
+\lambda & \mu & \nu}
+\]
+等于正一，并且其中每个元素都等于它自己的代数余子式。因此有
+\begin{equation}\tag{10}
+\left\{
+\begin{aligned}
+\lambda&=\beta\zeta-\gamma\eta=\rho\left(\frac{\diff y}{\diff s}\frac{\diff^2z}{\diff s^2}-\frac{\diff z}{\diff s}\frac{\diff^2y}{\diff s^2}\right),\\[0.4em]
+\mu&=\gamma\xi-\alpha\zeta=\rho\left(\frac{\diff z}{\diff s}\frac{\diff^2x}{\diff s^2}-\frac{\diff x}{\diff s}\frac{\diff^2z}{\diff s^2}\right),\\[0.4em]
+\nu&=\alpha\eta-\beta\xi=\rho\left(\frac{\diff x}{\diff s}\frac{\diff^2y}{\diff s^2}-\frac{\diff y}{\diff s}\frac{\diff^2x}{\diff s^2}\right).
+\end{aligned}\right.
+\end{equation}
+
+\subsection*{§. 5.\quad 第二曲率或挠率}
+曲线 \(C\) 的密切平面一般随密切点 \(M\) 的变化而变化；它偏转的快慢，也就是曲线偏离平面状态的快慢，用\emph{第二曲率或挠率}来度量。
+
+为了同样精确地规定这一概念，取曲线的一点 \(M\) 及其邻近点 \(M_1\)。\(M,M_1\) 两点处的密切平面夹一个极小角 \(\Delta\sigma\)。商 \(\Delta\sigma/\Delta s\) 中，\(\Delta s\) 表示弧 \(MM_1\)；当 \(\Delta s\) 趋于零时，这个商趋于一个确定的有限极限。该极限被取作曲线\emph{挠率}的度量，并在赋予适当符号后记为 \(1/T\)。其倒数 \(T\) 称为第二曲率半径。为了求 \(1/T\) 的表达式，先注意角 \(\Delta\sigma\) 由 \(M,M_1\) 处两条相继副法线的夹角来度量。因此，完全仿照 §. 3 作出\emph{副法线的球面指标曲线}，其生成点的坐标为
+\[
+ x_1=\lambda,\qquad y_1=\mu,\qquad z_1=\nu,
+\]
+并以 \(\diff s_1\) 表示其弧微元
+\[
+\diff s_1=\sqrt{\diff x_1^2+\diff y_1^2+\diff z_1^2},
+\]
+显然有
+\begin{equation}\tag{11}
+\frac{1}{T}=\pm\frac{\diff s_1}{\diff s}=\pm\sqrt{\left(\frac{\diff\lambda}{\diff s}\right)^2+\left(\frac{\diff\mu}{\diff s}\right)^2+\left(\frac{\diff\nu}{\diff s}\right)^2}.
+\end{equation}
+下一节将以最便利的方式规定挠率的符号；这里先指出，挠率为零的曲线只有平面曲线。事实上，若 \(1/T=0\)，则由 (11) 可知 \(\lambda,\mu,\nu\) 是常数。为简便起见，若取副法线的固定方向为 \(z\) 轴，就有
+\[
+\lambda=0,
+\qquad \mu=0,
+\qquad \nu=1,
+\]
+从而 \(\gamma=0\)，所以 \(z=\) 常数；因此曲线位于一个平行于 \(xy\) 平面的平面内。
+
+\subsection*{§. 6.\quad 弗雷内公式}
+现在来建立一组重要公式：它们用三个主方向本身的九个方向余弦以及第一、第二曲率半径 \(\rho,T\)，表示这些方向余弦对弧长所取的导数。其中三个公式立即来自 §. 4（第8页）的 (9)，即
+\begin{equation}\tag{a}
+\frac{\diff\alpha}{\diff s}=\frac{\xi}{\rho},\qquad
+\frac{\diff\beta}{\diff s}=\frac{\eta}{\rho},\qquad
+\frac{\diff\gamma}{\diff s}=\frac{\zeta}{\rho}.
+\end{equation}
+现在把恒等式
+\[
+\alpha\lambda+\beta\mu+\gamma\nu=0,
+\]
+\[
+\lambda^2+\mu^2+\nu^2=1,
+\]
+对 \(s\) 求导，并注意上面的 (a)，便得到
+\[
+\left\{
+\begin{aligned}
+\alpha\frac{\diff\lambda}{\diff s}+\beta\frac{\diff\mu}{\diff s}+\gamma\frac{\diff\nu}{\diff s}&=0,\\[0.4em]
+\lambda\frac{\diff\lambda}{\diff s}+\mu\frac{\diff\mu}{\diff s}+\nu\frac{\diff\nu}{\diff s}&=0,
+\end{aligned}\right.
+\]
+从而有比例式
+\[
+\frac{\diff\lambda}{\diff s}:\frac{\diff\mu}{\diff s}:\frac{\diff\nu}{\diff s}=
+\detmat{\beta&\gamma\\ \mu&\nu}:
+\detmat{\gamma&\alpha\\ \nu&\lambda}:
+\detmat{\alpha&\beta\\ \lambda&\mu},
+\]
+也就是
+\[
+\frac{\diff\lambda}{\diff s}:\frac{\diff\mu}{\diff s}:\frac{\diff\nu}{\diff s}=\xi:\eta:\zeta.
+\]
+所以三个比
+\[
+\frac{1}{\xi}\frac{\diff\lambda}{\diff s},\qquad
+\frac{1}{\eta}\frac{\diff\mu}{\diff s},\qquad
+\frac{1}{\zeta}\frac{\diff\nu}{\diff s}
+\]
+彼此相等；它们的绝对值显然等于
+\[
+\sqrt{\left(\frac{\diff\lambda}{\diff s}\right)^2+\left(\frac{\diff\mu}{\diff s}\right)^2+\left(\frac{\diff\nu}{\diff s}\right)^2}=\pm\frac{1}{T}.
+\]
+
+我们用下式规定挠率的符号：
+\[
+\frac{1}{T}=\frac{1}{\xi}\frac{\diff\lambda}{\diff s}=\frac{1}{\eta}\frac{\diff\mu}{\diff s}=\frac{1}{\zeta}\frac{\diff\nu}{\diff s};
+\]
+于是
+\begin{equation}\tag{a'}
+\frac{\diff\lambda}{\diff s}=\frac{\xi}{T},\qquad
+\frac{\diff\mu}{\diff s}=\frac{\eta}{T},\qquad
+\frac{\diff\nu}{\diff s}=\frac{\zeta}{T}.
+\end{equation}
+这样，挠率不仅有绝对值，还有代数值。尚待考察挠率的正号或负号对应于何种几何情形；我们很快就会作此考察。
+
+再补上关于导数
+\[
+\frac{\diff\xi}{\diff s},\qquad \frac{\diff\eta}{\diff s},\qquad \frac{\diff\zeta}{\diff s}.
+\]
+的公式，便可使 (a)、(a') 完备。注意例如
+\[
+\xi=\gamma\mu-\beta\nu
+\]
+对它求导并利用 (a)、(a')，得到
+\[
+\frac{\diff\xi}{\diff s}=\frac{1}{\rho}(\zeta\mu-\eta\nu)+\frac{1}{T}(\gamma\eta-\beta\zeta),
+\]
+即
+\[
+\frac{\diff\xi}{\diff s}=-\frac{\alpha}{\rho}-\frac{\lambda}{T},
+\]
+其余两个导数同理。把所得公式汇总如下：
+\begin{equation}\tag{A}
+\left\{
+\begin{aligned}
+\frac{\diff\alpha}{\diff s}&=\frac{\xi}{\rho},&
+\frac{\diff\beta}{\diff s}&=\frac{\eta}{\rho},&
+\frac{\diff\gamma}{\diff s}&=\frac{\zeta}{\rho},\\[0.4em]
+\frac{\diff\xi}{\diff s}&=-\frac{\alpha}{\rho}-\frac{\lambda}{T},&
+\frac{\diff\eta}{\diff s}&=-\frac{\beta}{\rho}-\frac{\mu}{T},&
+\frac{\diff\zeta}{\diff s}&=-\frac{\gamma}{\rho}-\frac{\nu}{T},\\[0.4em]
+\frac{\diff\lambda}{\diff s}&=\frac{\xi}{T},&
+\frac{\diff\mu}{\diff s}&=\frac{\eta}{T},&
+\frac{\diff\nu}{\diff s}&=\frac{\zeta}{T}.
+\end{aligned}\right.
+\end{equation}
+这就是\textsc{弗雷内（Frenet）}公式；它们更常以\textsc{塞雷（Serret）}公式之名为人所知。

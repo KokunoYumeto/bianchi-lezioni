@@ -1,0 +1,1129 @@
+%% UNIT ch06_complete | IT authority lines 6767--7890
+\section*{第六章}
+\begin{center}
+{\Large\bfseries 测地曲率——测地线。}
+\end{center}
+\begin{center}\footnotesize
+切向曲率或测地曲率。-- 波内公式。-- 李乌维尔关于曲率\(K\)的表达式。-- 测地线。-- 测地线微分方程的各种形式。-- 测地平行线。-- 测地椭圆与测地双曲线。-- 曲线的测地挠率。-- 关于测地线方程积分的一般定理。-- 李乌维尔曲面上的测地线，特别是旋转曲面上的测地线。-- 高斯关于测地三角形总曲率的定理。-- 常测地曲率曲线的双正交系。
+\end{center}
+
+\subsection*{\S. 84.\quad 切向曲率.}
+
+考虑曲面 S 上一条从其点 M 出发的曲线 C，并将 C 正交投影到 M 点的切平面上；其投影\(\gamma\)在 M 点的曲率，称为曲线 C 在 M 点的\emph{切向曲率或测地曲率}\srcfn{1}{采用“测地曲率”这一名称的理由将在后文（\S. 99）说明。}；曲率中心\(m\)，即\(\gamma\)在 M 点的曲率中心，称为 C 的\emph{测地曲率中心}；而线段\(M m\)的倒数就是测地曲率，故称为测地曲率半径。将它记作
+\[
+  \rho_g=\overline{M m}
+\]
+并注意它是在切平面内、沿 C 的法线方向从 M 起量的；在这个方向上规定一个正向后，我们将\(\rho_g\)赋予正值或负值，视从 M 指向\(m\)的方向沿正向还是负向而定。现在，若以\(1/\rho\)表示曲线 C 在 M 点的第一曲率（仍照例取绝对值），并以\(\varepsilon\)表示 C 在 M 点的主法线正向与切平面内刚规定的、垂直于 C 的正向之间的夹角，则有
+\[
+ \frac1{\rho_g}=\frac{\cos\varepsilon}{\rho}\srcfnmark{1}.
+\]
+下面设曲面上的一条曲线在曲线坐标中的方程
+\[
+ \varphi(u,v)=0
+\]
+已知，来求这条曲线的切向曲率表达式。先考察坐标线\((u,v)\)正交的情形，此时
+\[
+ ds^2=E\,du^2+G\,dv^2,
+\]
+并求两族坐标线的测地曲率，分别记作
+\[
+ \frac1{\rho_u},\qquad \frac1{\rho_v}
+\]
+；依照前面的约定以及已经为坐标线正向所作的约定，它们的符号是完全确定的。
+
+对于一条曲线\(u=\mathrm{cost}^{\mathrm e}\)，仍采用曲线论（第一章）中的通常记号，有
+\[
+ ds_u=\sqrt G\,dv,
+\]
+\[
+ \alpha=\frac1{\sqrt G}\frac{\partial x}{\partial v},
+  \qquad
+ \beta=\frac1{\sqrt G}\frac{\partial y}{\partial v},
+  \qquad
+ \gamma=\frac1{\sqrt G}\frac{\partial z}{\partial v},
+\]
+因而再次对曲线\(u\)的弧长求导，并顾及弗雷内公式，得到
+\[
+ \frac{\xi}{\rho}=\frac1{\sqrt G}\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial x}{\partial v}\right),\quad
+ \frac{\eta}{\rho}=\frac1{\sqrt G}\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial y}{\partial v}\right),\quad
+ \frac{\zeta}{\rho}=\frac1{\sqrt G}\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial z}{\partial v}\right),
+\]
+其中\(\rho\)是曲线\(u=\mathrm{cost}^{\mathrm e}\)的第一曲率半径（绝对值）。由此推出
+\[
+ \frac1{\rho_u}=\frac{\cos\varepsilon}{\rho}=\sum\frac{\xi}{\rho}\frac1{\sqrt E}\frac{\partial x}{\partial u}=\frac1{\sqrt{EG}}\sum\frac{\partial x}{\partial u}\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial x}{\partial v}\right);
+\]
+\srcfntext{1}{这是把第130页的梅尼耶公式应用于 C 以及把 C 投影到切平面上的柱面的正截线\(\gamma\)。由此可见，测地曲率中心\(m\)就是 C 在 M 点的密切圆轴线与切平面的交点。}
+
+现在
+\[
+ \sum\frac{\partial x}{\partial u}\frac{\partial}{\partial v}\left(\frac1{\sqrt G}\frac{\partial x}{\partial v}\right)
+ =\frac1{\sqrt G}\sum\frac{\partial x}{\partial u}\frac{\partial^2x}{\partial v^2},
+\]
+这是因为
+\[
+ \sum\frac{\partial x}{\partial u}\frac{\partial x}{\partial v}=0;
+\]
+此外，将最后这个等式对\(v\)求导，得到
+\[
+ \sum\frac{\partial x}{\partial u}\frac{\partial^2x}{\partial v^2}
+  =-\sum\frac{\partial x}{\partial v}\frac{\partial^2x}{\partial u\partial v}
+  =-\frac12\frac{\partial G}{\partial u},
+\]
+从而
+\begin{equation}\tag{1}
+ \frac1{\rho_u}=-\frac1{\sqrt{EG}}\frac{\partial\sqrt G}{\partial u}
+\end{equation}
+；同样地，
+\begin{equation}\tag{1*}
+ \frac1{\rho_v}=-\frac1{\sqrt{EG}}\frac{\partial\sqrt E}{\partial v}.
+\end{equation}
+
+\subsection*{\S. 85.\quad 波内公式.}
+
+引入微分参数，可以把(1)和(1*)改写成另一种形式。事实上，
+\[
+ \Delta_1u=\frac1{E},\qquad
+ \Delta_2u=-\frac1{\sqrt{EG}}\frac{\partial}{\partial u}\sqrt{\frac GE},
+\]
+\[
+ \nabla(u,\sqrt E)=\frac1E\frac{\partial\sqrt E}{\partial u}
+\]
+故(1)可写成
+\begin{equation}\tag{2}
+ -\frac1{\rho_u}=\frac{\Delta_2u}{\sqrt{\Delta_1u}}+\nabla\left(u,\frac1{\sqrt{\Delta_1u}}\right).
+\end{equation}
+此后即可在完全一般的情形下容易地解决下述问题：\emph{设曲面以任意坐标线系\((u,v)\)为参照，使线元具有形式}
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+\emph{并设曲面上一族曲线的方程为}
+\[
+ \varphi(u,v)=\mathrm{cost}^{\mathrm e}
+\]
+\emph{求这些曲线的测地曲率\(1/\rho_\varphi\)。}
+
+为固定\(\rho_\varphi\)的符号，约定取\(\varphi=\mathrm{costante}\)曲线在切平面中的法向方向为参数\(\varphi\)增大的方向。
+若以\(\varphi=\mathrm{costante}\)为坐标线，其正交轨道取\(\psi=\mathrm{costante}\)，则
+\[
+ ds^2=E_1\,d\varphi^2+G_1\,d\psi^2
+\]
+且由(1)得
+\[
+ -\frac1{\rho_\varphi}=\frac1{\sqrt{E_1G_1}}\frac{\partial\sqrt{G_1}}{\partial\varphi},
+\]
+或者
+\begin{equation}\tag{3}
+ -\frac1{\rho_\varphi}=\frac{\Delta_2\varphi}{\sqrt{\Delta_1\varphi}}+\nabla\left(\varphi,\frac1{\sqrt{\Delta_1\varphi}}\right).
+\end{equation}
+由参数微分的基本性质，在坐标\((\varphi,\psi)\)或\((u,v)\)中计算结果一致，因此前式即已给出所求表达式。将(3)右端展开，得
+\[
+\begin{aligned}
+ -\frac1{\rho_\varphi}
+ &=\frac1{\sqrt{EG-F^2}}\frac1{\sqrt{\Delta_1\varphi}}
+ \left[\frac{\partial}{\partial u}\left(\frac{G\frac{\partial\varphi}{\partial u}-F\frac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}\right)
+ +\frac{\partial}{\partial v}\left(\frac{E\frac{\partial\varphi}{\partial v}-F\frac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}\right)\right]\\
+ &\quad+\frac1{\sqrt{EG-F^2}}\left[
+ \frac{G\frac{\partial\varphi}{\partial u}-F\frac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}}\frac{\partial}{\partial u}\left(\frac1{\sqrt{\Delta_1\varphi}}\right)
+ +\frac{E\frac{\partial\varphi}{\partial v}-F\frac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}}\frac{\partial}{\partial v}\left(\frac1{\sqrt{\Delta_1\varphi}}\right)\right]\\
+ &=\frac1{\sqrt{EG-F^2}}\left\{
+ \frac{\partial}{\partial u}\left(\frac{G\frac{\partial\varphi}{\partial u}-F\frac{\partial\varphi}{\partial v}}{\sqrt{EG-F^2}\,\Delta_1\varphi}\right)
+ +\frac{\partial}{\partial v}\left(\frac{E\frac{\partial\varphi}{\partial v}-F\frac{\partial\varphi}{\partial u}}{\sqrt{EG-F^2}\,\Delta_1\varphi}\right)\right\}.
+\end{aligned}
+\]
+于是得到\emph{波内}公式：
+\begin{equation}\tag{4}
+\resizebox{\textwidth}{!}{$\displaystyle
+ \frac1{\rho_\varphi}=\frac1{\sqrt{EG-F^2}}\left\{
+ \frac{\partial}{\partial u}\left(\frac{F\frac{\partial\varphi}{\partial v}-G\frac{\partial\varphi}{\partial u}}{\sqrt{E\left(\frac{\partial\varphi}{\partial v}\right)^2-2F\frac{\partial\varphi}{\partial u}\frac{\partial\varphi}{\partial v}+G\left(\frac{\partial\varphi}{\partial u}\right)^2}}\right)
+ +\frac{\partial}{\partial v}\left(\frac{F\frac{\partial\varphi}{\partial u}-E\frac{\partial\varphi}{\partial v}}{\sqrt{E\left(\frac{\partial\varphi}{\partial v}\right)^2-2F\frac{\partial\varphi}{\partial u}\frac{\partial\varphi}{\partial v}+G\left(\frac{\partial\varphi}{\partial u}\right)^2}}\right)
+ \right\},
+$}
+\end{equation}
+其右端是\(\varphi\)的一个微分参数。刚才指出的这一事实表达了测地曲率的一条极其重要的性质；在曲面的可适用性理论中，我们将认识到它的几何意义。
+
+若曲线
+\[
+ \varphi=\mathrm{costante},
+\]
+不是由有限形式给出，而是由一阶微分方程
+\[
+ M\,du+N\,dv=0,
+\]
+定义，则显然可利用(4)计算其测地曲率，因为
+\[
+ \frac{\partial\varphi}{\partial u}:\frac{\partial\varphi}{\partial v}=M:N
+\]
+故
+\begin{equation}\tag{4*}
+ \frac1{\rho_\varphi}=\frac1{\sqrt{EG-F^2}}\left\{\frac{\partial}{\partial u}\left(\frac{FN-GM}{\sqrt{EN^2-2FMN+GM^2}}\right)
+ +\frac{\partial}{\partial v}\left(\frac{FM-EN}{\sqrt{EN^2-2FMN+GM^2}}\right)\right\}.
+\end{equation}
+
+\subsection*{\S. 86.\quad 曲率 K 的李乌维尔公式.}
+
+前述公式还联系着李乌维尔给出的一个重要公式，它用坐标线的测地曲率
+\[
+ \frac1{\rho_u}\qquad \frac1{\rho_v}
+\]
+来表示曲面的曲率\(K\)。由波内公式(4)，有
+\begin{equation}\tag{5}
+\left\{\begin{aligned}
+ \frac1{\rho_u}&=\frac1{\sqrt{EG-F^2}}\left\{\frac{\partial}{\partial v}\left(\frac{F}{\sqrt G}\right)-\frac{\partial\sqrt G}{\partial u}\right\},\\
+ \frac1{\rho_v}&=\frac1{\sqrt{EG-F^2}}\left\{\frac{\partial}{\partial u}\left(\frac{F}{\sqrt E}\right)-\frac{\partial\sqrt E}{\partial v}\right\}.
+\end{aligned}\right.
+\end{equation}
+在右端用克里斯托费尔符号所给的值代替系数的各个导数，便得到等价公式
+\begin{equation}\tag{5*}
+ \frac1{\rho_u}=\frac{\sqrt{EG-F^2}}{G\sqrt G}\left\{\begin{matrix}22\\1\end{matrix}\right\},
+ \qquad
+ \frac1{\rho_v}=\frac{\sqrt{EG-F^2}}{E\sqrt E}\left\{\begin{matrix}11\\2\end{matrix}\right\}.
+\end{equation}
+现在取第77页\S. 37中关于曲率\(K\)的公式(V)：
+\[
+ K=\frac1{\sqrt{EG-F^2}}\left\{
+ \frac{\partial}{\partial v}\left(\frac{\sqrt{EG-F^2}}{E}\left\{\begin{matrix}11\\2\end{matrix}\right\}\right)
+ -\frac{\partial}{\partial u}\left(\frac{\sqrt{EG-F^2}}{E}\left\{\begin{matrix}12\\2\end{matrix}\right\}\right)\right\},
+\]
+利用(5*)中的第二式，可先将它写成
+\begin{equation}\tag{a}
+ K=\frac1{\sqrt{EG-F^2}}\left\{
+ \frac{\partial}{\partial v}\left(\frac{\sqrt E}{\rho_v}\right)-
+ \frac{\partial}{\partial u}\left(\frac{\sqrt{EG-F^2}}{E}\left\{\begin{matrix}12\\2\end{matrix}\right\}\right)\right\}.
+\end{equation}
+借助熟知公式，引入夹角\(\Omega\)，即坐标线\((u,v)\)的夹角：
+\[
+ \cos\Omega=\frac{F}{\sqrt{EG}},
+  \qquad
+ \sen\Omega=\frac{\sqrt{EG-F^2}}{\sqrt{EG}}.
+\]
+将第一式对\(v\)求导，并以第二式所给的值代替\(\sen\Omega\)，得到
+\[
+ -\frac{\partial\Omega}{\partial v}=\frac1{\sqrt{EG-F^2}}\left[\frac{\partial F}{\partial v}-\frac{F}{2E}\frac{\partial E}{\partial v}-\frac{F}{2G}\frac{\partial G}{\partial v}\right];
+\]
+再在右端用克里斯托费尔符号表示系数的各个导数，便有
+\[
+ -\frac{\partial\Omega}{\partial v}=\frac{\sqrt{EG-F^2}}{G}\left\{\begin{matrix}22\\1\end{matrix}\right\}+\frac{\sqrt{EG-F^2}}{E}\left\{\begin{matrix}12\\2\end{matrix}\right\},
+\]
+亦即，由(5*)中的第一式，
+\[
+ \frac{\sqrt{EG-F^2}}{E}\left\{\begin{matrix}12\\2\end{matrix}\right\}=-\frac{\sqrt G}{\rho_u}-\frac{\partial\Omega}{\partial v}.
+\]
+因此(a)化为下面这个优美而对称的形式：
+\begin{equation}\tag{6}
+ K=\frac1{\sqrt{EG-F^2}}\left\{
+ \frac{\partial^2\Omega}{\partial u\partial v}
+ +\frac{\partial}{\partial u}\left(\frac{\sqrt G}{\rho_u}\right)
+ +\frac{\partial}{\partial v}\left(\frac{\sqrt E}{\rho_v}\right)\right\},
+\end{equation}
+这就是\emph{李乌维尔公式}。
+
+当坐标线正交时，\((\Omega=\pi/2)\)，它可以写成
+\[
+ K=\frac1{\sqrt E}\frac{\partial}{\partial u}\left(\frac1{\rho_u}\right)+\frac1{\sqrt G}\frac{\partial}{\partial v}\left(\frac1{\rho_v}\right)+\frac1{\rho_u}\frac1{\sqrt{EG}}\frac{\partial\sqrt G}{\partial u}+\frac1{\rho_v}\frac1{\sqrt{EG}}\frac{\partial\sqrt E}{\partial v},
+\]
+或者，由(1)和(1*)，并注意到
+\[
+ \sqrt E\,du,
+ \qquad
+ \sqrt G\,dv
+\]
+是坐标线的微元弧长
+\[
+ ds_v,
+ \qquad
+ ds_u
+\]
+，于是
+\begin{equation}\tag{6*}
+ K=\frac{\partial}{\partial s_v}\left(\frac1{\rho_u}\right)+\frac{\partial}{\partial s_u}\left(\frac1{\rho_v}\right)-\left(\frac1{\rho_u}\right)^2-\left(\frac1{\rho_v}\right)^2\srcfnmark{1}.
+\end{equation}
+\srcfntext{1}{由这些公式立即得到下述定理：\emph{只有在负常曲率曲面（伪球面）上，才存在曲线的双正交系，其中每一族的各条曲线都有同一个常测地曲率。}}
+\subsection*{\S. 87.\quad 测地线.}
+
+如果曲面 S 上的一条曲线 L，在 L 的每一点都以曲线的主法线与曲面的法线重合，我们就把 L 称为曲面的一条\emph{测地线}；换言之，测地线就是切向曲率为零的曲线\srcfn{2}{当所论曲线是一条直线时，只需诉诸第二个定义，便可判定它是测地线。}。
+
+从这个定义出发，来求测地线的微分方程。
+
+为此，设 G 是这样一条曲线，并把 G 上动点的曲线坐标\((u,v)\)表示成 G 本身弧长\(s\)的函数；首先有关系
+\begin{equation}\tag{7}
+ E\left(\frac{du}{ds}\right)^2+2F\frac{du}{ds}\frac{dv}{ds}+G\left(\frac{dv}{ds}\right)^2=1.
+\end{equation}
+对于曲线 G，采用第一章中的通常记号，有
+\[
+ \alpha=\frac{\partial x}{\partial u}\frac{du}{ds}+\frac{\partial x}{\partial v}\frac{dv}{ds},\quad
+ \beta=\frac{\partial y}{\partial u}\frac{du}{ds}+\frac{\partial y}{\partial v}\frac{dv}{ds},\quad
+ \gamma=\frac{\partial z}{\partial u}\frac{du}{ds}+\frac{\partial z}{\partial v}\frac{dv}{ds}.
+\]
+再次对\(s\)求导，并注意按照假设
+\[
+ \xi=\pm X,
+ \qquad
+ \eta=\pm Y,
+ \qquad
+ \zeta=\pm Z,
+\]
+由本理论的基本公式（第116页公式(I)）得到
+\[
+\begin{aligned}
+ \pm\frac{X}{\rho}&=\frac{\partial x}{\partial u}\frac{d^2u}{ds^2}+\frac{\partial x}{\partial v}\frac{d^2v}{ds^2}
++\left[\left\{\begin{matrix}11\\1\end{matrix}\right\}\frac{\partial x}{\partial u}+\left\{\begin{matrix}11\\2\end{matrix}\right\}\frac{\partial x}{\partial v}+DX\right]\left(\frac{du}{ds}\right)^2\\
+&\quad+2\left[\left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{\partial x}{\partial u}+\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{\partial x}{\partial v}+D'X\right]\frac{du}{ds}\frac{dv}{ds}
++\left[\left\{\begin{matrix}22\\1\end{matrix}\right\}\frac{\partial x}{\partial u}+\left\{\begin{matrix}22\\2\end{matrix}\right\}\frac{\partial x}{\partial v}+D''X\right]\left(\frac{dv}{ds}\right)^2,
+\end{aligned}
+\]
+关于\(Y,Z\)也有类似的式子。由此推出，测地线必须满足下列特征方程：
+\begin{equation}\tag{8}
+\left\{\begin{aligned}
+ \frac{d^2u}{ds^2}+\left\{\begin{matrix}11\\1\end{matrix}\right\}\left(\frac{du}{ds}\right)^2+2\left\{\begin{matrix}12\\1\end{matrix}\right\}\frac{du}{ds}\frac{dv}{ds}+\left\{\begin{matrix}22\\1\end{matrix}\right\}\left(\frac{dv}{ds}\right)^2&=0,\\
+ \frac{d^2v}{ds^2}+\left\{\begin{matrix}11\\2\end{matrix}\right\}\left(\frac{du}{ds}\right)^2+2\left\{\begin{matrix}12\\2\end{matrix}\right\}\frac{du}{ds}\frac{dv}{ds}+\left\{\begin{matrix}22\\2\end{matrix}\right\}\left(\frac{dv}{ds}\right)^2&=0,
+\end{aligned}\right.
+\end{equation}
+这些方程连同(7)决定测地线在曲面上的走向。
+
+还可以用由(8)得到的另外两个方程取代(8)：第一次把第一式乘以\(E\)、第二式乘以\(F\)后相加；第二次把第一式乘以\(F\)、第二式乘以\(G\)后相加。也就是
+\[
+\left\{\begin{aligned}
+ E\frac{d^2u}{ds^2}+F\frac{d^2v}{ds^2}+\begin{bmatrix}11\\1\end{bmatrix}\left(\frac{du}{ds}\right)^2+2\begin{bmatrix}12\\1\end{bmatrix}\frac{du}{ds}\frac{dv}{ds}+\begin{bmatrix}22\\1\end{bmatrix}\left(\frac{dv}{ds}\right)^2&=0,\\
+ F\frac{d^2u}{ds^2}+G\frac{d^2v}{ds^2}+\begin{bmatrix}11\\2\end{bmatrix}\left(\frac{du}{ds}\right)^2+2\begin{bmatrix}12\\2\end{bmatrix}\frac{du}{ds}\frac{dv}{ds}+\begin{bmatrix}22\\2\end{bmatrix}\left(\frac{dv}{ds}\right)^2&=0;
+\end{aligned}\right.
+\]
+它们可以写成简单形式：
+\begin{equation}\tag{9}
+\left\{\begin{aligned}
+ 2\frac d{ds}\left(E\frac{du}{ds}+F\frac{dv}{ds}\right)&=\frac{\partial E}{\partial u}\left(\frac{du}{ds}\right)^2+2\frac{\partial F}{\partial u}\frac{du}{ds}\frac{dv}{ds}+\frac{\partial G}{\partial u}\left(\frac{dv}{ds}\right)^2,\\
+ 2\frac d{ds}\left(F\frac{du}{ds}+G\frac{dv}{ds}\right)&=\frac{\partial E}{\partial v}\left(\frac{du}{ds}\right)^2+2\frac{\partial F}{\partial v}\frac{du}{ds}\frac{dv}{ds}+\frac{\partial G}{\partial v}\left(\frac{dv}{ds}\right)^2.
+\end{aligned}\right.\srcfnmark{1}
+\end{equation}
+\srcfntext{1}{应当注意，在方程(9)（或(8)）的两个方程中，一个是另一个与(7)的推论。事实上，将(7)对\(s\)求导，得到恒等式
+\[
+ \alpha\frac{du}{ds}+\beta\frac{dv}{ds}=0,
+\]
+其中置
+\[
+\begin{aligned}
+ \alpha&=2\frac d{ds}\left(E\frac{du}{ds}+F\frac{dv}{ds}\right)-\frac{\partial E}{\partial u}\left(\frac{du}{ds}\right)^2-2\frac{\partial F}{\partial u}\frac{du}{ds}\frac{dv}{ds}-\frac{\partial G}{\partial u}\left(\frac{dv}{ds}\right)^2,\\
+ \beta&=2\frac d{ds}\left(F\frac{du}{ds}+G\frac{dv}{ds}\right)-\frac{\partial E}{\partial v}\left(\frac{du}{ds}\right)^2-2\frac{\partial F}{\partial v}\frac{du}{ds}\frac{dv}{ds}-\frac{\partial G}{\partial v}\left(\frac{dv}{ds}\right)^2.
+\end{aligned}
+\]
+恒等式\((a)\)对曲面上的任意曲线都成立。由此可见，除坐标线\(u,v\)以外，对任何别的曲线，方程(9)中的任一个方程\(\alpha=0\)或\(\beta=0\)都会带来另一个方程。但是，如果要表示一条坐标线，例如一条\(v=\mathrm{costante}\)的曲线，是测地线，就必须写第二个条件\(\beta=0\)，因为第一个条件\(\alpha=0\)无论如何都恒等地成立。}
+
+最后，如果把标定测地线 G 上各点的参数留作任意参数而写出测地线的微分方程，只须由(8)推出下式：
+\begin{equation}\tag{10}
+ du\,d^2v-dv\,d^2u+\begin{Bmatrix}11\\2\end{Bmatrix}du^3+\biggl(2\begin{Bmatrix}12\\2\end{Bmatrix}-\begin{Bmatrix}11\\1\end{Bmatrix}\biggr)du^2dv
++\biggl(\begin{Bmatrix}22\\2\end{Bmatrix}-2\begin{Bmatrix}12\\1\end{Bmatrix}\biggr)du\,dv^2-\begin{Bmatrix}22\\1\end{Bmatrix}dv^3=0,
+\end{equation}
+显然，无论取什么自变量，这个方程都成立。特别地，如果取\(u\)为自变量，并把测地线的方程写成
+\[
+ v=\varphi(u),
+\]
+置
+\[
+ v'=\frac{dv}{du},
+ \qquad
+ v''=\frac{d^2v}{du^2},
+\]
+那么决定测地线的二阶微分方程为
+\begin{equation}\tag{10*}
+ v''-\begin{Bmatrix}22\\1\end{Bmatrix}v'^3+\biggl(\begin{Bmatrix}22\\2\end{Bmatrix}-2\begin{Bmatrix}12\\1\end{Bmatrix}\biggr)v'^2+\biggl(2\begin{Bmatrix}12\\2\end{Bmatrix}-\begin{Bmatrix}11\\1\end{Bmatrix}\biggr)v'+\begin{Bmatrix}11\\2\end{Bmatrix}=0.
+\end{equation}
+由测地线方程的这些不同形式可知：\emph{每一个曲面上都存在二重无穷多条测地线；只要规定测地线必须通过的曲面上一点，以及它从该点出发时的方向，这条测地线就被确定。}
+
+下面这个变分法问题同样把我们引到测地线理论：\emph{已知曲面上的两点 A、B，求曲面上连接 A 与 B 的最短曲线。}设 G 是所求曲线；按照变分法的规则，必须表示如下事实：在端点保持不动而对 G 作无穷小变形时，G 在 A 与 B 之间的长度的一阶变分等于零。现在，若沿 G 把\(u,v\)表示成 G 的弧长\(s\)的函数，就必须置
+\[
+ \delta\int_A^B ds=0,
+\]
+而\(u,v\)由关系
+\[
+ E\left(\frac{du}{ds}\right)^2+2F\frac{du}{ds}\frac{dv}{ds}+G\left(\frac{dv}{ds}\right)^2=1.
+\]
+联系起来。应用变分法规则，恰好得到方程(9)；所以得到结论：\emph{曲面上两点之间的最短曲线必定是一条测地线，也就是说，曲线的主法线在每一点都必须与曲面的法线重合。}
+
+不过应当注意，如果在一条测地线 G 上任取两点 A、B，绝不能就此断言 G 是曲面上连接 A 与 B 的最短曲线。正如不久将看到的，只有当 A 与 B 彼此充分接近时，这个性质才有保证。例如，在球面上取一段大圆弧（测地线），其长度超过半个圆周；或者在正圆柱面上取一段绕圆柱超过半周的螺旋线弧，便足以从几何上确信上述论断正确。测地线在全部行程中始终保持的性质，是我们在上一节据以定义测地线的性质；至于在自身两点之间给出最短路程的性质，一般只对长度适当小的测地线弧成立。
+
+\subsection*{\S. 88.\quad 高斯的测地线微分方程.}
+
+高斯给测地线的微分方程赋予了一种重要形式，在其中引入倾角\(\theta\)，即测地线对\(v\)线的倾角。完全按照\S. 42的方式量取\(\theta\)，便有公式
+\begin{equation}\tag{a}
+ \cos\theta=\frac1{\sqrt E}\left(E\frac{du}{ds}+F\frac{dv}{ds}\right),
+ \qquad
+ \sen\theta=\frac{\sqrt{EG-F^2}}{\sqrt E}\frac{dv}{ds}.
+\end{equation}
+现在，设所论测地线不是一条\(v=\mathrm{costante}\)的曲线，则可用(9)的第一式（见上一节的注）表示它是测地线的条件；该式可写成
+\begin{equation}\tag{b}
+ 2\,ds\,d(\sqrt E\cos\theta)=\frac{\partial E}{\partial u}\,du^2+2\frac{\partial F}{\partial u}\,du\,dv+\frac{\partial G}{\partial u}\,dv^2;
+\end{equation}
+而由\((a)\)本身，
+\[
+\begin{aligned}
+2\,ds\,d\sqrt E\cos\theta
+&=\frac1E(E\,du+F\,dv)dE-2\sqrt{EG-F^2}\,dv\,d\theta\\
+&=\frac{\partial E}{\partial u}du^2+\frac{\partial E}{\partial v}du\,dv
++\frac FE\left(\frac{\partial E}{\partial u}du+\frac{\partial E}{\partial v}dv\right)dv
+-2\sqrt{EG-F^2}\,dv\,d\theta.
+\end{aligned}
+\]
+把它代入\((b)\)，消去两边共有的项\(\frac{\partial E}{\partial u}du^2\)，再除以依假设不为零的\(2dv\)，便得到高斯方程
+\begin{equation}\tag{11}
+ \sqrt{EG-F^2}\,d\theta=\frac12\frac FE\left(\frac{\partial E}{\partial u}du+\frac{\partial E}{\partial v}dv\right)+\frac12\frac{\partial E}{\partial v}du-\frac{\partial F}{\partial u}du-\frac12\frac{\partial G}{\partial u}dv.
+\end{equation}
+由(5)的第二式立即可见，这个方程对于起初排除的测地线\(v=\mathrm{costante}\)也成立。
+
+特别地，当\(u,v\)线正交时，得到简单方程
+\[
+ \sqrt{EG}\,d\theta=\frac12\frac{\partial E}{\partial v}\,du-\frac12\frac{\partial G}{\partial u}\,dv,
+\]
+也可写成
+\begin{equation}\tag{11*}
+ d\theta=\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\,du-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\,dv.
+\end{equation}
+
+利用这些公式，可以给出曲线切向曲率或测地曲率的另一个定义，恰好说明采用第二个名称的理由。设\(l\)是曲面 S 上任意一条曲线，取其上一点 M，再取\(l\)上无限接近 M 的一点 M'；在 M、M' 两点作与曲线相切的测地线，它们相交于一点 N，并形成一个极小角\(\Delta\varepsilon\)。用\(\Delta\varepsilon\)除以弧 M M' 的长度\(\Delta s\)，可以证明：\emph{当 M' 无限趋近于 M 时，比值\(\frac{\Delta\varepsilon}{\Delta s}\)的极限等于曲线\(l\)在 M 点的测地曲率。}
+
+为证明这一点，取正交坐标线\((u,v)\)，令\(u=0\)为曲线\(l\)，并令\((0,v)\)、\((0,v+dv)\)为 M、M' 的曲线坐标。设\(g,g'\)分别是在 M、M' 与\(l\)相切的测地线，N 为它们的交点；以 P 表示测地线\(g\)与曲线\(v+dv\)相交之点，其交角为\(\pi/2+d\theta\)。由(11*)有
+\[
+ d\theta=\frac1{\sqrt G}\frac{\partial\sqrt E}{\partial v}\,du-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\,dv;
+\]
+而在 M 点有\(\theta=\pi/2\)、\(du=0\)，故
+\[
+ d\theta=-\frac1{\sqrt E}\frac{\partial\sqrt G}{\partial u}\,dv.
+\]
+无穷小三角形 M' N P，在忽略高阶无穷小量时，可以看成直线三角形；N 点处\(g,g'\)的夹角由\(d\theta\)量出。此外，
+\[
+ \operatorname{arc}MM'=ds_u=\sqrt G\,dv
+\]
+因而
+\[
+ \lim_{\Delta s=0}\frac{\Delta\varepsilon}{\Delta s}=\frac{d\theta}{ds_u}=-\frac1{\sqrt{EG}}\frac{\partial\sqrt G}{\partial u}.
+\]
+这个值恰与第181页\S. 84所算出的切向曲率\(1/\rho_u\)，也就是\(u\)线的切向曲率，一致。
+
+按第二种方式定义后，曲面上曲线的测地曲率，就是把平面曲线的通常曲率概念自然推广到曲面曲线；在这种推广中，以曲面的测地线代替平面的直线（测地线）。
+
+由此还得到测地曲率的另一个特征性质，按照这个性质，它也可称为\emph{展开曲率}。事实上，有下述定理：\emph{曲面 S 上一条曲线 L 的测地曲率，等于把沿 L 外切于 S 的可展曲面\(\Sigma\)展开到平面上时，L 所变成的平面曲线的通常曲率。}的确，因为 S 与\(\Sigma\)沿 L 相切，所以无论把 L 看作属于 S 还是属于\(\Sigma\)，L 都有相同的测地曲率。但是，将\(\Sigma\)展开到平面上时，画在\(\Sigma\)上的图形的线长度和角度都不改变，而\(\Sigma\)的测地线变为平面直线。
+
+例如，将这个定理用于求旋转曲面上一条纬线的测地曲率，并注意到此时的外切可展曲面是绕曲面轴旋转的圆锥，便得到：\emph{旋转曲面上一条纬线的测地曲率半径，等于从接触点到旋转轴之间所截取的子午线切线段。}
+
+\subsection*{\S. 89.\quad 测地线的一般性质.}
+
+只有在少数特殊情形中，我们才知道怎样积分测地线的微分方程；尽管如此，从微分方程本身出发，仍可以证明测地线的一些重要性质，现在就来讨论这些性质。
+
+首先考虑单无穷多条测地线的一个系统及其正交轨线。取这个双正交系为坐标系\((u,v)\)，并设\(v\)线是测地线；于是
+\[
+ ds^2=E\,du^2+G\,dv^2
+\]
+而依假设
+\[
+ \frac1{\rho_v}=-\frac1{\sqrt{EG}}\frac{\partial\sqrt E}{\partial v}=0,
+\]
+即
+\[
+ \frac{\partial\sqrt E}{\partial v}=0,
+\]
+也就是
+\[
+ \sqrt E=U
+\]
+其中\(U\)只是\(u\)的函数。现在把标定正交轨线的参数\(u\)改为\(\int Udu\)，线元便取特征形式
+\begin{equation}\tag{12}
+ ds^2=du^2+G\,dv^2,
+\end{equation}
+由此可以推出非常重要的结果。考察任意一条测地线\(v\)在系统\(u\)的两条固定曲线
+\[
+ u=u_0\qquad u=u_1
+\]
+之间所截的弧；其长度为
+\[
+ \int_{u_0}^{u_1}du=u_1-u_0,
+\]
+这个长度完全不依赖于\(v\)，因而有定理：
+
+A) \emph{两条正交轨线在各条测地线\(v\)上截取的弧，长度全都相等。}
+
+这个定理也可以换一种形式陈述：
+
+B) \emph{若从一条曲线 L 的各点作正交测地线\(g\)，并从 L 起在每一条测地线上截取等长的弧，则这些弧的端点轨迹是测地线\(g\)的另一条正交轨线。}\srcfn{1}{这是测地线的一条特征性质：如果在一个双正交系\((u,v)\)中，\(v\)线在任意两条正交轨线\(u_0,u_1\)之间的弧对所有\(v\)都相等，那么这些线就是测地线。事实上，从一条固定正交轨线起计量，以弧长\(u\)作为\(v\)线的参数，便有\(E=1\)。}
+
+因此，单无穷测地线系统\(\infty^1\)的正交轨线称为\emph{测地平行线}。曲面的总曲率\(K\)在公式(12)的测地坐标\(u,v\)中具有一个值得注意的表达式；它化为（第93页公式(18)）
+\begin{equation}\tag{13}
+ K=-\frac1{\sqrt G}\frac{\partial^2\sqrt G}{\partial u^2}.
+\end{equation}
+现在来求一族单无穷曲线\(\infty^1\)，其方程为
+\[
+ \varphi(u,v)=\mathrm{costante},
+\]
+成为一个测地平行线系统的条件。若取\(\varphi=\mathrm{costante}\)线及其正交轨线\(\psi=\mathrm{costante}\)为坐标线，线元便取形式
+\[
+ ds^2=E_1\,d\varphi^2+G_1\,d\psi^2
+\]
+并且
+\[
+ \Delta_1\varphi=\frac1{E_1}
+\]
+因此，如果\(\psi\)线是测地线，就有
+\[
+ \Delta_1\varphi=f(\varphi),
+\]
+其中\(f(\varphi)\)只是\(\varphi\)的函数。所以：\emph{曲线\(\varphi=\mathrm{costante}\)成为测地平行线的充分必要条件是}
+\[
+ \Delta_1\varphi=f(\varphi).
+\]
+
+在这个假设下，把参数\(\varphi\)改为弧长\(\theta\)，即测地线\(\psi\)的弧长，并从一条固定正交轨线起计量，也就是置
+\[
+ \theta=\int\frac{d\varphi}{\sqrt{f(\varphi)}},
+\]
+便有
+\[
+ \Delta_1\theta=1.
+\]
+这样得到重要结果：\emph{如果函数\(\theta(u,v)\)是偏微分方程}
+\[
+ \Delta_1\theta=1,
+\]
+\emph{的一个积分，那么曲线\(\theta=\mathrm{costante}\)是测地平行线，而\(\theta\)就是从一条固定曲线\(\theta=\theta_0\)起计量的正交测地线弧长。}
+
+\subsection*{\S. 90.\quad 线元的测地形式.}
+
+上一节定理 B) 中的曲线 L 是任意的。现在设它是环绕曲面上一点 O 的一条极小闭曲线，并使它围绕 O 无限收缩，最后缩成 O 点；定理 B) 便化为下述定理：\emph{在从曲面上一点 O 发出的各条测地线上，从 O 起截取等长的弧，则这些弧的端点轨迹是一条与所有测地线正交的曲线。}
+
+取这些测地线及其正交轨线为坐标线，曲面的线元仍取形式(12)。
+
+可以用下面的方式更严格而直接地证明这个定理。以变动测地线与测地线束中一条固定测地线之间的夹角作为参数\(v\)，用来标定从 O 发出的各条测地线；而以从 O 发出、长度等于\(u\)的测地弧端点轨迹作为\(u\)线。设曲面的线元取形式
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2.
+\]
+由于\(v\)测地线的微元弧长等于\(du\)，首先有\(E=1\)；又因\(v\)线是测地线，由第184页公式(5)有
+\[
+ \frac1{\rho_v}=\frac1{\sqrt{G-F^2}}\frac{\partial F}{\partial u}=0,
+\]
+所以
+\[
+ F=\varphi(v),
+\]
+其中\(\varphi(v)\)只是\(v\)的函数。现在，若\(x_0,y_0,z_0\)是 O 的坐标，则函数
+\[
+ x(u,v),\qquad y(u,v),\qquad z(u,v)
+\]
+在\(u=0\)时，无论\(v\)为何，都化为三个常数\(x_0,y_0,z_0\)，因而
+\[
+ \left(\frac{\partial x}{\partial v}\right)_{u=0}=0,
+ \qquad
+ \left(\frac{\partial y}{\partial v}\right)_{u=0}=0,
+ \qquad
+ \left(\frac{\partial z}{\partial v}\right)_{u=0}=0
+\]
+并且
+\[
+ \left(F\right)_{u=0}=0.
+\]
+但是，因为\(F\)不依赖于\(u\)，所以恒有\(F=0\)；也就是说，正如所断言的，\(u,v\)线是正交的。这里线元仍取形式
+\[
+ ds^2=du^2+G\,dv^2;
+\]
+不过，在当前情形中，函数\(G\)具有一些必须指出的特殊性质。为此，在 O 的邻域内把
+\[
+ x(u,v),\qquad y(u,v),\qquad z(u,v)
+\]
+按\(u\)的幂展开，只保留到\(u\)的二次幂；为简单起见，把坐标原点放在 O，使\(z\)轴与曲面法线重合，并使\(x\)轴与初始测地线\(v=0\)在 O 的切线重合。于是
+\[
+ x=u\cos v+\varepsilon_1,
+ \qquad
+ y=u\sen v+\varepsilon_2,
+ \qquad
+ z=\frac{u^2}{2\rho}+\varepsilon_3,
+\]
+其中\(\varepsilon_1,\varepsilon_2,\varepsilon_3\)是关于\(u\)的三阶无穷小量，而\(\rho\)表示该测地线的第一曲率半径。因此
+\[
+ G=u^2+\eta
+\]
+其中\(\eta\)是三阶无穷小量，所以
+\[
+ \left(\sqrt G\right)_{u=0}=0,
+ \qquad
+ \left(\frac{\partial\sqrt G}{\partial u}\right)_{u=0}=1.
+\]
+再考虑公式(13)
+\[
+ \frac{\partial^2\sqrt G}{\partial u^2}=-K\sqrt G,
+\]
+还可推出
+\[
+ \left(\frac{\partial^2\sqrt G}{\partial u^2}\right)_{u=0}=0,
+ \qquad
+ \left(\frac{\partial^3\sqrt G}{\partial u^3}\right)_{u=0}=-K_0,
+\]
+其中\(K_0\)是曲面在 O 点的曲率。
+
+因此，把\(\sqrt G\)按\(u\)的幂展开，得到公式
+\begin{equation}\tag{14}
+ \sqrt G=u-\frac{K_0}{6}u^3+\cdots.
+\end{equation}
+在目前所考察的情形中，曲线\(u=\mathrm{costante}\)的所有点到固定点 O 的测地距离都相等，因而称为\emph{测地圆}\srcfn{1}{由于刚才指出的性质，测地圆是平面圆的自然推广。但是，如果着眼于普通圆的另一条性质，即曲率为常数，那么反而会把\emph{常测地曲率曲线}定义为测地圆。达布等一些作者正采用第二种定义。必须注意的是，这两个定义在平面情形（更一般地，在常曲率曲面上）相符，而在一般曲面上却刻画出两类截然不同的曲线。}；O 称为它们的圆心，这个常距离称为半径。
+
+由(14)，对于半径为无穷小量\(u\)的测地圆，其圆周 C 为
+\[
+ C=\int_0^{2\pi}\sqrt G\,dv
+\]
+\begin{equation}\tag{15}
+ C=2\pi u-\frac{\pi K_0u^3}{3}+\varepsilon,
+\end{equation}
+其中\(\varepsilon\)是高于三阶的无穷小量。
+
+最后，从线元的测地形式(12)还可证明下述定理：\emph{在一条测地线\(g\)上取距离充分小的两点 A、B，则这条测地线确实是从 A 到 B 的最短路径。}
+
+事实上，在(12)中考虑\(u,v\)的一个变动区域，使函数\(G\)在其中保持单值、有限且连续，并令
+\[
+ A\equiv(u_0,v),\qquad B\equiv(u_1,v)
+\]
+为这个区域内测地线\(v\)上的两点。测地弧 A B 的长度为
+\[
+ \int_{u_0}^{u_1}du=u_1-u_0;
+\]
+对于在所考察区域内连接相同两点 A、B 的另一条曲线
+\[
+ v=\varphi(u)
+\]
+，A、B 之间的弧长\(s\)为
+\[
+ s=\int_{u_0}^{u_1}\sqrt{1+G\varphi'^2(u)}\,du
+\]
+显然大于
+\[
+ \int_{u_0}^{u_1}du=u_1-u_0.
+\]
+
+\subsection*{\S. 91.\quad 测地椭圆与测地双曲线.}
+
+在曲面 S 上固定两条并非测地平行的曲线 C、C'，取与 C、C' 测地平行的曲线为坐标线\(u,v\)；以到基线 C 的测地距离为参数\(u\)，以到基线 C' 的测地距离为参数\(v\)。若线元的表达式为
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2
+\]
+则由\S. 89末尾（第193页）的结果，必有
+\[
+ \Delta_1u=1,
+ \qquad
+ \Delta_1v=1,
+\]
+即
+\[
+ \frac{G}{EG-F^2}=1,
+ \qquad
+ \frac{E}{EG-F^2}=1
+\]
+也就是
+\[
+ E=G,
+ \qquad
+ F=\sqrt{E(E-1)}.
+\]
+以\(\omega\)表示坐标线的夹角，于是
+\[
+ E=G=\frac1{\sen^2\omega},
+ \qquad
+ F=\frac{\cos\omega}{\sen^2\omega}
+\]
+因而
+\begin{equation}\tag{16}
+ ds^2=\frac{du^2+2\cos\omega\,du\,dv+dv^2}{\sen^2\omega}.
+\end{equation}
+现在引入新的坐标线
+\[
+ u+v=\mathrm{costante},
+ \qquad
+ u-v=\mathrm{costante},
+\]
+即置
+\[
+ u+v=2\alpha,
+ \qquad
+ u-v=2\beta,
+\]
+便得到
+\begin{equation}\tag{17}
+ ds^2=\frac{d\alpha^2}{\sen^2\left(\frac\omega2\right)}+\frac{d\beta^2}{\cos^2\left(\frac\omega2\right)}.
+\end{equation}
+所以新的坐标线是正交的，即：\emph{在任意曲面上，到两条固定基线的测地距离之和或之差为常数的各点轨迹，构成一个正交系}（魏因加滕）。
+
+如果曲线 C、C' 各自无限收缩为一点，刚才所考察的系统就是平面上共焦椭圆与双曲线系统的推广。一般地，无论基线是什么，曲线
+\[
+ \alpha=\mathrm{costante},
+ \qquad
+ \beta=\mathrm{costante},
+\]
+都称为测地椭圆与测地双曲线。
+
+由上可知，任何曲面都适合线元形式(17)；并且显然，只要线元化成这种形式，曲线\(\alpha=\mathrm{costante}\)、\(\beta=\mathrm{costante}\)就是相对于两条适当基线的测地椭圆与测地双曲线。要把一个\emph{给定}曲面的线元实际化为(17)，只须知道该曲面的测地线及其弧长。例如，对于平面和球面，我们知道怎样以最一般的方式把线元化为这种形式\srcfn{1}{相应的显式公式见\textsc{Darboux}，第二卷，第422页。}。
+
+\subsection*{\S. 92.\quad 测地挠率.}
+
+一条测地线由它通过一点 P 以及在该点的指定方向所确定。现在，已知一条测地线\(g\)的这两个要素，我们要计算它在 P 点带有应有符号的挠率\(1/T_g\)。
+
+对于这样一条测地线，沿用通常记号，有
+\[
+\begin{gathered}
+ \alpha=\frac{\partial x}{\partial u}\frac{du}{ds}+\frac{\partial x}{\partial v}\frac{dv}{ds},\quad
+ \beta=\frac{\partial y}{\partial u}\frac{du}{ds}+\frac{\partial y}{\partial v}\frac{dv}{ds},\quad
+ \gamma=\frac{\partial z}{\partial u}\frac{du}{ds}+\frac{\partial z}{\partial v}\frac{dv}{ds},\\
+ \xi=\pm X,
+ \qquad
+ \eta=\pm Y,
+ \qquad
+ \zeta=\pm Z,
+\end{gathered}
+\]
+继而
+\[
+ \lambda=\left|\begin{matrix}\beta&\gamma\\\eta&\zeta\end{matrix}\right|
+ =\pm\left(Z\frac{\partial y}{\partial u}-Y\frac{\partial z}{\partial u}\right)\frac{du}{ds}
+ \pm\left(Z\frac{\partial y}{\partial v}-Y\frac{\partial z}{\partial v}\right)\frac{dv}{ds}
+\]
+关于\(\mu,\nu\)也有类似公式。注意到恒等式（第162页\S. 77的注）
+\[
+ Z\frac{\partial y}{\partial u}-Y\frac{\partial z}{\partial u}=\frac1{\sqrt{EG-F^2}}\left(F\frac{\partial x}{\partial u}-E\frac{\partial x}{\partial v}\right)
+\]
+\[
+ Z\frac{\partial y}{\partial v}-Y\frac{\partial z}{\partial v}=\frac1{\sqrt{EG-F^2}}\left(G\frac{\partial x}{\partial u}-F\frac{\partial x}{\partial v}\right),
+\]
+便得到
+\[
+\left\{\begin{aligned}
+ \lambda&=\pm\frac{F\dfrac{\partial x}{\partial u}-E\dfrac{\partial x}{\partial v}}{\sqrt{EG-F^2}}\frac{du}{ds}
+ \pm\frac{G\dfrac{\partial x}{\partial u}-F\dfrac{\partial x}{\partial v}}{\sqrt{EG-F^2}}\frac{dv}{ds},\\
+ \mu&=\pm\frac{F\dfrac{\partial y}{\partial u}-E\dfrac{\partial y}{\partial v}}{\sqrt{EG-F^2}}\frac{du}{ds}
+ \pm\frac{G\dfrac{\partial y}{\partial u}-F\dfrac{\partial y}{\partial v}}{\sqrt{EG-F^2}}\frac{dv}{ds},\\
+ \nu&=\pm\frac{F\dfrac{\partial z}{\partial u}-E\dfrac{\partial z}{\partial v}}{\sqrt{EG-F^2}}\frac{du}{ds}
+ \pm\frac{G\dfrac{\partial z}{\partial u}-F\dfrac{\partial z}{\partial v}}{\sqrt{EG-F^2}}\frac{dv}{ds}.
+\end{aligned}\right.
+\]
+另一方面，按弗雷内公式，
+\[
+ \frac1{T_g}=-\sum\lambda\frac{d\xi}{ds}=\mp\sum\lambda\left(\frac{\partial X}{\partial u}\frac{du}{ds}+\frac{\partial X}{\partial v}\frac{dv}{ds}\right)
+\]
+把上面\(\lambda,\mu,\nu\)的值代入后，符号的不确定性消失，得到所求公式
+\begin{equation}\tag{18}
+ \frac1{T_g}=\frac{(FD-ED')du^2+(GD-ED'')du\,dv+(GD'-FD'')dv^2}{\sqrt{EG-F^2}\,(E\,du^2+2F\,du\,dv+G\,dv^2)},
+\end{equation}
+它给出从曲面上点\((u,v)\)出发、方向由比值\(dv/du\)指定的测地线挠率。
+
+可以看到，这个公式的分子正是两个基本形式的雅可比行列式
+\[
+ \left|\begin{matrix}
+ D\,du+D'\,dv& D'\,du+D''\,dv\\
+ E\,du+F\,dv& F\,du+G\,dv
+ \end{matrix}\right|
+\]
+令它等于零，就得到曲率线的微分方程。由此得到下述两个定理；它们也很容易直接证明\srcfn{1}{若以曲率线为坐标线，公式(18)化为简单形式
+\[
+ \frac1{T_g}=\sqrt{EG}\left(\frac1{r_1}-\frac1{r_2}\right)\frac{du}{ds}\frac{dv}{ds}=\left(\frac1{r_1}-\frac1{r_2}\right)\cos\theta\sen\theta,
+\]
+即
+\[
+ \frac1{T_g}=\frac12\left(\frac1{r_1}-\frac1{r_2}\right)\sen2\theta.
+\]
+由此可见，曲率线方向把从 P 发出的测地线束分成两部分；一半中的测地线全是右旋的，另一半中的测地线全是左旋的。两条正交测地线的挠率绝对值相等、符号相反。主方向夹角的平分测地线具有最大挠率\(\frac12(1/r_1-1/r_2)\)。}：
+
+第一，\emph{如果一条曲率线是测地线，那么它是平面曲线。}
+
+第二，\emph{每一条平面测地线都是曲率线。}
+
+上一节的结果引导我们在曲面上任意一条曲线 L 的每一点引入另一个值得考察的几何要素，即所谓\emph{测地挠率}。按照波内的定义，这个名称表示在点 P 与 L 相切的测地线之挠率\srcfn{2}{应当注意，“测地挠率”这一名称与“测地曲率”并不类比，因为相切测地线的曲率其实是我们所称的曲线法曲率。}。曲线 L 的测地挠率\(1/T_g\)由公式(18)给出，其中\(du,dv\)应理解为沿 L 移动时曲线坐标的增量。
+
+由这个公式显然得到曲率线的另一定义：
+
+\emph{曲率线就是在每一点测地挠率都为零的曲线。}
+
+现在注意到，由(18)特别得到坐标线的测地挠率\(1/T_u,1/T_v\)的公式
+\begin{equation}\tag{19}
+\left\{\begin{aligned}
+ \frac1{T_u}&=\frac{GD'-FD''}{G\sqrt{EG-F^2}},\\
+ \frac1{T_v}&=\frac{FD-ED'}{E\sqrt{EG-F^2}},
+\end{aligned}\right.
+\end{equation}
+更特别地，当\(u,v\)线正交时，\((F=0)\)，
+\begin{equation}\tag{19*}
+ \frac1{T_u}=-\frac1{T_v}=\frac{D'}{\sqrt{EG}},
+\end{equation}
+由此可见，从一点沿正交方向发出的两条测地线具有大小相等、符号相反的挠率。（参见前注。）
+
+现在来求曲面上任意曲线的测地挠率与绝对挠率之间的关系。为简单起见，取正交系\(u,v\)为坐标线，并设所考察的曲线 L 是\(u\)族中的一条线。以\(\sigma\)表示曲面法线与 L 的主法线之间的夹角；更准确地说，它是在 L 上一点 P 的法平面内，曲面法线的正向为与 L 的主法线正向重合而按正向转过的角\srcfn{1}{这里把朝向 L 切线正向的那一面理解为所述法平面的正面。}。沿用通常记号，有
+\[
+\left\{\begin{aligned}
+ \alpha&=\frac1{\sqrt G}\frac{\partial x}{\partial v},
+ &\beta&=\frac1{\sqrt G}\frac{\partial y}{\partial v},
+ &\gamma&=\frac1{\sqrt G}\frac{\partial z}{\partial v},\\
+ \xi&=\cos\sigma\,X+\sen\sigma\,\frac1{\sqrt E}\frac{\partial x}{\partial u},
+ &\eta&=\cos\sigma\,Y+\sen\sigma\,\frac1{\sqrt E}\frac{\partial y}{\partial u},\\
+ \zeta&=\cos\sigma\,Z+\sen\sigma\,\frac1{\sqrt E}\frac{\partial z}{\partial u},\\
+ \lambda&=-\sen\sigma\,X+\cos\sigma\,\frac1{\sqrt E}\frac{\partial x}{\partial u},
+ &\mu&=-\sen\sigma\,Y+\cos\sigma\,\frac1{\sqrt E}\frac{\partial y}{\partial u},\\
+ \nu&=-\sen\sigma\,Z+\cos\sigma\,\frac1{\sqrt E}\frac{\partial z}{\partial u},
+\end{aligned}\right.
+\]
+于是，对于绝对挠率\(1/T\)，即曲线\(u\)的绝对挠率，
+\[
+ \frac1T=\sum\xi\frac{d\lambda}{ds_u}=\frac1{\sqrt G}\sum\xi\frac{\partial\lambda}{\partial v}=\frac{D'}{\sqrt{EG}}-\frac1{\sqrt G}\frac{\partial\sigma}{\partial v},
+\]
+由(19*)可写成
+\begin{equation}\tag{20}
+ \frac1{T_u}=\frac1T+\frac{d\sigma}{ds_u}.
+\end{equation}
+这就是所要建立的公式；它表明，测地挠率恰好只对那些主法线在曲面上保持恒定倾角的曲线等于绝对挠率。测地线和渐近线属于这一类：对前者有\(\sigma=0\)（或\(=\pi\)），对后者\(\sigma\)是直角。一般地，对\(\sigma\)的每一个固定常值，相应的这类曲线像测地线一样构成一个双无穷族；唯一例外是极限情形\(\sigma=\pi/2\)（渐近线）\srcfn{1}{由第200页注中所述，又可看出从一点发出的两条渐近线具有大小相等、符号相反的挠率。}。
+
+\subsection*{\S. 93.\quad 关于测地线方程积分的定理.}
+
+现在回到测地线的微分方程，给出关于它的积分的一些一般定理\srcfn{2}{\textsc{Darboux}，第二卷，第424页及以下。}。
+
+首先注意到，第183页的波内公式(4*)立即导出下述定理：
+
+A) \emph{如果由一阶微分方程}
+\[
+ M\,du+N\,dv=0
+\]
+\emph{所定义的曲线是测地线，那么它们的正交轨线可由一次求积确定。}
+
+事实上，正交轨线的微分方程为（第92页）
+\[
+ (EN-FM)\,du+(FN-GM)\,dv=0
+\]
+而由刚才引用的公式(4*)，依假设有
+\[
+ \frac{\partial}{\partial u}\left(\frac{FN-GM}{\sqrt{EN^2-2FMN+GM^2}}\right)
+ =\frac{\partial}{\partial v}\left(\frac{EN-FM}{\sqrt{EN^2-2FMN+GM^2}}\right),
+\]
+也就是说，表达式
+\[
+ \frac{EN-FM}{\sqrt{EN^2-2FMN+GM^2}}\,du+\frac{FN-GM}{\sqrt{EN^2-2FMN+GM^2}}\,dv
+\]
+是一个全微分。因此置
+\[
+ \theta(u,v)=\int\left\{\frac{EN-FM}{\sqrt{EN^2-2FMN+GM^2}}\,du+\frac{FN-GM}{\sqrt{EN^2-2FMN+GM^2}}\,dv\right\},
+\]
+便有
+\[
+ \Delta_1\theta=1
+\]
+所以（第194页），所求正交轨线的方程是\(\theta=\mathrm{costante}\)，而\(\theta\)就是从一条固定正交轨线起计量的测地线弧长。
+
+现在假设已知偏微分方程
+\[
+ \Delta_1\theta=1,
+\]
+的一个积分\(\theta\)，它含有一个本质的任意常数\(a\)，也就是说，该常数在\(\theta\)中不是相加常数。把方程
+\[
+ E\left(\frac{\partial\theta}{\partial v}\right)^2-2F\frac{\partial\theta}{\partial u}\frac{\partial\theta}{\partial v}+G\left(\frac{\partial\theta}{\partial u}\right)^2=EG-F^2
+\]
+对参数\(a\)求导；该参数只出现在\(\theta\)中。于是得到
+\[
+ \nabla\left(\theta,\frac{\partial\theta}{\partial a}\right)=0.
+\]
+这表明，对\(a\)的每一个固定值，方程
+\begin{equation}\tag{21}
+ \frac{\partial\theta}{\partial a}=b\quad (b\ \hbox{为任意常数})
+\end{equation}
+表示与曲线\(\theta=\mathrm{costante}\)正交的测地线。方程(21)含有两个任意常数\(a,b\)，因而是曲面上测地线的一般方程。为证明这一点，只须证明一条曲线
+\[
+ \theta=\mathrm{costante}
+\]
+可以通过曲面上任意一点，并具有任意方向。现在，\(\partial\theta/\partial u\)与\(\partial\theta/\partial v\)的比值不可能与\(a\)无关，
+
+因为若非如此，\(\dfrac{\partial\theta}{\partial u}\)、\(\dfrac{\partial\theta}{\partial v}\)又受关系\(\Delta_1\theta=1\)约束，二者便都与\(a\)无关，于是\(a\)在\(\theta\)中只是相加常数。可是，设\((u_0 v_0)\)是曲面上任意一点，方程
+\[
+ \theta(u,v,a)=\theta(u_0,v_0,a)
+\]
+就表示一条曲线\(\theta=\)常数，它从\((u_0v_0)\)发出。它在这一点的方向取决于比值\(\dfrac{\partial\theta}{\partial u}:\dfrac{\partial\theta}{\partial v}\)，而这个比值随\(a\)变化时可以取一切值\srcfn{1}{\textsc{Darboux}，第二卷，第428页。}。因此得到定理：
+
+B) \emph{若已知偏微分方程}
+\[
+ \Delta_1\theta=1,
+\]
+\emph{的一个解\(\theta\)，其中含有一个本质的任意常数\(a\)，则对它求导，由公式}
+\[
+ \frac{\partial\theta}{\partial a}=b,
+\]
+\emph{便得到测地线方程的一般积分，其中\(b\)是第二个任意常数。每条测地线的弧长，等于函数\(\theta\)在两个端点处的值之差。}
+
+借助刚才所得结果，可以同雅可比一起证明：\emph{只须知道测地线二阶微分方程的一个含任意常数\(a\)的第一积分，就能通过求积得到这些曲线的有限形式方程。}事实上，设
+\[
+ \frac{dv}{du}=\varphi(u,v,a)
+\]
+是这样一个第一积分。在上面的定理 A) 中置
+\[
+ M=-\varphi,\qquad N=1,
+\]
+可见表达式
+\[
+ \frac{(E+F\varphi)\,du+(F+G\varphi)\,dv}{\sqrt{E+2F\varphi+G\varphi^2}}
+\]
+是一个全微分。因此置
+\[
+ \theta=\int \frac{(E+F\varphi)\,du+(F+G\varphi)\,dv}{\sqrt{E+2F\varphi+G\varphi^2}},
+\]
+由定理 B)，
+\[
+ \frac{\partial\theta}{\partial a}=b
+\]
+就是测地线的有限形式方程。
+
+立即把这个结果用于重新证明\S. 15已经建立的定理：\emph{在零曲率曲面（可展曲面）上，测地线的微分方程可以用两次求积积分。}
+
+事实上，把测地线的微分方程写成高斯形式（第189页）：
+\[
+ d\psi=\frac{1}{2\sqrt{EG-F^2}}\left\{\frac{F}{E}\frac{\partial E}{\partial u}+\frac{\partial E}{\partial v}-2\frac{\partial F}{\partial u}\right\}du
+ +\frac{1}{2\sqrt{EG-F^2}}\left\{\frac{F}{E}\frac{\partial E}{\partial v}-\frac{\partial G}{\partial u}\right\}dv
+\]
+其中\(\psi\)是测地线与\(v\)线的夹角。由第93页公式(17)，条件\(K=0\)表示这个公式的右端是一个全微分；一次求积立即给出含任意常数\(a\)的第一积分
+\[
+ \psi=f(u,v)+a
+\]
+，第二次求积便给出测地线的有限形式方程。换言之，如果二次微分形式
+\begin{equation}\tag{22}
+ ds^2=\{\alpha(u)+\beta(v)\}\,(du^2+dv^2),
+\end{equation}
+具有零曲率，那么只须两次求积就能把它化为标准形式\(dx^2+dy^2\)。（参见第二章\S. 37。）
+
+\subsection*{\S. 94.\quad 李乌维尔曲面上的测地线.}
+
+有一类曲面，李乌维尔最先在完全一般的情形中研究了它们；对这类曲面，上一节定理所给的测地线积分方法完全奏效。这些曲面的线元可以化为形式(22)，其中\(\alpha(u)\)只是\(u\)的函数，而\(\beta(v)\)只是\(v\)的函数。对于线元的这种特殊形式，方程
+\[
+ \Delta_1\theta=1
+\]
+化为
+\[
+ \left(\frac{\partial\theta}{\partial u}\right)^2+\left(\frac{\partial\theta}{\partial v}\right)^2=\alpha(u)+\beta(v).
+\]
+令\(\theta\)等于两个函数之和，一个只是\(u\)的函数，另一个只是\(v\)的函数：
+\[
+ \theta=U+V,
+\]
+来求这个方程的解；于是
+\[
+ U'^2-\alpha(u)=\beta(v)-V'^2=a,
+\]
+其中\(a\)是任意常数。因此置
+\begin{equation}\tag{23}
+ \theta=\int\sqrt{\alpha(u)+a}\,du \pm \int\sqrt{\beta(v)-a}\,dv,
+\end{equation}
+则\(\theta\)是方程\(\Delta_1\theta=1\)的一个积分，并含有本质常数\(a\)；所以，由\S. 93，测地线的有限形式方程为
+\begin{equation}\tag{24}
+ 2\frac{\partial\theta}{\partial a}=\int\frac{du}{\sqrt{\alpha(u)+a}}\pm\int\frac{dv}{\sqrt{\beta(v)-a}}=b,
+\end{equation}
+而(23)给出它们的弧长\(\theta\)。再注意，以\(\psi\)表示测地线与\(v\)线的夹角时，有
+\[
+ \tg\psi=\frac{dv}{du},
+\]
+所以由前式得到
+\begin{equation}\tag{25}
+ \beta(v)\cos^2\psi-\alpha(u)\sen^2\psi=a,
+\end{equation}
+这给出\emph{李乌维尔}曲面上测地线方程的一个第一积分。
+
+迪尼\srcfn{1}{\emph{Sopra un problema della rappresentazione geografica di una superficie sopra un'altra.}（Annali di Matematica，第三卷，1869年。）}指出，可以用下述性质刻画线元的形式(22)：\emph{坐标线\(u,v\)构成测地椭圆与测地双曲线的一个等温系。}为证明这一点，置
+\[
+ u=u(u_1),\qquad v=v(v_1),
+\]
+来改变参数\(u,v\)，使得
+\[
+ \left(\frac{du_1}{du}\right)^2+\left(\frac{dv_1}{dv}\right)^2=\alpha(u)+\beta(v)
+\]
+并置
+\[
+ \sen\frac{\omega}{2}=\frac{\dfrac{du_1}{du}}{\sqrt{\alpha(u)+\beta(v)}},\qquad
+ \cos\frac{\omega}{2}=\frac{\dfrac{dv_1}{dv}}{\sqrt{\alpha(u)+\beta(v)}},
+\]
+则(22)取第198页\S. 91的特征形式(17)
+\[
+ ds^2=\frac{du_1^2}{\sen^2\dfrac{\omega}{2}}+\frac{dv_1^2}{\cos^2\dfrac{\omega}{2}},
+\]
+这恰好证明了我们的断言。反过来也立即可见，如果测地椭圆与测地双曲线的一个正交系还是等温的，那么经过参数变换，线元便化为李乌维尔形式。
+
+因此可以说：\emph{李乌维尔曲面，就是其上存在测地椭圆与测地双曲线的一个正交等温系的曲面。}\srcfn{1}{本书篇幅所限，不允许我们在此讨论若干几何学家最近在李乌维尔曲面理论中所得的重要结果，特别是判定一个给定曲面是否属于这一类的准则。}
+
+\subsection*{\S. 95.\quad 旋转曲面上的测地线.}
+
+二次曲面与旋转曲面都属于李乌维尔曲面类；在这些曲面上，曲率线恰构成测地椭圆与测地双曲线的等温系统。现将上一节的结果应用于后一种情形，即应用于线元（\S. 50）
+\[
+ ds^2=du^2+r^2\,dv^2,
+\]
+并化为等温参数
+\[
+ \pxChSixUOne=\int\frac{du}{r},\qquad v,
+\]
+\ednote{原书第207页在这里把新参数印作\(u=\int du/r\)，紧接的第208页却在所得线元中使用\(du_1^2\)，并写作\(\alpha(u_1)=r^2\)。为使同一换元前后一致，本译在本式中明确写作\(u_1\)；原书的\(u\)读法及这一内部冲突均保留在证据账中。}
+则
+\[
+ ds^2=r^2(du_1^2+dv^2).
+\]
+该元即(22)的情形，取
+\[
+ \alpha(u_1)=r^2,
+  \qquad
+  \beta(v)=0.
+\]
+对于实测地线，公式(23)中的常数\(a\)在这里必须取负值，故设
+\[
+ a=-k^2,
+\]
+则(24)化为
+\begin{equation}\tag{26}
+ v=\pm k\int\frac{du}{r\sqrt{r^2-k^2}}+b
+\end{equation}
+而公式(23)给出测地线的弧长\(s\)：
+\begin{equation}\tag{27}
+ s=\pm kv+\int\frac{\sqrt{r^2-k^2}}{r}\,du=\int\frac{r\,du}{\sqrt{r^2-k^2}}.
+\end{equation}
+显然，由(26)所得的单无穷测地线系\(\infty^1\)，在固定\(k\)而令\(b\)变化时，由全都可绕轴旋转而彼此重合的测地线组成。
+
+一阶积分(25)给出
+\begin{equation}\tag{28}
+ r\sen\psi=k,
+\end{equation}
+即克莱罗定理：\emph{在旋转曲面上，测地线上任一点处，平行圈半径与测地线对经线的倾角之正弦的乘积为常量。}
+
+若曲面有一条半径为 R 的最大平行圈，那么对每一条实测地线，常数\(k\)的值均小于 R，并且它的实轨迹全部位于平行圈半径大于\(k\)的带状区域内。
+
+\subsection*{\S. 96.\quad 测地三角形的总曲率.}
+
+回到测地线的一般理论，我们同高斯一起考察一个测地三角形 A B C（即由三条测地弧围成的三角形）；它围住曲面 S 的一部分。来计算它的总曲率，也就是二重积分
+\[
+ \Sigma=\int K\,d\sigma
+\]
+积分遍及整个三角形，其中\(d\sigma\)表示面积元，而 K 照例表示曲率。
+
+取从顶点 A 出发的测地线为坐标线\(v\)，并以它们同固定测地线 A B 所成的角为参数\(v\)（这条固定测地线为\(v=0\)）；取这些测地线的正交轨线（测地圆）为坐标线\(u\)，从 A 点起计量测地线的弧长\(u\)。线元为
+\[
+ ds^2=du^2+G\,dv^2,
+\]
+于是函数\(\sqrt G\)满足第195页的条件
+\begin{equation}\tag{29}
+ \left(\sqrt G\right)_{u=0}=0,
+  \qquad
+ \left(\frac{\partial\sqrt G}{\partial u}\right)_{u=0}=1.
+\end{equation}
+且
+\[
+ K=-\frac1{\sqrt G}\frac{\partial^2\sqrt G}{\partial u^2},
+  \qquad
+ d\sigma=\sqrt G\,du\,dv,
+\]
+所以
+\begin{equation}\tag{30}
+ \Sigma=\iint -\frac{\partial^2\sqrt G}{\partial u^2}\,du\,dv
+ =\int_0^{\widehat A}dv\int_0^u -\frac{\partial^2\sqrt G}{\partial u^2}\,du,
+\end{equation}
+其中\(\widehat A\)为三角形A点夹角。
+
+沿测地线 B C，把从 B 到 C 定为正向，则测地线的高斯微分方程［(11*)，第190页］成立，即
+\begin{equation}\tag{31}
+ d\theta=-\frac{\partial\sqrt G}{\partial u}\,dv.
+\end{equation}
+设\(\widehat B,\widehat C\)为B、C点内角，则
+\[
+ \theta_B=\pi-\widehat B,\qquad \theta_C=\widehat C,
+\]
+此时\(\theta_B,\theta_C\)分别为B、C点的\(\theta\)值。
+
+由(30)
+\[
+ \Sigma=\int_0^{\widehat A}\left\{\left(\frac{\partial\sqrt G}{\partial u}\right)_{u=0}-\frac{\partial\sqrt G}{\partial u}\right\}dv,
+\]
+即由(29),(31)
+\[
+ \Sigma=\int_0^{\widehat A}(dv+d\theta)=\widehat A+\theta_C-\theta_B=\widehat A+\widehat B+\widehat C-\pi.
+\]
+这个重要公式表述了高斯定理：
+
+\emph{测地三角形的总曲率，等于它的三个内角之和超过两个直角的超量。}
+
+若三角形内部各点全为椭圆点，这个超量为正；若全为双曲点，则为负；对可展曲面则为零。
+
+此外，若曲面K为常数，上式给出：
+
+\emph{在常曲率曲面上，每个测地三角形的面积，同它的三个内角之和超过两个直角的超量成比例。}
+
+\subsection*{\S. 97.\quad 常测地曲率曲线的正交双系统.}
+
+本章结尾给出若干关于常测地曲率曲线的简单定理。
+
+设曲面S上取正交双系统\((u,v)\)，其中\(u\)和\(v\)两系的每条曲线均有恒定测地曲率。若线元
+\[
+ ds^2=E\,du^2+G\,dv^2
+\]
+则由假设（第181页）有
+\begin{equation}\tag{a}
+ \frac1{\sqrt{EG}}\frac{\partial\sqrt G}{\partial u}=U,
+  \qquad
+ \frac1{\sqrt{EG}}\frac{\partial\sqrt E}{\partial v}=V,
+\end{equation}
+其中 U 只是\(u\)的函数，V 只是\(v\)的函数。于是
+\[
+ V\frac{\partial\sqrt G}{\partial u}=U\frac{\partial\sqrt E}{\partial v},
+\]
+即
+\[
+ \frac{\partial(V\sqrt G)}{\partial u}=\frac{\partial(U\sqrt E)}{\partial v};
+\]
+故
+\[
+ U\sqrt E\,du+V\sqrt G\,dv
+\]
+是某个函数\(\varphi\)的全微分，因而
+\[
+ \sqrt E=\frac1U\frac{\partial\varphi}{\partial u},
+  \qquad
+ \sqrt G=\frac1V\frac{\partial\varphi}{\partial v}.
+\]
+代入(a)得\(\varphi\)满足
+\[
+ \frac{\partial^2\varphi}{\partial u\partial v}=\frac{\partial\varphi}{\partial u}\frac{\partial\varphi}{\partial v},
+\]
+其通解
+\[
+ \varphi=-\log\{\alpha(u)+\beta(v)\},
+\]
+其中\(\alpha(u),\beta(v)\)分别为\(u,v\)的任意函数。于是线元具有形式
+\[
+ ds^2=\frac1{[\alpha(u)+\beta(v)]^2}\left\{\frac{\alpha'^2(u)}{U^2}\,du^2+\frac{\beta'^2(v)}{V^2}\,dv^2\right\},
+\]
+或者，改变参数\(u,v\)，得
+\begin{equation}\tag{32}
+ ds^2=\frac{du_1^2+dv_1^2}{(U_1+V_1)^2}\srcfnmark{1}.
+\end{equation}
+\srcfntext{1}{若函数 U、V 均为绝对常数，则线元具有形式
+\[
+ ds^2=\frac1{(au+bv)^2}(du^2+dv^2),\qquad (a,b\hbox{ 常数})
+\]
+并属于曲率
+\[
+ K=-(a^2+b^2).
+\]
+的伪球面。（参见第185页注。）}
+
+因此定理如下：
+
+\emph{常测地曲率的正交双系统必为等温系统。}
+
+反过来也成立：
+
+\emph{若在一个正交等温双系统中，一系曲线具有常测地曲率，则另一系的曲线也具有常测地曲率。}
+
+取等温参数后，线元具有形式
+\[
+ ds^2=\lambda(du^2+dv^2).
+\]
+这时
+\[
+ \frac1{\rho_u}=\frac{\partial}{\partial u}\left(\frac1{\sqrt\lambda}\right),
+ \qquad
+ \frac1{\rho_v}=\frac{\partial}{\partial v}\left(\frac1{\sqrt\lambda}\right)
+\]
+而两个条件
+\[
+ \frac{\partial}{\partial v}\left(\frac1{\rho_u}\right)=0,
+ \qquad
+ \frac{\partial}{\partial u}\left(\frac1{\rho_v}\right)=0
+\]
+显然互为推论。
+
+显然，这里所考察的正交双系统只存在于特殊曲面上。特别地，在平面与球面上存在无穷多个这样的系统；在\S. 52中，我们已经从几何上解决了把它们全部确定出来的问题。
+
+\begin{center}\rule{2.5em}{0.4pt}\,\(\bullet\bullet\)\,\rule{2.5em}{0.4pt}\end{center}

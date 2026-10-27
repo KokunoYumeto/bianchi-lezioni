@@ -1,0 +1,116 @@
+\subsection*{§. 193.\\ 椭圆度量与 Weierstrass 坐标。}
+
+令
+\[
+ \Omega_{xx}=\mathop{\mathrm{S}}_i x_i^2,
+\]
+则按 Cayley 度量，两点之间的距离 $\delta$ 由 (23) 给出为
+\[
+ \delta=h\log\left(\frac{\Omega_{xx'}+i\sqrt{\Omega_{xx}\Omega_{x'x'}-\Omega_{xx'}^2}}
+ {\Omega_{xx'}-i\sqrt{\Omega_{xx}\Omega_{x'x'}-\Omega_{xx'}^2}}\right),
+\]
+其中 $h$ 为常数；因对数号下的量是模 $=1$ 的复数，要使 $\delta$ 为实数，须取 $h$ 为纯虚数。令 $h=\frac R i$，于是
+\[
+ \cos\left(\frac\delta R\right)=\frac{\Omega_{xx'}}{\sqrt{\Omega_{xx}\Omega_{x'x'}}}.
+\]
+固定齐次坐标所含的任意因子，取
+\[
+\tag{24}
+ x_0^2+x_1^2+\cdots+x_n^2=1,
+\]
+则上式化为
+\[
+\tag{25}
+ \cos\left(\frac\delta R\right)=\mathop{\mathrm{S}}x_i x'_i=x_0x'_0+x_1x'_1+\cdots+x_nx'_n.
+\]
+现在用下述方法计算我们空间的 $ds^2$。在任意曲线上取两个无限邻近点 $(x_i)$、$(x_i+dx_i)$，并以 $h$ 表示从 $(x_i)$ 移到 $(x_i+dx_i)$ 时弧长的无穷小增量。
+
+在 (25) 中令
+\[
+ \delta=h,
+ \qquad x'_i=x_i+\frac{dx_i}{ds}h+\frac{d^2x_i}{ds^2}\frac{h^2}{2}+\cdots,
+\]
+便有
+\[
+ 1-\frac{h^2}{2R^2}+\cdots=\mathop{\mathrm{S}}x_i^2+h\mathop{\mathrm{S}}x_i\frac{dx_i}{ds}+\frac{h^2}{2}\mathop{\mathrm{S}}x_i\frac{d^2x_i}{ds^2}+\cdots,
+\]
+由此利用 (24) 并比较 $h^2$ 的系数，得到
+\[
+ -\mathop{\mathrm{S}}x_i\frac{d^2x_i}{ds^2}=\mathop{\mathrm{S}}\left(\frac{dx_i}{ds}\right)^2=\frac1{R^2},
+\]
+从而我们空间的线元为
+\[
+\tag{26}
+ ds^2=R^2(dx_0^2+dx_1^2+\cdots+dx_n^2),
+\]
+其中 $x_0,x_1,\ldots,x_n$ 由 (24) 联系。
+
+由此容易看出，当前空间的常曲率恰为正值 $=\frac1{R^2}$。事实上，暂时改变几何解释，把 $Rx_0,Rx_1,\ldots,Rx_n$ 看作欧几里得空间 $S_{n+1}$ 中的正交笛卡尔坐标（非齐次），该空间为 $n+1$ 维，其线元为 (26)；则 (24) 是半径为 $R$ 的超球面方程。这个超球面在 $S_{n+1}$ 中恰是一个 $n$ 维空间，其曲率 $K=\frac1{R^2}$。
+
+现在回到原来的解释：$x_0,x_1,x_2,\ldots,x_n$ 是一个表示空间 $S_n$ 的齐次坐标（由 (24) 联系），椭圆空间的测地线在其中由线性方程表示。称 $x_0,x_1,\ldots,x_n$ 为\emph{点的 Weierstrass 坐标}（参见 §. 183）。若考察方程为
+\[
+\tag{27}
+ \xi_0x_0+\xi_1x_1+\cdots+\xi_nx_n=0
+\]
+的超平面，并重新固定该超平面齐次坐标 $\xi$ 中的因子，使
+\[
+ \mathop{\mathrm{S}}\xi_i^2=\xi_0^2+\xi_1^2+\cdots+\xi_n^2=1,
+\]
+则称 $\xi$ 为超平面的 Weierstrass 坐标\srcfn{1}{在上面的解释中，$\xi_i$ 是空间 $S_{n+1}$ 中超平面法线的方向余弦。}。也可把 $\xi$ 看作一个点的坐标；由 (27)，该点正是超平面关于 Cayley 度量的绝对形
+\[
+ x_0^2+x_1^2+\cdots+x_n^2=0
+\]
+的极点。现在从点 $(x_i)$ 向两个无限邻近点 $(x_i+dx_i)$、$(x_i+\delta x_i)$ 作两个线元，立即可见，这两个线元的正交条件为
+\[
+ \mathop{\mathrm{S}}dx_i\,\delta x_i=0\srcfnmark{1}.
+\]
+若第一个线元属于超平面 $(\xi_i)$，则
+\[
+ \mathop{\mathrm{S}}\xi_i\,dx_i=0;
+\]
+另一方面，增量 $\delta x_i$，即 $x$ 沿连接 $(x_i)$ 与超平面极点 $(\xi_i)$ 的方向的增量，与 $\xi_i$ 成比例，所以这个方向垂直于超平面内的一切方向。即：\emph{在 Cayley 度量中，过点 $(x_i)$ 向超平面 $(\xi_i)$ 作的法线，是连接 $(x_i)$ 与该超平面关于绝对形之极点的直线。}
+
+一条直线可由它的一点的坐标 $(x_i)$ 与垂直于该直线的超平面坐标 $(\xi_i)$ 来定义；该超平面取在 $(x_i)$ 处，使得
+\[
+ \mathop{\mathrm{S}}x_i\xi_i=0.
+\]
+该直线上任意另一点的坐标 $x'_i$ 为
+\[
+ x'_i=\lambda x_i+\mu\xi_i
+\]
+其中 $\lambda^2+\mu^2=1$。若 $\delta$ 是 $(x'_i)$ 到 $(x_i)$ 的距离，则由 (25)
+\[
+ \lambda=\cos\left(\frac\delta R\right),\qquad \mu=\sen\left(\frac\delta R\right),
+\]
+因而
+\[
+\tag{28}
+ x'_i=x_i\cos\left(\frac\delta R\right)+\xi_i\sen\left(\frac\delta R\right).
+\]
+同样，垂直于该直线的超平面坐标 $\xi'_i$，在点 $(x'_i)$ 处为
+\[
+\tag{28*}
+ \xi'_i=x_i\sen\left(\frac\delta R\right)-\xi_i\cos\left(\frac\delta R\right).
+\]
+\srcfntext{1}{这既可借助 $S_{n+1}$ 中的表示看出，也可直接看出：若把 $x$ 表示为 $n$ 个独立变量 $u_1,u_2,\ldots,u_n$ 的函数，并有
+\[
+\mathop{\mathrm{S}}dx_i^2=\sum_{r,s}a_{rs}\,du_r\,du_s,
+\]
+则有
+\[
+\mathop{\mathrm{S}}dx_i\,\delta x_i=\sum_{r,s}a_{rs}\,du_r\,\delta u_s.
+\]}
+
+若在这些公式中让 $\delta$ 从 $0$ 连续增加到 $\pi R$，点 $x'_i$ 显然从 $(x_i)$ 出发描出整条直线并回到同一点；因为增加 $\pi R$ 后有 $x'_i=-x_i$，从而在表示空间 $S_n$ 中回到同一点。因此，若把正曲率空间中在欧几里得空间 $S_n$ 内具有同一像的两点视为重合，并把如此理解的常曲率空间称为\emph{单椭圆空间}，则可说：\emph{在半径为 $R$ 的单椭圆空间中，直线具有有限长度 $\pi R$。}
+
+反之，若把曲空间中坐标相等而符号相反的两点视为不同点，则直线只有经过一周 $2\pi R$ 后才闭合。在单椭圆空间中，两条相交直线只有一个公共点；而在\emph{双}椭圆空间中，两条在一点相交的直线还会在另一个（径向对跖）点再次相交，该点到第一点的距离为 $\pi R$。
+
+最后记下由上式导出的两个公式；在椭圆度量中，它们分别给出夹角 $\varphi$，即两个超平面 $(\xi_i)(\xi'_i)$ 的夹角，以及距离 $\delta$，即点 $(x_i)$ 到超平面 $(\xi_i)$ 的距离：
+\[
+\tag{29}
+ \cos\varphi=\mathop{\mathrm{S}}\xi_i\xi'_i
+\]
+\[
+\tag{30}
+ \sen\left(\frac\delta R\right)=\mathop{\mathrm{S}}x_i\xi_i.
+\]

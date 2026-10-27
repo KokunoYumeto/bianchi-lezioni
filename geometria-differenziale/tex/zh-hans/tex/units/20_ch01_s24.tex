@@ -1,0 +1,49 @@
+\subsection*{\S. 24.\quad 贝特朗曲线。}
+本章最后考察一个由贝特朗（Bertrand）提出并解决的问题。从第17节末尾所得的结果出发：第一曲率为常数的曲线成对出现，且每一对具有共同的主法线。现在要求：\emph{确定所有这样的曲线 C，它还容许第二条曲线 C' 与 C 具有相同的主法线。}用撇号表示与 C' 有关的量；坐标 \(x',y',z'\) 属于 C 上点 \(M\equiv(x,y,z)\) 的对应点，它们为
+\begin{equation}\tag{51}
+x'=x+k\xi,
+\qquad y'=y+k\eta,
+\qquad z'=z+k\zeta,
+\end{equation}
+其中 \(k\) 表示主法线线段 MM'。按照假设，MM' 是 C' 在 M' 处的法线，所以首先必须有
+\[
+\xi\frac{\diff x'}{\diff s}+\eta\frac{\diff y'}{\diff s}+\zeta\frac{\diff z'}{\diff s}=0,
+\]
+由此得到
+\[
+\frac{\diff k}{\diff s}=0,
+\qquad\hbox{即 }k=\hbox{常数}.
+\]
+其次，把 (51) 微分并令
+\begin{equation}\tag{52}
+\cos\sigma=\frac{1-\dfrac{k}{\rho}}{\sqrt{\left(1-\dfrac{k}{\rho}\right)^2+\dfrac{k^2}{T^2}}},
+\qquad
+\sen\sigma=\frac{-\dfrac{k}{T}}{\sqrt{\left(1-\dfrac{k}{\rho}\right)^2+\dfrac{k^2}{T^2}}},
+\end{equation}
+得到
+\begin{equation}\tag{53}
+\alpha'=\alpha\cos\sigma+\lambda\sen\sigma,
+\quad
+\beta'=\beta\cos\sigma+\mu\sen\sigma,
+\quad
+\gamma'=\gamma\cos\sigma+\nu\sen\sigma,
+\end{equation}
+其中 \(\sigma\) 表示 M、M' 两点处两条切线之间的角。再把 (53) 微分，利用弗雷内公式以及 C' 与 C 具有相同主法线的假设，得到
+\[
+\sigma=\hbox{常数},
+\]
+所以由 (52) 得到定理：\emph{曲线 C 的两个曲率必须由下列线性关系联系起来：}
+\begin{equation}\tag{54}
+\frac{k\cos\sigma}{T}-\frac{k\sen\sigma}{\rho}+\sen\sigma=0.
+\end{equation}
+反过来，设曲线 C 的两个曲率由线性方程
+\begin{equation}\tag{54*}
+\frac{A}{T}+\frac{B}{\rho}+C=0,
+\end{equation}
+联系起来，并且 \(\rho,T\) 不同时为常数（圆螺线的情形）。把 (54) 与 (54*) 对照，就得到第二条与 C 具有相同主法线的曲线 C'；它由下列公式完全确定：
+\begin{equation}\tag{55}
+k=-\frac{B}{C},
+\qquad
+\tg\sigma=-\frac{B}{A},
+\end{equation}
+显然，C' 的两个曲率满足同一个关系 (54*)。而在圆螺线的情形下，可以完全任意地选取 \(k\)；因此：\emph{一条圆螺线的各主法线的正交轨迹，全都具有共同的主法线。}圆螺线的主法线曲面，以后将在本书中作为\emph{极小直纹螺旋面}出现。

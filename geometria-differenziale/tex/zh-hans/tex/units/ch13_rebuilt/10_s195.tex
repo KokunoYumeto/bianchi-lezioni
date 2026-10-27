@@ -1,0 +1,114 @@
+\subsection*{§. 195.\\ Weierstrass 坐标的 Weingarten 方程。}
+
+现在对一个 $n$ 维常曲率空间作与 §. 184 对二维伪球空间所作的同一研究。也就是说，只给定一个空间的 $ds^2$，该空间的常曲率为 $K=\pm\frac1{R^2}$，并把线元写成
+\[
+ ds^2=R^2\sum_{h,k}a_{hk}\,dy_h\,dy_k,
+\]
+于是形式 $\sum a_{hk}\,dy_h\,dy_k$ 的黎曼曲率为常数 $=\pm1$；要求在此空间中建立一套 Weierstrass 坐标，这等价于积分测地线微分方程。先对 $K=+\frac1{R^2}$ 的情形计算，另一种情形完全类似。因而须求 $n+1$ 个未知函数 $x_0,x_1,x_2\ldots$，它们都是 $y$ 的函数，并使
+\[
+\tag{38}
+\left\{
+\begin{aligned}
+&\mathop{\mathrm{S}}_r x_r^2=1,\\
+&\mathop{\mathrm{S}}_r dx_r^2=\sum_{h,k}a_{hk}\,dy_h\,dy_k,
+\end{aligned}\right.
+\]
+而我们\emph{先验地}知道这是可能的。
+由方程
+\[
+\tag{38*}
+ \mathop{\mathrm{S}}\frac{\partial x_r}{\partial y_i}\frac{\partial x_r}{\partial y_k}=a_{ik}
+\]
+立即得到
+\[
+\tag{39}
+ \mathop{\mathrm{S}}\frac{\partial^2x}{\partial y_i\partial y_k}\frac{\partial x}{\partial y_\lambda}
+ =\left[\begin{matrix}ik\\ \lambda\end{matrix}\right]_a
+\]
+又对 (38) 的第一式求导，得到
+\[
+\tag{39*}
+ \mathop{\mathrm{S}}\frac{\partial^2x}{\partial y_i\partial y_k}x=-a_{ik}.
+\]
+在 (39)、(39*) 中固定指标 $i,k$，并让 $\lambda$ 取其 $n$ 个值 $1,2,\ldots,n$；由这些线性方程解出 $n+1$ 个未知量
+\[
+ \frac{\partial^2x_0}{\partial y_i\partial y_k},\quad
+ \frac{\partial^2x_1}{\partial y_i\partial y_k},\ldots,
+ \frac{\partial^2x_n}{\partial y_i\partial y_k},
+\]
+并注意系数行列式不为零，因为由 (38)、(38*)，它的平方等于 $a$ 的行列式。这样显然得到如下类型的公式：
+\[
+ \frac{\partial^2x}{\partial y_i\partial y_k}=\sum_t\alpha^{(t)}_{ik}\frac{\partial x}{\partial y_t}+\beta_{ik}x,
+\]
+这些公式适用于任意一个 $n+1$ 个 $x$，而系数 $\alpha^{(t)}_{ik},\beta_{ik}$ 保持不变。把它代入 (39)、(39*)，立即算得
+\[
+ \sum_t\alpha^{(t)}_{ik}a_{t\lambda}=\left[\begin{matrix}ik\\ \lambda\end{matrix}\right]_a,
+ \qquad \beta_{ik}=-a_{ik}
+\]
+因而简化为
+\[
+ \alpha^{(t)}_{ik}=\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_a.
+\]
+于是得到：\emph{Weierstrass 坐标 $x_0,x_1,x_2,\ldots,x_n$ 是 Weingarten 方程组（§. 183）的解：}
+\[
+\tag{A'}
+ \frac{\partial^2x}{\partial y_i\partial y_k}=
+ \sum_t\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_a\frac{\partial x}{\partial y_t}-a_{ik}x.
+\]
+容易看出，为求 Weierstrass 坐标 $x_0,x_1,\ldots,x_n$，若只给定曲率为 $K=+1$ 的微分形式，充要条件是求出方程组 (A') 的 $n+1$ 个特殊解
+\[
+ x_0,x_1,x_2,\ldots,x_n
+\]
+使它们在 $y_i=y_i^{(0)}$ 时的初值及其导数满足
+\[
+ \mathop{\mathrm{S}}x_r^2=1,
+ \qquad
+ \mathop{\mathrm{S}}\frac{\partial x_r}{\partial y_i}\frac{\partial x_r}{\partial y_k}=a_{ik},
+ \qquad \text{当 }y_i=y_i^{(0)}.
+\]
+负曲率情形的计算完全相同；此时 Weierstrass 坐标满足联立方程
+\[
+\tag{A''}
+ \frac{\partial^2x}{\partial y_i\partial y_k}=\sum_t\left\{\begin{matrix}ik\\ t\end{matrix}\right\}_a\frac{\partial x}{\partial y_t}+a_{ik}x,
+\]
+它们仍是 $K=-1$ 时的 Weingarten 方程 (A)。可见，我们已把 §. 184 的结果推广到 $n$ 维。
+
+为把上述观察应用于一个有趣的例子，取 §. 159 中空间的 $ds^2$ 的 Riemann 典型形式 (D)，该空间的常曲率为 $K=\pm\frac1{R^2}$；略改记号写成
+\[
+\tag{D*}
+ ds^2=\frac{R^2(dy_1^2+dy_2^2+\cdots+dy_n^2)}{(y_1^2+y_2^2+\cdots+y_n^2\pm \frac14)^2},
+\]
+上号用于正曲率，下号用于负曲率。称 $y_1,y_2,\ldots,y_n$ 为常曲率空间中一点的\emph{Riemann 坐标}，并要求用 Riemann 坐标表示 Weierstrass 坐标 $x_0,x_1,x_2,\ldots,x_n$，反之亦然。这里只需写出实际的变换公式；它们可按上述方法导出，也可立即验证。
+
+在正曲率情形，公式为
+\[
+\tag{I}
+ x_0=\frac{\frac14-\sum_r y_r^2}{\frac14+\sum_r y_r^2},
+ \qquad x_r=\frac{y_r}{\frac14+\sum_i y_i^2},
+\]
+负曲率情形则为
+\[
+\tag{II}
+ x_0=\frac{\sum_r y_r^2+\frac14}{\sum_r y_r^2-\frac14},
+ \qquad x_r=\frac{y_r}{\sum_i y_i^2-\frac14}.
+\]
+逆公式显然是
+\[
+\tag{I*}
+ y_r=\frac12\frac{x_r}{x_0+1},
+ \qquad (r=1,2,\ldots,n)
+\]
+\[
+\tag{II*}
+ y_r=\frac12\frac{x_r}{x_0-1}.
+\]
+若把 $y_1,y_2,\ldots,y_n$ 看作一个表示欧几里得空间的正交笛卡尔坐标，则 Riemann 公式给出常曲率空间在欧几里得空间上的共形表示。立即可见，测地线的像是圆；在双曲情形，这些圆正交地截极限超球面
+\[
+\tag{$\alpha$}
+ y_1^2+y_2^2+\cdots+y_n^2=\frac14;
+\]
+整个空间表示在该超球面之内。在椭圆情形，这些圆仍正交地截虚超球面
+\[
+ y_1^2+y_2^2+\cdots+y_n^2+\frac14=0,
+\]
+也就是说，它们以径向对跖点对截实超球面 ($\alpha$)。
