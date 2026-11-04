@@ -1,9 +1,8 @@
 # Luigi Bianchi, *Lezioni* — Italian text, English and Chinese translations
 
 Two lecture courses by Luigi Bianchi: Volume I of the second edition of the *Lezioni di geometria differenziale*
-(1902), complete in
-Italian, English and Simplified Chinese, and the beginning of the *Lezioni sulla teoria dei gruppi continui finiti di
-trasformazioni* (1902–1903) in Italian and English.
+(1902), complete in Italian, English and Simplified Chinese, and the beginning of the *Lezioni sulla teoria dei
+gruppi continui finiti di trasformazioni* (1902–1903) in Italian and English.
 
 ## *Lezioni di geometria differenziale*, second edition, Volume I (Pisa: Spoerri, 1902)
 
@@ -30,8 +29,7 @@ index. Volumes II (1903) and III (1909) are not transcribed.
 | English | [PDF](gruppi-continui/pdf/Bianchi_Continuous_Groups_English_pp001-116.pdf) (69 pages) | [LaTeX](gruppi-continui/tex/Bianchi_Continuous_Groups_English_pp001-116.tex) |
 
 **Completeness.** This is a partial edition of the handwritten lecture notes: the table of contents and pages 1–116 of
-708, ending in §35
-after equation (3₁). Pages 117–708 are not yet transcribed.
+708, ending in §35 after equation (3₁). Pages 117–708 are not yet transcribed.
 
 ## How it was made
 
@@ -47,6 +45,12 @@ was translated from the Italian, with the English as an aid.
   all three languages, and page 50 (§14) of the *Gruppi continui* in Italian, with the scans. Text and formulas
   agree with the print, and the translations are faithful.
 - Other pages have not had a second check by a different model.
+
+## Status
+
+The *Geometria differenziale* volume is complete; the *Gruppi continui* edition covers pages 1–116 of 708. Errors may
+remain in the transcriptions and translations; corrections are welcome through the
+[issues page](https://github.com/KokunoYumeto/bianchi-lezioni/issues).
 
 ## Sources
 
@@ -66,11 +70,6 @@ was translated from the Italian, with the English as an aid.
 
 Bianchi's texts are in the public domain. The transcriptions, translations and typesetting are dedicated to the
 public domain under [CC0 1.0](LICENSE).
-
-## Earlier versions
-
-Earlier versions were published on Zenodo, [doi:10.5281/zenodo.20615814](https://doi.org/10.5281/zenodo.20615814).
-Zenodo has blocked access to our account, so please use this repository from now on.
 
 ---
 
